@@ -20,23 +20,20 @@ library(kableExtra)
 
 knitr::include_graphics("img/tidy-workflow.png")
 ```
+## Instructor
 
+Julien Brun (brun\@nceas.ucsb.edu)
+
+## Important links
+
+-   [Course syllabus](https://bren.ucsb.edu/courses/eds-214)
+-   EDS Course Workbook
+-   [Code of Conduct]()
 
 ## Course description
 
 The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document help to organize and document workflows are being used to ensure reproducibility and transparency of the results. This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses, as well as various software tools that help users to manage multi-step processes that requires tools for storing, managing and sharing workflows, code, documents and data.
 
-## Teaching team
-
-**Instructor:** Mike Wazowski (wazowski\@monstersinc.org)
-
--   **Office:** Closet 100
--   **Office hours:** Friday 9pm - 11pm
-
-**Teaching assistant:** Boo (boo\@monstersinc.org)
-
--   **Office:** Boo's Room
--   **Office hours:** Saturday 7am - 8am
 
 ## Important links
 
@@ -84,7 +81,7 @@ The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to 
 
 ### Computing
 
-- Minimum MEDS device requirements (bring to all sessions)
+- Minimum [MEDS device requirements](https://ucsb-meds.github.io/computer_reqs.html)
 
 - Have a ready to be used GitHub Account (https://github.com/) 
 
