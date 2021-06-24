@@ -24,7 +24,7 @@ navbar:
     - text: "Resources"
       href: resources.html
     - icon: fab fa-github
-      href: https://github.com/brunj7/meds-distill-template
+      href: https://github.com/brunj7/EDS-214-analytical-workflows
 output:
   distill::distill_article:
     toc: true
