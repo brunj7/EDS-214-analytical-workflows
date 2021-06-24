@@ -10,7 +10,7 @@ The generation and analysis of environmental data is often a complex, multi-step
 
 
 
-<br>
+<hr>
 
 This website template is made with [`distill` by RStudio](https://rstudio.github.io/distill/) as an optional starting point for teachers in the Master of Environmental Data Science Program at the Bren School (UC Santa Barbara). 
 
