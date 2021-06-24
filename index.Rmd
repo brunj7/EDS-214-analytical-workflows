@@ -28,7 +28,7 @@ Julien Brun (brun\@nceas.ucsb.edu)
 
 -   [Course syllabus](https://bren.ucsb.edu/courses/eds-214)
 -   EDS Course Workbook
--   [Code of Conduct]()
+-   [NCEAS Code of Conduct](https://www.nceas.ucsb.edu/diversity-inclusion)
 
 ## Course description
 
@@ -88,12 +88,9 @@ The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to 
 
 ### Textbook
 
--   Required textbook / information
+-   R for Data Science: https://r4ds.had.co.nz/
 
-### Other requirements
 
--   Anything else
--   Important for students to know
 
 ## Tentative topics
 
