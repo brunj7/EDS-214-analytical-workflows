@@ -13,11 +13,11 @@ navbar:
           href: day_1.html
         - text: "Day 2: Scientific Coding as a Team"
           href: day_2.html
-        - text: "Day 3: Code Review & Pair Programming"
+        - text: "Day 3: Managing your code and data"
           href: day_3.html
-        - text: "Day 4: Documenting things"
+        - text: "Day 4: Code Review & Pair Programming"
           href: day_4.html
-        - text: "Day 5: Managing your code and data"
+        - text: "Day 5: Documenting and sharing things"
           href: day_5.html
     - text: "Assignments"
       href: assignments.html

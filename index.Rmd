@@ -24,6 +24,10 @@ knitr::include_graphics("img/tidy-workflow.png")
 
 Julien Brun (brun\@nceas.ucsb.edu)
 
+## Tutor
+
+Casey O'Hara (cohara@bren.ucsb.edu)
+
 ## Important links
 
 -   [Course syllabus](https://bren.ucsb.edu/courses/eds-214)
@@ -94,11 +98,11 @@ The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to 
 
 ## Tentative topics
 
-| Day   | Lecture topics                  | Lab topics |
+| Day   | Lecture topics                 | Lab topics |
 |-------|--------------------------------|------------|
-| 1     | Reproducible Workflows         | Writing pseudo code     |
-| 2     | Coding as a Team               | git & GitHub      |
-| 3     | Code Review & Pair Programming | Forking & Pull request   |
-| 4     | Documenting & sharing things   | GitHub Pages  |
-| 5     | Managing your code and data    | Working on a remote server  |
+| 1     | Reproducible Workflows         | Writing pseudo code   |
+| 2     | Coding as a Team               | GitHub branches and forks  |
+| 3     | Managing your code and data    | Working on a remote server  |
+| 4     | Code Review & Pair Programming | Pull request   |
+| 5     | Documenting & sharing things   | GitHub Pages  |
 

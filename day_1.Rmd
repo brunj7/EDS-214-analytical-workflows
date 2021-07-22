@@ -1,10 +1,14 @@
 ---
-title: "Scientific programming for reproducible research"
+title: "Reproducible Analytical Workflows"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# Lecture 1: Definitions and Concepts
+
+[Slide deck](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
 
 # Why
 

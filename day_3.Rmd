@@ -1,5 +1,5 @@
 ---
-title: "Collaborative coding"
+title: "Managing your code and data"
 ---
 
 ```{r setup, include=FALSE}
