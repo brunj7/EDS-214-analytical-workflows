@@ -8,6 +8,8 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(kableExtra)
+library(googlesheets4)
+library(DT)
 # Learn more about creating websites with Distill at:
 # https://rstudio.github.io/distill/website.html
 
@@ -31,21 +33,11 @@ Casey O'Hara (cohara\@bren.ucsb.edu)
 ## Important links
 
 -   [Course syllabus](https://bren.ucsb.edu/courses/eds-214)
--   EDS Course Workbook
 -   [Code of Conduct](code_of_conduct.html)
 
 ## Course description
 
 The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.
-
-
-## Important links
-
--   Link to full course syllabus (here is the [MEDS optional syllabus template](https://docs.google.com/document/d/1b2CElvwKk-haEA1axY5KvTEBbiSPUf7dIRUNX7gCI6w/edit?usp=sharing))
-
--   Link to Code of Conduct (Bren / UCSB)
-
--   Link to course GitHub Classroom, other essential resources
 
 
 ## Predictable daily schedule
@@ -81,6 +73,25 @@ The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to 
 -   **Practice documenting code and data** in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work
 
 
+## Main topics
+
+| Day   | Lecture topics                 | Lab topics |
+|-------|--------------------------------|------------|
+| 1     | Reproducible Workflows         | Writing pseudo code   |
+| 2     | Coding as a Team               | GitHub branches and forks  |
+| 3     | Managing your code and data    | Working on a remote server  |
+| 4     | Code Review & Pair Programming | Pull request   |
+| 5     | Documenting & sharing things   | GitHub Pages  |
+
+## Schedule (subject to change)
+
+```{r echo=FALSE, message=FALSE}
+gs4_deauth()
+sched <- read_sheet("https://docs.google.com/spreadsheets/d/1GckWJ4li6G2AyCjS8MrQSN6znym27aO9IPujdWfHc14/edit#gid=0")
+
+datatable(sched)
+
+```
 ## Course requirements
 
 ### Computing
@@ -96,14 +107,4 @@ The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to 
 - The Practice of Reproducible Research: http://www.practicereproducibleresearch.org/
 
 
-
-## Tentative topics
-
-| Day   | Lecture topics                 | Lab topics |
-|-------|--------------------------------|------------|
-| 1     | Reproducible Workflows         | Writing pseudo code   |
-| 2     | Coding as a Team               | GitHub branches and forks  |
-| 3     | Managing your code and data    | Working on a remote server  |
-| 4     | Code Review & Pair Programming | Pull request   |
-| 5     | Documenting & sharing things   | GitHub Pages  |
 

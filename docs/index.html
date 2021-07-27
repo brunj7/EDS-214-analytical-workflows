@@ -2443,6 +2443,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/datatables-binding-0.18/datatables.js"></script>
+  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+  <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2517,15 +2526,15 @@ Topics
 <li><a href="#tutor">Tutor</a></li>
 <li><a href="#important-links">Important links</a></li>
 <li><a href="#course-description">Course description</a></li>
-<li><a href="#important-links-1">Important links</a></li>
 <li><a href="#predictable-daily-schedule">Predictable daily schedule</a></li>
 <li><a href="#learning-objectives">Learning objectives</a></li>
+<li><a href="#main-topics">Main topics</a></li>
+<li><a href="#schedule-subject-to-change">Schedule (subject to change)</a></li>
 <li><a href="#course-requirements">Course requirements</a>
 <ul>
 <li><a href="#computing">Computing</a></li>
 <li><a href="#textbook">Textbook</a></li>
 </ul></li>
-<li><a href="#tentative-topics">Tentative topics</a></li>
 </ul>
 </nav>
 </div>
@@ -2544,17 +2553,10 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 <h2 id="important-links">Important links</h2>
 <ul>
 <li><a href="https://bren.ucsb.edu/courses/eds-214">Course syllabus</a></li>
-<li>EDS Course Workbook</li>
 <li><a href="code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <h2 id="course-description">Course description</h2>
 <p>The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.</p>
-<h2 id="important-links-1">Important links</h2>
-<ul>
-<li><p>Link to full course syllabus (here is the <a href="https://docs.google.com/document/d/1b2CElvwKk-haEA1axY5KvTEBbiSPUf7dIRUNX7gCI6w/edit?usp=sharing">MEDS optional syllabus template</a>)</p></li>
-<li><p>Link to Code of Conduct (Bren / UCSB)</p></li>
-<li><p>Link to course GitHub Classroom, other essential resources</p></li>
-</ul>
 <h2 id="predictable-daily-schedule">Predictable daily schedule</h2>
 <p><strong>Course dates:</strong> Monday (2021-08-02) - Friday (2021-08-06)</p>
 <p>EDS 214 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.</p>
@@ -2610,18 +2612,7 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 <li><p><strong>Learn how to code in a collaborative manner</strong> by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code review using <code>git</code> and <code>GitHub</code> to create pull request, ask feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows</p></li>
 <li><p><strong>Practice documenting code and data</strong> in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work</p></li>
 </ul>
-<h2 id="course-requirements">Course requirements</h2>
-<h3 id="computing">Computing</h3>
-<ul>
-<li><p>Minimum <a href="https://ucsb-meds.github.io/computer_reqs.html">MEDS device requirements</a></p></li>
-<li><p>Have a ready to be used GitHub Account (<a href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
-</ul>
-<h3 id="textbook">Textbook</h3>
-<ul>
-<li>R for Data Science: <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></li>
-<li>The Practice of Reproducible Research: <a href="http://www.practicereproducibleresearch.org/" class="uri">http://www.practicereproducibleresearch.org/</a></li>
-</ul>
-<h2 id="tentative-topics">Tentative topics</h2>
+<h2 id="main-topics">Main topics</h2>
 <table>
 <thead>
 <tr class="header">
@@ -2658,6 +2649,22 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 </tr>
 </tbody>
 </table>
+<h2 id="schedule-subject-to-change">Schedule (subject to change)</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-f2df2968309b36c48655" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f2df2968309b36c48655">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10"],["Monday 8/23: morning","Monday 8/23: afternoon","Tuesday 8/24: morning","Tuesday 8/24: afternoon","Wednesday 8/25: morning (late start)","Wednesday 8/25: afternoon","Thursday 8/26: morning","Thursday 8/26: afternoon","Friday 8/27: morning","Friday 8/27 afternoon"],["Repoducible workflows","Collaborating with Github 101","Collaborating with Github 102","Organizing your project","Working on a remote server","Working on a remote server","Code review and pair programming","Documenting things","Sharing things","Presentations"],["Planning things and writing pseudo code","Forking and Pull Requests","branches and issues","Notebooks, scripts, data and more","RStudio server &amp; the command line","Orgaizing projects on a server: how to manage data and codes","Team project","Team project","Team project","Team project"],["the Markdown syntax","Open","comparing R and python approached to notebooks","MEDS IT team -- your server accounts","No flex sessions - Wednesday late start","No flex sessions - Wednesday late start","Debugging with RStudio","Timing your code","Xaringan","Work on your online presence (GitHub profile and distill website)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Day / Session<\/th>\n      <th>Topics<\/th>\n      <th>Interactive Sessions<\/th>\n      <th>Flex Sessions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<h2 id="course-requirements">Course requirements</h2>
+<h3 id="computing">Computing</h3>
+<ul>
+<li><p>Minimum <a href="https://ucsb-meds.github.io/computer_reqs.html">MEDS device requirements</a></p></li>
+<li><p>Have a ready to be used GitHub Account (<a href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
+</ul>
+<h3 id="textbook">Textbook</h3>
+<ul>
+<li>R for Data Science: <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></li>
+<li>The Practice of Reproducible Research: <a href="http://www.practicereproducibleresearch.org/" class="uri">http://www.practicereproducibleresearch.org/</a></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
