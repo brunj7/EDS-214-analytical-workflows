@@ -32,11 +32,11 @@ Casey O'Hara (cohara@bren.ucsb.edu)
 
 -   [Course syllabus](https://bren.ucsb.edu/courses/eds-214)
 -   EDS Course Workbook
--   [NCEAS Code of Conduct](https://www.nceas.ucsb.edu/diversity-inclusion)
+-   [Code of Conduct](code_of_conduct.html)
 
 ## Course description
 
-The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document help to organize and document workflows are being used to ensure reproducibility and transparency of the results. This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses, as well as various software tools that help users to manage multi-step processes that requires tools for storing, managing and sharing workflows, code, documents and data.
+The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.
 
 
 ## Important links
