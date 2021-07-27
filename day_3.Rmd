@@ -6,6 +6,11 @@ title: "Managing your code and data"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Working on a remote server
+
+[Materials](topic_7.html)
+
+![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 
 # Collaborative Workflows with `GitHub`
 
@@ -19,7 +24,9 @@ Most commonly, forks are used to either propose changes to someone else's projec
 
 When you are satisfied with your work, you can initiate a ***Pull Request*** to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the "New pull request" button![](img/github-pull-request.png)  
   
-Next, click "compare across forks", and use the dropdown menus to select your fork as the "head fork" and the original repository as the "base fork".![](img/github-compare-forks.png)  
+Next, click "compare across forks", and use the dropdown menus to select your fork as the "head fork" and the original repository as the "base fork".
+
+![](img/github-compare-forks.png)  
   
 Then type a title and description for the changes you would like to make. By using GitHub's `@mention` syntax in your Pull Request message, you can ask for feedback from specific people or teams.
 

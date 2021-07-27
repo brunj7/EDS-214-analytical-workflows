@@ -26,7 +26,7 @@ Julien Brun (brun\@nceas.ucsb.edu)
 
 ## Tutor
 
-Casey O'Hara (cohara@bren.ucsb.edu)
+Casey O'Hara (cohara\@bren.ucsb.edu)
 
 ## Important links
 
@@ -92,7 +92,8 @@ The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to 
 
 ### Textbook
 
--   R for Data Science: https://r4ds.had.co.nz/
+- R for Data Science: https://r4ds.had.co.nz/
+- The Practice of Reproducible Research: http://www.practicereproducibleresearch.org/
 
 
 

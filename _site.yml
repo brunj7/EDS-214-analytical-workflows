@@ -19,8 +19,6 @@ navbar:
           href: day_4.html
         - text: "Day 5: Documenting and sharing things"
           href: day_5.html
-    - text: "Assignments"
-      href: assignments.html
     - text: "Resources"
       href: resources.html
     - icon: fab fa-github

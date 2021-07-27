@@ -48,13 +48,7 @@ For example, the image `usgs_sat.jpeg` is in the `img` folder of this template. 
 
 ````
 
-Which creates: 
 
-```{r, echo = FALSE, out.width = "80%", fig.cap = "USGS image of Mississippi River."}
-
-knitr::include_graphics("img/usgs_sat.jpeg")
-
-```
 
 
 
