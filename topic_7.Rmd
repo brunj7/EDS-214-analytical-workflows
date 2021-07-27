@@ -1,18 +1,433 @@
 ---
-title: "Topic 7: Remove tables of contents"
+title: "Working on a remote server"
 ---
 
-<p style="color: #ba5e00"><b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_7.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!</p>
+# Working on a Remote Machine
 
-In this template, you'll notice that a Table of Contents is automatically created on pages with headings (starting with Level 2 headers as top-level items). 
+## Learning Objectives
 
-To remove the auto-table of contents, open the `_site.yml` file. In the `output` section, change the `toc: ` and `toc_float: ` fields to `false`. 
+In this lesson, you will learn:
 
-That section in `_site.yml` would then look like this, and the table of contents won't appear: 
+- How to connect to a remote server 
+- Get familiar with RStudio server
+- Get a short introduction to the command line
+
+
+## Why working on a remote machine?
+
+Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientits:
+* **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB) 
+* **Capacity**: More *disk space* and generally* faster storage* (in highly optimized RAID arrays)
+* **Security**: Data are spread across *multiple drives* and have nightly *backups*
+* **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
+
+**=> The operating system is more likely going to be Linux!!**
+
+
+### Working Group / Collaborative Setup
+
+There are additional reasons of particular importance in a collaborative set up, such as a working group:
+- **Centralizing data management**: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!
+- **Make sure your files are safe**: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.
+
+
+### What does working on a remote server means?
+
+What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are  about:
+- File management: you will need to learn to move files (incluing your R scripts) to the server
+- Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.
+
+
+## RStudio Server
+
+From an user perspective, _RStudio Server is your familiar RStudio interface in your web browser_. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that **the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!** This remote file management is the main change you will have to adopt in your workflow. 
+
+To help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.
+
+```{r RStudio Server, echo=FALSE, out.width='90%', fig.align="center"}
+  knitr::include_graphics("img/rstudio-server-ide.png")
+```
+
+### Connecting to MEDS Analytical Server
+
+1. Got to: <https://???.ucsb.edu/> 
+
+2. Select `Login to RStudio Server`
+
+3. Enter your credentials
+
+4. You are in!
+
+
+## Jupyter Hub
+
+
+## Command line
+
+### Introduction to UNIX and its siblings
+
+UNIX
+ :  Originally developed at AT&T Bell Labs circa 1970. Has
+     experienced a [long, multi-branched
+     evolutionary path](https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg)
+
+POSIX (Portable Operating System Interface)
+ :  a set of specifications of what an OS needs to qualify as "a Unix", to enhance interoperability among all the "Unix" variants
+
+
+#### Various Unices
+
+![The unix family tree](img/unix-history-simple.png)
+
+* OS X
+ :  [is a Unix](http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix)!
+* Linux
+ :  is _not_ fully POSIX-compliant, but certainly can be
+      regarded as [functionally Unix](http://en.wikipedia.org/wiki/Unix-like)
+      
+
+#### Some Unix hallmarks
+
+* Supports multi-users, multi-processes
+* Highly modular: many small tools that do one thing well, and can be combined
+* Culture of text files and streams
+* Primary OS on HPC (**High Performance Computing** Systems)
+* Main OS on which Internet was built
+
+    
+### The Command Line Interface (CLI)
+
+The CLI provides a direct way to interact with the Operating System, by typing in commands. 
+
+#### Why the CLI is worth learning
+
+* Typically much more extensive access to features, commands, options
+* Command statements can be written down, saved (scripts!)
+* Easier automation
+* Much "cheaper" to do work on a remote system (no need to
+      transmit all the graphical stuff over the network)
+      
+#### Connecting to a remote server via `ssh`
+
+From the gitbash (MS Windows) or the terminal (Mac) type:
+
+```bash
+ssh aurora.nceas.ucsb.edu
+```
+You will be prompted for your username and password.
+
+![aurora_ssh](img/aurora-ssh.png)
+
+You can also directly add your username:
+
+```bash
+ssh brun@aurora.nceas.ucsb.edu
+```
+
+In this case, you will be only asked for your password as you already specified which user you want to connect with.
+
+
+** You can also use the terminal from RStudio!!**
+
+![](img/rstudio-terminal.png)
+
+
+### Navigating and managing files/directories in *NIX
+
+* `pwd`: Know where you are
+* `ls`: List the content of the directory
+* `cd`: Go inside a directory
+* `~` : Home directory
+* `.` : Here (current directory)
+* `..`: Up one level (upper directory)
+
+
+* go to my "Home" directory:  `cd ~`
+* go up one directory level: `cd ..`
+* list the content: `ls`
+* list the content showing hidden files: `ls -a`  note that `-a` is referred as an option (modifies the command)
+ 
+More files/directories manipulations:
+
+* `mkdir`: Create a directory
+* `cp`: Copy a file
+* `mv`: Move a file
+* `rm` /`rmdir`: Remove a file / directory  **use those carefully, there is no return / Trash!!**
+
+#### Permissions
+
+![File permissions](img/UnixFileLongFormat.png)
+
+#### Exercise
+
+Navigate to the repo we created and inspect its content using the CLI
+
+**Note: typing is not your thing? the `<tab>` key is your friend!** One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.
+
+### General command syntax
+
+* `$ command [options] [arguments]`
+
+where `command` must be an _executable_ file on your `PATH`
+* `echo $PATH`
+
+and `options` can usually take two forms
+* short form: `-a`
+* long form: `--all`
+
+You can combine the options:
+
+```bash
+ls -ltrh
+```
+
+What do these options do?
+
+```bash
+man ls
+```
+
+#### find
+
+Show me my Rmarkdown files!
+
+```bash
+find . -iname '*.Rmd'
+```
+
+Which files are larger than 1GB?
+
+```bash
+find . -size +1G
+```
+With more details about the files:
+
+```bash
+find . -size +1G -ls
+```
+
+### Getting things done
+
+#### Some useful, special commands using the Control key
+
+* Cancel (abort) a command: `Ctrl-c`
+* Stop (suspend) a command: `Ctrl-z`
+* `Ctrl-z` can be used to suspend, then background a process
+
+
+#### Process management
+
+* Like Windows Task Manager, OSX Activity Monitor
+* **`top`**, `ps`, `jobs` (hit `q` to get out!)
+* `kill` to delete an unwanted job or process
+* Foreground and background: `&`
+
+
+#### What about "space"
+
+* How much storage is available on this system?  `df -h`
+* How much storage am "I" using overall?  `du -hs <folder>`
+* How much storage am "I" using, by subdirectory?  `du -h <folder>`
+
+
+## Uploading Files to a server
+
+You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software... and you guessed it the CLI :)
+
+### RStudio
+
+You can only upload one file at the time (you can zip a folder to trick it):
+
+![](img/rstudio-upload.png)
+
+### sFTP Software
+
+An efficient protocol to upload files is FTP (File Transfer Protocol). The `s` stands for secured. Any software supporting those protocols will work to transfer files. 
+
+We recommend the following free software:
+
+- Mac users: [cyberduck]( https://cyberduck.io)
+- Windows: [WinSCP](https://winscp.net/eng/index.php)
+
+![](img/server-cyberduck.png)
+
+### scp
+
+The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from Aurora or from your local computer. Here is the basic syntax:
 
 ```
-output:
-  distill::distill_article:
-    toc: false
-    toc_float: false
+scp </source/path> <hostname:/path/to/destination/>
 ```
+
+Here is an example of my uploading the file `10min-loop.R` to Aurora from my laptop. The destination directory on Aurora is `/home/brun/github_com/NCEAS/nceas-training/materials/files`:
+
+```bash
+scp 10min-loop.R brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/files
+```
+
+
+![](img/server-scp.png)
+
+If you want to upload an entire folder, you can add the `-r` option to the command. The general syntax is:
+
+```bash
+scp -r /path/to/source-folder user@server:/path/to/destination-folder/
+```
+
+
+Here is an example uploading all the images in the `myplot` folder 
+
+```bash
+scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/images
+```
+
+
+
+## Advanced Topics at the command line
+
+### Unix systems are multi-user
+* Who else is logged into this machine?  `who`
+* Who is logged into "this shell"?  `whoami`
+
+### A sampling of simple commands for dealing with files
+
+* `wc` count lines, words, and/or characters
+* `diff` compare two files for differences
+* `sort` sort lines in a file
+* `uniq` report or filter out repeated lines in a file
+
+
+### All files have permissions and ownership
+
+* Change permissions: `chmod`
+* Change ownership: `chown`
+* List files showing ownership and permissions: `ls -l`
+
+			brun@aurora:~/postdoc-training/data$ ls -l
+			total 1136
+			-rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
+			-rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
+			-rwxr-xr-x 1 brun scientist   23358 Jun 26 11:20 locale.csv
+			-rwxrwx--- 1 brun scientist    7543 Jun 26 11:20 refrens.csv
+			-rwx------ 1 brun scientist   46653 Jun 26 11:20 sample.csv 		
+* Clear contents in terminal window: `clear`
+
+
+### Getting help
+
+* `<command> -h`, `<command> --help`
+* `man`, `info`, `apropos`, `whereis`
+* Search the web!
+
+
+### History
+
+* See your command history:  `history`
+* Re-run last command:  `!!`  (pronounced "bang-bang")
+* Re-run 32th command: `!32`
+* Re-run 5th from last command: `!-5`
+* Re-run last command that started with 'c': `!c`
+
+
+### Get into the flow, with pipes 
+
+![`stdin`, `stdout`, `stderr`](img/pipe_split.png
+    "http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png")
+
+```bash
+$ ls *.png | wc -l
+$ ls *.png | wc -l > pngcount.txt
+$ diff <(sort file1.txt) <(sort file2.txt)
+$ ls foo 2>/dev/null
+```
+* note use of `*` as character wildcard for zero or more matches (same in Mac and Windows); `%` is equivalent wildcard match in SQL queries
+* `?` matches single character; `_` is SQL query equivalent
+
+
+### Text editing
+
+#### Some editors
+
+* `vim`
+* `emacs`
+* `nano`
+
+```
+$ nano .bashrc
+```
+
+#### Let's look at our text file
+
+* `cat` print file(s)
+* `head` print first few lines of file(s)
+* `tail` print last few lines of file(s)
+* `less` "pager" -- view file interactively (type `q` to quit command)qqqbf
+*   `od --t` "octal dump" -- to view file's underlying binary/octal/hexadecimal/ASCII format
+
+   
+```bash
+$ brun@aurora:~/data$ head -3 env.csv
+EnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments
+1,*Loc ID,-888,-888,-888,-888,-888,-888,-888,-888
+1,10101,-888,-888,-888,-888,-888,-888,-888,-888
+
+$ brun@aurora:~/data$ head -3 env.csv | od -cx
+0000000   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D
+           6e45    4976    2c44    6f4c    4963    2c44    694d    446e
+0000020   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P
+           7461    2c65    614d    4478    7461    2c65    6e41    506e
+0000040   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n
+           5450    4d2c    5441    4d2c    7861    5441    4d2c    6e69
+0000060   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m
+           5441    572c    6165    6874    7265    2c53    6f43    6d6d
+0000100   e   n   t   s  \r  \n   1   ,   *   L   o   c       I   D   ,
+           6e65    7374    0a0d    2c31    4c2a    636f    4920    2c44
+0000120   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -
+           382d    3838    2d2c    3838    2c38    382d    3838    2d2c
+0000140   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -   8
+           3838    2c38    382d    3838    2d2c    3838    2c38    382d
+0000160   8   8   ,   -   8   8   8  \r  \n   1   ,   1   0   1   0   1
+           3838    2d2c    3838    0d38    310a    312c    3130    3130
+0000200   ,   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,
+           2d2c    3838    2c38    382d    3838    2d2c    3838    2c38
+0000220   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -
+           382d    3838    2d2c    3838    2c38    382d    3838    2d2c
+0000240   8   8   8   ,   -   8   8   8  \r  \n
+           3838    2c38    382d    3838    0a0d
+```
+
+
+### Create custom commands with "alias"
+```alias lwc='ls *.jpg | wc -l'```
+
+You can create a number of custom aliases that are available whenever you login, by putting commands such as the above in your shell start-up file, e.g. `.bashrc`
+
+
+### A sampling of more advanced utilities
+
+* `grep` search files for text
+* `sed` filter and transform text
+* `find` advanced search for files/directories
+
+
+#### grep
+
+Show all lines containing "bug" in my R scripts
+
+```bash
+$ grep bug *.R
+```
+
+Now count the number of occurrences per file
+
+```bash
+$ grep -c bug *.R
+```
+
+Print the names of files that contain bug
+
+```bash
+$ grep -l bug *.R
+```
+
+
