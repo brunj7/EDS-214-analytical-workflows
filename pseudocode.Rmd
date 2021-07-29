@@ -1,10 +1,29 @@
 ---
-title: "Topic 1: Add/remove a site page"
+title: "Flow charts and pseudocode"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+# Flow charts
+
+Flowcharts are useful to visualize and develop analytical workflow. It guides planning and anticipating the various computing and analytical tasks that will be required to complete an analysis. It also helps explaining the different steps to your collaborators and team. You can use a flowchart to spell out the logic behind a analytical workflow before ever starting to code. It can help to organize big-picture thinking and provide a guide when it comes time to code. More specifically, flowcharts can:
+
+- Visualize the sequence of the different phases of the analytical process from data collection to implementing analyses
+- Better define the scope and resources needed both in terms of project data management and computing ressources needed
+- Discuss who will be in charge and involved in the development of the different parts of the workflow
+- List the products / outputs that will result from your analysis - such as data, codes, publications, web presence, ... - and discuss how to best presrve and share them
+
+
+
+Often, programmers may write pseudocode as a next step, to provide greater detail than the flowchart in terms of processing steps and implementation.
+
+# Pseudocode
+
+Pseudocode is a technique used to describe the distinct steps to implement steps of a workflow into a sequence of pragrammatical steps in a manner that is easy to understand for anyone with basic programming knowledge. Pseudo can be implemented more or less formally and at various level of details. Here in this course, we will be focusing on the process more than the exact syntax to use, keeping the level of details at level that provide more details than a flow chart.
+
+One additional advantage of going through this process is that it is agnostic of the tools / programming languages that you will be using to develop your analytical workflow.
 
 
