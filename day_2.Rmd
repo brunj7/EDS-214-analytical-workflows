@@ -10,10 +10,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Compared to other programming languages (such as `C`, `fortran`, ...), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.
 
-### Don’t start coding without planning!
-
-It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
-
 ### Structure of a script
 
 A script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:

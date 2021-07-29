@@ -2,6 +2,10 @@
 title: "Working on a remote server"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 # Working on a Remote Machine
 
 ## Learning Objectives
