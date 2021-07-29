@@ -1,5 +1,5 @@
 ---
-title: "Managing your code and data"
+title: "Managing your code and data on a remote server"
 ---
 
 ```{r setup, include=FALSE}
@@ -8,9 +8,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Working on a remote server
 
-[Materials](topic_7.html)
+[Materials](remote_server.html)
 
 ![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
+
 
 # Collaborative Workflows with `GitHub`
 

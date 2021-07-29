@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Analytical Workflows"
+title: "Reproducible & collaborative workflows"
 ---
 
 ```{r setup, include=FALSE}
@@ -8,9 +8,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Lecture 1: Definitions and Concepts
 
-[Slide deck](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
+[**Slide deck**](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
 
-# Why
+# Why going reproducible
 
 There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower **you** to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your "future self" to reuse and build from your own work.
 
@@ -21,7 +21,8 @@ To make your data-riven research reproducible, it is important to develop scient
   knitr::include_graphics(here::here("img","tidy-workflow.png"))
 ```
 
-Two points to stress about this figure:
+### Two points to stress about this figure:
+
 - Workflows are not linear
 - Programming box (yes, you'll need to code this!!)
 
@@ -29,43 +30,8 @@ Two points to stress about this figure:
 
 ## How
 
-We recommend shying away from spreadsheets as an analytical tool, as well as Graphical User Interfaces (GUI) where you need to click on buttons to do your analysis. Although convenient for data exploration, GUI will limit the reproducibility and the scalability of your analysis as human intervention is needed at every step. Spreadsheets can be useful to store tabular data, but it is recommended to script their analysis, as copy-pasting and references to cells are prone to mistake ([see Reinhart and Rogof example](http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf). It is also very difficult to track changes and to scale your analysis using spreadsheets. In addition, auto-formatting (number, date, character, ...) can silently introduce modifications to your data (e.g. [One in five genetics papers contains errors thanks to Microsoft Excel](https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel) ).
+We recommend shying away from spreadsheets as an analytical tool, as well as Graphical User Interfaces (GUI) where you need to click on buttons to do your analysis. Although convenient for data exploration, GUI will limit the reproducibility and the scalability of your analysis as human intervention is needed at every step. Spreadsheets can be useful to store tabular data, but it is recommended to script their analysis, as copy-pasting and references to cells are prone to mistake [(see Reinhart and Rogof example)](http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf). It is also very difficult to track changes and to scale your analysis using spreadsheets. In addition, auto-formatting (number, date, character, ...) can silently introduce modifications to your data (e.g. [One in five genetics papers contains errors thanks to Microsoft Excel](https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel) ).
 
-
-## Scripting languages
-
-Compared to other programming languages (such as `C`, `fortran`, ...), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.
-
-**Don’t start coding without planning!**
-
-It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
-
-**Structure of a script**
-
-A script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:
-
-From the top to the bottom of your script:
-
-1. Summary explaining the purpose of the script
-2. Attribution: authors, contributors, date of last update, contact info
-3. Import of external modules / packages
-4. Constant definitions (g = 9.81)
-5. Function definitions (ideally respecting the order in which they are called)
-6. Main code calling the different functions
-
-**A few programming practices that will help a long way**
-
-*   _Comment your code_. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes 
-*   _Use variables and constants_ instead of repeating values in different places of the code. This will let you update those values more easily
-*   _Choose descriptive names_ for your variables and functions, not generic ones. If you store a list of files, do not use `x` for the variable name, use instead `files`. Even better use `input_files` if you are listing the files you are importing.
-*   _Be consistent_ in terms of style (`input_files`, `inputFiles`,...) used to name variables and functions. Just pick one and stick to it!
-*   `keep it simple, stupid` ([KISS](https://en.wikipedia.org/wiki/KISS_principle)). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others
-*   _Go modular!_  Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks
-*   `Don’t Repeat Yourself` ([DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)). If you start copy/pasting part of your code changing a few parameters => write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain
-*   _Test your code_. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, …. 
-*   _Iterate with small steps_, implement few changes at a time to your code. Test, fix, and move forward!
-
-We hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.
 
 
 ## Further reading

@@ -2473,15 +2473,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="index.html">Home</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
-Topics
+Daily Materials
  
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="day_1.html">Day 1: Reproducible Workflows</a>
-<a href="day_2.html">Day 2: Scientific Coding as a Team</a>
-<a href="day_3.html">Day 3: Managing your code and data</a>
-<a href="day_4.html">Day 4: Code Review &amp; Pair Programming</a>
+<a href="day_1.html">Day 1: Reproducible &amp; collaborative workflows</a>
+<a href="day_2.html">Day 2: Scientific coding as a team</a>
+<a href="day_3.html">Day 3: Managing your code and data on a remote server</a>
+<a href="day_4.html">Day 4: Code review &amp; pair Programming</a>
 <a href="day_5.html">Day 5: Documenting and sharing things</a>
 </div>
 </div>
@@ -2510,16 +2510,16 @@ Topics
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#why">Why</a></li>
-<li><a href="#how">How</a>
+<li><a href="#scripting-languages">Scripting languages</a>
+<ul>
+<li><a href="#dont-start-coding-without-planning">Don’t start coding without planning!</a></li>
+<li><a href="#structure-of-a-script">Structure of a script</a></li>
+<li><a href="#a-few-programming-practices-that-will-help-a-long-way">A few programming practices that will help a long way</a></li>
+</ul></li>
+<li><a href="#why-collaborative-coding">Why collaborative coding</a></li>
+<li><a href="#how-to-code-together">How to code together</a>
 <ul>
 <li><a href="#code-review-feedback">Code <del>review</del> feedback</a></li>
-<li><a href="#pair-programming">Pair programming</a></li>
-</ul></li>
-<li><a href="#a-few-more-thoughts">A few more thoughts</a>
-<ul>
-<li><a href="#more-is-not-always-better">More is not always better</a></li>
-<li><a href="#project-management">Project management</a></li>
 </ul></li>
 <li><a href="#tools">Tools</a></li>
 <li><a href="#version-control-with-git-and-github">Version Control with <code>git</code> and <code>GitHub</code></a>
@@ -2549,8 +2549,36 @@ Topics
 </ul>
 </nav>
 </div>
+<h2 id="scripting-languages">Scripting languages</h2>
+<p>Compared to other programming languages (such as <code>C</code>, <code>fortran</code>, …), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.</p>
+<h3 id="dont-start-coding-without-planning">Don’t start coding without planning!</h3>
+<p>It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.</p>
+<h3 id="structure-of-a-script">Structure of a script</h3>
+<p>A script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:</p>
+<p>From the top to the bottom of your script:</p>
+<ol type="1">
+<li>Summary explaining the purpose of the script</li>
+<li>Attribution: authors, contributors, date of last update, contact info</li>
+<li>Import of external modules / packages</li>
+<li>Constant definitions (g = 9.81)</li>
+<li>Function definitions (ideally respecting the order in which they are called)</li>
+<li>Main code calling the different functions</li>
+</ol>
+<h3 id="a-few-programming-practices-that-will-help-a-long-way">A few programming practices that will help a long way</h3>
+<ul>
+<li><em>Comment your code</em>. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes</li>
+<li><em>Use variables and constants</em> instead of repeating values in different places of the code. This will let you update those values more easily</li>
+<li><em>Choose descriptive names</em> for your variables and functions, not generic ones. If you store a list of files, do not use <code>x</code> for the variable name, use instead <code>files</code>. Even better use <code>input_files</code> if you are listing the files you are importing.</li>
+<li><em>Be consistent</em> in terms of style (<code>input_files</code>, <code>inputFiles</code>,…) used to name variables and functions. Just pick one and stick to it!</li>
+<li><code>keep it simple, stupid</code> (<a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others</li>
+<li><em>Go modular!</em> Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks</li>
+<li><code>Don’t Repeat Yourself</code> (<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>). If you start copy/pasting part of your code changing a few parameters =&gt; write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain</li>
+<li><em>Test your code</em>. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, ….</li>
+<li><em>Iterate with small steps</em>, implement few changes at a time to your code. Test, fix, and move forward!</li>
+</ul>
+<p>We hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.</p>
+<h2 id="why-collaborative-coding">Why collaborative coding</h2>
 <p><em>Slides</em>: <a href="https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html" class="uri">https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html</a></p>
-<h2 id="why">Why</h2>
 <p>Environmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise. Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:</p>
 <ul>
 <li>Right size</li>
@@ -2564,45 +2592,18 @@ Topics
 <ul>
 <li>Motivating you to document well your work</li>
 <li>Helping you to think how to make your work reusable (by you, your future you and others)</li>
-<li>Learning to read code from collaborators to build upon each other’s work</li>
+<li>Learning to read code from collaborators to build upon each others work</li>
 <li>Gain further knowledge in software development tools, such as version control</li>
 </ul>
 <p><strong>Developing those skills will accelerate your research and open the door for you to contribute to open source projects.</strong></p>
-<h2 id="how">How</h2>
+<h2 id="how-to-code-together">How to code together</h2>
 <p>It is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming.</p>
 <h3 id="code-review-feedback">Code <del>review</del> feedback</h3>
 <p>Code review is an <em>asynchronous</em> team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The “reviewer” should see this activity as a great way to learn from others.</p>
-<h3 id="pair-programming">Pair programming</h3>
-<p>Pair programming is an <em>synchronous</em> team activity, where several programmers get to work together on the same piece of code. This is a great way to gain a better sense of what coding style people are using and better understand their way of solving challenges. It is also a great way to learn from each other. Generally, there is one Driver who is the person typing at the computer. The other role is called Navigator(s). The Navigator does not write code and focuses on finding solutions to the problem. Their use of computer should be limited to searching online for solutions.</p>
-<h4 id="basic-principles-practices">Basic principles &amp; practices</h4>
-<p>Adapted from Woody Zuill <a href="https://www.agileconnection.com/article/getting-started-mob-programming" class="uri">https://www.agileconnection.com/article/getting-started-mob-programming</a></p>
-<ul>
-<li><strong>Treat each other with kindness, consideration, and respect</strong> - makes group work more fun and sustainable</li>
-<li><strong>Driver/navigator pair programming adapted to work with the whole team</strong> - “For an idea to go from your head into the computer, it <em>must</em> go through someone else’s hands.” Speak at the highest level of abstraction that the driver (and the rest of the team) is able to digest at the moment</li>
-<li><strong>Timed Rotation</strong> - 20-60 minutes. We don’t require that everyone take the driver role; it is everyone’s choice whether to do so</li>
-<li><strong>Whole Team</strong> - every contributor to the project is an integral part of the whole team; when we don’t have the skills we need within the team, we find someone who does and invite them to work with us to accomplish the needed work</li>
-<li><strong>Reflect, Tune, and Adjust Frequently</strong> - based on agile principle: “At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.”</li>
-</ul>
-<h4 id="tips-and-tricks-for-effective-team-programming">Tips and Tricks for Effective Team Programming</h4>
-<p>Adapted from Corey Johannsen: <a href="https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/" class="uri">https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/</a></p>
-<ul>
-<li><strong>Suggest, don’t dictate:</strong> Instead of telling the driver what to type into their editor, we explain what we’re trying to accomplish and then help the driver find the best solution. We’ve found that drivers learn better this way, and they don’t just end up feeling like a stenographer. Whenever possible, we ask questions that lead the driver to discover the answers on their own.</li>
-<li><strong>Stay focused and be present:</strong> Shut your laptop and put your phone away. I’ve struggled with following this guideline—we all have—and I recognize that the distraction almost always affects the rest of the mob. We tell all our mob members to be present, and if you can’t, it’s OK to leave until you can be.</li>
-<li><strong>Use a timer, but be ready to pause it:</strong> We switch drivers every 20 - 60 minutes. However, we often wander off implementation into design discussions—it’s unavoidable—so this is when we pause the timer. This is another key guideline of our mob: the time you spend driving should be dedicated to writing the code that helps complete the task, not discussing design solutions.</li>
-<li><strong>Set specific tasks for each session:</strong> When our mob gathers for a session, we first agree on and create a checklist of the tasks we are going to complete, and order them by priority on a whiteboard. This ensures we are all focused on the same task and keeps us moving forward. Additionally, this keeps us aligned with Minimal Marketable Feature (MMF) work, which we can communicate with our engineering and product managers to assure them we’re completing tasks that align with developing small, self-contained features that demonstrate immediate customer value.</li>
-</ul>
-<h2 id="a-few-more-thoughts">A few more thoughts</h2>
-<h3 id="more-is-not-always-better">More is not always better</h3>
-<ul>
-<li>Adding more analysts late into a project can be counterproductive (<a href="https://en.wikipedia.org/wiki/Brooks%27s_law">Brooks’ law</a>)</li>
-<li>Overtime is not the solution as it will increase likeliness of errors and thus frustration. Try to focus on finding at what time of the day you are the most productive at coding instead</li>
-</ul>
-<h3 id="project-management">Project management</h3>
-<p>This is a big topic and will be highly influenced by the team you are working with both in terms of practices and tools used to manage the project. On the coding side, there is a lot to borrow from Agile development approach for scientist. In a nutshell: “put it out there fast and iterate”. In other words to wait to try to have the percfect code or analaysis before sharing it with your collaborators. It is more efficenet to share and discuss an early / draft version, gather feedback and iterate.</p>
 <h2 id="tools">Tools</h2>
 <p>The good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:</p>
 <ul>
-<li>Version control system: say goodbye to “save as”</li>
+<li>Version control system: say goodbye to <code>save as</code></li>
 <li>Code repository: where we share code and communicate ideas and feedback</li>
 </ul>
 <hr />

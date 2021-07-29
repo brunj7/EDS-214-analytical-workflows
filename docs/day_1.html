@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Reproducible Analytical Workflows</title>
+  <title>EDS 214: Reproducible &amp; collaborative workflows</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Reproducible Analytical Workflows"/>
+  <meta property="og:title" content="EDS 214: Reproducible &amp; collaborative workflows"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Reproducible Analytical Workflows"/>
+  <meta property="twitter:title" content="EDS 214: Reproducible &amp; collaborative workflows"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Reproducible Analytical Workflows"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Reproducible & collaborative workflows"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Reproducible Analytical Workflows","authors":[]}
+{"title":"Reproducible & collaborative workflows","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2473,15 +2473,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="index.html">Home</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
-Topics
+Daily Materials
  
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="day_1.html">Day 1: Reproducible Workflows</a>
-<a href="day_2.html">Day 2: Scientific Coding as a Team</a>
-<a href="day_3.html">Day 3: Managing your code and data</a>
-<a href="day_4.html">Day 4: Code Review &amp; Pair Programming</a>
+<a href="day_1.html">Day 1: Reproducible &amp; collaborative workflows</a>
+<a href="day_2.html">Day 2: Scientific coding as a team</a>
+<a href="day_3.html">Day 3: Managing your code and data on a remote server</a>
+<a href="day_4.html">Day 4: Code review &amp; pair Programming</a>
 <a href="day_5.html">Day 5: Documenting and sharing things</a>
 </div>
 </div>
@@ -2498,7 +2498,7 @@ Topics
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Reproducible Analytical Workflows</h1>
+<h1>Reproducible &amp; collaborative workflows</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2511,18 +2511,18 @@ Topics
 <h3>Contents</h3>
 <ul>
 <li><a href="#lecture-1-definitions-and-concepts">Lecture 1: Definitions and Concepts</a></li>
-<li><a href="#why">Why</a>
+<li><a href="#why-going-reproducible">Why going reproducible</a>
 <ul>
+<li><a href="#two-points-to-stress-about-this-figure">Two points to stress about this figure:</a></li>
 <li><a href="#how">How</a></li>
-<li><a href="#scripting-languages">Scripting languages</a></li>
 <li><a href="#further-reading">Further reading</a></li>
 </ul></li>
 </ul>
 </nav>
 </div>
 <h1 id="lecture-1-definitions-and-concepts">Lecture 1: Definitions and Concepts</h1>
-<p><a href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000">Slide deck</a></p>
-<h1 id="why">Why</h1>
+<p><a href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000"><strong>Slide deck</strong></a></p>
+<h1 id="why-going-reproducible">Why going reproducible</h1>
 <p>There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower <strong>you</strong> to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your “future self” to reuse and build from your own work.</p>
 <p>To make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on <strong>programming</strong> to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, …) of your analysis. Scripting languages, even better open ones, such as <code>R</code> and <code>python</code>, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use <code>R</code>, <code>git</code> and <code>GitHub</code> to develop such workflows as a team.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2533,38 +2533,14 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 </p>
 </div>
 </div>
-<p>Two points to stress about this figure: - Workflows are not linear - Programming box (yes, you’ll need to code this!!)</p>
+<h3 id="two-points-to-stress-about-this-figure">Two points to stress about this figure:</h3>
+<ul>
+<li>Workflows are not linear</li>
+<li>Programming box (yes, you’ll need to code this!!)</li>
+</ul>
 <p><strong>Workflows are rarely linear! They are developed iteratively, and one of the most helpful things you can do is talk about them with your research team.</strong></p>
 <h2 id="how">How</h2>
-<p>We recommend shying away from spreadsheets as an analytical tool, as well as Graphical User Interfaces (GUI) where you need to click on buttons to do your analysis. Although convenient for data exploration, GUI will limit the reproducibility and the scalability of your analysis as human intervention is needed at every step. Spreadsheets can be useful to store tabular data, but it is recommended to script their analysis, as copy-pasting and references to cells are prone to mistake (<a href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">see Reinhart and Rogof example</a>. It is also very difficult to track changes and to scale your analysis using spreadsheets. In addition, auto-formatting (number, date, character, …) can silently introduce modifications to your data (e.g. <a href="https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel">One in five genetics papers contains errors thanks to Microsoft Excel</a> ).</p>
-<h2 id="scripting-languages">Scripting languages</h2>
-<p>Compared to other programming languages (such as <code>C</code>, <code>fortran</code>, …), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.</p>
-<p><strong>Don’t start coding without planning!</strong></p>
-<p>It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.</p>
-<p><strong>Structure of a script</strong></p>
-<p>A script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:</p>
-<p>From the top to the bottom of your script:</p>
-<ol type="1">
-<li>Summary explaining the purpose of the script</li>
-<li>Attribution: authors, contributors, date of last update, contact info</li>
-<li>Import of external modules / packages</li>
-<li>Constant definitions (g = 9.81)</li>
-<li>Function definitions (ideally respecting the order in which they are called)</li>
-<li>Main code calling the different functions</li>
-</ol>
-<p><strong>A few programming practices that will help a long way</strong></p>
-<ul>
-<li><em>Comment your code</em>. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes</li>
-<li><em>Use variables and constants</em> instead of repeating values in different places of the code. This will let you update those values more easily</li>
-<li><em>Choose descriptive names</em> for your variables and functions, not generic ones. If you store a list of files, do not use <code>x</code> for the variable name, use instead <code>files</code>. Even better use <code>input_files</code> if you are listing the files you are importing.</li>
-<li><em>Be consistent</em> in terms of style (<code>input_files</code>, <code>inputFiles</code>,…) used to name variables and functions. Just pick one and stick to it!</li>
-<li><code>keep it simple, stupid</code> (<a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others</li>
-<li><em>Go modular!</em> Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks</li>
-<li><code>Don’t Repeat Yourself</code> (<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>). If you start copy/pasting part of your code changing a few parameters =&gt; write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain</li>
-<li><em>Test your code</em>. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, ….</li>
-<li><em>Iterate with small steps</em>, implement few changes at a time to your code. Test, fix, and move forward!</li>
-</ul>
-<p>We hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.</p>
+<p>We recommend shying away from spreadsheets as an analytical tool, as well as Graphical User Interfaces (GUI) where you need to click on buttons to do your analysis. Although convenient for data exploration, GUI will limit the reproducibility and the scalability of your analysis as human intervention is needed at every step. Spreadsheets can be useful to store tabular data, but it is recommended to script their analysis, as copy-pasting and references to cells are prone to mistake <a href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">(see Reinhart and Rogof example)</a>. It is also very difficult to track changes and to scale your analysis using spreadsheets. In addition, auto-formatting (number, date, character, …) can silently introduce modifications to your data (e.g. <a href="https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel">One in five genetics papers contains errors thanks to Microsoft Excel</a> ).</p>
 <h2 id="further-reading">Further reading</h2>
 <p>Here are a few selected publications to help you to learn more about these topics.</p>
 <ul>
