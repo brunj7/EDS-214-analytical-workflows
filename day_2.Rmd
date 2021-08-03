@@ -6,174 +6,71 @@ title: "Scientific Coding as a Team"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Scripting languages
 
-Compared to other programming languages (such as `C`, `fortran`, ...), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.
+# GitHub branches
 
-### Structure of a script
+## Collaborating through write / push access
 
-A script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:
+When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (`git push`) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.
 
-From the top to the bottom of your script:
+#### Adding collaborators to a repository 
 
-1. Summary explaining the purpose of the script
-2. Attribution: authors, contributors, date of last update, contact info
-3. Import of external modules / packages
-4. Constant definitions (g = 9.81)
-5. Function definitions (ideally respecting the order in which they are called)
-6. Main code calling the different functions
+* Click on the repository
+* On the right panel, click ![](img/github-repo-settings.png)
+* On the left pane, click `Collaborators` and enter the usernames you want to add![collaborators](img/github-collaborators.png) 
 
-### A few programming practices that will help a long way
+Under this collaborative workflow, we recommend to use git `branches` combined with pull requests to avoid conflicts and to track and discuss collaborators contributions.
 
-*   _Comment your code_. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes 
-*   _Use variables and constants_ instead of repeating values in different places of the code. This will let you update those values more easily
-*   _Choose descriptive names_ for your variables and functions, not generic ones. If you store a list of files, do not use `x` for the variable name, use instead `files`. Even better use `input_files` if you are listing the files you are importing.
-*   _Be consistent_ in terms of style (`input_files`, `inputFiles`,...) used to name variables and functions. Just pick one and stick to it!
-*   `keep it simple, stupid` ([KISS](https://en.wikipedia.org/wiki/KISS_principle)). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others
-*   _Go modular!_  Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks
-*   `Don’t Repeat Yourself` ([DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)). If you start copy/pasting part of your code changing a few parameters => write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain
-*   _Test your code_. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, …. 
-*   _Iterate with small steps_, implement few changes at a time to your code. Test, fix, and move forward!
+# Branches
 
-We hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.
+![adapted from https://www.atlassian.com/git/tutorials/git-merge](img/atlassian_branches_sketch.png)
 
+What are branches?  Well in fact nothing new, as the `master` is a branch. A branch represents an independent line of development, parallel to the master (branch). 
 
+Why should you use branches? For 2 main reasons:
 
-## Why collaborative coding
+* We want the master to only keep a version of the code that is working
+* We want to version the code we are developing to add/test new features (for now we mostly talk about feature branch) in our script without altering the version on the master.
 
-_Slides_: https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html
+## Working with branches
 
-Environmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise.  Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:
+### Creating a new branch
 
-*   Right size
-*   Diverse group of people with the right mix of skills, knowledge, and competencies
-*   Aligned purpose and incentives
-*   Effective organizational structure
-*   Strong individual contributions
-*   Supportive team processes and culture
+In RStudio, you can create a branch using the git tab. 
 
-**Since Analytical Workflows are rarely linear!** and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind.  _Programming as part of a team is different than writing a script for your(present)self_. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:
+1. Click on the branch button
 
-*   Motivating you to document well your work
-*   Helping you to think how to make your work reusable (by you, your future you and others)
-*   Learning to read code from collaborators to build upon each others work
-*   Gain further knowledge in software development tools, such as version control
-
-**Developing those skills will accelerate your research and open the door for you to contribute to open source projects.**
-
-
-## How to code together
-
-It is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming. 
-
-
-### Code ~~review~~ feedback
-
-Code review is an *asynchronous* team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The "reviewer" should see this activity as a great way to learn from others.
-
-
-## Tools
-
-The good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:
-
-- Version control system: say goodbye to `save as`
-- Code repository: where we share code and communicate ideas and feedback
-
----
-
-# Version Control with `git` and `GitHub`
-
-Aka  --  **Say goodbye to  `script_JB_03v5b.R` !!**
-
-## Learning Objectives
-
-In this part of the lesson, you will learn:
-
-- Why __git__ is useful for reproducible analysis
-- How to use __git__ to track changes to your work over time
-- How to use __GitHub__ to collaborate with others
-- How to write effective commit messages
-- How to structure your commits so your changes are clear to others
-
-## The problem with `save_as`
-
-```{r phd_comics_final, out.width='80%', fig.align="center",echo=FALSE}
-knitr::include_graphics("img/phd_comics_final.png")
+```{r RStudio git pane branch, out.width='60%', fig.align='center', echo = FALSE}
+knitr::include_graphics("img/rstudio-git-branch-create.png")
 ```
 
-Every file in the scientific process changes.  Manuscripts are edited. Figures get revised.  Code gets fixed when problems are discovered.  Data files
-get combined together, then errors are fixed, and then they are split and combined again. In the course of a single analysis, one can expect thousands of
-changes to files.  And yet, all we use to track this are simplistic *filenames*.  You might think there is a better way, and you'd be right: __version control__.
+2. Fill the branch name in the new branch window; in this example, we are going to use `test` for the name; leave the other options as default and click create 
 
-Version control systems help you track all of the changes to your files, without
-the spaghetti mess that ensues from simple file renaming.  In other words, version control is a system that helps you to manage the different versions of your files in an organized manner. It will help you to never have to duplicate files using `save as` as a way to keep different versions of a file (see below). Version control help you to create a timeline of snapshots containing the different versions of a file. At any point in time, you will be able to roll back to a specific version. Bonus: you can add a short description (commit message) to remember what each specific version is about.
+```{r RStudio git new branch window, out.width='40%', fig.align='center', echo = FALSE}
+knitr::include_graphics("img/rstudio-git-branch-test.png")
+```
 
-**What is the difference between `git` and `GitHub`?**
+3. you will be directly creating a local and remote branch and switch to it
 
-- __git__: is a version control software used to track files in a folder (a repository)
-    - git creates a timeline or history of your files
-- __GitHub__: is a code repository in the cloud that enables users to store their git repositories and share them with others. Github also add many features to manage projects and document your work.
+```{r RStudio git new branch, out.width='62%', fig.align='center', echo = FALSE}
+knitr::include_graphics("img/rstudio-git-branch-new.png")
+```
 
+Congratulations you just created your first branch! 
 
-## git
+Let us check on Github:
 
- <img style="float: right;width: 100px;" src="img/git_icon.png">
+```{r RStudio github new branch, out.width='45%', fig.align='center', echo = FALSE}
+knitr::include_graphics("img/github-new-branch.png")
+```
 
-This training material focuses on the code versioning system called `Git`. Note that there are others, such as `Mercurial` or `svn` for example.
+As you can see, now there are two branches on our remote repository: 
+- master
+- test
 
-Git is a *free* and *open source* distributed *version control system*. It has many functionalities and was originally geared towards software development and production environment. In fact, Git was initially designed and developed in 2005 by Linux kernel developers (including Linus Torvalds) to track the development of the Linux kernel. Here is a [fun video](https://www.youtube.com/watch?v=4XpnKHJAok8) of Linus Torvalds touting Git to Google. 
+### Using a branch
 
-**How does it work?**
-
-Git can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a **repository** (which formally is a specific data structure storing versioning information).
-
-**What git is not:**
-
-- **Git is not a backup per se**
-- Git is not good at versioning large files (there are workarounds) => not meant for data
-
-
-
-### Repository
-
-Git can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a **repository** (which formally is a specific data structure storing versioning information).
-
-Although there many ways to start a new repository, [GitHub](https://github.com/) (or any other cloud solutions, such as [GitLab](https://about.gitlab.com/)) provide among the most convenient way of starting a repository.
-
-<img style="float: right;width: 100px;" src="img/github-logo.png">
-
-## GitHub  
-	
-**GitHub is a company that hosts git repositories online** and provides several collaboration features (among which `forking`). GitHub fosters a great user community and has built a nice web interface to git, also adding great visualization/rendering capacities of your data.
-
-- **GitHub.com**: <https://github.com>
-- **A user account**: <https://github.com/brunj7>
-- **An organization account**: <https://github.com/nceas>
-- **NCEAS GitHub instance**: <https://github.nceas.ucsb.edu/> 
-
-### Let's look at a repository on GitHub
-
-This screen shows the copy of a repository stored on GitHub,
-with its <span style="color:red">list of files</span>, <span style="color:green">when the files and directories were last modified</span>, 
-and <span style="color:blue">some information on who made the most recent changes.</span>  
-
-![](img/ss3sim-github_colored.png)
-
-If we drill into the 
-"<span style="color:orange">commits</span>" for the repository, we can see the history of changes made to all of 
-the files.  Looks like `kellijohnson` and `seananderson` were fixing things in
-June and July:
-
-![](img/ss3sim-commits_colored.png)
-
-And finally, if we drill into the changes made on June 13, we can see exactly what
-was changed in each file:
-
-![](img/ss3sim-diff.png)
-Tracking these changes, and seeing how they relate to released versions of software and files
-is exactly what Git and GitHub are good for. We will show how they can really 
-be effective for tracking versions of scientific code, figures, and manuscripts
-to accomplish a reproducible workflow.
+Here there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the `test` branch instead of the master branch.
 
 
 ## GitHub Hands-on 
@@ -242,21 +139,60 @@ Try to edit the csv file directly on GitHub!
 **No need to be a programmer to contribute to analytical workflows with GitHub!!**
 
 
+---
 
-## Further reading
+# Organizing your project
 
-### Collaborative coding
+## Scripting languages
 
-- A new grad's guide to coding as a team - Atlassian:
-https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf 
-- 10 tips for efficient programming: 
-https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html 
-- Agile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf
+Compared to other programming languages (such as `C`, `fortran`, ...), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.
 
-### Code Review
+### Structure of a script
 
-- Small-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext
+A script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:
 
+From the top to the bottom of your script:
+
+1. Summary explaining the purpose of the script
+2. Attribution: authors, contributors, date of last update, contact info
+3. Import of external modules / packages
+4. Constant definitions (g = 9.81)
+5. Function definitions (ideally respecting the order in which they are called)
+6. Main code calling the different functions
+
+### A few programming practices that will help a long way
+
+*   _Comment your code_. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes 
+*   _Use variables and constants_ instead of repeating values in different places of the code. This will let you update those values more easily
+*   _Choose descriptive names_ for your variables and functions, not generic ones. If you store a list of files, do not use `x` for the variable name, use instead `files`. Even better use `input_files` if you are listing the files you are importing.
+*   _Be consistent_ in terms of style (`input_files`, `inputFiles`,...) used to name variables and functions. Just pick one and stick to it!
+*   `keep it simple, stupid` ([KISS](https://en.wikipedia.org/wiki/KISS_principle)). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others
+*   _Go modular!_  Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks
+*   `Don’t Repeat Yourself` ([DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)). If you start copy/pasting part of your code changing a few parameters => write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain
+*   _Test your code_. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, …. 
+*   _Iterate with small steps_, implement few changes at a time to your code. Test, fix, and move forward!
+
+We hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.
+
+
+---
+
+# Further reading
+
+
+## GitHub Workflow
+
+- GitHub:
+   - guides on how to use GitHub: [https://guides.github.com/](https://guides.github.com/)
+   - GitHub from RStudio: [http://r-pkgs.had.co.nz/git.html#git-pull](http://r-pkgs.had.co.nz/git.html#git-pull)
+- Forking:
+   - [https://help.github.com/articles/fork-a-repo/](https://help.github.com/articles/fork-a-repo/)
+   - [https://guides.github.com/activities/forking/](https://guides.github.com/activities/forking/)
+- Comparison of git repository host services: <https://www.git-tower.com/blog/git-hosting-services-compared/>
+- Branches
+   - interactive tutorial on branches: <http://learngitbranching.js.org/>
+   - using git in a collaborative environment: <https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow>
+https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf 
 
 ### Git using RStudio
 

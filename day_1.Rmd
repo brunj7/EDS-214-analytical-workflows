@@ -6,11 +6,13 @@ title: "Reproducible & collaborative workflows"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Lecture 1: Definitions and Concepts
+# Reproducible Workflows
+
+## Lecture 1: Definitions and Concepts
 
 [**Slide deck**](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
 
-# Why going reproducible
+## Why going reproducible
 
 There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower **you** to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your "future self" to reuse and build from your own work.
 
@@ -21,57 +23,158 @@ To make your data-riven research reproducible, it is important to develop scient
   knitr::include_graphics(here::here("img","tidy-workflow.png"))
 ```
 
-### Two points to stress about this figure:
+**Two points to stress about this figure**:
 
-- Workflows are not linear
-- Programming box (yes, you'll need to code this!!)
+- Workflows are rarely linear... even less so their implementation
+- Note the programming box -- yes, you'll need to code this :) 
 
-**Workflows are rarely linear! They are developed iteratively, and one of the most helpful things you can do is talk about them with your research team.**
+**Workflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team.**
 
 ## How
 
 We recommend shying away from spreadsheets as an analytical tool, as well as Graphical User Interfaces (GUI) where you need to click on buttons to do your analysis. Although convenient for data exploration, GUI will limit the reproducibility and the scalability of your analysis as human intervention is needed at every step. Spreadsheets can be useful to store tabular data, but it is recommended to script their analysis, as copy-pasting and references to cells are prone to mistake [(see Reinhart and Rogof example)](http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf). It is also very difficult to track changes and to scale your analysis using spreadsheets. In addition, auto-formatting (number, date, character, ...) can silently introduce modifications to your data (e.g. [One in five genetics papers contains errors thanks to Microsoft Excel](https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel)).
 
-# Don’t start coding without planning!
 
-It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
+## Planing things
 
+**Don’t start implementing nor coding without planning!** It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
 
-# Planing things
-
-## Flow charts and pseudocode
+### Flow charts and pseudocode
 
 [Materials](pseudocode.html)
 
+### Managing your data
 
-## Further reading
+
+
+---
+
+# Coding together
+
+## Learning Objectives
+
+In this part of the lesson, you will learn:
+
+- Why __git__ is useful for reproducible analysis
+- How to use __git__ to track changes to your work over time
+- How to use __GitHub__ to collaborate with others
+- How to write effective commit messages
+- How to structure your commits so your changes are clear to others
+- How to fork a repository to contribute to its content
+- How to create a pull request
+- How to review a pull request
+
+
+## Why collaborative coding
+
+_Slides_: https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html
+
+Environmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise.  Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:
+
+*   Right size
+*   Diverse group of people with the right mix of skills, knowledge, and competencies
+*   Aligned purpose and incentives
+*   Effective organizational structure
+*   Strong individual contributions
+*   Supportive team processes and culture
+
+**Since Analytical Workflows are rarely linear!** and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind.  _Programming as part of a team is different than writing a script for your(present)self_. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:
+
+*   Motivating you to document well your work
+*   Helping you to think how to make your work reusable (by you, your future you and others)
+*   Learning to read code from collaborators to build upon each others work
+*   Gain further knowledge in software development tools, such as version control
+
+**Developing those skills will accelerate your research and open the door for you to contribute to open source projects.**
+
+
+## How to code together
+
+It is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming. 
+
+
+### Tools 
+
+The good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:
+
+- Version control system: say goodbye to `save as`
+- Code repository: where we share code and communicate ideas and feedback
+
+
+## GitHub as a collaborative tool 
+
+### Quick recap on version control
+
+[git and GitHub quick recap](git_github.html)
+
+## Collaborating through Forking
+
+A **fork** is a **copy of a repository** that will be stored under your user account. Forking a repository allows you to freely experiment with changes without affecting the original project. We can create a fork on Github by clicking the "fork" button in the top right corner of our repository web page.
+![](img/github-fork.png) 
+  
+  
+Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+
+When you are satisfied with your work, you can initiate a ***Pull Request*** to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the "New pull request" button![](img/github-pull-request.png)  
+  
+Next, click "compare across forks", and use the dropdown menus to select your fork as the "head fork" and the original repository as the "base fork".
+
+![](img/github-compare-forks.png)  
+  
+Then type a title and description for the changes you would like to make. By using GitHub's `@mention` syntax in your Pull Request message, you can ask for feedback from specific people or teams.
+
+This workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project.
+
+
+## Hands-on
+
+
+---
+
+# Further reading
 
 Here are a few selected publications to help you to learn more about these topics.
 
-*   Data and scientific workflow management:
-    *   Some Simple Guidelines for Effective Data Management: \
+
+## Data and scientific workflow management:
+
+- Some Simple Guidelines for Effective Data Management: \
     [https://doi.org/10.1890/0012-9623-90.2.205](https://doi.org/10.1890/0012-9623-90.2.205) 
-    *   Basic concepts of data management: \
+- Basic concepts of data management: \
     [https://www.dataone.org/education-modules](https://www.dataone.org/education-modules)
-    *   Good enough practices in Scientific Computing: \
+- Good enough practices in Scientific Computing: \
     [https://doi.org/10.1371/journal.pcbi.1005510](https://doi.org/10.1371/journal.pcbi.1005510) 
-    *   Script your analysis:   \
+- Script your analysis:   \
     [https://doi.org/10.1038/nj7638-563a](https://doi.org/10.1038/nj7638-563a) 
-    *   Principles for data analysis workflows:   \
+- Principles for data analysis workflows:   \
     <https://doi.org/10.1371/journal.pcbi.1008770>
 
 
-*   Open Science:
-    *   The Tao of open science for ecology:  \
+## Open Science
+
+- The Tao of open science for ecology:  \
 [https://doi.org/10.1890/ES14-00402.1](https://doi.org/10.1890/ES14-00402.1) 
-    *   Challenges and Opportunities of Open Data in Ecology:  \
+- Challenges and Opportunities of Open Data in Ecology:  \
 [https://doi.org/10.1126/science.1197962](https://doi.org/10.1126/science.1197962)  
-    *   Scientific computing: Code alert \
+- Scientific computing: Code alert \
 [https://doi.org/10.1038/nj7638-563a](https://doi.org/10.1038/nj7638-563a) 
-    *   Our path to better science in less time using open data science tools \
+- Our path to better science in less time using open data science tools \
 [https://doi.org/10.1038%2Fs41559-017-0160](https://doi.org/10.1038%2Fs41559-017-0160)
-    *   FAIR data guiding principles \
+-  FAIR data guiding principles \
 [https://doi.org/10.1038/sdata.2016.18](https://doi.org/10.1038/sdata.2016.18) 
-    *   Skills and Knowledge for Data-Intensive Environmental Research [https://doi.org/10.1093/biosci/bix025](https://doi.org/10.1093/biosci/bix025)  
-    *   Let go your data \
+- Skills and Knowledge for Data-Intensive Environmental Research [https://doi.org/10.1093/biosci/bix025](https://doi.org/10.1093/biosci/bix025)  
+- Let go your data \
 [https://doi.org/10.1038/s41563-019-0539-5](https://doi.org/10.1038/s41563-019-0539-5) 
+
+
+## Collaborative coding
+
+- A new grad's guide to coding as a team - Atlassian:
+https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf 
+- 10 tips for efficient programming: 
+https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html 
+- Agile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf
+
+## Code Review
+
+- Small-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext

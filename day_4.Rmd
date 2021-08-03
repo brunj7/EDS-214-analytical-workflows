@@ -2,6 +2,13 @@
 title: "Code Review & Pair Programming"
 ---
 
+### Code ~~review~~ feedback
+
+Code review is an *asynchronous* team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The "reviewer" should see this activity as a great way to learn from others.
+
+You actually have already pratice this a little when practicing merging pull request!!
+
+
 # Pair programming
 
 Pair programming is an *synchronous* team activity, where several programmers get to work together on the same piece of code. This is a great way to gain a better sense of what coding style people are using and better understand their way of solving challenges. It is also a great way to learn from each other. Generally, there is one Driver who is the person typing at the computer. The other role is called Navigator(s). The Navigator does not write code and focuses on finding solutions to the problem. Their use of computer should be limited to searching online for solutions.
@@ -32,6 +39,7 @@ Adapted from Corey Johannsen: https://blog.newrelic.com/2017/10/31/mob-programmi
 # A few more thoughts
 
 ## More is not always better
+
 - Adding more analysts late into a project can be counterproductive ([Brooks’ law](https://en.wikipedia.org/wiki/Brooks%27s_law))
 - Overtime is not the solution as it will increase likeliness of errors and thus frustration. Try to focus on finding at what time of the day you are the most productive at coding instead
 
