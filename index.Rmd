@@ -24,7 +24,7 @@ knitr::include_graphics("img/tidy-workflow.png")
 ```
 ## Instructor
 
-Julien Brun (brun\@nceas.ucsb.edu)
+[Julien Brun](https://brunj7.github.io/about.html) (brun\@nceas.ucsb.edu)
 
 ## Tutor
 
