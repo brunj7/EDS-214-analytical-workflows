@@ -105,7 +105,7 @@ The good news is there are several tools out there that have been designed to ma
 
 ### Quick recap on version control
 
-[git and GitHub quick recap](git_github.html)
+[git and GitHub quick recap](git_github_recap.html)
 
 ## Collaborating through Forking
 
