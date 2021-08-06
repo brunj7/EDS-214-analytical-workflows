@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Topic 4: Change the theme</title>
+  <title>EDS 214: Hands-on: Planning your work</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Topic 4: Change the theme"/>
+  <meta property="og:title" content="EDS 214: Hands-on: Planning your work"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Topic 4: Change the theme"/>
+  <meta property="twitter:title" content="EDS 214: Hands-on: Planning your work"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 4: Change the theme"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Hands-on: Planning your work"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 4: Change the theme","authors":[]}
+{"title":"Hands-on: Planning your work","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 4: Change the theme</h1>
+<h1>Hands-on: Planning your work</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2506,12 +2506,52 @@ Daily Materials
 
 
 <div class="d-article">
-<p style="color: #ba5e00">
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_4.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
-</p>
-<p>The bells and whistles of this MEDS template (colors, fonts, spacing, etc.) are customized in the <code>theme.css</code> file in your Project root.</p>
-<p>If you love css or want to make changes, you’re encouraged to customize your site! There is minor annotation in the css file, but honestly this will probably just take quite a bit of Inspect Element to figure out what to change.</p>
-<p><strong>Fonts:</strong> If you specifically want to know how to change the site fonts, see <a href="module_9.html">here</a>.</p>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#goal-combine-4-datasets-about-streamflow-and-water-chemistry-in-a-way-that-will-let-you-investigate-the-impact-of-the-1989-hurricane-hugo-on-stream-chemistry-in-the-luquillo-moun--tains-of-puerto-rico">Goal: Combine 4 datasets about streamflow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Moun- tains of Puerto Rico</a>
+<ul>
+<li><a href="#a-few-things-to-know">A few things to know:</a></li>
+<li><a href="#study-sites">Study sites</a></li>
+<li><a href="#output">Output</a></li>
+<li><a href="#oh-wait">Oh wait…</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="goal-combine-4-datasets-about-streamflow-and-water-chemistry-in-a-way-that-will-let-you-investigate-the-impact-of-the-1989-hurricane-hugo-on-stream-chemistry-in-the-luquillo-moun--tains-of-puerto-rico">Goal: Combine 4 datasets about streamflow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Moun- tains of Puerto Rico</h2>
+<h3 id="a-few-things-to-know">A few things to know:</h3>
+<ul>
+<li>Table structures are different =&gt; only some variables / columns overlap maong teh different sites</li>
+<li>Units used among the various sites are different</li>
+<li>Period covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap</li>
+</ul>
+<h3 id="study-sites">Study sites</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/luq-map-small.png"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/luq-map-small.png" width="705" /></p>
+</div>
+<h3 id="output">Output</h3>
+We want to be able to produce this plot
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/luq-ts-plot.png"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/luq-ts-plot.png" width="721" /></p>
+</div>
+<p><strong>Draw the data processing steps and You want to harmonize those data into one dataset that will let you compare time-series data (20min)</strong></p>
+<hr />
+<h3 id="oh-wait">Oh wait…</h3>
+<p><a href="hands-on_drawings_p2.Rmd">Actually here is more</a></p>
+<h2 id="references">References</h2>
+<p>Exercise based on: Schaefer, D., McDowell, W., Scatena, F., &amp; Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. <a href="doi:10.1017/S0266467400001358" class="uri">doi:10.1017/S0266467400001358</a></p>
+<p>Data available here: McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684" class="uri">https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684</a> (Accessed 2021-08-06).</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

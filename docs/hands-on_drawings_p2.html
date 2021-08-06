@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Topic 3: Adding images</title>
+  <title>EDS 214: Hands-on: Planning your work</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Topic 3: Adding images"/>
+  <meta property="og:title" content="EDS 214: Hands-on: Planning your work"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Topic 3: Adding images"/>
+  <meta property="twitter:title" content="EDS 214: Hands-on: Planning your work"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 3: Adding images"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Hands-on: Planning your work"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 3: Adding images","authors":[]}
+{"title":"Hands-on: Planning your work","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 3: Adding images</h1>
+<h1>Hands-on: Planning your work</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2510,35 +2510,33 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#where-should-i-save-my-images">Where should I save my images?</a></li>
-<li><a href="#how-do-i-make-images-show-up-on-my-site">How do I make images show up on my site?</a></li>
+<li><a href="#good-news-we-found-data-for-one-more-watershed">Good news we found data for one more watershed :)</a></li>
+<li><a href="#this-is-your-lucky-day">This is your lucky day!!</a></li>
 </ul>
 </nav>
 </div>
-<p style="color: #ba5e00">
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_3.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
-</p>
-<h2 id="where-should-i-save-my-images">Where should I save my images?</h2>
-<p>Drop images you want to include on your site into the existing <code>img</code> folder within your R Project (or make your own folder for images, set up a subfolder structure, etc.) - as long as you can easily point to them within your project.</p>
-<h2 id="how-do-i-make-images-show-up-on-my-site">How do I make images show up on my site?</h2>
-<p>There are a bunch of ways to add images in an R Markdown document (see more examples from the R Markdown Cookbook <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html">here</a>).</p>
-<p>I recommend using <code>knitr::include_graphics("path_to_image")</code>.</p>
-<p>For example, if there is an image saved as <code>cool_dogs.jpg</code> in the <code>img</code> folder, then you can add this to your R Markdown document by adding (within a code chunk):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">  knitr::include_graphics(&quot;img/cool_dogs.jpg&quot;)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>You can also update the size of the image, add a caption, etc. by updating the code chunk header, e.g.:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE, out.width = &quot;50%&quot;, fig.cap = &quot;Some cool dogs!&quot;}</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">  knitr::include_graphics(&quot;img/cool_dogs.jpg&quot;)</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>For example, the image <code>usgs_sat.jpeg</code> is in the <code>img</code> folder of this template. I can have it show up here by include a code chunk that looks like this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE, out.width = &quot;80%&quot;, fig.cap = &quot;USGS image of Mississippi River.&quot;}</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">  knitr::include_graphics(&quot;img/usgs_sat.jpeg&quot;)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="good-news-we-found-data-for-one-more-watershed">Good news we found data for one more watershed :)</h2>
+<p>Actually our team also collected data for an adjacent watershed!!</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/luq-map-all.png"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/luq-map-all.png" width="702" /></p>
+</div>
+<p><strong>=&gt; How should you modify your workflow to handle this new situation? (10min)</strong></p>
+<h2 id="this-is-your-lucky-day">This is your lucky day!!</h2>
+<p>We found data for additional chemistry measurements while skimming through the database :)</p>
+<p>We now want to be able to produce the follwing plot</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/luq-ts-plot-all.png"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/luq-ts-plot-all.png" width="798" /></p>
+</div>
+<p><strong>=&gt; How should you modify your workflow to handle this new situation? (5min)</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -39,17 +39,18 @@ We recommend shying away from spreadsheets as an analytical tool, as well as Gra
 
 **Don’t start implementing nor coding without planning!** It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
 
-### Flow charts and pseudocode
+### From drawings to pseudocode
 
 [Materials](pseudocode.html)
 
 ![Cherubini et al., 2007](img/whiteborad_drawings.png)
+### Hands-on
 
-### Managing your data
-
+[Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](hands-on_drawings.html)
 
 
 ---  
+
 
 # Coding together
 
@@ -129,6 +130,10 @@ This workflow is recommended when you do not have push/write access to a reposit
 
 
 ## Hands-on
+
+
+
+
 
 
 ---

@@ -1,0 +1,25 @@
+---
+title: "Hands-on: Planning your work"
+---
+
+## Good news we found data for one more watershed :)
+
+Actually our team also collected data for an adjacent watershed!! 
+
+```{r map all}
+knitr::include_graphics("img/luq-map-all.png")
+```
+
+**=> How should you modify your workflow to handle this new situation? (10min)**
+
+
+## This is your lucky day!!
+
+We found data for additional chemistry measurements while skimming through the database :)
+
+We now want to be able to produce the follwing plot
+
+```{r plot}
+knitr::include_graphics("img/luq-ts-plot-all.png")
+```
+**=> How should you modify your workflow to handle this new situation? (5min)** 
