@@ -6,9 +6,8 @@ title: "Working on a remote server"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Working on a Remote Machine
 
-## Learning Objectives
+# Learning Objectives
 
 In this lesson, you will learn:
 
@@ -17,7 +16,7 @@ In this lesson, you will learn:
 - Get a short introduction to the command line
 
 
-## Why working on a remote machine?
+# Why working on a remote machine?
 
 Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientits:
 * **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB) 
@@ -28,21 +27,21 @@ Often the main motivation is to **scale your analysis beyond what a personal com
 **=> The operating system is more likely going to be Linux!!**
 
 
-### Working Group / Collaborative Setup
+# Collaborative Setup
 
 There are additional reasons of particular importance in a collaborative set up, such as a working group:
 - **Centralizing data management**: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!
 - **Make sure your files are safe**: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.
 
 
-### What does working on a remote server means?
+# What does working on a remote server means?
 
 What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are  about:
-- File management: you will need to learn to move files (incluing your R scripts) to the server
+- File management: you will need to learn to move files (including your R scripts) to the server
 - Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.
 
 
-## RStudio Server
+# RStudio Server
 
 From an user perspective, _RStudio Server is your familiar RStudio interface in your web browser_. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that **the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!** This remote file management is the main change you will have to adopt in your workflow. 
 
@@ -52,7 +51,7 @@ To help with remote files management, the RStudio Server interface as few additi
   knitr::include_graphics("img/rstudio-server-ide.png")
 ```
 
-### Connecting to MEDS Analytical Server
+## Connecting to MEDS Analytical Server
 
 1. Got to: <https://???.ucsb.edu/> 
 
@@ -63,12 +62,12 @@ To help with remote files management, the RStudio Server interface as few additi
 4. You are in!
 
 
-## Jupyter Hub
+# Jupyter Hub
 
 
-## Command line
+# Command line
 
-### Introduction to UNIX and its siblings
+## Introduction to UNIX and its siblings
 
 UNIX
  :  Originally developed at AT&T Bell Labs circa 1970. Has
@@ -90,7 +89,7 @@ POSIX (Portable Operating System Interface)
       regarded as [functionally Unix](http://en.wikipedia.org/wiki/Unix-like)
       
 
-#### Some Unix hallmarks
+### Some Unix hallmarks
 
 * Supports multi-users, multi-processes
 * Highly modular: many small tools that do one thing well, and can be combined
@@ -99,11 +98,11 @@ POSIX (Portable Operating System Interface)
 * Main OS on which Internet was built
 
     
-### The Command Line Interface (CLI)
+## The Command Line Interface (CLI)
 
 The CLI provides a direct way to interact with the Operating System, by typing in commands. 
 
-#### Why the CLI is worth learning
+### Why the CLI is worth learning
 
 * Typically much more extensive access to features, commands, options
 * Command statements can be written down, saved (scripts!)
@@ -111,7 +110,7 @@ The CLI provides a direct way to interact with the Operating System, by typing i
 * Much "cheaper" to do work on a remote system (no need to
       transmit all the graphical stuff over the network)
       
-#### Connecting to a remote server via `ssh`
+### Connecting to a remote server via `ssh`
 
 From the gitbash (MS Windows) or the terminal (Mac) type:
 
@@ -136,7 +135,7 @@ In this case, you will be only asked for your password as you already specified 
 ![](img/rstudio-terminal.png)
 
 
-### Navigating and managing files/directories in *NIX
+## Navigating and managing files/directories in *NIX
 
 * `pwd`: Know where you are
 * `ls`: List the content of the directory
@@ -158,17 +157,17 @@ More files/directories manipulations:
 * `mv`: Move a file
 * `rm` /`rmdir`: Remove a file / directory  **use those carefully, there is no return / Trash!!**
 
-#### Permissions
+### Permissions
 
 ![File permissions](img/UnixFileLongFormat.png)
 
-#### Exercise
+### Exercise
 
 Navigate to the repo we created and inspect its content using the CLI
 
 **Note: typing is not your thing? the `<tab>` key is your friend!** One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.
 
-### General command syntax
+## General command syntax
 
 * `$ command [options] [arguments]`
 
@@ -191,7 +190,7 @@ What do these options do?
 man ls
 ```
 
-#### find
+### find
 
 Show me my Rmarkdown files!
 
@@ -210,16 +209,16 @@ With more details about the files:
 find . -size +1G -ls
 ```
 
-### Getting things done
+## Getting things done
 
-#### Some useful, special commands using the Control key
+### Some useful, special commands using the Control key
 
 * Cancel (abort) a command: `Ctrl-c`
 * Stop (suspend) a command: `Ctrl-z`
 * `Ctrl-z` can be used to suspend, then background a process
 
 
-#### Process management
+### Process management
 
 * Like Windows Task Manager, OSX Activity Monitor
 * **`top`**, `ps`, `jobs` (hit `q` to get out!)
@@ -227,14 +226,14 @@ find . -size +1G -ls
 * Foreground and background: `&`
 
 
-#### What about "space"
+### What about "space"
 
 * How much storage is available on this system?  `df -h`
 * How much storage am "I" using overall?  `du -hs <folder>`
 * How much storage am "I" using, by subdirectory?  `du -h <folder>`
 
 
-## Uploading Files to a server
+# Uploading Files to a server
 
 You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software... and you guessed it the CLI :)
 
@@ -244,7 +243,7 @@ You can only upload one file at the time (you can zip a folder to trick it):
 
 ![](img/rstudio-upload.png)
 
-### sFTP Software
+## sFTP Software
 
 An efficient protocol to upload files is FTP (File Transfer Protocol). The `s` stands for secured. Any software supporting those protocols will work to transfer files. 
 
@@ -255,7 +254,7 @@ We recommend the following free software:
 
 ![](img/server-cyberduck.png)
 
-### scp
+## scp
 
 The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from Aurora or from your local computer. Here is the basic syntax:
 
@@ -285,23 +284,7 @@ Here is an example uploading all the images in the `myplot` folder
 scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/images
 ```
 
-
-
-## Advanced Topics at the command line
-
-### Unix systems are multi-user
-* Who else is logged into this machine?  `who`
-* Who is logged into "this shell"?  `whoami`
-
-### A sampling of simple commands for dealing with files
-
-* `wc` count lines, words, and/or characters
-* `diff` compare two files for differences
-* `sort` sort lines in a file
-* `uniq` report or filter out repeated lines in a file
-
-
-### All files have permissions and ownership
+## All files have permissions and ownership
 
 * Change permissions: `chmod`
 * Change ownership: `chown`
@@ -317,14 +300,29 @@ scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-trai
 * Clear contents in terminal window: `clear`
 
 
-### Getting help
+--- 
+
+
+# Advanced Topics at the command line
+
+**We will not cover this during class, it is for your reference **
+
+## Unix systems are multi-user
+* Who else is logged into this machine?  `who`
+* Who is logged into "this shell"?  `whoami`
+
+
+
+## Getting help
 
 * `<command> -h`, `<command> --help`
 * `man`, `info`, `apropos`, `whereis`
 * Search the web!
 
 
-### History
+
+
+## History
 
 * See your command history:  `history`
 * Re-run last command:  `!!`  (pronounced "bang-bang")
@@ -333,7 +331,15 @@ scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-trai
 * Re-run last command that started with 'c': `!c`
 
 
-### Get into the flow, with pipes 
+## A sampling of simple commands for dealing with files
+
+* `wc` count lines, words, and/or characters
+* `diff` compare two files for differences
+* `sort` sort lines in a file
+* `uniq` report or filter out repeated lines in a file
+
+
+## Get into the flow, with pipes 
 
 ![`stdin`, `stdout`, `stderr`](img/pipe_split.png
     "http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png")
@@ -344,29 +350,57 @@ $ ls *.png | wc -l > pngcount.txt
 $ diff <(sort file1.txt) <(sort file2.txt)
 $ ls foo 2>/dev/null
 ```
-* note use of `*` as character wildcard for zero or more matches (same in Mac and Windows); `%` is equivalent wildcard match in SQL queries
+
+* note use of `*` as character wildcard for zero or more matches (same in Mac and Windows)
 * `?` matches single character; `_` is SQL query equivalent
 
 
-### Text editing
+## Text editing
 
-#### Some editors
+### Some editors
 
 * `vim`
 * `emacs`
 * `nano`
 
-```
+```bash
 $ nano .bashrc
 ```
 
-#### Let's look at our text file
+## Searching advanced utilities
 
-* `cat` print file(s)
-* `head` print first few lines of file(s)
-* `tail` print last few lines of file(s)
-* `less` "pager" -- view file interactively (type `q` to quit command)qqqbf
-*   `od --t` "octal dump" -- to view file's underlying binary/octal/hexadecimal/ASCII format
+* `grep` search files for text
+* `sed` filter and transform text
+* `find` advanced search for files/directories
+
+
+### grep
+
+Show all lines containing "bug" in my R scripts
+
+```bash
+$ grep bug *.R
+```
+
+Now count the number of occurrences per file
+
+```bash
+$ grep -c bug *.R
+```
+
+Print the names of files that contain bug
+
+```bash
+$ grep -l bug *.R
+```
+
+### Let's look at our text file
+
+*  `cat` print file(s)
+*  `head` print first few lines of file(s)
+*  `tail` print last few lines of file(s)
+*  `less` "pager" -- view file interactively (type `q` to quit command)qqqbf
+*  `od --t` "octal dump" -- to view file's underlying binary/octal/hexadecimal/ASCII format
 
    
 ```bash
@@ -401,37 +435,14 @@ $ brun@aurora:~/data$ head -3 env.csv | od -cx
 ```
 
 
-### Create custom commands with "alias"
+## Create custom commands with "alias"
 ```alias lwc='ls *.jpg | wc -l'```
 
 You can create a number of custom aliases that are available whenever you login, by putting commands such as the above in your shell start-up file, e.g. `.bashrc`
 
 
-### A sampling of more advanced utilities
 
-* `grep` search files for text
-* `sed` filter and transform text
-* `find` advanced search for files/directories
+# Aknowledgements
 
-
-#### grep
-
-Show all lines containing "bug" in my R scripts
-
-```bash
-$ grep bug *.R
-```
-
-Now count the number of occurrences per file
-
-```bash
-$ grep -c bug *.R
-```
-
-Print the names of files that contain bug
-
-```bash
-$ grep -l bug *.R
-```
-
+This tutorial reuses a lot of materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and. Contributors to this content has been Made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
 
