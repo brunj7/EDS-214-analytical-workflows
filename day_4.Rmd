@@ -6,7 +6,7 @@ title: "Code Review & Pair Programming"
 
 Code review is an *asynchronous* team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The "reviewer" should see this activity as a great way to learn from others.
 
-You actually have already pratice this a little when practicing merging pull request!!
+You actually have already practice this a little when practicing merging pull request!!
 
 
 # Pair programming
@@ -48,4 +48,6 @@ Adapted from Corey Johannsen: https://blog.newrelic.com/2017/10/31/mob-programmi
 This is a big topic and will be highly influenced by the team you are working with both in terms of practices and tools used to manage the project. On the coding side, there is a lot to borrow from Agile development approach for scientist. In a nutshell: "put it out there fast and iterate". In other words to wait to try to have the perfect code or analysis before sharing it with your collaborators. It is more efficient to share and discuss an early / draft version, gather feedback and iterate.
 
 
+# Aknowledgements
 
+This section reuses a lot of materials from and RMetetup organized by the Santa Barbara R Users group (), including material prepared by Irene Steves.

@@ -159,7 +159,24 @@ More files/directories manipulations:
 
 ### Permissions
 
+All files have permissions and ownership.
+
 ![File permissions](img/UnixFileLongFormat.png)
+
+* Change permissions: `chmod`
+* Change ownership: `chown`
+* List files showing ownership and permissions: `ls -l`
+
+			brun@aurora:~/postdoc-training/data$ ls -l
+			total 1136
+			-rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
+			-rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
+			-rwxr-xr-x 1 brun scientist   23358 Jun 26 11:20 locale.csv
+			-rwxrwx--- 1 brun scientist    7543 Jun 26 11:20 refrens.csv
+			-rwx------ 1 brun scientist   46653 Jun 26 11:20 sample.csv 		
+* Clear contents in terminal window: `clear`
+
+
 
 ### Exercise
 
@@ -169,7 +186,7 @@ Navigate to the repo we created and inspect its content using the CLI
 
 ## General command syntax
 
-* `$ command [options] [arguments]`
+* `command [options] [arguments]`
 
 where `command` must be an _executable_ file on your `PATH`
 * `echo $PATH`
@@ -190,47 +207,8 @@ What do these options do?
 man ls
 ```
 
-### find
+Tip: hit `q` to exit the help!
 
-Show me my Rmarkdown files!
-
-```bash
-find . -iname '*.Rmd'
-```
-
-Which files are larger than 1GB?
-
-```bash
-find . -size +1G
-```
-With more details about the files:
-
-```bash
-find . -size +1G -ls
-```
-
-## Getting things done
-
-### Some useful, special commands using the Control key
-
-* Cancel (abort) a command: `Ctrl-c`
-* Stop (suspend) a command: `Ctrl-z`
-* `Ctrl-z` can be used to suspend, then background a process
-
-
-### Process management
-
-* Like Windows Task Manager, OSX Activity Monitor
-* **`top`**, `ps`, `jobs` (hit `q` to get out!)
-* `kill` to delete an unwanted job or process
-* Foreground and background: `&`
-
-
-### What about "space"
-
-* How much storage is available on this system?  `df -h`
-* How much storage am "I" using overall?  `du -hs <folder>`
-* How much storage am "I" using, by subdirectory?  `du -h <folder>`
 
 
 # Uploading Files to a server
@@ -284,20 +262,6 @@ Here is an example uploading all the images in the `myplot` folder
 scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/images
 ```
 
-## All files have permissions and ownership
-
-* Change permissions: `chmod`
-* Change ownership: `chown`
-* List files showing ownership and permissions: `ls -l`
-
-			brun@aurora:~/postdoc-training/data$ ls -l
-			total 1136
-			-rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
-			-rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
-			-rwxr-xr-x 1 brun scientist   23358 Jun 26 11:20 locale.csv
-			-rwxrwx--- 1 brun scientist    7543 Jun 26 11:20 refrens.csv
-			-rwx------ 1 brun scientist   46653 Jun 26 11:20 sample.csv 		
-* Clear contents in terminal window: `clear`
 
 
 --- 
@@ -305,7 +269,7 @@ scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-trai
 
 # Advanced Topics at the command line
 
-**We will not cover this during class, it is for your reference **
+**We will not cover this during class, it is for your reference**. You will also have the opportunity to further practice and learn about the command line in EDS-215.
 
 ## Unix systems are multi-user
 * Who else is logged into this machine?  `who`
@@ -320,9 +284,50 @@ scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-trai
 * Search the web!
 
 
+## finding stuff
+
+Show me my Rmarkdown files!
+
+```bash
+find . -iname '*.Rmd'
+```
+
+Which files are larger than 1GB?
+
+```bash
+find . -size +1G
+```
+With more details about the files:
+
+```bash
+find . -size +1G -ls
+```
 
 
-## History
+## Getting things done
+
+### Some useful, special commands using the Control key
+
+* Cancel (abort) a command: `Ctrl-c`  Note: very different than Windows!!
+* Stop (suspend) a command: `Ctrl-z`
+* `Ctrl-z` can be used to suspend, then background a process
+
+
+### Process management
+
+* Like Windows Task Manager, OSX Activity Monitor
+* **`top`**, `ps`, `jobs` (hit `q` to get out!)
+* `kill` to delete an unwanted job or process
+* Foreground and background: `&`
+
+
+### What about "space"
+
+* How much storage is available on this system?  `df -h`
+* How much storage am "I" using overall?  `du -hs <folder>`
+* How much storage am "I" using, by subdirectory?  `du -h <folder>`
+
+### History
 
 * See your command history:  `history`
 * Re-run last command:  `!!`  (pronounced "bang-bang")
@@ -444,5 +449,5 @@ You can create a number of custom aliases that are available whenever you login,
 
 # Aknowledgements
 
-This tutorial reuses a lot of materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and. Contributors to this content has been Made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
+This section reuses a lot of materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and other trainings. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
 

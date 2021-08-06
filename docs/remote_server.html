@@ -2535,29 +2535,26 @@ Daily Materials
 <li><a href="#permissions">Permissions</a></li>
 <li><a href="#exercise">Exercise</a></li>
 </ul></li>
-<li><a href="#general-command-syntax">General command syntax</a>
-<ul>
-<li><a href="#find">find</a></li>
-</ul></li>
-<li><a href="#getting-things-done">Getting things done</a>
-<ul>
-<li><a href="#some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</a></li>
-<li><a href="#process-management">Process management</a></li>
-<li><a href="#what-about-space">What about “space”</a></li>
-</ul></li>
+<li><a href="#general-command-syntax">General command syntax</a></li>
 </ul></li>
 <li><a href="#uploading-files-to-a-server">Uploading Files to a server</a>
 <ul>
 <li><a href="#rstudio">RStudio</a></li>
 <li><a href="#sftp-software">sFTP Software</a></li>
 <li><a href="#scp">scp</a></li>
-<li><a href="#all-files-have-permissions-and-ownership">All files have permissions and ownership</a></li>
 </ul></li>
 <li><a href="#advanced-topics-at-the-command-line">Advanced Topics at the command line</a>
 <ul>
 <li><a href="#unix-systems-are-multi-user">Unix systems are multi-user</a></li>
 <li><a href="#getting-help">Getting help</a></li>
+<li><a href="#finding-stuff">finding stuff</a></li>
+<li><a href="#getting-things-done">Getting things done</a>
+<ul>
+<li><a href="#some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</a></li>
+<li><a href="#process-management">Process management</a></li>
+<li><a href="#what-about-space">What about “space”</a></li>
 <li><a href="#history">History</a></li>
+</ul></li>
 <li><a href="#a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</a></li>
 <li><a href="#get-into-the-flow-with-pipes">Get into the flow, with pipes</a></li>
 <li><a href="#text-editing">Text editing</a>
@@ -2679,49 +2676,37 @@ Daily Materials
 <li><code>rm</code> /<code>rmdir</code>: Remove a file / directory <strong>use those carefully, there is no return / Trash!!</strong></li>
 </ul>
 <h3 id="permissions">Permissions</h3>
+<p>All files have permissions and ownership.</p>
 <figure>
 <img src="img/UnixFileLongFormat.png" alt="File permissions" /><figcaption aria-hidden="true">File permissions</figcaption>
 </figure>
+<ul>
+<li><p>Change permissions: <code>chmod</code></p></li>
+<li><p>Change ownership: <code>chown</code></p></li>
+<li><p>List files showing ownership and permissions: <code>ls -l</code></p>
+<pre><code>      brun@aurora:~/postdoc-training/data$ ls -l
+      total 1136
+      -rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
+      -rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
+      -rwxr-xr-x 1 brun scientist   23358 Jun 26 11:20 locale.csv
+      -rwxrwx--- 1 brun scientist    7543 Jun 26 11:20 refrens.csv
+      -rwx------ 1 brun scientist   46653 Jun 26 11:20 sample.csv         </code></pre></li>
+<li><p>Clear contents in terminal window: <code>clear</code></p></li>
+</ul>
 <h3 id="exercise">Exercise</h3>
 <p>Navigate to the repo we created and inspect its content using the CLI</p>
 <p><strong>Note: typing is not your thing? the <code>&lt;tab&gt;</code> key is your friend!</strong> One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.</p>
 <h2 id="general-command-syntax">General command syntax</h2>
 <ul>
-<li><code>$ command [options] [arguments]</code></li>
+<li><code>command [options] [arguments]</code></li>
 </ul>
 <p>where <code>command</code> must be an <em>executable</em> file on your <code>PATH</code> * <code>echo $PATH</code></p>
 <p>and <code>options</code> can usually take two forms * short form: <code>-a</code> * long form: <code>--all</code></p>
 <p>You can combine the options:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ltrh</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ltrh</span></span></code></pre></div>
 <p>What do these options do?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
-<h3 id="find">find</h3>
-<p>Show me my Rmarkdown files!</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-iname</span> <span class="st">&#39;*.Rmd&#39;</span></span></code></pre></div>
-<p>Which files are larger than 1GB?</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G</span></code></pre></div>
-<p>With more details about the files:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G <span class="at">-ls</span></span></code></pre></div>
-<h2 id="getting-things-done">Getting things done</h2>
-<h3 id="some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</h3>
-<ul>
-<li>Cancel (abort) a command: <code>Ctrl-c</code></li>
-<li>Stop (suspend) a command: <code>Ctrl-z</code></li>
-<li><code>Ctrl-z</code> can be used to suspend, then background a process</li>
-</ul>
-<h3 id="process-management">Process management</h3>
-<ul>
-<li>Like Windows Task Manager, OSX Activity Monitor</li>
-<li><strong><code>top</code></strong>, <code>ps</code>, <code>jobs</code> (hit <code>q</code> to get out!)</li>
-<li><code>kill</code> to delete an unwanted job or process</li>
-<li>Foreground and background: <code>&amp;</code></li>
-</ul>
-<h3 id="what-about-space">What about “space”</h3>
-<ul>
-<li>How much storage is available on this system? <code>df -h</code></li>
-<li>How much storage am “I” using overall? <code>du -hs &lt;folder&gt;</code></li>
-<li>How much storage am “I” using, by subdirectory? <code>du -h &lt;folder&gt;</code></li>
-</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
+<p>Tip: hit <code>q</code> to exit the help!</p>
 <h1 id="uploading-files-to-a-server">Uploading Files to a server</h1>
 <p>You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)</p>
 <h3 id="rstudio">RStudio</h3>
@@ -2739,29 +2724,15 @@ Daily Materials
 <p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from Aurora or from your local computer. Here is the basic syntax:</p>
 <pre><code>scp &lt;/source/path&gt; &lt;hostname:/path/to/destination/&gt;</code></pre>
 <p>Here is an example of my uploading the file <code>10min-loop.R</code> to Aurora from my laptop. The destination directory on Aurora is <code>/home/brun/github_com/NCEAS/nceas-training/materials/files</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/files</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/files</span></code></pre></div>
 <p><img src="img/server-scp.png" /></p>
 <p>If you want to upload an entire folder, you can add the <code>-r</code> option to the command. The general syntax is:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code></pre></div>
 <p>Here is an example uploading all the images in the <code>myplot</code> folder</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/images</span></code></pre></div>
-<h2 id="all-files-have-permissions-and-ownership">All files have permissions and ownership</h2>
-<ul>
-<li><p>Change permissions: <code>chmod</code></p></li>
-<li><p>Change ownership: <code>chown</code></p></li>
-<li><p>List files showing ownership and permissions: <code>ls -l</code></p>
-<pre><code>      brun@aurora:~/postdoc-training/data$ ls -l
-      total 1136
-      -rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
-      -rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
-      -rwxr-xr-x 1 brun scientist   23358 Jun 26 11:20 locale.csv
-      -rwxrwx--- 1 brun scientist    7543 Jun 26 11:20 refrens.csv
-      -rwx------ 1 brun scientist   46653 Jun 26 11:20 sample.csv         </code></pre></li>
-<li><p>Clear contents in terminal window: <code>clear</code></p></li>
-</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/images</span></code></pre></div>
 <hr />
 <h1 id="advanced-topics-at-the-command-line">Advanced Topics at the command line</h1>
-<p><strong>We will not cover this during class, it is for your reference </strong></p>
+<p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
 <h2 id="unix-systems-are-multi-user">Unix systems are multi-user</h2>
 <ul>
 <li>Who else is logged into this machine? <code>who</code></li>
@@ -2773,7 +2744,34 @@ Daily Materials
 <li><code>man</code>, <code>info</code>, <code>apropos</code>, <code>whereis</code></li>
 <li>Search the web!</li>
 </ul>
-<h2 id="history">History</h2>
+<h2 id="finding-stuff">finding stuff</h2>
+<p>Show me my Rmarkdown files!</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-iname</span> <span class="st">&#39;*.Rmd&#39;</span></span></code></pre></div>
+<p>Which files are larger than 1GB?</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G</span></code></pre></div>
+<p>With more details about the files:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G <span class="at">-ls</span></span></code></pre></div>
+<h2 id="getting-things-done">Getting things done</h2>
+<h3 id="some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</h3>
+<ul>
+<li>Cancel (abort) a command: <code>Ctrl-c</code> Note: very different than Windows!!</li>
+<li>Stop (suspend) a command: <code>Ctrl-z</code></li>
+<li><code>Ctrl-z</code> can be used to suspend, then background a process</li>
+</ul>
+<h3 id="process-management">Process management</h3>
+<ul>
+<li>Like Windows Task Manager, OSX Activity Monitor</li>
+<li><strong><code>top</code></strong>, <code>ps</code>, <code>jobs</code> (hit <code>q</code> to get out!)</li>
+<li><code>kill</code> to delete an unwanted job or process</li>
+<li>Foreground and background: <code>&amp;</code></li>
+</ul>
+<h3 id="what-about-space">What about “space”</h3>
+<ul>
+<li>How much storage is available on this system? <code>df -h</code></li>
+<li>How much storage am “I” using overall? <code>du -hs &lt;folder&gt;</code></li>
+<li>How much storage am “I” using, by subdirectory? <code>du -h &lt;folder&gt;</code></li>
+</ul>
+<h3 id="history">History</h3>
 <ul>
 <li>See your command history: <code>history</code></li>
 <li>Re-run last command: <code>!!</code> (pronounced “bang-bang”)</li>
@@ -2861,7 +2859,7 @@ Daily Materials
 <p><code>alias lwc='ls *.jpg | wc -l'</code></p>
 <p>You can create a number of custom aliases that are available whenever you login, by putting commands such as the above in your shell start-up file, e.g. <code>.bashrc</code></p>
 <h1 id="aknowledgements">Aknowledgements</h1>
-<p>This tutorial reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and. Contributors to this content has been Made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
+<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other trainings. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
