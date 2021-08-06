@@ -18,7 +18,7 @@ In this lesson, you will learn:
 
 # Why working on a remote machine?
 
-Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientits:
+Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
 * **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB) 
 * **Capacity**: More *disk space* and generally* faster storage* (in highly optimized RAID arrays)
 * **Security**: Data are spread across *multiple drives* and have nightly *backups*
@@ -325,7 +325,7 @@ find . -size +1G -ls
 
 * How much storage is available on this system?  `df -h`
 * How much storage am "I" using overall?  `du -hs <folder>`
-* How much storage am "I" using, by subdirectory?  `du -h <folder>`
+* How much storage am "I" using, by sub directory?  `du -h <folder>`
 
 ### History
 
@@ -404,7 +404,7 @@ $ grep -l bug *.R
 *  `cat` print file(s)
 *  `head` print first few lines of file(s)
 *  `tail` print last few lines of file(s)
-*  `less` "pager" -- view file interactively (type `q` to quit command)qqqbf
+*  `less` "pager" -- view file interactively (type `q` to quit command)
 *  `od --t` "octal dump" -- to view file's underlying binary/octal/hexadecimal/ASCII format
 
    
@@ -443,11 +443,11 @@ $ brun@aurora:~/data$ head -3 env.csv | od -cx
 ## Create custom commands with "alias"
 ```alias lwc='ls *.jpg | wc -l'```
 
-You can create a number of custom aliases that are available whenever you login, by putting commands such as the above in your shell start-up file, e.g. `.bashrc`
+You can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. `.bashrc`
 
 
 
 # Aknowledgements
 
-This section reuses a lot of materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and other trainings. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
+This section reuses a lot of materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
 

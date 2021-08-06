@@ -2580,7 +2580,7 @@ Daily Materials
 <li>Get a short introduction to the command line</li>
 </ul>
 <h1 id="why-working-on-a-remote-machine">Why working on a remote machine?</h1>
-<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientits: * <strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB) * <strong>Capacity</strong>: More <em>disk space</em> and generally* faster storage* (in highly optimized RAID arrays) * <strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em> * <strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></p>
+<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist: * <strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB) * <strong>Capacity</strong>: More <em>disk space</em> and generally* faster storage* (in highly optimized RAID arrays) * <strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em> * <strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></p>
 <p><strong>=&gt; The operating system is more likely going to be Linux!!</strong></p>
 <h1 id="collaborative-setup">Collaborative Setup</h1>
 <p>There are additional reasons of particular importance in a collaborative set up, such as a working group: - <strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!! - <strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p>
@@ -2769,7 +2769,7 @@ Daily Materials
 <ul>
 <li>How much storage is available on this system? <code>df -h</code></li>
 <li>How much storage am “I” using overall? <code>du -hs &lt;folder&gt;</code></li>
-<li>How much storage am “I” using, by subdirectory? <code>du -h &lt;folder&gt;</code></li>
+<li>How much storage am “I” using, by sub directory? <code>du -h &lt;folder&gt;</code></li>
 </ul>
 <h3 id="history">History</h3>
 <ul>
@@ -2824,7 +2824,7 @@ Daily Materials
 <li><code>cat</code> print file(s)</li>
 <li><code>head</code> print first few lines of file(s)</li>
 <li><code>tail</code> print last few lines of file(s)</li>
-<li><code>less</code> “pager” – view file interactively (type <code>q</code> to quit command)qqqbf</li>
+<li><code>less</code> “pager” – view file interactively (type <code>q</code> to quit command)</li>
 <li><code>od --t</code> “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format</li>
 </ul>
 <div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brun@aurora:~/data$ head <span class="at">-3</span> env.csv</span>
@@ -2857,9 +2857,9 @@ Daily Materials
 <span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2c38    382d    3838    0a0d</span></code></pre></div>
 <h2 id="create-custom-commands-with-alias">Create custom commands with “alias”</h2>
 <p><code>alias lwc='ls *.jpg | wc -l'</code></p>
-<p>You can create a number of custom aliases that are available whenever you login, by putting commands such as the above in your shell start-up file, e.g. <code>.bashrc</code></p>
+<p>You can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. <code>.bashrc</code></p>
 <h1 id="aknowledgements">Aknowledgements</h1>
-<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other trainings. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
+<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

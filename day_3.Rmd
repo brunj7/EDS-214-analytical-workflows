@@ -84,7 +84,7 @@ It is recommended to **keep the raw-data you are collecting separated from any d
 
 # Working on a remote server
 
-[Materials](remote_server.html)
+**[Materials](remote_server.html)**
 
 ![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 
