@@ -48,18 +48,19 @@ EDS 214 is an intensive 1-week long 2-unit course. Students should plan to atten
 
 Tentative daily schedule (subject to change):
 
-|                   |                                                            |
-|-------------------|------------------------------------------------------------|
-| **Time (PST)**    | **Activity**                                               |
-| 8:00am - 9:00am   | *Lecture 1 (60 min)*                                       |
-| 9:00am - 9:15am   | *Break 1 (15 min)*                                         |
-| 9:15am - 10:15am  | *Interactive Session 1 (60 min)*                           |
-| 10:15am - 11:00am | *Flex time (45 min)*                                       |
-| 11:00am - 12:15pm | *Break 2 (75 min)*                                         |
-| 12:15pm - 1:15pm  | *Lecture 2 (60 min)*                                       |
-| 1:15pm - 2:15pm   | *Interactive Session 2 (60 min)*                           |
-| 2:15pm - 3:15pm   | *Flex time (60 min)*                                       |
-| 3:15pm - 5:00pm   | *Interactive Session 3: Group & challenge tasks (105 min)* |
+|                   |                                                           |
+|-------------------|-----------------------------------------------------------|
+| **Time (PST)**    | **Activity**                                              |
+| 9:00am - 10:00am  | *Lecture 1 (60 min)*                                      |
+| 10:00am - 10:10am | *Break 1 (10 min)*                                        |
+| 10:10am - 11:30am | *Interactive Session 1 (80 min)*                          |
+| 11:30am - 12:00am | *Flex time (30 min)*                                      |
+| 12:00am - 1:15pm  | *Lunch (75 min)*                                          |
+| 1:15pm - 2:15pm   | *Lecture 2 (60 min)*                                      |
+| 2:15pm - 2:25pm   | *Break 2 (10 min)*                                        |
+| 2:25pm - 3:25pm   | *Interactive Session 2 (60 min)*                          |
+| 3:25pm - 3:35pm   | *Break 2 (10 min)*                                        |
+| 3:35pm - 4:35pm   | *Group tasks + assignment time (60 min)*                  |
 
 
 ## Learning objectives
