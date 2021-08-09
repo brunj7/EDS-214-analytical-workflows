@@ -2510,78 +2510,10 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#managing-your-files-as-a-team">Managing your files as a team</a>
-<ul>
-<li><a href="#naming-things">Naming things</a>
-<ul>
-<li><a href="#exercise">Exercise</a></li>
-</ul></li>
-<li><a href="#organizing-things">Organizing things</a></li>
-<li><a href="#code">Code</a>
-<ul>
-<li><a href="#notebooks-and-scripts">Notebooks and scripts</a></li>
-</ul></li>
-<li><a href="#data">Data</a></li>
-</ul></li>
 <li><a href="#working-on-a-remote-server">Working on a remote server</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="managing-your-files-as-a-team">Managing your files as a team</h1>
-<p>Our goal is to centralize the management of your files (data, codes, …). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path.</p>
-<p>There are many tools out there to help with file management. Here are a few questions to ask your teammates when organizing your project:</p>
-<ul>
-<li>Can everybody have access to this tool? This should overrule the “best” tool =&gt; maximize adoption</li>
-<li>What team practices should you set on how to use these tools? Example: naming convention for files</li>
-<li>Allow flexibility – acknowledge the technological level varies among collaborators. Empower them by showing how to best use these tools rather than doing it for them!</li>
-</ul>
-<h2 id="naming-things">Naming things</h2>
-<p><img src="img/naming_conventions.png" /></p>
-<p>Develop naming conventions for files and folder:</p>
-<ul>
-<li>Avoid spaces (use underscores or dashes)</li>
-<li>Avoid punctuation or special characters</li>
-<li>Try to leverage alphabetical order (e.g. start with dates: 2020-05-08)</li>
-<li>Use descriptive naming (lite metadata)</li>
-<li>Use folders to structure/organize content</li>
-<li>Keep it simple</li>
-<li>Make it programmatically useful:
-<ul>
-<li>Useful to select files (Wildcard *, regular expression)</li>
-<li>But don’t forget Humans need to read file names too!!</li>
-</ul></li>
-</ul>
-<h3 id="exercise">Exercise</h3>
-<p>Which filename would be the most useful?</p>
-<ul>
-<li><code>06-2020-08-sensor2-plot1.csv</code></li>
-<li><code>2020-05-08_light-sensor-1_plot-1.csv</code></li>
-<li><code>Measurement 1.csv</code></li>
-<li><code>2020-05-08-light-sensor-1-plot-2.csv</code></li>
-<li><code>2020-05-08-windSensor1-plot3.csv</code></li>
-</ul>
-<p>** The most important is to make it consistent! **</p>
-<p>Good <a href="https://speakerdeck.com/jennybc/how-to-name-files">reference</a> on this topic from Jenny Bryan (RStudio).</p>
-<h2 id="organizing-things">Organizing things</h2>
-<p>As we discussed previously, it is good practice to encapsulate your project and repositories are a good unit to start with. In this section we will talk about the case when your data sets start to be numerous or large enough that it is not possible anymore to keep them in your repository. Generally when you reach this amount of data to deal with, it also means that your personal computer might not be the best computer to efficiently process those data sets. Thus using a remote server (on premise or in the cloud) might become necessary.</p>
-<ol type="1">
-<li><p>Codes should be managed using version controlled (git and GitHub for this course)   The repository should be stored in your home folder and the management of the different contributions should be resolved using git and GitHub and not by sharing directly the scripts. The main reason is that git does already the work for us by tracking the changes between the various versions, but also tracking which collaborator has made those changes and when.</p></li>
-<li><p>Data sets should should be centralized in a shared folder that is available to all   It is very rare in an Environmental Data Science project that you will discover all the data you need from the start. In addition, a lot of environmental data sets are time-series, and one year later might need to be updated as your project progresses. Our goal here is to setup ourselves in a way that will help us to avoid duplication of data. Every time you duplicate a data set (for example on your own laptop), there is a risk that at some point it will become its own version.</p></li>
-</ol>
-<h2 id="code">Code</h2>
-<p>Version control systems have been originally designed to track changes by rows in small text files, in other words they are well suited to manage codes. It is thus recommended to use them to track changes that you and your collaborators are making to the various scripts of your project. Mote on how to best do this in the section below.</p>
-<h3 id="notebooks-and-scripts">Notebooks and scripts</h3>
-<p>With the increasing popularity of notebooks in scientific projects, it can sometimes be confusing to know when to use one. The good news is that there is not really a wrong or right here and that actually both can be used in a complementary manner and each data scientist will have her/his preference. However here are a few tips to help you decide:</p>
-<ul>
-<li>Keep your Notebook at a length you will feel comfortable reading. It if starts to be a long it might be time to think about if some code could be move to another document (scripts or another notebook)</li>
-<li>Scripts might be better suited for tasks you need to rerun frequently</li>
-<li>If you have developed many functions for your analysis, it might be worth storing them in a script outside your main notebook</li>
-</ul>
-<h2 id="data">Data</h2>
-<p>It is recommended to <strong>keep the raw-data you are collecting separated from any data you might generate at various steps of your workflow</strong>. This will help you to trace back any problems, but also make your work more reproducible because you started your processing directly from the original data. There are different ways of ensuring this. A common one is to create a <code>raw-data</code> (sub)folder to store the data. You can even play with the file access settings to make those files read-only.</p>
-<figure>
-<img src="img/project_file_structure.png" alt="https://github.com/benmarwick/rrtools" /><figcaption aria-hidden="true"><a href="https://github.com/benmarwick/rrtools" class="uri">https://github.com/benmarwick/rrtools</a></figcaption>
-</figure>
 <h1 id="working-on-a-remote-server">Working on a remote server</h1>
 <p><strong><a href="remote_server.html">Materials</a></strong></p>
 <figure>

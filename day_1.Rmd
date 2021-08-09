@@ -52,7 +52,6 @@ We recommend shying away from spreadsheets as an analytical tool, as well as Gra
 
 ---  
 
-
 # Coding together
 
 ## Learning Objectives
