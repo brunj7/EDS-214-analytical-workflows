@@ -44,6 +44,7 @@ We recommend shying away from spreadsheets as an analytical tool, as well as Gra
 [Materials](pseudocode.html)
 
 ![Cherubini et al., 2007](img/whiteborad_drawings.png)
+
 ### Hands-on
 
 [Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](hands-on_drawings.html)
