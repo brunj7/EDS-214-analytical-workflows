@@ -8,6 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### More References
 
--   Reproducible Research with R and RStudio, Chrisotpher Gandrud
-
-
+- The Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\
+    Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <http://www.practicereproducibleresearch.org/>
+- Reproducible Research with R and RStudio, Chrisotpher Gandrud <http://christophergandrud.github.io/RepResR-RStudio/index.html>
+- Initial steps toward reproducible research, Karl Broman, <https://kbroman.org/steps2rr/>

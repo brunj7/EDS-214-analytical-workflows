@@ -146,16 +146,20 @@ Here are a few selected publications to help you to learn more about these topic
 
 ## Data and scientific workflow management:
 
-- Some Simple Guidelines for Effective Data Management: \
-    [https://doi.org/10.1890/0012-9623-90.2.205](https://doi.org/10.1890/0012-9623-90.2.205) 
-- Basic concepts of data management: \
-    [https://www.dataone.org/education-modules](https://www.dataone.org/education-modules)
+- The Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\
+    Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <http://www.practicereproducibleresearch.org/>
 - Good enough practices in Scientific Computing: \
     [https://doi.org/10.1371/journal.pcbi.1005510](https://doi.org/10.1371/journal.pcbi.1005510) 
 - Script your analysis:   \
     [https://doi.org/10.1038/nj7638-563a](https://doi.org/10.1038/nj7638-563a) 
 - Principles for data analysis workflows:   \
     <https://doi.org/10.1371/journal.pcbi.1008770>
+- Benureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions. Front. Neuroinform. 0. https://doi.org/10.3389/fninf.2017.00069
+- Sandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology 9, e1003285. https://doi.org/10.1371/journal.pcbi.1003285
+- Some Simple Guidelines for Effective Data Management: \
+    [https://doi.org/10.1890/0012-9623-90.2.205](https://doi.org/10.1890/0012-9623-90.2.205) 
+- Basic concepts of data management: \
+    [https://www.dataone.org/education-modules](https://www.dataone.org/education-modules)
 
 
 ## Open Science
