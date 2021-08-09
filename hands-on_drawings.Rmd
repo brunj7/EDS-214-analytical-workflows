@@ -23,18 +23,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Study sites
 
-```{r map}
+```{r map, echo=FALSE}
 knitr::include_graphics("img/luq-map-small.png")
 ```
 
 ### Output
 
 We want to be able to produce this plot
-```{r plot}
+
+```{r plot, echo=FALSE}
 knitr::include_graphics("img/luq-ts-plot.png")
 ```
 
-**Draw the data processing steps and You want to harmonize those data into one dataset that will let you compare time-series data (20min)**
+
+**Draw the data processing steps to harmonize those data into one dataset that will let you compare time-series data and reproduce the above plot (20min)**
 
 ---
 

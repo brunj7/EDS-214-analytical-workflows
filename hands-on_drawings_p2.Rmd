@@ -6,7 +6,7 @@ title: "Hands-on: Planning your work"
 
 Actually our team also collected data for an adjacent watershed!! 
 
-```{r map all}
+```{r map all, echo=FALSE}
 knitr::include_graphics("img/luq-map-all.png")
 ```
 
@@ -19,7 +19,7 @@ We found data for additional chemistry measurements while skimming through the d
 
 We now want to be able to produce the follwing plot
 
-```{r plot}
+```{r plot, echo=FALSE}
 knitr::include_graphics("img/luq-ts-plot-all.png")
 ```
 **=> How should you modify your workflow to handle this new situation? (5min)** 
