@@ -7,7 +7,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## Goal: Combine 4 datasets about streamflow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Moun- tains of Puerto Rico
+## Goal
+
+**Combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico**
 
 
 ### A few things to know:
