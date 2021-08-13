@@ -153,7 +153,6 @@ Try to edit the csv file directly on GitHub!
 
 # Further reading
 
-
 ## GitHub Workflow
 
 - GitHub:

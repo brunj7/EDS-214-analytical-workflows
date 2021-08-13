@@ -118,8 +118,12 @@ A **fork** is a **copy of a repository** that will be stored under your user acc
   
 Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
 
-When you are satisfied with your work, you can initiate a ***Pull Request*** to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the "New pull request" button![](img/github-pull-request.png)  
-  
+When you are satisfied with your work, you can initiate a ***Pull Request*** to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the "New pull request" button!
+
+```{r, fig.align="center", echo=FALSE}
+knitr::include_graphics("img/github-pull-request.png")
+```
+
 Next, click "compare across forks", and use the dropdown menus to select your fork as the "head fork" and the original repository as the "base fork".
 
 ![](img/github-compare-forks.png)  
@@ -131,6 +135,23 @@ This workflow is recommended when you do not have push/write access to a reposit
 
 ## Hands-on
 
+Fork the repository of the `greetings` R package to add the option to change the color of the background of the text.
+
+Repo: <https://github.com/brunj7/greetings>
+
+By team of two:
+
+- Team member 1: fork the repository
+
+- Team member 2: fork the fork that team member 1 just created
+
+- Work together on Team member 2's computer to modify the `say_aloah()` function to 
+
+- Once done, create a pull request to integrate the new changes tagging team member 1 as reviewer
+
+- Team member 1, review the code, comment as neede on the pull request, and merge changes
+
+---
 
 # Flex session
 
