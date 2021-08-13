@@ -11,11 +11,11 @@ navbar:
       menu:
         - text: "Day 1: Reproducible & collaborative workflows"
           href: day_1.html
-        - text: "Day 2: Scientific coding as a team"
+        - text: "Day 2: Developing analytical workflows as a team"
           href: day_2.html
         - text: "Day 3: Managing your code and data on a remote server"
           href: day_3.html
-        - text: "Day 4: Code review & pair Programming"
+        - text: "Day 4: Scientific Programming as a team"
           href: day_4.html
         - text: "Day 5: Documenting and sharing things"
           href: day_5.html

@@ -1,5 +1,5 @@
 ---
-title: "Reproducible & collaborative workflows"
+title: "Reproducible & Collaborative Workflows"
 ---
 
 ```{r setup, include=FALSE}
