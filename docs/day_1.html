@@ -2521,7 +2521,7 @@ Daily Materials
 <li><a href="#hands-on">Hands-on</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#coding-together">Coding together</a>
+<li><a href="#coding-together-managing-scripts">Coding together – Managing Scripts</a>
 <ul>
 <li><a href="#learning-objectives">Learning Objectives</a></li>
 <li><a href="#why-collaborative-coding">Why collaborative coding</a></li>
@@ -2535,6 +2535,13 @@ Daily Materials
 </ul></li>
 <li><a href="#collaborating-through-forking">Collaborating through Forking</a></li>
 <li><a href="#hands-on-1">Hands-on</a></li>
+</ul></li>
+<li><a href="#flex-session">Flex session</a>
+<ul>
+<li><a href="#the-markdown-syntax">The Markdown syntax <img style="float: right;width: 50px;" src=img/markdown-logo.png /></a>
+<ul>
+<li><a href="#rmarkdown">RMarkdown</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#further-reading">Further reading</a>
 <ul>
@@ -2578,7 +2585,7 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 <h3 id="hands-on">Hands-on</h3>
 <p><a href="hands-on_drawings.html">Investigating the impacts of Hurricane on stream chemistry in Puerto Rico</a></p>
 <hr />
-<h1 id="coding-together">Coding together</h1>
+<h1 id="coding-together-managing-scripts">Coding together – Managing Scripts</h1>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this part of the lesson, you will learn:</p>
 <ul>
@@ -2630,6 +2637,21 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 <p>Then type a title and description for the changes you would like to make. By using GitHub’s <code>@mention</code> syntax in your Pull Request message, you can ask for feedback from specific people or teams.</p>
 <p>This workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project.</p>
 <h2 id="hands-on-1">Hands-on</h2>
+<h1 id="flex-session">Flex session</h1>
+<h2 id="the-markdown-syntax">The Markdown syntax <img style="float: right;width: 50px;" src=img/markdown-logo.png /></h2>
+<p>You will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using <code>pandoc</code> into various document formats (PDF, html, ….). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor.</p>
+<p>Another interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.</p>
+<pre><code>$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$</code></pre>
+<p><span class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
+<p>During this flex session, explore what you can do with with Markdown basic</p>
+<p><a href="https://www.markdownguide.org/basic-syntax/" class="uri">https://www.markdownguide.org/basic-syntax/</a></p>
+<p>And extended:</p>
+<p><a href="https://www.markdownguide.org/extended-syntax/" class="uri">https://www.markdownguide.org/extended-syntax/</a></p>
+<h3 id="rmarkdown">RMarkdown</h3>
+<p>What about Rmarkdown in all of this? Well the RMarkdown syntax, or more precisely the <code>knitr</code> package, add extra R oriented features which allows the translate of R code, figures and more into a Markdown document to produce dynamic and reproducible documents.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/markdown-how-it-works.png" width="732" /></p>
+</div>
 <hr />
 <h1 id="further-reading">Further reading</h1>
 <p>Here are a few selected publications to help you to learn more about these topics.</p>
@@ -2678,7 +2700,7 @@ Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <a href="http://www.practice
 <ul>
 <li>Small-Group Code Reviews For Education: <a href="https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext" class="uri">https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2686,6 +2708,15 @@ Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <a href="http://www.practice
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
