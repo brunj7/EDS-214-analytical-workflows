@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Topic 6: Internal &amp; external links</title>
+  <title>EDS 214: Collaborating using GitHub forking</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Topic 6: Internal &amp; external links"/>
+  <meta property="og:title" content="EDS 214: Collaborating using GitHub forking"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Topic 6: Internal &amp; external links"/>
+  <meta property="twitter:title" content="EDS 214: Collaborating using GitHub forking"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 6: Internal & external links"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Collaborating using GitHub forking"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 6: Internal & external links","authors":[]}
+{"title":"Collaborating using GitHub forking","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 6: Internal &amp; external links</h1>
+<h1>Collaborating using GitHub forking</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2506,31 +2506,17 @@ Daily Materials
 
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
-<ul>
-<li><a href="#linking-to-internal-parts-of-your-site">Linking to internal parts of your site</a></li>
-<li><a href="#external-links">External links</a></li>
-</ul>
-</nav>
+<p>A <strong>fork</strong> is a <strong>copy of a repository</strong> that will be stored under your user account. Forking a repository allows you to freely experiment with changes without affecting the original project. We can create a fork on Github by clicking the “fork” button in the top right corner of our repository web page. <img src="img/github-fork.png" /></p>
+<p>Most commonly, forks are used to either propose changes to someone else’s project or to use someone else’s project as a starting point for your own idea.</p>
+<p>When you are satisfied with your work, you can initiate a <strong><em>Pull Request</em></strong> to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the “New pull request” button!</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/github-pull-request.png" width="150" style="display: block; margin: auto;" /></p>
 </div>
-<p style="color: #ba5e00">
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_6.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
-</p>
-<h2 id="linking-to-internal-parts-of-your-site">Linking to internal parts of your site</h2>
-<p>Sometimes you’ll want to have a link to another page <em>in your website</em>. How? Use the format <code>[text](link_to_this_page.html)</code>.</p>
-<p>For example, if I want to link here to the Resources page, within my .Rmd that looks like this:</p>
-<pre><code>  Find more resources [here](resources.html). </code></pre>
-<p>Which, when built, looks like this:</p>
-<p>Find more resources <a href="resources.html">here</a>.</p>
-<h2 id="external-links">External links</h2>
-<p>Same thing, just add the full URL within the parentheses. For example, to link to UCSB’s home page that would look like:</p>
-<pre><code>  Learn more about [UCSB](https://www.ucsb.edu/).
-  </code></pre>
-<p>Which when built looks like this:</p>
-<p>Learn more about <a href="https://www.ucsb.edu/">UCSB</a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Next, click “compare across forks”, and use the dropdown menus to select your fork as the “head fork” and the original repository as the “base fork”.</p>
+<p><img src="img/github-compare-forks.png" /></p>
+<p>Then type a title and description for the changes you would like to make. By using GitHub’s <code>@mention</code> syntax in your Pull Request message, you can ask for feedback from specific people or teams.</p>
+<p>This workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
