@@ -2512,20 +2512,7 @@ Daily Materials
 <ul>
 <li><a href="#github-branches">GitHub branches</a>
 <ul>
-<li><a href="#collaborating-through-write-push-access">Collaborating through write / push access</a></li>
-</ul></li>
-<li><a href="#branches">Branches</a>
-<ul>
-<li><a href="#working-with-branches">Working with branches</a>
-<ul>
-<li><a href="#creating-a-new-branch">Creating a new branch</a></li>
-<li><a href="#using-a-branch">Using a branch</a></li>
-</ul></li>
-<li><a href="#github-hands-on">GitHub Hands-on</a>
-<ul>
-<li><a href="#our-asks">Our asks</a></li>
-<li><a href="#prompt">Prompt</a></li>
-</ul></li>
+<li><a href="#github-hands-on">GitHub Hands-on</a></li>
 </ul></li>
 <li><a href="#managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</a></li>
 <li><a href="#further-reading">Further reading</a>
@@ -2539,98 +2526,9 @@ Daily Materials
 </nav>
 </div>
 <h1 id="github-branches">GitHub branches</h1>
-<h2 id="collaborating-through-write-push-access">Collaborating through write / push access</h2>
-<p>When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (<code>git push</code>) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.</p>
-<h4 id="adding-collaborators-to-a-repository">Adding collaborators to a repository</h4>
-<ul>
-<li>Click on the repository</li>
-<li>On the top tabs, click <img src="img/github-repo-settings.png" /></li>
-<li>On the left pane, click <code>Manage access</code> and click on “Invite a Collaborator” to enter the usernames you want to add</li>
-</ul>
-<figure>
-<img src="img/github-collaborators.png" alt="collaborators" /><figcaption aria-hidden="true">collaborators</figcaption>
-</figure>
-<p>Under this collaborative workflow, we recommend to use git <code>branches</code> combined with pull requests to avoid conflicts and to track and discuss collaborators contributions.</p>
-<h1 id="branches">Branches</h1>
-<figure>
-<img src="img/atlassian_branches_sketch.png" alt="adapted from https://www.atlassian.com/git/tutorials/git-merge" /><figcaption aria-hidden="true">adapted from <a href="https://www.atlassian.com/git/tutorials/git-merge" class="uri">https://www.atlassian.com/git/tutorials/git-merge</a></figcaption>
-</figure>
-<p>What are branches? Well in fact nothing new, as the <code>master</code> is a branch. A branch represents an independent line of development, parallel to the master (branch).</p>
-<p>Why should you use branches? For 2 main reasons:</p>
-<ul>
-<li>We want the master to only keep a version of the code that is working</li>
-<li>We want to version the code we are developing to add/test new features (for now we mostly talk about feature branch) in our script without altering the version on the master.</li>
-</ul>
-<h2 id="working-with-branches">Working with branches</h2>
-<h3 id="creating-a-new-branch">Creating a new branch</h3>
-<p>In RStudio, you can create a branch using the git tab.</p>
-<ol type="1">
-<li>Click on the branch button</li>
-</ol>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-git-branch-create.png" width="60%" style="display: block; margin: auto;" /></p>
-</div>
-<ol start="2" type="1">
-<li>Fill the branch name in the new branch window; in this example, we are going to use <code>test</code> for the name; leave the other options as default and click create</li>
-</ol>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-git-branch-test.png" width="40%" style="display: block; margin: auto;" /></p>
-</div>
-<ol start="3" type="1">
-<li>you will be directly creating a local and remote branch and switch to it</li>
-</ol>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-git-branch-new.png" width="62%" style="display: block; margin: auto;" /></p>
-</div>
-<p>Congratulations you just created your first branch!</p>
-<p>Let us check on Github:</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/github-new-branch.png" width="45%" style="display: block; margin: auto;" /></p>
-</div>
-<p>As you can see, now there are two branches on our remote repository: - master - test</p>
-<h3 id="using-a-branch">Using a branch</h3>
-<p>Here there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the <code>test</code> branch instead of the master branch.</p>
+<p><a href="day2-github_branches.html"><strong>Materials</strong></a></p>
 <h2 id="github-hands-on">GitHub Hands-on</h2>
-<p>In this section we will be using the GitHub.com website and show you do not need to be a programmer to use version control and edit files on GitHub!</p>
-<p>Checks: If you have not already created a GitHub username, please do so now: - GitHub: <a href="https://github.com" class="uri">https://github.com</a> - Follow optional <a href="https://happygitwithr.com/github-acct.html">advice on choosing your username</a></p>
-<h3 id="our-asks">Our asks</h3>
-<p>As a Team of two: - Help each other, everyone is bringing different skills! Talk it out! - Listen to each other; avoid judgment and solutioneering. - Have fun!</p>
-<h3 id="prompt">Prompt</h3>
-<h4 id="person-1-owner">Person 1 (owner):</h4>
-<ul>
-<li>Create a (first) repository following these <a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">instructions</a> steps 1-6</li>
-</ul>
-<p><img src="img/github-dessert-repo.png" /></p>
-<ul>
-<li>Add Person 2 as collaborator following these <a href="https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository">instructions</a></li>
-</ul>
-<h4 id="person-2-modify-a-file">Person 2: Modify a file</h4>
-<ul>
-<li>Check your email to accept the invitation</li>
-<li>Go to the repository website (link is provided in the invitation)</li>
-<li>Click on pen at the top of the README.md file to edit it</li>
-</ul>
-<p><img src="img/github-readme-edit.png" /></p>
-<ul>
-<li>Replace the title (first line starting with <code>#</code>) with something better! Maybe <code>Favorite Desserts</code></li>
-<li>Add your name and your favorite dessert below the title: e.g. <code>- Julien: crepes</code></li>
-<li>Add a descriptive message</li>
-</ul>
-<p><img src="img/github-commit.png" /> - Commit your changes</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/github-commit-button.png" width="20%" /></p>
-</div>
-<h4 id="person-1-add-a-file">Person 1: add a file</h4>
-<p>Download this <a href="https://aurora.nceas.ucsb.edu/~brun/favorite_desserts.csv">csv file</a> about your favorite desserts to your computer</p>
-<ul>
-<li>Just drag and drop it on the Github web page of your repository to upload it</li>
-<li>Add a short message about the file e.g. <code>Adding dessert csv</code> &amp; hit <code>Commit changes</code></li>
-<li>Your have has been uploaded. Click on the filename to see it!</li>
-</ul>
-<p>You should have something similar to this repo: <a href="https://github.com/brunj7/favorite-desserts" class="uri">https://github.com/brunj7/favorite-desserts</a></p>
-<h4 id="bonus-person-2">Bonus Person 2:</h4>
-<p>Try to edit the csv file directly on GitHub!</p>
-<p><strong>No need to be a programmer to contribute to analytical workflows with GitHub!!</strong></p>
+<p>1.<a href="day2-handson_github_website.Rmd">GitHub branches using the website</a> 2.<a href="">GitHub branches using RStudio</a></p>
 <hr />
 <h1 id="managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</h1>
 <p><a href="projects_team.html"><strong>Materials</strong></a></p>

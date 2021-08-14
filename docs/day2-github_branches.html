@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Topic 9: Changing site fonts</title>
+  <title>EDS 214: Topic 8: Dropdown list from a navigation bar item</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Topic 9: Changing site fonts"/>
+  <meta property="og:title" content="EDS 214: Topic 8: Dropdown list from a navigation bar item"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Topic 9: Changing site fonts"/>
+  <meta property="twitter:title" content="EDS 214: Topic 8: Dropdown list from a navigation bar item"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 9: Changing site fonts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 8: Dropdown list from a navigation bar item"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 9: Changing site fonts","authors":[]}
+{"title":"Topic 8: Dropdown list from a navigation bar item","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 9: Changing site fonts</h1>
+<h1>Topic 8: Dropdown list from a navigation bar item</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2510,43 +2510,70 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#fonts-are-imported-and-specified-in-theme.css">Fonts are imported and specified in theme.css</a></li>
-<li><a href="#use-different-fonts">Use different fonts</a></li>
+<li><a href="#collaborating-through-write-push-access">Collaborating through write / push access</a></li>
+<li><a href="#branches">Branches</a>
+<ul>
+<li><a href="#working-with-branches">Working with branches</a>
+<ul>
+<li><a href="#creating-a-new-branch">Creating a new branch</a></li>
+<li><a href="#using-a-branch">Using a branch</a></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav>
 </div>
-<p style="color: #ba5e00">
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_9.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
-</p>
-<p>You are welcome to use any fonts you want on your website. Here, only using Google fonts is described (there are other methods for downloading fonts and adding, not included here).</p>
-<h2 id="fonts-are-imported-and-specified-in-theme.css">Fonts are imported and specified in theme.css</h2>
-<p>In your Project in RStudio, open the <code>theme.css</code> file.</p>
-<p>Near the top, you’ll see some lines that look like this:</p>
-<pre><code>/* Header font */
-@import url(&#39;https://fonts.googleapis.com/css2?family=Sanchez&amp;display=swap&#39;);
-
-/* Body font */
-@import url(&#39;https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&amp;display=swap&#39;);
-
-/* Code font (Roboto Mono) */
-@import url(&#39;https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&amp;display=swap&#39;);</code></pre>
-<p>Those are the import command to get 3 different Google fonts (Sanchez, Nunito Sans, and Roboto Mono). You can explore many different Google fonts <a href="https://fonts.google.com/">here</a>.</p>
-<h2 id="use-different-fonts">Use different fonts</h2>
+<h2 id="collaborating-through-write-push-access">Collaborating through write / push access</h2>
+<p>When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (<code>git push</code>) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.</p>
+<h4 id="adding-collaborators-to-a-repository">Adding collaborators to a repository</h4>
+<ul>
+<li>Click on the repository</li>
+<li>On the top tabs, click <img src="img/github-repo-settings.png" /></li>
+<li>On the left pane, click <code>Manage access</code> and click on “Invite a Collaborator” to enter the usernames you want to add</li>
+</ul>
+<figure>
+<img src="img/github-collaborators.png" alt="collaborators" /><figcaption aria-hidden="true">collaborators</figcaption>
+</figure>
+<p>Under this collaborative workflow, we recommend to use git <code>branches</code> combined with pull requests to avoid conflicts and to track and discuss collaborators contributions.</p>
+<h1 id="branches">Branches</h1>
+<figure>
+<img src="img/atlassian_branches_sketch.png" alt="adapted from https://www.atlassian.com/git/tutorials/git-merge" /><figcaption aria-hidden="true">adapted from <a href="https://www.atlassian.com/git/tutorials/git-merge" class="uri">https://www.atlassian.com/git/tutorials/git-merge</a></figcaption>
+</figure>
+<p>What are branches? Well in fact nothing new, as the <code>master</code> is a branch. A branch represents an independent line of development, parallel to the master (branch).</p>
+<p>Why should you use branches? For 2 main reasons:</p>
+<ul>
+<li>We want the master to only keep a version of the code that is working</li>
+<li>We want to version the code we are developing to add/test new features (for now we mostly talk about feature branch) in our script without altering the version on the master.</li>
+</ul>
+<h2 id="working-with-branches">Working with branches</h2>
+<h3 id="creating-a-new-branch">Creating a new branch</h3>
+<p>In RStudio, you can create a branch using the git tab.</p>
 <ol type="1">
-<li><p>Find a <a href="https://fonts.google.com/">Google Font</a> you like.</p></li>
-<li><p>Click on the font. To the right of the font example text, you should see an option to ‘+ Select this style’. Click the one(s) you want to select.</p></li>
-<li><p>That will probably bring up a side menu. If you <em>don’t</em> see that side menu, you can see your selected styles at any time by clicking on the top-right menu icon that is a grid with 3 squares and a plus sign - hovering reveals this is to ‘View your selected families’. In the <em>Use on the web</em> section of the side menu that appears, <strong>select the radio button for <span class="citation" data-cites="import">@import</span></strong>. It’ll look weird like this (for the Zen Dots Google Font):</p></li>
+<li>Click on the branch button</li>
 </ol>
-<pre><code>    &lt;style&gt;
-    @import url(&#39;https://fonts.googleapis.com/css2?family=Zen+Dots&amp;display=swap&#39;);
-    &lt;/style&gt; </code></pre>
-<ol start="4" type="1">
-<li><p>Copy everything BETWEEN (but excluding) the ending <code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code>tags</p></li>
-<li><p>Paste the <code>@import</code> line you’ve copied into the top section of <code>theme.css</code> near the other fonts imported there. It is now available for use in your theme.</p></li>
-<li><p>Update the css with your new fonts, replacing the existing font names with the name you’ve imported. You might want to use a Find &amp; Replace All if you want to make sure you’re updating a font everywhere it appears in the current theme.</p></li>
-<li><p>Repeat for as many different fonts as you want to update in your theme.</p></li>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-git-branch-create.png" width="60%" style="display: block; margin: auto;" /></p>
+</div>
+<ol start="2" type="1">
+<li>Fill the branch name in the new branch window; in this example, we are going to use <code>test</code> for the name; leave the other options as default and click create</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-git-branch-test.png" width="40%" style="display: block; margin: auto;" /></p>
+</div>
+<ol start="3" type="1">
+<li>you will be directly creating a local and remote branch and switch to it</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-git-branch-new.png" width="62%" style="display: block; margin: auto;" /></p>
+</div>
+<p>Congratulations you just created your first branch!</p>
+<p>Let us check on Github:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/github-new-branch.png" width="45%" style="display: block; margin: auto;" /></p>
+</div>
+<p>As you can see, now there are two branches on our remote repository: - master - test</p>
+<h3 id="using-a-branch">Using a branch</h3>
+<p>Here there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the <code>test</code> branch instead of the master branch.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

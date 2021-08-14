@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Topic 8: Dropdown list from a navigation bar item</title>
+  <title>EDS 214: GitHub branching and more only using their website</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Topic 8: Dropdown list from a navigation bar item"/>
+  <meta property="og:title" content="EDS 214: GitHub branching and more only using their website"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Topic 8: Dropdown list from a navigation bar item"/>
+  <meta property="twitter:title" content="EDS 214: GitHub branching and more only using their website"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 8: Dropdown list from a navigation bar item"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["GitHub branching and more only using their website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 8: Dropdown list from a navigation bar item","authors":[]}
+{"title":"GitHub branching and more only using their website","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 8: Dropdown list from a navigation bar item</h1>
+<h1>GitHub branching and more only using their website</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2506,23 +2506,79 @@ Daily Materials
 
 
 <div class="d-article">
-<p style="color: #ba5e00">
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_8.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
-</p>
-<p>If you look at this template, you’ll notice that some navigation bar items go directly to a single page, while the Modules item takes you to a dropdown menu.</p>
-<p>To create a dropdown menu of pages:</p>
-<ol type="1">
-<li><p>Create and save the pages as individual R Markdown documents as described <a href="module_1.html">here</a>.</p></li>
-<li><p>Open the <code>_site.yml</code> file. In the <code>navbar</code> section, create a menu with the pages as linked items using a structure like this:</p></li>
-</ol>
-<pre><code>   - text: &quot;Dropdown menu&quot;
-      menu:
-        - text: &quot;First dropdown item&quot;
-          href: item_1.html
-        - text: &quot;Second dropdown item&quot;
-          href: item_2.html</code></pre>
-<p>The example above would only work if the new pages were created as <code>item_1.Rmd</code> and <code>item_2.Rmd</code>, so that when the site is built the rendered <code>item_1.html</code> and <code>item_2.html</code> files exist in the <code>docs</code> output directory.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#our-asks">Our asks</a></li>
+<li><a href="#prompt">Prompt</a></li>
+</ul>
+</nav>
+</div>
+<p>In this section we will be using the GitHub.com website and show you do not need to be a programmer to use version control and edit files on GitHub, nor using branches</p>
+<p>Checks: If you have not already created a GitHub username, please do so now: - GitHub: <a href="https://github.com" class="uri">https://github.com</a> - Follow optional <a href="https://happygitwithr.com/github-acct.html">advice on choosing your username</a></p>
+<h3 id="our-asks">Our asks</h3>
+<p>As a Team of two: - Help each other, everyone is bringing different skills! Talk it out! - Listen to each other; avoid judgment and solutioneering. - Have fun!</p>
+<h3 id="prompt">Prompt</h3>
+<h4 id="person-1-owner">Person 1 (owner):</h4>
+<ul>
+<li>Create a repository following these <a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">instructions</a> steps 1-6</li>
+</ul>
+<p><img src="img/github-dessert-repo.png" /></p>
+<ul>
+<li>Add Person 2 as collaborator following these <a href="https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository">instructions</a></li>
+<li>Edit the README to:
+<ul>
+<li>Replace the title (first line starting with <code>#</code>) with something better! Maybe <code>Favorite Desserts</code></li>
+<li>Add your name and your favorite dessert below the title: e.g. <code>- Julien: crepes</code></li>
+</ul></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/github-readme_desserts.png" width="1248" /></p>
+</div>
+<h4 id="person-2-create-a-branch">Person 2: Create a branch</h4>
+<ul>
+<li>Check your email to accept the invitation</li>
+<li>Go to the repository website (link is provided in the invitation)</li>
+<li>Create a new branch named after your first name</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/github-create_branch.png" width="1148" /></p>
+</div>
+<ul>
+<li>Start editing the README.md by clicking on pen at the top of the README.md file to edit it</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/github-readme-edit.png" width="556" /></p>
+</div>
+<ul>
+<li>Add your name and your favorite dessert below the title: e.g. <code>- Sophia: chocolate</code></li>
+<li>Add a descriptive message</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/github-commit.png" width="531" /></p>
+</div>
+<ul>
+<li>Commit your changes</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/github-commit-button.png" width="20%" /></p>
+</div>
+<ul>
+<li>Create a pull request to merge those changes to the main repository</li>
+</ul>
+<h4 id="person-1-add-a-file">Person 1: add a file</h4>
+<p>Download this <a href="https://aurora.nceas.ucsb.edu/~brun/favorite_desserts.csv">csv file</a> about your favorite desserts to your computer</p>
+<ul>
+<li>Just drag and drop it on the Github web page of your repository to upload it</li>
+<li>Add a short message about the file e.g. <code>Adding dessert csv</code> &amp; hit <code>Commit changes</code></li>
+<li>Your have has been uploaded. Click on the filename to see it!</li>
+</ul>
+<p>You should have something similar to this repo: <a href="https://github.com/brunj7/favorite-desserts" class="uri">https://github.com/brunj7/favorite-desserts</a></p>
+<h4 id="bonus-person-2">Bonus Person 2:</h4>
+<p>Try to edit the csv file directly on GitHub!</p>
+<p><strong>No need to be a programmer to contribute to analytical workflows with GitHub!!</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

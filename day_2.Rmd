@@ -3,145 +3,22 @@ title: "Developing Analytical Workflows as a Team"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # GitHub branches
 
-## Collaborating through write / push access
-
-When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (`git push`) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.
-
-#### Adding collaborators to a repository 
-
-* Click on the repository
-* On the top tabs, click ![](img/github-repo-settings.png)
-* On the left pane, click `Manage access` and click on "Invite a Collaborator" to enter the usernames you want to add
-
-![collaborators](img/github-collaborators.png) 
-
-Under this collaborative workflow, we recommend to use git `branches` combined with pull requests to avoid conflicts and to track and discuss collaborators contributions.
-
-# Branches
-
-![adapted from https://www.atlassian.com/git/tutorials/git-merge](img/atlassian_branches_sketch.png)
-
-What are branches?  Well in fact nothing new, as the `master` is a branch. A branch represents an independent line of development, parallel to the master (branch). 
-
-Why should you use branches? For 2 main reasons:
-
-* We want the master to only keep a version of the code that is working
-* We want to version the code we are developing to add/test new features (for now we mostly talk about feature branch) in our script without altering the version on the master.
-
-## Working with branches
-
-### Creating a new branch
-
-In RStudio, you can create a branch using the git tab. 
-
-1. Click on the branch button
-
-```{r RStudio git pane branch, out.width='60%', fig.align='center', echo = FALSE}
-knitr::include_graphics("img/rstudio-git-branch-create.png")
-```
-
-2. Fill the branch name in the new branch window; in this example, we are going to use `test` for the name; leave the other options as default and click create 
-
-```{r RStudio git new branch window, out.width='40%', fig.align='center', echo = FALSE}
-knitr::include_graphics("img/rstudio-git-branch-test.png")
-```
-
-3. you will be directly creating a local and remote branch and switch to it
-
-```{r RStudio git new branch, out.width='62%', fig.align='center', echo = FALSE}
-knitr::include_graphics("img/rstudio-git-branch-new.png")
-```
-
-Congratulations you just created your first branch! 
-
-Let us check on Github:
-
-```{r RStudio github new branch, out.width='45%', fig.align='center', echo = FALSE}
-knitr::include_graphics("img/github-new-branch.png")
-```
-
-As you can see, now there are two branches on our remote repository: 
-- master
-- test
-
-### Using a branch
-
-Here there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the `test` branch instead of the master branch.
+[**Materials**](day2-github_branches.html)
 
 
 ## GitHub Hands-on 
 
-In this section we will be using the GitHub.com website and show you do not need to be a programmer to use version control and edit files on GitHub!
+1.[GitHub branches using the website](day2-handson_github_website.Rmd)
+2.[GitHub branches using RStudio]()
 
-Checks:
-If you have not already created a GitHub username, please do so now:
-- GitHub: https://github.com
-- Follow optional [advice on choosing your username](https://happygitwithr.com/github-acct.html)
-
-
-### Our asks
-
-As a Team of two:
-- Help each other, everyone is bringing different skills! Talk it out!
-- Listen to each other; avoid judgment and solutioneering.
-- Have fun!
-
-### Prompt 
-
-#### Person 1 (owner):
-
-- Create a (first) repository following these [instructions](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) steps 1-6
-
-![](img/github-dessert-repo.png)
-
-- Add Person 2 as collaborator following these [instructions](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)
-
-#### Person 2: Modify a file
-
-- Check your email to accept the invitation
-- Go to the repository website (link is provided in the invitation)
-- Click on pen at the top of the README.md file to edit it
-
-![](img/github-readme-edit.png)
-
-
-- Replace the title (first line starting with `#`) with something better! Maybe `Favorite Desserts`
-- Add your name and your favorite dessert below the title: e.g.  ` - Julien: crepes`
-- Add a descriptive message
-
-![](img/github-commit.png)
-- Commit your changes
-
-```{r commit-button, out.width="20%", echo=FALSE}
-knitr::include_graphics("img/github-commit-button.png")
-```
-
-
-#### Person 1: add a file
-
-Download this [csv file](https://aurora.nceas.ucsb.edu/~brun/favorite_desserts.csv) about your favorite desserts to your computer
-
-- Just drag and drop it on the Github web page of your repository to upload it
-- Add a short message about the file e.g. `Adding dessert csv` & hit `Commit changes`
-- Your have has been uploaded. Click on the filename to see it!
-
-You should have something similar to this repo: https://github.com/brunj7/favorite-desserts
-
-#### Bonus Person 2:
-
-Try to edit the csv file directly on GitHub! 
-
-
-**No need to be a programmer to contribute to analytical workflows with GitHub!!**
 
 
 ---
-
 
 # Managing data-driven projects as a team
 
