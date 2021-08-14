@@ -13,8 +13,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## GitHub Hands-on 
 
-1.[GitHub branches using the website](day2-handson_github_website.Rmd)
-2.[GitHub branches using RStudio]()
+1. [GitHub branches using the website](day2-handson_github_website.Rmd)
+2. [GitHub branches using RStudio]()
 
 
 
