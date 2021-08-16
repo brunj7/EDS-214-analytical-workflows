@@ -1,23 +1,41 @@
 ---
-title: "Topic 10: Inserting tables"
+title: "GitHub branches using RStudio"
 ---
 
-<p style="color: #ba5e00">
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_10.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
+## Is your fav' iconic !?!
 
-</p>
+Write and R script to compare the csv with your favorite desserts you modified previously with the top 42 most iconic American desserts 
 
-## Use the Visual Editor
+1. Create a new branch using RStudio
+2. Add a new script named `desserts_match_myinitials.R` 
+3. This script should read both csv files into R and try to determine if your favorite dessert is part of the most iconic desserts!
 
-If you want to create a table in your R Markdown from scratch that is easily editable (e.g., a table of Assignment due dates or something), it might be easiest to just make the thing manually right in your R Markdown document.
+You can download the iconic data here: <https://github.com/brunj7/EDS-214-analytical-workflows/data/iconic_desserts.csv>
 
-To do that, I strongly recommend using the RStudio Visual Editor (in RStudio versions \>= 1.4), which has an easy-to-use Table maker similar to what you'd see in Word or Google Docs.
+## Note
 
-1.  Open the .Rmd in which you want to add the table
-2.  Switch over to the visual editor by clicking on the compass-looking icon in the top right of your .Rmd screen, to the right of the 'Run' and 'Publish' buttons (hover text is "Switch to visual markdown editor")
-3.  In the Visual Editor menu, click on Table, then in the dropdown Menu click 'Insert Table'...and create & populate your new table like you would normally in non-markdown tools
+Here is how we created the iconic listing
 
-## Other options
+```{r getting the data, eval=FALSE}
+library(tidyverse)
+library(rvest)
 
-There are a bunch of different ways to add & format tables in R Markdown (see several of *many* options in David Keyes' post on [Making Beautiful Tables in R](https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/)). I think most of them are most useful when you're trying to make a finalized table with data in it, but if you really want to beautify your website tables there are options.
+# read the webpage code
+webpage <- read_html("https://www.eatthis.com/iconic-desserts-united-states/")
+
+# Extract the desserts lising
+dessert_elements<- html_elements(webpage, "h2")
+dessert_listing <- dessert_elements %>% 
+  html_text2() %>% # extracting the text associated with this type of elements of the webpage
+  as_tibble() %>% # make it a data frame
+  rename(dessert = value) %>% # better name for the column
+  head(.,-3) %>% # 3 last ones were not desserts 
+  rowid_to_column("rank") %>% # adding a column using the row number as proxy for the rank
+  write_csv("data/iconic_desserts.csv") # save it as csv
+
+```
+

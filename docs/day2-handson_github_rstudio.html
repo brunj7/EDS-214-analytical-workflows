@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Topic 10: Inserting tables</title>
+  <title>EDS 214: GitHub branches using RStudio</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Topic 10: Inserting tables"/>
+  <meta property="og:title" content="EDS 214: GitHub branches using RStudio"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Topic 10: Inserting tables"/>
+  <meta property="twitter:title" content="EDS 214: GitHub branches using RStudio"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 10: Inserting tables"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["GitHub branches using RStudio"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 10: Inserting tables","authors":[]}
+{"title":"GitHub branches using RStudio","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 10: Inserting tables</h1>
+<h1>GitHub branches using RStudio</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2510,24 +2510,41 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#use-the-visual-editor">Use the Visual Editor</a></li>
-<li><a href="#other-options">Other options</a></li>
+<li><a href="#is-your-fav-iconic">Is your fav’ iconic !?!</a></li>
+<li><a href="#note">Note</a></li>
 </ul>
 </nav>
 </div>
-<p style="color: #ba5e00">
-<p><b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_10.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!</p>
-</p>
-<h2 id="use-the-visual-editor">Use the Visual Editor</h2>
-<p>If you want to create a table in your R Markdown from scratch that is easily editable (e.g., a table of Assignment due dates or something), it might be easiest to just make the thing manually right in your R Markdown document.</p>
-<p>To do that, I strongly recommend using the RStudio Visual Editor (in RStudio versions &gt;= 1.4), which has an easy-to-use Table maker similar to what you’d see in Word or Google Docs.</p>
+<h2 id="is-your-fav-iconic">Is your fav’ iconic !?!</h2>
+<p>Write and R script to compare the csv with your favorite desserts you modified previously with the top 42 most iconic American desserts</p>
 <ol type="1">
-<li>Open the .Rmd in which you want to add the table</li>
-<li>Switch over to the visual editor by clicking on the compass-looking icon in the top right of your .Rmd screen, to the right of the ‘Run’ and ‘Publish’ buttons (hover text is “Switch to visual markdown editor”)</li>
-<li>In the Visual Editor menu, click on Table, then in the dropdown Menu click ‘Insert Table’…and create &amp; populate your new table like you would normally in non-markdown tools</li>
+<li>Create a new branch using RStudio</li>
+<li>Add a new script named <code>desserts_match_myinitials.R</code></li>
+<li>This script should read both csv files into R and try to determine if your favorite dessert is part of the most iconic desserts!</li>
 </ol>
-<h2 id="other-options">Other options</h2>
-<p>There are a bunch of different ways to add &amp; format tables in R Markdown (see several of <em>many</em> options in David Keyes’ post on <a href="https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/">Making Beautiful Tables in R</a>). I think most of them are most useful when you’re trying to make a finalized table with data in it, but if you really want to beautify your website tables there are options.</p>
+<p>You can download the iconic data here: <a href="https://github.com/brunj7/EDS-214-analytical-workflows/data/iconic_desserts.csv" class="uri">https://github.com/brunj7/EDS-214-analytical-workflows/data/iconic_desserts.csv</a></p>
+<h2 id="note">Note</h2>
+<p>Here is how we created the iconic listing</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rvest.tidyverse.org/'>rvest</a></span><span class='op'>)</span>
+
+<span class='co'># read the webpage code</span>
+<span class='va'>webpage</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://xml2.r-lib.org/reference/read_xml.html'>read_html</a></span><span class='op'>(</span><span class='st'>"https://www.eatthis.com/iconic-desserts-united-states/"</span><span class='op'>)</span>
+
+<span class='co'># Extract the desserts lising</span>
+<span class='va'>dessert_elements</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_element.html'>html_elements</a></span><span class='op'>(</span><span class='va'>webpage</span>, <span class='st'>"h2"</span><span class='op'>)</span>
+<span class='va'>dessert_listing</span> <span class='op'>&lt;-</span> <span class='va'>dessert_elements</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_text.html'>html_text2</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># extracting the text associated with this type of elements of the webpage</span>
+  <span class='fu'>as_tibble</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># make it a data frame</span>
+  <span class='fu'>rename</span><span class='op'>(</span>dessert <span class='op'>=</span> <span class='va'>value</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># better name for the column</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>.</span>,<span class='op'>-</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># 3 last ones were not desserts </span>
+  <span class='fu'>rowid_to_column</span><span class='op'>(</span><span class='st'>"rank"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># adding a column using the row number as proxy for the rank</span>
+  <span class='fu'>write_csv</span><span class='op'>(</span><span class='st'>"data/iconic_desserts.csv"</span><span class='op'>)</span> <span class='co'># save it as csv</span>
+</code></pre>
+</div>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

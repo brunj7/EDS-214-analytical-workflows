@@ -1,5 +1,5 @@
 ---
-title: "GitHub branching and more only using their website"
+title: "GitHub branches and more using GitHub website"
 ---
 
 ```{r setup, include=FALSE}
@@ -22,11 +22,13 @@ As a Team of two:
 - Listen to each other; avoid judgment and solutioneering.
 - Have fun!
 
-### Prompt 
+### Prompt
+
+We want to log the information about people favorite dessert using a repository.
 
 #### Person 1 (owner):
 
-- Create a repository following these [instructions](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) steps 1-6
+- Create a repository using the  following these [instructions](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) steps 1-6
 
 ![](img/github-dessert-repo.png)
 
@@ -80,8 +82,10 @@ Download this [csv file](https://aurora.nceas.ucsb.edu/~brun/favorite_desserts.c
 
 You should have something similar to this repo: https://github.com/brunj7/favorite-desserts
 
-#### Bonus Person 2:
+#### Bonus 
 
-Try to edit the csv file directly on GitHub! 
+Person 2: Try to edit the csv file directly on GitHub! 
+
+Person 1: Your turn!
 
 **No need to be a programmer to contribute to analytical workflows with GitHub!!**
