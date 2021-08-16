@@ -14,7 +14,7 @@ Write and R script to compare the csv with your favorite desserts you modified p
 2. Add a new script named `desserts_match_myinitials.R` 
 3. This script should read both csv files into R and try to determine if your favorite dessert is part of the most iconic desserts!
 
-You can download the iconic data here: <https://github.com/brunj7/EDS-214-analytical-workflows/data/iconic_desserts.csv>
+You can download the iconic data here: <https://github.com/brunj7/EDS-214-analytical-workflows/blob/main/data/iconic_desserts.csv>
 
 ## Note
 
