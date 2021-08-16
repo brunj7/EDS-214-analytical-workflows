@@ -56,11 +56,11 @@ Tentative daily schedule (subject to change):
 | 10:10am - 11:30am | *Interactive Session 1 (80 min)*                          |
 | 11:30am - 12:00am | *Flex time (30 min)*                                      |
 | 12:00am - 1:15pm  | *Lunch (75 min)*                                          |
-| 1:15pm - 2:15pm   | *Lecture 2 (60 min)*                                      |
-| 2:15pm - 2:25pm   | *Break 2 (10 min)*                                        |
-| 2:25pm - 3:25pm   | *Interactive Session 2 (60 min)*                          |
-| 3:25pm - 3:35pm   | *Break 2 (10 min)*                                        |
-| 3:35pm - 4:35pm   | *Group tasks + assignment time (60 min)*                  |
+| 1:15pm - 2:00pm   | *Lecture 2 (45 min)*                                      |
+| 2:00pm - 2:10pm   | *Break 2 (10 min)*                                        |
+| 2:10pm - 3:10pm   | *Interactive Session 2 (60 min)*                          |
+| 3:10pm - 3:20pm   | *Break 2 (10 min)*                                        |
+| 3:20pm - 4:30pm   | *Group projects and/or flex time (70 min)*                |
 
 
 ## Learning objectives

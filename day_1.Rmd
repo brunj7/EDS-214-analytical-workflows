@@ -6,6 +6,11 @@ title: "Reproducible & Collaborative Workflows"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Introduction
+
+[**A few words...**](https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&loop=false&delayms=3000)
+
+
 # Reproducible Workflows
 
 ## Lecture 1: Definitions and Concepts
