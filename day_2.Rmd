@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Managing data-driven projects as a team
 
-[**Materials**](projects_team.html)
+[**Materials**](day2-projects_team.html)
 
 
 
