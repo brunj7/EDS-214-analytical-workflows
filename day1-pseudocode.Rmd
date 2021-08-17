@@ -20,6 +20,7 @@ There are  conventions on how to use symbols to represent different parts of a w
 
 The main benefit for the project is the process and discussion as a team to develop the workflow. It will ensure that everybody is on the same page and has the opportunity to provide inputs on the project. This workflow should be updated regularly as the project evolves.
 
+[A few workflow examples](https://docs.google.com/presentation/d/e/2PACX-1vSEWK0Qrkg7ob-wBLebla5KHJuGCsezV502J1Sc00pZK24CJBFcp-0YOFVP-dtI-l8azsR-1Y5jluiz/pub?start=false&loop=false&delayms=60000)
 
 # Pseudocode
 
