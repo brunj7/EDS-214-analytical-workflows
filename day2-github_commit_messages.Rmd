@@ -1,0 +1,36 @@
+---
+title: "On good commit messages"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, fig.cap="https://xkcd.com/1296/"}
+knitr::include_graphics("img/git_commit_xkcd.png")
+```
+
+Commit messages are critical for others, including your future self, to understand the motivation behind the changes that were implemented. Combined into the history of your file and repository, those messages help to understand the content and its evolution over time
+
+So what is a good commit message? Well I think the answer actually starts with what is a good commit? Which actually begins when you are choosing how to group files during the staging.
+
+
+A good commit:
+
+- Incorporate changes that have **one** common purpose
+- Group files that need to be kept synchronized or that are working together towards this common purpose
+
+A good commit message:
+
+- Should be short (50-72 characters max)
+- Should be descriptive (what is the goal of those changes)
+- Use imperative mood (to match git default messages)
+
+Note: you can add a body to a commit message if you want to describe the content in greater details, but keep the first line (message) separated.
+
+
+## References
+
+- How to Write a Git Commit Message: https://chris.beams.io/posts/git-commit/
+
