@@ -30,3 +30,10 @@ This technique aims at developing a sequence of pragrammatical steps in a manner
 
 In this course, we will be focusing on the process more than the exact syntax to use, keeping the level of details at a level that provide more details than a flow chart.
 
+
+# Further reading
+
+- What is a flowchart: https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial
+- How to write pseudocode: https://www.wikihow.com/Write-Pseudocode
+- An Introduction to Writing Good Pseudocode:  https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7
+- How to write Pseudocode: A beginner’s guide https://blog.usejournal.com/how-to-write-pseudocode-a-beginners-guide-29956242698
