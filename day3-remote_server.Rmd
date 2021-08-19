@@ -53,7 +53,7 @@ To help with remote files management, the RStudio Server interface as few additi
 
 ## Connecting to MEDS Analytical Server
 
-1. Got to: <https://???.ucsb.edu/> 
+1. Got to: <http://taylor.bren.ucsb.edu/> 
 
 2. Select `Login to RStudio Server`
 
