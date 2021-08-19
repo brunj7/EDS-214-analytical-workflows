@@ -35,6 +35,10 @@ Adapted from Corey Johannsen: https://blog.newrelic.com/2017/10/31/mob-programmi
 - **Use a timer, but be ready to pause it:** We switch drivers every 20 - 60 minutes. However, we often wander off implementation into design discussions—it’s unavoidable—so this is when we pause the timer. This is another key guideline of our mob: the time you spend driving should be dedicated to writing the code that helps complete the task, not discussing design solutions.
 - **Set specific tasks for each session:** When our mob gathers for a session, we first agree on and create a checklist of the tasks we are going to complete, and order them by priority on a whiteboard. This ensures we are all focused on the same task and keeps us moving forward. Additionally, this keeps us aligned with Minimal Marketable Feature (MMF) work, which we can communicate with our engineering and product managers to assure them we’re completing tasks that align with developing small, self-contained features that demonstrate immediate customer value.
 
+### Aknowledgements
+
+This section reuses a lot of materials from an RMeetup organized by the Santa Barbara R Users group (https://github.com/R-Meetup-SB/hackathon-201806), including material prepared by Irene Steves.
+
 
 # A few more thoughts
 
@@ -48,6 +52,37 @@ Adapted from Corey Johannsen: https://blog.newrelic.com/2017/10/31/mob-programmi
 This is a big topic and will be highly influenced by the team you are working with both in terms of practices and tools used to manage the project. On the coding side, there is a lot to borrow from Agile development approach for scientist. In a nutshell: "put it out there fast and iterate". In other words to wait to try to have the perfect code or analysis before sharing it with your collaborators. It is more efficient to share and discuss an early / draft version, gather feedback and iterate.
 
 
-# Aknowledgements
 
-This section reuses a lot of materials from and RMetetup organized by the Santa Barbara R Users group (), including material prepared by Irene Steves.
+
+
+# Documentating things
+
+# The power of README
+
+# Code Commenting
+
+## Inline 
+
+## Functions
+
+# Leveraging Notebooks
+
+## A few thoughts on Notebooks and Scripts
+
+# Metadata
+
+## Human readable
+
+## Machine readable
+
+# What about your computing environment
+
+## Session info
+
+## Looking ahead
+
+### Containers
+
+### Data Provenance
+
+# Further reading

@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Documenting and sharing things</title>
+  <title>EDS 214: Sharing things</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Documenting and sharing things"/>
+  <meta property="og:title" content="EDS 214: Sharing things"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Documenting and sharing things"/>
+  <meta property="twitter:title" content="EDS 214: Sharing things"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Documenting and sharing things"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Sharing things"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Documenting and sharing things","authors":[]}
+{"title":"Sharing things","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Documenting and sharing things</h1>
+<h1>Sharing things</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2510,43 +2510,64 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#the-power-of-readme">The power of README</a></li>
-<li><a href="#code-commenting">Code Commenting</a>
+<li><a href="#scientific-products">Scientific products</a>
 <ul>
-<li><a href="#inline">Inline</a></li>
-<li><a href="#functions">Functions</a></li>
-</ul></li>
-<li><a href="#leveraging-notebooks">Leveraging Notebooks</a></li>
-<li><a href="#metadata">Metadata</a>
+<li><a href="#github-pages-the-r-markdown-family">GitHub pages &amp; the R Markdown family</a></li>
+<li><a href="#interactive-web-applications">Interactive web applications</a>
 <ul>
-<li><a href="#human-readable">Human readable</a></li>
-<li><a href="#machine-readable">Machine readable</a></li>
+<li><a href="#r-shiny">R Shiny <img style="float: right;width: 30px;" src=img/shiny_logo.png /></a></li>
+<li><a href="#html-widgets">Html widgets</a></li>
 </ul></li>
-<li><a href="#what-about-your-computing-environment">What about your computing environment</a>
+<li><a href="#plotly">plotly <img style="float: right;width: 60px;" src=img/logo-plotly.svg /></a></li>
+</ul></li>
+<li><a href="#code-repositories">Code Repositories</a>
 <ul>
-<li><a href="#session-info">Session info</a></li>
-<li><a href="#looking-ahead">Looking ahead</a>
-<ul>
-<li><a href="#containers">containers</a></li>
-<li><a href="#data-provenance">Data Provenance</a></li>
+<li><a href="#binder-jupyter">Binder &amp; jupyter <img style="float: right;width: 60px;" src=img/binder_logo.svg /></a></li>
+<li><a href="#citing-your-code">Citing your code</a></li>
 </ul></li>
-</ul></li>
+<li><a href="#data-repositories">Data Repositories</a></li>
+<li><a href="#you-as-an-author">You as an Author <img style="float: right;width: 35px;" src=img/orcid_logo.svg /></a></li>
 </ul>
 </nav>
 </div>
-<h1 id="the-power-of-readme">The power of README</h1>
-<h1 id="code-commenting">Code Commenting</h1>
-<h2 id="inline">Inline</h2>
-<h2 id="functions">Functions</h2>
-<h1 id="leveraging-notebooks">Leveraging Notebooks</h1>
-<h1 id="metadata">Metadata</h1>
-<h2 id="human-readable">Human readable</h2>
-<h2 id="machine-readable">Machine readable</h2>
-<h1 id="what-about-your-computing-environment">What about your computing environment</h1>
-<h2 id="session-info">Session info</h2>
-<h2 id="looking-ahead">Looking ahead</h2>
-<h3 id="containers">containers</h3>
-<h3 id="data-provenance">Data Provenance</h3>
+<h1 id="scientific-products">Scientific products</h1>
+<h2 id="github-pages-the-r-markdown-family">GitHub pages &amp; the R Markdown family</h2>
+<p>You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see <a href="https://rstudio.github.io/distill/website.html">here</a> for more), and it is also a great way to publish and share your note book with your team and the broader community.</p>
+<h2 id="interactive-web-applications">Interactive web applications</h2>
+<p>When you have complex data that you want to not only visualize but also to let the user interact with your data or customize parameters used in an analysis, interactive web applications are a great way to increase engagement. The good news is that you do not need to be a web developer anymore to spin such applications or dashboards.</p>
+<h3 id="r-shiny">R Shiny <img style="float: right;width: 30px;" src=img/shiny_logo.png /></h3>
+<p>R Shiny is a very interesting framework that lets you write R code that will then be translated into javascript for you and thus let you develop web application without having to learn any new programming language. Note that you will need a server to host the application.</p>
+<p>Check out this gallery of shiny apps: <a href="https://shiny.rstudio.com/gallery/" class="uri">https://shiny.rstudio.com/gallery/</a></p>
+<p>Getting started with Shiny: <a href="https://shiny.rstudio.com/tutorial/" class="uri">https://shiny.rstudio.com/tutorial/</a></p>
+<h3 id="html-widgets">Html widgets</h3>
+<p>Html widgets offer some great interactive data visualization. It is more limited that Shiny because you can not modify parameters to modify the data use, but it has the advantage that it does not need a server to run the widget and it can be inserted directly into an R Markdown.</p>
+<p>Here to get started: <a href="https://www.htmlwidgets.org/" class="uri">https://www.htmlwidgets.org/</a></p>
+<h2 id="plotly">plotly <img style="float: right;width: 60px;" src=img/logo-plotly.svg /></h2>
+<p><a href="https://plotly.com/"><code>plotly</code></a> enable you to develop great interactive data visualizations. It has the advantage to be available both in <a href="https://plotly.com/r/">R</a> and <a href="https://plotly.com/python/">Python</a> (and javascript). One great thing in R is that if you are a ggplot master, you can write your plot code using ggplot and transform it into a plotly plot with one line of code (<a href="https://plotly.com/ggplot2/getting-started/">here</a> for an example)</p>
+<p>Note there are also other python libraries to create interactive plots, here are a few: <a href="https://mode.com/blog/python-interactive-plot-libraries/" class="uri">https://mode.com/blog/python-interactive-plot-libraries/</a></p>
+<h1 id="code-repositories">Code Repositories</h1>
+<ul>
+<li>GitHub</li>
+<li>GitLab (open source!!): <a href="https://about.gitlab.com/" class="uri">https://about.gitlab.com/</a></li>
+<li>Bitbucket: <a href="https://bitbucket.org/product" class="uri">https://bitbucket.org/product</a></li>
+<li>…</li>
+</ul>
+<h2 id="binder-jupyter">Binder &amp; jupyter <img style="float: right;width: 60px;" src=img/binder_logo.svg /></h2>
+<p>Transform your <code>git</code> based repo into an interactive jupyter notebook <a href="https://mybinder.org/" class="uri">https://mybinder.org/</a>!! So other researchers can run your code without having to install anything!</p>
+<p><img src="https://media.giphy.com/media/9SIAXIrMh4AWBx4GBB/giphy.gif" /></p>
+<p><strong>Try it:</strong> <a href="https://github.com/syoh/my-awesome-project" class="uri">https://github.com/syoh/my-awesome-project</a></p>
+<h2 id="citing-your-code">Citing your code</h2>
+<p>Note that it is also possible to assign a <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI</a> to cite a specific version of your repository. For example, see <a href="https://guides.github.com/activities/citable-code/">here</a> for more information on how to link <a href="https://zenodo.org/">Zenodo</a> and GitHub.</p>
+<h1 id="data-repositories">Data Repositories</h1>
+<p>As we discussed earlier, code repositories are note necessarily the best home for your data sets, especially if their format is not text based and if their size is large (&gt;100MB). In addition data repositories offer better support to metadata standard that will help you to describe your data and thus make them more discoverable. Like code repositories, data repositories will version your data creating an history of your data sets that you can navigate. In addition, most of the data repositories will also offer to mint a DOI to cite your data (to be precise a specific version of your data) in a convenient and non ubiquitous way.</p>
+<p>We will talk more in depth about data repositories in the Fall, but for now we will mention to entryways to environmental data federation:</p>
+<ul>
+<li>DataONE: a federation of data repositories, <a href="https://www.dataone.org/" class="uri">https://www.dataone.org/</a></li>
+<li>re3data: a registry of research data repositories, <a href="https://www.re3data.org/" class="uri">https://www.re3data.org/</a></li>
+</ul>
+<p>Starting by searching data in your field and see where other researchers are archiving their data is often a great way to determine which data repository could be a good home for your own data.</p>
+<h1 id="you-as-an-author">You as an Author <img style="float: right;width: 35px;" src=img/orcid_logo.svg /></h1>
+<p>It is important to be able to reference to yourself as a researcher and as an author of your work in a non ambiguous manner. From their website: <em><a href="https://info.orcid.org/what-is-orcid/">ORCID</a> is a great way to create a persistent digital identifier (an ORCID iD) that you own and control, and that distinguishes you from every other researcher.</em> ORCID is also more and more use as an authentication system for many services (e.g. data repositories).</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
