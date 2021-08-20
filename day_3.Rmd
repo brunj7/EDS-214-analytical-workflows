@@ -13,9 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 
+---
 
+# Group project
 
-
+[**Group project**](group_project.html)
 
 
 

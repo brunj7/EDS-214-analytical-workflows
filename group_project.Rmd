@@ -1,0 +1,50 @@
+---
+title: "Group Project"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+We are going to build on the exercise we used the first day and work on implementing and refining the workflow we developed during that session.
+
+Here are the expectations:
+- By group of 3-4 collaborators
+- Find an awesome name for your group (one of the hardest [step](https://www.karlton.org/2017/12/naming-things-hard/))
+- Setup a shared GitHub repository
+- Use the MEDS server Taylor as your main computing resource
+- Use GitHub to manage your code development in a collaborative manner
+- Use shared folder on Taylor to manage your data `/courses/EDS214/my_group_name`
+- Document your work as you go!!
+- Use GitHub issues to track your work and discuss progress and tasks
+
+## Goal
+
+**Investigating the impact of Hurricane Hugo on Stream Chemistry data in Luquillo**
+
+The Luquillo Experimental Forest (LEF) has been a center of tropical forestry research for nearly a century. In addition, the LEF is a recreation site for over a half a million people per year, a water supply for approximately 20% of Puerto Rico's population, a regional center for electronic communication, and a refuge of Caribbean biodiversity. It is the goal of the USDA Forest Service and the University of Puerto to promote and maintain the forest's role as a center of active and dynamic scientific inquiry. However, to maintain the ecological integrity of the forest while balancing the many demands placed upon it's resources, certain protocol is required. This guide provides the major protocols that govern research in the LEF. These protocols are designed to help researchers protect the forests, obey the law, create an amiable and non-discriminatory work environment, and provide a historical record for future scientists
+
+Here for more information about the Luquillo site: https://lternet.edu/site/luquillo-lter/
+
+
+You are encouraged to define you own question around this topic as a team. To help you to get started, you could work towards reproducing this plot and extend the time-series to the latest available data:
+
+```{r plot, echo=FALSE}
+knitr::include_graphics("img/luq-ts-plot.png")
+```
+
+## Data
+
+Data are available from the Environmental Data Initiative ([EDI](https://environmentaldatainitiative.org/)) that is hosting most of the data of the Long Term Ecological Research ([LTER](https://lternet.edu/)) Network.
+
+
+
+### Chemistry of stream water from the Luquillo Mountains
+
+McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684
+
+
+## Reference
+
+Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358
