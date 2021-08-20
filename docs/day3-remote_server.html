@@ -2557,10 +2557,16 @@ Daily Materials
 <ul>
 <li>How to connect to a remote server</li>
 <li>Get familiar with RStudio server</li>
-<li>Get a short introduction to the command line</li>
+<li>Get a short introduction to the command line (CLI)</li>
 </ul>
 <h1 id="why-working-on-a-remote-machine">Why working on a remote machine?</h1>
-<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist: * <strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB) * <strong>Capacity</strong>: More <em>disk space</em> and generally* faster storage* (in highly optimized RAID arrays) * <strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em> * <strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></p>
+<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
+<ul>
+<li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
+<li><strong>Capacity</strong>: More <em>disk space</em> and generally <em>faster storage</em> (in highly optimized RAID arrays)</li>
+<li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
+<li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
+</ul>
 <p><strong>=&gt; The operating system is more likely going to be Linux!!</strong></p>
 <h1 id="collaborative-setup">Collaborative Setup</h1>
 <p>There are additional reasons of particular importance in a collaborative set up, such as a working group: - <strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!! - <strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p>
@@ -2684,17 +2690,16 @@ Daily Materials
 <img src="img/UnixFileLongFormat.png" alt="File permissions" /><figcaption aria-hidden="true">File permissions</figcaption>
 </figure>
 <ul>
-<li><p>Change permissions: <code>chmod</code></p></li>
-<li><p>Change ownership: <code>chown</code></p></li>
-<li><p>List files showing ownership and permissions: <code>ls -l</code></p>
-<pre><code>      brun@taylor:~/postdoc-training/data$ ls -l
-      total 1136
-      -rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
-      -rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
-      -rwxr-xr-x 1 brun scientist   23358 Jun 26 11:20 locale.csv
-      -rwxrwx--- 1 brun scientist    7543 Jun 26 11:20 refrens.csv
-      -rwx------ 1 brun scientist   46653 Jun 26 11:20 sample.csv         </code></pre></li>
-<li><p>Clear contents in terminal window: <code>clear</code></p></li>
+<li>Change permissions: <code>chmod</code></li>
+<li>Change ownership: <code>chown</code></li>
+<li>List files showing ownership and permissions: <code>ls -l</code></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:/courses/EDS214$</span> ls <span class="at">-l</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 3 brun      esmdomainusers 4096 Aug 20 04:49 data</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 2 katherine esmdomainusers 4096 Aug 18 18:32 example    </span></code></pre></div>
+<ul>
+<li>Clear contents in terminal window: <code>clear</code></li>
 </ul>
 <h3 id="exercise">Exercise</h3>
 <p>Navigate to the repo we created and inspect its content using the CLI</p>

@@ -13,14 +13,15 @@ In this lesson, you will learn:
 
 - How to connect to a remote server 
 - Get familiar with RStudio server
-- Get a short introduction to the command line
+- Get a short introduction to the command line (CLI)
 
 
 # Why working on a remote machine?
 
 Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
+
 * **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB) 
-* **Capacity**: More *disk space* and generally* faster storage* (in highly optimized RAID arrays)
+* **Capacity**: More *disk space* and generally *faster storage* (in highly optimized RAID arrays)
 * **Security**: Data are spread across *multiple drives* and have nightly *backups*
 * **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
 
@@ -187,6 +188,9 @@ More files/directories manipulations:
 * `mv`: Move a file
 * `rm` /`rmdir`: Remove a file / directory  **use those carefully, there is no return / Trash!!**
 
+
+
+
 ### Permissions
 
 All files have permissions and ownership.
@@ -196,14 +200,12 @@ All files have permissions and ownership.
 * Change permissions: `chmod`
 * Change ownership: `chown`
 * List files showing ownership and permissions: `ls -l`
-
-			brun@taylor:~/postdoc-training/data$ ls -l
-			total 1136
-			-rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
-			-rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
-			-rwxr-xr-x 1 brun scientist   23358 Jun 26 11:20 locale.csv
-			-rwxrwx--- 1 brun scientist    7543 Jun 26 11:20 refrens.csv
-			-rwx------ 1 brun scientist   46653 Jun 26 11:20 sample.csv 		
+```bash
+brun@taylor:/courses/EDS214$ ls -l
+total 16
+drwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data
+drwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example	
+```
 * Clear contents in terminal window: `clear`
 
 
