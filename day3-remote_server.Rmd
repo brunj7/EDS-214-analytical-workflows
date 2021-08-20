@@ -66,7 +66,7 @@ knitr::include_graphics("img/rstudio-server_login.png")
 
 4. Click on the `New Session` button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let's take a few minutes to experiment with the different options. 
 
-For this session, we are goin to select the `RStudio` option and hit `Start Session`.
+For this session, we are going to select the `RStudio` option and hit `Start Session`.
 
 ```{r}
 knitr::include_graphics("img/rstudio-server_session.png")
@@ -97,7 +97,7 @@ knitr::include_graphics("img/rstudio-server_packages.png")
 
 
 
-A user can also installed her/his own packages. Let's try to install the `remote` package that lets you install R packages directly from GitHub: `install.packages("remotes")`. Once done, note a new section that appeared on the Packages tab named `User Library`. Each of us have now its own copy ot the package installed (in this `R` folder we were talking about a few minutes ago). 
+A user can also installed her/his own packages. Let's try to install the `remote` package that lets you install R packages directly from GitHub: `install.packages("remotes")`. Once done, note a new section that appeared on the Packages tab named `User Library`. Each of us have now its own copy of the package installed (in this `R` folder we were talking about a few minutes ago). 
 
 ```{r}
 knitr::include_graphics("img/rstudio-server_packages-user.png")
