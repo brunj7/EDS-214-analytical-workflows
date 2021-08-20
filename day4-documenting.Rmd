@@ -15,6 +15,9 @@ README are not a new thing. They have been around computer projects since the ea
 
 # Code Commenting
 
+***Real Programmers don't comment their code. If it was hard to write, it should be hard to understand.*** \
+Tom Van Vleck, based on people he knew (https://multicians.org/thvv/realprogs.html)
+
 ## Inline 
 
 ## Functions
@@ -29,15 +32,14 @@ README are not a new thing. They have been around computer projects since the ea
 
 ## Machine readable
 
+## Data provenance & semantics
+
 # What about your computing environment
 
 ## Session info
 
-## Looking ahead
+## Containers
 
-### Containers
-
-### Data provenance & semantics
 
 # Further reading
 

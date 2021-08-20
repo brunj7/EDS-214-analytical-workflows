@@ -137,8 +137,8 @@
       "path": "day4-documenting.html",
       "title": "Documenting things",
       "author": [],
-      "contents": "\n\nContents\nThe power of README\nCode Commenting\nInline\nFunctions\n\nLeveraging Notebooks\nA few thoughts on Notebooks and Scripts\n\nMetadata\nHuman readable\nMachine readable\n\nWhat about your computing environment\nSession info\nLooking ahead\nContainers\nData provenance & semantics\n\n\nFurther reading\nAknowledgements\n\nThe power of README\nREADME are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.\nCode Commenting\nInline\nFunctions\nLeveraging Notebooks\nA few thoughts on Notebooks and Scripts\nMetadata\nHuman readable\nMachine readable\nWhat about your computing environment\nSession info\nLooking ahead\nContainers\nData provenance & semantics\nFurther reading\nAknowledgements\n\n\n\n",
-      "last_modified": "2021-08-19T21:59:27-07:00"
+      "contents": "\n\nContents\nThe power of README\nCode Commenting\nInline\nFunctions\n\nLeveraging Notebooks\nA few thoughts on Notebooks and Scripts\n\nMetadata\nHuman readable\nMachine readable\nData provenance & semantics\n\nWhat about your computing environment\nSession info\nContainers\n\nFurther reading\nAknowledgements\n\nThe power of README\nREADME are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.\nCode Commenting\nReal Programmers don’t comment their code. If it was hard to write, it should be hard to understand.\nTom Van Vleck, based on people he knew (https://multicians.org/thvv/realprogs.html)\nInline\nFunctions\nLeveraging Notebooks\nA few thoughts on Notebooks and Scripts\nMetadata\nHuman readable\nMachine readable\nData provenance & semantics\nWhat about your computing environment\nSession info\nContainers\nFurther reading\nAknowledgements\n\n\n\n",
+      "last_modified": "2021-08-19T22:43:59-07:00"
     },
     {
       "path": "index.html",
@@ -152,7 +152,7 @@
       "path": "README.html",
       "author": [],
       "contents": "\n\nContents\nEDS 214: Analytical Workflows and Scientific Reproducibility\nInstructor\nCourse description\n\n\nEDS 214: Analytical Workflows and Scientific Reproducibility\nInstructor\nJulien Brun (brun@nceas.ucsb.edu)\nCourse description\nThe generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document help to organize and document workflows are being used to ensure reproducibility and transparency of the results. This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses, as well as various software tools that help users to manage multi-step processes that requires tools for storing, managing and sharing workflows, code, documents and data.\n\nThis website template is made with distill by RStudio as an optional starting point for teachers in the Master of Environmental Data Science Program at the Bren School (UC Santa Barbara).\nClick here for a template preview.\n\n\n",
-      "last_modified": "2021-08-19T22:10:21-07:00"
+      "last_modified": "2021-08-19T22:43:59-07:00"
     },
     {
       "path": "resources.html",
