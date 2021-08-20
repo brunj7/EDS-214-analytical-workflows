@@ -80,7 +80,7 @@ The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to 
 gs4_deauth()
 sched <- read_sheet("https://docs.google.com/spreadsheets/d/1GckWJ4li6G2AyCjS8MrQSN6znym27aO9IPujdWfHc14/edit#gid=0")
 
-datatable(sched)
+datatable(sched, rownames=FALSE)
 
 ```
 ## Course requirements
