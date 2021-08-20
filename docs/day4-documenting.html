@@ -2511,7 +2511,8 @@ Daily Materials
 <h3>Contents</h3>
 <ul>
 <li><a href="#the-power-of-readme">The power of README</a></li>
-<li><a href="#code-commenting">Code Commenting</a>
+<li><a href="#making-your-code-readable">Making your code readable</a></li>
+<li><a href="#comments">Comments</a>
 <ul>
 <li><a href="#inline">Inline</a></li>
 <li><a href="#functions">Functions</a></li>
@@ -2537,26 +2538,58 @@ Daily Materials
 </ul>
 </nav>
 </div>
-<h1 id="the-power-of-readme">The power of README</h1>
+<h2 id="the-power-of-readme">The power of README</h2>
 <p>README are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.</p>
-<h1 id="code-commenting">Code Commenting</h1>
+<h2 id="making-your-code-readable">Making your code readable</h2>
+<p>It is important to make your code easy to read if you hope that others will reuse it. It starts with using a <strong>consistent syntax</strong> withing your scripts (at least within a project).</p>
+<ul>
+<li>Here is a good style guide for R: <a href="http://adv-r.had.co.nz/Style.html" class="uri">http://adv-r.had.co.nz/Style.html</a></li>
+<li>Syle guide for Python: <a href="https://www.python.org/dev/peps/pep-0008/" class="uri">https://www.python.org/dev/peps/pep-0008/</a></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> this</span></code></pre></div>
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre>
+</div>
+<p>There is also the <strong>visual aspect</strong> of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. <em>Indentation</em>, <em>spaces</em>, and <em>empty lines</em> should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions. Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, try to add four <code>-</code> or <code>#</code> after a line starting with one or several <code>#</code> in an R Script!</p>
+<h2 id="comments">Comments</h2>
 <p><strong><em>Real Programmers don’t comment their code. If it was hard to write, it should be hard to understand.</em></strong><br />
-Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/realprogs.html" class="uri">https://multicians.org/thvv/realprogs.html</a>)</p>
-<h2 id="inline">Inline</h2>
-<h2 id="functions">Functions</h2>
-<h1 id="leveraging-notebooks">Leveraging Notebooks</h1>
-<h2 id="a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</h2>
-<h1 id="metadata">Metadata</h1>
-<h2 id="human-readable">Human readable</h2>
-<h2 id="machine-readable">Machine readable</h2>
-<h2 id="data-provenance-semantics">Data provenance &amp; semantics</h2>
+_Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/realprogs.html)_" class="uri">https://multicians.org/thvv/realprogs.html)_</a></p>
+<p>Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not feel like this anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others.</p>
+<h3 id="inline">Inline</h3>
+<h3 id="functions">Functions</h3>
+<h2 id="leveraging-notebooks">Leveraging Notebooks</h2>
+<h3 id="a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</h3>
+<h2 id="metadata">Metadata</h2>
+<h3 id="human-readable">Human readable</h3>
+<h3 id="machine-readable">Machine readable</h3>
+<h3 id="data-provenance-semantics">Data provenance &amp; semantics</h3>
 <h1 id="what-about-your-computing-environment">What about your computing environment</h1>
 <h2 id="session-info">Session info</h2>
 <h2 id="containers">Containers</h2>
 <h1 id="licensing">Licensing</h1>
 <h1 id="further-reading">Further reading</h1>
 <h1 id="aknowledgements">Aknowledgements</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
