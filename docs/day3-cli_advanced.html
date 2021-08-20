@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Scientific Programming as a Team</title>
+  <title>EDS 214: Working on a remote server</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Scientific Programming as a Team"/>
+  <meta property="og:title" content="EDS 214: Working on a remote server"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Scientific Programming as a Team"/>
+  <meta property="twitter:title" content="EDS 214: Working on a remote server"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Scientific Programming as a Team"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Working on a remote server"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Scientific Programming as a Team","authors":[]}
+{"title":"Working on a remote server","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Scientific Programming as a Team</h1>
+<h1>Working on a remote server</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2510,60 +2510,176 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#code-review-feedback">Code <del>review</del> feedback</a></li>
-<li><a href="#pair-programming">Pair programming</a>
+<li><a href="#advanced-topics-at-the-command-line">Advanced Topics at the command line</a>
 <ul>
-<li><a href="#basic-principles-practices">Basic principles &amp; practices</a></li>
-<li><a href="#tips-and-tricks-for-effective-team-programming">Tips and Tricks for Effective Team Programming</a>
+<li><a href="#connecting-to-a-remote-server-via-ssh">Connecting to a remote server via <code>ssh</code></a></li>
+<li><a href="#unix-systems-are-multi-user">Unix systems are multi-user</a></li>
+<li><a href="#getting-help">Getting help</a></li>
+<li><a href="#finding-stuff">finding stuff</a></li>
+<li><a href="#getting-things-done">Getting things done</a>
 <ul>
+<li><a href="#some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</a></li>
+<li><a href="#process-management">Process management</a></li>
+<li><a href="#what-about-space">What about “space”</a></li>
+<li><a href="#history">History</a></li>
+</ul></li>
+<li><a href="#a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</a></li>
+<li><a href="#get-into-the-flow-with-pipes">Get into the flow, with pipes</a></li>
+<li><a href="#text-editing">Text editing</a>
+<ul>
+<li><a href="#some-editors">Some editors</a></li>
+</ul></li>
+<li><a href="#searching-advanced-utilities">Searching advanced utilities</a>
+<ul>
+<li><a href="#grep">grep</a></li>
+<li><a href="#lets-look-at-our-text-file">Let’s look at our text file</a></li>
+</ul></li>
+<li><a href="#create-custom-commands-with-alias">Create custom commands with “alias”</a></li>
+</ul></li>
 <li><a href="#aknowledgements">Aknowledgements</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#a-few-more-thoughts">A few more thoughts</a>
-<ul>
-<li><a href="#more-is-not-always-better">More is not always better</a></li>
-<li><a href="#project-management">Project management</a></li>
-</ul></li>
-<li><a href="#documentating-things">Documentating things</a></li>
 </ul>
 </nav>
 </div>
-<h3 id="code-review-feedback">Code <del>review</del> feedback</h3>
-<p>Code review is an <em>asynchronous</em> team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The “reviewer” should see this activity as a great way to learn from others.</p>
-<p>You actually have already practice this a little when practicing merging pull request!!</p>
-<h1 id="pair-programming">Pair programming</h1>
-<p>Pair programming is an <em>synchronous</em> team activity, where several programmers get to work together on the same piece of code. This is a great way to gain a better sense of what coding style people are using and better understand their way of solving challenges. It is also a great way to learn from each other. Generally, there is one Driver who is the person typing at the computer. The other role is called Navigator(s). The Navigator does not write code and focuses on finding solutions to the problem. Their use of computer should be limited to searching online for solutions.</p>
-<h2 id="basic-principles-practices">Basic principles &amp; practices</h2>
-<p>Adapted from Woody Zuill <a href="https://www.agileconnection.com/article/getting-started-mob-programming" class="uri">https://www.agileconnection.com/article/getting-started-mob-programming</a></p>
+<h1 id="advanced-topics-at-the-command-line">Advanced Topics at the command line</h1>
+<p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
+<h2 id="connecting-to-a-remote-server-via-ssh">Connecting to a remote server via <code>ssh</code></h2>
+<p>From the gitbash (MS Windows) or the terminal (Mac) type:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> taylor.bren.ucsb.edu</span></code></pre></div>
+<p>You will be prompted for your username and password.</p>
+<figure>
+<img src="img/aurora-ssh.png" alt="aurora_ssh" /><figcaption aria-hidden="true">aurora_ssh</figcaption>
+</figure>
+<p>You can also directly add your username:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> brun@taylor.bren.ucsb.edu</span></code></pre></div>
+<p>In this case, you will be only asked for your password as you already specified which user you want to connect with.</p>
+<h2 id="unix-systems-are-multi-user">Unix systems are multi-user</h2>
 <ul>
-<li><strong>Treat each other with kindness, consideration, and respect</strong> - makes group work more fun and sustainable</li>
-<li><strong>Driver/navigator pair programming adapted to work with the whole team</strong> - “For an idea to go from your head into the computer, it <em>must</em> go through someone else’s hands.” Speak at the highest level of abstraction that the driver (and the rest of the team) is able to digest at the moment</li>
-<li><strong>Timed Rotation</strong> - 20-60 minutes. We don’t require that everyone take the driver role; it is everyone’s choice whether to do so</li>
-<li><strong>Whole Team</strong> - every contributor to the project is an integral part of the whole team; when we don’t have the skills we need within the team, we find someone who does and invite them to work with us to accomplish the needed work</li>
-<li><strong>Reflect, Tune, and Adjust Frequently</strong> - based on agile principle: “At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.”</li>
+<li>Who else is logged into this machine? <code>who</code></li>
+<li>Who is logged into “this shell”? <code>whoami</code></li>
 </ul>
-<h2 id="tips-and-tricks-for-effective-team-programming">Tips and Tricks for Effective Team Programming</h2>
-<p>Adapted from Corey Johannsen: <a href="https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/" class="uri">https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/</a></p>
+<h2 id="getting-help">Getting help</h2>
 <ul>
-<li><strong>Suggest, don’t dictate:</strong> Instead of telling the driver what to type into their editor, we explain what we’re trying to accomplish and then help the driver find the best solution. We’ve found that drivers learn better this way, and they don’t just end up feeling like a stenographer. Whenever possible, we ask questions that lead the driver to discover the answers on their own.</li>
-<li><strong>Stay focused and be present:</strong> Shut your laptop and put your phone away. I’ve struggled with following this guideline—we all have—and I recognize that the distraction almost always affects the rest of the mob. We tell all our mob members to be present, and if you can’t, it’s OK to leave until you can be.</li>
-<li><strong>Use a timer, but be ready to pause it:</strong> We switch drivers every 20 - 60 minutes. However, we often wander off implementation into design discussions—it’s unavoidable—so this is when we pause the timer. This is another key guideline of our mob: the time you spend driving should be dedicated to writing the code that helps complete the task, not discussing design solutions.</li>
-<li><strong>Set specific tasks for each session:</strong> When our mob gathers for a session, we first agree on and create a checklist of the tasks we are going to complete, and order them by priority on a whiteboard. This ensures we are all focused on the same task and keeps us moving forward. Additionally, this keeps us aligned with Minimal Marketable Feature (MMF) work, which we can communicate with our engineering and product managers to assure them we’re completing tasks that align with developing small, self-contained features that demonstrate immediate customer value.</li>
+<li><code>&lt;command&gt; -h</code>, <code>&lt;command&gt; --help</code></li>
+<li><code>man</code>, <code>info</code>, <code>apropos</code>, <code>whereis</code></li>
+<li>Search the web!</li>
 </ul>
-<h3 id="aknowledgements">Aknowledgements</h3>
-<p>This section reuses a lot of materials from an RMeetup organized by the Santa Barbara R Users group (<a href="https://github.com/R-Meetup-SB/hackathon-201806" class="uri">https://github.com/R-Meetup-SB/hackathon-201806</a>), including material prepared by Irene Steves.</p>
-<h1 id="a-few-more-thoughts">A few more thoughts</h1>
-<h2 id="more-is-not-always-better">More is not always better</h2>
+<h2 id="finding-stuff">finding stuff</h2>
+<p>Show me my Rmarkdown files!</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-iname</span> <span class="st">&#39;*.Rmd&#39;</span></span></code></pre></div>
+<p>Which files are larger than 1GB?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G</span></code></pre></div>
+<p>With more details about the files:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G <span class="at">-ls</span></span></code></pre></div>
+<h2 id="getting-things-done">Getting things done</h2>
+<h3 id="some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</h3>
 <ul>
-<li>Adding more analysts late into a project can be counterproductive (<a href="https://en.wikipedia.org/wiki/Brooks%27s_law">Brooks’ law</a>)</li>
-<li>Overtime is not the solution as it will increase likeliness of errors and thus frustration. Try to focus on finding at what time of the day you are the most productive at coding instead</li>
+<li>Cancel (abort) a command: <code>Ctrl-c</code> Note: very different than Windows!!</li>
+<li>Stop (suspend) a command: <code>Ctrl-z</code></li>
+<li><code>Ctrl-z</code> can be used to suspend, then background a process</li>
 </ul>
-<h2 id="project-management">Project management</h2>
-<p>This is a big topic and will be highly influenced by the team you are working with both in terms of practices and tools used to manage the project. On the coding side, there is a lot to borrow from Agile development approach for scientist. In a nutshell: “put it out there fast and iterate”. In other words to wait to try to have the perfect code or analysis before sharing it with your collaborators. It is more efficient to share and discuss an early / draft version, gather feedback and iterate.</p>
-<hr />
-<h1 id="documentating-things">Documentating things</h1>
-<p><a href="day4-documenting.html"><strong>Materials</strong></a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="process-management">Process management</h3>
+<ul>
+<li>Like Windows Task Manager, OSX Activity Monitor</li>
+<li><strong><code>top</code></strong>, <code>ps</code>, <code>jobs</code> (hit <code>q</code> to get out!)</li>
+<li><code>kill</code> to delete an unwanted job or process</li>
+<li>Foreground and background: <code>&amp;</code></li>
+</ul>
+<h3 id="what-about-space">What about “space”</h3>
+<ul>
+<li>How much storage is available on this system? <code>df -h</code></li>
+<li>How much storage am “I” using overall? <code>du -hs &lt;folder&gt;</code></li>
+<li>How much storage am “I” using, by sub directory? <code>du -h &lt;folder&gt;</code></li>
+</ul>
+<h3 id="history">History</h3>
+<ul>
+<li>See your command history: <code>history</code></li>
+<li>Re-run last command: <code>!!</code> (pronounced “bang-bang”)</li>
+<li>Re-run 32th command: <code>!32</code></li>
+<li>Re-run 5th from last command: <code>!-5</code></li>
+<li>Re-run last command that started with ‘c’: <code>!c</code></li>
+</ul>
+<h2 id="a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</h2>
+<ul>
+<li><code>wc</code> count lines, words, and/or characters</li>
+<li><code>diff</code> compare two files for differences</li>
+<li><code>sort</code> sort lines in a file</li>
+<li><code>uniq</code> report or filter out repeated lines in a file</li>
+</ul>
+<h2 id="get-into-the-flow-with-pipes">Get into the flow, with pipes</h2>
+<figure>
+<img src="img/pipe_split.png" title="http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png" alt="stdin, stdout, stderr" /><figcaption aria-hidden="true"><code>stdin</code>, <code>stdout</code>, <code>stderr</code></figcaption>
+</figure>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="pp">*</span>.png <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="pp">*</span>.png <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="op">&gt;</span> pngcount.txt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> diff <span class="op">&lt;(</span><span class="fu">sort</span> file1.txt<span class="op">)</span> <span class="op">&lt;(</span><span class="fu">sort</span> file2.txt<span class="op">)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls foo <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code></pre></div>
+<ul>
+<li>note use of <code>*</code> as character wildcard for zero or more matches (same in Mac and Windows)</li>
+<li><code>?</code> matches single character; <code>_</code> is SQL query equivalent</li>
+</ul>
+<h2 id="text-editing">Text editing</h2>
+<h3 id="some-editors">Some editors</h3>
+<ul>
+<li><code>vim</code></li>
+<li><code>emacs</code></li>
+<li><code>nano</code></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano .bashrc</span></code></pre></div>
+<h2 id="searching-advanced-utilities">Searching advanced utilities</h2>
+<ul>
+<li><code>grep</code> search files for text</li>
+<li><code>sed</code> filter and transform text</li>
+<li><code>find</code> advanced search for files/directories</li>
+</ul>
+<h3 id="grep">grep</h3>
+<p>Show all lines containing “bug” in my R scripts</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep bug <span class="pp">*</span>.R</span></code></pre></div>
+<p>Now count the number of occurrences per file</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-c</span> bug <span class="pp">*</span>.R</span></code></pre></div>
+<p>Print the names of files that contain bug</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-l</span> bug <span class="pp">*</span>.R</span></code></pre></div>
+<h3 id="lets-look-at-our-text-file">Let’s look at our text file</h3>
+<ul>
+<li><code>cat</code> print file(s)</li>
+<li><code>head</code> print first few lines of file(s)</li>
+<li><code>tail</code> print last few lines of file(s)</li>
+<li><code>less</code> “pager” – view file interactively (type <code>q</code> to quit command)</li>
+<li><code>od --t</code> “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brun@aurora:~/data$ head <span class="at">-3</span> env.csv</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">EnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">1,*Loc</span> ID,-888,-888,-888,-888,-888,-888,-888,-888</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">1,10101,-888,-888,-888,-888,-888,-888,-888,-888</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brun@aurora:~/data$ head <span class="at">-3</span> env.csv <span class="kw">|</span> <span class="fu">od</span> <span class="at">-cx</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ex">0000000</span>   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>           <span class="ex">6e45</span>    4976    2c44    6f4c    4963    2c44    694d    446e</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="ex">0000020</span>   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>           <span class="ex">7461</span>    2c65    614d    4478    7461    2c65    6e41    506e</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="ex">0000040</span>   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>           <span class="ex">5450</span>    4d2c    5441    4d2c    7861    5441    4d2c    6e69</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="ex">0000060</span>   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>           <span class="ex">5441</span>    572c    6165    6874    7265    2c53    6f43    6d6d</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="ex">0000100</span>   e   n   t   s  <span class="dt">\r</span>  <span class="dt">\n</span>   1   ,   <span class="pp">*</span>   L   o   c       I   D   ,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>           <span class="ex">6e65</span>    7374    0a0d    2c31    4c2a    636f    4920    2c44</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="ex">0000120</span>   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>           <span class="ex">382d</span>    3838    2d2c    3838    2c38    382d    3838    2d2c</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="ex">0000140</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2c38    382d    3838    2d2c    3838    2c38    382d</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="ex">0000160</span>   8   8   ,   <span class="at">-</span>   8   8   8  <span class="dt">\r</span>  <span class="dt">\n</span>   1   ,   1   0   1   0   1</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2d2c    3838    0d38    310a    312c    3130    3130</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="ex">0000200</span>   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>           <span class="ex">2d2c</span>    3838    2c38    382d    3838    2d2c    3838    2c38</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="ex">0000220</span>   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>           <span class="ex">382d</span>    3838    2d2c    3838    2c38    382d    3838    2d2c</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="ex">0000240</span>   8   8   8   ,   <span class="at">-</span>   8   8   8  <span class="dt">\r</span>  <span class="dt">\n</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2c38    382d    3838    0a0d</span></code></pre></div>
+<h2 id="create-custom-commands-with-alias">Create custom commands with “alias”</h2>
+<p><code>alias lwc='ls *.jpg | wc -l'</code></p>
+<p>You can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. <code>.bashrc</code></p>
+<h1 id="aknowledgements">Aknowledgements</h1>
+<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

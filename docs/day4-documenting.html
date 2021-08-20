@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Scientific Programming as a Team</title>
+  <title>EDS 214: Documenting things</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Scientific Programming as a Team"/>
+  <meta property="og:title" content="EDS 214: Documenting things"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Scientific Programming as a Team"/>
+  <meta property="twitter:title" content="EDS 214: Documenting things"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Scientific Programming as a Team"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Documenting things"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Scientific Programming as a Team","authors":[]}
+{"title":"Documenting things","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Scientific Programming as a Team</h1>
+<h1>Documenting things</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2510,59 +2510,52 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#code-review-feedback">Code <del>review</del> feedback</a></li>
-<li><a href="#pair-programming">Pair programming</a>
+<li><a href="#the-power-of-readme">The power of README</a></li>
+<li><a href="#code-commenting">Code Commenting</a>
 <ul>
-<li><a href="#basic-principles-practices">Basic principles &amp; practices</a></li>
-<li><a href="#tips-and-tricks-for-effective-team-programming">Tips and Tricks for Effective Team Programming</a>
+<li><a href="#inline">Inline</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul></li>
+<li><a href="#leveraging-notebooks">Leveraging Notebooks</a>
 <ul>
+<li><a href="#a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</a></li>
+</ul></li>
+<li><a href="#metadata">Metadata</a>
+<ul>
+<li><a href="#human-readable">Human readable</a></li>
+<li><a href="#machine-readable">Machine readable</a></li>
+</ul></li>
+<li><a href="#what-about-your-computing-environment">What about your computing environment</a>
+<ul>
+<li><a href="#session-info">Session info</a></li>
+<li><a href="#looking-ahead">Looking ahead</a>
+<ul>
+<li><a href="#containers">Containers</a></li>
+<li><a href="#data-provenance-semantics">Data provenance &amp; semantics</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#further-reading">Further reading</a></li>
 <li><a href="#aknowledgements">Aknowledgements</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#a-few-more-thoughts">A few more thoughts</a>
-<ul>
-<li><a href="#more-is-not-always-better">More is not always better</a></li>
-<li><a href="#project-management">Project management</a></li>
-</ul></li>
-<li><a href="#documentating-things">Documentating things</a></li>
 </ul>
 </nav>
 </div>
-<h3 id="code-review-feedback">Code <del>review</del> feedback</h3>
-<p>Code review is an <em>asynchronous</em> team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The “reviewer” should see this activity as a great way to learn from others.</p>
-<p>You actually have already practice this a little when practicing merging pull request!!</p>
-<h1 id="pair-programming">Pair programming</h1>
-<p>Pair programming is an <em>synchronous</em> team activity, where several programmers get to work together on the same piece of code. This is a great way to gain a better sense of what coding style people are using and better understand their way of solving challenges. It is also a great way to learn from each other. Generally, there is one Driver who is the person typing at the computer. The other role is called Navigator(s). The Navigator does not write code and focuses on finding solutions to the problem. Their use of computer should be limited to searching online for solutions.</p>
-<h2 id="basic-principles-practices">Basic principles &amp; practices</h2>
-<p>Adapted from Woody Zuill <a href="https://www.agileconnection.com/article/getting-started-mob-programming" class="uri">https://www.agileconnection.com/article/getting-started-mob-programming</a></p>
-<ul>
-<li><strong>Treat each other with kindness, consideration, and respect</strong> - makes group work more fun and sustainable</li>
-<li><strong>Driver/navigator pair programming adapted to work with the whole team</strong> - “For an idea to go from your head into the computer, it <em>must</em> go through someone else’s hands.” Speak at the highest level of abstraction that the driver (and the rest of the team) is able to digest at the moment</li>
-<li><strong>Timed Rotation</strong> - 20-60 minutes. We don’t require that everyone take the driver role; it is everyone’s choice whether to do so</li>
-<li><strong>Whole Team</strong> - every contributor to the project is an integral part of the whole team; when we don’t have the skills we need within the team, we find someone who does and invite them to work with us to accomplish the needed work</li>
-<li><strong>Reflect, Tune, and Adjust Frequently</strong> - based on agile principle: “At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.”</li>
-</ul>
-<h2 id="tips-and-tricks-for-effective-team-programming">Tips and Tricks for Effective Team Programming</h2>
-<p>Adapted from Corey Johannsen: <a href="https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/" class="uri">https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/</a></p>
-<ul>
-<li><strong>Suggest, don’t dictate:</strong> Instead of telling the driver what to type into their editor, we explain what we’re trying to accomplish and then help the driver find the best solution. We’ve found that drivers learn better this way, and they don’t just end up feeling like a stenographer. Whenever possible, we ask questions that lead the driver to discover the answers on their own.</li>
-<li><strong>Stay focused and be present:</strong> Shut your laptop and put your phone away. I’ve struggled with following this guideline—we all have—and I recognize that the distraction almost always affects the rest of the mob. We tell all our mob members to be present, and if you can’t, it’s OK to leave until you can be.</li>
-<li><strong>Use a timer, but be ready to pause it:</strong> We switch drivers every 20 - 60 minutes. However, we often wander off implementation into design discussions—it’s unavoidable—so this is when we pause the timer. This is another key guideline of our mob: the time you spend driving should be dedicated to writing the code that helps complete the task, not discussing design solutions.</li>
-<li><strong>Set specific tasks for each session:</strong> When our mob gathers for a session, we first agree on and create a checklist of the tasks we are going to complete, and order them by priority on a whiteboard. This ensures we are all focused on the same task and keeps us moving forward. Additionally, this keeps us aligned with Minimal Marketable Feature (MMF) work, which we can communicate with our engineering and product managers to assure them we’re completing tasks that align with developing small, self-contained features that demonstrate immediate customer value.</li>
-</ul>
-<h3 id="aknowledgements">Aknowledgements</h3>
-<p>This section reuses a lot of materials from an RMeetup organized by the Santa Barbara R Users group (<a href="https://github.com/R-Meetup-SB/hackathon-201806" class="uri">https://github.com/R-Meetup-SB/hackathon-201806</a>), including material prepared by Irene Steves.</p>
-<h1 id="a-few-more-thoughts">A few more thoughts</h1>
-<h2 id="more-is-not-always-better">More is not always better</h2>
-<ul>
-<li>Adding more analysts late into a project can be counterproductive (<a href="https://en.wikipedia.org/wiki/Brooks%27s_law">Brooks’ law</a>)</li>
-<li>Overtime is not the solution as it will increase likeliness of errors and thus frustration. Try to focus on finding at what time of the day you are the most productive at coding instead</li>
-</ul>
-<h2 id="project-management">Project management</h2>
-<p>This is a big topic and will be highly influenced by the team you are working with both in terms of practices and tools used to manage the project. On the coding side, there is a lot to borrow from Agile development approach for scientist. In a nutshell: “put it out there fast and iterate”. In other words to wait to try to have the perfect code or analysis before sharing it with your collaborators. It is more efficient to share and discuss an early / draft version, gather feedback and iterate.</p>
-<hr />
-<h1 id="documentating-things">Documentating things</h1>
-<p><a href="day4-documenting.html"><strong>Materials</strong></a></p>
+<h1 id="the-power-of-readme">The power of README</h1>
+<p>README are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.</p>
+<h1 id="code-commenting">Code Commenting</h1>
+<h2 id="inline">Inline</h2>
+<h2 id="functions">Functions</h2>
+<h1 id="leveraging-notebooks">Leveraging Notebooks</h1>
+<h2 id="a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</h2>
+<h1 id="metadata">Metadata</h1>
+<h2 id="human-readable">Human readable</h2>
+<h2 id="machine-readable">Machine readable</h2>
+<h1 id="what-about-your-computing-environment">What about your computing environment</h1>
+<h2 id="session-info">Session info</h2>
+<h2 id="looking-ahead">Looking ahead</h2>
+<h3 id="containers">Containers</h3>
+<h3 id="data-provenance-semantics">Data provenance &amp; semantics</h3>
+<h1 id="further-reading">Further reading</h1>
+<h1 id="aknowledgements">Aknowledgements</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

@@ -3,7 +3,7 @@ title: "Working on a remote server"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
@@ -55,14 +55,60 @@ To help with remote files management, the RStudio Server interface as few additi
 
 1. Got to: <http://taylor.bren.ucsb.edu/> 
 
-2. Select `Login to RStudio Server`
+2. Enter your credentials
 
-3. Enter your credentials
+3. You are in!
 
-4. You are in!
+```{r}
+knitr::include_graphics("img/rstudio-server_login.png")
+```
+
+4. Click on the `New Session` button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let's take a few minutes to experiment with the different options. 
+
+For this session, we are goin to select the `RStudio` option and hit `Start Session`.
+
+```{r}
+knitr::include_graphics("img/rstudio-server_session.png")
+```
+
+**You should now see a very familiar interface :)  Except it is running on the server with a lot of resources at your fingertips!!**
+
+### File structure
+
+Let's explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the `home` folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: `R` and `H`
+
+```{r}
+knitr::include_graphics("img/rstudio-server_file-structure.png")
+```
+
+The `R` folder is where your local R packages will be installed, you can ignore it. The `H` is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.
+
+Let us make a folder named `github` by click on the `New Folder` button at the top of the tab. We will use this folder (also named `directory` in linux/unix terms) to clone any GitHub repository.
+
+### R packages
+
+If we go to the `Packages` tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them. 
 
 
-# Jupyter Hub
+```{r}
+knitr::include_graphics("img/rstudio-server_packages.png")
+```
+
+
+
+A user can also installed her/his own packages. Let's try to install the `remote` package that lets you install R packages directly from GitHub: `install.packages("remotes")`. Once done, note a new section that appeared on the Packages tab named `User Library`. Each of us have now its own copy ot the package installed (in this `R` folder we were talking about a few minutes ago). 
+
+```{r}
+knitr::include_graphics("img/rstudio-server_packages-user.png")
+```
+
+A few notes:
+
+- In this example we will have made a better choice to have the `remotes` package installed once at the system level
+- Some R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package
+- Installing an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries
+
+**Look now inside you `R` folder!!**
 
 
 # Command line
@@ -110,32 +156,16 @@ The CLI provides a direct way to interact with the Operating System, by typing i
 * Much "cheaper" to do work on a remote system (no need to
       transmit all the graphical stuff over the network)
       
-### Connecting to a remote server via `ssh`
-
-From the gitbash (MS Windows) or the terminal (Mac) type:
-
-```bash
-ssh aurora.nceas.ucsb.edu
-```
-You will be prompted for your username and password.
-
-![aurora_ssh](img/aurora-ssh.png)
-
-You can also directly add your username:
-
-```bash
-ssh brun@aurora.nceas.ucsb.edu
-```
-
-In this case, you will be only asked for your password as you already specified which user you want to connect with.
 
 
-** You can also use the terminal from RStudio!!**
+### The Terminal from RStudio
+
+You can access the command line directly from RStudio by using the `Terminal` tab next to your R console.
 
 ![](img/rstudio-terminal.png)
 
 
-## Navigating and managing files/directories in *NIX
+### Navigating and managing files/directories in *NIX
 
 * `pwd`: Know where you are
 * `ls`: List the content of the directory
@@ -167,7 +197,7 @@ All files have permissions and ownership.
 * Change ownership: `chown`
 * List files showing ownership and permissions: `ls -l`
 
-			brun@aurora:~/postdoc-training/data$ ls -l
+			brun@taylor:~/postdoc-training/data$ ls -l
 			total 1136
 			-rw----r-- 1 brun scientist 1062050 May 29  2007 AT_85_to_89.csv
 			-rwxrwxr-x 1 brun scientist   16200 Jun 26 11:20 env.csv
@@ -234,16 +264,16 @@ We recommend the following free software:
 
 ## scp
 
-The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from Aurora or from your local computer. Here is the basic syntax:
+The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from taylor or from your local computer. Here is the basic syntax:
 
 ```
 scp </source/path> <hostname:/path/to/destination/>
 ```
 
-Here is an example of my uploading the file `10min-loop.R` to Aurora from my laptop. The destination directory on Aurora is `/home/brun/github_com/NCEAS/nceas-training/materials/files`:
+Here is an example of my uploading the file `10min-loop.R` to taylor from my laptop. The destination directory on taylor is `/home/brun/github_com/NCEAS/nceas-training/materials/files`:
 
 ```bash
-scp 10min-loop.R brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/files
+scp 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/files
 ```
 
 
@@ -259,10 +289,12 @@ scp -r /path/to/source-folder user@server:/path/to/destination-folder/
 Here is an example uploading all the images in the `myplot` folder 
 
 ```bash
-scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-training/materials/images
+scp -r myplot brun@taylor.bren.ucsb.edu:/home/brun/plots
 ```
 
+### Your turn
 
+Upload files from your local machine to the server using the different techniques mentioned above, You can download the `10min-loop.R` file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R
 
 --- 
 
@@ -271,180 +303,7 @@ scp -r myplots brun@aurora.nceas.ucsb.edu:/home/brun/github_com/NCEAS/nceas-trai
 
 **We will not cover this during class, it is for your reference**. You will also have the opportunity to further practice and learn about the command line in EDS-215.
 
-## Unix systems are multi-user
-* Who else is logged into this machine?  `who`
-* Who is logged into "this shell"?  `whoami`
-
-
-
-## Getting help
-
-* `<command> -h`, `<command> --help`
-* `man`, `info`, `apropos`, `whereis`
-* Search the web!
-
-
-## finding stuff
-
-Show me my Rmarkdown files!
-
-```bash
-find . -iname '*.Rmd'
-```
-
-Which files are larger than 1GB?
-
-```bash
-find . -size +1G
-```
-With more details about the files:
-
-```bash
-find . -size +1G -ls
-```
-
-
-## Getting things done
-
-### Some useful, special commands using the Control key
-
-* Cancel (abort) a command: `Ctrl-c`  Note: very different than Windows!!
-* Stop (suspend) a command: `Ctrl-z`
-* `Ctrl-z` can be used to suspend, then background a process
-
-
-### Process management
-
-* Like Windows Task Manager, OSX Activity Monitor
-* **`top`**, `ps`, `jobs` (hit `q` to get out!)
-* `kill` to delete an unwanted job or process
-* Foreground and background: `&`
-
-
-### What about "space"
-
-* How much storage is available on this system?  `df -h`
-* How much storage am "I" using overall?  `du -hs <folder>`
-* How much storage am "I" using, by sub directory?  `du -h <folder>`
-
-### History
-
-* See your command history:  `history`
-* Re-run last command:  `!!`  (pronounced "bang-bang")
-* Re-run 32th command: `!32`
-* Re-run 5th from last command: `!-5`
-* Re-run last command that started with 'c': `!c`
-
-
-## A sampling of simple commands for dealing with files
-
-* `wc` count lines, words, and/or characters
-* `diff` compare two files for differences
-* `sort` sort lines in a file
-* `uniq` report or filter out repeated lines in a file
-
-
-## Get into the flow, with pipes 
-
-![`stdin`, `stdout`, `stderr`](img/pipe_split.png
-    "http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png")
-
-```bash
-$ ls *.png | wc -l
-$ ls *.png | wc -l > pngcount.txt
-$ diff <(sort file1.txt) <(sort file2.txt)
-$ ls foo 2>/dev/null
-```
-
-* note use of `*` as character wildcard for zero or more matches (same in Mac and Windows)
-* `?` matches single character; `_` is SQL query equivalent
-
-
-## Text editing
-
-### Some editors
-
-* `vim`
-* `emacs`
-* `nano`
-
-```bash
-$ nano .bashrc
-```
-
-## Searching advanced utilities
-
-* `grep` search files for text
-* `sed` filter and transform text
-* `find` advanced search for files/directories
-
-
-### grep
-
-Show all lines containing "bug" in my R scripts
-
-```bash
-$ grep bug *.R
-```
-
-Now count the number of occurrences per file
-
-```bash
-$ grep -c bug *.R
-```
-
-Print the names of files that contain bug
-
-```bash
-$ grep -l bug *.R
-```
-
-### Let's look at our text file
-
-*  `cat` print file(s)
-*  `head` print first few lines of file(s)
-*  `tail` print last few lines of file(s)
-*  `less` "pager" -- view file interactively (type `q` to quit command)
-*  `od --t` "octal dump" -- to view file's underlying binary/octal/hexadecimal/ASCII format
-
-   
-```bash
-$ brun@aurora:~/data$ head -3 env.csv
-EnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments
-1,*Loc ID,-888,-888,-888,-888,-888,-888,-888,-888
-1,10101,-888,-888,-888,-888,-888,-888,-888,-888
-
-$ brun@aurora:~/data$ head -3 env.csv | od -cx
-0000000   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D
-           6e45    4976    2c44    6f4c    4963    2c44    694d    446e
-0000020   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P
-           7461    2c65    614d    4478    7461    2c65    6e41    506e
-0000040   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n
-           5450    4d2c    5441    4d2c    7861    5441    4d2c    6e69
-0000060   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m
-           5441    572c    6165    6874    7265    2c53    6f43    6d6d
-0000100   e   n   t   s  \r  \n   1   ,   *   L   o   c       I   D   ,
-           6e65    7374    0a0d    2c31    4c2a    636f    4920    2c44
-0000120   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -
-           382d    3838    2d2c    3838    2c38    382d    3838    2d2c
-0000140   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -   8
-           3838    2c38    382d    3838    2d2c    3838    2c38    382d
-0000160   8   8   ,   -   8   8   8  \r  \n   1   ,   1   0   1   0   1
-           3838    2d2c    3838    0d38    310a    312c    3130    3130
-0000200   ,   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,
-           2d2c    3838    2c38    382d    3838    2d2c    3838    2c38
-0000220   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -
-           382d    3838    2d2c    3838    2c38    382d    3838    2d2c
-0000240   8   8   8   ,   -   8   8   8  \r  \n
-           3838    2c38    382d    3838    0a0d
-```
-
-
-## Create custom commands with "alias"
-```alias lwc='ls *.jpg | wc -l'```
-
-You can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. `.bashrc`
-
+[Advanced topics CLI](day3-cli_advanced.html)
 
 
 # Aknowledgements

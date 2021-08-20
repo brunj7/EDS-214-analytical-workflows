@@ -52,37 +52,9 @@ This section reuses a lot of materials from an RMeetup organized by the Santa Ba
 This is a big topic and will be highly influenced by the team you are working with both in terms of practices and tools used to manage the project. On the coding side, there is a lot to borrow from Agile development approach for scientist. In a nutshell: "put it out there fast and iterate". In other words to wait to try to have the perfect code or analysis before sharing it with your collaborators. It is more efficient to share and discuss an early / draft version, gather feedback and iterate.
 
 
-
-
+---
 
 # Documentating things
 
-# The power of README
+[**Materials**](day4-documenting.html)
 
-# Code Commenting
-
-## Inline 
-
-## Functions
-
-# Leveraging Notebooks
-
-## A few thoughts on Notebooks and Scripts
-
-# Metadata
-
-## Human readable
-
-## Machine readable
-
-# What about your computing environment
-
-## Session info
-
-## Looking ahead
-
-### Containers
-
-### Data Provenance
-
-# Further reading

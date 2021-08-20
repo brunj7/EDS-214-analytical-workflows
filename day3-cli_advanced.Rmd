@@ -1,0 +1,214 @@
+---
+title: "Working on a remote server"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Advanced Topics at the command line
+
+**We will not cover this during class, it is for your reference**. You will also have the opportunity to further practice and learn about the command line in EDS-215.
+
+## Connecting to a remote server via `ssh`
+
+From the gitbash (MS Windows) or the terminal (Mac) type:
+
+```bash
+ssh taylor.bren.ucsb.edu
+```
+You will be prompted for your username and password.
+
+![aurora_ssh](img/aurora-ssh.png)
+
+You can also directly add your username:
+
+```bash
+ssh brun@taylor.bren.ucsb.edu
+```
+
+In this case, you will be only asked for your password as you already specified which user you want to connect with.
+
+
+
+## Unix systems are multi-user
+* Who else is logged into this machine?  `who`
+* Who is logged into "this shell"?  `whoami`
+
+
+
+## Getting help
+
+* `<command> -h`, `<command> --help`
+* `man`, `info`, `apropos`, `whereis`
+* Search the web!
+
+
+## finding stuff
+
+Show me my Rmarkdown files!
+
+```bash
+find . -iname '*.Rmd'
+```
+
+Which files are larger than 1GB?
+
+```bash
+find . -size +1G
+```
+With more details about the files:
+
+```bash
+find . -size +1G -ls
+```
+
+
+## Getting things done
+
+### Some useful, special commands using the Control key
+
+* Cancel (abort) a command: `Ctrl-c`  Note: very different than Windows!!
+* Stop (suspend) a command: `Ctrl-z`
+* `Ctrl-z` can be used to suspend, then background a process
+
+
+### Process management
+
+* Like Windows Task Manager, OSX Activity Monitor
+* **`top`**, `ps`, `jobs` (hit `q` to get out!)
+* `kill` to delete an unwanted job or process
+* Foreground and background: `&`
+
+
+### What about "space"
+
+* How much storage is available on this system?  `df -h`
+* How much storage am "I" using overall?  `du -hs <folder>`
+* How much storage am "I" using, by sub directory?  `du -h <folder>`
+
+### History
+
+* See your command history:  `history`
+* Re-run last command:  `!!`  (pronounced "bang-bang")
+* Re-run 32th command: `!32`
+* Re-run 5th from last command: `!-5`
+* Re-run last command that started with 'c': `!c`
+
+
+## A sampling of simple commands for dealing with files
+
+* `wc` count lines, words, and/or characters
+* `diff` compare two files for differences
+* `sort` sort lines in a file
+* `uniq` report or filter out repeated lines in a file
+
+
+## Get into the flow, with pipes 
+
+![`stdin`, `stdout`, `stderr`](img/pipe_split.png
+    "http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png")
+
+```bash
+$ ls *.png | wc -l
+$ ls *.png | wc -l > pngcount.txt
+$ diff <(sort file1.txt) <(sort file2.txt)
+$ ls foo 2>/dev/null
+```
+
+* note use of `*` as character wildcard for zero or more matches (same in Mac and Windows)
+* `?` matches single character; `_` is SQL query equivalent
+
+
+## Text editing
+
+### Some editors
+
+* `vim`
+* `emacs`
+* `nano`
+
+```bash
+$ nano .bashrc
+```
+
+## Searching advanced utilities
+
+* `grep` search files for text
+* `sed` filter and transform text
+* `find` advanced search for files/directories
+
+
+### grep
+
+Show all lines containing "bug" in my R scripts
+
+```bash
+$ grep bug *.R
+```
+
+Now count the number of occurrences per file
+
+```bash
+$ grep -c bug *.R
+```
+
+Print the names of files that contain bug
+
+```bash
+$ grep -l bug *.R
+```
+
+### Let's look at our text file
+
+*  `cat` print file(s)
+*  `head` print first few lines of file(s)
+*  `tail` print last few lines of file(s)
+*  `less` "pager" -- view file interactively (type `q` to quit command)
+*  `od --t` "octal dump" -- to view file's underlying binary/octal/hexadecimal/ASCII format
+
+   
+```bash
+$ brun@aurora:~/data$ head -3 env.csv
+EnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments
+1,*Loc ID,-888,-888,-888,-888,-888,-888,-888,-888
+1,10101,-888,-888,-888,-888,-888,-888,-888,-888
+
+$ brun@aurora:~/data$ head -3 env.csv | od -cx
+0000000   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D
+           6e45    4976    2c44    6f4c    4963    2c44    694d    446e
+0000020   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P
+           7461    2c65    614d    4478    7461    2c65    6e41    506e
+0000040   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n
+           5450    4d2c    5441    4d2c    7861    5441    4d2c    6e69
+0000060   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m
+           5441    572c    6165    6874    7265    2c53    6f43    6d6d
+0000100   e   n   t   s  \r  \n   1   ,   *   L   o   c       I   D   ,
+           6e65    7374    0a0d    2c31    4c2a    636f    4920    2c44
+0000120   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -
+           382d    3838    2d2c    3838    2c38    382d    3838    2d2c
+0000140   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -   8
+           3838    2c38    382d    3838    2d2c    3838    2c38    382d
+0000160   8   8   ,   -   8   8   8  \r  \n   1   ,   1   0   1   0   1
+           3838    2d2c    3838    0d38    310a    312c    3130    3130
+0000200   ,   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,
+           2d2c    3838    2c38    382d    3838    2d2c    3838    2c38
+0000220   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -
+           382d    3838    2d2c    3838    2c38    382d    3838    2d2c
+0000240   8   8   8   ,   -   8   8   8  \r  \n
+           3838    2c38    382d    3838    0a0d
+```
+
+
+## Create custom commands with "alias"
+```alias lwc='ls *.jpg | wc -l'```
+
+You can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. `.bashrc`
+
+
+
+# Aknowledgements
+
+This section reuses a lot of materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
+

@@ -1,0 +1,46 @@
+---
+title: "Documenting things"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# The power of README
+
+README are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
+
+
+
+# Code Commenting
+
+## Inline 
+
+## Functions
+
+# Leveraging Notebooks
+
+## A few thoughts on Notebooks and Scripts
+
+# Metadata
+
+## Human readable
+
+## Machine readable
+
+# What about your computing environment
+
+## Session info
+
+## Looking ahead
+
+### Containers
+
+### Data provenance & semantics
+
+# Further reading
+
+# Aknowledgements
+
+

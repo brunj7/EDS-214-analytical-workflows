@@ -41,6 +41,8 @@ Note there are also other python libraries to create interactive plots, here are
 - Bitbucket: https://bitbucket.org/product
 - ...
 
+**Don't forget to provide information about the versions of software and librairies that were used when running this specific analysis** 
+
 ## Binder & jupyter <img style="float: right;width: 60px;" src=img/binder_logo.svg />
 
 Transform your `git` based repo into an interactive jupyter notebook <https://mybinder.org/>!! So other researchers can run your code without having to install anything!
