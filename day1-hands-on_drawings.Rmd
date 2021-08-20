@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### A few things to know:
 
-- Table structures are different => only some variables / columns overlap maong teh different sites
+- Table structures are different => only some variables / columns overlap among the different sites
 - Units used among the various sites are different
 - Period covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap
 
