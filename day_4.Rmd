@@ -37,7 +37,7 @@ Adapted from Corey Johannsen: https://blog.newrelic.com/2017/10/31/mob-programmi
 
 ### Aknowledgements
 
-This section reuses a lot of materials from an RMeetup organized by the Santa Barbara R Users group (https://github.com/R-Meetup-SB/hackathon-201806), including material prepared by Irene Steves.
+This section reuses a lot of materials from an R Meetup organized by the Santa Barbara R Users group (https://github.com/R-Meetup-SB/hackathon-201806), including material prepared by Irene Steves.
 
 
 # A few more thoughts

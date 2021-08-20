@@ -27,7 +27,7 @@ library(rvest)
 # read the webpage code
 webpage <- read_html("https://www.eatthis.com/iconic-desserts-united-states/")
 
-# Extract the desserts lising
+# Extract the desserts listing
 dessert_elements<- html_elements(webpage, "h2")
 dessert_listing <- dessert_elements %>% 
   html_text2() %>% # extracting the text associated with this type of elements of the webpage

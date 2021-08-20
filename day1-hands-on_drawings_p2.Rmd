@@ -17,7 +17,7 @@ knitr::include_graphics("img/luq-map-all.png")
 
 We found data for additional chemistry measurements while skimming through the database :)
 
-We now want to be able to produce the follwing plot
+We now want to be able to produce the following plot
 
 ```{r plot, echo=FALSE}
 knitr::include_graphics("img/luq-ts-plot-all.png")
