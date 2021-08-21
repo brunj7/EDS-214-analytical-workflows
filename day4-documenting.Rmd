@@ -178,7 +178,7 @@ Try adding the Roxygen Skeleton to this function and fill all the information yo
 
 This topic will be the focus of our Fall course [EDS-213](https://docs.python-guide.org/writing/documentation/). This a very important topic for scientific reproducibility and for today we will be only provide a partial overview of this broader topic.
 
-```{r, fig.cap="Data life cycle, DataONE"}
+```{r, fig.cap="Data life cycle, DataONE", out.width="150%", echo=FALSE}
 knitr::include_graphics("img/DLC.png")
 ```
 
@@ -219,7 +219,7 @@ There are a number of environmental **metadata standards** (think, templates) th
 
 Another important and related aspect and also active field of research is **data semantics**. Often data sets store complex information and concepts that can be describe more of less accurately. Let's take an example, you have receive a csv file storing a table with several variables about a fish stock assessment. One of the variable is named "length". However there are many ways to measure the length of a fish. Which one is it? 
 
-```{r}
+```{r, echo=FALSE}
 knitr::include_graphics("img/fish_length.png")
 ```
 Data semantics aims at clearly identify those concepts relying on vocabularies and ontologies, such as [ENVO](http://www.obofoundry.org/ontology/envo.html) in environmental sciences. In addition, it enables the leverage relations between those concepts to help with (data) discovery.
