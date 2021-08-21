@@ -12,33 +12,50 @@ library(reticulate)
 
 README are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
 
+Good types of information to have on a README:
+
+- Title  capturing the essence of the project
+- A short explanation of the goal / purpose
+- How to install / where to start
+- A quick demo on how to use the content (can be a link to another document as well)
+- What to do if a bug is spotted
+- How to contribute
+- Licensing 
+- Aknowledgements of authors, contributors, sponsors or other related work 
+
+Adding images,short videos / animations can make a README more engaging. 
+
+For your inspiration here is a interesting template: https://github.com/navendu-pottekkat/awesome-readme/tree/master
+
+Note that when you start an R package with the `usethis` package, a README will be created for you with all the relevant sections for such type of project.
 
 
 ## Making your code readable
 
-It is important to make your code easy to read if you hope that others will reuse it. It starts with using a **consistent syntax** withing your scripts (at least within a project). 
+It is important to make your code easy to read if you hope that others will reuse it. It starts with using a **consistent style** withing your scripts (at least within a project). 
 
 - Here is a good style guide for R: http://adv-r.had.co.nz/Style.html
-- Syle guide for Python: https://www.python.org/dev/peps/pep-0008/
+- Style guide for Python: https://www.python.org/dev/peps/pep-0008/
 
 ```{python Zen of Python, echo=TRUE}
 import this
 ```
 
 
-There is also the **visual aspect** of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. _Indentation_, _spaces_, and _empty lines_ should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions.  Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, try to add four `-` or `#` after a line starting with one or several `#` in an R Script! 
+There is also the **visual aspect** of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. _Indentation_, _spaces_, and _empty lines_ should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions.  Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, _try to add four `-` or `#` after a line starting with one or several `#` in an R Script!_
+
 
 ## Comments
 
 ***Real Programmers don't comment their code. If it was hard to write, it should be hard to understand.*** \
 _Tom Van Vleck, based on people he knew (https://multicians.org/thvv/realprogs.html)_
 
-Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that comments should work in complement of the code and should not being seen as work around vague naming conventions of variables or functions.
+Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that **comments should work in complement of the code** and should not being seen as work around vague naming conventions of variables or functions.
 
 ```{r , eval=FALSE}
 x <- 9.81  #  gravitational acceleration
 
-gravity_acc <- 9.81  # earth gravitational acceleration
+gravity_acc <- 9.81  #  gravitational acceleration
 ```
 
 
@@ -67,15 +84,63 @@ It does not matter if you are using a script or notebook. It is important to pro
 
 Other thoughts:
 
-- It is OK to state (what seems) the obvious
-- Try to keep it to the point
+- It is OK to state (what seems) the obvious (some might disagree with this statement)
+- Try to keep comments to the point and short
 
 
 
 ### Functions
 
+Both Python and R have conventions on how to document functions. Adopting those conventions will help you to make your code readable but also to automate part of the documentation development.
+
+#### Roxygen2
+
+The goal of roxygen2 is to make documenting your code as easy as possible. It can dynamically inspect the objects that it’s documenting, so it can automatically add data that you’d otherwise have to write by hand.
+
+How do we insert it? Make sure you cursor is inside the function you want to document and from RStudio Menu _Code -> Insert Roxygen Skeleton_
+
+Example:
+
+```{r}
+#' Add together two numbers
+#'
+#' @param x A number
+#' @param y A number
+#' @return The sum of \code{x} and \code{y}
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+add2 <- function(x, y) {
+  x + y
+}
+```
+
+Try it! 
+- Copy the function (without the documentation) in a new script 
+- Add a third parameter to the function such as it sums 3 numbers
+- Add the Roxygen skeleton
+- Fill it to best describe your function
+
+Note that when you are developing an R package, the Roxygen skeleton can be leveraged to develop the help pages of your package so you only have one place to update and the help will synchronize automatically.
+
+#### Python Doctring
+
+A docstring is a string literal that occurs as the first statement in a module,  function, class, or method definition. Such a docstring becomes the `__doc__` special attribute of that object.
 
 
+```{python, eval=FALSE}
+def complex(real=0.0, imag=0.0):
+    """Form a complex number.
+
+    Keyword arguments:
+    real -- the real part (default 0.0)
+    imag -- the imaginary part (default 0.0)
+    """
+    if imag == 0.0 and real == 0.0:
+        return complex_zero
+```
+
+Here for more: https://www.python.org/dev/peps/pep-0257/
 
 
 
@@ -83,20 +148,66 @@ Other thoughts:
 
 ### A few thoughts on Notebooks and Scripts
 
+
+---
+
 ## Hands-on
 
-Let's try to improve the readability and documentation of this repository: <https://github.com/brunj7/better-comments>
+### Commenting
 
-Follow the instructions on the README
+Let's try to improve the readability and documentation of this repository: <https://github.com/brunj7/better-comments>. Follow the instructions on the README
 
+For inspiration, you can check out the APOLLO 11 code from 1969 <https://github.com/chrislgarry/Apollo-11>!!
+
+### Documenting
+
+```{r, eval=FALSE}
+getPercent <- function( value, pct ) {
+    result <- value * ( pct / 100 )
+    return( result )
+}
+```
+
+Try adding the Roxygen Skeleton to this function and fill all the information you think is necessary to document the function
+
+
+
+---
 
 ## Metadata
 
-### Human readable
+This topic will be the focus of our Fall course [EDS-213](https://docs.python-guide.org/writing/documentation/). This a very important topic for scientific reproducibility and for today we will be only provide a partial overview of this broader topic.
 
-### Machine readable
+```{r, fig.cap="Data life cycle, DataONE"}
+knitr::include_graphics("img/DLC.png")
+```
 
-### Data provenance & semantics
+
+
+
+Metadata (data about data) is an important part of the data life cycle because it enables data reuse long after the original collection. The goal is to have enough information for the researcher to understand the data, interpret the data, and then re-use the data in another study.
+
+Here are good questions to answer with your metadata:
+
+- What was measured?
+- Who measured it?
+- When was it measured?
+- Where was it measured?
+- How was it measured?
+- How is the data structured?
+- Why was the data collected?
+- Who should get credit for this data (researcher AND funding agency)?
+- How can this data be reused (licensing)?
+
+How do you organize all this information? You could use a free form format, like a README file or spreadsheet. But there is also great advantage to use a more standardized way that will make the content not only **Human readable but also machine readable**. This will enhance the data discovery as specific information will be potentially tagged or attributed to specific aspect of your data (e.g. spatial or temporal coverage, taxonomy, ...).
+
+There are a number of environmental **metadata standards** (think, templates) that you could use, including the [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/), [Geospatial Metadata Standards](https://www.fgdc.gov/metadata/iso-standards) like ISO 19115 and ISO 19139, the [Biological Data Profile (BDP)](https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/biometadata/biodatap.pdf), [Dublin Core](https://dublincore.org/), [Darwin Core](https://dwc.tdwg.org/), [PREMIS](https://www.loc.gov/standards/premis/), the [Metadata Encoding and Transmission Standard (METS)](http://www.loc.gov/standards/mets/), and the list goes on and on. 
+
+
+## Data provenance & semantics
+
+Data provenance is tracing the origin of a data set to the raw-data that were used as input of the processing / Analysis that led to the creation of this data set. It can be done more or less formally and this is an active area of research. For today we will be focusing on capturing the information about the data you are collecting. Here are a set of good questions to help you in that process:
+
 
 
 
@@ -110,9 +221,15 @@ Here is also good set of instructions on how to make this happen on a GitHub rep
 
 Note that for content (such as this course), there is also another type of licensing that can be used: https://creativecommons.org/licenses/
 
+
 ## Further Reading
 
-- Python Hichhiker's guide: https://docs.python-guide.org/writing/style/
+- Awesome README: https://towardsdatascience.com/how-to-write-an-awesome-readme-68bf4be91f8b
+- How to write a great README: https://x-team.com/blog/how-to-write-a-great-readme/
+- Python Hichhiker's guide: 
+  - style: https://docs.python-guide.org/writing/style/
+  - documentation: https://docs.python-guide.org/writing/documentation/
+- Documenting Python Code: A Complete Guide: https://realpython.com/documenting-python-code/
 - Roxygen2: https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html
 - Introduction to Software Engineering by Jason Coposky: https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf
 - Functional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming
@@ -120,6 +237,10 @@ Note that for content (such as this course), there is also another type of licen
 - https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages
 - http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language
 
+
+## Acknowledgements
+
+Large portion of this material have been adapted from NCEAS Reproducible Research Techniques for Synthesis course <https://learning.nceas.ucsb.edu/2021-02-RRCourse/> 
 
 
 
