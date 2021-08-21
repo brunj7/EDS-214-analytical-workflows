@@ -2514,6 +2514,7 @@ Daily Materials
 <li><a href="#making-your-code-readable">Making your code readable</a></li>
 <li><a href="#comments">Comments</a>
 <ul>
+<li><a href="#header">Header</a></li>
 <li><a href="#inline">Inline</a></li>
 <li><a href="#functions">Functions</a></li>
 </ul></li>
@@ -2521,20 +2522,15 @@ Daily Materials
 <ul>
 <li><a href="#a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</a></li>
 </ul></li>
+<li><a href="#hands-on">Hands-on</a></li>
 <li><a href="#metadata">Metadata</a>
 <ul>
 <li><a href="#human-readable">Human readable</a></li>
 <li><a href="#machine-readable">Machine readable</a></li>
 <li><a href="#data-provenance-semantics">Data provenance &amp; semantics</a></li>
 </ul></li>
-<li><a href="#what-about-your-computing-environment">What about your computing environment</a>
-<ul>
-<li><a href="#session-info">Session info</a></li>
-<li><a href="#containers">Containers</a></li>
-</ul></li>
 <li><a href="#licensing">Licensing</a></li>
-<li><a href="#further-reading">Further reading</a></li>
-<li><a href="#aknowledgements">Aknowledgements</a></li>
+<li><a href="#further-reading">Further Reading</a></li>
 </ul>
 </nav>
 </div>
@@ -2574,21 +2570,65 @@ Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre
 <h2 id="comments">Comments</h2>
 <p><strong><em>Real Programmers don’t comment their code. If it was hard to write, it should be hard to understand.</em></strong><br />
 _Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/realprogs.html)_" class="uri">https://multicians.org/thvv/realprogs.html)_</a></p>
-<p>Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not feel like this anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others.</p>
+<p>Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that comments should work in complement of the code and should not being seen as work around vague naming conventions of variables or functions.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'>#  gravitational acceleration</span>
+
+<span class='va'>gravity_acc</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'># earth gravitational acceleration</span>
+</code></pre>
+</div>
+</div>
+<h3 id="header">Header</h3>
+<p>It is good to add a header to your script that will provide basic information such as:</p>
+<ul>
+<li>Purpose of the script (Long title style)</li>
+<li>Who are the authors</li>
+<li>A contact email</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li>A longer description about the script purpose</li>
+<li>A starting date and potentially last updated one, although this information becomes redundant with repository information</li>
+</ul>
+<p>Note that R Studio does something similar by default when creating an new R Markdown document!</p>
 <h3 id="inline">Inline</h3>
+<p>It does not matter if you are using a script or notebook. It is important to provide comments along your code to complement it by:</p>
+<ul>
+<li>explaining what the code does</li>
+<li>capturing decisions that were made on the analytical side. For example, why a specific value was used for a threshold.</li>
+<li>specifying when some code was added to handel an edge case such as an unexpected value in the data (so a newuser doesn’t have to guess what does lines of code and might want to delete them assuming it is not necessary)</li>
+</ul>
+<p>Other thoughts:</p>
+<ul>
+<li>It is OK to state (what seems) the obvious</li>
+<li>Try to keep it to the point</li>
+</ul>
 <h3 id="functions">Functions</h3>
 <h2 id="leveraging-notebooks">Leveraging Notebooks</h2>
 <h3 id="a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</h3>
+<h2 id="hands-on">Hands-on</h2>
+<p>Let’s try to improve the readability and documentation of this repository: <a href="https://github.com/brunj7/better-comments" class="uri">https://github.com/brunj7/better-comments</a></p>
+<p>Follow the instructions on the README</p>
 <h2 id="metadata">Metadata</h2>
 <h3 id="human-readable">Human readable</h3>
 <h3 id="machine-readable">Machine readable</h3>
 <h3 id="data-provenance-semantics">Data provenance &amp; semantics</h3>
-<h1 id="what-about-your-computing-environment">What about your computing environment</h1>
-<h2 id="session-info">Session info</h2>
-<h2 id="containers">Containers</h2>
-<h1 id="licensing">Licensing</h1>
-<h1 id="further-reading">Further reading</h1>
-<h1 id="aknowledgements">Aknowledgements</h1>
+<h2 id="licensing">Licensing</h2>
+<p>It is a good practice to add a license to a repository / project. It will help to clarify what are the expectations regarding using and potentially contributing to this work.</p>
+<p>Here is a good website to choose a license:</p>
+<p>Here is also good set of instructions on how to make this happen on a GitHub repository: <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository" class="uri">https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository</a></p>
+<p>Note that for content (such as this course), there is also another type of licensing that can be used: <a href="https://creativecommons.org/licenses/" class="uri">https://creativecommons.org/licenses/</a></p>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Python Hichhiker’s guide: <a href="https://docs.python-guide.org/writing/style/" class="uri">https://docs.python-guide.org/writing/style/</a></li>
+<li>Roxygen2: <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html" class="uri">https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html</a></li>
+<li>Introduction to Software Engineering by Jason Coposky: <a href="https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf" class="uri">https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf</a></li>
+<li>Functional programming in R: <a href="http://adv-r.had.co.nz/Functional-programming.html#functional-programming" class="uri">http://adv-r.had.co.nz/Functional-programming.html#functional-programming</a></li>
+<li>Scoping in R: <a href="http://adv-r.had.co.nz/Functions.html" class="uri">http://adv-r.had.co.nz/Functions.html</a></li>
+<li><a href="https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages" class="uri">https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages</a></li>
+<li><a href="http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language" class="uri">http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language</a></li>
+</ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

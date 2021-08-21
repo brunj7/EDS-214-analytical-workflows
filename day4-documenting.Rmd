@@ -3,7 +3,7 @@ title: "Documenting things"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 library(reticulate)
 ```
 
@@ -33,17 +33,62 @@ There is also the **visual aspect** of the code that should not be neglected. Li
 ***Real Programmers don't comment their code. If it was hard to write, it should be hard to understand.*** \
 _Tom Van Vleck, based on people he knew (https://multicians.org/thvv/realprogs.html)_
 
-Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not feel like this anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others.
+Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that comments should work in complement of the code and should not being seen as work around vague naming conventions of variables or functions.
+
+```{r , eval=FALSE}
+x <- 9.81  #  gravitational acceleration
+
+gravity_acc <- 9.81  # earth gravitational acceleration
+```
+
+
+### Header
+
+It is good to add a header to your script that will provide basic information such as:
+
+- Purpose of the script (Long title style)
+- Who are the authors
+- A contact email 
+
+Optional:
+
+- A longer description about the script purpose
+- A starting date and potentially last updated one, although this information becomes redundant with repository information
+
+Note that R Studio does something similar by default when creating an new R Markdown document!
 
 ### Inline 
 
+It does not matter if you are using a script or notebook. It is important to provide comments along your code to complement it by:
+
+- explaining what the code does
+- capturing decisions that were made on the analytical side. For example, why a specific value was used for a threshold.
+- specifying when some code was added to handel an edge case such as an unexpected value in the data (so a newuser doesn't have to guess what does lines of code and might want to delete them assuming it is not necessary)
+
+Other thoughts:
+
+- It is OK to state (what seems) the obvious
+- Try to keep it to the point
+
+
+
 ### Functions
+
+
+
 
 
 
 ## Leveraging Notebooks
 
 ### A few thoughts on Notebooks and Scripts
+
+## Hands-on
+
+Let's try to improve the readability and documentation of this repository: <https://github.com/brunj7/better-comments>
+
+Follow the instructions on the README
+
 
 ## Metadata
 
@@ -55,16 +100,26 @@ Joke aside, it is really hard to comment too much your code, because even steps 
 
 
 
-# What about your computing environment
+## Licensing
 
-## Session info
+It is a good practice to add a license to a repository / project. It will help to clarify what are the expectations regarding using and potentially contributing to this work. 
 
-## Containers
+Here is a good website to choose a license: 
 
-# Licensing
+Here is also good set of instructions on how to make this happen on a GitHub repository: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository
 
-# Further reading
+Note that for content (such as this course), there is also another type of licensing that can be used: https://creativecommons.org/licenses/
 
-# Aknowledgements
+## Further Reading
+
+- Python Hichhiker's guide: https://docs.python-guide.org/writing/style/
+- Roxygen2: https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html
+- Introduction to Software Engineering by Jason Coposky: https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf
+- Functional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming
+- Scoping in R: http://adv-r.had.co.nz/Functions.html
+- https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages
+- http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language
+
+
 
 

@@ -2,6 +2,12 @@
 title: "Sharing things"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(devtools)
+``` 
+
+
 # Scientific products
 
 ## GitHub pages & the R Markdown family
@@ -41,6 +47,8 @@ Note there are also other python libraries to create interactive plots, here are
 - Bitbucket: https://bitbucket.org/product
 - ...
 
+
+
 **Don't forget to provide information about the versions of software and libraries that were used when running this specific analysis** 
 
 It is also a great idea to add license to your project so people know how they can use your code: https://choosealicense.com/ 
@@ -77,5 +85,26 @@ Starting by searching data in your field and see where other researchers are arc
 It is important to be able to reference to yourself as a researcher and as an author of your work in a non ambiguous manner. From their website: _[ORCID](https://info.orcid.org/what-is-orcid/) is a great way to create a persistent digital identifier (an ORCID iD) that you own and control, and that distinguishes you from every other researcher._ ORCID is also more and more use as an authentication system for many services (e.g. data repositories).
 
 
+# What about your computing environment
+
+## Session info
+
+Your analysis was done with specific versions both of the program used but also of all the packages involved, as well as the specifications of Operating System (OS) that was used. The good use is that there ar tools to let you capture this information in a systematic manner.
+
+```{r}
+sessionInfo()
+```
+or even better:
+
+```{r}
+devtools::session_info()
+```
+You can save all this content to an `session_info.txt` file and upload it to your repository.
+
+
+In python, using `pip freeze > requirements.txt` or `conda list --export > requirements.txt` will create a text file listing all the libraries (and their versions) used in a specific python environment. You can actually use this file to (re)install all the packages and specific versions into a new python environment. It is also great practice to add this file to your repository.
+
+
+## Containers
 
 

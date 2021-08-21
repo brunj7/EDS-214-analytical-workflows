@@ -3,7 +3,6 @@ title: "Debugging in RStudio"
 ---
 
 
-
 *This section is adapted from the more detailed material available on the RStudio website: <https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio>* 
 
 Debugging is a broad topic that can be approached in many ways. Generically, at some point you will likely attempt to execute a script in R, receive errors and not know exactly what caused the errors. One approach would be to run your code line by line, but RStudio has some useful [built-in debugging features](https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio). 

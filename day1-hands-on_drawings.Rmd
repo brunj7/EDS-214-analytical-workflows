@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Goal
 
-**Combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico**
+**Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico**
 
 
 ### A few things to know:
@@ -34,9 +34,15 @@ We want to be able to produce this plot
 ```{r plot, echo=FALSE}
 knitr::include_graphics("img/luq-ts-plot.png")
 ```
-
+# To Do:
 
 **Draw the data processing steps to harmonize those data into one dataset that will let you compare time-series data and reproduce the above plot (20min)**
+
+## Remember
+
+- Each **node** represents a `step` or an `input/output`
+- Each connecting **edge** represents data flow or processing
+
 
 ---
 
