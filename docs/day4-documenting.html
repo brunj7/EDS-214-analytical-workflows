@@ -2522,25 +2522,40 @@ Daily Materials
 <ul>
 <li><a href="#a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</a></li>
 </ul></li>
-<li><a href="#hands-on">Hands-on</a></li>
-<li><a href="#metadata">Metadata</a>
+<li><a href="#hands-on">Hands-on</a>
 <ul>
-<li><a href="#human-readable">Human readable</a></li>
-<li><a href="#machine-readable">Machine readable</a></li>
-<li><a href="#data-provenance-semantics">Data provenance &amp; semantics</a></li>
+<li><a href="#commenting">Commenting</a></li>
+<li><a href="#documenting">Documenting</a></li>
 </ul></li>
+<li><a href="#metadata">Metadata</a></li>
+<li><a href="#data-provenance-semantics">Data provenance &amp; semantics</a></li>
 <li><a href="#licensing">Licensing</a></li>
 <li><a href="#further-reading">Further Reading</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="the-power-of-readme">The power of README</h2>
 <p>README are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.</p>
+<p>Good types of information to have on a README:</p>
+<ul>
+<li>Title capturing the essence of the project</li>
+<li>A short explanation of the goal / purpose</li>
+<li>How to install / where to start</li>
+<li>A quick demo on how to use the content (can be a link to another document as well)</li>
+<li>What to do if a bug is spotted</li>
+<li>How to contribute</li>
+<li>Licensing</li>
+<li>Aknowledgements of authors, contributors, sponsors or other related work</li>
+</ul>
+<p>Adding images,short videos / animations can make a README more engaging.</p>
+<p>For your inspiration here is a interesting template: <a href="https://github.com/navendu-pottekkat/awesome-readme/tree/master" class="uri">https://github.com/navendu-pottekkat/awesome-readme/tree/master</a></p>
+<p>Note that when you start an R package with the <code>usethis</code> package, a README will be created for you with all the relevant sections for such type of project.</p>
 <h2 id="making-your-code-readable">Making your code readable</h2>
-<p>It is important to make your code easy to read if you hope that others will reuse it. It starts with using a <strong>consistent syntax</strong> withing your scripts (at least within a project).</p>
+<p>It is important to make your code easy to read if you hope that others will reuse it. It starts with using a <strong>consistent style</strong> withing your scripts (at least within a project).</p>
 <ul>
 <li>Here is a good style guide for R: <a href="http://adv-r.had.co.nz/Style.html" class="uri">http://adv-r.had.co.nz/Style.html</a></li>
-<li>Syle guide for Python: <a href="https://www.python.org/dev/peps/pep-0008/" class="uri">https://www.python.org/dev/peps/pep-0008/</a></li>
+<li>Style guide for Python: <a href="https://www.python.org/dev/peps/pep-0008/" class="uri">https://www.python.org/dev/peps/pep-0008/</a></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> this</span></code></pre></div>
@@ -2566,16 +2581,16 @@ If the implementation is hard to explain, it&#39;s a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre>
 </div>
-<p>There is also the <strong>visual aspect</strong> of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. <em>Indentation</em>, <em>spaces</em>, and <em>empty lines</em> should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions. Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, try to add four <code>-</code> or <code>#</code> after a line starting with one or several <code>#</code> in an R Script!</p>
+<p>There is also the <strong>visual aspect</strong> of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. <em>Indentation</em>, <em>spaces</em>, and <em>empty lines</em> should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions. Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, <em>try to add four <code>-</code> or <code>#</code> after a line starting with one or several <code>#</code> in an R Script!</em></p>
 <h2 id="comments">Comments</h2>
 <p><strong><em>Real Programmers don’t comment their code. If it was hard to write, it should be hard to understand.</em></strong><br />
 _Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/realprogs.html)_" class="uri">https://multicians.org/thvv/realprogs.html)_</a></p>
-<p>Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that comments should work in complement of the code and should not being seen as work around vague naming conventions of variables or functions.</p>
+<p>Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that <strong>comments should work in complement of the code</strong> and should not being seen as work around vague naming conventions of variables or functions.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'>#  gravitational acceleration</span>
 
-<span class='va'>gravity_acc</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'># earth gravitational acceleration</span>
+<span class='va'>gravity_acc</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'>#  gravitational acceleration</span>
 </code></pre>
 </div>
 </div>
@@ -2601,19 +2616,115 @@ _Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/re
 </ul>
 <p>Other thoughts:</p>
 <ul>
-<li>It is OK to state (what seems) the obvious</li>
-<li>Try to keep it to the point</li>
+<li>It is OK to state (what seems) the obvious (some might disagree with this statement)</li>
+<li>Try to keep comments to the point and short</li>
 </ul>
 <h3 id="functions">Functions</h3>
+<p>Both Python and R have conventions on how to document functions. Adopting those conventions will help you to make your code readable but also to automate part of the documentation development.</p>
+<h4 id="roxygen2">Roxygen2</h4>
+<p>The goal of roxygen2 is to make documenting your code as easy as possible. It can dynamically inspect the objects that it’s documenting, so it can automatically add data that you’d otherwise have to write by hand.</p>
+<p>How do we insert it? Make sure you cursor is inside the function you want to document and from RStudio Menu <em>Code -&gt; Insert Roxygen Skeleton</em></p>
+<p>Example:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#' Add together two numbers</span>
+<span class='co'>#'</span>
+<span class='co'>#' @param x A number</span>
+<span class='co'>#' @param y A number</span>
+<span class='co'>#' @return The sum of \code{x} and \code{y}</span>
+<span class='co'>#' @examples</span>
+<span class='co'>#' add(1, 1)</span>
+<span class='co'>#' add(10, 1)</span>
+<span class='va'>add2</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>x</span> <span class='op'>+</span> <span class='va'>y</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>Try it! - Copy the function (without the documentation) in a new script - Add a third parameter to the function such as it sums 3 numbers - Add the Roxygen skeleton - Fill it to best describe your function</p>
+<p>Note that when you are developing an R package, the Roxygen skeleton can be leveraged to develop the help pages of your package so you only have one place to update and the help will synchronize automatically.</p>
+<h4 id="python-doctring">Python Doctring</h4>
+<p>A docstring is a string literal that occurs as the first statement in a module, function, class, or method definition. Such a docstring becomes the <code>__doc__</code> special attribute of that object.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">complex</span>(real<span class="op">=</span><span class="fl">0.0</span>, imag<span class="op">=</span><span class="fl">0.0</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Form a complex number.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Keyword arguments:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    real -- the real part (default 0.0)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">    imag -- the imaginary part (default 0.0)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> imag <span class="op">==</span> <span class="fl">0.0</span> <span class="kw">and</span> real <span class="op">==</span> <span class="fl">0.0</span>:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> complex_zero</span></code></pre></div>
+</div>
+<p>Here for more: <a href="https://www.python.org/dev/peps/pep-0257/" class="uri">https://www.python.org/dev/peps/pep-0257/</a></p>
 <h2 id="leveraging-notebooks">Leveraging Notebooks</h2>
 <h3 id="a-few-thoughts-on-notebooks-and-scripts">A few thoughts on Notebooks and Scripts</h3>
+<hr />
 <h2 id="hands-on">Hands-on</h2>
-<p>Let’s try to improve the readability and documentation of this repository: <a href="https://github.com/brunj7/better-comments" class="uri">https://github.com/brunj7/better-comments</a></p>
-<p>Follow the instructions on the README</p>
+<h3 id="commenting">Commenting</h3>
+<p>Let’s try to improve the readability and documentation of this repository: <a href="https://github.com/brunj7/better-comments" class="uri">https://github.com/brunj7/better-comments</a>. Follow the instructions on the README</p>
+<p>For inspiration, you can check out the APOLLO 11 code from 1969 <a href="https://github.com/chrislgarry/Apollo-11" class="uri">https://github.com/chrislgarry/Apollo-11</a>!!</p>
+<h3 id="documenting">Documenting</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>getPercent</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span> <span class='va'>value</span>, <span class='va'>pct</span> <span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>result</span> <span class='op'>&lt;-</span> <span class='va'>value</span> <span class='op'>*</span> <span class='op'>(</span> <span class='va'>pct</span> <span class='op'>/</span> <span class='fl'>100</span> <span class='op'>)</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span> <span class='va'>result</span> <span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>Try adding the Roxygen Skeleton to this function and fill all the information you think is necessary to document the function</p>
+<hr />
 <h2 id="metadata">Metadata</h2>
-<h3 id="human-readable">Human readable</h3>
-<h3 id="machine-readable">Machine readable</h3>
-<h3 id="data-provenance-semantics">Data provenance &amp; semantics</h3>
+<p>This topic will be the focus of our Fall course <a href="https://docs.python-guide.org/writing/documentation/">EDS-213</a>. This a very important topic for scientific reproducibility and for today we will be only provide a partial overview of this broader topic.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/DLC.png"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="img/DLC.png" alt="Data life cycle, DataONE" width="215" />
+<p class="caption">
+Figure 1: Data life cycle, DataONE
+</p>
+</div>
+</div>
+<p>Metadata (data about data) is an important part of the data life cycle because it enables data reuse long after the original collection. The goal is to have enough information for the researcher to understand the data, interpret the data, and then re-use the data in another study.</p>
+<p>Here are good questions to answer with your metadata:</p>
+<ul>
+<li>What was measured?</li>
+<li>Who measured it?</li>
+<li>When was it measured?</li>
+<li>Where was it measured?</li>
+<li>How was it measured?</li>
+<li>How is the data structured?</li>
+<li>Why was the data collected?</li>
+<li>Who should get credit for this data (researcher AND funding agency)?</li>
+<li>How can this data be reused (licensing)?</li>
+</ul>
+<p>How do you organize all this information? You could use a free form format, like a README file or spreadsheet. But there is also great advantage to use a more standardized way that will make the content not only <strong>Human readable but also machine readable</strong>. This will enhance the data discovery as specific information will be potentially tagged or attributed to specific aspect of your data (e.g. spatial or temporal coverage, taxonomy, …).</p>
+<p>There are a number of environmental <strong>metadata standards</strong> (think, templates) that you could use, including the <a href="https://eml.ecoinformatics.org/">Ecological Metadata Language (EML)</a>, <a href="https://www.fgdc.gov/metadata/iso-standards">Geospatial Metadata Standards</a> like ISO 19115 and ISO 19139, the <a href="https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/biometadata/biodatap.pdf">Biological Data Profile (BDP)</a>, <a href="https://dublincore.org/">Dublin Core</a>, <a href="https://dwc.tdwg.org/">Darwin Core</a>, <a href="https://www.loc.gov/standards/premis/">PREMIS</a>, the <a href="http://www.loc.gov/standards/mets/">Metadata Encoding and Transmission Standard (METS)</a>, and the list goes on and on.</p>
+<h2 id="data-provenance-semantics">Data provenance &amp; semantics</h2>
+<p><strong>Data provenance</strong> is tracing the origin of a data set to the raw-data that were used as input of the processing / analysis that led to the creation of this data set. It can be done more or less formally and this is an active area of research. For today we will be focusing on capturing the information about the data you are collecting. Here are a set of good questions to help you in that process:</p>
+<ul>
+<li>Source / owner (Person, institution, website, ….)</li>
+<li>When was it acquired ?</li>
+<li>By whom on the WG ?</li>
+<li>Where is it currently located (Google drive, server, ….) ?</li>
+<li>Short description of the data</li>
+<li>Track if it is used in your analysis</li>
+</ul>
+<p><a href="https://docs.google.com/spreadsheets/d/1LLpOyydCGTZdY8Xk2fDmTPVy8efF-47GtEXkAjvYsJI/edit#gid=0">Here</a> is a template of a data log that could hep to store this information</p>
+<p>Another important and related aspect and also active field of reserach is <strong>data semantics</strong>. Often data sets store complex information and concepts that can be describe more of less accurately. Let’s take an example, you have receive a csv file storing a table with several variables about a fish stock assessment. One of the variable is named “length”. However there are many ways to measure the length of a fish. Which one is it?</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/fish_length.png"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/fish_length.png" width="694" /></p>
+</div>
+<p>Data semantics aims at clearly identify those concepts relying on vocabularies and ontologies, such as <a href="http://www.obofoundry.org/ontology/envo.html">ENVO</a> in environmental sciences. In addition, it enables the leverage relations between those concepts to help with (data) discovery.</p>
 <h2 id="licensing">Licensing</h2>
 <p>It is a good practice to add a license to a repository / project. It will help to clarify what are the expectations regarding using and potentially contributing to this work.</p>
 <p>Here is a good website to choose a license:</p>
@@ -2621,7 +2732,14 @@ _Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/re
 <p>Note that for content (such as this course), there is also another type of licensing that can be used: <a href="https://creativecommons.org/licenses/" class="uri">https://creativecommons.org/licenses/</a></p>
 <h2 id="further-reading">Further Reading</h2>
 <ul>
-<li>Python Hichhiker’s guide: <a href="https://docs.python-guide.org/writing/style/" class="uri">https://docs.python-guide.org/writing/style/</a></li>
+<li>Awesome README: <a href="https://towardsdatascience.com/how-to-write-an-awesome-readme-68bf4be91f8b" class="uri">https://towardsdatascience.com/how-to-write-an-awesome-readme-68bf4be91f8b</a></li>
+<li>How to write a great README: <a href="https://x-team.com/blog/how-to-write-a-great-readme/" class="uri">https://x-team.com/blog/how-to-write-a-great-readme/</a></li>
+<li>Python Hichhiker’s guide:
+<ul>
+<li>style: <a href="https://docs.python-guide.org/writing/style/" class="uri">https://docs.python-guide.org/writing/style/</a></li>
+<li>documentation: <a href="https://docs.python-guide.org/writing/documentation/" class="uri">https://docs.python-guide.org/writing/documentation/</a></li>
+</ul></li>
+<li>Documenting Python Code: A Complete Guide: <a href="https://realpython.com/documenting-python-code/" class="uri">https://realpython.com/documenting-python-code/</a></li>
 <li>Roxygen2: <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html" class="uri">https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html</a></li>
 <li>Introduction to Software Engineering by Jason Coposky: <a href="https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf" class="uri">https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf</a></li>
 <li>Functional programming in R: <a href="http://adv-r.had.co.nz/Functional-programming.html#functional-programming" class="uri">http://adv-r.had.co.nz/Functional-programming.html#functional-programming</a></li>
@@ -2629,7 +2747,9 @@ _Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/re
 <li><a href="https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages" class="uri">https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages</a></li>
 <li><a href="http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language" class="uri">http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language</a></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Large portion of this material have been adapted from NCEAS Reproducible Research Techniques for Synthesis course <a href="https://learning.nceas.ucsb.edu/2021-02-RRCourse/" class="uri">https://learning.nceas.ucsb.edu/2021-02-RRCourse/</a></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

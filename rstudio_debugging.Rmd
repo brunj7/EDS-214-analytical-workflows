@@ -35,3 +35,7 @@ The **Code window** highlights the currently executing function and may create a
 The **Console** retains most of its normal functionality in debugging mode, but contains some additional buttons that appear at the top to facilitate moving through code lines (see below).
 
 ![Debugging buttons on the console](img/RStudio_debugging_console.png)
+## Further Reading
+
+- Functional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming
+- Scoping in R: http://adv-r.had.co.nz/Functions.html

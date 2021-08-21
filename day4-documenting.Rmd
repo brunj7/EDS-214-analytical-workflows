@@ -206,8 +206,23 @@ There are a number of environmental **metadata standards** (think, templates) th
 
 ## Data provenance & semantics
 
-Data provenance is tracing the origin of a data set to the raw-data that were used as input of the processing / Analysis that led to the creation of this data set. It can be done more or less formally and this is an active area of research. For today we will be focusing on capturing the information about the data you are collecting. Here are a set of good questions to help you in that process:
+**Data provenance** is tracing the origin of a data set to the raw-data that were used as input of the processing / analysis that led to the creation of this data set. It can be done more or less formally and this is an active area of research. For today we will be focusing on capturing the information about the data you are collecting. Here are a set of good questions to help you in that process:
 
+- Source / owner (Person, institution, website, ….)
+- When was it acquired ?
+- By whom on the WG ?
+- Where is it currently located (Google drive, server, ….) ?
+- Short description of the data
+- Track if it is used in your analysis
+
+[Here](https://docs.google.com/spreadsheets/d/1LLpOyydCGTZdY8Xk2fDmTPVy8efF-47GtEXkAjvYsJI/edit#gid=0) is a template of a data log that could hep to store this information
+
+Another important and related aspect and also active field of reserach is **data semantics**. Often data sets store complex information and concepts that can be describe more of less accurately. Let's take an example, you have receive a csv file storing a table with several variables about a fish stock assessment. One of the variable is named "length". However there are many ways to measure the length of a fish. Which one is it? 
+
+```{r}
+knitr::include_graphics("img/fish_length.png")
+```
+Data semantics aims at clearly identify those concepts relying on vocabularies and ontologies, such as [ENVO](http://www.obofoundry.org/ontology/envo.html) in environmental sciences. In addition, it enables the leverage relations between those concepts to help with (data) discovery.
 
 
 
