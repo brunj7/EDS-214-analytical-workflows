@@ -21,7 +21,7 @@ Good types of information to have on a README:
 - What to do if a bug is spotted
 - How to contribute
 - Licensing 
-- Aknowledgements of authors, contributors, sponsors or other related work 
+- Acknowledgements of authors, contributors, sponsors or other related work 
 
 Adding images,short videos / animations can make a README more engaging. 
 
@@ -80,7 +80,7 @@ It does not matter if you are using a script or notebook. It is important to pro
 
 - explaining what the code does
 - capturing decisions that were made on the analytical side. For example, why a specific value was used for a threshold.
-- specifying when some code was added to handel an edge case such as an unexpected value in the data (so a newuser doesn't have to guess what does lines of code and might want to delete them assuming it is not necessary)
+- specifying when some code was added to handle an edge case such as an unexpected value in the data (so a new user doesn't have to guess what does lines of code and might want to delete them assuming it is not necessary)
 
 Other thoughts:
 
@@ -217,7 +217,7 @@ There are a number of environmental **metadata standards** (think, templates) th
 
 [Here](https://docs.google.com/spreadsheets/d/1LLpOyydCGTZdY8Xk2fDmTPVy8efF-47GtEXkAjvYsJI/edit#gid=0) is a template of a data log that could hep to store this information
 
-Another important and related aspect and also active field of reserach is **data semantics**. Often data sets store complex information and concepts that can be describe more of less accurately. Let's take an example, you have receive a csv file storing a table with several variables about a fish stock assessment. One of the variable is named "length". However there are many ways to measure the length of a fish. Which one is it? 
+Another important and related aspect and also active field of research is **data semantics**. Often data sets store complex information and concepts that can be describe more of less accurately. Let's take an example, you have receive a csv file storing a table with several variables about a fish stock assessment. One of the variable is named "length". However there are many ways to measure the length of a fish. Which one is it? 
 
 ```{r}
 knitr::include_graphics("img/fish_length.png")
