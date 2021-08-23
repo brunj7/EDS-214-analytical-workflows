@@ -48,7 +48,7 @@ knitr::include_graphics("img/luq-ts-plot.png")
 
 ### Oh wait...
 
-[Actually here is more](hands-on_drawings_p2.Rmd)
+[Actually here is more](day1-hands-on_drawings_p2.html)
 
 
 ## References
