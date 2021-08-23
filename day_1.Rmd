@@ -125,7 +125,7 @@ The good news is there are several tools out there that have been designed to ma
 - Version control system: say goodbye to `save as`
 - Code repository: where we share code and communicate ideas and feedback
 
-```{r, fig.cap=" https://xkcd.com/1597/"}
+```{r, fig.cap=" https://xkcd.com/1597/", echo=FALSE}
 knitr::include_graphics("img/git_explain_xkcd.png")
 ```
 
