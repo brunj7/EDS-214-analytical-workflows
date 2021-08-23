@@ -69,7 +69,7 @@ We recommend shying away from spreadsheets as an analytical tool, as well as Gra
 
 ### Hands-on
 
-[Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](hands-on_drawings.html)
+[Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](day1-hands-on_drawings.html)
 
 
 ---  
