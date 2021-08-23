@@ -251,6 +251,7 @@ Note that for content (such as this course), there is also another type of licen
 - Scoping in R: http://adv-r.had.co.nz/Functions.html
 - https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages
 - http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language
+- Software carpentry: https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R/
 
 
 ## Acknowledgements
