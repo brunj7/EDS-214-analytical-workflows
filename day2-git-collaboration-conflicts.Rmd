@@ -1,3 +1,7 @@
+---
+title: "git conflicts"
+---
+
 ## Learning Objectives
 
 In this lesson, you will learn:
