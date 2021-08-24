@@ -32,6 +32,15 @@ Develop naming conventions for files and folder:
 
 ### Exercise
 
+Why do you think the second option would be best?
+
+```{r , eval=FALSE}
+x <- 9.81  #  gravitational acceleration
+
+gravity_acc <- 9.81  #  gravitational acceleration
+```
+
+
 Which filename would be the most useful?
 
 - `06-2020-08-sensor2-plot1.csv`
@@ -41,7 +50,7 @@ Which filename would be the most useful?
 - `2020-05-08-windSensor1-plot3.csv` 
 
 
-** The most important is to make it consistent! **
+**The most important is to make it consistent!**
 
 Good [reference](https://speakerdeck.com/jennybc/how-to-name-files) on this topic from Jenny Bryan (RStudio).
 

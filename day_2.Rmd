@@ -6,16 +6,29 @@ title: "Developing Analytical Workflows as a Team"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# GitHub branches
+| **Time (PST)**    | **Activity**                        |
+|-------------------|-------------------------------------|
+| 9:00am - 10:00am  | *Github conflicts (60 min)*                               |
+| 10:00am - 10:10am | *Break 1 (10 min)*                                        |
+| 10:10am - 11:20am | *Managing data-driven projects as a team (80 min)*        |
+| 11:20am - 11:30am | *Break 2 (10 min)*                                        |
+| 11:30am - 12:00am | *Flex time 1: Debugging with RStudio (30 min)*            |
+| 12:00am - 1:15pm  | *Lunch (75 min)*                                          |
+| 1:15pm - 2:15pm   | *git commit messages (60 min)*                            |
+| 2:15pm - 3:15pm   | *Meet Kat and Brad -- MEDS computing resources*           |
+| 3:15pm - 3:25pm   | *Break 3 (10 min)*                                        |
+| 3:25pm - 4:05pm   | *Server practice: Bringing your code to the server*       |
+| 4:05pm - 4:30pm   | *Recap of the day and Q&A  (25 min)*                      |
 
-[**Materials**](day2-github_branches.html)
+# Git Therapy
 
+## GitHub conflicts
 
-## GitHub Hands-on 
+First thing to know is that actually `git pull` (or a Pull Request) is a two step process: `git pull = git fetch + git merge`
 
-1. [GitHub branches using the website](day2-handson_github_website.html)
-2. [GitHub branches using RStudio](day2-handson_github_rstudio.html)
+Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, `git` will call you to the rescue and ask him how to solve the problem.
 
+[**Materials**](day2-git-collaboration-conflicts.html)
 
 
 ---
@@ -23,6 +36,29 @@ knitr::opts_chunk$set(echo = FALSE)
 # Managing data-driven projects as a team
 
 [**Materials**](day2-projects_team.html)
+
+---
+
+# `git` commit messages
+
+[**Materials**](day2-github_commit_messages.html)
+
+---
+
+# Debugging with RStudio
+
+[**Materials**](docs/rstudio_debugging.html)
+
+---
+
+# MEDS computing ressources
+
+
+---
+
+# Moving your codes to a remote server
+
+
 
 
 
@@ -65,4 +101,10 @@ Git mainly from the command line:
 - GitPro book (2nd edition): <https://git-scm.com/book/en/v2>
 
 
+### Undoing things
+
+- Help to decide how to undo your problem: <http://justinhileman.info/article/git-pretty/git-pretty.png>
+- Undo almost everything with git <https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/>
+- Difference between git reset soft, mixed and hard <https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/>
+- Resetting, Checking Out & Reverting <https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting>
 

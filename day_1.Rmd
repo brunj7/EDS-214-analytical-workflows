@@ -194,6 +194,20 @@ knitr::include_graphics("img/markdown-how-it-works.png")
 
 ---
 
+# GitHub branches
+
+[**Materials**](day2-github_branches.html)
+
+
+## GitHub Hands-on 
+
+1. [GitHub branches using the website](day2-handson_github_website.html)
+2. [GitHub branches using RStudio](day2-handson_github_rstudio.html)
+
+
+
+---
+
 # Further reading
 
 Here are a few selected publications to help you to learn more about these topics.
@@ -245,3 +259,7 @@ https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html
 ## Code Review
 
 - Small-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext
+
+## Branches
+
+- Interactive tutorial to learn more about git branches and more <https://learngitbranching.js.org/>

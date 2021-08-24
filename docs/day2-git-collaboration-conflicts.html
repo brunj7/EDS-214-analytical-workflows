@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Working on a remote server</title>
+  <title>EDS 214: Untitled</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Working on a remote server"/>
+  <meta property="og:title" content="EDS 214: Untitled"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Working on a remote server"/>
+  <meta property="twitter:title" content="EDS 214: Untitled"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Working on a remote server"]}]}
+  {"type":"list","attributes":{},"value":[]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Working on a remote server","authors":[]}
+{"title":"Untitled","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Working on a remote server</h1>
+<h1>day2-git-collaboration-conflicts.knit</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2511,242 +2511,123 @@ Daily Materials
 <h3>Contents</h3>
 <ul>
 <li><a href="#learning-objectives">Learning Objectives</a></li>
-<li><a href="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
-<li><a href="#collaborative-setup">Collaborative Setup</a></li>
-<li><a href="#what-does-working-on-a-remote-server-means">What does working on a remote server means?</a></li>
-<li><a href="#rstudio-server">RStudio Server</a>
+<li><a href="#merge-conflicts">Merge conflicts</a></li>
+<li><a href="#how-to-resolve-a-conflict">How to resolve a conflict</a>
 <ul>
-<li><a href="#connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</a>
-<ul>
-<li><a href="#file-structure">File structure</a></li>
-<li><a href="#r-packages">R packages</a></li>
+<li><a href="#abort-abort-abort">Abort, abort, abort…</a></li>
+<li><a href="#checkout">Checkout</a></li>
+<li><a href="#pull-and-edit-the-file">Pull and edit the file</a></li>
+<li><a href="#producing-and-resolving-merge-conflicts">Producing and resolving merge conflicts</a></li>
+<li><a href="#merge-conflict-challenge">Merge Conflict Challenge</a></li>
+<li><a href="#section"></a></li>
 </ul></li>
-</ul></li>
-<li><a href="#command-line">Command line</a>
-<ul>
-<li><a href="#introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</a>
-<ul>
-<li><a href="#some-unix-hallmarks">Some Unix hallmarks</a></li>
-</ul></li>
-<li><a href="#the-command-line-interface-cli">The Command Line Interface (CLI)</a>
-<ul>
-<li><a href="#why-the-cli-is-worth-learning">Why the CLI is worth learning</a></li>
-<li><a href="#the-terminal-from-rstudio">The Terminal from RStudio</a></li>
-<li><a href="#navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</a></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#exercise">Exercise</a></li>
-</ul></li>
-<li><a href="#general-command-syntax">General command syntax</a></li>
-</ul></li>
-<li><a href="#uploading-files-to-a-server">Uploading Files to a server</a>
-<ul>
-<li><a href="#rstudio">RStudio</a></li>
-<li><a href="#sftp-software">sFTP Software</a></li>
-<li><a href="#scp">scp</a>
-<ul>
+<li><a href="#workflows-to-avoid-merge-conflicts">Workflows to avoid merge conflicts</a></li>
 <li><a href="#your-turn">Your turn</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#advanced-topics-at-the-command-line">Advanced Topics at the command line</a></li>
-<li><a href="#aknowledgements">Aknowledgements</a></li>
+<li><a href="#aknowledgement">Aknowledgement</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="learning-objectives">Learning Objectives</h1>
+<h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this lesson, you will learn:</p>
 <ul>
-<li>How to connect to a remote server</li>
-<li>Get familiar with RStudio server</li>
-<li>Get a short introduction to the command line (CLI)</li>
+<li>What typically causes conflicts when collaborating</li>
+<li>Workflows to avoid conflicts</li>
+<li>How to resolve a conflict</li>
 </ul>
-<h1 id="why-working-on-a-remote-machine">Why working on a remote machine?</h1>
-<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
+<h2 id="merge-conflicts">Merge conflicts</h2>
+<p>So things can go wrong, which usually starts with a <strong>merge conflict</strong>, due to both collaborators making incompatible changes to a file. While the error messages from merge conflicts can be daunting, getting things back to a normal state can be straightforward once you’ve got an idea where the problem lies.</p>
+<p>This is most <strong>easily avoided by good communication about who is working on various sections of each file, and trying to avoid overlaps</strong>. But sometimes it happens, and <em>git</em> is there to warn you about potential problems. And git will not allow you to overwrite one person’s changes to a file with another’s changes to the same file if they were based on the same version.</p>
+<p><img src="img/git-conflict-00-lines-changed.png" /></p>
+<p>The main problem with merge conflicts is that, when the Owner and Collaborator both make changes to the same line of a file, git doesn’t know whose changes take precedence. You have to tell git whose changes to use for that line.</p>
+<h2 id="how-to-resolve-a-conflict">How to resolve a conflict</h2>
+<h3 class="unnumbered" id="abort-abort-abort">Abort, abort, abort…</h3>
+<p>Sometimes you just made a mistake. When you get a merge conflict, the repository is placed in a ‘Merging’ state until you resolve it. There’s a command line command to abort doing the merge altogether:</p>
+<pre><code>git merge --abort</code></pre>
+<p>Of course, after doing that you still haven’t synced with your collaborator’s changes, so things are still unresolved. But at least your repository is now usable on your local machine.</p>
+<h3 class="unnumbered" id="checkout">Checkout</h3>
+<p>The simplest way to resolve a conflict, given that you know whose version of the file you want to keep, is to use the command line <code>git</code> program to tell git to use either <em>your</em> changes (the person doing the merge), or <em>their</em> changes (the other collaborator).</p>
 <ul>
-<li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
-<li><strong>Capacity</strong>: More <em>disk space</em> and generally <em>faster storage</em> (in highly optimized RAID arrays)</li>
-<li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
-<li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
+<li>keep your collaborators file: <code>git checkout --theirs conflicted_file.Rmd</code></li>
+<li>keep your own file: <code>git checkout --ours conflicted_file.Rmd</code></li>
 </ul>
-<p><strong>=&gt; The operating system is more likely going to be Linux!!</strong></p>
-<h1 id="collaborative-setup">Collaborative Setup</h1>
-<p>There are additional reasons of particular importance in a collaborative set up, such as a working group: - <strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!! - <strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p>
-<h1 id="what-does-working-on-a-remote-server-means">What does working on a remote server means?</h1>
-<p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about: - File management: you will need to learn to move files (including your R scripts) to the server - Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</p>
-<h1 id="rstudio-server">RStudio Server</h1>
-<p>From an user perspective, <em>RStudio Server is your familiar RStudio interface in your web browser</em>. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that <strong>the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!</strong> This remote file management is the main change you will have to adopt in your workflow.</p>
-<p>To help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-server-ide.png" width="90%" style="display: block; margin: auto;" /></p>
-</div>
-<h2 id="connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</h2>
-<ol type="1">
-<li><p>Got to: <a href="https://taylor.bren.ucsb.edu/" class="uri">https://taylor.bren.ucsb.edu/</a></p></li>
-<li><p>Enter your credentials</p></li>
-<li><p>You are in!</p></li>
-</ol>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-server_login.png" width="1544" /></p>
-</div>
-<ol start="4" type="1">
-<li>Click on the <code>New Session</code> button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.</li>
-</ol>
-<p>For this session, we are going to select the <code>RStudio</code> option and hit <code>Start Session</code>.</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-server_session.png" width="591" /></p>
-</div>
-<p><strong>You should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!</strong></p>
-<h3 id="file-structure">File structure</h3>
-<p>Let’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the <code>home</code> folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: <code>R</code> and <code>H</code></p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-server_file-structure.png" width="779" /></p>
-</div>
-<p>The <code>R</code> folder is where your local R packages will be installed, you can ignore it. The <code>H</code> is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.</p>
-<p>Let us make a folder named <code>github</code> by click on the <code>New Folder</code> button at the top of the tab. We will use this folder (also named <code>directory</code> in linux/unix terms) to clone any GitHub repository.</p>
-<h3 id="r-packages">R packages</h3>
-<p>If we go to the <code>Packages</code> tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-server_packages.png" width="779" /></p>
-</div>
-<p>A user can also installed her/his own packages. Let’s try to install the <code>remote</code> package that lets you install R packages directly from GitHub: <code>install.packages("remotes")</code>. Once done, note a new section that appeared on the Packages tab named <code>User Library</code>. Each of us have now its own copy of the package installed (in this <code>R</code> folder we were talking about a few minutes ago).</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/rstudio-server_packages-user.png" width="777" /></p>
-</div>
-<p>A few notes:</p>
+<p>Once you have run that command, then run <code>add</code>, <code>commit</code>, and <code>push</code> the changes as normal.</p>
+<h3 class="unnumbered" id="pull-and-edit-the-file">Pull and edit the file</h3>
+<p>But that requires the command line. If you want to resolve from RStudio, or if you want to pick and choose some of your changes and some of your collaborator’s, then instead you can manually edit and fix the file. When you <code>pull</code>ed the file with a conflict, git notices that there is a conflict and modifies the file to show both your own changes and your collaborator’s changes in the file. It also shows the file in the Git tab with an orange <code>U</code> icon, which indicates that the file is <code>Unmerged</code>, and therefore awaiting you help to resolve the conflict. It delimits these blocks with a series of less than and greater than signs, so they are easy to find:</p>
+<p><img src="img/rstudio-merge-conflict.png" /></p>
+<p>To resolve the conficts, simply find all of these blocks, and edit them so that the file looks how you want (either pick your lines, your collaborators lines, some combination, or something altogether new), and save. Be sure you removed the delimiter lines that started with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
+<p>Once you have made those changes, you simply add, commit, and push the files to resolve the conflict.</p>
+<h3 id="producing-and-resolving-merge-conflicts">Producing and resolving merge conflicts</h3>
+<p>To illustrate this process, we’re going to carefully create a merge conflict step by step, show how to resolve it, and show how to see the results of the successful merge after it is complete. First, we will walk through the exercise to demonstrate the issues.</p>
+<h4 id="owner-and-collaborator-ensure-all-changes-are-updated">Owner and collaborator ensure all changes are updated</h4>
+<p>First, start the exercise by ensuring that both the Owner and Collaborator have all of the changes synced to their local copies of the Owner’s repositoriy in RStudio. This includes doing a <code>git pull</code> to ensure that you have all changes local, and make sure that the Git tab in RStudio doesn’t show any changes needing to be committed.</p>
+<h4 id="owner-makes-a-change-and-commits">Owner makes a change and commits</h4>
+<p>From that clean slate, the Owner first modifies and commits a small change inlcuding their name on a specific line of the README.md file (we will change line 4). Work to only change that one line, and add your username to the line in some form and commit the changes (but DO NOT push). We are now in the situation where the owner has unpushed changes that the collaborator can not yet see.</p>
+<h4 id="collaborator-makes-a-change-and-commits-on-the-same-line">Collaborator makes a change and commits <strong>on the same line</strong></h4>
+<p>Now the collaborator also makes changes to the same of the README.md file in their RStudio copy of the project, adding their name to the line. They then commit. At this point, both the owner and collaborator have committed changes based on their shared version of the README.md file, but neither has tried to share their changes via GitHub.</p>
+<h4 id="collaborator-pushes-the-file-to-github">Collaborator pushes the file to GitHub</h4>
+<p>Sharing starts when the Collaborator pushes their changes to the GitHub repo, which updates GitHub to their version of the file. The owner is now one revision behind, but doesn’t yet know it.</p>
+<h4 id="owner-pushes-their-changes-and-gets-an-error">Owner pushes their changes and gets an error</h4>
+<p>At this point, the owner tries to push their change to the repository, which triggers an error from GitHub. While the error message is long, it basically tells you everything needed (that the owner’s repository doesn’t reflect the changes on GitHub, and that they need to <em>pull</em> before they can push).</p>
+<p><img src="img/git-conflict-01-push-error.png" /></p>
+<h4 id="owner-pulls-from-github-to-get-collaborator-changes">Owner pulls from GitHub to get Collaborator changes</h4>
+<p>Doing what the message says, the Owner pulls the changes from GitHub, and gets another, different error message. In this case, it indicates that there is a merge conflict because of the conflicting lines.</p>
+<p><img src="img/git-conflict-02-pull-error.png" /></p>
+<p>In the Git pane of RStudio, the file is also flagged with an orange ‘U’, which stands for an unresolved merge conflict.</p>
+<p><img src="img/git-conflict-03-conflict.png" /></p>
+<h4 id="owner-edits-the-file-to-resolve-the-conflict">Owner edits the file to resolve the conflict</h4>
+<p>To resolve the conflict, the Owner now needs to edit the file. Again, as indicated above, git has flagged the locations in the file where a conflict occcurred with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. The Owner should edit the file, merging whatever changes are appropriate until the conflicting lines read how they should, and eliminate all of the marker lines with with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
+<p><img src="img/git-conflict-04-conflict-tags.png" /></p>
+<p>Of course, for scripts and programs, resolving the changes means more than just merging the text – whoever is doing the merging should make sure that the code runs properly and none of the logic of the program has been broken.</p>
+<p><img src="img/git-conflict-05-resolved-file.png" /></p>
+<h4 id="owner-commits-the-resolved-changes">Owner commits the resolved changes</h4>
+<p>From this point forward, things proceed as normal. The owner first ‘Adds’ the file changes to be made, which changes the orange <code>U</code> to a blue <code>M</code> for modified, and then commits the changes locally. The owner now has a resolved version of the file on their system.</p>
+<p><img src="img/git-conflict-06-commit-resolved.png" /></p>
+<h4 id="owner-pushes-the-resolved-changes-to-github">Owner pushes the resolved changes to GitHub</h4>
+<p>Have the Owner push the changes, and it should replicate the changes to GitHub without error.</p>
+<p><img src="img/git-conflict-07-push-resolved.png" /></p>
+<h4 id="collaborator-pulls-the-resolved-changes-from-github">Collaborator pulls the resolved changes from GitHub</h4>
+<p>Finally, the Collaborator can pull from GitHub to get the changes the owner made.</p>
+<h4 id="both-can-view-commit-history">Both can view commit history</h4>
+<p>When either the Collaborator or the Owner view the history, the conflict, associated branch, and the merged changes are clearly visible in the history.</p>
+<p><img src="img/git-conflict-08-history.png" /></p>
+<h3 class="unnumbered exercise" id="merge-conflict-challenge">Merge Conflict Challenge</h3>
+<p>Now it’s your turn. In pairs, intentionally create a merge conflict, and then go through the steps needed to resolve the issues and continue developing with the merged files. See the sections above for help with each of these steps:</p>
 <ul>
-<li>In this example we will have made a better choice to have the <code>remotes</code> package installed once at the system level</li>
-<li>Some R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package</li>
-<li>Installing an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries</li>
+<li>Step 0: Owner and collaborator ensure all changes are updated</li>
+<li>Step 1: Owner makes a change and commits</li>
+<li>Step 2: Collaborator makes a change and commits <strong>on the same line</strong></li>
+<li>Step 3: Collaborator pushes the file to GitHub</li>
+<li>Step 4: Owner pushes their changes and gets an error</li>
+<li>Step 5: Owner pulls from GitHub to get Collaborator changes</li>
+<li>Step 6: Owner edits the file to resolve the conflict</li>
+<li>Step 7: Owner commits the resolved changes</li>
+<li>Step 8: Owner pushes the resolved changes to GitHub</li>
+<li>Step 9: Collaborator pulls the resolved changes from GitHub</li>
+<li>Step 10: Both can view commit history</li>
 </ul>
-<p><strong>Look now inside you <code>R</code> folder!!</strong></p>
-<h1 id="command-line">Command line</h1>
-<h2 id="introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</h2>
-<dl>
-<dt>UNIX</dt>
-<dd>Originally developed at AT&amp;T Bell Labs circa 1970. Has experienced a <a href="https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg">long, multi-branched evolutionary path</a>
-</dd>
-<dt>POSIX (Portable Operating System Interface)</dt>
-<dd>a set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants
-</dd>
-</dl>
-<h4 id="various-unices">Various Unices</h4>
-<figure>
-<img src="img/unix-history-simple.png" alt="The unix family tree" /><figcaption aria-hidden="true">The unix family tree</figcaption>
-</figure>
+<h3 class="unnumbered" id="section"></h3>
+<h2 id="workflows-to-avoid-merge-conflicts">Workflows to avoid merge conflicts</h2>
+<p>Some basic rules of thumb can avoid the vast majority of merge conflicts, saving a lot of time and frustration. These are words our teams live by:</p>
 <ul>
-<li><dl>
-<dt>OS X</dt>
-<dd><a href="http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix">is a Unix</a>!
-</dd>
-</dl></li>
-<li><dl>
-<dt>Linux</dt>
-<dd>is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href="http://en.wikipedia.org/wiki/Unix-like">functionally Unix</a>
-</dd>
-</dl></li>
+<li>Communicate often</li>
+<li>Tell each other what you are working on</li>
+<li>Pull immediately before you commit or push</li>
+<li>Commit often in small chunks.</li>
 </ul>
-<h3 id="some-unix-hallmarks">Some Unix hallmarks</h3>
-<ul>
-<li>Supports multi-users, multi-processes</li>
-<li>Highly modular: many small tools that do one thing well, and can be combined</li>
-<li>Culture of text files and streams</li>
-<li>Primary OS on HPC (<strong>High Performance Computing</strong> Systems)</li>
-<li>Main OS on which Internet was built</li>
-</ul>
-<h2 id="the-command-line-interface-cli">The Command Line Interface (CLI)</h2>
-<p>The CLI provides a direct way to interact with the Operating System, by typing in commands.</p>
-<h3 id="why-the-cli-is-worth-learning">Why the CLI is worth learning</h3>
-<ul>
-<li>Typically much more extensive access to features, commands, options</li>
-<li>Command statements can be written down, saved (scripts!)</li>
-<li>Easier automation</li>
-<li>Much “cheaper” to do work on a remote system (no need to transmit all the graphical stuff over the network)</li>
-</ul>
-<h3 id="the-terminal-from-rstudio">The Terminal from RStudio</h3>
-<p>You can access the command line directly from RStudio by using the <code>Terminal</code> tab next to your R console.</p>
-<p><img src="img/rstudio-terminal.png" /></p>
-<h3 id="navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</h3>
-<ul>
-<li><p><code>pwd</code>: Know where you are</p></li>
-<li><p><code>ls</code>: List the content of the directory</p></li>
-<li><p><code>cd</code>: Go inside a directory</p></li>
-<li><p><code>~</code> : Home directory</p></li>
-<li><p><code>.</code> : Here (current directory)</p></li>
-<li><p><code>..</code>: Up one level (upper directory)</p></li>
-<li><p>go to my “Home” directory: <code>cd ~</code></p></li>
-<li><p>go up one directory level: <code>cd ..</code></p></li>
-<li><p>list the content: <code>ls</code></p></li>
-<li><p>list the content showing hidden files: <code>ls -a</code> note that <code>-a</code> is referred as an option (modifies the command)</p></li>
-</ul>
-<p>More files/directories manipulations:</p>
-<ul>
-<li><code>mkdir</code>: Create a directory</li>
-<li><code>cp</code>: Copy a file</li>
-<li><code>mv</code>: Move a file</li>
-<li><code>rm</code> /<code>rmdir</code>: Remove a file / directory <strong>use those carefully, there is no return / Trash!!</strong></li>
-</ul>
-<h3 id="permissions">Permissions</h3>
-<p>All files have permissions and ownership.</p>
-<figure>
-<img src="img/UnixFileLongFormat.png" alt="File permissions" /><figcaption aria-hidden="true">File permissions</figcaption>
-</figure>
-<ul>
-<li>Change permissions: <code>chmod</code></li>
-<li>Change ownership: <code>chown</code></li>
-<li>List files showing ownership and permissions: <code>ls -l</code></li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:/courses/EDS214$</span> ls <span class="at">-l</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 3 brun      esmdomainusers 4096 Aug 20 04:49 data</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 2 katherine esmdomainusers 4096 Aug 18 18:32 example    </span></code></pre></div>
-<ul>
-<li>Clear contents in terminal window: <code>clear</code></li>
-</ul>
-<h3 id="exercise">Exercise</h3>
-<p>Navigate to the repo we created and inspect its content using the CLI</p>
-<p><strong>Note: typing is not your thing? the <code>&lt;tab&gt;</code> key is your friend!</strong> One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.</p>
-<h2 id="general-command-syntax">General command syntax</h2>
-<ul>
-<li><code>command [options] [arguments]</code></li>
-</ul>
-<p>where <code>command</code> must be an <em>executable</em> file on your <code>PATH</code> * <code>echo $PATH</code></p>
-<p>and <code>options</code> can usually take two forms * short form: <code>-a</code> * long form: <code>--all</code></p>
-<p>You can combine the options:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ltrh</span></span></code></pre></div>
-<p>What do these options do?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
-<p>Tip: hit <code>q</code> to exit the help!</p>
-<h1 id="uploading-files-to-a-server">Uploading Files to a server</h1>
-<p>You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)</p>
-<h3 id="rstudio">RStudio</h3>
-<p>You can only upload one file at the time (you can zip a folder to trick it):</p>
-<p><img src="img/rstudio-upload.png" /></p>
-<h2 id="sftp-software">sFTP Software</h2>
-<p>An efficient protocol to upload files is FTP (File Transfer Protocol). The <code>s</code> stands for secured. Any software supporting those protocols will work to transfer files.</p>
-<p>We recommend the following free software:</p>
-<ul>
-<li>Mac users: <a href="https://cyberduck.io">cyberduck</a></li>
-<li>Windows: <a href="https://winscp.net/eng/index.php">WinSCP</a></li>
-</ul>
-<p><img src="img/server-cyberduck.png" /></p>
-<h2 id="scp">scp</h2>
-<p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from taylor or from your local computer. Here is the basic syntax:</p>
-<pre><code>scp &lt;/source/path&gt; &lt;hostname:/path/to/destination/&gt;</code></pre>
-<p>Here is an example of my uploading the file <code>10min-loop.R</code> to taylor from my laptop. The destination directory on taylor is <code>/home/brun/</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/</span></code></pre></div>
-<p><img src="img/server-scp.png" /> BTW try to open and run that script for fun!!</p>
-<p>If you want to upload an entire folder, you can add the <code>-r</code> option to the command. The general syntax is:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code></pre></div>
-<p>Here is an example uploading all the images in the <code>myplot</code> folder</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/home/brun/plots</span></code></pre></div>
-<h3 id="your-turn">Your turn</h3>
-<p>Upload files from your local machine to the server using the different techniques mentioned above, You can download the <code>10min-loop.R</code> file to your local machine from <a href="https://aurora.nceas.ucsb.edu/~brun/10min-loop.R" class="uri">https://aurora.nceas.ucsb.edu/~brun/10min-loop.R</a></p>
+<p>A good workflow is encapsulated as follows:</p>
+<p><code>Pull -&gt; Edit -&gt; Add -&gt; Pull -&gt; Commit -&gt; Push</code></p>
+<p><strong>Always start your working sessions with a pull</strong> to get any outstanding changes, then start doing your editing and work. Stage your changes, but before you commit, Pull again to see if any new changes have arrived. If so, they should merge in easily if you are working in different parts of the program. You can then Commit and immediately Push your changes safely. Good luck, and try to not get frustrated. Once you figure out how to handle merge conflicts, they can be avoided or dispatched when they occur, but it does take a bit of practice.</p>
 <hr />
-<h1 id="advanced-topics-at-the-command-line">Advanced Topics at the command line</h1>
-<p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
-<p><a href="day3-cli_advanced.html">Advanced topics CLI</a></p>
-<h1 id="aknowledgements">Aknowledgements</h1>
-<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="your-turn">Your turn</h2>
+<ul>
+<li>Use your favorite desserts to create a merge conflict. Resolve it using RStudio</li>
+<li>Mixing the fun: try to create a merge conflict using the forking workflow. How would you do this? Try to resolve the conflict on the GitHub website! <a href="https://docs.github.com/en/github/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github">hint</a></li>
+</ul>
+<hr />
+<h1 id="aknowledgement">Aknowledgement</h1>
+<p>This section had been adapted from <a href="https://learning.nceas.ucsb.edu/2021-02-RRCourse/index.html">NCEAS Reproducible Research Techniques for Synthesis</a></p>
+<p>Individual units were created by (in alphabetical order): Julien Brun, Amber Budden, Jeanette Clark, Matt Jones, Erin McLean, Bryce Mecum, William Michener.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

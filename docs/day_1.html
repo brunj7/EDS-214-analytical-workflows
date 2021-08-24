@@ -2439,7 +2439,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2545,12 +2545,17 @@ Daily Materials
 <li><a href="#r-markdown">R Markdown</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#github-branches">GitHub branches</a>
+<ul>
+<li><a href="#github-hands-on">GitHub Hands-on</a></li>
+</ul></li>
 <li><a href="#further-reading">Further reading</a>
 <ul>
 <li><a href="#data-and-scientific-workflow-management">Data and scientific workflow management:</a></li>
 <li><a href="#open-science">Open Science</a></li>
 <li><a href="#collaborative-coding">Collaborative coding</a></li>
 <li><a href="#code-review">Code Review</a></li>
+<li><a href="#branches">Branches</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2623,7 +2628,7 @@ Daily Materials
 <p>There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower <strong>you</strong> to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your “future self” to reuse and build from your own work.</p>
 <p>To make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on <strong>programming</strong> to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, …) of your analysis. Scripting languages, even better open ones, such as <code>R</code> and <code>python</code>, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use <code>R</code>, <code>git</code> and <code>GitHub</code> to develop such workflows as a team.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure" style="text-align: center"><span id="fig:tidy-workflow"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tidy-workflow"></span>
 <img src="img/tidy-workflow.png" alt="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science &lt;https://r4ds.had.co.nz/&gt;_" width="80%" />
 <p class="caption">
 Figure 1: Workflow example using the <code>tidyverse</code>. Note the program box around the workflow and the iterative nature of the analytical process described. <em>Source: R for Data Science <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></em>
@@ -2689,7 +2694,7 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 <li>Code repository: where we share code and communicate ideas and feedback</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="img/git_explain_xkcd.png" alt=" https://xkcd.com/1597/" width="330" />
 <p class="caption">
 Figure 2:  <a href="https://xkcd.com/1597/" class="uri">https://xkcd.com/1597/</a>
@@ -2728,6 +2733,14 @@ Figure 2:  <a href="https://xkcd.com/1597/" class="uri">https://xkcd.com/1597/</
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/markdown-how-it-works.png" width="732" /></p>
 </div>
+<hr />
+<h1 id="github-branches">GitHub branches</h1>
+<p><a href="day2-github_branches.html"><strong>Materials</strong></a></p>
+<h2 id="github-hands-on">GitHub Hands-on</h2>
+<ol type="1">
+<li><a href="day2-handson_github_website.html">GitHub branches using the website</a></li>
+<li><a href="day2-handson_github_rstudio.html">GitHub branches using RStudio</a></li>
+</ol>
 <hr />
 <h1 id="further-reading">Further reading</h1>
 <p>Here are a few selected publications to help you to learn more about these topics.</p>
@@ -2775,6 +2788,10 @@ Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <a href="http://www.practice
 <h2 id="code-review">Code Review</h2>
 <ul>
 <li>Small-Group Code Reviews For Education: <a href="https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext" class="uri">https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext</a></li>
+</ul>
+<h2 id="branches">Branches</h2>
+<ul>
+<li>Interactive tutorial to learn more about git branches and more <a href="https://learngitbranching.js.org/" class="uri">https://learngitbranching.js.org/</a></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

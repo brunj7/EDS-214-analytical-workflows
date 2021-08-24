@@ -2439,7 +2439,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2510,31 +2510,98 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#github-branches">GitHub branches</a>
+<li><a href="#git-therapy">Git Therapy</a>
 <ul>
-<li><a href="#github-hands-on">GitHub Hands-on</a></li>
+<li><a href="#github-conflicts">GitHub conflicts</a></li>
 </ul></li>
 <li><a href="#managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</a></li>
+<li><a href="#git-commit-messages"><code>git</code> commit messages</a></li>
+<li><a href="#debugging-with-rstudio">Debugging with RStudio</a></li>
+<li><a href="#meds-computing-ressources">MEDS computing ressources</a></li>
+<li><a href="#moving-your-codes-to-a-remote-server">Moving your codes to a remote server</a></li>
 <li><a href="#further-reading">Further reading</a>
 <ul>
 <li><a href="#github-workflow">GitHub Workflow</a>
 <ul>
 <li><a href="#git-using-rstudio">Git using RStudio</a></li>
+<li><a href="#undoing-things">Undoing things</a></li>
 </ul></li>
 </ul></li>
 </ul>
 </nav>
 </div>
-<h1 id="github-branches">GitHub branches</h1>
-<p><a href="day2-github_branches.html"><strong>Materials</strong></a></p>
-<h2 id="github-hands-on">GitHub Hands-on</h2>
-<ol type="1">
-<li><a href="day2-handson_github_website.html">GitHub branches using the website</a></li>
-<li><a href="day2-handson_github_rstudio.html">GitHub branches using RStudio</a></li>
-</ol>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Time (PST)</strong></th>
+<th><strong>Activity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9:00am - 10:00am</td>
+<td><em>Github conflicts (60 min)</em></td>
+</tr>
+<tr class="even">
+<td>10:00am - 10:10am</td>
+<td><em>Break 1 (10 min)</em></td>
+</tr>
+<tr class="odd">
+<td>10:10am - 11:20am</td>
+<td><em>Managing data-driven projects as a team (80 min)</em></td>
+</tr>
+<tr class="even">
+<td>11:20am - 11:30am</td>
+<td><em>Break 2 (10 min)</em></td>
+</tr>
+<tr class="odd">
+<td>11:30am - 12:00am</td>
+<td><em>Flex time 1: Debugging with RStudio (30 min)</em></td>
+</tr>
+<tr class="even">
+<td>12:00am - 1:15pm</td>
+<td><em>Lunch (75 min)</em></td>
+</tr>
+<tr class="odd">
+<td>1:15pm - 2:15pm</td>
+<td><em>git commit messages (60 min)</em></td>
+</tr>
+<tr class="even">
+<td>2:15pm - 3:15pm</td>
+<td><em>Meet Kat and Brad – MEDS computing resources</em></td>
+</tr>
+<tr class="odd">
+<td>3:15pm - 3:25pm</td>
+<td><em>Break 3 (10 min)</em></td>
+</tr>
+<tr class="even">
+<td>3:25pm - 4:05pm</td>
+<td><em>Server practice: Bringing your code to the server</em></td>
+</tr>
+<tr class="odd">
+<td>4:05pm - 4:30pm</td>
+<td><em>Recap of the day and Q&amp;A (25 min)</em></td>
+</tr>
+</tbody>
+</table>
+<h1 id="git-therapy">Git Therapy</h1>
+<h2 id="github-conflicts">GitHub conflicts</h2>
+<p>First thing to know is that actually <code>git pull</code> (or a Pull Request) is a two step process: <code>git pull = git fetch + git merge</code></p>
+<p>Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, <code>git</code> will call you to the rescue and ask him how to solve the problem.</p>
+<p><a href="day2-git-collaboration-conflicts.html"><strong>Materials</strong></a></p>
 <hr />
 <h1 id="managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</h1>
 <p><a href="day2-projects_team.html"><strong>Materials</strong></a></p>
+<hr />
+<h1 id="git-commit-messages"><code>git</code> commit messages</h1>
+<p><a href="day2-github_commit_messages.html"><strong>Materials</strong></a></p>
+<hr />
+<h1 id="debugging-with-rstudio">Debugging with RStudio</h1>
+<p><a href="docs/rstudio_debugging.html"><strong>Materials</strong></a></p>
+<hr />
+<h1 id="meds-computing-ressources">MEDS computing ressources</h1>
+<hr />
+<h1 id="moving-your-codes-to-a-remote-server">Moving your codes to a remote server</h1>
 <hr />
 <h1 id="further-reading">Further reading</h1>
 <h2 id="github-workflow">GitHub Workflow</h2>
@@ -2575,6 +2642,13 @@ Daily Materials
 <li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology" class="uri">https://www.atlassian.com/git/glossary/terminology</a></li>
 <li>8 tips to work better with git: <a href="https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/" class="uri">https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/</a></li>
 <li>GitPro book (2nd edition): <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a></li>
+</ul>
+<h3 id="undoing-things">Undoing things</h3>
+<ul>
+<li>Help to decide how to undo your problem: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png" class="uri">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
+<li>Undo almost everything with git <a href="https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/" class="uri">https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/</a></li>
+<li>Difference between git reset soft, mixed and hard <a href="https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/" class="uri">https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/</a></li>
+<li>Resetting, Checking Out &amp; Reverting <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" class="uri">https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting</a></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
