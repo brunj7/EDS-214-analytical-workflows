@@ -53,7 +53,7 @@ Second: you did nothing wrong!! Git tries to merge files automatically. When the
 
 # MEDS computing ressources
 
-bit.ly/medscompute8-25
+https://bit.ly/medscompute8-25
 
 ---
 
