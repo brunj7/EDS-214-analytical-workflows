@@ -39,15 +39,15 @@ Second: you did nothing wrong!! Git tries to merge files automatically. When the
 
 ---
 
-# `git` commit messages
+# Debugging with RStudio
 
-[**Materials**](day2-github_commit_messages.html)
+[**Materials**](rstudio_debugging.html)
 
 ---
 
-# Debugging with RStudio
+# `git` commit messages
 
-[**Materials**](docs/rstudio_debugging.html)
+[**Materials**](day2-github_commit_messages.html)
 
 ---
 
