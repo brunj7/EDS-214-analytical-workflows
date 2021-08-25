@@ -86,29 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: EDS 214: Analytical Workflows and Scientific Reproducibility</title>
+  <title>EDS 214: Vim, the editor</title>
 
-  <meta property="description" itemprop="description" content="This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: EDS 214: Analytical Workflows and Scientific Reproducibility"/>
+  <meta property="og:title" content="EDS 214: Vim, the editor"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: EDS 214: Analytical Workflows and Scientific Reproducibility"/>
-  <meta property="twitter:description" content="This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"/>
+  <meta property="twitter:title" content="EDS 214: Vim, the editor"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["EDS 214: Analytical Workflows and Scientific Reproducibility"]},{"type":"character","attributes":{},"value":["This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Vim, the editor"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2443,15 +2440,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
-  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/datatables-binding-0.18/datatables.js"></script>
-  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-  <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2471,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"EDS 214: Analytical Workflows and Scientific Reproducibility","description":"This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses","authors":[]}
+{"title":"Vim, the editor","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2510,10 +2498,10 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>EDS 214: Analytical Workflows and Scientific Reproducibility</h1>
+<h1>Vim, the editor</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses</p>
+
 </div>
 
 
@@ -2522,116 +2510,199 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#instructor">Instructor</a></li>
-<li><a href="#tutor">Tutor</a></li>
-<li><a href="#important-links">Important links</a></li>
-<li><a href="#course-description">Course description</a></li>
-<li><a href="#predictable-daily-schedule">Predictable daily schedule</a></li>
-<li><a href="#learning-objectives">Learning objectives</a></li>
-<li><a href="#sessions-subject-to-change">Sessions (subject to change)</a></li>
-<li><a href="#course-requirements">Course requirements</a>
+<li><a href="#other-text-editors">Other text editors</a>
 <ul>
-<li><a href="#computing">Computing</a></li>
-<li><a href="#textbook">Textbook</a></li>
+<li><a href="#your-typical-editor-works-like-this">Your typical editor works like this…</a></li>
 </ul></li>
+<li><a href="#vim-is-different">Vim is different</a>
+<ul>
+<li><a href="#vim-has-modes">Vim has <em>modes</em></a></li>
+</ul></li>
+<li><a href="#the-keyboard-is-your-friend">The keyboard is your friend</a></li>
+<li><a href="#for-the-impatient">For the impatient</a></li>
+<li><a href="#normal-mode">Normal mode</a>
+<ul>
+<li><a href="#now-that-youve-seen-that-you-can-actually-type-in-vim-lets-learn-about-the-magic-of-normal-mode">Now that you’ve seen that you <em>can</em> actually type in vim, let’s learn about the magic of Normal mode!</a></li>
+</ul></li>
+<li><a href="#moving-around-motions">Moving around (“motions”)</a></li>
+<li><a href="#moving-around-motions-1">Moving around (“motions”)</a></li>
+<li><a href="#insert">Insert</a></li>
+<li><a href="#delete-really-this-is-cut">Delete (really, this is “cut”)</a></li>
+<li><a href="#copy-and-paste">Copy and paste</a></li>
+<li><a href="#search-and-replace">Search and replace</a></li>
+<li><a href="#do-overs">Do-overs!</a></li>
+<li><a href="#extras">Extras</a></li>
+<li><a href="#saving-and-quitting">Saving and quitting</a></li>
+<li><a href="#tabs">Tabs</a></li>
+<li><a href="#basic-editing">Basic editing</a></li>
+<li><a href="#operators-and-repetition">Operators and repetition</a></li>
+<li><a href="#yank-paste">Yank &amp; paste</a></li>
+<li><a href="#searching">Searching</a></li>
+<li><a href="#marks-macros">Marks &amp; macros</a></li>
+<li><a href="#various-motions">Various motions</a></li>
+<li><a href="#various-commands">Various commands</a></li>
+<li><a href="#places-to-learn">Places to learn</a></li>
 </ul>
 </nav>
 </div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tidy-workflow"></span>
-<img src="img/tidy-workflow.png" alt="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science &lt;https://r4ds.had.co.nz/&gt;_" width="80%" />
-<p class="caption">
-Figure 1: Workflow example using the <code>tidyverse</code>. Note the program box around the workflow and the iterative nature of the analytical process described. <em>Source: R for Data Science <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></em>
-</p>
-</div>
-</div>
-<h2 id="instructor">Instructor</h2>
-<p><a href="https://brunj7.github.io/about.html">Julien Brun</a> (brun@nceas.ucsb.edu)</p>
-<h2 id="tutor">Tutor</h2>
-<p>Casey O’Hara (cohara@bren.ucsb.edu)</p>
-<h2 id="important-links">Important links</h2>
+<h1 id="other-text-editors">Other text editors</h1>
+<h2 id="your-typical-editor-works-like-this">Your typical editor works like this…</h2>
 <ul>
-<li><a href="https://bren.ucsb.edu/courses/eds-214">Course syllabus</a></li>
-<li><a href="code_of_conduct.html">Code of Conduct</a></li>
+<li>When you type almost any key, the corresponding character (letter, number, symbol, or whitespace) appears at the cursor</li>
+<li>Certain special keys do special operations (control, alt, command, super)</li>
+<li>For a GUI app, you can/must click menus for other functionality</li>
 </ul>
-<h2 id="course-description">Course description</h2>
-<p>The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.</p>
-<h2 id="predictable-daily-schedule">Predictable daily schedule</h2>
-<p><strong>Course dates:</strong> Monday (2021-08-02) - Friday (2021-08-06)</p>
-<p>EDS 214 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.</p>
-<p>Tentative daily schedule (subject to change):</p>
-<table>
-<thead>
-<tr class="header">
-<th><strong>Time (PST)</strong></th>
-<th><strong>Activity</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9:00am - 10:00am</td>
-<td><em>Lecture 1 (60 min)</em></td>
-</tr>
-<tr class="even">
-<td>10:00am - 10:10am</td>
-<td><em>Break 1 (10 min)</em></td>
-</tr>
-<tr class="odd">
-<td>10:10am - 11:30am</td>
-<td><em>Interactive Session 1 (80 min)</em></td>
-</tr>
-<tr class="even">
-<td>11:30am - 12:00am</td>
-<td><em>Flex time (30 min)</em></td>
-</tr>
-<tr class="odd">
-<td>12:00am - 1:15pm</td>
-<td><em>Lunch (75 min)</em></td>
-</tr>
-<tr class="even">
-<td>1:15pm - 2:00pm</td>
-<td><em>Lecture 2 (45 min)</em></td>
-</tr>
-<tr class="odd">
-<td>2:00pm - 2:10pm</td>
-<td><em>Break 2 (10 min)</em></td>
-</tr>
-<tr class="even">
-<td>2:10pm - 3:10pm</td>
-<td><em>Interactive Session 2 (60 min)</em></td>
-</tr>
-<tr class="odd">
-<td>3:10pm - 3:20pm</td>
-<td><em>Break 3 (10 min)</em></td>
-</tr>
-<tr class="even">
-<td>3:20pm - 4:30pm</td>
-<td><em>Group projects and/or flex time (70 min)</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="learning-objectives">Learning objectives</h2>
-<p>The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to expose incoming MEDS students to “good enough” practices of scientific programming develop skills in environmental data science to produce reproducible research. By the end of the course, students should be able to:</p>
+<h1 id="vim-is-different">Vim is different</h1>
+<h2 id="vim-has-modes">Vim has <em>modes</em></h2>
+<dl>
+<dt>Normal</dt>
+<dd>for almost everything except typing! Insert
+</dd>
+<dd>for typing Visual
+</dd>
+<dd>for highlighting a region to operate on
+</dd>
+<dd>(and others you don’t need to know about)
+</dd>
+</dl>
+<h1 id="the-keyboard-is-your-friend">The keyboard is your friend</h1>
+<p><img src="img/vi-vim-cheat-sheet.gif" /></p>
+<h1 id="for-the-impatient">For the impatient</h1>
 <ul>
-<li><p><strong>Develop knowledge in scientific analytical workflows</strong> To learn how to make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results of your analysis (figures, new data, publications, …). Scripting languages, even better open ones such as <code>R</code> and <code>python</code>, are well-suited for scientists to develop reproducible scientific workflows, but are not the only tools you will need to develop reproducible and collaborative workflows</p></li>
-<li><p><strong>Learn how to code in a collaborative manner</strong> by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code review using <code>git</code> and <code>GitHub</code> to create pull request, ask feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows</p></li>
-<li><p><strong>Practice documenting code and data</strong> in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work</p></li>
+<li>Start vim in terminal: <code>$ vim test.txt</code></li>
+<li>Press <code>i</code> to enter insert mode</li>
+<li>Type to your heart’s content</li>
+<li>When you’re done, hit <code>Esc</code> to leave insert mode</li>
+<li>Then type <code>:w</code> to save your document</li>
+<li>Then type <code>:q</code> to quit
+<ul>
+<li>if you have unsaved changes, vim will complain</li>
+<li>to save, see previous, or do <code>:wq</code> in one step</li>
+<li>to discard changes and quit, do <code>:q!</code></li>
+</ul></li>
 </ul>
-<h2 id="sessions-subject-to-change">Sessions (subject to change)</h2>
-<div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-4ffc5996fda06c36ced1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4ffc5996fda06c36ced1">{"x":{"filter":"none","data":[["Monday 8/23: morning","Monday 8/23: afternoon","Tuesday 8/24: morning","Tuesday 8/24: afternoon","Wednesday 8/25: morning (late start)","Wednesday 8/25: afternoon","Thursday 8/26: morning","Thursday 8/26: afternoon","Friday 8/27: morning","Friday 8/27 afternoon"],["Repoducible workflows","Collaborating with Github 101","Collaborating with Github 102","Organizing your project","Working on a remote server","Working on a remote server","Code review and pair programming","Documenting things","Sharing things","Presentations"],["Planning things: from diagrams to pseudo code","Forking and Pull Requests","Branches and issues","Notebooks, scripts, data and more","RStudio server &amp; the command line","Organizing projects on a server: how to manage data and codes","Team project","Team project","Team project","Team project"],["the Markdown syntax","Comparing R and python approaches to notebooks","Open","MEDS IT team (Brad &amp; Kat) -- Computing ressources","No flex sessions - Wednesday late start","Debugging with RStudio","Meet your next instructor  --  Jim Frew,  Bren School, UCSB","Capstone project proposal --  Jamie","Xaringan","Work on your online presence (GitHub profile and distill website)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Day / Session<\/th>\n      <th>Topics<\/th>\n      <th>Interactive Sessions<\/th>\n      <th>Flex Sessions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<h2 id="course-requirements">Course requirements</h2>
-<h3 id="computing">Computing</h3>
+<h1 id="normal-mode">Normal mode</h1>
+<h3 id="now-that-youve-seen-that-you-can-actually-type-in-vim-lets-learn-about-the-magic-of-normal-mode">Now that you’ve seen that you <em>can</em> actually type in vim, let’s learn about the magic of Normal mode!</h3>
+<h1 id="moving-around-motions">Moving around (“motions”)</h1>
+<p><strong>Stepping</strong></p>
 <ul>
-<li><p>Minimum <a href="https://ucsb-meds.github.io/computer_reqs.html">MEDS device requirements</a></p></li>
-<li><p>Have a ready to be used GitHub Account (<a href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
+<li>by line: up <code>k</code>, down <code>j</code></li>
+<li>by character: forward <code>l</code>, backward <code>h</code></li>
+<li>by word: forward <code>w</code>, backward <code>b</code></li>
+<li>by sentence: forward <code>)</code>, backward <code>(</code></li>
+<li>by paragraph: forward <code>}</code>, backward <code>{</code></li>
 </ul>
-<h3 id="textbook">Textbook</h3>
+<h1 id="moving-around-motions-1">Moving around (“motions”)</h1>
+<p><strong>Jumping</strong></p>
 <ul>
-<li>R for Data Science: <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></li>
-<li>The Practice of Reproducible Research: <a href="http://www.practicereproducibleresearch.org/" class="uri">http://www.practicereproducibleresearch.org/</a></li>
+<li>to start/end of line: <code>0/$</code></li>
+<li>to first/last line of file: <code>gg/G</code></li>
+<li>to a character on current line: <code>f/F{char}</code></li>
+<li>to identical word: <code>*/#</code></li>
+<li>to line number: <code>:{#}</code> or <code>{#}G</code></li>
+<li>to top, middle, or bottom of screen: <code>{HML}</code></li>
+</ul>
+<h1 id="insert">Insert</h1>
+<ul>
+<li>starting right where you are: <code>i</code></li>
+<li>starting at the next character – <code>a</code></li>
+<li>starting at the end of the current line – <code>A</code></li>
+<li>starting at the beginning of the line – <code>I</code></li>
+<li>starting on the next line – <code>o</code></li>
+<li>starting on the previous line – <code>O</code></li>
+<li>enter ‘replace mode’ right where you are – <code>R</code></li>
+<li>replace current character with one other character – <code>r{char}</code></li>
+<li>delete current character, then enter insert mode – <code>s</code></li>
+<li>delete current line, then enter insert mode – <code>S</code></li>
+</ul>
+<h1 id="delete-really-this-is-cut">Delete (really, this is “cut”)</h1>
+<ul>
+<li>delete character under cursor: <code>x</code></li>
+<li>delete character before cursor: <code>X</code></li>
+<li>delete to end of line: <code>D</code></li>
+<li>delete entire line: <code>dd</code></li>
+<li>delete # lines: <code>d#d</code></li>
+<li>delete over some motion: <code>d{motion}</code></li>
+<li>use backspace in insert mode (like every other editor)</li>
+</ul>
+<h1 id="copy-and-paste">Copy and paste</h1>
+<ul>
+<li>copy (“yank”) – <code>y{motion}</code></li>
+<li>copy (“yank”) –</li>
+<li>paste after cursor – <code>p</code></li>
+<li>paste before cursor – <code>P</code></li>
+</ul>
+<h1 id="search-and-replace">Search and replace</h1>
+<ul>
+<li>we already saw some of this with jumping</li>
+<li>search for arbitrary expression – <code>/{expression}</code></li>
+<li>search and replace
+<ul>
+<li><code>:s/foo/bar/</code></li>
+<li><code>:s/foo/bar/g</code></li>
+<li><code>:%s/foo/bar/g</code></li>
+</ul></li>
+</ul>
+<h1 id="do-overs">Do-overs!</h1>
+<ul>
+<li>undo change: <code>u</code></li>
+<li>repeat last change: <code>.</code></li>
+<li>redo last undone change: <code>Ctrl-r</code></li>
+</ul>
+<h1 id="extras">Extras</h1>
+<ul>
+<li>toggle case – ~</li>
+</ul>
+<h1 id="saving-and-quitting">Saving and quitting</h1>
+<ul>
+<li>save and quit: <code>ZZ</code> (or <code>:wq)</code></li>
+<li>save and keep editing: <code>:w</code></li>
+<li>quit without saving: <code>:q</code></li>
+<li><em>really</em> quit without saving: <code>:q!</code></li>
+</ul>
+<h1 id="tabs">Tabs</h1>
+<ul>
+<li>open another file in new tab: <code>:tabe &lt;file&gt;</code></li>
+<li>change tabs: forward <code>gt</code>, backward <code>gT</code></li>
+</ul>
+<h1 id="basic-editing">Basic editing</h1>
+<figure>
+<img src="img/vi-vim-tutorial-1.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+</figure>
+<h1 id="operators-and-repetition">Operators and repetition</h1>
+<figure>
+<img src="img/vi-vim-tutorial-2.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+</figure>
+<h1 id="yank-paste">Yank &amp; paste</h1>
+<figure>
+<img src="img/vi-vim-tutorial-3.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+</figure>
+<h1 id="searching">Searching</h1>
+<figure>
+<img src="img/vi-vim-tutorial-4.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+</figure>
+<h1 id="marks-macros">Marks &amp; macros</h1>
+<figure>
+<img src="img/vi-vim-tutorial-5.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+</figure>
+<h1 id="various-motions">Various motions</h1>
+<figure>
+<img src="img/vi-vim-tutorial-6.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+</figure>
+<h1 id="various-commands">Various commands</h1>
+<figure>
+<img src="img/vi-vim-tutorial-7.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+</figure>
+<h1 id="places-to-learn">Places to learn</h1>
+<ul>
+<li>The <a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html">pictorial cheatsheets</a> used in this slide
+<ul>
+<li><a href="http://www.glump.net/_media/howto/vi-vim-cheat-sheet-and-tutorial.pdf">Color PDF of all 8 diagrams</a></li>
+</ul></li>
+<li>A nice <a href="http://jmcpherson.org/editing.html">introduction with some clear prose</a></li>
+<li>A popular portal to <a href="http://thomer.com/vi/vi.html">the rest of the vim universe</a></li>
+<li>A bit heavy-handed, but if you really like learning by <a href="http://www.linuxconfig.org/Vim_Tutorial">watching over someone’s shoulder</a>…</li>
+<li>Lastly, if you just want to learn <a href="http://www.jerrywang.net/vi/">how to start <em>and</em> quit vim all in the first page of tips</a></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

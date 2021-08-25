@@ -86,29 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: EDS 214: Analytical Workflows and Scientific Reproducibility</title>
+  <title>EDS 214: Practicing CLI</title>
 
-  <meta property="description" itemprop="description" content="This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: EDS 214: Analytical Workflows and Scientific Reproducibility"/>
+  <meta property="og:title" content="EDS 214: Practicing CLI"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: EDS 214: Analytical Workflows and Scientific Reproducibility"/>
-  <meta property="twitter:description" content="This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"/>
+  <meta property="twitter:title" content="EDS 214: Practicing CLI"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["EDS 214: Analytical Workflows and Scientific Reproducibility"]},{"type":"character","attributes":{},"value":["This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Practicing CLI"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2443,15 +2440,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
-  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/datatables-binding-0.18/datatables.js"></script>
-  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-  <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2471,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"EDS 214: Analytical Workflows and Scientific Reproducibility","description":"This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses","authors":[]}
+{"title":"Practicing CLI","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2510,10 +2498,10 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>EDS 214: Analytical Workflows and Scientific Reproducibility</h1>
+<h1>Practicing CLI</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses</p>
+
 </div>
 
 
@@ -2522,118 +2510,51 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#instructor">Instructor</a></li>
-<li><a href="#tutor">Tutor</a></li>
-<li><a href="#important-links">Important links</a></li>
-<li><a href="#course-description">Course description</a></li>
-<li><a href="#predictable-daily-schedule">Predictable daily schedule</a></li>
-<li><a href="#learning-objectives">Learning objectives</a></li>
-<li><a href="#sessions-subject-to-change">Sessions (subject to change)</a></li>
-<li><a href="#course-requirements">Course requirements</a>
-<ul>
-<li><a href="#computing">Computing</a></li>
-<li><a href="#textbook">Textbook</a></li>
-</ul></li>
+<li><a href="#files-and-directories">Files and directories</a></li>
+<li><a href="#aknowledgements">Aknowledgements</a></li>
 </ul>
 </nav>
 </div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tidy-workflow"></span>
-<img src="img/tidy-workflow.png" alt="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science &lt;https://r4ds.had.co.nz/&gt;_" width="80%" />
-<p class="caption">
-Figure 1: Workflow example using the <code>tidyverse</code>. Note the program box around the workflow and the iterative nature of the analytical process described. <em>Source: R for Data Science <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></em>
-</p>
-</div>
-</div>
-<h2 id="instructor">Instructor</h2>
-<p><a href="https://brunj7.github.io/about.html">Julien Brun</a> (brun@nceas.ucsb.edu)</p>
-<h2 id="tutor">Tutor</h2>
-<p>Casey O’Hara (cohara@bren.ucsb.edu)</p>
-<h2 id="important-links">Important links</h2>
+<h2 id="files-and-directories">Files and directories</h2>
+<p>In the following code examples, you need to type the command, but not include the command prompt (e.g., <code>brun@taylor:~$</code>) which just shows that the computer is ready to accept a command.</p>
+<p>We’ll start by:</p>
 <ul>
-<li><a href="https://bren.ucsb.edu/courses/eds-214">Course syllabus</a></li>
-<li><a href="code_of_conduct.html">Code of Conduct</a></li>
+<li>creating two directories with <code>mkdir</code> (make directory)</li>
+<li>create a simple text file using <code>echo</code></li>
+<li>Show the contents of that file using <code>cat</code> (concatenate)</li>
 </ul>
-<h2 id="course-description">Course description</h2>
-<p>The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.</p>
-<h2 id="predictable-daily-schedule">Predictable daily schedule</h2>
-<p><strong>Course dates:</strong> Monday (2021-08-02) - Friday (2021-08-06)</p>
-<p>EDS 214 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.</p>
-<p>Tentative daily schedule (subject to change):</p>
-<table>
-<thead>
-<tr class="header">
-<th><strong>Time (PST)</strong></th>
-<th><strong>Activity</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9:00am - 10:00am</td>
-<td><em>Lecture 1 (60 min)</em></td>
-</tr>
-<tr class="even">
-<td>10:00am - 10:10am</td>
-<td><em>Break 1 (10 min)</em></td>
-</tr>
-<tr class="odd">
-<td>10:10am - 11:30am</td>
-<td><em>Interactive Session 1 (80 min)</em></td>
-</tr>
-<tr class="even">
-<td>11:30am - 12:00am</td>
-<td><em>Flex time (30 min)</em></td>
-</tr>
-<tr class="odd">
-<td>12:00am - 1:15pm</td>
-<td><em>Lunch (75 min)</em></td>
-</tr>
-<tr class="even">
-<td>1:15pm - 2:00pm</td>
-<td><em>Lecture 2 (45 min)</em></td>
-</tr>
-<tr class="odd">
-<td>2:00pm - 2:10pm</td>
-<td><em>Break 2 (10 min)</em></td>
-</tr>
-<tr class="even">
-<td>2:10pm - 3:10pm</td>
-<td><em>Interactive Session 2 (60 min)</em></td>
-</tr>
-<tr class="odd">
-<td>3:10pm - 3:20pm</td>
-<td><em>Break 3 (10 min)</em></td>
-</tr>
-<tr class="even">
-<td>3:20pm - 4:30pm</td>
-<td><em>Group projects and/or flex time (70 min)</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="learning-objectives">Learning objectives</h2>
-<p>The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to expose incoming MEDS students to “good enough” practices of scientific programming develop skills in environmental data science to produce reproducible research. By the end of the course, students should be able to:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> mkdir oss</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> mkdir oss/data</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> echo <span class="st">&quot;# Tutorial files related to OSS&quot;</span> <span class="op">&gt;</span> oss/README.md</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cat oss/README.md</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tutorial files related to OSS</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> </span></code></pre></div>
+<p>Next, let’s copy another file and look around in the directories:</p>
 <ul>
-<li><p><strong>Develop knowledge in scientific analytical workflows</strong> To learn how to make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results of your analysis (figures, new data, publications, …). Scripting languages, even better open ones such as <code>R</code> and <code>python</code>, are well-suited for scientists to develop reproducible scientific workflows, but are not the only tools you will need to develop reproducible and collaborative workflows</p></li>
-<li><p><strong>Learn how to code in a collaborative manner</strong> by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code review using <code>git</code> and <code>GitHub</code> to create pull request, ask feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows</p></li>
-<li><p><strong>Practice documenting code and data</strong> in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work</p></li>
+<li>copy a file into your directory with <code>cp</code> (copy)</li>
+<li>change our working directory to that newly created directory using <code>cd</code> (change directory)</li>
+<li>list the files in the directory with <code>ls</code> (list)</li>
+<li>look where we are in the filesystem using <code>pwd</code> (print working directory)</li>
+<li>get an overview of the directory contents using <code>tree</code></li>
 </ul>
-<h2 id="sessions-subject-to-change">Sessions (subject to change)</h2>
-<div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-4ffc5996fda06c36ced1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4ffc5996fda06c36ced1">{"x":{"filter":"none","data":[["Monday 8/23: morning","Monday 8/23: afternoon","Tuesday 8/24: morning","Tuesday 8/24: afternoon","Wednesday 8/25: morning (late start)","Wednesday 8/25: afternoon","Thursday 8/26: morning","Thursday 8/26: afternoon","Friday 8/27: morning","Friday 8/27 afternoon"],["Repoducible workflows","Collaborating with Github 101","Collaborating with Github 102","Organizing your project","Working on a remote server","Working on a remote server","Code review and pair programming","Documenting things","Sharing things","Presentations"],["Planning things: from diagrams to pseudo code","Forking and Pull Requests","Branches and issues","Notebooks, scripts, data and more","RStudio server &amp; the command line","Organizing projects on a server: how to manage data and codes","Team project","Team project","Team project","Team project"],["the Markdown syntax","Comparing R and python approaches to notebooks","Open","MEDS IT team (Brad &amp; Kat) -- Computing ressources","No flex sessions - Wednesday late start","Debugging with RStudio","Meet your next instructor  --  Jim Frew,  Bren School, UCSB","Capstone project proposal --  Jamie","Xaringan","Work on your online presence (GitHub profile and distill website)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Day / Session<\/th>\n      <th>Topics<\/th>\n      <th>Interactive Sessions<\/th>\n      <th>Flex Sessions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<h2 id="course-requirements">Course requirements</h2>
-<h3 id="computing">Computing</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cd ~</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cp 10min-loop.R oss</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cd oss</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/oss$</span> ls</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">10min-loop.R</span>  data  README.md</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/oss$</span> pwd</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/brun/oss</span></span></code></pre></div>
+<h2 id="aknowledgements">Aknowledgements</h2>
+<p>Adapted from Matt Jones, OSS 2017, <a href="https://github.com/NCEAS/oss-lessons" class="uri">https://github.com/NCEAS/oss-lessons</a></p>
+<p>Now, let’s create two subdirectories in the data directory: <code>mammals</code> and <code>plots</code></p>
 <ul>
-<li><p>Minimum <a href="https://ucsb-meds.github.io/computer_reqs.html">MEDS device requirements</a></p></li>
-<li><p>Have a ready to be used GitHub Account (<a href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
+<li>move using <code>cp</code> all the mammals files from the <code>sampledata</code> folder to the <code>mammals</code> subdirectory; hint: you can use the wildcard <code>*</code></li>
+<li>move using <code>mv</code> the other files files from the <code>sampledata</code> folder to the <code>plots</code> subdirectory</li>
+<li>double check it is done using <code>cd</code> and <code>ls</code></li>
+<li>remove <code>rm</code> the <code>sampledata</code> directory; hint: <code>rmdir</code> can only remove empty directories</li>
+<li>bonus: add a text file <code>data_listing.txt</code> in the <code>data</code> folder that lists all the files in it</li>
 </ul>
-<h3 id="textbook">Textbook</h3>
-<ul>
-<li>R for Data Science: <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></li>
-<li>The Practice of Reproducible Research: <a href="http://www.practicereproducibleresearch.org/" class="uri">http://www.practicereproducibleresearch.org/</a></li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

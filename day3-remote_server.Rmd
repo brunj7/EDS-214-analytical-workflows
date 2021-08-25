@@ -31,6 +31,7 @@ Often the main motivation is to **scale your analysis beyond what a personal com
 # Collaborative Setup
 
 There are additional reasons of particular importance in a collaborative set up, such as a working group:
+
 - **Centralizing data management**: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!
 - **Make sure your files are safe**: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.
 
@@ -38,6 +39,7 @@ There are additional reasons of particular importance in a collaborative set up,
 # What does working on a remote server means?
 
 What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are  about:
+
 - File management: you will need to learn to move files (including your R scripts) to the server
 - Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.
 
@@ -96,7 +98,6 @@ knitr::include_graphics("img/rstudio-server_packages.png")
 ```
 
 
-
 A user can also installed her/his own packages. Let's try to install the `remote` package that lets you install R packages directly from GitHub: `install.packages("remotes")`. Once done, note a new section that appeared on the Packages tab named `User Library`. Each of us have now its own copy of the package installed (in this `R` folder we were talking about a few minutes ago). 
 
 ```{r}
@@ -111,6 +112,7 @@ A few notes:
 
 **Look now inside you `R` folder!!**
 
+---
 
 # Command line
 
@@ -175,6 +177,8 @@ You can access the command line directly from RStudio by using the `Terminal` ta
 * `.` : Here (current directory)
 * `..`: Up one level (upper directory)
 
+![](img/unix_filetree.gif)
+
 
 * go to my "Home" directory:  `cd ~`
 * go up one directory level: `cd ..`
@@ -186,9 +190,10 @@ More files/directories manipulations:
 * `mkdir`: Create a directory
 * `cp`: Copy a file
 * `mv`: Move a file
-* `rm` /`rmdir`: Remove a file / directory  **use those carefully, there is no return / Trash!!**
+* `rm` / `rmdir`: Remove a file / directory  **use those carefully, there is no return / Trash!!**
 
 
+**Note: typing is not your thing? the `<tab>` key is your friend!** One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.
 
 
 ### Permissions
@@ -209,12 +214,6 @@ drwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example
 * Clear contents in terminal window: `clear`
 
 
-
-### Exercise
-
-Navigate to the repo we created and inspect its content using the CLI
-
-**Note: typing is not your thing? the `<tab>` key is your friend!** One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.
 
 ## General command syntax
 
@@ -242,6 +241,9 @@ man ls
 Tip: hit `q` to exit the help!
 
 
+**To end an SSH session, simply type `exit` or `logout` into the command line**
+
+---
 
 # Uploading Files to a server
 
@@ -269,7 +271,7 @@ We recommend the following free software:
 The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from taylor or from your local computer. Here is the basic syntax:
 
 ```
-scp </source/path> <hostname:/path/to/destination/>
+scp /source/path hostname:/path/to/destination/
 ```
 
 Here is an example of my uploading the file `10min-loop.R` to taylor from my laptop. The destination directory on taylor is `/home/brun/`:
@@ -278,7 +280,6 @@ Here is an example of my uploading the file `10min-loop.R` to taylor from my lap
 scp 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/
 ```
 
-![](img/server-scp.png)
 BTW try to open and run that script for fun!!
 
 
@@ -299,6 +300,25 @@ scp -r myplot brun@taylor.bren.ucsb.edu:/home/brun/plots
 
 Upload files from your local machine to the server using the different techniques mentioned above, You can download the `10min-loop.R` file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R
 
+Try with a folder: 
+
+- download the data to your laptop: https://aurora.nceas.ucsb.edu/~brun/sampledata.zip
+- unzip the folder
+- upload the folder to Taylor using scp or cyberduck
+
+Your should end up with something like this:
+
+```bash
+brun@taylor:~$ ls -l
+total 16
+-rw-r--r-- 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R
+drwxr-xr-x 3 brun esmdomainusers 4096 Aug 24 23:05 github
+drwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R
+drwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata
+```
+
+[**CLI Practice**](day3-cli_practice.html)
+
 --- 
 
 
@@ -308,8 +328,10 @@ Upload files from your local machine to the server using the different technique
 
 [Advanced topics CLI](day3-cli_advanced.html)
 
+[Vim](vim.html)
+
 
 # Aknowledgements
 
-This section reuses a lot of materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
+This section reuses materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.
 

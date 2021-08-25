@@ -1,0 +1,61 @@
+---
+title: "Practicing CLI"
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Files and directories
+
+In the following code examples, you need to type the command, but not include 
+the command prompt (e.g., `brun@taylor:~$`) which just shows that the computer 
+is ready to accept a command.
+
+We'll start by:
+
+- creating two directories with `mkdir` (make directory)
+- create a simple text file using `echo`
+- Show the contents of that file using `cat` (concatenate)
+
+```bash
+brun@taylor:~$ mkdir oss
+brun@taylor:~$ mkdir oss/data
+brun@taylor:~$ echo "# Tutorial files related to OSS" > oss/README.md
+brun@taylor:~$ cat oss/README.md
+# Tutorial files related to OSS
+brun@taylor:~$ 
+```
+
+Next, let's copy another file and look around in the directories:
+
+- copy a file into your directory with `cp` (copy)
+- change our working directory to that newly created directory using `cd` (change directory)
+- list the files in the directory with `ls` (list)
+- look where we are in the filesystem using `pwd` (print working directory)
+- get an overview of the directory contents using `tree`
+
+
+```bash
+brun@taylor:~$ cd ~
+brun@taylor:~$ cp 10min-loop.R oss
+brun@taylor:~$ cd oss
+brun@taylor:~/oss$ ls
+10min-loop.R  data  README.md
+brun@taylor:~/oss$ pwd
+/home/brun/oss
+```
+
+
+## Aknowledgements
+
+Adapted from Matt Jones, OSS 2017, https://github.com/NCEAS/oss-lessons
+
+
+Now, let's create two subdirectories in the data directory: `mammals` and `plots`
+
+- move using `cp` all the mammals files from the `sampledata` folder to the `mammals` subdirectory; hint: you can use the wildcard `*`
+- move using `mv` the other files files from the `sampledata` folder to the `plots` subdirectory
+- double check it is done using `cd` and `ls`
+- remove `rm` the  `sampledata` directory; hint: `rmdir` can only remove empty directories
+- bonus: add a text file `data_listing.txt` in the `data` folder that lists all the files in it

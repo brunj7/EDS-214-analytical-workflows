@@ -6,6 +6,8 @@ title: "Developing Analytical Workflows as a Team"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+# Day 2
+
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
 | 9:00am - 10:00am  | *Github conflicts (60 min)*                               |

@@ -2534,7 +2534,6 @@ Daily Materials
 <li><a href="#the-terminal-from-rstudio">The Terminal from RStudio</a></li>
 <li><a href="#navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</a></li>
 <li><a href="#permissions">Permissions</a></li>
-<li><a href="#exercise">Exercise</a></li>
 </ul></li>
 <li><a href="#general-command-syntax">General command syntax</a></li>
 </ul></li>
@@ -2569,9 +2568,17 @@ Daily Materials
 </ul>
 <p><strong>=&gt; The operating system is more likely going to be Linux!!</strong></p>
 <h1 id="collaborative-setup">Collaborative Setup</h1>
-<p>There are additional reasons of particular importance in a collaborative set up, such as a working group: - <strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!! - <strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p>
+<p>There are additional reasons of particular importance in a collaborative set up, such as a working group:</p>
+<ul>
+<li><strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!</li>
+<li><strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</li>
+</ul>
 <h1 id="what-does-working-on-a-remote-server-means">What does working on a remote server means?</h1>
-<p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about: - File management: you will need to learn to move files (including your R scripts) to the server - Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</p>
+<p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:</p>
+<ul>
+<li>File management: you will need to learn to move files (including your R scripts) to the server</li>
+<li>Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</li>
+</ul>
 <h1 id="rstudio-server">RStudio Server</h1>
 <p>From an user perspective, <em>RStudio Server is your familiar RStudio interface in your web browser</em>. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that <strong>the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!</strong> This remote file management is the main change you will have to adopt in your workflow.</p>
 <p>To help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.</p>
@@ -2618,6 +2625,7 @@ Daily Materials
 <li>Installing an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries</li>
 </ul>
 <p><strong>Look now inside you <code>R</code> folder!!</strong></p>
+<hr />
 <h1 id="command-line">Command line</h1>
 <h2 id="introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</h2>
 <dl>
@@ -2666,24 +2674,28 @@ Daily Materials
 <p><img src="img/rstudio-terminal.png" /></p>
 <h3 id="navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</h3>
 <ul>
-<li><p><code>pwd</code>: Know where you are</p></li>
-<li><p><code>ls</code>: List the content of the directory</p></li>
-<li><p><code>cd</code>: Go inside a directory</p></li>
-<li><p><code>~</code> : Home directory</p></li>
-<li><p><code>.</code> : Here (current directory)</p></li>
-<li><p><code>..</code>: Up one level (upper directory)</p></li>
-<li><p>go to my “Home” directory: <code>cd ~</code></p></li>
-<li><p>go up one directory level: <code>cd ..</code></p></li>
-<li><p>list the content: <code>ls</code></p></li>
-<li><p>list the content showing hidden files: <code>ls -a</code> note that <code>-a</code> is referred as an option (modifies the command)</p></li>
+<li><code>pwd</code>: Know where you are</li>
+<li><code>ls</code>: List the content of the directory</li>
+<li><code>cd</code>: Go inside a directory</li>
+<li><code>~</code> : Home directory</li>
+<li><code>.</code> : Here (current directory)</li>
+<li><code>..</code>: Up one level (upper directory)</li>
+</ul>
+<p><img src="img/unix_filetree.gif" /></p>
+<ul>
+<li>go to my “Home” directory: <code>cd ~</code></li>
+<li>go up one directory level: <code>cd ..</code></li>
+<li>list the content: <code>ls</code></li>
+<li>list the content showing hidden files: <code>ls -a</code> note that <code>-a</code> is referred as an option (modifies the command)</li>
 </ul>
 <p>More files/directories manipulations:</p>
 <ul>
 <li><code>mkdir</code>: Create a directory</li>
 <li><code>cp</code>: Copy a file</li>
 <li><code>mv</code>: Move a file</li>
-<li><code>rm</code> /<code>rmdir</code>: Remove a file / directory <strong>use those carefully, there is no return / Trash!!</strong></li>
+<li><code>rm</code> / <code>rmdir</code>: Remove a file / directory <strong>use those carefully, there is no return / Trash!!</strong></li>
 </ul>
+<p><strong>Note: typing is not your thing? the <code>&lt;tab&gt;</code> key is your friend!</strong> One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.</p>
 <h3 id="permissions">Permissions</h3>
 <p>All files have permissions and ownership.</p>
 <figure>
@@ -2701,9 +2713,6 @@ Daily Materials
 <ul>
 <li>Clear contents in terminal window: <code>clear</code></li>
 </ul>
-<h3 id="exercise">Exercise</h3>
-<p>Navigate to the repo we created and inspect its content using the CLI</p>
-<p><strong>Note: typing is not your thing? the <code>&lt;tab&gt;</code> key is your friend!</strong> One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.</p>
 <h2 id="general-command-syntax">General command syntax</h2>
 <ul>
 <li><code>command [options] [arguments]</code></li>
@@ -2715,6 +2724,8 @@ Daily Materials
 <p>What do these options do?</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
 <p>Tip: hit <code>q</code> to exit the help!</p>
+<p><strong>To end an SSH session, simply type <code>exit</code> or <code>logout</code> into the command line</strong></p>
+<hr />
 <h1 id="uploading-files-to-a-server">Uploading Files to a server</h1>
 <p>You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)</p>
 <h3 id="rstudio">RStudio</h3>
@@ -2730,23 +2741,38 @@ Daily Materials
 <p><img src="img/server-cyberduck.png" /></p>
 <h2 id="scp">scp</h2>
 <p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from taylor or from your local computer. Here is the basic syntax:</p>
-<pre><code>scp &lt;/source/path&gt; &lt;hostname:/path/to/destination/&gt;</code></pre>
+<pre><code>scp /source/path hostname:/path/to/destination/</code></pre>
 <p>Here is an example of my uploading the file <code>10min-loop.R</code> to taylor from my laptop. The destination directory on taylor is <code>/home/brun/</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/</span></code></pre></div>
-<p><img src="img/server-scp.png" /> BTW try to open and run that script for fun!!</p>
+<p>BTW try to open and run that script for fun!!</p>
 <p>If you want to upload an entire folder, you can add the <code>-r</code> option to the command. The general syntax is:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code></pre></div>
 <p>Here is an example uploading all the images in the <code>myplot</code> folder</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/home/brun/plots</span></code></pre></div>
 <h3 id="your-turn">Your turn</h3>
 <p>Upload files from your local machine to the server using the different techniques mentioned above, You can download the <code>10min-loop.R</code> file to your local machine from <a href="https://aurora.nceas.ucsb.edu/~brun/10min-loop.R" class="uri">https://aurora.nceas.ucsb.edu/~brun/10min-loop.R</a></p>
+<p>Try with a folder:</p>
+<ul>
+<li>download the data to your laptop: <a href="https://aurora.nceas.ucsb.edu/~brun/sampledata.zip" class="uri">https://aurora.nceas.ucsb.edu/~brun/sampledata.zip</a></li>
+<li>unzip the folder</li>
+<li>upload the folder to Taylor using scp or cyberduck</li>
+</ul>
+<p>Your should end up with something like this:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> ls <span class="at">-l</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 24 23:05 github</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 16 05:00 R</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata</span></code></pre></div>
+<p><a href="day3-cli_practice.html"><strong>CLI Practice</strong></a></p>
 <hr />
 <h1 id="advanced-topics-at-the-command-line">Advanced Topics at the command line</h1>
 <p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
 <p><a href="day3-cli_advanced.html">Advanced topics CLI</a></p>
+<p><a href="vim.html">Vim</a></p>
 <h1 id="aknowledgements">Aknowledgements</h1>
-<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>This section reuses materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
