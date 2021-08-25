@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 We are going to build on the exercise we used the first day and work on implementing and refining the workflow we developed during that session.
 
 Here are the expectations:
+
 - By group of 3-4 collaborators
 - Find an awesome name for your group (one of the hardest [step](https://www.karlton.org/2017/12/naming-things-hard/))
 - Setup a shared GitHub repository

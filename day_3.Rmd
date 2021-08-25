@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 | 11:10am - 12:00am | *Practicing the command line*                             |
 | 12:00am - 1:15pm  | *Lunch (75 min)*                                          |
 | 1:15pm - 2:00pm   | *Introduction to the group project (45 min)*              |
-| 2:00pm - 4:30pm   | *Group Projects*           s|
+| 2:00pm - 4:30pm   | *Group Projects*           |
 
 
 
