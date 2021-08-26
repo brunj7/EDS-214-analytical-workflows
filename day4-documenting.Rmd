@@ -146,7 +146,9 @@ Here for more: https://www.python.org/dev/peps/pep-0257/
 
 ## Leveraging Notebooks
 
-### A few thoughts on Notebooks and Scripts
+As we have discussed and experimented with Notebooks during the week. It is because Notebooks provide space to further develop content, such as methodology, around the code you are developing in your analysis. Notebooks also enable you to integrate the outputs of your scientific research with the code that was used to produce it. Finally, notebooks can be rendered into various format that let them share with a broad audience.
+
+Notebooks are not only used within the scientific community, see [here](https://peerj.com/preprints/3182.pdf) for some thoughts from Airbnb data science team.
 
 
 ---
