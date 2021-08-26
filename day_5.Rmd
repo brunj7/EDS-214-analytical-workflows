@@ -124,7 +124,7 @@ In python, using `pip freeze > requirements.txt` or `conda list --export > requi
 
 A helpful abstraction for capturing the computing environment is a container, whereby a container is created from a set of instructions in a recipe. For the most common containerisation software, Docker, this recipe is called a Dockerfile. Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure and ship the containers to others. A Docker container can be seen as a computer inside your computer.
 
-```{r, fig.cap="http://jsta.github.io/r-docker-tutorial/01-what-and-why.html"}
+```{r, fig.cap="http://jsta.github.io/r-docker-tutorial/"}
 knitr::include_graphics("img/docker_drawing.jpeg")
 ```
 
@@ -133,6 +133,9 @@ A few good readings:
 
 - Docker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316
 - The Whole Tale project: combining containers with data repositories <https://wholetale.org/>
+- Docker tutorial: http://jsta.github.io/r-docker-tutorial/
+- Environment Management with Docker: https://environments.rstudio.com/docker
+- Sharing and Running R code using Docker: https://aboland.ie/Docker.html
 
 
 
