@@ -2510,7 +2510,10 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#the-power-of-readme">The power of README</a></li>
+<li><a href="#the-power-of-readme">The power of README</a>
+<ul>
+<li><a href="#need-some-inspiration">Need some inspiration ?</a></li>
+</ul></li>
 <li><a href="#making-your-code-readable">Making your code readable</a></li>
 <li><a href="#comments">Comments</a>
 <ul>
@@ -2533,7 +2536,7 @@ Daily Materials
 </nav>
 </div>
 <h2 id="the-power-of-readme">The power of README</h2>
-<p>README are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.</p>
+<p>README files are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.</p>
 <p>Good types of information to have on a README:</p>
 <ul>
 <li>Title capturing the essence of the project</li>
@@ -2545,9 +2548,13 @@ Daily Materials
 <li>Licensing</li>
 <li>Acknowledgements of authors, contributors, sponsors or other related work</li>
 </ul>
-<p>Adding images,short videos / animations can make a README more engaging.</p>
-<p>For your inspiration here is a interesting template: <a href="https://github.com/navendu-pottekkat/awesome-readme/tree/master" class="uri">https://github.com/navendu-pottekkat/awesome-readme/tree/master</a></p>
-<p>Note that when you start an R package with the <code>usethis</code> package, a README will be created for you with all the relevant sections for such type of project.</p>
+<p>Adding images, short videos / animations can make a README more engaging.</p>
+<h3 id="need-some-inspiration">Need some inspiration ?</h3>
+<ul>
+<li><p>Here is a interesting template: <a href="https://github.com/navendu-pottekkat/awesome-readme/tree/master" class="uri">https://github.com/navendu-pottekkat/awesome-readme/tree/master</a></p></li>
+<li><p>When you start an R package with the <code>usethis</code> package, a README will be created for you with all the relevant sections for such type of project.</p></li>
+<li><p>pick a package you like and inspect their README</p></li>
+</ul>
 <h2 id="making-your-code-readable">Making your code readable</h2>
 <p>It is important to make your code easy to read if you hope that others will reuse it. It starts with using a <strong>consistent style</strong> withing your scripts (at least within a project).</p>
 <ul>
@@ -2581,7 +2588,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre
 <p>There is also the <strong>visual aspect</strong> of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. <em>Indentation</em>, <em>spaces</em>, and <em>empty lines</em> should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions. Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, <em>try to add four <code>-</code> or <code>#</code> after a line starting with one or several <code>#</code> in an R Script!</em></p>
 <h2 id="comments">Comments</h2>
 <p><strong><em>Real Programmers don’t comment their code. If it was hard to write, it should be hard to understand.</em></strong><br />
-_Tom Van Vleck, based on people he knew (<a href="https://multicians.org/thvv/realprogs.html)_" class="uri">https://multicians.org/thvv/realprogs.html)_</a></p>
+Tom Van Vleck, based on people he knew_ (<a href="https://multicians.org/thvv/realprogs.html" class="uri">https://multicians.org/thvv/realprogs.html</a>)</p>
 <p>Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that <strong>comments should work in complement of the code</strong> and should not being seen as work around vague naming conventions of variables or functions.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">

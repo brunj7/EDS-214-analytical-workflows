@@ -10,7 +10,7 @@ library(reticulate)
 
 ## The power of README
 
-README are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
+README files are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
 
 Good types of information to have on a README:
 
@@ -23,11 +23,15 @@ Good types of information to have on a README:
 - Licensing 
 - Acknowledgements of authors, contributors, sponsors or other related work 
 
-Adding images,short videos / animations can make a README more engaging. 
+Adding images, short videos / animations can make a README more engaging. 
 
-For your inspiration here is a interesting template: https://github.com/navendu-pottekkat/awesome-readme/tree/master
+### Need some inspiration ?
 
-Note that when you start an R package with the `usethis` package, a README will be created for you with all the relevant sections for such type of project.
+- Here is a interesting template: https://github.com/navendu-pottekkat/awesome-readme/tree/master
+
+- When you start an R package with the `usethis` package, a README will be created for you with all the relevant sections for such type of project.
+
+- pick a package you like and inspect their README
 
 
 ## Making your code readable
@@ -48,7 +52,7 @@ There is also the **visual aspect** of the code that should not be neglected. Li
 ## Comments
 
 ***Real Programmers don't comment their code. If it was hard to write, it should be hard to understand.*** \
-_Tom Van Vleck, based on people he knew (https://multicians.org/thvv/realprogs.html)_
+Tom Van Vleck, based on people he knew_ (https://multicians.org/thvv/realprogs.html)
 
 Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that **comments should work in complement of the code** and should not being seen as work around vague naming conventions of variables or functions.
 
