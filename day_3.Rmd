@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 | 10:10am - 11:00am | *Introduction to server and linux*                        |
 | 11:00am - 11:10am | *Break 2 (10 min)*                                        |
 | 11:10am - 12:00am | *Practicing the command line*                             |
-| 12:00am - 1:15pm  | *Lunch (75 min)*                                          |
+| 12:00pm - 1:15pm  | *Lunch (75 min)*                                          |
 | 1:15pm - 2:00pm   | *Introduction to the group project (45 min)*              |
 | 2:00pm - 4:30pm   | *Group Projects*           |
 

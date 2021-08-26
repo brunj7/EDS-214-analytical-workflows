@@ -123,7 +123,7 @@ Try it!
 
 Note that when you are developing an R package, the Roxygen skeleton can be leveraged to develop the help pages of your package so you only have one place to update and the help will synchronize automatically.
 
-#### Python Doctring
+#### Python Docstring
 
 A docstring is a string literal that occurs as the first statement in a module,  function, class, or method definition. Such a docstring becomes the `__doc__` special attribute of that object.
 
@@ -153,12 +153,6 @@ Here for more: https://www.python.org/dev/peps/pep-0257/
 
 ## Hands-on
 
-### Commenting
-
-Let's try to improve the readability and documentation of this repository: <https://github.com/brunj7/better-comments>. Follow the instructions on the README
-
-For inspiration, you can check out the APOLLO 11 code from 1969 <https://github.com/chrislgarry/Apollo-11>!!
-
 ### Documenting
 
 ```{r, eval=FALSE}
@@ -170,7 +164,11 @@ getPercent <- function( value, pct ) {
 
 Try adding the Roxygen Skeleton to this function and fill all the information you think is necessary to document the function
 
+### Commenting
 
+Let's try to improve the readability and documentation of this repository: <https://github.com/brunj7/better-comments>. Follow the instructions on the README
+
+For inspiration, you can check out the NASA code for APOLLO 11 dating from 1969: <https://github.com/chrislgarry/Apollo-11>!!
 
 ---
 

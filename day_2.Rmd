@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 | 10:10am - 11:20am | *Managing data-driven projects as a team (80 min)*        |
 | 11:20am - 11:30am | *Break 2 (10 min)*                                        |
 | 11:30am - 12:00am | *Flex time 1: Debugging with RStudio (30 min)*            |
-| 12:00am - 1:15pm  | *Lunch (75 min)*                                          |
+| 12:00pm - 1:15pm  | *Lunch (75 min)*                                          |
 | 1:15pm - 2:15pm   | *git commit messages (60 min)*                            |
 | 2:15pm - 3:15pm   | *Meet Kat and Brad -- MEDS computing resources*           |
 | 3:15pm - 3:25pm   | *Break 3 (10 min)*                                        |

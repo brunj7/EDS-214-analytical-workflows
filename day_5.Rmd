@@ -107,4 +107,12 @@ In python, using `pip freeze > requirements.txt` or `conda list --export > requi
 
 ## Containers
 
+A helpful abstraction for capturing the computing environment is a container, whereby a container is created from a set of instructions in a recipe. For the most common containerisation software, Docker, this recipe is called a Dockerfile. Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure and ship the containers to others.
+
+A few good readings:
+
+- Docker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316
+- The Whole Tale project: combining containers with data repositories <https://wholetale.org/>
+
+
 

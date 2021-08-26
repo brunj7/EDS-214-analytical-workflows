@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Developing Analytical Workflows as a Team</title>
+  <title>EDS 214: Pair Programming</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Developing Analytical Workflows as a Team"/>
+  <meta property="og:title" content="EDS 214: Pair Programming"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Developing Analytical Workflows as a Team"/>
+  <meta property="twitter:title" content="EDS 214: Pair Programming"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Developing Analytical Workflows as a Team"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Pair Programming"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2459,7 +2459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Developing Analytical Workflows as a Team","authors":[]}
+{"title":"Pair Programming","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2498,7 +2498,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Developing Analytical Workflows as a Team</h1>
+<h1>Pair Programming</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2510,149 +2510,32 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#day-2">Day 2</a></li>
-<li><a href="#git-therapy">Git Therapy</a>
-<ul>
-<li><a href="#github-conflicts">GitHub conflicts</a></li>
-</ul></li>
-<li><a href="#managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</a></li>
-<li><a href="#debugging-with-rstudio">Debugging with RStudio</a></li>
-<li><a href="#git-commit-messages"><code>git</code> commit messages</a></li>
-<li><a href="#meds-computing-ressources">MEDS computing ressources</a></li>
-<li><a href="#moving-your-codes-to-a-remote-server">Moving your codes to a remote server</a></li>
-<li><a href="#further-reading">Further reading</a>
-<ul>
-<li><a href="#github-workflow">GitHub Workflow</a>
-<ul>
-<li><a href="#git-using-rstudio">Git using RStudio</a></li>
-<li><a href="#undoing-things">Undoing things</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#basic-principles-practices">Basic principles &amp; practices</a></li>
+<li><a href="#tips-and-tricks-for-effective-team-programming">Tips and Tricks for Effective Team Programming</a></li>
+<li><a href="#aknowledgements">Aknowledgements</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="day-2">Day 2</h1>
-<table>
-<thead>
-<tr class="header">
-<th><strong>Time (PST)</strong></th>
-<th><strong>Activity</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9:00am - 10:00am</td>
-<td><em>Github conflicts (60 min)</em></td>
-</tr>
-<tr class="even">
-<td>10:00am - 10:10am</td>
-<td><em>Break 1 (10 min)</em></td>
-</tr>
-<tr class="odd">
-<td>10:10am - 11:20am</td>
-<td><em>Managing data-driven projects as a team (80 min)</em></td>
-</tr>
-<tr class="even">
-<td>11:20am - 11:30am</td>
-<td><em>Break 2 (10 min)</em></td>
-</tr>
-<tr class="odd">
-<td>11:30am - 12:00am</td>
-<td><em>Flex time 1: Debugging with RStudio (30 min)</em></td>
-</tr>
-<tr class="even">
-<td>12:00pm - 1:15pm</td>
-<td><em>Lunch (75 min)</em></td>
-</tr>
-<tr class="odd">
-<td>1:15pm - 2:15pm</td>
-<td><em>git commit messages (60 min)</em></td>
-</tr>
-<tr class="even">
-<td>2:15pm - 3:15pm</td>
-<td><em>Meet Kat and Brad – MEDS computing resources</em></td>
-</tr>
-<tr class="odd">
-<td>3:15pm - 3:25pm</td>
-<td><em>Break 3 (10 min)</em></td>
-</tr>
-<tr class="even">
-<td>3:25pm - 4:05pm</td>
-<td><em>Server practice: Bringing your code to the server</em></td>
-</tr>
-<tr class="odd">
-<td>4:05pm - 4:30pm</td>
-<td><em>Recap of the day and Q&amp;A (25 min)</em></td>
-</tr>
-</tbody>
-</table>
-<h1 id="git-therapy">Git Therapy</h1>
-<h2 id="github-conflicts">GitHub conflicts</h2>
-<p>First thing to know is that actually <code>git pull</code> (or a Pull Request) is a two step process: <code>git pull = git fetch + git merge</code></p>
-<p>Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, <code>git</code> will call you to the rescue and ask him how to solve the problem.</p>
-<p><a href="day2-git-collaboration-conflicts.html"><strong>Materials</strong></a></p>
-<hr />
-<h1 id="managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</h1>
-<p><a href="day2-projects_team.html"><strong>Materials</strong></a></p>
-<hr />
-<h1 id="debugging-with-rstudio">Debugging with RStudio</h1>
-<p><a href="rstudio_debugging.html"><strong>Materials</strong></a></p>
-<hr />
-<h1 id="git-commit-messages"><code>git</code> commit messages</h1>
-<p><a href="day2-github_commit_messages.html"><strong>Materials</strong></a></p>
-<hr />
-<h1 id="meds-computing-ressources">MEDS computing ressources</h1>
-<p><a href="https://bit.ly/medscompute8-25" class="uri">https://bit.ly/medscompute8-25</a></p>
-<hr />
-<h1 id="moving-your-codes-to-a-remote-server">Moving your codes to a remote server</h1>
-<hr />
-<h1 id="further-reading">Further reading</h1>
-<h2 id="github-workflow">GitHub Workflow</h2>
+<p>Pair programming is an <em>synchronous</em> team activity, where several programmers get to work together on the same piece of code. This is a great way to gain a better sense of what coding style people are using and better understand their way of solving challenges. It is also a great way to learn from each other. Generally, there is one Driver who is the person typing at the computer. The other role is called Navigator(s). The Navigator does not write code and focuses on finding solutions to the problem. Their use of computer should be limited to searching online for solutions.</p>
+<h2 id="basic-principles-practices">Basic principles &amp; practices</h2>
+<p>Adapted from Woody Zuill <a href="https://www.agileconnection.com/article/getting-started-mob-programming" class="uri">https://www.agileconnection.com/article/getting-started-mob-programming</a></p>
 <ul>
-<li>GitHub:
-<ul>
-<li>guides on how to use GitHub: <a href="https://guides.github.com/">https://guides.github.com/</a></li>
-<li>GitHub from RStudio: <a href="http://r-pkgs.had.co.nz/git.html#git-pull">http://r-pkgs.had.co.nz/git.html#git-pull</a></li>
-</ul></li>
-<li>Forking:
-<ul>
-<li><a href="https://help.github.com/articles/fork-a-repo/">https://help.github.com/articles/fork-a-repo/</a></li>
-<li><a href="https://guides.github.com/activities/forking/">https://guides.github.com/activities/forking/</a></li>
-</ul></li>
-<li>Comparison of git repository host services: <a href="https://www.git-tower.com/blog/git-hosting-services-compared/" class="uri">https://www.git-tower.com/blog/git-hosting-services-compared/</a></li>
-<li>Branches
-<ul>
-<li>interactive tutorial on branches: <a href="http://learngitbranching.js.org/" class="uri">http://learngitbranching.js.org/</a></li>
-<li>using git in a collaborative environment: <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow" class="uri">https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow</a> <a href="https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf" class="uri">https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</a></li>
-</ul></li>
+<li><strong>Treat each other with kindness, consideration, and respect</strong> - makes group work more fun and sustainable</li>
+<li><strong>Driver/navigator pair programming adapted to work with the whole team</strong> - “For an idea to go from your head into the computer, it <em>must</em> go through someone else’s hands.” Speak at the highest level of abstraction that the driver (and the rest of the team) is able to digest at the moment</li>
+<li><strong>Timed Rotation</strong> - 20-60 minutes. We don’t require that everyone take the driver role; it is everyone’s choice whether to do so</li>
+<li><strong>Whole Team</strong> - every contributor to the project is an integral part of the whole team; when we don’t have the skills we need within the team, we find someone who does and invite them to work with us to accomplish the needed work</li>
+<li><strong>Reflect, Tune, and Adjust Frequently</strong> - based on agile principle: “At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.”</li>
 </ul>
-<h3 id="git-using-rstudio">Git using RStudio</h3>
+<h2 id="tips-and-tricks-for-effective-team-programming">Tips and Tricks for Effective Team Programming</h2>
+<p>Adapted from Corey Johannsen: <a href="https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/" class="uri">https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/</a></p>
 <ul>
-<li>Happy Git and GitHub for the useR: <a href="http://happygitwithr.com/" class="uri">http://happygitwithr.com/</a></li>
-<li>R packages - Git and GitHub: <a href="http://r-pkgs.had.co.nz/git.html#git-init" class="uri">http://r-pkgs.had.co.nz/git.html#git-init</a></li>
+<li><strong>Suggest, don’t dictate:</strong> Instead of telling the driver what to type into their editor, we explain what we’re trying to accomplish and then help the driver find the best solution. We’ve found that drivers learn better this way, and they don’t just end up feeling like a stenographer. Whenever possible, we ask questions that lead the driver to discover the answers on their own.</li>
+<li><strong>Stay focused and be present:</strong> Shut your laptop and put your phone away. I’ve struggled with following this guideline—we all have—and I recognize that the distraction almost always affects the rest of the mob. We tell all our mob members to be present, and if you can’t, it’s OK to leave until you can be.</li>
+<li><strong>Use a timer, but be ready to pause it:</strong> We switch drivers every 20 - 60 minutes. However, we often wander off implementation into design discussions—it’s unavoidable—so this is when we pause the timer. This is another key guideline of our mob: the time you spend driving should be dedicated to writing the code that helps complete the task, not discussing design solutions.</li>
+<li><strong>Set specific tasks for each session:</strong> When our mob gathers for a session, we first agree on and create a checklist of the tasks we are going to complete, and order them by priority on a whiteboard. This ensures we are all focused on the same task and keeps us moving forward. Additionally, this keeps us aligned with Minimal Marketable Feature (MMF) work, which we can communicate with our engineering and product managers to assure them we’re completing tasks that align with developing small, self-contained features that demonstrate immediate customer value.</li>
 </ul>
-<p>Git mainly from the command line:</p>
-<ul>
-<li>Interactive git 101: <a href="https://try.github.io/">https://try.github.io/</a></li>
-<li>Very good tutorial about git: <a href="https://www.atlassian.com/git/tutorials/what-is-version-control">https://www.atlassian.com/git/tutorials/what-is-version-control</a></li>
-<li>Git tutorial geared towards scientists: <a href="http://nyuccl.org/pages/gittutorial/">http://nyuccl.org/pages/gittutorial/</a></li>
-<li>Short intro to git basics: <a href="https://github.com/mbjones/gitbasics">https://github.com/mbjones/gitbasics</a></li>
-<li>Git documentation about the basics: <a href="http://gitref.org/basic/">http://gitref.org/basic/</a></li>
-<li>Git documentation - the basics: <a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">https://git-scm.com/book/en/v2/Getting-Started-Git-Basics</a></li>
-<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology">https://www.atlassian.com/git/glossary/terminology</a></li>
-<li>In trouble, guide to know what to do: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
-<li>Want to undo something? <a href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git" class="uri">https://github.com/blog/2019-how-to-undo-almost-anything-with-git</a></li>
-<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology" class="uri">https://www.atlassian.com/git/glossary/terminology</a></li>
-<li>8 tips to work better with git: <a href="https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/" class="uri">https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/</a></li>
-<li>GitPro book (2nd edition): <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a></li>
-</ul>
-<h3 id="undoing-things">Undoing things</h3>
-<ul>
-<li>Help to decide how to undo your problem: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png" class="uri">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
-<li>Undo almost everything with git <a href="https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/" class="uri">https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/</a></li>
-<li>Difference between git reset soft, mixed and hard <a href="https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/" class="uri">https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/</a></li>
-<li>Resetting, Checking Out &amp; Reverting <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" class="uri">https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting</a></li>
-</ul>
+<h2 id="aknowledgements">Aknowledgements</h2>
+<p>This section reuses a lot of materials from an R Meetup organized by the Santa Barbara R Users group (<a href="https://github.com/R-Meetup-SB/hackathon-201806" class="uri">https://github.com/R-Meetup-SB/hackathon-201806</a>), including material prepared by Irene Steves.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

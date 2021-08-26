@@ -2635,7 +2635,7 @@ loaded via a namespace (and not attached):
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       America/Los_Angeles         
- date     2021-08-24                  
+ date     2021-08-25                  
 
 ─ Packages ─────────────────────────────────────────────────────────
  package     * version date       lib source        
@@ -2691,6 +2691,12 @@ loaded via a namespace (and not attached):
 <p>You can save all this content to an <code>session_info.txt</code> file and upload it to your repository.</p>
 <p>In python, using <code>pip freeze &gt; requirements.txt</code> or <code>conda list --export &gt; requirements.txt</code> will create a text file listing all the libraries (and their versions) used in a specific python environment. You can actually use this file to (re)install all the packages and specific versions into a new python environment. It is also great practice to add this file to your repository.</p>
 <h2 id="containers">Containers</h2>
+<p>A helpful abstraction for capturing the computing environment is a container, whereby a container is created from a set of instructions in a recipe. For the most common containerisation software, Docker, this recipe is called a Dockerfile. Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure and ship the containers to others.</p>
+<p>A few good readings:</p>
+<ul>
+<li>Docker for scientific reproducibility: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316" class="uri">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316</a></li>
+<li>The Whole Tale project: combining containers with data repositories <a href="https://wholetale.org/" class="uri">https://wholetale.org/</a></li>
+</ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
