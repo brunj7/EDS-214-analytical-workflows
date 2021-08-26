@@ -50,7 +50,7 @@ McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 492
 
 Major points to hit:
 
-- Goal/Question + workflow you used to achieve it
+- Goal/Question + workflow you used to achieve it (aka *THE* plan)
 - How did you set up your project (server, data, code, …)
 - How did you organize your team (tasks, who did what)
 - Results 
