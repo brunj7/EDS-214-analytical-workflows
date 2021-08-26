@@ -46,6 +46,19 @@ Data are available from the Environmental Data Initiative ([EDI](https://environ
 McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684
 
 
+## Group project presentation (12-15min) 
+
+Major points to hit:
+
+- Goal/Question + workflow you used to achieve it
+- How did you set up your project (server, data, code, …)
+- How did you organize your team (tasks, who did what)
+- Results 
+- Challenges
+- Share your work!
+
+
+
 ## Reference
 
 Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358
