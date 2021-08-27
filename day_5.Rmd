@@ -11,16 +11,17 @@ library(devtools)
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 9:00am - 10:00am  | *Sharing things*                    |
-| 10:00am - 10:10am | *Break 1 (10 min)*                  |
-| 10:10am - 12:00pm | *Group project*                     |
+| 9:00am - 9:45am   | *Sharing things (45min)*             |
+| 9:45am - 10:00am  | *Xarigan (15 min)*                   |
+| 10:00am - 10:10am | *Break 1 (10min)*                   |
+| 10:10am - 12:00pm | *Group project (110min)*            |
 | 12:00pm - 1:15pm  | *Lunch (75 min)*                    |
-| 1:15pm - 2:00pm   | *Group final preparation (45 min)*  |
-| 2:00pm - 2:10pm   | *Break 2 (10min)*           |
-| 2:10pm - 3:00pm   | *Group project presentations - p1 (50 min)*  |
-| 3:00pm - 3:10pm   | *Break 3 (10min)*                       |
-| 3:10pm - 3:30pm   | *Group project presentations - p2 (50 min)*|
-| 3:30pm - 4:00pm   | *Final thoughts and feedback*     |
+| 1:15pm - 1:45pm   | *[Open Source Software for Data Science](https://www.rstudio.com/resources/rstudioconf-2020/open-source-software-for-data-science/) (30 min)*  |
+| 1:45pm - 2:45pm   | *Group project presentations - p1 (60 min)* |
+| 2:45pm - 2:55pm   | *Break 2 (10min)*                           |
+| 2:55pm - 3:55pm   | *Group project presentations - p2 (60 min)* |
+| 3:55pm - 4:05pm   | *Break 3 (10min)* 
+| 4:05pm - 4:30pm   | *Final thoughts and feedback*     |
 
 
 # Scientific products
@@ -128,7 +129,6 @@ A helpful abstraction for capturing the computing environment is a container, wh
 knitr::include_graphics("img/docker_drawing.jpeg")
 ```
 
-
 A few good readings:
 
 - Docker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316
@@ -138,4 +138,14 @@ A few good readings:
 - Sharing and Running R code using Docker: https://aboland.ie/Docker.html
 
 
+---
 
+# Xaringan
+
+Xarigan is an R package to create slide deck using R Markdown: https://github.com/yihui/xaringan
+
+```{r, eval=FALSE}
+remotes::install_github('yihui/xaringan')
+```
+
+Here is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/
