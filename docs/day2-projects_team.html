@@ -2511,8 +2511,7 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#managing-your-files-as-a-team">Managing your files as a team</a>
-<ul>
+<li><a href="#managing-your-files-as-a-team">Managing your files as a team</a></li>
 <li><a href="#naming-things">Naming things</a>
 <ul>
 <li><a href="#exercise">Exercise</a></li>
@@ -2529,13 +2528,13 @@ Daily Materials
 <li><a href="#leveraging-existing-framework">Leveraging existing framework</a>
 <ul>
 <li><a href="#an-example-rrtols">An example: <code>rrtols</code></a></li>
-</ul></li>
+<li><a href="#other-workflow-frameworks-to-look-into">Other workflow frameworks to look into</a></li>
 </ul></li>
 <li><a href="#aknowledgement">Aknowledgement</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="managing-your-files-as-a-team">Managing your files as a team</h1>
+<h2 id="managing-your-files-as-a-team">Managing your files as a team</h2>
 <p>Our goal is to centralize the management of your files (data, codes, …). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path.</p>
 <p>There are many tools out there to help with file management. Here are a few questions to ask your teammates when organizing your project:</p>
 <ul>
@@ -2716,6 +2715,13 @@ Next, you need to:  ↓ ↓ ↓
 <p>After that, push a copy up to <a href="https://github.com">GitHub</a>.</p>
 <p>Hopefully, now that you’ve created a research compendium with <code>rrtools</code>, you can imagine how a pre-defined structure like the one <code>rrtools</code> creates might help you organize your reproducible research and also make it easier for others to understand your work.</p>
 <p>For a more complete example than the one we built above, take a look at <a href="https://github.com/benmarwick/teaching-replication-in-archaeology">benmarwick/teaching-replication-in-archaeology</a>.</p>
+<h3 id="other-workflow-frameworks-to-look-into">Other workflow frameworks to look into</h3>
+<h4 id="target">Target</h4>
+<p>The <code>target</code> R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.</p>
+<p>Here for more: <a href="https://books.ropensci.org/targets/" class="uri">https://books.ropensci.org/targets/</a></p>
+<h4 id="pointblank">Pointblank</h4>
+<p>Although the <code>pointblank</code> package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety or project setups.</p>
+<p><a href="https://rich-iannone.github.io/pointblank/" class="uri">https://rich-iannone.github.io/pointblank/</a></p>
 <hr />
 <h1 id="aknowledgement">Aknowledgement</h1>
 <p>The <code>rrtools</code> example had been ported from <a href="https://learning.nceas.ucsb.edu/2021-02-RRCourse/index.html">NCEAS Reproducible Research Techniques for Synthesis</a></p>

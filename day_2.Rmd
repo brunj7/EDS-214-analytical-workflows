@@ -57,13 +57,6 @@ Second: you did nothing wrong!! Git tries to merge files automatically. When the
 
 https://bit.ly/medscompute8-25
 
----
-
-# Moving your codes to a remote server
-
-
-
-
 
 ---
 

@@ -2,7 +2,7 @@
 title: "Managing data-driven projects as a team"
 ---
 
-# Managing your files as a team
+## Managing your files as a team
 
 Our goal is to centralize the management of your files (data, codes, ...). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path. 
 
@@ -109,7 +109,6 @@ With the increasing popularity of notebooks in scientific projects, it can somet
 - Keep your Notebook at a length you will feel comfortable reading. It if starts to be a long it might be time to think about if some code could be move to another document (scripts or another notebook)
 - Scripts might be better suited for tasks you need to rerun frequently
 - If you have developed many functions for your analysis, it might be worth storing them in a script outside your main notebook
-
 
 
 ## Data
@@ -224,6 +223,21 @@ After that, push a copy up to [GitHub](https://github.com).
 Hopefully, now that you've created a research compendium with `rrtools`, you can imagine how a pre-defined structure like the one `rrtools` creates might help you organize your reproducible research and also make it easier for others to understand your work.
 
 For a more complete example than the one we built above, take a look at [benmarwick/teaching-replication-in-archaeology](https://github.com/benmarwick/teaching-replication-in-archaeology).
+
+
+### Other workflow frameworks to look into
+
+#### Target
+
+The `target` R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.
+
+Here for more: https://books.ropensci.org/targets/
+
+#### Pointblank
+
+Although the `pointblank` package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety or project setups.
+
+https://rich-iannone.github.io/pointblank/
 
 ---
 
