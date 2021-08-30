@@ -120,6 +120,9 @@ It is recommended to **keep the raw-data you are collecting separated from any d
 
 ## Leveraging existing framework
 
+Please remember that every workflow is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project. 
+
+
 ### An example: `rrtols`
 
 #### Reproducible Papers
