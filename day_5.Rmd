@@ -149,3 +149,18 @@ remotes::install_github('yihui/xaringan')
 ```
 
 Here is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/
+
+
+---
+
+# Group Projects
+
+- `Dammad Coder`s: https://github.com/alexvand24/eds214-dammad-coders
+- `Nutria`: https://github.com/cboyajian/nutria
+- `Eco Warriors`: https://github.com/julietcohen/EDS-214-eco-warriors
+- `ShaleCoRyJoe`: https://github.com/hub-shale/ShaleCoRyJoe
+- `Bassethound`: https://github.com/AllieCole/EDS214_Bassethound
+- `Coqui Crew`: https://github.com/cognack/coqui_crew
+- `Topatopa`: https://github.com/petermenzies/topatopa
+
+
