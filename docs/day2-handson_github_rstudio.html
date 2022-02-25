@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>EDS 214: GitHub branches using RStudio</title>
@@ -1859,7 +1860,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2536,13 +2540,13 @@ Daily Materials
 
 <span class='co'># Extract the desserts listing</span>
 <span class='va'>dessert_elements</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_element.html'>html_elements</a></span><span class='op'>(</span><span class='va'>webpage</span>, <span class='st'>"h2"</span><span class='op'>)</span>
-<span class='va'>dessert_listing</span> <span class='op'>&lt;-</span> <span class='va'>dessert_elements</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_text.html'>html_text2</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># extracting the text associated with this type of elements of the webpage</span>
-  <span class='fu'>as_tibble</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># make it a data frame</span>
-  <span class='fu'>rename</span><span class='op'>(</span>dessert <span class='op'>=</span> <span class='va'>value</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># better name for the column</span>
-  <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>.</span>,<span class='op'>-</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># 3 last ones were not desserts </span>
-  <span class='fu'>rowid_to_column</span><span class='op'>(</span><span class='st'>"rank"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># adding a column using the row number as proxy for the rank</span>
-  <span class='fu'>write_csv</span><span class='op'>(</span><span class='st'>"data/iconic_desserts.csv"</span><span class='op'>)</span> <span class='co'># save it as csv</span>
+<span class='va'>dessert_listing</span> <span class='op'>&lt;-</span> <span class='va'>dessert_elements</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_text.html'>html_text2</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># extracting the text associated with this type of elements of the webpage</span>
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># make it a data frame</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>dessert <span class='op'>=</span> <span class='va'>value</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># better name for the column</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>.</span>,<span class='op'>-</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># 3 last ones were not desserts </span>
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/rownames.html'>rowid_to_column</a></span><span class='op'>(</span><span class='st'>"rank"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># adding a column using the row number as proxy for the rank</span>
+  <span class='fu'><a href='https://readr.tidyverse.org/reference/write_delim.html'>write_csv</a></span><span class='op'>(</span><span class='st'>"data/iconic_desserts.csv"</span><span class='op'>)</span> <span class='co'># save it as csv</span>
 </code></pre>
 </div>
 </div>

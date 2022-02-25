@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>EDS 214: EDS 214: Analytical Workflows and Scientific Reproducibility</title>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2443,15 +2447,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/datatables-binding-0.19/datatables.js"></script>
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-  <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2560,7 +2555,7 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 <h2 id="predictable-daily-schedule">Predictable daily schedule</h2>
 <p><strong>Course dates:</strong> Monday (2021-08-02) - Friday (2021-08-06)</p>
 <p>EDS 214 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.</p>
-<p>Tentative daily schedule (subject to change):</p>
+<p>Daily schedule (subject to change):</p>
 <table>
 <thead>
 <tr class="header">
@@ -2620,9 +2615,86 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 </ul>
 <h2 id="sessions-subject-to-change">Sessions (subject to change)</h2>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-e0969ade418b94caf236" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e0969ade418b94caf236">{"x":{"filter":"none","vertical":false,"data":[["Monday 8/23: morning","Monday 8/23: afternoon","Tuesday 8/24: morning","Tuesday 8/24: afternoon","Wednesday 8/25: morning (late start)","Wednesday 8/25: afternoon","Thursday 8/26: morning","Thursday 8/26: afternoon","Friday 8/27: morning","Friday 8/27 afternoon"],["Repoducible workflows","Collaborating with Github 101","Collaborating with Github 102","Organizing your project","Working on a remote server","Working on a remote server","Code review and pair programming","Documenting things","Sharing things","Presentations"],["Planning things: from diagrams to pseudo code","Forking and Pull Requests","Branches and issues","Notebooks, scripts, data and more","RStudio server &amp; the command line","Organizing projects on a server: how to manage data and codes","Team project","Team project","Team project","Team project"],["the Markdown syntax","Comparing R and python approaches to notebooks","Open","MEDS IT team (Brad &amp; Kat) -- Computing ressources","No flex sessions - Wednesday late start","Debugging with RStudio","Meet your next instructor  --  Jim Frew,  Bren School, UCSB","Capstone project proposal --  Jamie","Xaringan","Work on your online presence (GitHub profile and distill website)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Day / Session<\/th>\n      <th>Topics<\/th>\n      <th>Interactive Sessions<\/th>\n      <th>Flex Sessions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
 </div>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 13%" />
+<col style="width: 37%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Day / Session</th>
+<th>Topics</th>
+<th>Interactive Sessions</th>
+<th>Flex Sessions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday 8/23: morning</td>
+<td><a href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000&amp;slide=id.p">Reproducible workflows</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html#planing-things">Planning things: from diagrams to pseudo code</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html#flex-session">the Markdown syntax</a></td>
+</tr>
+<tr class="even">
+<td>Monday 8/23: afternoon</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html#coding-together-managing-scripts">Collaborating with Github 101</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html#collaborating-through-forking">Forking and Pull Requests</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html#hands-on-1">Github collaboration Hands-on</a></td>
+</tr>
+<tr class="odd">
+<td>Tuesday 8/24: morning</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day2-git-collaboration-conflicts.html">Github conflicts</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day2-projects_team.html">Managing data-driven projects as a team</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/rstudio_debugging.html">Debugging with RStudio</a></td>
+</tr>
+<tr class="even">
+<td>Tuesday 8/24: afternoon</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day2-github_commit_messages.html">git commit messages</a></td>
+<td><a href="https://ucsb.app.box.com/notes/850504913040?s=zzy77gwmmil94a5k1seuttzz12urlyvp">MEDS IT team (Brad &amp; Kat) – Computing resources</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wednesday 8/25: morning (late start)</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day3-remote_server.html">Working on a remote server</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day3-remote_server.html#rstudio-server">RStudio server</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day3-remote_server.html#command-line">the command line</a></td>
+</tr>
+<tr class="even">
+<td>Wednesday 8/25: afternoon</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/group_project.html">Introduction to group project</a>]</td>
+<td>Group project</td>
+<td>Group project Q&amp;A</td>
+</tr>
+<tr class="odd">
+<td>Thursday 8/26: morning</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_4.html#coding-as-a-team">Coding as a team – Code review and pair programming</a></td>
+<td>Group project</td>
+<td>Meet your next instructor – Jim Frew, Bren School, UCSB</td>
+</tr>
+<tr class="even">
+<td>Thursday 8/26: afternoon</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day4-documenting.html">Documenting things</a></td>
+<td>Group project</td>
+<td>Capstone project proposal – Jamie</td>
+</tr>
+<tr class="odd">
+<td>Friday 8/27: morning</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_5.html#scientific-products">Sharing things</a></td>
+<td>Group project</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_5.html#xaringan">Xaringan</a></td>
+</tr>
+<tr class="even">
+<td>Friday 8/27 afternoon</td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_5.html#group-projects">Project presentations</a></td>
+<td><a href="https://brunj7.github.io/EDS-214-analytical-workflows/day_5.html#group-projects">Project presentations</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="course-requirements">Course requirements</h2>
 <h3 id="computing">Computing</h3>
 <ul>
