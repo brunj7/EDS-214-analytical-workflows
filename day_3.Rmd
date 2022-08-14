@@ -20,11 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-# Working on a remote server
 
-**[Materials](day3-remote_server.html)**
-
-![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 
 ---
 
