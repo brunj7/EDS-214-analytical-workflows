@@ -19,11 +19,11 @@ We'll start by:
 - Show the contents of that file using `cat` (concatenate)
 
 ```bash
-brun@taylor:~$ mkdir oss
-brun@taylor:~$ mkdir oss/data
-brun@taylor:~$ echo "# Tutorial files related to OSS" > oss/README.md
-brun@taylor:~$ cat oss/README.md
-# Tutorial files related to OSS
+brun@taylor:~$ mkdir cli_intro
+brun@taylor:~$ mkdir cli_intro/data
+brun@taylor:~$ echo "# Tutorial files related to CLI" > cli_intro/README.md
+brun@taylor:~$ cat cli_intro/README.md
+# Tutorial files related to CLI
 brun@taylor:~$ 
 ```
 
@@ -38,19 +38,15 @@ Next, let's copy another file and look around in the directories:
 
 ```bash
 brun@taylor:~$ cd ~
-brun@taylor:~$ cp 10min-loop.R oss
-brun@taylor:~$ cd oss
-brun@taylor:~/oss$ ls
+brun@taylor:~$ cp 10min-loop.R cli_intro
+brun@taylor:~$ cd cli_intro
+brun@taylor:~/cli_intro$ ls
 10min-loop.R  data  README.md
-brun@taylor:~/oss$ pwd
-/home/brun/oss
+brun@taylor:~/cli_intro$ pwd
+/home/brun/cli_intro
 ```
 
-
-## Aknowledgements
-
-Adapted from Matt Jones, OSS 2017, https://github.com/NCEAS/oss-lessons
-
+### Your turn
 
 Now, let's create two subdirectories in the data directory: `mammals` and `plots`
 
@@ -59,3 +55,10 @@ Now, let's create two subdirectories in the data directory: `mammals` and `plots
 - double check it is done using `cd` and `ls`
 - remove `rm` the  `sampledata` directory; hint: `rmdir` can only remove empty directories
 - bonus: add a text file `data_listing.txt` in the `data` folder that lists all the files in it
+
+
+
+## Aknowledgements
+
+Adapted from Matt Jones, OSS 2017, https://github.com/NCEAS/oss-lessons
+
