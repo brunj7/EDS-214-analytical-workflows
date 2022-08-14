@@ -2546,7 +2546,10 @@ Daily Materials
 <h3>Contents</h3>
 <ul>
 <li><a href="#files-and-directories"
-id="toc-files-and-directories">Files and directories</a></li>
+id="toc-files-and-directories">Files and directories</a>
+<ul>
+<li><a href="#your-turn" id="toc-your-turn">Your turn</a></li>
+</ul></li>
 <li><a href="#aknowledgements"
 id="toc-aknowledgements">Aknowledgements</a></li>
 </ul>
@@ -2565,11 +2568,11 @@ directory)</li>
 (concatenate)</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> mkdir oss</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> mkdir oss/data</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> echo <span class="st">&quot;# Tutorial files related to OSS&quot;</span> <span class="op">&gt;</span> oss/README.md</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cat oss/README.md</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tutorial files related to OSS</span></span>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> mkdir cli_intro</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> mkdir cli_intro/data</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> echo <span class="st">&quot;# Tutorial files related to CLI&quot;</span> <span class="op">&gt;</span> cli_intro/README.md</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cat cli_intro/README.md</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tutorial files related to CLI</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> </span></code></pre></div>
 <p>Next, let’s copy another file and look around in the directories:</p>
 <ul>
@@ -2584,16 +2587,13 @@ working directory)</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cd ~</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cp 10min-loop.R oss</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cd oss</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/oss$</span> ls</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cp 10min-loop.R cli_intro</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cd cli_intro</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/cli_intro$</span> ls</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">10min-loop.R</span>  data  README.md</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/oss$</span> pwd</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/brun/oss</span></span></code></pre></div>
-<h2 id="aknowledgements">Aknowledgements</h2>
-<p>Adapted from Matt Jones, OSS 2017, <a
-href="https://github.com/NCEAS/oss-lessons"
-class="uri">https://github.com/NCEAS/oss-lessons</a></p>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/cli_intro$</span> pwd</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/brun/cli_intro</span></span></code></pre></div>
+<h3 id="your-turn">Your turn</h3>
 <p>Now, let’s create two subdirectories in the data directory:
 <code>mammals</code> and <code>plots</code></p>
 <ul>
@@ -2610,6 +2610,10 @@ subdirectory</li>
 <li>bonus: add a text file <code>data_listing.txt</code> in the
 <code>data</code> folder that lists all the files in it</li>
 </ul>
+<h2 id="aknowledgements">Aknowledgements</h2>
+<p>Adapted from Matt Jones, OSS 2017, <a
+href="https://github.com/NCEAS/oss-lessons"
+class="uri">https://github.com/NCEAS/oss-lessons</a></p>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

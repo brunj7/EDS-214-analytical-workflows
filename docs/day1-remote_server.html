@@ -88,26 +88,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 214: Reproducible &amp; Collaborative Workflows</title>
+  <title>EDS 214: Working on a remote server</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 214: Reproducible &amp; Collaborative Workflows"/>
+  <meta property="og:title" content="EDS 214: Working on a remote server"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 214"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 214: Reproducible &amp; Collaborative Workflows"/>
+  <meta property="twitter:title" content="EDS 214: Working on a remote server"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Reproducible & Collaborative Workflows"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Working on a remote server"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2493,7 +2493,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Reproducible & Collaborative Workflows","authors":[]}
+{"title":"Working on a remote server","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2533,7 +2533,7 @@ Daily Materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Reproducible &amp; Collaborative Workflows</h1>
+<h1>Working on a remote server</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2545,204 +2545,81 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#day-1" id="toc-day-1">Day 1</a></li>
-<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
-<li><a href="#reproducible-workflows"
-id="toc-reproducible-workflows">Reproducible Workflows</a>
-<ul>
-<li><a href="#lecture-1-definitions-and-concepts"
-id="toc-lecture-1-definitions-and-concepts">Lecture 1: Definitions and
-Concepts</a>
-<ul>
-<li><a href="#why-going-reproducible"
-id="toc-why-going-reproducible">Why going reproducible</a></li>
-<li><a href="#how" id="toc-how">How</a></li>
-</ul></li>
-<li><a href="#hands-on-planing-things"
-id="toc-hands-on-planing-things">Hands-on: Planing things</a>
-<ul>
-<li><a href="#from-drawings-to-pseudocode"
-id="toc-from-drawings-to-pseudocode">From drawings to
-pseudocode</a></li>
-<li><a href="#hands-on" id="toc-hands-on">Hands-on</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#working-on-a-remote-server"
-id="toc-working-on-a-remote-server">Working on a remote server</a>
-<ul>
 <li><a href="#learning-objectives" id="toc-learning-objectives">Learning
 Objectives</a></li>
 <li><a href="#why-working-on-a-remote-machine"
 id="toc-why-working-on-a-remote-machine">Why working on a remote
 machine?</a></li>
-</ul></li>
-<li><a href="#further-reading" id="toc-further-reading">Further
-reading</a>
+<li><a href="#collaborative-setup"
+id="toc-collaborative-setup">Collaborative Setup</a></li>
+<li><a href="#what-does-working-on-a-remote-server-means"
+id="toc-what-does-working-on-a-remote-server-means">What does working on
+a remote server means?</a></li>
+<li><a href="#rstudio-server" id="toc-rstudio-server">RStudio Server</a>
 <ul>
-<li><a href="#data-and-scientific-workflow-management"
-id="toc-data-and-scientific-workflow-management">Data and scientific
-workflow management:</a></li>
-<li><a href="#open-science" id="toc-open-science">Open Science</a></li>
+<li><a href="#connecting-to-meds-analytical-server"
+id="toc-connecting-to-meds-analytical-server">Connecting to MEDS
+Analytical Server</a>
+<ul>
+<li><a href="#file-structure" id="toc-file-structure">File
+structure</a></li>
+<li><a href="#r-packages" id="toc-r-packages">R packages</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#command-line" id="toc-command-line">Command line</a>
+<ul>
+<li><a href="#introduction-to-unix-and-its-siblings"
+id="toc-introduction-to-unix-and-its-siblings">Introduction to UNIX and
+its siblings</a>
+<ul>
+<li><a href="#some-unix-hallmarks" id="toc-some-unix-hallmarks">Some
+Unix hallmarks</a></li>
+</ul></li>
+<li><a href="#the-command-line-interface-cli"
+id="toc-the-command-line-interface-cli">The Command Line Interface
+(CLI)</a>
+<ul>
+<li><a href="#why-the-cli-is-worth-learning"
+id="toc-why-the-cli-is-worth-learning">Why the CLI is worth
+learning</a></li>
+<li><a href="#the-terminal-from-rstudio"
+id="toc-the-terminal-from-rstudio">The Terminal from RStudio</a></li>
+<li><a href="#navigating-and-managing-filesdirectories-in-nix"
+id="toc-navigating-and-managing-filesdirectories-in-nix">Navigating and
+managing files/directories in *NIX</a></li>
+<li><a href="#permissions" id="toc-permissions">Permissions</a></li>
+</ul></li>
+<li><a href="#general-command-syntax"
+id="toc-general-command-syntax">General command syntax</a></li>
+</ul></li>
+<li><a href="#uploading-files-to-a-server"
+id="toc-uploading-files-to-a-server">Uploading Files to a server</a>
+<ul>
+<li><a href="#rstudio" id="toc-rstudio">RStudio</a></li>
+<li><a href="#sftp-software" id="toc-sftp-software">sFTP
+Software</a></li>
+<li><a href="#scp" id="toc-scp">scp</a>
+<ul>
+<li><a href="#your-turn" id="toc-your-turn">Your turn</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#advanced-topics-at-the-command-line"
+id="toc-advanced-topics-at-the-command-line">Advanced Topics at the
+command line</a></li>
+<li><a href="#aknowledgements"
+id="toc-aknowledgements">Aknowledgements</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="day-1">Day 1</h1>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 66%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Time (PST)</strong></th>
-<th><strong>Activity</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9:00am - 9:50am</td>
-<td><em>Intro &amp; Reproducible and Collaborative workflow (50
-min)</em></td>
-</tr>
-<tr class="even">
-<td>9:50am - 10:00am</td>
-<td><em>Break 1 (10 min)</em></td>
-</tr>
-<tr class="odd">
-<td>10:00am - 11:00am</td>
-<td><em>Interactive Session: Drawing board + reporting (60
-min)</em></td>
-</tr>
-<tr class="even">
-<td>11:30am - 12:00am</td>
-<td><em>Flex time 1: Intro to MEDS Analytical server (Kat) (60
-min)</em></td>
-</tr>
-<tr class="odd">
-<td>12:00pm - 1:15pm</td>
-<td><em>Lunch (75 min)</em></td>
-</tr>
-<tr class="even">
-<td>1:15pm - 2:05pm</td>
-<td><em>Working on a remote server (50 min)</em></td>
-</tr>
-<tr class="odd">
-<td>2:15pm - 2:25pm</td>
-<td><em>Break 2 (10 min)</em></td>
-</tr>
-<tr class="even">
-<td>2:25pm - 3:25pm</td>
-<td><em>RStudio server &amp; the command line (60min)</em></td>
-</tr>
-<tr class="odd">
-<td>3:25pm - 3:35pm</td>
-<td><em>Recap of the day (10 min)</em></td>
-</tr>
-<tr class="even">
-<td>3:35pm - 5:00pm</td>
-<td><em>Q&amp;A Support with Casey (30 min)</em></td>
-</tr>
-</tbody>
-</table>
-<h1 id="introduction">Introduction</h1>
-<p><a
-href="https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&amp;loop=false&amp;delayms=3000"><strong>A
-few words…</strong></a></p>
-<h1 id="reproducible-workflows">Reproducible Workflows</h1>
-<h2 id="lecture-1-definitions-and-concepts">Lecture 1: Definitions and
-Concepts</h2>
-<p><a
-href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000"><strong>Slide
-deck</strong></a></p>
-<h3 id="why-going-reproducible">Why going reproducible</h3>
-<p>There are many reasons why it is essential to make your science
-reproducible and how the necessity of openness is a cornerstone of the
-integrity and efficacy of the scientific research process. Here we will
-also be focusing on why making your work reproducible will empower
-<strong>you</strong> to iterate quickly, integrate new information more
-easily to iterate quickly, scale your analysis to larger data sets, and
-better collaborate by receiving feedback and contributions from others,
-as well as enable your “future self” to reuse and build from your own
-work.</p>
-<p>To make your data-riven research reproducible, it is important to
-develop scientific workflows that will be relying on
-<strong>programming</strong> to accomplish the necessary tasks to go
-from the raw data to the results (figures, new data, publications, …) of
-your analysis. Scripting languages, even better open ones, such as
-<code>R</code> and <code>python</code>, are well-suited for scientists
-to develop reproducible scientific workflows. Those scripting languages
-provide a large ecosystem of libraries (also referred to as packages or
-modules) that are ready to be leveraged to conduct analysis and
-modeling. In this course we will introduce how to use <code>R</code>,
-<code>git</code> and <code>GitHub</code> to develop such workflows as a
-team.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tidy-workflow"></span>
-<img src="img/tidy-workflow.png" alt="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science &lt;https://r4ds.had.co.nz/&gt;_" width="80%" />
-<p class="caption">
-Figure 1: Workflow example using the <code>tidyverse</code>.
-Note the program box around the workflow and the iterative nature of the
-analytical process described. <em>Source: R for Data Science <a
-href="https://r4ds.had.co.nz/"
-class="uri">https://r4ds.had.co.nz/</a></em>
-</p>
-</div>
-</div>
-<p><strong>Two points to stress about this figure</strong>:</p>
-<ul>
-<li>Workflows are rarely linear… even less so their implementation</li>
-<li>Note the programming box – yes, you’ll need to code this :)</li>
-</ul>
-<p><strong>Workflows are developed iteratively, and one of the most
-helpful things you can do as a data scientist is to talk about them with
-your research team.</strong></p>
-<h3 id="how">How</h3>
-<p>We recommend shying away from spreadsheets as an analytical tool, as
-well as Graphical User Interfaces (GUI) where you need to click on
-buttons to do your analysis. Although convenient for data exploration,
-GUI will limit the reproducibility and the scalability of your analysis
-as human intervention is needed at every step. Spreadsheets can be
-useful to store tabular data, but it is recommended to script their
-analysis, as copy-pasting and references to cells are prone to mistake
-<a
-href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">(see
-Reinhart and Rogof example)</a>. It is also very difficult to track
-changes and to scale your analysis using spreadsheets. In addition,
-auto-formatting (number, date, character, …) can silently introduce
-modifications to your data (e.g. <a
-href="https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel">One
-in five genetics papers contains errors thanks to Microsoft
-Excel</a>).</p>
-<h2 id="hands-on-planing-things">Hands-on: Planing things</h2>
-<p><strong>Don’t start implementing nor coding without
-planning!</strong> It is important to stress that scientists write
-scripts to help them to investigate scientific question(s). Therefore
-scripting should not drive our analysis and thinking. We strongly
-recommend you take the time to plan ahead all the steps you need to
-conduct your analysis. Developing such a scientific workflow will help
-you to narrow down the tasks that are needed to move forward your
-analysis.</p>
-<h3 id="from-drawings-to-pseudocode">From drawings to pseudocode</h3>
-<p><a href="day1-pseudocode.html">Materials</a></p>
-<figure>
-<img src="img/whiteborad_drawings.png" alt="Cherubini et al., 2007" />
-<figcaption aria-hidden="true">Cherubini et al., 2007</figcaption>
-</figure>
-<h3 id="hands-on">Hands-on</h3>
-<p><a href="day1-hands-on_drawings.html">Investigating the impacts of
-Hurricane on stream chemistry in Puerto Rico</a></p>
-<hr />
-<h1 id="working-on-a-remote-server">Working on a remote server</h1>
-<h2 id="learning-objectives">Learning Objectives</h2>
+<h1 id="learning-objectives">Learning Objectives</h1>
 <p>In this lesson, you will learn:</p>
 <ul>
 <li>How to connect to a remote server</li>
 <li>Get familiar with RStudio server</li>
 <li>Get a short introduction to the command line (CLI)</li>
 </ul>
-<h2 id="why-working-on-a-remote-machine">Why working on a remote
-machine?</h2>
+<h1 id="why-working-on-a-remote-machine">Why working on a remote
+machine?</h1>
 <p>Often the main motivation is to <strong>scale your analysis beyond
 what a personal computer can handle</strong>. R being pretty memory
 intensive, moving to a server often provides you more RAM and thus
@@ -2761,78 +2638,339 @@ data, and other materials; same <em>software versions</em></li>
 </ul>
 <p><strong>=&gt; The operating system is more likely going to be
 Linux!!</strong></p>
-<p><strong><a href="day1-remote_server.html">Materials</a></strong></p>
-<figure>
-<img
-src="https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium"
-alt="CERN computing center" />
-<figcaption aria-hidden="true">CERN computing center</figcaption>
-</figure>
-<hr />
-<h1 id="further-reading">Further reading</h1>
-<p>Here are a few selected publications to help you to learn more about
-these topics.</p>
-<h2 id="data-and-scientific-workflow-management">Data and scientific
-workflow management:</h2>
+<h1 id="collaborative-setup">Collaborative Setup</h1>
+<p>There are additional reasons of particular importance in a
+collaborative set up, such as a working group:</p>
 <ul>
-<li>The Practice of Reproducible Research-Case Studies and Lessons from
-the Data-Intensive Sciences:<br />
-Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <a
-href="http://www.practicereproducibleresearch.org/"
-class="uri">http://www.practicereproducibleresearch.org/</a></li>
-<li>Good enough practices in Scientific Computing:<br />
-<a
-href="https://doi.org/10.1371/journal.pcbi.1005510">https://doi.org/10.1371/journal.pcbi.1005510</a></li>
-<li>Script your analysis:<br />
-<a
-href="https://doi.org/10.1038/nj7638-563a">https://doi.org/10.1038/nj7638-563a</a></li>
-<li>Principles for data analysis workflows:<br />
-<a href="https://doi.org/10.1371/journal.pcbi.1008770"
-class="uri">https://doi.org/10.1371/journal.pcbi.1008770</a></li>
-<li>Benureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce,
-Reuse, Replicate: Transforming Code into Scientific Contributions.
-Front. Neuroinform. 0. <a
-href="https://doi.org/10.3389/fninf.2017.00069"
-class="uri">https://doi.org/10.3389/fninf.2017.00069</a></li>
-<li>Sandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten
-Simple Rules for Reproducible Computational Research. PLOS Computational
-Biology 9, e1003285. <a
-href="https://doi.org/10.1371/journal.pcbi.1003285"
-class="uri">https://doi.org/10.1371/journal.pcbi.1003285</a></li>
-<li>Some Simple Guidelines for Effective Data Management:<br />
-<a
-href="https://doi.org/10.1890/0012-9623-90.2.205">https://doi.org/10.1890/0012-9623-90.2.205</a></li>
-<li>Basic concepts of data management:<br />
-<a
-href="https://www.dataone.org/education-modules">https://www.dataone.org/education-modules</a></li>
+<li><strong>Centralizing data management</strong>: As you know synthesis
+science is data intensive and often require to deal with a large number
+of heterogeneous data files. It can be complicated to make sure every
+collaborators as access to all the data they need. It is even harder to
+ensure that the exact same version of the data is used by everyone.
+Moving your workflow to a server, will allow to have only one copy of
+the data that you can share with all your collaborators. Even better,
+since everyone can access the same data, everybody will have the exact
+same path in their script!!</li>
+<li><strong>Make sure your files are safe</strong>: Generally, servers
+are managed by a System Administrator. This person is in charge of
+keeping the server up-to-date, secured from malwares and set up back up
+strategies to ensure all the files on the server are backed up. When
+using cloud solutions, you should always check if a back up plan is
+available for the resources your using.</li>
 </ul>
-<h2 id="open-science">Open Science</h2>
+<h1 id="what-does-working-on-a-remote-server-means">What does working on
+a remote server means?</h1>
+<p>What does it mean for your workflow? The good news is that RStudio
+Server makes it very easy for RStudio users to start using a server for
+their analysis. The main changes are about:</p>
 <ul>
-<li>The Tao of open science for ecology:<br />
+<li>File management: you will need to learn to move files (including
+your R scripts) to the server</li>
+<li>Package installation: You can still install the R packages you need
+under your user (with some limitations). However some R packages will be
+already installed at the server level.</li>
+</ul>
+<h1 id="rstudio-server">RStudio Server</h1>
+<p>From an user perspective, <em>RStudio Server is your familiar RStudio
+interface in your web browser</em>. The big difference however is that
+with RStudio Server the computation will be running on the remote
+machine instead of your local personal computer. This also means that
+<strong>the files you are seeing through the RStudio Server interface
+are located on the remote machine. And this also include your R
+packages!!!</strong> This remote file management is the main change you
+will have to adopt in your workflow.</p>
+<p>To help with remote files management, the RStudio Server interface as
+few additional features that we will be discussing in the following
+sections.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-server-ide.png" width="90%" style="display: block; margin: auto;" /></p>
+</div>
+<h2 id="connecting-to-meds-analytical-server">Connecting to MEDS
+Analytical Server</h2>
+<ol type="1">
+<li><p>Got to: <a href="https://taylor.bren.ucsb.edu/"
+class="uri">https://taylor.bren.ucsb.edu/</a></p></li>
+<li><p>Enter your credentials</p></li>
+<li><p>You are in!</p></li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-server_login.png" width="1544" /></p>
+</div>
+<ol start="4" type="1">
+<li>Click on the <code>New Session</code> button. You can see that you
+are able to start both an R (Studio) and jupyter notebook session. Let’s
+take a few minutes to experiment with the different options.</li>
+</ol>
+<p>For this session, we are going to select the <code>RStudio</code>
+option and hit <code>Start Session</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-server_session.png" width="591" /></p>
+</div>
+<p><strong>You should now see a very familiar interface :) Except it is
+running on the server with a lot of resources at your
+fingertips!!</strong></p>
+<h3 id="file-structure">File structure</h3>
+<p>Let’s explore explore a little bit the file structure on the server.
+By default on a Linux server, you are located in the <code>home</code>
+folder. This folder is only accessible to you and it is where you can
+store your personal files on a server. You should see 2 folders:
+<code>R</code> and <code>H</code></p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-server_file-structure.png" width="779" /></p>
+</div>
+<p>The <code>R</code> folder is where your local R packages will be
+installed, you can ignore it. The <code>H</code> is your H drive that
+the Bren School is offering to all its students. If you click on it you
+should see any files you have uploaded there.</p>
+<p>Let us make a folder named <code>github</code> by click on the
+<code>New Folder</code> button at the top of the tab. We will use this
+folder (also named <code>directory</code> in linux/unix terms) to clone
+any GitHub repository.</p>
+<h3 id="r-packages">R packages</h3>
+<p>If we go to the <code>Packages</code> tab, we can see a long list of
+packages that have already be installed by our system administrator
+(Brad). Those packages have been installed server wide, meaning that all
+the users have access to them.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-server_packages.png" width="779" /></p>
+</div>
+<p>A user can also installed her/his own packages. Let’s try to install
+the <code>remote</code> package that lets you install R packages
+directly from GitHub: <code>install.packages("remotes")</code>. Once
+done, note a new section that appeared on the Packages tab named
+<code>User Library</code>. Each of us have now its own copy of the
+package installed (in this <code>R</code> folder we were talking about a
+few minutes ago).</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/rstudio-server_packages-user.png" width="777" /></p>
+</div>
+<p>A few notes:</p>
+<ul>
+<li>In this example we will have made a better choice to have the
+<code>remotes</code> package installed once at the system level</li>
+<li>Some R packages depend on external libraries that need to be
+installed on the server. Those libraries will have to be installed by
+the system administrator first before you can install the R package</li>
+<li>Installing an R package on a linux machine generally requires
+compilation of the code and will thus take more time to install than
+when you install it from pre-compiled binaries</li>
+</ul>
+<p><strong>Look now inside you <code>R</code> folder!!</strong></p>
+<hr />
+<h1 id="command-line">Command line</h1>
+<h2 id="introduction-to-unix-and-its-siblings">Introduction to UNIX and
+its siblings</h2>
+<dl>
+<dt>UNIX</dt>
+<dd>
+Originally developed at AT&amp;T Bell Labs circa 1970. Has experienced a
 <a
-href="https://doi.org/10.1890/ES14-00402.1">https://doi.org/10.1890/ES14-00402.1</a></li>
-<li>Challenges and Opportunities of Open Data in Ecology:<br />
+href="https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg">long,
+multi-branched evolutionary path</a>
+</dd>
+<dt>POSIX (Portable Operating System Interface)</dt>
+<dd>
+a set of specifications of what an OS needs to qualify as “a Unix”, to
+enhance interoperability among all the “Unix” variants
+</dd>
+</dl>
+<h4 id="various-unices">Various Unices</h4>
+<figure>
+<img src="img/unix-history-simple.png" alt="The unix family tree" />
+<figcaption aria-hidden="true">The unix family tree</figcaption>
+</figure>
+<ul>
+<li><dl>
+<dt>OS X</dt>
+<dd>
 <a
-href="https://doi.org/10.1126/science.1197962">https://doi.org/10.1126/science.1197962</a><br />
-</li>
-<li>Scientific computing: Code alert<br />
-<a
-href="https://doi.org/10.1038/nj7638-563a">https://doi.org/10.1038/nj7638-563a</a></li>
-<li>Our path to better science in less time using open data science
-tools<br />
-<a
-href="https://doi.org/10.1038%2Fs41559-017-0160">https://doi.org/10.1038%2Fs41559-017-0160</a></li>
-<li>FAIR data guiding principles<br />
-<a
-href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a></li>
-<li>Skills and Knowledge for Data-Intensive Environmental Research <a
-href="https://doi.org/10.1093/biosci/bix025">https://doi.org/10.1093/biosci/bix025</a><br />
-</li>
-<li>Let go your data<br />
-<a
-href="https://doi.org/10.1038/s41563-019-0539-5">https://doi.org/10.1038/s41563-019-0539-5</a></li>
+href="http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix">is
+a Unix</a>!
+</dd>
+</dl></li>
+<li><dl>
+<dt>Linux</dt>
+<dd>
+is <em>not</em> fully POSIX-compliant, but certainly can be regarded as
+<a href="http://en.wikipedia.org/wiki/Unix-like">functionally Unix</a>
+</dd>
+</dl></li>
+</ul>
+<h3 id="some-unix-hallmarks">Some Unix hallmarks</h3>
+<ul>
+<li>Supports multi-users, multi-processes</li>
+<li>Highly modular: many small tools that do one thing well, and can be
+combined</li>
+<li>Culture of text files and streams</li>
+<li>Primary OS on HPC (<strong>High Performance Computing</strong>
+Systems)</li>
+<li>Main OS on which Internet was built</li>
+</ul>
+<h2 id="the-command-line-interface-cli">The Command Line Interface
+(CLI)</h2>
+<p>The CLI provides a direct way to interact with the Operating System,
+by typing in commands.</p>
+<h3 id="why-the-cli-is-worth-learning">Why the CLI is worth
+learning</h3>
+<ul>
+<li>Typically much more extensive access to features, commands,
+options</li>
+<li>Command statements can be written down, saved (scripts!)</li>
+<li>Easier automation</li>
+<li>Much “cheaper” to do work on a remote system (no need to transmit
+all the graphical stuff over the network)</li>
+</ul>
+<h3 id="the-terminal-from-rstudio">The Terminal from RStudio</h3>
+<p>You can access the command line directly from RStudio by using the
+<code>Terminal</code> tab next to your R console.</p>
+<p><img src="img/rstudio-terminal.png" /></p>
+<h3 id="navigating-and-managing-filesdirectories-in-nix">Navigating and
+managing files/directories in *NIX</h3>
+<p><img src="img/unix_filetree.gif" /></p>
+<ul>
+<li><code>pwd</code>: Know where you are</li>
+<li><code>ls</code>: List the content of the directory</li>
+<li><code>cd</code>: Go inside a directory</li>
+<li><code>~</code> : Home directory</li>
+<li><code>.</code> : Here (current directory)</li>
+<li><code>..</code>: Up one level (upper directory)</li>
+</ul>
+<p>Let’s put this into action:</p>
+<ul>
+<li>go to my “Home” directory: <code>cd ~</code></li>
+<li>go up one directory level: <code>cd ..</code></li>
+<li>list the content: <code>ls</code></li>
+<li>list the content showing hidden files: <code>ls -a</code> note that
+<code>-a</code> is referred as an option (modifies the command)</li>
+</ul>
+<p>More files/directories manipulations:</p>
+<ul>
+<li><code>mkdir</code>: Create a directory</li>
+<li><code>cp</code>: Copy a file</li>
+<li><code>mv</code>: Move a file <strong>it is also how you rename a
+file!</strong></li>
+<li><code>rm</code> / <code>rmdir</code>: Remove a file / directory
+<strong>use those carefully, there is no return / Trash!!</strong></li>
+</ul>
+<p><strong>Note: typing is not your thing? the <code>&lt;tab&gt;</code>
+key is your friend!</strong> One hit it will auto-complete the
+file/directory/path name for you. If there are many options, hit it
+twice to see the options.</p>
+<h3 id="permissions">Permissions</h3>
+<p>All files have permissions and ownership.</p>
+<figure>
+<img src="img/UnixFileLongFormat.png" alt="File permissions" />
+<figcaption aria-hidden="true">File permissions</figcaption>
+</figure>
+<ul>
+<li>Change permissions: <code>chmod</code></li>
+<li>Change ownership: <code>chown</code></li>
+<li>List files showing ownership and permissions:
+<code>ls -l</code></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:/courses/EDS214$</span> ls <span class="at">-l</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 3 brun      esmdomainusers 4096 Aug 20 04:49 data</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 2 katherine esmdomainusers 4096 Aug 18 18:32 example    </span></code></pre></div>
+<ul>
+<li>Clear contents in terminal window: <code>clear</code></li>
+</ul>
+<h2 id="general-command-syntax">General command syntax</h2>
+<ul>
+<li><code>command [options] [arguments]</code></li>
+</ul>
+<p>where <code>command</code> must be an <em>executable</em> file on
+your <code>PATH</code> * <code>echo $PATH</code></p>
+<p>and <code>options</code> can usually take two forms * short form:
+<code>-a</code> * long form: <code>--all</code></p>
+<p>You can combine the options:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ltrh</span></span></code></pre></div>
+<p>What do these options do?</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
+<p>Tip: hit <code>q</code> to exit the help!</p>
+<p><strong>To end an SSH session, simply type <code>exit</code> or
+<code>logout</code> into the command line</strong></p>
+<hr />
+<h1 id="uploading-files-to-a-server">Uploading Files to a server</h1>
+<p>You have several options to upload files to the server. Some are more
+convenient if you have few files, like RStudio interface, some are more
+built for uploading a lot of files at one, like specific software… and
+you guessed it the CLI :)</p>
+<h3 id="rstudio">RStudio</h3>
+<p>You can only upload one file at the time (you can zip a folder to
+trick it):</p>
+<p><img src="img/rstudio-upload.png" /></p>
+<h2 id="sftp-software">sFTP Software</h2>
+<p>An efficient protocol to upload files is FTP (File Transfer
+Protocol). The <code>s</code> stands for secured. Any software
+supporting those protocols will work to transfer files.</p>
+<p>We recommend the following free software:</p>
+<ul>
+<li>Mac users: <a href="https://cyberduck.io">cyberduck</a></li>
+<li>Windows: <a href="https://winscp.net/eng/index.php">WinSCP</a></li>
+</ul>
+<p><img src="img/server-cyberduck.png" /></p>
+<h2 id="scp">scp</h2>
+<p>The <code>scp</code> command is another convenient way to transfer a
+single file or directory using the CLI. You can run it from Taylor or
+from your local computer. Here is the basic syntax:</p>
+<pre><code>scp /source/path hostname:/path/to/destination/</code></pre>
+<p>Here is an example of my uploading the file <code>10min-loop.R</code>
+to Taylor from my laptop. The destination directory on Taylor is
+<code>/home/brun/</code>:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/</span></code></pre></div>
+<p>BTW try to open and run that script for fun!!</p>
+<p>If you want to upload an entire folder, you can add the
+<code>-r</code> option to the command. The general syntax is:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code></pre></div>
+<p>Here is an example uploading all the images in the
+<code>myplot</code> folder</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/home/brun/plots</span></code></pre></div>
+<h3 id="your-turn">Your turn</h3>
+<p>Upload files from your local machine to the server using the
+different techniques mentioned above, You can download the
+<code>10min-loop.R</code> file to your local machine from <a
+href="https://aurora.nceas.ucsb.edu/~brun/10min-loop.R"
+class="uri">https://aurora.nceas.ucsb.edu/~brun/10min-loop.R</a></p>
+<p>Try with a folder:</p>
+<ul>
+<li>download the data to your laptop: <a
+href="https://aurora.nceas.ucsb.edu/~brun/sampledata.zip"
+class="uri">https://aurora.nceas.ucsb.edu/~brun/sampledata.zip</a></li>
+<li>unzip the folder</li>
+<li>upload the folder to Taylor using scp or cyberduck</li>
+</ul>
+<p>Your should end up with something like this:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> ls <span class="at">-l</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 24 23:05 github</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 16 05:00 R</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata</span></code></pre></div>
+<p><a href="day1-cli_practice.html"><strong>CLI
+Practice</strong></a></p>
+<hr />
+<h1 id="advanced-topics-at-the-command-line">Advanced Topics at the
+command line</h1>
+<p><strong>We will not cover this during class, it is for your
+reference</strong>. You will also have the opportunity to further
+practice and learn about the command line in EDS-215.</p>
+<p><a href="day1-cli_advanced.html">Advanced topics CLI</a></p>
+<p><a href="vim.html">Vim</a></p>
+<h1 id="aknowledgements">Aknowledgements</h1>
+<p>This section reuses materials from <a
+href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis
+(OSS)</a> intensive summer schools and other training. Contributions to
+this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz
+and many others.</p>
+<div class="sourceCode" id="cb9"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
