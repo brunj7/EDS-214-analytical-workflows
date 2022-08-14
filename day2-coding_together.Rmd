@@ -66,11 +66,11 @@ knitr::include_graphics("img/git_explain_xkcd.png")
 
 ### Quick recap on version control
 
-[git and GitHub quick recap](day1-git_github_recap.html)
+[git and GitHub quick recap](day2-git_github_recap.html)
 
 ## Collaborating through Forking
 
-[**Materials**](day1-github_forking.html)
+[**Materials**](day2-github_forking.html)
 
 ## Hands-on
 
