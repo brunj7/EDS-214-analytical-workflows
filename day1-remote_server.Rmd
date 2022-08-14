@@ -170,6 +170,9 @@ You can access the command line directly from RStudio by using the `Terminal` ta
 
 ### Navigating and managing files/directories in *NIX
 
+
+![](img/unix_filetree.gif)
+
 * `pwd`: Know where you are
 * `ls`: List the content of the directory
 * `cd`: Go inside a directory
@@ -177,8 +180,7 @@ You can access the command line directly from RStudio by using the `Terminal` ta
 * `.` : Here (current directory)
 * `..`: Up one level (upper directory)
 
-![](img/unix_filetree.gif)
-
+Let's put this into action: 
 
 * go to my "Home" directory:  `cd ~`
 * go up one directory level: `cd ..`
@@ -189,7 +191,7 @@ More files/directories manipulations:
 
 * `mkdir`: Create a directory
 * `cp`: Copy a file
-* `mv`: Move a file
+* `mv`: Move a file  **it is also how you rename a file!**
 * `rm` / `rmdir`: Remove a file / directory  **use those carefully, there is no return / Trash!!**
 
 
@@ -268,13 +270,13 @@ We recommend the following free software:
 
 ## scp
 
-The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from taylor or from your local computer. Here is the basic syntax:
+The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:
 
 ```
 scp /source/path hostname:/path/to/destination/
 ```
 
-Here is an example of my uploading the file `10min-loop.R` to taylor from my laptop. The destination directory on taylor is `/home/brun/`:
+Here is an example of my uploading the file `10min-loop.R` to Taylor from my laptop. The destination directory on Taylor is `/home/brun/`:
 
 ```bash
 scp 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/
@@ -317,7 +319,7 @@ drwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R
 drwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata
 ```
 
-[**CLI Practice**](day3-cli_practice.html)
+[**CLI Practice**](day1-cli_practice.html)
 
 --- 
 
@@ -326,7 +328,7 @@ drwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata
 
 **We will not cover this during class, it is for your reference**. You will also have the opportunity to further practice and learn about the command line in EDS-215.
 
-[Advanced topics CLI](day3-cli_advanced.html)
+[Advanced topics CLI](day1-cli_advanced.html)
 
 [Vim](vim.html)
 
