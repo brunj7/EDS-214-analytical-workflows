@@ -10,17 +10,36 @@ knitr::opts_chunk$set(echo = FALSE)
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 9:00am - 10:00am  | *Github conflicts (60 min)*                               |
-| 10:00am - 10:10am | *Break 1 (10 min)*                                        |
-| 10:10am - 11:20am | *Managing data-driven projects as a team (80 min)*        |
-| 11:20am - 11:30am | *Break 2 (10 min)*                                        |
-| 11:30am - 12:00am | *Flex time 1: Debugging with RStudio (30 min)*            |
+| 9:00am - 9:50am   | *Managing Data Science Project as a team (50 min)*        |
+| 9:50am - 10:00am  | *Break (10 min)*                                        |
+| 10:00am - 10:50am | *Coding together (50min)*        |
+| 10:50am - 11:00am | *Break (10min)*                  |
+| 11:00am - 12:00pm | *Flex time 1: Resumé Workshop (Myia) (60 min)*         |
 | 12:00pm - 1:15pm  | *Lunch (75 min)*                                          |
-| 1:15pm - 2:15pm   | *git commit messages (60 min)*                            |
-| 2:15pm - 3:15pm   | *Meet Kat and Brad -- MEDS computing resources*           |
-| 3:15pm - 3:25pm   | *Break 3 (10 min)*                                        |
-| 3:25pm - 4:05pm   | *Server practice: Bringing your code to the server*       |
-| 4:05pm - 4:30pm   | *Recap of the day and Q&A  (25 min)*                      |
+| 1:15pm - 2:15pm   | *Review Forks, Branches and Pull Requests (60 min)*   |
+| 2:15pm - 2:25pm   | *Break (10 min)*           |
+| 3:15pm - 3:25pm   | *GitHub hands-on on server (70min)*                  |
+| 3:25pm - 3:35pm   | *Day 2 Recap (10min)*       |
+| 3:35pm - 5:00pm   | *Q&A with Casey*                      |
+
+
+---
+
+# Managing data-driven projects as a team
+
+[**Materials**](day2-projects_team.html)
+
+---
+
+
+---
+
+# Coding together
+
+[**Materials**](day2-coding_together.html)
+
+
+---
 
 # Git Therapy
 
@@ -35,32 +54,29 @@ Second: you did nothing wrong!! Git tries to merge files automatically. When the
 
 ---
 
-# Managing data-driven projects as a team
-
-[**Materials**](day2-projects_team.html)
-
----
-
-# Debugging with RStudio
-
-[**Materials**](rstudio_debugging.html)
-
----
-
 # `git` commit messages
 
 [**Materials**](day2-github_commit_messages.html)
 
 ---
 
-# MEDS computing ressources
-
-https://bit.ly/medscompute8-25
-
-
----
-
 # Further reading
+
+## Collaborative coding
+
+- A new grad's guide to coding as a team - Atlassian:
+https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf 
+- 10 tips for efficient programming: 
+https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html 
+- Agile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf
+
+## Code Review
+
+- Small-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext
+
+## Branches
+
+- Interactive tutorial to learn more about git branches and more <https://learngitbranching.js.org/>
 
 ## GitHub Workflow
 
