@@ -1,0 +1,138 @@
+---
+title: "Coding together"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Managing Scripts
+
+## Learning Objectives
+
+In this part of the lesson, you will learn:
+
+- Why __git__ is useful for reproducible analysis
+- How to use __git__ to track changes to your work over time
+- How to use __GitHub__ to collaborate with others
+- How to write effective commit messages
+- How to structure your commits so your changes are clear to others
+- How to fork a repository to contribute to its content
+- How to create a pull request
+- How to review a pull request
+
+
+## Why collaborative coding
+
+[**Slides**](https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html)
+
+Environmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise.  Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:
+
+*   Right size
+*   Diverse group of people with the right mix of skills, knowledge, and competencies
+*   Aligned purpose and incentives
+*   Effective organizational structure
+*   Strong individual contributions
+*   Supportive team processes and culture
+
+**Since Analytical Workflows are rarely linear!** and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind.  _Programming as part of a team is different than writing a script for your(present)self_. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:
+
+*   Motivating you to document well your work
+*   Helping you to think how to make your work reusable (by you, your future you and others)
+*   Learning to read code from collaborators to build upon each others work
+*   Gain further knowledge in software development tools, such as version control
+
+**Developing those skills will accelerate your research and open the door for you to contribute to open source projects.**
+
+
+## How to code together
+
+It is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming. 
+
+
+### Tools 
+
+The good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:
+
+- Version control system: say goodbye to `save as`
+- Code repository: where we share code and communicate ideas and feedback
+
+```{r, fig.cap=" https://xkcd.com/1597/", echo=FALSE}
+knitr::include_graphics("img/git_explain_xkcd.png")
+```
+
+
+
+## GitHub as a collaborative tool 
+
+### Quick recap on version control
+
+[git and GitHub quick recap](day1-git_github_recap.html)
+
+## Collaborating through Forking
+
+[**Materials**](day1-github_forking.html)
+
+## Hands-on
+
+Fork the repository of the `greetings` R package to add the option to change the color of the background of the text.
+
+Repo: <https://github.com/brunj7/greetings>
+
+By team of two:
+
+- Team member 1: fork the repository
+
+- Team member 2: fork the fork that team member 1 just created (yes, you can do this!!)
+
+- Work together on Team member 2's computer to modify the `say_aloah()` function to allow changing the text background color to blue in addition to the existing green (see [here](https://github.com/r-lib/crayon#screenshot-on-osx) for more about the `crayon` package)
+
+- Once done, create a pull request to integrate the new changes tagging team member 1 as reviewer
+
+- Team member 1, review the code, comment as needed on the pull request, and merge changes
+
+---
+
+# Flex session
+
+## The Markdown syntax <img style="float: right;width: 50px;" src=img/markdown-logo.png />
+
+You will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using `pandoc` into various document formats (PDF, html, ....). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor. 
+
+Another interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.
+
+```
+$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+
+During this flex session, explore what you can do with with Markdown basic 
+
+<https://www.markdownguide.org/basic-syntax/>
+
+And extended:
+
+<https://www.markdownguide.org/extended-syntax/>
+
+### R Markdown
+
+What about R markdown in all of this? Well the R Markdown syntax, or more precisely the `knitr` package, add extra R oriented features which allows the translate of R code, figures and more  into a Markdown document to produce dynamic and reproducible documents.
+
+```{r echo=FALSE}
+knitr::include_graphics("img/markdown-how-it-works.png")
+```
+
+
+---
+
+# GitHub branches
+
+[**Materials**](day2-github_branches.html)
+
+
+## GitHub Hands-on 
+
+1. [GitHub branches using the website](day2-handson_github_website.html)
+2. [GitHub branches using RStudio](day2-handson_github_rstudio.html)
+
+
