@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,39 +2545,65 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#collaborating-through-write-push-access">Collaborating through write / push access</a></li>
-<li><a href="#branches">Branches</a>
+<li><a href="#collaborating-through-write-push-access"
+id="toc-collaborating-through-write-push-access">Collaborating through
+write / push access</a></li>
+<li><a href="#branches" id="toc-branches">Branches</a>
 <ul>
-<li><a href="#working-with-branches">Working with branches</a>
+<li><a href="#working-with-branches"
+id="toc-working-with-branches">Working with branches</a>
 <ul>
-<li><a href="#creating-a-new-branch">Creating a new branch</a></li>
-<li><a href="#using-a-branch">Using a branch</a></li>
+<li><a href="#creating-a-new-branch"
+id="toc-creating-a-new-branch">Creating a new branch</a></li>
+<li><a href="#using-a-branch" id="toc-using-a-branch">Using a
+branch</a></li>
 </ul></li>
 </ul></li>
 </ul>
 </nav>
 </div>
-<h2 id="collaborating-through-write-push-access">Collaborating through write / push access</h2>
-<p>When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (<code>git push</code>) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.</p>
-<h4 id="adding-collaborators-to-a-repository">Adding collaborators to a repository</h4>
+<h2 id="collaborating-through-write-push-access">Collaborating through
+write / push access</h2>
+<p>When you collaborate closely and actively with colleagues, you do not
+want necessarily to have to review all their changes through pull
+requests. You can then give them write access (<code>git push</code>) to
+your repository to allow them to directly edit and contribute to its
+content. This is the workflow we will recommend to use within your
+working group.</p>
+<h4 id="adding-collaborators-to-a-repository">Adding collaborators to a
+repository</h4>
 <ul>
 <li>Click on the repository</li>
-<li>On the top tabs, click <img src="img/github-repo-settings.png" /></li>
-<li>On the left pane, click <code>Manage access</code> and click on “Invite a Collaborator” to enter the usernames you want to add</li>
+<li>On the top tabs, click <img
+src="img/github-repo-settings.png" /></li>
+<li>On the left pane, click <code>Manage access</code> and click on
+“Invite a Collaborator” to enter the usernames you want to add</li>
 </ul>
 <figure>
-<img src="img/github-collaborators.png" alt="collaborators" /><figcaption aria-hidden="true">collaborators</figcaption>
+<img src="img/github-collaborators.png" alt="collaborators" />
+<figcaption aria-hidden="true">collaborators</figcaption>
 </figure>
-<p>Under this collaborative workflow, we recommend to use git <code>branches</code> combined with pull requests to avoid conflicts and to track and discuss collaborators contributions.</p>
+<p>Under this collaborative workflow, we recommend to use git
+<code>branches</code> combined with pull requests to avoid conflicts and
+to track and discuss collaborators contributions.</p>
 <h1 id="branches">Branches</h1>
 <figure>
-<img src="img/atlassian_branches_sketch.png" alt="adapted from https://www.atlassian.com/git/tutorials/git-merge" /><figcaption aria-hidden="true">adapted from <a href="https://www.atlassian.com/git/tutorials/git-merge" class="uri">https://www.atlassian.com/git/tutorials/git-merge</a></figcaption>
+<img src="img/atlassian_branches_sketch.png"
+alt="adapted from https://www.atlassian.com/git/tutorials/git-merge" />
+<figcaption aria-hidden="true">adapted from <a
+href="https://www.atlassian.com/git/tutorials/git-merge"
+class="uri">https://www.atlassian.com/git/tutorials/git-merge</a></figcaption>
 </figure>
-<p>What are branches? Well in fact nothing new, as the <code>master</code> is a branch. A branch represents an independent line of development, parallel to the master (branch).</p>
+<p>What are branches? Well in fact nothing new, as the
+<code>master</code> is a branch. A branch represents an independent line
+of development, parallel to the master (branch).</p>
 <p>Why should you use branches? For 2 main reasons:</p>
 <ul>
-<li>We want the master to only keep a version of the code that is working</li>
-<li>We want to version the code we are developing to add/test new features (for now we mostly talk about feature branch) in our script without altering the version on the master.</li>
+<li>We want the master to only keep a version of the code that is
+working</li>
+<li>We want to version the code we are developing to add/test new
+features (for now we mostly talk about feature branch) in our script
+without altering the version on the master.</li>
 </ul>
 <h2 id="working-with-branches">Working with branches</h2>
 <h3 id="creating-a-new-branch">Creating a new branch</h3>
@@ -2559,13 +2615,16 @@ Daily Materials
 <p><img src="img/rstudio-git-branch-create.png" width="60%" style="display: block; margin: auto;" /></p>
 </div>
 <ol start="2" type="1">
-<li>Fill the branch name in the new branch window; in this example, we are going to use <code>test</code> for the name; leave the other options as default and click create</li>
+<li>Fill the branch name in the new branch window; in this example, we
+are going to use <code>test</code> for the name; leave the other options
+as default and click create</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/rstudio-git-branch-test.png" width="40%" style="display: block; margin: auto;" /></p>
 </div>
 <ol start="3" type="1">
-<li>you will be directly creating a local and remote branch and switch to it</li>
+<li>you will be directly creating a local and remote branch and switch
+to it</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/rstudio-git-branch-new.png" width="62%" style="display: block; margin: auto;" /></p>
@@ -2575,10 +2634,14 @@ Daily Materials
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/github-new-branch.png" width="45%" style="display: block; margin: auto;" /></p>
 </div>
-<p>As you can see, now there are two branches on our remote repository: - master - test</p>
+<p>As you can see, now there are two branches on our remote repository:
+- master - test</p>
 <h3 id="using-a-branch">Using a branch</h3>
-<p>Here there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the <code>test</code> branch instead of the master branch.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Here there is nothing new. The workflow is exactly the same as we did
+before, except our commits will be created on the <code>test</code>
+branch instead of the master branch.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

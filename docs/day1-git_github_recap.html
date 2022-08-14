@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,68 +2545,142 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#version-control-with-git-and-github">Version Control with <code>git</code> and <code>GitHub</code></a>
+<li><a href="#version-control-with-git-and-github"
+id="toc-version-control-with-git-and-github">Version Control with
+<code>git</code> and <code>GitHub</code></a>
 <ul>
-<li><a href="#the-problem-with-save_as">The problem with <code>save_as</code></a></li>
-<li><a href="#git">git</a>
+<li><a href="#the-problem-with-save_as"
+id="toc-the-problem-with-save_as">The problem with
+<code>save_as</code></a></li>
+<li><a href="#git" id="toc-git">git</a>
 <ul>
-<li><a href="#repository">Repository</a></li>
+<li><a href="#repository" id="toc-repository">Repository</a></li>
 </ul></li>
-<li><a href="#github">GitHub</a>
+<li><a href="#github" id="toc-github">GitHub</a>
 <ul>
-<li><a href="#lets-look-at-a-repository-on-github">Let’s look at a repository on GitHub</a></li>
+<li><a href="#lets-look-at-a-repository-on-github"
+id="toc-lets-look-at-a-repository-on-github">Let’s look at a repository
+on GitHub</a></li>
 </ul></li>
 </ul></li>
 </ul>
 </nav>
 </div>
-<h1 id="version-control-with-git-and-github">Version Control with <code>git</code> and <code>GitHub</code></h1>
-<p>Aka – <strong>Say goodbye to <code>script_JB_03v5b.R</code> !!</strong></p>
-<h2 id="the-problem-with-save_as">The problem with <code>save_as</code></h2>
+<h1 id="version-control-with-git-and-github">Version Control with
+<code>git</code> and <code>GitHub</code></h1>
+<p>Aka – <strong>Say goodbye to <code>script_JB_03v5b.R</code>
+!!</strong></p>
+<h2 id="the-problem-with-save_as">The problem with
+<code>save_as</code></h2>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/phd_comics_final.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
-<p>Every file in the scientific process changes. Manuscripts are edited. Figures get revised. Code gets fixed when problems are discovered. Data files get combined together, then errors are fixed, and then they are split and combined again. In the course of a single analysis, one can expect thousands of changes to files. And yet, all we use to track this are simplistic <em>filenames</em>. You might think there is a better way, and you’d be right: <strong>version control</strong>.</p>
-<p>Version control systems help you track all of the changes to your files, without the spaghetti mess that ensues from simple file renaming. In other words, version control is a system that helps you to manage the different versions of your files in an organized manner. It will help you to never have to duplicate files using <code>save as</code> as a way to keep different versions of a file (see below). Version control help you to create a timeline of snapshots containing the different versions of a file. At any point in time, you will be able to roll back to a specific version. Bonus: you can add a short description (commit message) to remember what each specific version is about.</p>
-<p><strong>What is the difference between <code>git</code> and <code>GitHub</code>?</strong></p>
+<p>Every file in the scientific process changes. Manuscripts are edited.
+Figures get revised. Code gets fixed when problems are discovered. Data
+files get combined together, then errors are fixed, and then they are
+split and combined again. In the course of a single analysis, one can
+expect thousands of changes to files. And yet, all we use to track this
+are simplistic <em>filenames</em>. You might think there is a better
+way, and you’d be right: <strong>version control</strong>.</p>
+<p>Version control systems help you track all of the changes to your
+files, without the spaghetti mess that ensues from simple file renaming.
+In other words, version control is a system that helps you to manage the
+different versions of your files in an organized manner. It will help
+you to never have to duplicate files using <code>save as</code> as a way
+to keep different versions of a file (see below). Version control help
+you to create a timeline of snapshots containing the different versions
+of a file. At any point in time, you will be able to roll back to a
+specific version. Bonus: you can add a short description (commit
+message) to remember what each specific version is about.</p>
+<p><strong>What is the difference between <code>git</code> and
+<code>GitHub</code>?</strong></p>
 <ul>
-<li><strong>git</strong>: is a version control software used to track files in a folder (a repository)
+<li><strong>git</strong>: is a version control software used to track
+files in a folder (a repository)
 <ul>
 <li>git creates a timeline or history of your files</li>
 </ul></li>
-<li><strong>GitHub</strong>: is a code repository in the cloud that enables users to store their git repositories and share them with others. Github also add many features to manage projects and document your work.</li>
+<li><strong>GitHub</strong>: is a code repository in the cloud that
+enables users to store their git repositories and share them with
+others. Github also add many features to manage projects and document
+your work.</li>
 </ul>
 <h2 id="git">git</h2>
 <p><img style="float: right;width: 100px;" src="img/git_icon.png"></p>
-<p>This section focuses on the code versioning system called <code>Git</code>. Note that there are others, such as <code>Mercurial</code> or <code>svn</code> for example.</p>
-<p>Git is a <em>free</em> and <em>open source</em> distributed <em>version control system</em>. It has many functionalities and was originally geared towards software development and production environment. In fact, Git was initially designed and developed in 2005 by Linux kernel developers (including Linus Torvalds) to track the development of the Linux kernel. Here is a <a href="https://www.youtube.com/watch?v=4XpnKHJAok8">fun video</a> of Linus Torvalds touting Git to Google.</p>
+<p>This section focuses on the code versioning system called
+<code>Git</code>. Note that there are others, such as
+<code>Mercurial</code> or <code>svn</code> for example.</p>
+<p>Git is a <em>free</em> and <em>open source</em> distributed
+<em>version control system</em>. It has many functionalities and was
+originally geared towards software development and production
+environment. In fact, Git was initially designed and developed in 2005
+by Linux kernel developers (including Linus Torvalds) to track the
+development of the Linux kernel. Here is a <a
+href="https://www.youtube.com/watch?v=4XpnKHJAok8">fun video</a> of
+Linus Torvalds touting Git to Google.</p>
 <p><strong>How does it work?</strong></p>
-<p>Git can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a <strong>repository</strong> (which formally is a specific data structure storing versioning information).</p>
+<p>Git can be enabled on a specific folder/directory on your file system
+to version files within that directory (including sub-directories). In
+git (and other version control systems) terms, this “tracked folder” is
+called a <strong>repository</strong> (which formally is a specific data
+structure storing versioning information).</p>
 <p><strong>What git is not:</strong></p>
 <ul>
 <li><strong>Git is not a backup per se</strong></li>
-<li>Git is not good at versioning large files (there are workarounds) =&gt; not meant for data</li>
+<li>Git is not good at versioning large files (there are workarounds)
+=&gt; not meant for data</li>
 </ul>
 <h3 id="repository">Repository</h3>
-<p>Git can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a <strong>repository</strong> (which formally is a specific data structure storing versioning information).</p>
-<p>Although there many ways to start a new repository, <a href="https://github.com/">GitHub</a> (or any other cloud solutions, such as <a href="https://about.gitlab.com/">GitLab</a>) provide among the most convenient way of starting a repository.</p>
+<p>Git can be enabled on a specific folder/directory on your file system
+to version files within that directory (including sub-directories). In
+git (and other version control systems) terms, this “tracked folder” is
+called a <strong>repository</strong> (which formally is a specific data
+structure storing versioning information).</p>
+<p>Although there many ways to start a new repository, <a
+href="https://github.com/">GitHub</a> (or any other cloud solutions,
+such as <a href="https://about.gitlab.com/">GitLab</a>) provide among
+the most convenient way of starting a repository.</p>
 <p><img style="float: right;width: 100px;" src="img/github-logo.png"></p>
 <h2 id="github">GitHub</h2>
-<p><strong>GitHub is a company that hosts git repositories online</strong> and provides several collaboration features (among which <code>forking</code>). GitHub fosters a great user community and has built a nice web interface to git, also adding great visualization/rendering capacities of your data.</p>
+<p><strong>GitHub is a company that hosts git repositories
+online</strong> and provides several collaboration features (among which
+<code>forking</code>). GitHub fosters a great user community and has
+built a nice web interface to git, also adding great
+visualization/rendering capacities of your data.</p>
 <ul>
-<li><strong>GitHub.com</strong>: <a href="https://github.com" class="uri">https://github.com</a></li>
-<li><strong>A user account</strong>: <a href="https://github.com/brunj7" class="uri">https://github.com/brunj7</a></li>
-<li><strong>An organization account</strong>: <a href="https://github.com/nceas" class="uri">https://github.com/nceas</a></li>
-<li><strong>NCEAS GitHub instance</strong>: <a href="https://github.nceas.ucsb.edu/" class="uri">https://github.nceas.ucsb.edu/</a></li>
+<li><strong>GitHub.com</strong>: <a href="https://github.com"
+class="uri">https://github.com</a></li>
+<li><strong>A user account</strong>: <a href="https://github.com/brunj7"
+class="uri">https://github.com/brunj7</a></li>
+<li><strong>An organization account</strong>: <a
+href="https://github.com/nceas"
+class="uri">https://github.com/nceas</a></li>
+<li><strong>NCEAS GitHub instance</strong>: <a
+href="https://github.nceas.ucsb.edu/"
+class="uri">https://github.nceas.ucsb.edu/</a></li>
 </ul>
-<h3 id="lets-look-at-a-repository-on-github">Let’s look at a repository on GitHub</h3>
-<p>This screen shows the copy of a repository stored on GitHub, with its <span style="color:red">list of files</span>, <span style="color:green">when the files and directories were last modified</span>, and <span style="color:blue">some information on who made the most recent changes.</span></p>
+<h3 id="lets-look-at-a-repository-on-github">Let’s look at a repository
+on GitHub</h3>
+<p>This screen shows the copy of a repository stored on GitHub, with its
+<span style="color:red">list of files</span>, <span
+style="color:green">when the files and directories were last
+modified</span>, and <span style="color:blue">some information on who
+made the most recent changes.</span></p>
 <p><img src="img/ss3sim-github_colored.png" /></p>
-<p>If we drill into the “<span style="color:orange">commits</span>” for the repository, we can see the history of changes made to all of the files. Looks like <code>kellijohnson</code> and <code>seananderson</code> were fixing things in June and July:</p>
+<p>If we drill into the “<span style="color:orange">commits</span>” for
+the repository, we can see the history of changes made to all of the
+files. Looks like <code>kellijohnson</code> and
+<code>seananderson</code> were fixing things in June and July:</p>
 <p><img src="img/ss3sim-commits_colored.png" /></p>
-<p>And finally, if we drill into the changes made on June 13, we can see exactly what was changed in each file:</p>
-<p><img src="img/ss3sim-diff.png" /> Tracking these changes, and seeing how they relate to released versions of software and files is exactly what Git and GitHub are good for. We will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>And finally, if we drill into the changes made on June 13, we can see
+exactly what was changed in each file:</p>
+<p><img src="img/ss3sim-diff.png" /> Tracking these changes, and seeing
+how they relate to released versions of software and files is exactly
+what Git and GitHub are good for. We will show how they can really be
+effective for tracking versions of scientific code, figures, and
+manuscripts to accomplish a reproducible workflow.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

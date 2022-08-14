@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,59 +2545,91 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#other-text-editors">Other text editors</a>
+<li><a href="#other-text-editors" id="toc-other-text-editors">Other text
+editors</a>
 <ul>
-<li><a href="#your-typical-editor-works-like-this">Your typical editor works like this…</a></li>
+<li><a href="#your-typical-editor-works-like-this"
+id="toc-your-typical-editor-works-like-this">Your typical editor works
+like this…</a></li>
 </ul></li>
-<li><a href="#vim-is-different">Vim is different</a>
+<li><a href="#vim-is-different" id="toc-vim-is-different">Vim is
+different</a>
 <ul>
-<li><a href="#vim-has-modes">Vim has <em>modes</em></a></li>
+<li><a href="#vim-has-modes" id="toc-vim-has-modes">Vim has
+<em>modes</em></a></li>
 </ul></li>
-<li><a href="#the-keyboard-is-your-friend">The keyboard is your friend</a></li>
-<li><a href="#for-the-impatient">For the impatient</a></li>
-<li><a href="#normal-mode">Normal mode</a>
+<li><a href="#the-keyboard-is-your-friend"
+id="toc-the-keyboard-is-your-friend">The keyboard is your
+friend</a></li>
+<li><a href="#for-the-impatient" id="toc-for-the-impatient">For the
+impatient</a></li>
+<li><a href="#normal-mode" id="toc-normal-mode">Normal mode</a>
 <ul>
-<li><a href="#now-that-youve-seen-that-you-can-actually-type-in-vim-lets-learn-about-the-magic-of-normal-mode">Now that you’ve seen that you <em>can</em> actually type in vim, let’s learn about the magic of Normal mode!</a></li>
+<li><a
+href="#now-that-youve-seen-that-you-can-actually-type-in-vim-lets-learn-about-the-magic-of-normal-mode"
+id="toc-now-that-youve-seen-that-you-can-actually-type-in-vim-lets-learn-about-the-magic-of-normal-mode">Now
+that you’ve seen that you <em>can</em> actually type in vim, let’s learn
+about the magic of Normal mode!</a></li>
 </ul></li>
-<li><a href="#moving-around-motions">Moving around (“motions”)</a></li>
-<li><a href="#moving-around-motions-1">Moving around (“motions”)</a></li>
-<li><a href="#insert">Insert</a></li>
-<li><a href="#delete-really-this-is-cut">Delete (really, this is “cut”)</a></li>
-<li><a href="#copy-and-paste">Copy and paste</a></li>
-<li><a href="#search-and-replace">Search and replace</a></li>
-<li><a href="#do-overs">Do-overs!</a></li>
-<li><a href="#extras">Extras</a></li>
-<li><a href="#saving-and-quitting">Saving and quitting</a></li>
-<li><a href="#tabs">Tabs</a></li>
-<li><a href="#basic-editing">Basic editing</a></li>
-<li><a href="#operators-and-repetition">Operators and repetition</a></li>
-<li><a href="#yank-paste">Yank &amp; paste</a></li>
-<li><a href="#searching">Searching</a></li>
-<li><a href="#marks-macros">Marks &amp; macros</a></li>
-<li><a href="#various-motions">Various motions</a></li>
-<li><a href="#various-commands">Various commands</a></li>
-<li><a href="#places-to-learn">Places to learn</a></li>
+<li><a href="#moving-around-motions"
+id="toc-moving-around-motions">Moving around (“motions”)</a></li>
+<li><a href="#moving-around-motions-1"
+id="toc-moving-around-motions-1">Moving around (“motions”)</a></li>
+<li><a href="#insert" id="toc-insert">Insert</a></li>
+<li><a href="#delete-really-this-is-cut"
+id="toc-delete-really-this-is-cut">Delete (really, this is
+“cut”)</a></li>
+<li><a href="#copy-and-paste" id="toc-copy-and-paste">Copy and
+paste</a></li>
+<li><a href="#search-and-replace" id="toc-search-and-replace">Search and
+replace</a></li>
+<li><a href="#do-overs" id="toc-do-overs">Do-overs!</a></li>
+<li><a href="#extras" id="toc-extras">Extras</a></li>
+<li><a href="#saving-and-quitting" id="toc-saving-and-quitting">Saving
+and quitting</a></li>
+<li><a href="#tabs" id="toc-tabs">Tabs</a></li>
+<li><a href="#basic-editing" id="toc-basic-editing">Basic
+editing</a></li>
+<li><a href="#operators-and-repetition"
+id="toc-operators-and-repetition">Operators and repetition</a></li>
+<li><a href="#yank-paste" id="toc-yank-paste">Yank &amp; paste</a></li>
+<li><a href="#searching" id="toc-searching">Searching</a></li>
+<li><a href="#marks-macros" id="toc-marks-macros">Marks &amp;
+macros</a></li>
+<li><a href="#various-motions" id="toc-various-motions">Various
+motions</a></li>
+<li><a href="#various-commands" id="toc-various-commands">Various
+commands</a></li>
+<li><a href="#places-to-learn" id="toc-places-to-learn">Places to
+learn</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="other-text-editors">Other text editors</h1>
-<h2 id="your-typical-editor-works-like-this">Your typical editor works like this…</h2>
+<h2 id="your-typical-editor-works-like-this">Your typical editor works
+like this…</h2>
 <ul>
-<li>When you type almost any key, the corresponding character (letter, number, symbol, or whitespace) appears at the cursor</li>
-<li>Certain special keys do special operations (control, alt, command, super)</li>
+<li>When you type almost any key, the corresponding character (letter,
+number, symbol, or whitespace) appears at the cursor</li>
+<li>Certain special keys do special operations (control, alt, command,
+super)</li>
 <li>For a GUI app, you can/must click menus for other functionality</li>
 </ul>
 <h1 id="vim-is-different">Vim is different</h1>
 <h2 id="vim-has-modes">Vim has <em>modes</em></h2>
 <dl>
 <dt>Normal</dt>
-<dd>for almost everything except typing! Insert
+<dd>
+for almost everything except typing! Insert
 </dd>
-<dd>for typing Visual
+<dd>
+for typing Visual
 </dd>
-<dd>for highlighting a region to operate on
+<dd>
+for highlighting a region to operate on
 </dd>
-<dd>(and others you don’t need to know about)
+<dd>
+(and others you don’t need to know about)
 </dd>
 </dl>
 <h1 id="the-keyboard-is-your-friend">The keyboard is your friend</h1>
@@ -2587,7 +2649,10 @@ Daily Materials
 </ul></li>
 </ul>
 <h1 id="normal-mode">Normal mode</h1>
-<h3 id="now-that-youve-seen-that-you-can-actually-type-in-vim-lets-learn-about-the-magic-of-normal-mode">Now that you’ve seen that you <em>can</em> actually type in vim, let’s learn about the magic of Normal mode!</h3>
+<h3
+id="now-that-youve-seen-that-you-can-actually-type-in-vim-lets-learn-about-the-magic-of-normal-mode">Now
+that you’ve seen that you <em>can</em> actually type in vim, let’s learn
+about the magic of Normal mode!</h3>
 <h1 id="moving-around-motions">Moving around (“motions”)</h1>
 <p><strong>Stepping</strong></p>
 <ul>
@@ -2616,8 +2681,10 @@ Daily Materials
 <li>starting on the next line – <code>o</code></li>
 <li>starting on the previous line – <code>O</code></li>
 <li>enter ‘replace mode’ right where you are – <code>R</code></li>
-<li>replace current character with one other character – <code>r{char}</code></li>
-<li>delete current character, then enter insert mode – <code>s</code></li>
+<li>replace current character with one other character –
+<code>r{char}</code></li>
+<li>delete current character, then enter insert mode –
+<code>s</code></li>
 <li>delete current line, then enter insert mode – <code>S</code></li>
 </ul>
 <h1 id="delete-really-this-is-cut">Delete (really, this is “cut”)</h1>
@@ -2672,44 +2739,83 @@ Daily Materials
 </ul>
 <h1 id="basic-editing">Basic editing</h1>
 <figure>
-<img src="img/vi-vim-tutorial-1.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+<img src="img/vi-vim-tutorial-1.gif"
+alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" />
+<figcaption aria-hidden="true"><a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"
+class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
 </figure>
 <h1 id="operators-and-repetition">Operators and repetition</h1>
 <figure>
-<img src="img/vi-vim-tutorial-2.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+<img src="img/vi-vim-tutorial-2.gif"
+alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" />
+<figcaption aria-hidden="true"><a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"
+class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
 </figure>
 <h1 id="yank-paste">Yank &amp; paste</h1>
 <figure>
-<img src="img/vi-vim-tutorial-3.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+<img src="img/vi-vim-tutorial-3.gif"
+alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" />
+<figcaption aria-hidden="true"><a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"
+class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
 </figure>
 <h1 id="searching">Searching</h1>
 <figure>
-<img src="img/vi-vim-tutorial-4.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+<img src="img/vi-vim-tutorial-4.gif"
+alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" />
+<figcaption aria-hidden="true"><a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"
+class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
 </figure>
 <h1 id="marks-macros">Marks &amp; macros</h1>
 <figure>
-<img src="img/vi-vim-tutorial-5.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+<img src="img/vi-vim-tutorial-5.gif"
+alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" />
+<figcaption aria-hidden="true"><a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"
+class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
 </figure>
 <h1 id="various-motions">Various motions</h1>
 <figure>
-<img src="img/vi-vim-tutorial-6.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+<img src="img/vi-vim-tutorial-6.gif"
+alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" />
+<figcaption aria-hidden="true"><a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"
+class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
 </figure>
 <h1 id="various-commands">Various commands</h1>
 <figure>
-<img src="img/vi-vim-tutorial-7.gif" alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" /><figcaption aria-hidden="true"><a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
+<img src="img/vi-vim-tutorial-7.gif"
+alt="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" />
+<figcaption aria-hidden="true"><a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"
+class="uri">http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</a></figcaption>
 </figure>
 <h1 id="places-to-learn">Places to learn</h1>
 <ul>
-<li>The <a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html">pictorial cheatsheets</a> used in this slide
+<li>The <a
+href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html">pictorial
+cheatsheets</a> used in this slide
 <ul>
-<li><a href="http://www.glump.net/_media/howto/vi-vim-cheat-sheet-and-tutorial.pdf">Color PDF of all 8 diagrams</a></li>
+<li><a
+href="http://www.glump.net/_media/howto/vi-vim-cheat-sheet-and-tutorial.pdf">Color
+PDF of all 8 diagrams</a></li>
 </ul></li>
-<li>A nice <a href="http://jmcpherson.org/editing.html">introduction with some clear prose</a></li>
-<li>A popular portal to <a href="http://thomer.com/vi/vi.html">the rest of the vim universe</a></li>
-<li>A bit heavy-handed, but if you really like learning by <a href="http://www.linuxconfig.org/Vim_Tutorial">watching over someone’s shoulder</a>…</li>
-<li>Lastly, if you just want to learn <a href="http://www.jerrywang.net/vi/">how to start <em>and</em> quit vim all in the first page of tips</a></li>
+<li>A nice <a href="http://jmcpherson.org/editing.html">introduction
+with some clear prose</a></li>
+<li>A popular portal to <a href="http://thomer.com/vi/vi.html">the rest
+of the vim universe</a></li>
+<li>A bit heavy-handed, but if you really like learning by <a
+href="http://www.linuxconfig.org/Vim_Tutorial">watching over someone’s
+shoulder</a>…</li>
+<li>Lastly, if you just want to learn <a
+href="http://www.jerrywang.net/vi/">how to start <em>and</em> quit vim
+all in the first page of tips</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

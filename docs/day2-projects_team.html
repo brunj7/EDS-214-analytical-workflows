@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,36 +2545,63 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#managing-your-files-as-a-team">Managing your files as a team</a></li>
-<li><a href="#naming-things">Naming things</a>
+<li><a href="#managing-your-files-as-a-team"
+id="toc-managing-your-files-as-a-team">Managing your files as a
+team</a></li>
+<li><a href="#naming-things" id="toc-naming-things">Naming things</a>
 <ul>
-<li><a href="#exercise">Exercise</a></li>
+<li><a href="#exercise" id="toc-exercise">Exercise</a></li>
 </ul></li>
-<li><a href="#organizing-things">Organizing things</a></li>
-<li><a href="#code">Code</a></li>
-<li><a href="#scripting-languages">Scripting languages</a>
+<li><a href="#organizing-things" id="toc-organizing-things">Organizing
+things</a></li>
+<li><a href="#code" id="toc-code">Code</a></li>
+<li><a href="#scripting-languages"
+id="toc-scripting-languages">Scripting languages</a>
 <ul>
-<li><a href="#structure-of-a-script">Structure of a script</a></li>
-<li><a href="#a-few-programming-practices-that-will-help-a-long-way">A few programming practices that will help a long way</a></li>
-<li><a href="#notebooks-and-scripts">Notebooks and scripts</a></li>
+<li><a href="#structure-of-a-script"
+id="toc-structure-of-a-script">Structure of a script</a></li>
+<li><a href="#a-few-programming-practices-that-will-help-a-long-way"
+id="toc-a-few-programming-practices-that-will-help-a-long-way">A few
+programming practices that will help a long way</a></li>
+<li><a href="#notebooks-and-scripts"
+id="toc-notebooks-and-scripts">Notebooks and scripts</a></li>
 </ul></li>
-<li><a href="#data">Data</a></li>
-<li><a href="#leveraging-existing-framework">Leveraging existing framework</a>
+<li><a href="#data" id="toc-data">Data</a></li>
+<li><a href="#leveraging-existing-framework"
+id="toc-leveraging-existing-framework">Leveraging existing framework</a>
 <ul>
-<li><a href="#an-example-rrtols">An example: <code>rrtols</code></a></li>
-<li><a href="#other-workflow-frameworks-to-look-into">Other workflow frameworks to look into</a></li>
+<li><a href="#an-example-rrtols" id="toc-an-example-rrtols">An example:
+<code>rrtols</code></a></li>
+<li><a href="#other-workflow-frameworks-to-look-into"
+id="toc-other-workflow-frameworks-to-look-into">Other workflow
+frameworks to look into</a></li>
 </ul></li>
-<li><a href="#aknowledgement">Aknowledgement</a></li>
+<li><a href="#aknowledgement"
+id="toc-aknowledgement">Aknowledgement</a></li>
 </ul>
 </nav>
 </div>
-<h2 id="managing-your-files-as-a-team">Managing your files as a team</h2>
-<p>Our goal is to centralize the management of your files (data, codes, …). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path.</p>
-<p>There are many tools out there to help with file management. Here are a few questions to ask your teammates when organizing your project:</p>
+<h2 id="managing-your-files-as-a-team">Managing your files as a
+team</h2>
+<p>Our goal is to centralize the management of your files (data, codes,
+…). Try to avoid having data sets spread among laptops or other personal
+computers; this makes it difficult for other team members to redo a
+particular analysis and it can become difficult to know which version of
+the data was used for a specific analysis. We recommend asking your
+institution if there are servers or cloud services available to you and
+use those tools to centralize your data management. This will also make
+sure that all your collaborators will be able to access the same version
+of the data using the same path.</p>
+<p>There are many tools out there to help with file management. Here are
+a few questions to ask your teammates when organizing your project:</p>
 <ul>
-<li>Can everybody have access to this tool? This should overrule the “best” tool =&gt; maximize adoption</li>
-<li>What team practices should you set on how to use these tools? Example: naming convention for files</li>
-<li>Allow flexibility – acknowledge the technological level varies among collaborators. Empower them by showing how to best use these tools rather than doing it for them!</li>
+<li>Can everybody have access to this tool? This should overrule the
+“best” tool =&gt; maximize adoption</li>
+<li>What team practices should you set on how to use these tools?
+Example: naming convention for files</li>
+<li>Allow flexibility – acknowledge the technological level varies among
+collaborators. Empower them by showing how to best use these tools
+rather than doing it for them!</li>
 </ul>
 <h2 id="naming-things">Naming things</h2>
 <p><img src="img/naming_conventions.png" /></p>
@@ -2552,7 +2609,8 @@ Daily Materials
 <ul>
 <li>Avoid spaces (use underscores or dashes)</li>
 <li>Avoid punctuation or special characters</li>
-<li>Try to leverage alphabetical order (e.g. start with dates: 2020-05-08)</li>
+<li>Try to leverage alphabetical order (e.g. start with dates:
+2020-05-08)</li>
 <li>Use descriptive naming (lite metadata)</li>
 <li>Use folders to structure/organize content</li>
 <li>Keep it simple</li>
@@ -2566,10 +2624,9 @@ Daily Materials
 <p>Why do you think the second option would be best?</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'>#  gravitational acceleration</span>
-
-<span class='va'>gravity_acc</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'>#  gravitational acceleration</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'>#  gravitational acceleration</span></span>
+<span></span>
+<span><span class='va'>gravity_acc</span> <span class='op'>&lt;-</span> <span class='fl'>9.81</span>  <span class='co'>#  gravitational acceleration</span></span></code></pre>
 </div>
 </div>
 <p>Which filename would be the most useful?</p>
@@ -2581,79 +2638,188 @@ Daily Materials
 <li><code>2020-05-08-windSensor1-plot3.csv</code></li>
 </ul>
 <p><strong>The most important is to make it consistent!</strong></p>
-<p>Good <a href="https://speakerdeck.com/jennybc/how-to-name-files">reference</a> on this topic from Jenny Bryan (RStudio).</p>
+<p>Good <a
+href="https://speakerdeck.com/jennybc/how-to-name-files">reference</a>
+on this topic from Jenny Bryan (RStudio).</p>
 <h2 id="organizing-things">Organizing things</h2>
-<p>As we discussed previously, it is good practice to encapsulate your project and repositories are a good unit to start with. In this section we will talk about the case when your data sets start to be numerous or large enough that it is not possible anymore to keep them in your repository. Generally when you reach this amount of data to deal with, it also means that your personal computer might not be the best computer to efficiently process those data sets. Thus using a remote server (on premise or in the cloud) might become necessary.</p>
+<p>As we discussed previously, it is good practice to encapsulate your
+project and repositories are a good unit to start with. In this section
+we will talk about the case when your data sets start to be numerous or
+large enough that it is not possible anymore to keep them in your
+repository. Generally when you reach this amount of data to deal with,
+it also means that your personal computer might not be the best computer
+to efficiently process those data sets. Thus using a remote server (on
+premise or in the cloud) might become necessary.</p>
 <ol type="1">
-<li><p>Codes should be managed using version controlled (git and GitHub for this course)   The repository should be stored in your home folder and the management of the different contributions should be resolved using git and GitHub and not by sharing directly the scripts. The main reason is that git does already the work for us by tracking the changes between the various versions, but also tracking which collaborator has made those changes and when.</p></li>
-<li><p>Data sets should should be centralized in a shared folder that is available to all   It is very rare in an Environmental Data Science project that you will discover all the data you need from the start. In addition, a lot of environmental data sets are time-series, and one year later might need to be updated as your project progresses. Our goal here is to setup ourselves in a way that will help us to avoid duplication of data. Every time you duplicate a data set (for example on your own laptop), there is a risk that at some point it will become its own version.</p></li>
+<li><p>Codes should be managed using version controlled (git and GitHub
+for this course)   The repository should be stored in your home folder
+and the management of the different contributions should be resolved
+using git and GitHub and not by sharing directly the scripts. The main
+reason is that git does already the work for us by tracking the changes
+between the various versions, but also tracking which collaborator has
+made those changes and when.</p></li>
+<li><p>Data sets should should be centralized in a shared folder that is
+available to all   It is very rare in an Environmental Data Science
+project that you will discover all the data you need from the start. In
+addition, a lot of environmental data sets are time-series, and one year
+later might need to be updated as your project progresses. Our goal here
+is to setup ourselves in a way that will help us to avoid duplication of
+data. Every time you duplicate a data set (for example on your own
+laptop), there is a risk that at some point it will become its own
+version.</p></li>
 </ol>
 <h2 id="code">Code</h2>
-<p>Version control systems have been originally designed to track changes by rows in small text files, in other words they are well suited to manage codes. It is thus recommended to use them to track changes that you and your collaborators are making to the various scripts of your project. Mote on how to best do this in the section below.</p>
+<p>Version control systems have been originally designed to track
+changes by rows in small text files, in other words they are well suited
+to manage codes. It is thus recommended to use them to track changes
+that you and your collaborators are making to the various scripts of
+your project. Mote on how to best do this in the section below.</p>
 <h2 id="scripting-languages">Scripting languages</h2>
-<p>Compared to other programming languages (such as <code>C</code>, <code>fortran</code>, …), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.</p>
+<p>Compared to other programming languages (such as <code>C</code>,
+<code>fortran</code>, …), scripting languages are not required to be
+compiled to be executable. One consequence is that, generally, scripts
+will execute more slowly than a compiled executable program, because
+they need an interpreter. However, the more natural language oriented
+syntax of scripts make them easier to learn and use. In addition,
+numerous libraries are available to streamline scientific analysis.</p>
 <h3 id="structure-of-a-script">Structure of a script</h3>
-<p>A script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:</p>
+<p>A script can be divided into several main sections. Each scripting
+language has its own syntax and style, but these main components are
+generally accepted:</p>
 <p>From the top to the bottom of your script:</p>
 <ol type="1">
 <li>Summary explaining the purpose of the script</li>
-<li>Attribution: authors, contributors, date of last update, contact info</li>
+<li>Attribution: authors, contributors, date of last update, contact
+info</li>
 <li>Import of external modules / packages</li>
 <li>Constant definitions (g = 9.81)</li>
-<li>Function definitions (ideally respecting the order in which they are called)</li>
+<li>Function definitions (ideally respecting the order in which they are
+called)</li>
 <li>Main code calling the different functions</li>
 </ol>
-<h3 id="a-few-programming-practices-that-will-help-a-long-way">A few programming practices that will help a long way</h3>
+<h3 id="a-few-programming-practices-that-will-help-a-long-way">A few
+programming practices that will help a long way</h3>
 <ul>
-<li><em>Comment your code</em>. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes</li>
-<li><em>Use variables and constants</em> instead of repeating values in different places of the code. This will let you update those values more easily</li>
-<li><em>Choose descriptive names</em> for your variables and functions, not generic ones. If you store a list of files, do not use <code>x</code> for the variable name, use instead <code>files</code>. Even better use <code>input_files</code> if you are listing the files you are importing.</li>
-<li><em>Be consistent</em> in terms of style (<code>input_files</code>, <code>inputFiles</code>,…) used to name variables and functions. Just pick one and stick to it!</li>
-<li><code>keep it simple, stupid</code> (<a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others</li>
-<li><em>Go modular!</em> Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks</li>
-<li><code>Don’t Repeat Yourself</code> (<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>). If you start copy/pasting part of your code changing a few parameters =&gt; write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain</li>
-<li><em>Test your code</em>. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, ….</li>
-<li><em>Iterate with small steps</em>, implement few changes at a time to your code. Test, fix, and move forward!</li>
+<li><em>Comment your code</em>. This will allow you to inform your
+collaborators (but also your future self!) about the tasks your script
+accomplishes</li>
+<li><em>Use variables and constants</em> instead of repeating values in
+different places of the code. This will let you update those values more
+easily</li>
+<li><em>Choose descriptive names</em> for your variables and functions,
+not generic ones. If you store a list of files, do not use
+<code>x</code> for the variable name, use instead <code>files</code>.
+Even better use <code>input_files</code> if you are listing the files
+you are importing.</li>
+<li><em>Be consistent</em> in terms of style (<code>input_files</code>,
+<code>inputFiles</code>,…) used to name variables and functions. Just
+pick one and stick to it!</li>
+<li><code>keep it simple, stupid</code> (<a
+href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>). Do not
+create overly complicated or nested statements. Break your tasks in
+several simple lines of code instead of embedding a lot of executions in
+one (complicated line). It will save you time while debugging and make
+your code more readable to others</li>
+<li><em>Go modular!</em> Break down tasks into small code fragments such
+as functions or code chunks. It will make your code reusable for you and
+others (if well documented). Keep functions simple; they should only
+implement one or few (related) tasks</li>
+<li><code>Don’t Repeat Yourself</code> (<a
+href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>).
+If you start copy/pasting part of your code changing a few parameters
+=&gt; write a function and call it several times with different
+parameters. Add flow control such as loops and conditions. It will be
+easier to debug, change and maintain</li>
+<li><em>Test your code</em>. Test your code against values you would
+expect or computed with another software. Try hedge cases, such as NA,
+negative values, ….</li>
+<li><em>Iterate with small steps</em>, implement few changes at a time
+to your code. Test, fix, and move forward!</li>
 </ul>
-<p>We hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.</p>
+<p>We hope this overview section about scientific programming has raised
+your interest in learning more about best practices and tools for
+developing reproducible workflows using scripting languages.</p>
 <h3 id="notebooks-and-scripts">Notebooks and scripts</h3>
-<p>With the increasing popularity of notebooks in scientific projects, it can sometimes be confusing to know when to use one. The good news is that there is not really a wrong or right here and that actually both can be used in a complementary manner and each data scientist will have her/his preference. However here are a few tips to help you decide:</p>
+<p>With the increasing popularity of notebooks in scientific projects,
+it can sometimes be confusing to know when to use one. The good news is
+that there is not really a wrong or right here and that actually both
+can be used in a complementary manner and each data scientist will have
+her/his preference. However here are a few tips to help you decide:</p>
 <ul>
-<li>Keep your Notebook at a length you will feel comfortable reading. It if starts to be a long it might be time to think about if some code could be move to another document (scripts or another notebook)</li>
-<li>Scripts might be better suited for tasks you need to rerun frequently</li>
-<li>If you have developed many functions for your analysis, it might be worth storing them in a script outside your main notebook</li>
+<li>Keep your Notebook at a length you will feel comfortable reading. It
+if starts to be a long it might be time to think about if some code
+could be move to another document (scripts or another notebook)</li>
+<li>Scripts might be better suited for tasks you need to rerun
+frequently</li>
+<li>If you have developed many functions for your analysis, it might be
+worth storing them in a script outside your main notebook</li>
 </ul>
 <h2 id="data">Data</h2>
-<p>It is recommended to <strong>keep the raw-data you are collecting separated from any data you might generate at various steps of your workflow</strong>. This will help you to trace back any problems, but also make your work more reproducible because you started your processing directly from the original data. There are different ways of ensuring this. A common one is to create a <code>raw-data</code> (sub)folder to store the data. You can even play with the file access settings to make those files read-only.</p>
+<p>It is recommended to <strong>keep the raw-data you are collecting
+separated from any data you might generate at various steps of your
+workflow</strong>. This will help you to trace back any problems, but
+also make your work more reproducible because you started your
+processing directly from the original data. There are different ways of
+ensuring this. A common one is to create a <code>raw-data</code>
+(sub)folder to store the data. You can even play with the file access
+settings to make those files read-only.</p>
 <figure>
-<img src="img/project_file_structure.png" alt="https://github.com/benmarwick/rrtools" /><figcaption aria-hidden="true"><a href="https://github.com/benmarwick/rrtools" class="uri">https://github.com/benmarwick/rrtools</a></figcaption>
+<img src="img/project_file_structure.png"
+alt="https://github.com/benmarwick/rrtools" />
+<figcaption aria-hidden="true"><a
+href="https://github.com/benmarwick/rrtools"
+class="uri">https://github.com/benmarwick/rrtools</a></figcaption>
 </figure>
-<h2 id="leveraging-existing-framework">Leveraging existing framework</h2>
-<p>Please remember that every workflow is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project.</p>
+<h2 id="leveraging-existing-framework">Leveraging existing
+framework</h2>
+<p>Please remember that every workflow is opinionated. This is also true
+for the tools out there that can help you to develop reproducible
+workflows. It is great practice to test them on a small project to see
+if hey could fit your project needs and way of working and
+collaborating. In this section we will go over a few R packages that
+could be of interest for your project.</p>
 <h3 id="an-example-rrtols">An example: <code>rrtols</code></h3>
 <h4 id="reproducible-papers">Reproducible Papers</h4>
-<p>A great overview of this approach to reproducible papers comes from:</p>
+<p>A great overview of this approach to reproducible papers comes
+from:</p>
 <blockquote>
-<p>Ben Marwick, Carl Boettiger &amp; Lincoln Mullen (2018) <strong>Packaging Data Analytical Work Reproducibly Using R (and Friends)</strong>, The American Statistician, 72:1, 80-88, <a href="https://doi.org/10.1080/00031305.2017.1375986">doi:10.1080/00031305.2017.1375986</a></p>
+<p>Ben Marwick, Carl Boettiger &amp; Lincoln Mullen (2018)
+<strong>Packaging Data Analytical Work Reproducibly Using R (and
+Friends)</strong>, The American Statistician, 72:1, 80-88, <a
+href="https://doi.org/10.1080/00031305.2017.1375986">doi:10.1080/00031305.2017.1375986</a></p>
 </blockquote>
 <p>This lesson will draw from existing materials:</p>
 <ul>
 <li><a href="https://github.com/benmarwick/rrtools">rrtools</a></li>
-<li><a href="https://nceas.github.io/oss-lessons/reproducible-papers-with-rmd/reproducible-papers-with-rmd.html">Reproducible papers with RMarkdown</a></li>
+<li><a
+href="https://nceas.github.io/oss-lessons/reproducible-papers-with-rmd/reproducible-papers-with-rmd.html">Reproducible
+papers with RMarkdown</a></li>
 </ul>
-<p>The key idea in Marwick et al. (2018) is that of the “research compendium”: A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work. Research compendia make it easy for researchers to do their work but also for others to inspect or even reproduce the work because all necessary materials are readily at hand due to being kept in one place. Rather than a constrained set of rules, the research compendium is a scaffold upon which to conduct reproducible research using open science tools such as:</p>
+<p>The key idea in Marwick et al. (2018) is that of the “research
+compendium”: A single container for not just the journal article
+associated with your research but also the underlying analysis, data,
+and even the required software environment required to reproduce your
+work. Research compendia make it easy for researchers to do their work
+but also for others to inspect or even reproduce the work because all
+necessary materials are readily at hand due to being kept in one place.
+Rather than a constrained set of rules, the research compendium is a
+scaffold upon which to conduct reproducible research using open science
+tools such as:</p>
 <ul>
 <li><a href="https://www.r-project.org/">R</a></li>
 <li><a href="https://rmarkdown.rstudio.com/">RMarkdown</a></li>
-<li><a href="https://git-scm.com/">git</a> and <a href="https://github.com">GitHub</a></li>
+<li><a href="https://git-scm.com/">git</a> and <a
+href="https://github.com">GitHub</a></li>
 </ul>
-<p>Fortunately for us, Ben Marwick (and others) have written an R package called <a href="https://github.com/benmarwick/rrtools">rrtools</a> that helps us create a research compendium from scratch.</p>
+<p>Fortunately for us, Ben Marwick (and others) have written an R
+package called <a
+href="https://github.com/benmarwick/rrtools">rrtools</a> that helps us
+create a research compendium from scratch.</p>
 <p>To start a reproducible paper with <code>rrtools</code>, run:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>remotes</span><span class='fu'>::</span><span class='fu'><a href='https://remotes.r-lib.org/reference/install_github.html'>install_github</a></span><span class='op'>(</span><span class='st'>"benmarwick/rrtools"</span><span class='op'>)</span>
-<span class='fu'>rrtools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/rrtools/man/use_compendium.html'>use_compendium</a></span><span class='op'>(</span><span class='st'>"mypaper"</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>remotes</span><span class='fu'>::</span><span class='fu'><a href='https://remotes.r-lib.org/reference/install_github.html'>install_github</a></span><span class='op'>(</span><span class='st'>"benmarwick/rrtools"</span><span class='op'>)</span></span>
+<span><span class='fu'>rrtools</span><span class='fu'>::</span><span class='fu'>use_compendium</span><span class='op'>(</span><span class='st'>"mypaper"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
 <p>You should see output similar to the below:</p>
@@ -2686,51 +2852,83 @@ RoxygenNote: 7.1.1
 Next, you need to:  ↓ ↓ ↓ 
 ● Edit the DESCRIPTION file
 ● Use other &#39;rrtools&#39; functions to add components to the compendium</code></pre>
-<p><code>rrtools</code> has created the beginnings of a research compendium for us. At this point, it looks mostly the same as an R package. That’s because it uses the same underlying folder structure and metadata and therefore it technically is an R package. And this means our research compendium will be easy to install, just like an R package.</p>
-<p>Before we get to writing our reproducible paper, let’s fill in some more structure. Let’s:</p>
+<p><code>rrtools</code> has created the beginnings of a research
+compendium for us. At this point, it looks mostly the same as an R
+package. That’s because it uses the same underlying folder structure and
+metadata and therefore it technically is an R package. And this means
+our research compendium will be easy to install, just like an R
+package.</p>
+<p>Before we get to writing our reproducible paper, let’s fill in some
+more structure. Let’s:</p>
 <ol type="1">
 <li>Add a license (always a good idea)</li>
 <li>Set up a README file in the RMarkdown format</li>
-<li>Create an <code>analysis</code> folder to hold our reproducible paper</li>
+<li>Create an <code>analysis</code> folder to hold our reproducible
+paper</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>usethis</span><span class='fu'>::</span><span class='fu'><a href='https://usethis.r-lib.org/reference/licenses.html'>use_apl2_license</a></span><span class='op'>(</span><span class='op'>)</span> <span class='co'># Change this</span>
-<span class='fu'>rrtools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/rrtools/man/use_readme_rmd.html'>use_readme_rmd</a></span><span class='op'>(</span><span class='op'>)</span>
-<span class='fu'>rrtools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/rrtools/man/use_analysis.html'>use_analysis</a></span><span class='op'>(</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>usethis</span><span class='fu'>::</span><span class='fu'><a href='https://usethis.r-lib.org/reference/licenses.html'>use_apl2_license</a></span><span class='op'>(</span><span class='op'>)</span> <span class='co'># Change this</span></span>
+<span><span class='fu'>rrtools</span><span class='fu'>::</span><span class='fu'>use_readme_rmd</span><span class='op'>(</span><span class='op'>)</span></span>
+<span><span class='fu'>rrtools</span><span class='fu'>::</span><span class='fu'>use_analysis</span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p>At this point, we’re ready to start writing the paper. To follow the structure <code>rrtools</code> has put in place for us, here are some pointers:</p>
+<p>At this point, we’re ready to start writing the paper. To follow the
+structure <code>rrtools</code> has put in place for us, here are some
+pointers:</p>
 <ul>
-<li>Edit <code>./analysis/paper/paper.Rmd</code> to begin writing your paper and your analysis in the same document</li>
-<li>Add any citations to <code>./analysis/paper/references.bib</code></li>
-<li>Add any longer R scripts that don’t fit in your paper in an <code>R</code> folder at the top level</li>
+<li>Edit <code>./analysis/paper/paper.Rmd</code> to begin writing your
+paper and your analysis in the same document</li>
+<li>Add any citations to
+<code>./analysis/paper/references.bib</code></li>
+<li>Add any longer R scripts that don’t fit in your paper in an
+<code>R</code> folder at the top level</li>
 <li>Add raw data to <code>./data/raw_data</code></li>
-<li>Write out any derived data (generated in <code>paper.Rmd</code>) to <code>./data/derived_data</code></li>
+<li>Write out any derived data (generated in <code>paper.Rmd</code>) to
+<code>./data/derived_data</code></li>
 <li>Write out any figures in <code>./analysis/figures</code></li>
 </ul>
-<p>It would also be a good idea to initialize this folder as a git repo for maximum reproducibility:</p>
+<p>It would also be a good idea to initialize this folder as a git repo
+for maximum reproducibility:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>usethis</span><span class='fu'>::</span><span class='fu'><a href='https://usethis.r-lib.org/reference/use_git.html'>use_git</a></span><span class='op'>(</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>usethis</span><span class='fu'>::</span><span class='fu'><a href='https://usethis.r-lib.org/reference/use_git.html'>use_git</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p>After that, push a copy up to <a href="https://github.com">GitHub</a>.</p>
-<p>Hopefully, now that you’ve created a research compendium with <code>rrtools</code>, you can imagine how a pre-defined structure like the one <code>rrtools</code> creates might help you organize your reproducible research and also make it easier for others to understand your work.</p>
-<p>For a more complete example than the one we built above, take a look at <a href="https://github.com/benmarwick/teaching-replication-in-archaeology">benmarwick/teaching-replication-in-archaeology</a>.</p>
-<h3 id="other-workflow-frameworks-to-look-into">Other workflow frameworks to look into</h3>
+<p>After that, push a copy up to <a
+href="https://github.com">GitHub</a>.</p>
+<p>Hopefully, now that you’ve created a research compendium with
+<code>rrtools</code>, you can imagine how a pre-defined structure like
+the one <code>rrtools</code> creates might help you organize your
+reproducible research and also make it easier for others to understand
+your work.</p>
+<p>For a more complete example than the one we built above, take a look
+at <a
+href="https://github.com/benmarwick/teaching-replication-in-archaeology">benmarwick/teaching-replication-in-archaeology</a>.</p>
+<h3 id="other-workflow-frameworks-to-look-into">Other workflow
+frameworks to look into</h3>
 <h4 id="target">Target</h4>
-<p>The <code>target</code> R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.</p>
-<p>Here for more: <a href="https://books.ropensci.org/targets/" class="uri">https://books.ropensci.org/targets/</a></p>
+<p>The <code>target</code> R package can be very useful if you have a
+complex workflow that is built of many parts that take time to rerun.
+Target can detect and run only the strict necessary steps to rerun when
+a specific change has been done to the workflow.</p>
+<p>Here for more: <a href="https://books.ropensci.org/targets/"
+class="uri">https://books.ropensci.org/targets/</a></p>
 <h4 id="pointblank">Pointblank</h4>
-<p>Although the <code>pointblank</code> package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety or project setups.</p>
-<p><a href="https://rich-iannone.github.io/pointblank/" class="uri">https://rich-iannone.github.io/pointblank/</a></p>
+<p>Although the <code>pointblank</code> package is mainly framed as a
+validating tool of the various part of your workflow, it provide a set
+of tools and great integration with the R Markdown ecosystem. It is also
+quite flexible making it possible to leverage this tool in a variety or
+project setups.</p>
+<p><a href="https://rich-iannone.github.io/pointblank/"
+class="uri">https://rich-iannone.github.io/pointblank/</a></p>
 <hr />
 <h1 id="aknowledgement">Aknowledgement</h1>
-<p>The <code>rrtools</code> example had been ported from <a href="https://learning.nceas.ucsb.edu/2021-02-RRCourse/index.html">NCEAS Reproducible Research Techniques for Synthesis</a></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>The <code>rrtools</code> example had been ported from <a
+href="https://learning.nceas.ucsb.edu/2021-02-RRCourse/index.html">NCEAS
+Reproducible Research Techniques for Synthesis</a></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,21 +2545,31 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#day-2">Day 2</a></li>
-<li><a href="#git-therapy">Git Therapy</a>
+<li><a href="#day-2" id="toc-day-2">Day 2</a></li>
+<li><a href="#git-therapy" id="toc-git-therapy">Git Therapy</a>
 <ul>
-<li><a href="#github-conflicts">GitHub conflicts</a></li>
+<li><a href="#github-conflicts" id="toc-github-conflicts">GitHub
+conflicts</a></li>
 </ul></li>
-<li><a href="#managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</a></li>
-<li><a href="#debugging-with-rstudio">Debugging with RStudio</a></li>
-<li><a href="#git-commit-messages"><code>git</code> commit messages</a></li>
-<li><a href="#meds-computing-ressources">MEDS computing ressources</a></li>
-<li><a href="#further-reading">Further reading</a>
+<li><a href="#managing-data-driven-projects-as-a-team"
+id="toc-managing-data-driven-projects-as-a-team">Managing data-driven
+projects as a team</a></li>
+<li><a href="#debugging-with-rstudio"
+id="toc-debugging-with-rstudio">Debugging with RStudio</a></li>
+<li><a href="#git-commit-messages"
+id="toc-git-commit-messages"><code>git</code> commit messages</a></li>
+<li><a href="#meds-computing-ressources"
+id="toc-meds-computing-ressources">MEDS computing ressources</a></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+reading</a>
 <ul>
-<li><a href="#github-workflow">GitHub Workflow</a>
+<li><a href="#github-workflow" id="toc-github-workflow">GitHub
+Workflow</a>
 <ul>
-<li><a href="#git-using-rstudio">Git using RStudio</a></li>
-<li><a href="#undoing-things">Undoing things</a></li>
+<li><a href="#git-using-rstudio" id="toc-git-using-rstudio">Git using
+RStudio</a></li>
+<li><a href="#undoing-things" id="toc-undoing-things">Undoing
+things</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2537,6 +2577,10 @@ Daily Materials
 </div>
 <h1 id="day-2">Day 2</h1>
 <table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Time (PST)</strong></th>
@@ -2592,70 +2636,121 @@ Daily Materials
 </table>
 <h1 id="git-therapy">Git Therapy</h1>
 <h2 id="github-conflicts">GitHub conflicts</h2>
-<p>First thing to know is that actually <code>git pull</code> (or a Pull Request) is a two step process: <code>git pull = git fetch + git merge</code></p>
-<p>Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, <code>git</code> will call you to the rescue and ask him how to solve the problem.</p>
-<p><a href="day2-git-collaboration-conflicts.html"><strong>Materials</strong></a></p>
+<p>First thing to know is that actually <code>git pull</code> (or a Pull
+Request) is a two step process:
+<code>git pull = git fetch + git merge</code></p>
+<p>Second: you did nothing wrong!! Git tries to merge files
+automatically. When the changes are on the same file far apart, git will
+figure it out on his own and do the merge automatically. However if
+changes are overlapping, <code>git</code> will call you to the rescue
+and ask him how to solve the problem.</p>
+<p><a
+href="day2-git-collaboration-conflicts.html"><strong>Materials</strong></a></p>
 <hr />
-<h1 id="managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</h1>
+<h1 id="managing-data-driven-projects-as-a-team">Managing data-driven
+projects as a team</h1>
 <p><a href="day2-projects_team.html"><strong>Materials</strong></a></p>
 <hr />
 <h1 id="debugging-with-rstudio">Debugging with RStudio</h1>
 <p><a href="rstudio_debugging.html"><strong>Materials</strong></a></p>
 <hr />
 <h1 id="git-commit-messages"><code>git</code> commit messages</h1>
-<p><a href="day2-github_commit_messages.html"><strong>Materials</strong></a></p>
+<p><a
+href="day2-github_commit_messages.html"><strong>Materials</strong></a></p>
 <hr />
 <h1 id="meds-computing-ressources">MEDS computing ressources</h1>
-<p><a href="https://bit.ly/medscompute8-25" class="uri">https://bit.ly/medscompute8-25</a></p>
+<p><a href="https://bit.ly/medscompute8-25"
+class="uri">https://bit.ly/medscompute8-25</a></p>
 <hr />
 <h1 id="further-reading">Further reading</h1>
 <h2 id="github-workflow">GitHub Workflow</h2>
 <ul>
 <li>GitHub:
 <ul>
-<li>guides on how to use GitHub: <a href="https://guides.github.com/">https://guides.github.com/</a></li>
-<li>GitHub from RStudio: <a href="http://r-pkgs.had.co.nz/git.html#git-pull">http://r-pkgs.had.co.nz/git.html#git-pull</a></li>
+<li>guides on how to use GitHub: <a
+href="https://guides.github.com/">https://guides.github.com/</a></li>
+<li>GitHub from RStudio: <a
+href="http://r-pkgs.had.co.nz/git.html#git-pull">http://r-pkgs.had.co.nz/git.html#git-pull</a></li>
 </ul></li>
 <li>Forking:
 <ul>
-<li><a href="https://help.github.com/articles/fork-a-repo/">https://help.github.com/articles/fork-a-repo/</a></li>
-<li><a href="https://guides.github.com/activities/forking/">https://guides.github.com/activities/forking/</a></li>
+<li><a
+href="https://help.github.com/articles/fork-a-repo/">https://help.github.com/articles/fork-a-repo/</a></li>
+<li><a
+href="https://guides.github.com/activities/forking/">https://guides.github.com/activities/forking/</a></li>
 </ul></li>
-<li>Comparison of git repository host services: <a href="https://www.git-tower.com/blog/git-hosting-services-compared/" class="uri">https://www.git-tower.com/blog/git-hosting-services-compared/</a></li>
+<li>Comparison of git repository host services: <a
+href="https://www.git-tower.com/blog/git-hosting-services-compared/"
+class="uri">https://www.git-tower.com/blog/git-hosting-services-compared/</a></li>
 <li>Branches
 <ul>
-<li>interactive tutorial on branches: <a href="http://learngitbranching.js.org/" class="uri">http://learngitbranching.js.org/</a></li>
-<li>using git in a collaborative environment: <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow" class="uri">https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow</a> <a href="https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf" class="uri">https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</a></li>
+<li>interactive tutorial on branches: <a
+href="http://learngitbranching.js.org/"
+class="uri">http://learngitbranching.js.org/</a></li>
+<li>using git in a collaborative environment: <a
+href="https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow"
+class="uri">https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow</a>
+<a
+href="https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf"
+class="uri">https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</a></li>
 </ul></li>
 </ul>
 <h3 id="git-using-rstudio">Git using RStudio</h3>
 <ul>
-<li>Happy Git and GitHub for the useR: <a href="http://happygitwithr.com/" class="uri">http://happygitwithr.com/</a></li>
-<li>R packages - Git and GitHub: <a href="http://r-pkgs.had.co.nz/git.html#git-init" class="uri">http://r-pkgs.had.co.nz/git.html#git-init</a></li>
+<li>Happy Git and GitHub for the useR: <a
+href="http://happygitwithr.com/"
+class="uri">http://happygitwithr.com/</a></li>
+<li>R packages - Git and GitHub: <a
+href="http://r-pkgs.had.co.nz/git.html#git-init"
+class="uri">http://r-pkgs.had.co.nz/git.html#git-init</a></li>
 </ul>
 <p>Git mainly from the command line:</p>
 <ul>
-<li>Interactive git 101: <a href="https://try.github.io/">https://try.github.io/</a></li>
-<li>Very good tutorial about git: <a href="https://www.atlassian.com/git/tutorials/what-is-version-control">https://www.atlassian.com/git/tutorials/what-is-version-control</a></li>
-<li>Git tutorial geared towards scientists: <a href="http://nyuccl.org/pages/gittutorial/">http://nyuccl.org/pages/gittutorial/</a></li>
-<li>Short intro to git basics: <a href="https://github.com/mbjones/gitbasics">https://github.com/mbjones/gitbasics</a></li>
-<li>Git documentation about the basics: <a href="http://gitref.org/basic/">http://gitref.org/basic/</a></li>
-<li>Git documentation - the basics: <a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">https://git-scm.com/book/en/v2/Getting-Started-Git-Basics</a></li>
-<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology">https://www.atlassian.com/git/glossary/terminology</a></li>
-<li>In trouble, guide to know what to do: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
-<li>Want to undo something? <a href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git" class="uri">https://github.com/blog/2019-how-to-undo-almost-anything-with-git</a></li>
-<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology" class="uri">https://www.atlassian.com/git/glossary/terminology</a></li>
-<li>8 tips to work better with git: <a href="https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/" class="uri">https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/</a></li>
-<li>GitPro book (2nd edition): <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a></li>
+<li>Interactive git 101: <a
+href="https://try.github.io/">https://try.github.io/</a></li>
+<li>Very good tutorial about git: <a
+href="https://www.atlassian.com/git/tutorials/what-is-version-control">https://www.atlassian.com/git/tutorials/what-is-version-control</a></li>
+<li>Git tutorial geared towards scientists: <a
+href="http://nyuccl.org/pages/gittutorial/">http://nyuccl.org/pages/gittutorial/</a></li>
+<li>Short intro to git basics: <a
+href="https://github.com/mbjones/gitbasics">https://github.com/mbjones/gitbasics</a></li>
+<li>Git documentation about the basics: <a
+href="http://gitref.org/basic/">http://gitref.org/basic/</a></li>
+<li>Git documentation - the basics: <a
+href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">https://git-scm.com/book/en/v2/Getting-Started-Git-Basics</a></li>
+<li>Git terminology: <a
+href="https://www.atlassian.com/git/glossary/terminology">https://www.atlassian.com/git/glossary/terminology</a></li>
+<li>In trouble, guide to know what to do: <a
+href="http://justinhileman.info/article/git-pretty/git-pretty.png">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
+<li>Want to undo something? <a
+href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git"
+class="uri">https://github.com/blog/2019-how-to-undo-almost-anything-with-git</a></li>
+<li>Git terminology: <a
+href="https://www.atlassian.com/git/glossary/terminology"
+class="uri">https://www.atlassian.com/git/glossary/terminology</a></li>
+<li>8 tips to work better with git: <a
+href="https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/"
+class="uri">https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/</a></li>
+<li>GitPro book (2nd edition): <a href="https://git-scm.com/book/en/v2"
+class="uri">https://git-scm.com/book/en/v2</a></li>
 </ul>
 <h3 id="undoing-things">Undoing things</h3>
 <ul>
-<li>Help to decide how to undo your problem: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png" class="uri">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
-<li>Undo almost everything with git <a href="https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/" class="uri">https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/</a></li>
-<li>Difference between git reset soft, mixed and hard <a href="https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/" class="uri">https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/</a></li>
-<li>Resetting, Checking Out &amp; Reverting <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" class="uri">https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting</a></li>
+<li>Help to decide how to undo your problem: <a
+href="http://justinhileman.info/article/git-pretty/git-pretty.png"
+class="uri">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
+<li>Undo almost everything with git <a
+href="https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/"
+class="uri">https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/</a></li>
+<li>Difference between git reset soft, mixed and hard <a
+href="https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/"
+class="uri">https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/</a></li>
+<li>Resetting, Checking Out &amp; Reverting <a
+href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting"
+class="uri">https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

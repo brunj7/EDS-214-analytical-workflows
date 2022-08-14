@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,52 +2545,77 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#day-1">Day 1</a></li>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#reproducible-workflows">Reproducible Workflows</a>
+<li><a href="#day-1" id="toc-day-1">Day 1</a></li>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#reproducible-workflows"
+id="toc-reproducible-workflows">Reproducible Workflows</a>
 <ul>
-<li><a href="#lecture-1-definitions-and-concepts">Lecture 1: Definitions and Concepts</a></li>
-<li><a href="#why-going-reproducible">Why going reproducible</a></li>
-<li><a href="#how">How</a></li>
-<li><a href="#planing-things">Planing things</a>
+<li><a href="#lecture-1-definitions-and-concepts"
+id="toc-lecture-1-definitions-and-concepts">Lecture 1: Definitions and
+Concepts</a></li>
+<li><a href="#why-going-reproducible"
+id="toc-why-going-reproducible">Why going reproducible</a></li>
+<li><a href="#how" id="toc-how">How</a></li>
+<li><a href="#planing-things" id="toc-planing-things">Planing things</a>
 <ul>
-<li><a href="#from-drawings-to-pseudocode">From drawings to pseudocode</a></li>
-<li><a href="#hands-on">Hands-on</a></li>
+<li><a href="#from-drawings-to-pseudocode"
+id="toc-from-drawings-to-pseudocode">From drawings to
+pseudocode</a></li>
+<li><a href="#hands-on" id="toc-hands-on">Hands-on</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#coding-together-managing-scripts">Coding together – Managing Scripts</a>
+<li><a href="#coding-together-managing-scripts"
+id="toc-coding-together-managing-scripts">Coding together – Managing
+Scripts</a>
 <ul>
-<li><a href="#learning-objectives">Learning Objectives</a></li>
-<li><a href="#why-collaborative-coding">Why collaborative coding</a></li>
-<li><a href="#how-to-code-together">How to code together</a>
+<li><a href="#learning-objectives" id="toc-learning-objectives">Learning
+Objectives</a></li>
+<li><a href="#why-collaborative-coding"
+id="toc-why-collaborative-coding">Why collaborative coding</a></li>
+<li><a href="#how-to-code-together" id="toc-how-to-code-together">How to
+code together</a>
 <ul>
-<li><a href="#tools">Tools</a></li>
+<li><a href="#tools" id="toc-tools">Tools</a></li>
 </ul></li>
-<li><a href="#github-as-a-collaborative-tool">GitHub as a collaborative tool</a>
+<li><a href="#github-as-a-collaborative-tool"
+id="toc-github-as-a-collaborative-tool">GitHub as a collaborative
+tool</a>
 <ul>
-<li><a href="#quick-recap-on-version-control">Quick recap on version control</a></li>
+<li><a href="#quick-recap-on-version-control"
+id="toc-quick-recap-on-version-control">Quick recap on version
+control</a></li>
 </ul></li>
-<li><a href="#collaborating-through-forking">Collaborating through Forking</a></li>
-<li><a href="#hands-on-1">Hands-on</a></li>
+<li><a href="#collaborating-through-forking"
+id="toc-collaborating-through-forking">Collaborating through
+Forking</a></li>
+<li><a href="#hands-on-1" id="toc-hands-on-1">Hands-on</a></li>
 </ul></li>
-<li><a href="#flex-session">Flex session</a>
+<li><a href="#flex-session" id="toc-flex-session">Flex session</a>
 <ul>
-<li><a href="#the-markdown-syntax">The Markdown syntax <img style="float: right;width: 50px;" src=img/markdown-logo.png /></a>
+<li><a href="#the-markdown-syntax" id="toc-the-markdown-syntax">The
+Markdown syntax
+<img style="float: right;width: 50px;" src=img/markdown-logo.png /></a>
 <ul>
-<li><a href="#r-markdown">R Markdown</a></li>
+<li><a href="#r-markdown" id="toc-r-markdown">R Markdown</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#github-branches">GitHub branches</a>
+<li><a href="#github-branches" id="toc-github-branches">GitHub
+branches</a>
 <ul>
-<li><a href="#github-hands-on">GitHub Hands-on</a></li>
+<li><a href="#github-hands-on" id="toc-github-hands-on">GitHub
+Hands-on</a></li>
 </ul></li>
-<li><a href="#further-reading">Further reading</a>
+<li><a href="#further-reading" id="toc-further-reading">Further
+reading</a>
 <ul>
-<li><a href="#data-and-scientific-workflow-management">Data and scientific workflow management:</a></li>
-<li><a href="#open-science">Open Science</a></li>
-<li><a href="#collaborative-coding">Collaborative coding</a></li>
-<li><a href="#code-review">Code Review</a></li>
-<li><a href="#branches">Branches</a></li>
+<li><a href="#data-and-scientific-workflow-management"
+id="toc-data-and-scientific-workflow-management">Data and scientific
+workflow management:</a></li>
+<li><a href="#open-science" id="toc-open-science">Open Science</a></li>
+<li><a href="#collaborative-coding"
+id="toc-collaborative-coding">Collaborative coding</a></li>
+<li><a href="#code-review" id="toc-code-review">Code Review</a></li>
+<li><a href="#branches" id="toc-branches">Branches</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2580,7 +2635,8 @@ Daily Materials
 <tbody>
 <tr class="odd">
 <td>9:00am - 10:00am</td>
-<td><em>Intro &amp; Reproducible and Collaborative workflow (60 min)</em></td>
+<td><em>Intro &amp; Reproducible and Collaborative workflow (60
+min)</em></td>
 </tr>
 <tr class="even">
 <td>10:00am - 10:10am</td>
@@ -2588,7 +2644,8 @@ Daily Materials
 </tr>
 <tr class="odd">
 <td>10:10am - 11:30am</td>
-<td><em>Interactive Session: Drawing board + reporting (80 min)</em></td>
+<td><em>Interactive Session: Drawing board + reporting (80
+min)</em></td>
 </tr>
 <tr class="even">
 <td>11:30am - 12:00am</td>
@@ -2616,7 +2673,8 @@ Daily Materials
 </tr>
 <tr class="even">
 <td>3:35pm - 4:05pm</td>
-<td><em>Flex time 2: Find how to knit an R Markdown document while keeping the markdown file? (30 min)</em></td>
+<td><em>Flex time 2: Find how to knit an R Markdown document while
+keeping the markdown file? (30 min)</em></td>
 </tr>
 <tr class="odd">
 <td>4:05pm - 4:30pm</td>
@@ -2625,18 +2683,46 @@ Daily Materials
 </tbody>
 </table>
 <h1 id="introduction">Introduction</h1>
-<p><a href="https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&amp;loop=false&amp;delayms=3000"><strong>A few words…</strong></a></p>
+<p><a
+href="https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&amp;loop=false&amp;delayms=3000"><strong>A
+few words…</strong></a></p>
 <h1 id="reproducible-workflows">Reproducible Workflows</h1>
-<h2 id="lecture-1-definitions-and-concepts">Lecture 1: Definitions and Concepts</h2>
-<p><a href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000"><strong>Slide deck</strong></a></p>
+<h2 id="lecture-1-definitions-and-concepts">Lecture 1: Definitions and
+Concepts</h2>
+<p><a
+href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000"><strong>Slide
+deck</strong></a></p>
 <h2 id="why-going-reproducible">Why going reproducible</h2>
-<p>There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower <strong>you</strong> to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your “future self” to reuse and build from your own work.</p>
-<p>To make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on <strong>programming</strong> to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, …) of your analysis. Scripting languages, even better open ones, such as <code>R</code> and <code>python</code>, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use <code>R</code>, <code>git</code> and <code>GitHub</code> to develop such workflows as a team.</p>
+<p>There are many reasons why it is essential to make your science
+reproducible and how the necessity of openness is a cornerstone of the
+integrity and efficacy of the scientific research process. Here we will
+also be focusing on why making your work reproducible will empower
+<strong>you</strong> to iterate quickly, integrate new information more
+easily to iterate quickly, scale your analysis to larger data sets, and
+better collaborate by receiving feedback and contributions from others,
+as well as enable your “future self” to reuse and build from your own
+work.</p>
+<p>To make your data-riven research reproducible, it is important to
+develop scientific workflows that will be relying on
+<strong>programming</strong> to accomplish the necessary tasks to go
+from the raw data to the results (figures, new data, publications, …) of
+your analysis. Scripting languages, even better open ones, such as
+<code>R</code> and <code>python</code>, are well-suited for scientists
+to develop reproducible scientific workflows. Those scripting languages
+provide a large ecosystem of libraries (also referred to as packages or
+modules) that are ready to be leveraged to conduct analysis and
+modeling. In this course we will introduce how to use <code>R</code>,
+<code>git</code> and <code>GitHub</code> to develop such workflows as a
+team.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:tidy-workflow"></span>
 <img src="img/tidy-workflow.png" alt="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science &lt;https://r4ds.had.co.nz/&gt;_" width="80%" />
 <p class="caption">
-Figure 1: Workflow example using the <code>tidyverse</code>. Note the program box around the workflow and the iterative nature of the analytical process described. <em>Source: R for Data Science <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></em>
+Figure 1: Workflow example using the <code>tidyverse</code>.
+Note the program box around the workflow and the iterative nature of the
+analytical process described. <em>Source: R for Data Science <a
+href="https://r4ds.had.co.nz/"
+class="uri">https://r4ds.had.co.nz/</a></em>
 </p>
 </div>
 </div>
@@ -2645,160 +2731,299 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 <li>Workflows are rarely linear… even less so their implementation</li>
 <li>Note the programming box – yes, you’ll need to code this :)</li>
 </ul>
-<p><strong>Workflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team.</strong></p>
+<p><strong>Workflows are developed iteratively, and one of the most
+helpful things you can do as a data scientist is to talk about them with
+your research team.</strong></p>
 <h2 id="how">How</h2>
-<p>We recommend shying away from spreadsheets as an analytical tool, as well as Graphical User Interfaces (GUI) where you need to click on buttons to do your analysis. Although convenient for data exploration, GUI will limit the reproducibility and the scalability of your analysis as human intervention is needed at every step. Spreadsheets can be useful to store tabular data, but it is recommended to script their analysis, as copy-pasting and references to cells are prone to mistake <a href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">(see Reinhart and Rogof example)</a>. It is also very difficult to track changes and to scale your analysis using spreadsheets. In addition, auto-formatting (number, date, character, …) can silently introduce modifications to your data (e.g. <a href="https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel">One in five genetics papers contains errors thanks to Microsoft Excel</a>).</p>
+<p>We recommend shying away from spreadsheets as an analytical tool, as
+well as Graphical User Interfaces (GUI) where you need to click on
+buttons to do your analysis. Although convenient for data exploration,
+GUI will limit the reproducibility and the scalability of your analysis
+as human intervention is needed at every step. Spreadsheets can be
+useful to store tabular data, but it is recommended to script their
+analysis, as copy-pasting and references to cells are prone to mistake
+<a
+href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">(see
+Reinhart and Rogof example)</a>. It is also very difficult to track
+changes and to scale your analysis using spreadsheets. In addition,
+auto-formatting (number, date, character, …) can silently introduce
+modifications to your data (e.g. <a
+href="https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel">One
+in five genetics papers contains errors thanks to Microsoft
+Excel</a>).</p>
 <h2 id="planing-things">Planing things</h2>
-<p><strong>Don’t start implementing nor coding without planning!</strong> It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.</p>
+<p><strong>Don’t start implementing nor coding without
+planning!</strong> It is important to stress that scientists write
+scripts to help them to investigate scientific question(s). Therefore
+scripting should not drive our analysis and thinking. We strongly
+recommend you take the time to plan ahead all the steps you need to
+conduct your analysis. Developing such a scientific workflow will help
+you to narrow down the tasks that are needed to move forward your
+analysis.</p>
 <h3 id="from-drawings-to-pseudocode">From drawings to pseudocode</h3>
 <p><a href="day1-pseudocode.html">Materials</a></p>
 <figure>
-<img src="img/whiteborad_drawings.png" alt="Cherubini et al., 2007" /><figcaption aria-hidden="true">Cherubini et al., 2007</figcaption>
+<img src="img/whiteborad_drawings.png" alt="Cherubini et al., 2007" />
+<figcaption aria-hidden="true">Cherubini et al., 2007</figcaption>
 </figure>
 <h3 id="hands-on">Hands-on</h3>
-<p><a href="day1-hands-on_drawings.html">Investigating the impacts of Hurricane on stream chemistry in Puerto Rico</a></p>
+<p><a href="day1-hands-on_drawings.html">Investigating the impacts of
+Hurricane on stream chemistry in Puerto Rico</a></p>
 <hr />
-<h1 id="coding-together-managing-scripts">Coding together – Managing Scripts</h1>
+<h1 id="coding-together-managing-scripts">Coding together – Managing
+Scripts</h1>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this part of the lesson, you will learn:</p>
 <ul>
 <li>Why <strong>git</strong> is useful for reproducible analysis</li>
-<li>How to use <strong>git</strong> to track changes to your work over time</li>
+<li>How to use <strong>git</strong> to track changes to your work over
+time</li>
 <li>How to use <strong>GitHub</strong> to collaborate with others</li>
 <li>How to write effective commit messages</li>
-<li>How to structure your commits so your changes are clear to others</li>
+<li>How to structure your commits so your changes are clear to
+others</li>
 <li>How to fork a repository to contribute to its content</li>
 <li>How to create a pull request</li>
 <li>How to review a pull request</li>
 </ul>
 <h2 id="why-collaborative-coding">Why collaborative coding</h2>
-<p><a href="https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html"><strong>Slides</strong></a></p>
-<p>Environmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise. Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:</p>
+<p><a
+href="https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html"><strong>Slides</strong></a></p>
+<p>Environmental Data Science (EDS), as many other data-driven research
+fields, requires a transdisciplinary approach to tackle challenges that
+often span across several domains of expertise. Working as a team will
+leverage know-how from diverse collaborators and be the most efficient
+way to tackle complex problems in EDS. Consequently collaborative skills
+are required to work effectively as a member of a team. No matter their
+focus, highly effective teams share certain characteristics:</p>
 <ul>
 <li>Right size</li>
-<li>Diverse group of people with the right mix of skills, knowledge, and competencies</li>
+<li>Diverse group of people with the right mix of skills, knowledge, and
+competencies</li>
 <li>Aligned purpose and incentives</li>
 <li>Effective organizational structure</li>
 <li>Strong individual contributions</li>
 <li>Supportive team processes and culture</li>
 </ul>
-<p><strong>Since Analytical Workflows are rarely linear!</strong> and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind. <em>Programming as part of a team is different than writing a script for your(present)self</em>. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:</p>
+<p><strong>Since Analytical Workflows are rarely linear!</strong> and
+are developed iteratively, the most efficient way to iterate quickly on
+your analysis is to use scripts and leave copy-pasting behind.
+<em>Programming as part of a team is different than writing a script for
+your(present)self</em>. However learning programming as part of a team
+is not only critical to the efficacy of your team, it will also you help
+you to grow as a programmer by:</p>
 <ul>
 <li>Motivating you to document well your work</li>
-<li>Helping you to think how to make your work reusable (by you, your future you and others)</li>
-<li>Learning to read code from collaborators to build upon each others work</li>
-<li>Gain further knowledge in software development tools, such as version control</li>
+<li>Helping you to think how to make your work reusable (by you, your
+future you and others)</li>
+<li>Learning to read code from collaborators to build upon each others
+work</li>
+<li>Gain further knowledge in software development tools, such as
+version control</li>
 </ul>
-<p><strong>Developing those skills will accelerate your research and open the door for you to contribute to open source projects.</strong></p>
+<p><strong>Developing those skills will accelerate your research and
+open the door for you to contribute to open source
+projects.</strong></p>
 <h2 id="how-to-code-together">How to code together</h2>
-<p>It is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming.</p>
+<p>It is important to acknowledge that there are many solutions to the
+complex research questions you will be facing in EDS. Each of those
+solutions will have several possible implementations, meaning that more
+likely you might code this implementation differently than your
+collaborators. Integrated software engineer teams generally try to
+mitigate this by developing coding standards and conventions that will
+guide how to write code and develop specific implementation. In
+scientific teams in which the collaboration is more loose and maybe more
+ephemeral as well, developing detailed coding standards will be too much
+of an overhead. However, we think it is important to acknowledge that
+coding style may varies among the data scientists of a project and it is
+a good discussion to have among the team at the beginning of the
+project. For example, in R it could be trying to use the tidyverse
+approach as much as possible. We also think there are two activities
+that will make the team more efficient: Code Review and Pair
+Programming.</p>
 <h3 id="tools">Tools</h3>
-<p>The good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:</p>
+<p>The good news is there are several tools out there that have been
+designed to make developing code as a team more efficient. In this
+course, we will focus on getting familiar with the following:</p>
 <ul>
 <li>Version control system: say goodbye to <code>save as</code></li>
-<li>Code repository: where we share code and communicate ideas and feedback</li>
+<li>Code repository: where we share code and communicate ideas and
+feedback</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="img/git_explain_xkcd.png" alt=" https://xkcd.com/1597/" width="330" />
 <p class="caption">
-Figure 2:  <a href="https://xkcd.com/1597/" class="uri">https://xkcd.com/1597/</a>
+Figure 2:  <a href="https://xkcd.com/1597/"
+class="uri">https://xkcd.com/1597/</a>
 </p>
 </div>
 </div>
-<h2 id="github-as-a-collaborative-tool">GitHub as a collaborative tool</h2>
-<h3 id="quick-recap-on-version-control">Quick recap on version control</h3>
-<p><a href="day1-git_github_recap.html">git and GitHub quick recap</a></p>
-<h2 id="collaborating-through-forking">Collaborating through Forking</h2>
+<h2 id="github-as-a-collaborative-tool">GitHub as a collaborative
+tool</h2>
+<h3 id="quick-recap-on-version-control">Quick recap on version
+control</h3>
+<p><a href="day1-git_github_recap.html">git and GitHub quick
+recap</a></p>
+<h2 id="collaborating-through-forking">Collaborating through
+Forking</h2>
 <p><a href="day1-github_forking.html"><strong>Materials</strong></a></p>
 <h2 id="hands-on-1">Hands-on</h2>
-<p>Fork the repository of the <code>greetings</code> R package to add the option to change the color of the background of the text.</p>
-<p>Repo: <a href="https://github.com/brunj7/greetings" class="uri">https://github.com/brunj7/greetings</a></p>
+<p>Fork the repository of the <code>greetings</code> R package to add
+the option to change the color of the background of the text.</p>
+<p>Repo: <a href="https://github.com/brunj7/greetings"
+class="uri">https://github.com/brunj7/greetings</a></p>
 <p>By team of two:</p>
 <ul>
 <li><p>Team member 1: fork the repository</p></li>
-<li><p>Team member 2: fork the fork that team member 1 just created (yes, you can do this!!)</p></li>
-<li><p>Work together on Team member 2’s computer to modify the <code>say_aloah()</code> function to allow changing the text background color to blue in addition to the existing green (see <a href="https://github.com/r-lib/crayon#screenshot-on-osx">here</a> for more about the <code>crayon</code> package)</p></li>
-<li><p>Once done, create a pull request to integrate the new changes tagging team member 1 as reviewer</p></li>
-<li><p>Team member 1, review the code, comment as needed on the pull request, and merge changes</p></li>
+<li><p>Team member 2: fork the fork that team member 1 just created
+(yes, you can do this!!)</p></li>
+<li><p>Work together on Team member 2’s computer to modify the
+<code>say_aloah()</code> function to allow changing the text background
+color to blue in addition to the existing green (see <a
+href="https://github.com/r-lib/crayon#screenshot-on-osx">here</a> for
+more about the <code>crayon</code> package)</p></li>
+<li><p>Once done, create a pull request to integrate the new changes
+tagging team member 1 as reviewer</p></li>
+<li><p>Team member 1, review the code, comment as needed on the pull
+request, and merge changes</p></li>
 </ul>
 <hr />
 <h1 id="flex-session">Flex session</h1>
-<h2 id="the-markdown-syntax">The Markdown syntax <img style="float: right;width: 50px;" src=img/markdown-logo.png /></h2>
-<p>You will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using <code>pandoc</code> into various document formats (PDF, html, ….). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor.</p>
-<p>Another interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.</p>
+<h2 id="the-markdown-syntax">The Markdown syntax
+<img style="float: right;width: 50px;" src=img/markdown-logo.png /></h2>
+<p>You will find Markdown to be useful for a lot of various tasks and
+tools you will use as a data scientist. The good new is that the syntax
+is very basic and it is easy to get started with. In addition, Markdown
+files (.md) are text files that can be opened by any text editor and can
+be easily be versioned. You can also render markdown document using
+<code>pandoc</code> into various document formats (PDF, html, ….).
+However it is important to be aware that there are several flavors of
+Markdown out there that are adding more capabilities to the basic one.
+For example GitHub has created its own flavor.</p>
+<p>Another interesting feature of Markdown is that you can use html
+formatting when you want to do some more advanced formatting. In fact,
+document styles can be customized with HTML/CSS and math notation can be
+included using LaTeX or mathjax.</p>
 <pre><code>$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$</code></pre>
-<p><span class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
-<p>During this flex session, explore what you can do with with Markdown basic</p>
-<p><a href="https://www.markdownguide.org/basic-syntax/" class="uri">https://www.markdownguide.org/basic-syntax/</a></p>
+<p><span
+class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
+<p>During this flex session, explore what you can do with with Markdown
+basic</p>
+<p><a href="https://www.markdownguide.org/basic-syntax/"
+class="uri">https://www.markdownguide.org/basic-syntax/</a></p>
 <p>And extended:</p>
-<p><a href="https://www.markdownguide.org/extended-syntax/" class="uri">https://www.markdownguide.org/extended-syntax/</a></p>
+<p><a href="https://www.markdownguide.org/extended-syntax/"
+class="uri">https://www.markdownguide.org/extended-syntax/</a></p>
 <h3 id="r-markdown">R Markdown</h3>
-<p>What about R markdown in all of this? Well the R Markdown syntax, or more precisely the <code>knitr</code> package, add extra R oriented features which allows the translate of R code, figures and more into a Markdown document to produce dynamic and reproducible documents.</p>
+<p>What about R markdown in all of this? Well the R Markdown syntax, or
+more precisely the <code>knitr</code> package, add extra R oriented
+features which allows the translate of R code, figures and more into a
+Markdown document to produce dynamic and reproducible documents.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/markdown-how-it-works.png" width="732" /></p>
 </div>
 <hr />
 <h1 id="github-branches">GitHub branches</h1>
-<p><a href="day2-github_branches.html"><strong>Materials</strong></a></p>
+<p><a
+href="day2-github_branches.html"><strong>Materials</strong></a></p>
 <h2 id="github-hands-on">GitHub Hands-on</h2>
 <ol type="1">
-<li><a href="day2-handson_github_website.html">GitHub branches using the website</a></li>
-<li><a href="day2-handson_github_rstudio.html">GitHub branches using RStudio</a></li>
+<li><a href="day2-handson_github_website.html">GitHub branches using the
+website</a></li>
+<li><a href="day2-handson_github_rstudio.html">GitHub branches using
+RStudio</a></li>
 </ol>
 <hr />
 <h1 id="further-reading">Further reading</h1>
-<p>Here are a few selected publications to help you to learn more about these topics.</p>
-<h2 id="data-and-scientific-workflow-management">Data and scientific workflow management:</h2>
+<p>Here are a few selected publications to help you to learn more about
+these topics.</p>
+<h2 id="data-and-scientific-workflow-management">Data and scientific
+workflow management:</h2>
 <ul>
-<li>The Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:<br />
-Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <a href="http://www.practicereproducibleresearch.org/" class="uri">http://www.practicereproducibleresearch.org/</a></li>
+<li>The Practice of Reproducible Research-Case Studies and Lessons from
+the Data-Intensive Sciences:<br />
+Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <a
+href="http://www.practicereproducibleresearch.org/"
+class="uri">http://www.practicereproducibleresearch.org/</a></li>
 <li>Good enough practices in Scientific Computing:<br />
-<a href="https://doi.org/10.1371/journal.pcbi.1005510">https://doi.org/10.1371/journal.pcbi.1005510</a></li>
+<a
+href="https://doi.org/10.1371/journal.pcbi.1005510">https://doi.org/10.1371/journal.pcbi.1005510</a></li>
 <li>Script your analysis:<br />
-<a href="https://doi.org/10.1038/nj7638-563a">https://doi.org/10.1038/nj7638-563a</a></li>
+<a
+href="https://doi.org/10.1038/nj7638-563a">https://doi.org/10.1038/nj7638-563a</a></li>
 <li>Principles for data analysis workflows:<br />
-<a href="https://doi.org/10.1371/journal.pcbi.1008770" class="uri">https://doi.org/10.1371/journal.pcbi.1008770</a></li>
-<li>Benureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions. Front. Neuroinform. 0. <a href="https://doi.org/10.3389/fninf.2017.00069" class="uri">https://doi.org/10.3389/fninf.2017.00069</a></li>
-<li>Sandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology 9, e1003285. <a href="https://doi.org/10.1371/journal.pcbi.1003285" class="uri">https://doi.org/10.1371/journal.pcbi.1003285</a></li>
+<a href="https://doi.org/10.1371/journal.pcbi.1008770"
+class="uri">https://doi.org/10.1371/journal.pcbi.1008770</a></li>
+<li>Benureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce,
+Reuse, Replicate: Transforming Code into Scientific Contributions.
+Front. Neuroinform. 0. <a
+href="https://doi.org/10.3389/fninf.2017.00069"
+class="uri">https://doi.org/10.3389/fninf.2017.00069</a></li>
+<li>Sandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten
+Simple Rules for Reproducible Computational Research. PLOS Computational
+Biology 9, e1003285. <a
+href="https://doi.org/10.1371/journal.pcbi.1003285"
+class="uri">https://doi.org/10.1371/journal.pcbi.1003285</a></li>
 <li>Some Simple Guidelines for Effective Data Management:<br />
-<a href="https://doi.org/10.1890/0012-9623-90.2.205">https://doi.org/10.1890/0012-9623-90.2.205</a></li>
+<a
+href="https://doi.org/10.1890/0012-9623-90.2.205">https://doi.org/10.1890/0012-9623-90.2.205</a></li>
 <li>Basic concepts of data management:<br />
-<a href="https://www.dataone.org/education-modules">https://www.dataone.org/education-modules</a></li>
+<a
+href="https://www.dataone.org/education-modules">https://www.dataone.org/education-modules</a></li>
 </ul>
 <h2 id="open-science">Open Science</h2>
 <ul>
 <li>The Tao of open science for ecology:<br />
-<a href="https://doi.org/10.1890/ES14-00402.1">https://doi.org/10.1890/ES14-00402.1</a></li>
+<a
+href="https://doi.org/10.1890/ES14-00402.1">https://doi.org/10.1890/ES14-00402.1</a></li>
 <li>Challenges and Opportunities of Open Data in Ecology:<br />
-<a href="https://doi.org/10.1126/science.1197962">https://doi.org/10.1126/science.1197962</a><br />
+<a
+href="https://doi.org/10.1126/science.1197962">https://doi.org/10.1126/science.1197962</a><br />
 </li>
 <li>Scientific computing: Code alert<br />
-<a href="https://doi.org/10.1038/nj7638-563a">https://doi.org/10.1038/nj7638-563a</a></li>
-<li>Our path to better science in less time using open data science tools<br />
-<a href="https://doi.org/10.1038%2Fs41559-017-0160">https://doi.org/10.1038%2Fs41559-017-0160</a></li>
+<a
+href="https://doi.org/10.1038/nj7638-563a">https://doi.org/10.1038/nj7638-563a</a></li>
+<li>Our path to better science in less time using open data science
+tools<br />
+<a
+href="https://doi.org/10.1038%2Fs41559-017-0160">https://doi.org/10.1038%2Fs41559-017-0160</a></li>
 <li>FAIR data guiding principles<br />
-<a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a></li>
-<li>Skills and Knowledge for Data-Intensive Environmental Research <a href="https://doi.org/10.1093/biosci/bix025">https://doi.org/10.1093/biosci/bix025</a><br />
+<a
+href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a></li>
+<li>Skills and Knowledge for Data-Intensive Environmental Research <a
+href="https://doi.org/10.1093/biosci/bix025">https://doi.org/10.1093/biosci/bix025</a><br />
 </li>
 <li>Let go your data<br />
-<a href="https://doi.org/10.1038/s41563-019-0539-5">https://doi.org/10.1038/s41563-019-0539-5</a></li>
+<a
+href="https://doi.org/10.1038/s41563-019-0539-5">https://doi.org/10.1038/s41563-019-0539-5</a></li>
 </ul>
 <h2 id="collaborative-coding">Collaborative coding</h2>
 <ul>
-<li>A new grad’s guide to coding as a team - Atlassian: <a href="https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf" class="uri">https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf</a></li>
-<li>10 tips for efficient programming: <a href="https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html" class="uri">https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html</a></li>
-<li>Agile Manifesto: <a href="https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf" class="uri">https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</a></li>
+<li>A new grad’s guide to coding as a team - Atlassian: <a
+href="https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf"
+class="uri">https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf</a></li>
+<li>10 tips for efficient programming: <a
+href="https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html"
+class="uri">https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html</a></li>
+<li>Agile Manifesto: <a
+href="https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf"
+class="uri">https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</a></li>
 </ul>
 <h2 id="code-review">Code Review</h2>
 <ul>
-<li>Small-Group Code Reviews For Education: <a href="https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext" class="uri">https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext</a></li>
+<li>Small-Group Code Reviews For Education: <a
+href="https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext"
+class="uri">https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext</a></li>
 </ul>
 <h2 id="branches">Branches</h2>
 <ul>
-<li>Interactive tutorial to learn more about git branches and more <a href="https://learngitbranching.js.org/" class="uri">https://learngitbranching.js.org/</a></li>
+<li>Interactive tutorial to learn more about git branches and more <a
+href="https://learngitbranching.js.org/"
+class="uri">https://learngitbranching.js.org/</a></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

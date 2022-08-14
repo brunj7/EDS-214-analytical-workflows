@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,35 +2545,78 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#flow-charts">Flow charts</a></li>
-<li><a href="#pseudocode">Pseudocode</a></li>
-<li><a href="#further-reading">Further reading</a></li>
+<li><a href="#flow-charts" id="toc-flow-charts">Flow charts</a></li>
+<li><a href="#pseudocode" id="toc-pseudocode">Pseudocode</a></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+reading</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="flow-charts">Flow charts</h1>
-<p>Flowcharts are useful to visualize and develop analytical workflow. It guides planning and anticipating the various computing and analytical tasks that will be required to complete an analysis. It also helps explaining the different steps to your collaborators and team. You can use a flowchart to spell out the logic behind a analytical workflow before ever starting to code. It can help to organize big-picture thinking and provide a guide when it comes time to code. More specifically, flowcharts can:</p>
+<p>Flowcharts are useful to visualize and develop analytical workflow.
+It guides planning and anticipating the various computing and analytical
+tasks that will be required to complete an analysis. It also helps
+explaining the different steps to your collaborators and team. You can
+use a flowchart to spell out the logic behind a analytical workflow
+before ever starting to code. It can help to organize big-picture
+thinking and provide a guide when it comes time to code. More
+specifically, flowcharts can:</p>
 <ul>
-<li>Visualize the sequence of the different phases of the analytical process from data collection to implementing analyses</li>
-<li>Better define the scope and resources needed both in terms of project data management and computing resources needed</li>
-<li>Discuss who will be in charge and involved in the development of the different parts of the workflow</li>
-<li>List the products / outputs that will result from your analysis - such as data, codes, publications, web presence, … - and discuss how to best preserve and share them</li>
+<li>Visualize the sequence of the different phases of the analytical
+process from data collection to implementing analyses</li>
+<li>Better define the scope and resources needed both in terms of
+project data management and computing resources needed</li>
+<li>Discuss who will be in charge and involved in the development of the
+different parts of the workflow</li>
+<li>List the products / outputs that will result from your analysis -
+such as data, codes, publications, web presence, … - and discuss how to
+best preserve and share them</li>
 </ul>
-<p>There are conventions on how to use symbols to represent different parts of a workflow (see <a href="https://en.wikipedia.org/wiki/Flowchart">here</a> for example). Although it is good to be aware of those conventions for sharing a workflow with your community, within a team the most important aspect is to be coherent and stick to this usage overtime.</p>
-<p>The main benefit for the project is the process and discussion as a team to develop the workflow. It will ensure that everybody is on the same page and has the opportunity to provide inputs on the project. This workflow should be updated regularly as the project evolves.</p>
-<p><a href="https://docs.google.com/presentation/d/e/2PACX-1vSEWK0Qrkg7ob-wBLebla5KHJuGCsezV502J1Sc00pZK24CJBFcp-0YOFVP-dtI-l8azsR-1Y5jluiz/pub?start=false&amp;loop=false&amp;delayms=60000">A few workflow examples</a></p>
+<p>There are conventions on how to use symbols to represent different
+parts of a workflow (see <a
+href="https://en.wikipedia.org/wiki/Flowchart">here</a> for example).
+Although it is good to be aware of those conventions for sharing a
+workflow with your community, within a team the most important aspect is
+to be coherent and stick to this usage overtime.</p>
+<p>The main benefit for the project is the process and discussion as a
+team to develop the workflow. It will ensure that everybody is on the
+same page and has the opportunity to provide inputs on the project. This
+workflow should be updated regularly as the project evolves.</p>
+<p><a
+href="https://docs.google.com/presentation/d/e/2PACX-1vSEWK0Qrkg7ob-wBLebla5KHJuGCsezV502J1Sc00pZK24CJBFcp-0YOFVP-dtI-l8azsR-1Y5jluiz/pub?start=false&amp;loop=false&amp;delayms=60000">A
+few workflow examples</a></p>
 <h1 id="pseudocode">Pseudocode</h1>
-<p>Often, programmers may write pseudocode as a next step, to provide greater detail than the flowchart in terms of processing steps and implementation. It will help you to define where iterations will be needed but also detect repeating blocks that might be well suited to be handled via the development of a function.</p>
-<p>This technique aims at developing a sequence of pragrammatical steps in a manner that is easy to understand for anyone with basic programming knowledge. Pseudocode can be implemented more or less formally and at various levels of details. One additional advantage of going through this process is that it is agnostic of the tools / programming languages that you will be using to develop your analytical workflow.</p>
-<p>In this course, we will be focusing on the process more than the exact syntax to use, keeping the level of details at a level that provide more details than a flow chart.</p>
+<p>Often, programmers may write pseudocode as a next step, to provide
+greater detail than the flowchart in terms of processing steps and
+implementation. It will help you to define where iterations will be
+needed but also detect repeating blocks that might be well suited to be
+handled via the development of a function.</p>
+<p>This technique aims at developing a sequence of pragrammatical steps
+in a manner that is easy to understand for anyone with basic programming
+knowledge. Pseudocode can be implemented more or less formally and at
+various levels of details. One additional advantage of going through
+this process is that it is agnostic of the tools / programming languages
+that you will be using to develop your analytical workflow.</p>
+<p>In this course, we will be focusing on the process more than the
+exact syntax to use, keeping the level of details at a level that
+provide more details than a flow chart.</p>
 <h1 id="further-reading">Further reading</h1>
 <ul>
-<li>What is a flowchart: <a href="https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial" class="uri">https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial</a></li>
-<li>How to write pseudocode: <a href="https://www.wikihow.com/Write-Pseudocode" class="uri">https://www.wikihow.com/Write-Pseudocode</a></li>
-<li>An Introduction to Writing Good Pseudocode: <a href="https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7" class="uri">https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7</a></li>
-<li>How to write Pseudocode: A beginner’s guide <a href="https://blog.usejournal.com/how-to-write-pseudocode-a-beginners-guide-29956242698" class="uri">https://blog.usejournal.com/how-to-write-pseudocode-a-beginners-guide-29956242698</a></li>
+<li>What is a flowchart: <a
+href="https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial"
+class="uri">https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial</a></li>
+<li>How to write pseudocode: <a
+href="https://www.wikihow.com/Write-Pseudocode"
+class="uri">https://www.wikihow.com/Write-Pseudocode</a></li>
+<li>An Introduction to Writing Good Pseudocode: <a
+href="https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7"
+class="uri">https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7</a></li>
+<li>How to write Pseudocode: A beginner’s guide <a
+href="https://blog.usejournal.com/how-to-write-pseudocode-a-beginners-guide-29956242698"
+class="uri">https://blog.usejournal.com/how-to-write-pseudocode-a-beginners-guide-29956242698</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

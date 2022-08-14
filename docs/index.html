@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1030,10 +1031,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1863,6 +1860,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1877,6 +1880,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1976,6 +2004,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1998,7 +2028,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2446,7 +2476,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/datatables-binding-0.24/datatables.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+  <script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+  <link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2509,7 +2548,8 @@ Daily Materials
 <h1>EDS 214: Analytical Workflows and Scientific Reproducibility</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>This course will introduce students to conceptual organization of workflows as a way to conduct reproducible analyses</p>
+<p>This course will introduce students to conceptual organization of
+workflows as a way to conduct reproducible analyses</p>
 </div>
 
 
@@ -2518,17 +2558,24 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#instructor">Instructor</a></li>
-<li><a href="#tutor">Tutor</a></li>
-<li><a href="#important-links">Important links</a></li>
-<li><a href="#course-description">Course description</a></li>
-<li><a href="#predictable-daily-schedule">Predictable daily schedule</a></li>
-<li><a href="#learning-objectives">Learning objectives</a></li>
-<li><a href="#sessions-subject-to-change">Sessions (subject to change)</a></li>
-<li><a href="#course-requirements">Course requirements</a>
+<li><a href="#instructor" id="toc-instructor">Instructor</a></li>
+<li><a href="#tutor" id="toc-tutor">Tutor</a></li>
+<li><a href="#important-links" id="toc-important-links">Important
+links</a></li>
+<li><a href="#course-description" id="toc-course-description">Course
+description</a></li>
+<li><a href="#predictable-daily-schedule"
+id="toc-predictable-daily-schedule">Predictable daily schedule</a></li>
+<li><a href="#learning-objectives" id="toc-learning-objectives">Learning
+objectives</a></li>
+<li><a href="#sessions-subject-to-change"
+id="toc-sessions-subject-to-change">Sessions (subject to
+change)</a></li>
+<li><a href="#course-requirements" id="toc-course-requirements">Course
+requirements</a>
 <ul>
-<li><a href="#computing">Computing</a></li>
-<li><a href="#textbook">Textbook</a></li>
+<li><a href="#computing" id="toc-computing">Computing</a></li>
+<li><a href="#textbook" id="toc-textbook">Textbook</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2537,26 +2584,50 @@ Daily Materials
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:tidy-workflow"></span>
 <img src="img/tidy-workflow.png" alt="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science &lt;https://r4ds.had.co.nz/&gt;_" width="80%" />
 <p class="caption">
-Figure 1: Workflow example using the <code>tidyverse</code>. Note the program box around the workflow and the iterative nature of the analytical process described. <em>Source: R for Data Science <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></em>
+Figure 1: Workflow example using the <code>tidyverse</code>.
+Note the program box around the workflow and the iterative nature of the
+analytical process described. <em>Source: R for Data Science <a
+href="https://r4ds.had.co.nz/"
+class="uri">https://r4ds.had.co.nz/</a></em>
 </p>
 </div>
 </div>
 <h2 id="instructor">Instructor</h2>
-<p><a href="https://brunj7.github.io/about.html">Julien Brun</a> (brun@nceas.ucsb.edu)</p>
+<p><a href="https://brunj7.github.io">Julien Brun</a>
+(brun@nceas.ucsb.edu)</p>
 <h2 id="tutor">Tutor</h2>
 <p>Casey O’Hara (cohara@bren.ucsb.edu)</p>
 <h2 id="important-links">Important links</h2>
 <ul>
-<li><a href="https://bren.ucsb.edu/courses/eds-214">Course syllabus</a></li>
+<li><a href="https://bren.ucsb.edu/courses/eds-214">Course
+syllabus</a></li>
 <li><a href="code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <h2 id="course-description">Course description</h2>
-<p>The generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.</p>
+<p>The generation and analysis of environmental data is often a complex,
+multi-step process that may involve the collaboration of many people.
+Increasingly tools that document and help to organize workflows are
+being used to ensure reproducibility, shareability, and transparency of
+the results. This course will introduce students to the conceptual
+organization of workflows (including code, documents, and data) as a way
+to conduct reproducible analyses. These concepts will be combined with
+the practice of various software tools and collaborative coding
+techniques to develop and manage multi-step analytical workflows as a
+team.</p>
 <h2 id="predictable-daily-schedule">Predictable daily schedule</h2>
-<p><strong>Course dates:</strong> Monday (2021-08-02) - Friday (2021-08-06)</p>
-<p>EDS 214 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.</p>
+<p><strong>Course dates:</strong> Monday (2021-08-02) - Friday
+(2021-08-06)</p>
+<p>EDS 214 is an intensive 1-week long 2-unit course. Students should
+plan to attend all scheduled sessions. All course requirements will be
+completed between 8am and 5pm PST (M - F), i.e. you are not expected to
+do additional work for EDS 214 outside of those hours, unless you are
+working with the Teaching Assistant in student hours.</p>
 <p>Daily schedule (subject to change):</p>
 <table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 75%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Time (PST)</strong></th>
@@ -2607,106 +2678,69 @@ Figure 1: Workflow example using the <code>tidyverse</code>. Note the program bo
 </tbody>
 </table>
 <h2 id="learning-objectives">Learning objectives</h2>
-<p>The goal of EDS 214 (Analytical Workflows and Scientific Reproducibility) is to expose incoming MEDS students to “good enough” practices of scientific programming develop skills in environmental data science to produce reproducible research. By the end of the course, students should be able to:</p>
+<p>The goal of EDS 214 - Analytical Workflows and Scientific
+Reproducibility is to expose incoming MEDS students to “good enough”
+practices of scientific programming develop skills in environmental data
+science to produce reproducible research. By the end of the course,
+students should be able to:</p>
 <ul>
-<li><p><strong>Develop knowledge in scientific analytical workflows</strong> To learn how to make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results of your analysis (figures, new data, publications, …). Scripting languages, even better open ones such as <code>R</code> and <code>python</code>, are well-suited for scientists to develop reproducible scientific workflows, but are not the only tools you will need to develop reproducible and collaborative workflows</p></li>
-<li><p><strong>Learn how to code in a collaborative manner</strong> by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code review using <code>git</code> and <code>GitHub</code> to create pull request, ask feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows</p></li>
-<li><p><strong>Practice documenting code and data</strong> in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work</p></li>
+<li><p><strong>Develop knowledge in scientific analytical
+workflows</strong> To learn how to make your data-riven research
+reproducible, it is important to develop scientific workflows that will
+be relying on programming to accomplish the necessary tasks to go from
+the raw data to the results of your analysis (figures, new data,
+publications, …). Scripting languages, even better open ones such as
+<code>R</code> and <code>python</code>, are well-suited for scientists
+to develop reproducible scientific workflows, but are not the only tools
+you will need to develop reproducible and collaborative
+workflows</p></li>
+<li><p><strong>Learn how to code in a collaborative manner</strong> by
+practicing techniques such as code review and pair programming. Become
+comfortable asking for and conducting code review using <code>git</code>
+and <code>GitHub</code> to create pull request, ask feedback from peers,
+and merge changes into the main repository. Practice pair programming to
+cement the collaborative development of reproducible analytical
+workflows</p></li>
+<li><p><strong>Practice documenting code and data</strong> in a
+systematic way that will enable your collaborators, including your
+future self, to understand and reuse your work</p></li>
 </ul>
 <h2 id="sessions-subject-to-change">Sessions (subject to change)</h2>
 <div class="layout-chunk" data-layout="l-body">
-
+<div id="htmlwidget-09b3edb41a23a2c4bc40" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-09b3edb41a23a2c4bc40">{"x":{"filter":"none","vertical":false,"data":[["<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html' target='_blank'>1<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html' target='_blank'>1<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_2.html' target='_blank'>2<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_2.html' target='_blank'>2<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_3.html' target='_blank'>3<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_3.html' target='_blank'>3<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_4.html' target='_blank'>4<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_4.html' target='_blank'>4<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_5.html' target='_blank'>5<\/a>","<a href='https://brunj7.github.io/EDS-214-analytical-workflows/day_5.html' target='_blank'>5<\/a>"],["Monday 8/22: morning","Monday 8/22: afternoon","Tuesday 8/23: morning","Tuesday 8/23: afternoon","Wednesday 8/24: morning (late start)","Wednesday 8/24: afternoon","Thursday 8/25: morning","Thursday 8/25: afternoon","Friday 8/26: morning","Friday 8/26 afternoon"],["Reproducible workflows","Working on a remote server","Organizing your project","Collaborative Coding with Github","Getting Data","Code review and pair programming","Documenting things","Sharing things","Making presentations with R: Xaringan & Quarto","Project Presentations"],["Planning things: from diagrams to pseudo code","RStudio server & the command line","how to manage large data and codes on a server","Review Forks, Branches and Pull Requests","APIs hands-on","Team project","Team project","Team project","Team project","Project Presentations"],["Intro to Taylor MEDS Analytical server (Kat)","-","Resumé Workshop (Myia)","-","-","Debugging with RStudio","Updating your GitHub profile (Sam)","-","Meet your next instructor  --  Kelly Caylor,  Earth Research Insitute, UCSB","-"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Day<\/th>\n      <th>Day / Session<\/th>\n      <th>Lectures<\/th>\n      <th>Interactive Sessions<\/th>\n      <th>Flex Sessions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<table>
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 13%" />
-<col style="width: 37%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Day / Session</th>
-<th>Topics</th>
-<th>Interactive Sessions</th>
-<th>Flex Sessions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Monday 8/23: morning</td>
-<td><a href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000&amp;slide=id.p">Reproducible workflows</a></td>
-<td><a href="day_1.html#planing-things">Planning things: from diagrams to pseudo code</a></td>
-<td><a href="day_1.html#flex-session">the Markdown syntax</a></td>
-</tr>
-<tr class="even">
-<td>Monday 8/23: afternoon</td>
-<td><a href="day_1.html#coding-together-managing-scripts">Collaborating with Github 101</a></td>
-<td><a href="day_1.html#collaborating-through-forking">Forking and Pull Requests</a></td>
-<td><a href="day_1.html#hands-on-1">Github collaboration Hands-on</a></td>
-</tr>
-<tr class="odd">
-<td>Tuesday 8/24: morning</td>
-<td><a href="day2-git-collaboration-conflicts.html">Github conflicts</a></td>
-<td><a href="day2-projects_team.html">Managing data-driven projects as a team</a></td>
-<td><a href="rstudio_debugging.html">Debugging with RStudio</a></td>
-</tr>
-<tr class="even">
-<td>Tuesday 8/24: afternoon</td>
-<td><a href="day2-github_commit_messages.html">git commit messages</a></td>
-<td><a href="https://ucsb.app.box.com/notes/850504913040?s=zzy77gwmmil94a5k1seuttzz12urlyvp">MEDS IT team (Brad &amp; Kat) – Computing resources</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Wednesday 8/25: morning (late start)</td>
-<td><a href="day3-remote_server.html">Working on a remote server</a></td>
-<td><a href="day3-remote_server.html#rstudio-server">RStudio server</a></td>
-<td><a href="day3-remote_server.html#command-line">the command line</a></td>
-</tr>
-<tr class="even">
-<td>Wednesday 8/25: afternoon</td>
-<td><a href="group_project.html">Introduction to group project</a>]</td>
-<td>Group project</td>
-<td>Group project Q&amp;A</td>
-</tr>
-<tr class="odd">
-<td>Thursday 8/26: morning</td>
-<td><a href="day_4.html#coding-as-a-team">Coding as a team – Code review and pair programming</a></td>
-<td>Group project</td>
-<td>Meet your next instructor – Jim Frew, Bren School, UCSB</td>
-</tr>
-<tr class="even">
-<td>Thursday 8/26: afternoon</td>
-<td><a href="day4-documenting.html">Documenting things</a></td>
-<td>Group project</td>
-<td>Capstone project proposal – Jamie</td>
-</tr>
-<tr class="odd">
-<td>Friday 8/27: morning</td>
-<td><a href="day_5.html#scientific-products">Sharing things</a></td>
-<td>Group project</td>
-<td><a href="day_5.html#xaringan">Xaringan</a></td>
-</tr>
-<tr class="even">
-<td>Friday 8/27 afternoon</td>
-<td><a href="day_5.html#group-projects">Project presentations</a></td>
-<td><a href="day_5.html#group-projects">Project presentations</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<!-- | Day / Session    | Topics |  Interactive Sessions |  Flex Sessions | -->
+<!-- |--------------|--------|-----------------------|----------------| -->
+<!-- | Monday 8/23: morning | [Reproducible workflows](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000&slide=id.p) | [Planning things: from diagrams to pseudo code](day_1.html#planing-things) | [the Markdown syntax](day_1.html#flex-session) | -->
+<!-- | Monday 8/23: afternoon | [Collaborating with Github 101](day_1.html#coding-together-managing-scripts) | [Forking and Pull Requests](day_1.html#collaborating-through-forking) | [Github collaboration Hands-on](day_1.html#hands-on-1) | -->
+<!-- | Tuesday 8/24: morning | [Github conflicts](day2-git-collaboration-conflicts.html) |  [Managing data-driven projects as a team](day2-projects_team.html)  | [Debugging with RStudio](rstudio_debugging.html) | -->
+<!-- | Tuesday 8/24: afternoon  | [git commit messages](day2-github_commit_messages.html) | [MEDS IT team (Brad & Kat) -- Computing resources](https://ucsb.app.box.com/notes/850504913040?s=zzy77gwmmil94a5k1seuttzz12urlyvp) | -->
+<!-- | Wednesday 8/25: morning (late start) | [Working on a remote server](day3-remote_server.html) |   [RStudio server](day3-remote_server.html#rstudio-server) | [the command line](day3-remote_server.html#command-line) | -->
+<!-- | Wednesday 8/25: afternoon |  [Introduction to group project](group_project.html)] |  Group project   | Group project Q&A | -->
+<!-- | Thursday 8/26: morning | [Coding as a team -- Code review and pair programming](day_4.html#coding-as-a-team) |   Group project   | Meet your next instructor  --  Jim Frew,  Bren School, UCSB | -->
+<!-- | Thursday 8/26: afternoon |   [Documenting things](day4-documenting.html) |   Group project | Capstone project proposal --  Jamie | -->
+<!-- | Friday 8/27: morning | [Sharing things](day_5.html#scientific-products)  | Group project | [Xaringan](day_5.html#xaringan) | -->
+<!-- | Friday 8/27 afternoon    | [Project presentations](day_5.html#group-projects)    | [Project presentations](day_5.html#group-projects) |  -->
 <h2 id="course-requirements">Course requirements</h2>
 <h3 id="computing">Computing</h3>
 <ul>
-<li><p>Minimum <a href="https://ucsb-meds.github.io/computer_reqs.html">MEDS device requirements</a></p></li>
-<li><p>Have a ready to be used GitHub Account (<a href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
+<li><p>Minimum <a
+href="https://ucsb-meds.github.io/computer_reqs.html">MEDS device
+requirements</a></p></li>
+<li><p>Have a ready to be used GitHub Account (<a
+href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
 </ul>
 <h3 id="textbook">Textbook</h3>
 <ul>
-<li>R for Data Science: <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></li>
-<li>The Practice of Reproducible Research: <a href="http://www.practicereproducibleresearch.org/" class="uri">http://www.practicereproducibleresearch.org/</a></li>
+<li>R for Data Science: <a href="https://r4ds.had.co.nz/"
+class="uri">https://r4ds.had.co.nz/</a></li>
+<li>The Practice of Reproducible Research: <a
+href="http://www.practicereproducibleresearch.org/"
+class="uri">http://www.practicereproducibleresearch.org/</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

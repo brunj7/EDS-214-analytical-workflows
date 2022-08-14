@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1027,10 +1028,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1860,6 +1857,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1874,6 +1877,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2001,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2025,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2443,7 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2515,48 +2545,77 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#advanced-topics-at-the-command-line">Advanced Topics at the command line</a>
+<li><a href="#advanced-topics-at-the-command-line"
+id="toc-advanced-topics-at-the-command-line">Advanced Topics at the
+command line</a>
 <ul>
-<li><a href="#connecting-to-a-remote-server-via-ssh">Connecting to a remote server via <code>ssh</code></a></li>
-<li><a href="#unix-systems-are-multi-user">Unix systems are multi-user</a></li>
-<li><a href="#getting-help">Getting help</a></li>
-<li><a href="#finding-stuff">finding stuff</a></li>
-<li><a href="#getting-things-done">Getting things done</a>
+<li><a href="#connecting-to-a-remote-server-via-ssh"
+id="toc-connecting-to-a-remote-server-via-ssh">Connecting to a remote
+server via <code>ssh</code></a></li>
+<li><a href="#unix-systems-are-multi-user"
+id="toc-unix-systems-are-multi-user">Unix systems are
+multi-user</a></li>
+<li><a href="#getting-help" id="toc-getting-help">Getting help</a></li>
+<li><a href="#finding-stuff" id="toc-finding-stuff">finding
+stuff</a></li>
+<li><a href="#getting-things-done" id="toc-getting-things-done">Getting
+things done</a>
 <ul>
-<li><a href="#some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</a></li>
-<li><a href="#process-management">Process management</a></li>
-<li><a href="#what-about-space">What about “space”</a></li>
-<li><a href="#history">History</a></li>
+<li><a href="#some-useful-special-commands-using-the-control-key"
+id="toc-some-useful-special-commands-using-the-control-key">Some useful,
+special commands using the Control key</a></li>
+<li><a href="#process-management" id="toc-process-management">Process
+management</a></li>
+<li><a href="#what-about-space" id="toc-what-about-space">What about
+“space”</a></li>
+<li><a href="#history" id="toc-history">History</a></li>
 </ul></li>
-<li><a href="#a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</a></li>
-<li><a href="#get-into-the-flow-with-pipes">Get into the flow, with pipes</a></li>
-<li><a href="#text-editing">Text editing</a>
+<li><a href="#a-sampling-of-simple-commands-for-dealing-with-files"
+id="toc-a-sampling-of-simple-commands-for-dealing-with-files">A sampling
+of simple commands for dealing with files</a></li>
+<li><a href="#get-into-the-flow-with-pipes"
+id="toc-get-into-the-flow-with-pipes">Get into the flow, with
+pipes</a></li>
+<li><a href="#text-editing" id="toc-text-editing">Text editing</a>
 <ul>
-<li><a href="#some-editors">Some editors</a></li>
+<li><a href="#some-editors" id="toc-some-editors">Some editors</a></li>
 </ul></li>
-<li><a href="#searching-advanced-utilities">Searching advanced utilities</a>
+<li><a href="#searching-advanced-utilities"
+id="toc-searching-advanced-utilities">Searching advanced utilities</a>
 <ul>
-<li><a href="#grep">grep</a></li>
-<li><a href="#lets-look-at-our-text-file">Let’s look at our text file</a></li>
+<li><a href="#grep" id="toc-grep">grep</a></li>
+<li><a href="#lets-look-at-our-text-file"
+id="toc-lets-look-at-our-text-file">Let’s look at our text file</a></li>
 </ul></li>
-<li><a href="#create-custom-commands-with-alias">Create custom commands with “alias”</a></li>
+<li><a href="#create-custom-commands-with-alias"
+id="toc-create-custom-commands-with-alias">Create custom commands with
+“alias”</a></li>
 </ul></li>
-<li><a href="#aknowledgements">Aknowledgements</a></li>
+<li><a href="#aknowledgements"
+id="toc-aknowledgements">Aknowledgements</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="advanced-topics-at-the-command-line">Advanced Topics at the command line</h1>
-<p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
-<h2 id="connecting-to-a-remote-server-via-ssh">Connecting to a remote server via <code>ssh</code></h2>
+<h1 id="advanced-topics-at-the-command-line">Advanced Topics at the
+command line</h1>
+<p><strong>We will not cover this during class, it is for your
+reference</strong>. You will also have the opportunity to further
+practice and learn about the command line in EDS-215.</p>
+<h2 id="connecting-to-a-remote-server-via-ssh">Connecting to a remote
+server via <code>ssh</code></h2>
 <p>From the gitbash (MS Windows) or the terminal (Mac) type:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> taylor.bren.ucsb.edu</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> taylor.bren.ucsb.edu</span></code></pre></div>
 <p>You will be prompted for your username and password.</p>
 <figure>
-<img src="img/aurora-ssh.png" alt="aurora_ssh" /><figcaption aria-hidden="true">aurora_ssh</figcaption>
+<img src="img/aurora-ssh.png" alt="aurora_ssh" />
+<figcaption aria-hidden="true">aurora_ssh</figcaption>
 </figure>
 <p>You can also directly add your username:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> brun@taylor.bren.ucsb.edu</span></code></pre></div>
-<p>In this case, you will be only asked for your password as you already specified which user you want to connect with.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> brun@taylor.bren.ucsb.edu</span></code></pre></div>
+<p>In this case, you will be only asked for your password as you already
+specified which user you want to connect with.</p>
 <h2 id="unix-systems-are-multi-user">Unix systems are multi-user</h2>
 <ul>
 <li>Who else is logged into this machine? <code>who</code></li>
@@ -2564,36 +2623,48 @@ Daily Materials
 </ul>
 <h2 id="getting-help">Getting help</h2>
 <ul>
-<li><code>&lt;command&gt; -h</code>, <code>&lt;command&gt; --help</code></li>
-<li><code>man</code>, <code>info</code>, <code>apropos</code>, <code>whereis</code></li>
+<li><code>&lt;command&gt; -h</code>,
+<code>&lt;command&gt; --help</code></li>
+<li><code>man</code>, <code>info</code>, <code>apropos</code>,
+<code>whereis</code></li>
 <li>Search the web!</li>
 </ul>
 <h2 id="finding-stuff">finding stuff</h2>
 <p>Show me my Rmarkdown files!</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-iname</span> <span class="st">&#39;*.Rmd&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-iname</span> <span class="st">&#39;*.Rmd&#39;</span></span></code></pre></div>
 <p>Which files are larger than 1GB?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G</span></code></pre></div>
 <p>With more details about the files:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G <span class="at">-ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G <span class="at">-ls</span></span></code></pre></div>
 <h2 id="getting-things-done">Getting things done</h2>
-<h3 id="some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</h3>
+<h3 id="some-useful-special-commands-using-the-control-key">Some useful,
+special commands using the Control key</h3>
 <ul>
-<li>Cancel (abort) a command: <code>Ctrl-c</code> Note: very different than Windows!!</li>
+<li>Cancel (abort) a command: <code>Ctrl-c</code> Note: very different
+than Windows!!</li>
 <li>Stop (suspend) a command: <code>Ctrl-z</code></li>
-<li><code>Ctrl-z</code> can be used to suspend, then background a process</li>
+<li><code>Ctrl-z</code> can be used to suspend, then background a
+process</li>
 </ul>
 <h3 id="process-management">Process management</h3>
 <ul>
 <li>Like Windows Task Manager, OSX Activity Monitor</li>
-<li><strong><code>top</code></strong>, <code>ps</code>, <code>jobs</code> (hit <code>q</code> to get out!)</li>
+<li><strong><code>top</code></strong>, <code>ps</code>,
+<code>jobs</code> (hit <code>q</code> to get out!)</li>
 <li><code>kill</code> to delete an unwanted job or process</li>
 <li>Foreground and background: <code>&amp;</code></li>
 </ul>
 <h3 id="what-about-space">What about “space”</h3>
 <ul>
-<li>How much storage is available on this system? <code>df -h</code></li>
-<li>How much storage am “I” using overall? <code>du -hs &lt;folder&gt;</code></li>
-<li>How much storage am “I” using, by sub directory? <code>du -h &lt;folder&gt;</code></li>
+<li>How much storage is available on this system?
+<code>df -h</code></li>
+<li>How much storage am “I” using overall?
+<code>du -hs &lt;folder&gt;</code></li>
+<li>How much storage am “I” using, by sub directory?
+<code>du -h &lt;folder&gt;</code></li>
 </ul>
 <h3 id="history">History</h3>
 <ul>
@@ -2603,7 +2674,8 @@ Daily Materials
 <li>Re-run 5th from last command: <code>!-5</code></li>
 <li>Re-run last command that started with ‘c’: <code>!c</code></li>
 </ul>
-<h2 id="a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</h2>
+<h2 id="a-sampling-of-simple-commands-for-dealing-with-files">A sampling
+of simple commands for dealing with files</h2>
 <ul>
 <li><code>wc</code> count lines, words, and/or characters</li>
 <li><code>diff</code> compare two files for differences</li>
@@ -2612,15 +2684,22 @@ Daily Materials
 </ul>
 <h2 id="get-into-the-flow-with-pipes">Get into the flow, with pipes</h2>
 <figure>
-<img src="img/pipe_split.png" title="http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png" alt="stdin, stdout, stderr" /><figcaption aria-hidden="true"><code>stdin</code>, <code>stdout</code>, <code>stderr</code></figcaption>
+<img src="img/pipe_split.png"
+title="http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png"
+alt="stdin, stdout, stderr" />
+<figcaption aria-hidden="true"><code>stdin</code>, <code>stdout</code>,
+<code>stderr</code></figcaption>
 </figure>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="pp">*</span>.png <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="pp">*</span>.png <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="pp">*</span>.png <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="op">&gt;</span> pngcount.txt</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> diff <span class="op">&lt;(</span><span class="fu">sort</span> file1.txt<span class="op">)</span> <span class="op">&lt;(</span><span class="fu">sort</span> file2.txt<span class="op">)</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls foo <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code></pre></div>
 <ul>
-<li>note use of <code>*</code> as character wildcard for zero or more matches (same in Mac and Windows)</li>
-<li><code>?</code> matches single character; <code>_</code> is SQL query equivalent</li>
+<li>note use of <code>*</code> as character wildcard for zero or more
+matches (same in Mac and Windows)</li>
+<li><code>?</code> matches single character; <code>_</code> is SQL query
+equivalent</li>
 </ul>
 <h2 id="text-editing">Text editing</h2>
 <h3 id="some-editors">Some editors</h3>
@@ -2629,7 +2708,8 @@ Daily Materials
 <li><code>emacs</code></li>
 <li><code>nano</code></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano .bashrc</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano .bashrc</span></code></pre></div>
 <h2 id="searching-advanced-utilities">Searching advanced utilities</h2>
 <ul>
 <li><code>grep</code> search files for text</li>
@@ -2638,20 +2718,26 @@ Daily Materials
 </ul>
 <h3 id="grep">grep</h3>
 <p>Show all lines containing “bug” in my R scripts</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep bug <span class="pp">*</span>.R</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep bug <span class="pp">*</span>.R</span></code></pre></div>
 <p>Now count the number of occurrences per file</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-c</span> bug <span class="pp">*</span>.R</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-c</span> bug <span class="pp">*</span>.R</span></code></pre></div>
 <p>Print the names of files that contain bug</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-l</span> bug <span class="pp">*</span>.R</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-l</span> bug <span class="pp">*</span>.R</span></code></pre></div>
 <h3 id="lets-look-at-our-text-file">Let’s look at our text file</h3>
 <ul>
 <li><code>cat</code> print file(s)</li>
 <li><code>head</code> print first few lines of file(s)</li>
 <li><code>tail</code> print last few lines of file(s)</li>
-<li><code>less</code> “pager” – view file interactively (type <code>q</code> to quit command)</li>
-<li><code>od --t</code> “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format</li>
+<li><code>less</code> “pager” – view file interactively (type
+<code>q</code> to quit command)</li>
+<li><code>od --t</code> “octal dump” – to view file’s underlying
+binary/octal/hexadecimal/ASCII format</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brun@aurora:~/data$ head <span class="at">-3</span> env.csv</span>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brun@aurora:~/data$ head <span class="at">-3</span> env.csv</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">EnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">1,*Loc</span> ID,-888,-888,-888,-888,-888,-888,-888,-888</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">1,10101,-888,-888,-888,-888,-888,-888,-888,-888</span></span>
@@ -2679,12 +2765,20 @@ Daily Materials
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>           <span class="ex">382d</span>    3838    2d2c    3838    2c38    382d    3838    2d2c</span>
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="ex">0000240</span>   8   8   8   ,   <span class="at">-</span>   8   8   8  <span class="dt">\r</span>  <span class="dt">\n</span></span>
 <span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2c38    382d    3838    0a0d</span></code></pre></div>
-<h2 id="create-custom-commands-with-alias">Create custom commands with “alias”</h2>
+<h2 id="create-custom-commands-with-alias">Create custom commands with
+“alias”</h2>
 <p><code>alias lwc='ls *.jpg | wc -l'</code></p>
-<p>You can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. <code>.bashrc</code></p>
+<p>You can create a number of custom aliases that are available whenever
+you log in, by putting commands such as the above in your shell start-up
+file, e.g. <code>.bashrc</code></p>
 <h1 id="aknowledgements">Aknowledgements</h1>
-<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>This section reuses a lot of materials from <a
+href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis
+(OSS)</a> intensive summer schools and other training. Contributions to
+this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz
+and many others.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
