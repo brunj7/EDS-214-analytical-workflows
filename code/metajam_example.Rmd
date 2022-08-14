@@ -1,0 +1,42 @@
+---
+title: "metajam_exercise"
+author: "brunj7"
+date: "10/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+Data Package on KNB: https://doi.org/10.5063/F1N58JPP
+
+```{r single download, eval=FALSE}
+library(metajam)
+# Download info
+dataset_url <- "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/urn%3Auuid%3A7fc6f6db-c5ea-426a-a743-1f2edafb43b8"
+data_path <- "~/Desktop"
+# Download
+hh_path <- download_d1_data(data_url=dataset_url, path=data_path)
+```
+
+```{r single read, eval=FALSE}
+hh_lang <- read_d1_files(folder_path=hh_path)
+```
+
+### How many German speakers?
+
+```{r german in alaska, eval=FALSE}
+library(tidyverse)
+# Get the percentage across region per year
+hh_data <- hh_lang$data
+
+german_sp <- hh_data %>% 
+  group_by(Year) %>% 
+  summarize(n_german = sum(german)/sum(total)*100)
+# plot it                                           
+ggplot(german_sp) + geom_line(aes(x=Year, y=n_german))      
+
+```

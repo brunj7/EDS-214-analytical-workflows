@@ -10,16 +10,32 @@ knitr::opts_chunk$set(echo = TRUE)
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 10:00am - 10:10am | *Recap of yesterday*                                      |
-| 10:10am - 11:00am | *Introduction to server and linux*                        |
-| 11:00am - 11:10am | *Break 2 (10 min)*                                        |
-| 11:10am - 12:00am | *Practicing the command line*                             |
-| 12:00pm - 1:15pm  | *Lunch (75 min)*                                          |
-| 1:15pm - 2:00pm   | *Introduction to the group project (45 min)*              |
-| 2:00pm - 4:30pm   | *Group Projects*           |
+| 10:00am - 10:10am | *Getting data*                       |
+| 10:10am - 11:00am | *APIs*                               |
+| 11:00am - 11:10am | *Break 2 (10 min)*                   |
+| 11:10am - 12:00am | *APIs hands-on*                      |
+| 12:00pm - 1:15pm  | *Lunch (75 min)*                     |
+| 1:15pm - 2:00pm   | *Debugging with RStudio*             |
+| 2:00pm - 2:30pm   | *Introduction to the group project (30 min)* |
+| 2:30pm - 3:30pm   | *Group Projects (60min)*                     |
+| 3:35pm - 5:00pm   | *Q&A with Casey*                      |
 
 
+# Getting Data
 
+## Introduction to APIs
+
+[**Materials**](day3-apis.html)
+
+## Hands-on -- APIs
+
+[**Materials**](day3-apis.html#Hands-on)
+
+---
+
+# Debugging with RStudio
+
+[**Materials**](rstudio_debugging.html)
 
 
 ---
