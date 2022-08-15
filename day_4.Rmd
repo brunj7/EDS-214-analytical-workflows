@@ -6,24 +6,23 @@ title: "Scientific Programming as a Team"
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 9:00am - 9:30am   | *Recap of yesterday*                    |
-| 9:30am - 10:05am  | *Pair programming (35min)*              |
-| 10:05am - 10:15am | *Break 1 (10 min)*                      |
-| 10:15am - 11:00am | *Meet your next Instructor -- Jim Frew* |
-| 11:00am - 12:00pm | *Group project*                        |
-| 12:00pm - 1:15pm  | *Lunch (75 min)*                       |
-| 1:15pm - 2:15pm   | *Documenting things (60 min)*          |
-| 2:15pm - 3:00pm   | *Capstone projects -- Jamie*           |
-| 3:00pm - 3:10pm   | *Break*                                |
-| 3:10pm - 4:30pm   | *Group project*                        |
-| 4:30pm -  ...     | *Happy hour with Ginger ;)*            |
+| 9:00am - 9:50am   | *Code Exchange & pair programming (50min)* |
+| 9:50am - 10:00am  | *Break 1 (10 min)*                  |
+| 10:00am - 11:00am | *Group Project (60min)*             |
+| 11:00am - 12:00pm | *Updating your GitHub profile (Sam)*|
+| 12:00pm - 1:15pm  | *Lunch (75 min)*                    |
+| 1:15pm - 2:15pm   | *Documenting things (60 min)*       |
+| 2:15pm - 2:25pm   | *Break (10min)*                     |
+| 2:25pm - 3:25pm   | *Group Project (60min)*             |
+| 3:30pm - 4:30pm   | *Q&A with Casey*                    |
+| 4:30pm -  ...     | *Happy hour with Ginger ;)*         |
 
 
 # Coding as a team
 
-## Code ~~review~~ feedback
+## Code ~~review~~ exchange
 
-Code review is an *asynchronous* team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The "reviewer" should see this activity as a great way to learn from others.
+Code ~~review~~ exchange is an *asynchronous* team activity. Despite its impressive name, code review should be seen by the person asking for the review (submitter) as a great opportunity to have one more pair of eyes looking at your code and providing feedback to make your code better. The "reviewer" should see this activity as a great way to learn from others and provide constructive feedback.
 
 You actually have already practice this a little when practicing merging pull request!!
 
