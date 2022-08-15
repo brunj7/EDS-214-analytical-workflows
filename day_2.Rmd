@@ -29,7 +29,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 [**Materials**](day2-projects_team.html)
 
----
 
 
 ---
