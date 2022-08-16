@@ -12,14 +12,14 @@ knitr::opts_chunk$set(echo = FALSE)
 |-------------------|-------------------------------------|
 | 9:00am - 9:50am   | *Managing Data Science Project as a team (50 min)*        |
 | 9:50am - 10:00am  | *Break (10 min)*                                        |
-| 10:00am - 10:50am | *Coding together (50min)*        |
-| 10:50am - 11:00am | *Break (10min)*                  |
-| 11:00am - 12:00pm | *Flex time 1: Resumé Workshop (Myia) (60 min)*         |
-| 12:00pm - 1:15pm  | *Lunch (75 min)*                                          |
-| 1:15pm - 2:15pm   | *Review Forks, Branches and Pull Requests (60 min)*   |
+| 10:00am - 10:50am | *Coding together (50 min)*        |
+| 10:50am - 11:00am | *Break (10 min)*                  |
+| 11:00am - 12:30pm | *Flex time 1: Resumé Workshop (Myia) (90 min)*         |
+| 12:30pm - 1:30pm  | *Lunch (60 min)*                                          |
+| 1:30pm - 2:15pm   | *Review Forks, Branches and Pull Requests (45 min)*   |
 | 2:15pm - 2:25pm   | *Break (10 min)*           |
-| 3:15pm - 3:25pm   | *GitHub hands-on on server (70min)*                  |
-| 3:25pm - 3:35pm   | *Day 2 Recap (10min)*       |
+| 3:15pm - 3:25pm   | *GitHub hands-on on server (70 min)*                  |
+| 3:25pm - 3:35pm   | *Day 2 Recap (10 min)*       |
 | 3:35pm - 5:00pm   | *Q&A with Casey*                      |
 
 
@@ -29,14 +29,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 [**Materials**](day2-projects_team.html)
 
-
-
 ---
 
 # Coding together
 
 [**Materials**](day2-coding_together.html)
-
 
 ---
 
