@@ -77,7 +77,7 @@ The goal of EDS 214 - Analytical Workflows and Scientific Reproducibility  is to
 
 ## Grading
 
-The grading for this course (passed/not passed) is organized as follow:
+The grading for this course is organized as follow:
 
 - 50% Class participation
 - 50% Group project
