@@ -243,8 +243,6 @@ man ls
 Tip: hit `q` to exit the help!
 
 
-[**CLI Practice**](day1-cli_practice.html)
-
 ### Your turn
 
 Upload files from your local machine to the server using the different techniques mentioned above, You can download the `10min-loop.R` file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R
@@ -266,7 +264,7 @@ drwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R
 drwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata
 ```
 
-
+[**CLI Practice**](day1-cli_practice.html)
 
 **To end an SSH session, simply type `exit` or `logout` into the command line**
 
