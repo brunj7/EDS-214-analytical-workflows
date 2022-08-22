@@ -27,7 +27,10 @@ brun@taylor:~$ cat cli_intro/README.md
 brun@taylor:~$ 
 ```
 
-Next, let's copy another file and look around in the directories:
+### Your turn
+
+
+#### Next, let's copy another file and look around in the directories:
 
 - copy a file into your directory with `cp` (copy)
 - change our working directory to that newly created directory using `cd` (change directory)
@@ -35,16 +38,25 @@ Next, let's copy another file and look around in the directories:
 - look where we are in the filesystem using `pwd` (print working directory)
 - get an overview of the directory contents using `tree`
 
+Upload files from your local machine to the server using the different techniques mentioned above, You can download the `10min-loop.R` file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R
+
+#### Try with a folder: 
+
+- download the data to your laptop: https://aurora.nceas.ucsb.edu/~brun/sampledata.zip
+- unzip the folder
+- upload the folder to Taylor using scp or cyberduck
+
+Your should end up with something like this:
 
 ```bash
-brun@taylor:~$ cd ~
-brun@taylor:~$ cp 10min-loop.R cli_intro
-brun@taylor:~$ cd cli_intro
-brun@taylor:~/cli_intro$ ls
-10min-loop.R  data  README.md
-brun@taylor:~/cli_intro$ pwd
-/home/brun/cli_intro
+brun@taylor:~$ ls -l
+total 16
+-rw-r--r-- 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R
+drwxr-xr-x 3 brun esmdomainusers 4096 Aug 24 23:05 github
+drwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R
+drwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata
 ```
+
 
 ### Your turn
 

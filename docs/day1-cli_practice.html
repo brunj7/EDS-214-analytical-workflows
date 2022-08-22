@@ -2549,6 +2549,7 @@ Daily Materials
 id="toc-files-and-directories">Files and directories</a>
 <ul>
 <li><a href="#your-turn" id="toc-your-turn">Your turn</a></li>
+<li><a href="#your-turn-1" id="toc-your-turn-1">Your turn</a></li>
 </ul></li>
 <li><a href="#aknowledgements"
 id="toc-aknowledgements">Aknowledgements</a></li>
@@ -2574,7 +2575,10 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cat cli_intro/README.md</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tutorial files related to CLI</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> </span></code></pre></div>
-<p>Next, let’s copy another file and look around in the directories:</p>
+<h3 id="your-turn">Your turn</h3>
+<h4
+id="next-lets-copy-another-file-and-look-around-in-the-directories">Next,
+let’s copy another file and look around in the directories:</h4>
 <ul>
 <li>copy a file into your directory with <code>cp</code> (copy)</li>
 <li>change our working directory to that newly created directory using
@@ -2585,15 +2589,28 @@ working directory)</li>
 <li>get an overview of the directory contents using
 <code>tree</code></li>
 </ul>
+<p>Upload files from your local machine to the server using the
+different techniques mentioned above, You can download the
+<code>10min-loop.R</code> file to your local machine from <a
+href="https://aurora.nceas.ucsb.edu/~brun/10min-loop.R"
+class="uri">https://aurora.nceas.ucsb.edu/~brun/10min-loop.R</a></p>
+<h4 id="try-with-a-folder">Try with a folder:</h4>
+<ul>
+<li>download the data to your laptop: <a
+href="https://aurora.nceas.ucsb.edu/~brun/sampledata.zip"
+class="uri">https://aurora.nceas.ucsb.edu/~brun/sampledata.zip</a></li>
+<li>unzip the folder</li>
+<li>upload the folder to Taylor using scp or cyberduck</li>
+</ul>
+<p>Your should end up with something like this:</p>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cd ~</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cp 10min-loop.R cli_intro</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> cd cli_intro</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/cli_intro$</span> ls</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">10min-loop.R</span>  data  README.md</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~/cli_intro$</span> pwd</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/brun/cli_intro</span></span></code></pre></div>
-<h3 id="your-turn">Your turn</h3>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> ls <span class="at">-l</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 24 23:05 github</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 16 05:00 R</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata</span></code></pre></div>
+<h3 id="your-turn-1">Your turn</h3>
 <p>Now, let’s create two subdirectories in the data directory:
 <code>mammals</code> and <code>plots</code></p>
 <ul>
