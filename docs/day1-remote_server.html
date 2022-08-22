@@ -2590,7 +2590,10 @@ managing files/directories in *NIX</a></li>
 <li><a href="#permissions" id="toc-permissions">Permissions</a></li>
 </ul></li>
 <li><a href="#general-command-syntax"
-id="toc-general-command-syntax">General command syntax</a></li>
+id="toc-general-command-syntax">General command syntax</a>
+<ul>
+<li><a href="#your-turn" id="toc-your-turn">Your turn</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#uploading-files-to-a-server"
 id="toc-uploading-files-to-a-server">Uploading Files to a server</a>
@@ -2598,10 +2601,7 @@ id="toc-uploading-files-to-a-server">Uploading Files to a server</a>
 <li><a href="#rstudio" id="toc-rstudio">RStudio</a></li>
 <li><a href="#sftp-software" id="toc-sftp-software">sFTP
 Software</a></li>
-<li><a href="#scp" id="toc-scp">scp</a>
-<ul>
-<li><a href="#your-turn" id="toc-your-turn">Your turn</a></li>
-</ul></li>
+<li><a href="#scp" id="toc-scp">scp</a></li>
 </ul></li>
 <li><a href="#advanced-topics-at-the-command-line"
 id="toc-advanced-topics-at-the-command-line">Advanced Topics at the
@@ -2891,6 +2891,30 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
 <p>Tip: hit <code>q</code> to exit the help!</p>
+<p><a href="day1-cli_practice.html"><strong>CLI
+Practice</strong></a></p>
+<h3 id="your-turn">Your turn</h3>
+<p>Upload files from your local machine to the server using the
+different techniques mentioned above, You can download the
+<code>10min-loop.R</code> file to your local machine from <a
+href="https://aurora.nceas.ucsb.edu/~brun/10min-loop.R"
+class="uri">https://aurora.nceas.ucsb.edu/~brun/10min-loop.R</a></p>
+<p>Try with a folder:</p>
+<ul>
+<li>download the data to your laptop: <a
+href="https://aurora.nceas.ucsb.edu/~brun/sampledata.zip"
+class="uri">https://aurora.nceas.ucsb.edu/~brun/sampledata.zip</a></li>
+<li>unzip the folder</li>
+<li>upload the folder to Taylor using scp or cyberduck</li>
+</ul>
+<p>Your should end up with something like this:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> ls <span class="at">-l</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 24 23:05 github</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 16 05:00 R</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata</span></code></pre></div>
 <p><strong>To end an SSH session, simply type <code>exit</code> or
 <code>logout</code> into the command line</strong></p>
 <hr />
@@ -2921,41 +2945,17 @@ from your local computer. Here is the basic syntax:</p>
 <p>Here is an example of my uploading the file <code>10min-loop.R</code>
 to Taylor from my laptop. The destination directory on Taylor is
 <code>/Users/brun/</code>:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code></pre></div>
 <p>BTW try to open and run that script for fun!!</p>
 <p>If you want to upload an entire folder, you can add the
 <code>-r</code> option to the command. The general syntax is:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code></pre></div>
 <p>Here is an example uploading all the images in the
 <code>myplot</code> folder</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code></pre></div>
-<h3 id="your-turn">Your turn</h3>
-<p>Upload files from your local machine to the server using the
-different techniques mentioned above, You can download the
-<code>10min-loop.R</code> file to your local machine from <a
-href="https://aurora.nceas.ucsb.edu/~brun/10min-loop.R"
-class="uri">https://aurora.nceas.ucsb.edu/~brun/10min-loop.R</a></p>
-<p>Try with a folder:</p>
-<ul>
-<li>download the data to your laptop: <a
-href="https://aurora.nceas.ucsb.edu/~brun/sampledata.zip"
-class="uri">https://aurora.nceas.ucsb.edu/~brun/sampledata.zip</a></li>
-<li>unzip the folder</li>
-<li>upload the folder to Taylor using scp or cyberduck</li>
-</ul>
-<p>Your should end up with something like this:</p>
 <div class="sourceCode" id="cb8"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:~$</span> ls <span class="at">-l</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 24 23:05 github</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 brun esmdomainusers 4096 Aug 16 05:00 R</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata</span></code></pre></div>
-<p><a href="day1-cli_practice.html"><strong>CLI
-Practice</strong></a></p>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code></pre></div>
 <hr />
 <h1 id="advanced-topics-at-the-command-line">Advanced Topics at the
 command line</h1>
