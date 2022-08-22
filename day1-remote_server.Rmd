@@ -276,10 +276,10 @@ The `scp` command is another convenient way to transfer a single file or directo
 scp /source/path hostname:/path/to/destination/
 ```
 
-Here is an example of my uploading the file `10min-loop.R` to Taylor from my laptop. The destination directory on Taylor is `/home/brun/`:
+Here is an example of my uploading the file `10min-loop.R` to Taylor from my laptop. The destination directory on Taylor is `/Users/brun/`:
 
 ```bash
-scp 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/
+scp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/
 ```
 
 BTW try to open and run that script for fun!!
@@ -295,7 +295,7 @@ scp -r /path/to/source-folder user@server:/path/to/destination-folder/
 Here is an example uploading all the images in the `myplot` folder 
 
 ```bash
-scp -r myplot brun@taylor.bren.ucsb.edu:/home/brun/plots
+scp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots
 ```
 
 ### Your turn

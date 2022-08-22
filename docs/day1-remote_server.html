@@ -2920,9 +2920,9 @@ from your local computer. Here is the basic syntax:</p>
 <pre><code>scp /source/path hostname:/path/to/destination/</code></pre>
 <p>Here is an example of my uploading the file <code>10min-loop.R</code>
 to Taylor from my laptop. The destination directory on Taylor is
-<code>/home/brun/</code>:</p>
+<code>/Users/brun/</code>:</p>
 <div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/home/brun/</span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code></pre></div>
 <p>BTW try to open and run that script for fun!!</p>
 <p>If you want to upload an entire folder, you can add the
 <code>-r</code> option to the command. The general syntax is:</p>
@@ -2931,7 +2931,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="
 <p>Here is an example uploading all the images in the
 <code>myplot</code> folder</p>
 <div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/home/brun/plots</span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code></pre></div>
 <h3 id="your-turn">Your turn</h3>
 <p>Upload files from your local machine to the server using the
 different techniques mentioned above, You can download the
