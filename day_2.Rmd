@@ -41,8 +41,11 @@ git config --list
 
 ## Setting GitHub on Taylor
 
-```{r, eval=FALSE}
-usethis::create_github_token()
+```{r, eval=FALSE, echo=TRUE}
+# On your laptop
+usethis::create_github_token() # This should open a web browser on GitHub
+
+# On Taylor 
 gitcreds::gitcreds_set()
 usethis::git_sitrep()
 ```
