@@ -28,7 +28,7 @@ This workflow is recommended when you do not have push/write access to a reposit
 
 ## Hands-on
 
-Fork the repository of the `greetings` R package to add the option to change the color of the background of the text.
+Update the `greetings` R package to add the option to change the color of the background of the text.
 
 Repo: <https://github.com/brunj7/greetings>
 

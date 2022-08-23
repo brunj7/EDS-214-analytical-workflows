@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 | 2:15pm - 2:25pm   | *Break (10 min)*           |
 | 3:15pm - 3:25pm   | *Collaborating with GitHub -- Branches (70 min)*                  |
 | 3:25pm - 3:35pm   | *Day 2 Recap (10 min)*       |
-| 3:35pm - 5:00pm   | *Q&A with Casey*                      |
+| 3:35pm - 5:00pm   | *Flex session with Casey*                      |
 
 
 ---
