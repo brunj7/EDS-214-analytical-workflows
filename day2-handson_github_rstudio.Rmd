@@ -10,9 +10,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Write and R script to compare the csv with your favorite desserts you modified previously with the top 42 most iconic American desserts 
 
-1. Create a new branch using RStudio
-2. Add a new script named `desserts_match_myinitials.R` 
-3. This script should read both csv files into R and try to determine if your favorite dessert is part of the most iconic desserts!
+1. Clone the repository you just created to Taylor
+2. Create a new branch using RStudio and name it `your-initials_rstudio`
+3. Start a new script named `desserts_match_myinitials.R` 
+4. This script should read a csv file with your favorite dessert (create it if you do not have one yet) and the csv file with the most iconic desserts (see link below) into R and try to determine if your favorite dessert is part of the [most iconic desserts](https://www.eatthis.com/iconic-desserts-united-states/)!
 
 You can download the iconic data here: <https://github.com/brunj7/EDS-214-analytical-workflows/blob/main/data/iconic_desserts.csv?raw=TRUE>
 
