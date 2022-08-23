@@ -2558,6 +2558,7 @@ id="toc-creating-a-new-branch">Creating a new branch</a></li>
 <li><a href="#using-a-branch" id="toc-using-a-branch">Using a
 branch</a></li>
 </ul></li>
+<li><a href="#hands-on" id="toc-hands-on">Hands-on</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2594,16 +2595,16 @@ alt="adapted from https://www.atlassian.com/git/tutorials/git-merge" />
 href="https://www.atlassian.com/git/tutorials/git-merge"
 class="uri">https://www.atlassian.com/git/tutorials/git-merge</a></figcaption>
 </figure>
-<p>What are branches? Well in fact nothing new, as the
-<code>master</code> is a branch. A branch represents an independent line
-of development, parallel to the master (branch).</p>
+<p>What are branches? Well in fact nothing new, as the <code>main</code>
+is a branch. A branch represents an independent line of development,
+parallel to the main (branch).</p>
 <p>Why should you use branches? For 2 main reasons:</p>
 <ul>
-<li>We want the master to only keep a version of the code that is
+<li>We want the main to only keep a version of the code that is
 working</li>
 <li>We want to version the code we are developing to add/test new
 features (for now we mostly talk about feature branch) in our script
-without altering the version on the master.</li>
+without altering the version on the main.</li>
 </ul>
 <h2 id="working-with-branches">Working with branches</h2>
 <h3 id="creating-a-new-branch">Creating a new branch</h3>
@@ -2635,11 +2636,18 @@ to it</li>
 <p><img src="img/github-new-branch.png" width="45%" style="display: block; margin: auto;" /></p>
 </div>
 <p>As you can see, now there are two branches on our remote repository:
-- master - test</p>
+- main - test</p>
 <h3 id="using-a-branch">Using a branch</h3>
 <p>Here there is nothing new. The workflow is exactly the same as we did
 before, except our commits will be created on the <code>test</code>
-branch instead of the master branch.</p>
+branch instead of the main branch.</p>
+<h2 id="hands-on">Hands-on</h2>
+<ol type="1">
+<li><a href="day2-handson_github_website.html">GitHub branches using the
+website</a></li>
+<li><a href="day2-handson_github_rstudio.html">GitHub branches using
+RStudio</a></li>
+</ol>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

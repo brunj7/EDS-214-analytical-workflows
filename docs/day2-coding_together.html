@@ -2557,6 +2557,7 @@ code together</a>
 <ul>
 <li><a href="#tools" id="toc-tools">Tools</a></li>
 </ul></li>
+</ul></li>
 <li><a href="#github-as-a-collaborative-tool"
 id="toc-github-as-a-collaborative-tool">GitHub as a collaborative
 tool</a>
@@ -2564,26 +2565,6 @@ tool</a>
 <li><a href="#quick-recap-on-version-control"
 id="toc-quick-recap-on-version-control">Quick recap on version
 control</a></li>
-</ul></li>
-<li><a href="#collaborating-through-forking"
-id="toc-collaborating-through-forking">Collaborating through
-Forking</a></li>
-<li><a href="#hands-on" id="toc-hands-on">Hands-on</a></li>
-</ul></li>
-<li><a href="#flex-session" id="toc-flex-session">Flex session</a>
-<ul>
-<li><a href="#the-markdown-syntax" id="toc-the-markdown-syntax">The
-Markdown syntax
-<img style="float: right;width: 50px;" src=img/markdown-logo.png /></a>
-<ul>
-<li><a href="#r-markdown" id="toc-r-markdown">R Markdown</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#github-branches" id="toc-github-branches">GitHub
-branches</a>
-<ul>
-<li><a href="#github-hands-on" id="toc-github-hands-on">GitHub
-Hands-on</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2676,82 +2657,14 @@ class="uri">https://xkcd.com/1597/</a>
 </p>
 </div>
 </div>
-<h2 id="github-as-a-collaborative-tool">GitHub as a collaborative
-tool</h2>
+<hr />
+<h1 id="github-as-a-collaborative-tool">GitHub as a collaborative
+tool</h1>
 <h3 id="quick-recap-on-version-control">Quick recap on version
 control</h3>
 <p><a href="day2-git_github_recap.html">git and GitHub quick
 recap</a></p>
-<h2 id="collaborating-through-forking">Collaborating through
-Forking</h2>
-<p><a href="day2-github_forking.html"><strong>Materials</strong></a></p>
-<h2 id="hands-on">Hands-on</h2>
-<p>Fork the repository of the <code>greetings</code> R package to add
-the option to change the color of the background of the text.</p>
-<p>Repo: <a href="https://github.com/brunj7/greetings"
-class="uri">https://github.com/brunj7/greetings</a></p>
-<p>By team of two:</p>
-<ul>
-<li><p>Team member 1: fork the repository</p></li>
-<li><p>Team member 2: fork the fork that team member 1 just created
-(yes, you can do this!!)</p></li>
-<li><p>Work together on Team member 2’s computer to modify the
-<code>say_aloah()</code> function to allow changing the text background
-color to blue in addition to the existing green (see <a
-href="https://github.com/r-lib/crayon#screenshot-on-osx">here</a> for
-more about the <code>crayon</code> package)</p></li>
-<li><p>Once done, create a pull request to integrate the new changes
-tagging team member 1 as reviewer</p></li>
-<li><p>Team member 1, review the code, comment as needed on the pull
-request, and merge changes</p></li>
-</ul>
-<hr />
-<h1 id="flex-session">Flex session</h1>
-<h2 id="the-markdown-syntax">The Markdown syntax
-<img style="float: right;width: 50px;" src=img/markdown-logo.png /></h2>
-<p>You will find Markdown to be useful for a lot of various tasks and
-tools you will use as a data scientist. The good new is that the syntax
-is very basic and it is easy to get started with. In addition, Markdown
-files (.md) are text files that can be opened by any text editor and can
-be easily be versioned. You can also render markdown document using
-<code>pandoc</code> into various document formats (PDF, html, ….).
-However it is important to be aware that there are several flavors of
-Markdown out there that are adding more capabilities to the basic one.
-For example GitHub has created its own flavor.</p>
-<p>Another interesting feature of Markdown is that you can use html
-formatting when you want to do some more advanced formatting. In fact,
-document styles can be customized with HTML/CSS and math notation can be
-included using LaTeX or mathjax.</p>
-<pre><code>$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$</code></pre>
-<p><span
-class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
-<p>During this flex session, explore what you can do with with Markdown
-basic</p>
-<p><a href="https://www.markdownguide.org/basic-syntax/"
-class="uri">https://www.markdownguide.org/basic-syntax/</a></p>
-<p>And extended:</p>
-<p><a href="https://www.markdownguide.org/extended-syntax/"
-class="uri">https://www.markdownguide.org/extended-syntax/</a></p>
-<h3 id="r-markdown">R Markdown</h3>
-<p>What about R markdown in all of this? Well the R Markdown syntax, or
-more precisely the <code>knitr</code> package, add extra R oriented
-features which allows the translate of R code, figures and more into a
-Markdown document to produce dynamic and reproducible documents.</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="img/markdown-how-it-works.png" width="732" /></p>
-</div>
-<hr />
-<h1 id="github-branches">GitHub branches</h1>
-<p><a
-href="day2-github_branches.html"><strong>Materials</strong></a></p>
-<h2 id="github-hands-on">GitHub Hands-on</h2>
-<ol type="1">
-<li><a href="day2-handson_github_website.html">GitHub branches using the
-website</a></li>
-<li><a href="day2-handson_github_rstudio.html">GitHub branches using
-RStudio</a></li>
-</ol>
-<div class="sourceCode" id="cb2"><pre
+<div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2760,15 +2673,6 @@ class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"><
 <div class="d-appendix">
 </div>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

@@ -2541,6 +2541,14 @@ Daily Materials
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#hands-on" id="toc-hands-on">Hands-on</a></li>
+</ul>
+</nav>
+</div>
 <p>A <strong>fork</strong> is a <strong>copy of a repository</strong>
 that will be stored under your user account. Forking a repository allows
 you to freely experiment with changes without affecting the original
@@ -2571,6 +2579,26 @@ teams.</p>
 <p>This workflow is recommended when you do not have push/write access
 to a repository, such as contributing to a open source software or R
 package, or if you are heavily changing a project.</p>
+<h2 id="hands-on">Hands-on</h2>
+<p>Update the <code>greetings</code> R package to add the option to
+change the color of the background of the text.</p>
+<p>Repo: <a href="https://github.com/brunj7/greetings"
+class="uri">https://github.com/brunj7/greetings</a></p>
+<p>By team of two:</p>
+<ul>
+<li><p>Team member 1: fork the repository</p></li>
+<li><p>Team member 2: fork the fork that team member 1 just created
+(yes, you can do this!!)</p></li>
+<li><p>Work together on Team member 2’s computer to modify the
+<code>say_aloah()</code> function to allow changing the text background
+color to blue in addition to the existing green (see <a
+href="https://github.com/r-lib/crayon#screenshot-on-osx">here</a> for
+more about the <code>crayon</code> package)</p></li>
+<li><p>Once done, create a pull request to integrate the new changes
+tagging team member 1 as reviewer</p></li>
+<li><p>Team member 1, review the code, comment as needed on the pull
+request, and merge changes</p></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

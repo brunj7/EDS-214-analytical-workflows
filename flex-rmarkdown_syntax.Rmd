@@ -1,0 +1,36 @@
+---
+title: "Rmarkdown syntax"
+---
+
+---
+
+# Flex session
+
+## The Markdown syntax <img style="float: right;width: 50px;" src=img/markdown-logo.png />
+
+You will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using `pandoc` into various document formats (PDF, html, ....). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor. 
+
+Another interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.
+
+```
+$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+
+During this flex session, explore what you can do with with Markdown basic 
+
+<https://www.markdownguide.org/basic-syntax/>
+
+And extended:
+
+<https://www.markdownguide.org/extended-syntax/>
+
+### R Markdown
+
+What about R markdown in all of this? Well the R Markdown syntax, or more precisely the `knitr` package, add extra R oriented features which allows the translate of R code, figures and more  into a Markdown document to produce dynamic and reproducible documents.
+
+```{r echo=FALSE}
+knitr::include_graphics("img/markdown-how-it-works.png")
+```
+
