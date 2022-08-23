@@ -25,15 +25,16 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ---
 
+# Coding together
+
+[**Materials**](day2-coding_together.html)
+
+---
+
 # Managing data-driven projects as a team
 
 [**Materials**](day2-projects_team.html)
 
----
-
-# Coding together
-
-[**Materials**](day2-coding_together.html)
 
 ---
 
