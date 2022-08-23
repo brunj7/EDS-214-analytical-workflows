@@ -1,6 +1,6 @@
 ---
 title: "EDS 214 - Analytical Workflows and Scientific Reproducibility"
-subtitle: "Day 1: Coding as a Team"
+subtitle: "Day 2: Coding as a Team"
 author: "Julien Brun"
 institute: "NCEAS, UCSB"
 output:
