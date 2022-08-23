@@ -10,15 +10,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 9:00am - 9:50am   | *Managing Data Science Project as a team (50 min)*        |
+| 9:00am - 9:50am   | *Coding together (50 min)*         |
 | 9:50am - 10:00am  | *Break (10 min)*                                        |
-| 10:00am - 10:50am | *Coding together (50 min)*        |
+| 10:00am - 10:50am | *Collaborating with GitHub -- Forks (50 min)*        |
 | 10:50am - 11:00am | *Break (10 min)*                  |
 | 11:00am - 12:30pm | *Flex time 1: Resumé Workshop (Myia) (90 min)*         |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                                          |
-| 1:30pm - 2:15pm   | *Review Forks, Branches and Pull Requests (45 min)*   |
+| 1:30pm - 2:15pm   | *Branches and Pull Requests (45 min)*   |
 | 2:15pm - 2:25pm   | *Break (10 min)*           |
-| 3:15pm - 3:25pm   | *GitHub hands-on on server (70 min)*                  |
+| 3:15pm - 3:25pm   | *Collaborating with GitHub -- Branches (70 min)*                  |
 | 3:25pm - 3:35pm   | *Day 2 Recap (10 min)*       |
 | 3:35pm - 5:00pm   | *Q&A with Casey*                      |
 
@@ -29,11 +29,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 [**Materials**](day2-coding_together.html)
 
----
+## Collaborating through forking
 
-# Managing data-driven projects as a team
+[**Materials**](day2-github_forking.html)
 
-[**Materials**](day2-projects_team.html)
+## Collaborating through branches
+
+[**Materials**](day2-github_branches.html)
+
+## `git` commit messages
+
+[**Materials**](day2-github_commit_messages.html)
 
 
 ---
@@ -51,11 +57,7 @@ Second: you did nothing wrong!! Git tries to merge files automatically. When the
 
 ---
 
-# `git` commit messages
 
-[**Materials**](day2-github_commit_messages.html)
-
----
 
 # Further reading
 

@@ -70,3 +70,9 @@ As you can see, now there are two branches on our remote repository:
 ### Using a branch
 
 Here there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the `test` branch instead of the master branch.
+
+
+## Hands-on
+
+1. [GitHub branches using the website](day2-handson_github_website.html)
+2. [GitHub branches using RStudio](day2-handson_github_rstudio.html)

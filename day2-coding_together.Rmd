@@ -60,79 +60,13 @@ The good news is there are several tools out there that have been designed to ma
 knitr::include_graphics("img/git_explain_xkcd.png")
 ```
 
+---
 
-
-## GitHub as a collaborative tool 
+# GitHub as a collaborative tool 
 
 ### Quick recap on version control
 
 [git and GitHub quick recap](day2-git_github_recap.html)
 
-## Collaborating through Forking
-
-[**Materials**](day2-github_forking.html)
-
-## Hands-on
-
-Fork the repository of the `greetings` R package to add the option to change the color of the background of the text.
-
-Repo: <https://github.com/brunj7/greetings>
-
-By team of two:
-
-- Team member 1: fork the repository
-
-- Team member 2: fork the fork that team member 1 just created (yes, you can do this!!)
-
-- Work together on Team member 2's computer to modify the `say_aloah()` function to allow changing the text background color to blue in addition to the existing green (see [here](https://github.com/r-lib/crayon#screenshot-on-osx) for more about the `crayon` package)
-
-- Once done, create a pull request to integrate the new changes tagging team member 1 as reviewer
-
-- Team member 1, review the code, comment as needed on the pull request, and merge changes
-
----
-
-# Flex session
-
-## The Markdown syntax <img style="float: right;width: 50px;" src=img/markdown-logo.png />
-
-You will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using `pandoc` into various document formats (PDF, html, ....). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor. 
-
-Another interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.
-
-```
-$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-
-
-During this flex session, explore what you can do with with Markdown basic 
-
-<https://www.markdownguide.org/basic-syntax/>
-
-And extended:
-
-<https://www.markdownguide.org/extended-syntax/>
-
-### R Markdown
-
-What about R markdown in all of this? Well the R Markdown syntax, or more precisely the `knitr` package, add extra R oriented features which allows the translate of R code, figures and more  into a Markdown document to produce dynamic and reproducible documents.
-
-```{r echo=FALSE}
-knitr::include_graphics("img/markdown-how-it-works.png")
-```
-
-
----
-
-# GitHub branches
-
-[**Materials**](day2-github_branches.html)
-
-
-## GitHub Hands-on 
-
-1. [GitHub branches using the website](day2-handson_github_website.html)
-2. [GitHub branches using RStudio](day2-handson_github_rstudio.html)
 
 
