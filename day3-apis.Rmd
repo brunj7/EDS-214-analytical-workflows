@@ -33,7 +33,11 @@ USGS is managing a vast [network of gauges](https://dashboard.waterdata.usgs.gov
 
 ### Exercise 1
 
-Start a new Markdown document to plot the discharge time-series for the Ventura River from 2019-10-01 to 2020-10-05
+- Create a new repository on GitHub named `api-practice`
+
+- Clone is to Taylor
+
+- Start a new Markdown document to plot the discharge time-series for the Ventura River from 2019-10-01 to 2020-10-05
 
 Webpage: https://waterdata.usgs.gov/nwis/uv?site_no=11118500
 
