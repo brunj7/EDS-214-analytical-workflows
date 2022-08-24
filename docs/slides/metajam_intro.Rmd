@@ -1,9 +1,9 @@
 ---
 title: "Introduction to metajam"
-subtitle: "EDS-213: Metadata, Data Modeling and Data Semantics"
+subtitle: "EDS-214: Reproducible workflows"
 author: "Julien Brun"
 institute: "NCEAS, UCSB"
-date: "Fall 2021"
+date: "Summer 2022"
 output:
   xaringan::moon_reader:
     css: [hygge-duke, hygge, metropolis-fonts]

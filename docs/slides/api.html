@@ -1,22 +1,38 @@
----
-title: "Acessing Data in a Programmatic Way"
-subtitle: "APIs and more"
-author: "Julien Brun"
-institute: "EDS-214"
-date: "2022/08"
-output:
-  xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Acessing Data in a Programmatic Way</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Julien Brun" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Acessing Data in a Programmatic Way
+]
+.subtitle[
+## APIs and more
+]
+.author[
+### Julien Brun
+]
+.institute[
+### EDS-214
+]
+.date[
+### 2022/08
+]
+
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-```
+
+
 
 
 class: center, middle, inverse
@@ -75,7 +91,7 @@ IP numbers can be difficult to remember, so the Internet also has a way of assig
 
 - Clients first look up a hostname in DNS to find the IP Number
 
-- `taylor.bren.ucsb.edu` -> 128.111.??.?? (Can you check!?)
+- `taylor.bren.ucsb.edu` -&gt; 128.111.??.?? (Can you check!?)
 
 - Then they open a connection to the IP Number
 
@@ -129,7 +145,7 @@ The *H*yper*T*ext *M*arkup *L*anguage (`HTML`) describes and defines the content
 
 "Hyper Text" in HTML refers to links that connect webpages to one another, either within a single website or between websites. Links are a fundamental aspect of the Web. 
 
-HTML uses "markup" to annotate text, images, and other content for display in a Web browser. HTML markup includes special "elements" such as `<head>`, `<title>`, `<body>`, `<header>`, `<footer>`, `<article>`, `<section>`, `<p>`, `<div>`, `<span>`, `<img>`, and many others.
+HTML uses "markup" to annotate text, images, and other content for display in a Web browser. HTML markup includes special "elements" such as `&lt;head&gt;`, `&lt;title&gt;`, `&lt;body&gt;`, `&lt;header&gt;`, `&lt;footer&gt;`, `&lt;article&gt;`, `&lt;section&gt;`, `&lt;p&gt;`, `&lt;div&gt;`, `&lt;span&gt;`, `&lt;img&gt;`, and many others.
 
 Using you web browser, you can inspect the HTML content of any webpage of the World Wide Web.
 
@@ -171,11 +187,11 @@ REST stands for _Representational State Transfer_.  Those APIs a some similariti
 
 # Authentification
 
-<br>
+&lt;br&gt;
 
 ###  You often need to use some of kind of authentication (often token) to use an API.
 
-<br>
+&lt;br&gt;
 
 ### This is mostly because data providers do not want one user using all the server resources.
 
@@ -187,9 +203,7 @@ REST stands for _Representational State Transfer_.  Those APIs a some similariti
 
 APIs often return xml or JSON documents either for the data themselves but also for some kind of metadata
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("images/api-plug-socket.png")
-```
+&lt;img src="images/api-plug-socket.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -201,13 +215,13 @@ XML provides the basic, common, and quite simple structure and syntax. It is the
 
 
 ```xml
-<?xml version="1.0" encoding="ISO-8859-1"?>  
-<note>  
-  <to>Tove</to>  
-  <from>Jani</from>  
-  <heading>Reminder</heading>  
-  <body>Don't forget me this weekend!</body>  
-</note>  
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;  
+&lt;note&gt;  
+  &lt;to&gt;Tove&lt;/to&gt;  
+  &lt;from&gt;Jani&lt;/from&gt;  
+  &lt;heading&gt;Reminder&lt;/heading&gt;  
+  &lt;body&gt;Don't forget me this weekend!&lt;/body&gt;  
+&lt;/note&gt;  
 ```
 
 ---
@@ -218,7 +232,7 @@ XML provides the basic, common, and quite simple structure and syntax. It is the
 
 ---
 
-# Document Types -- JSON <img src="https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/logo.png" style="float:right" width="20%"> <img/>
+# Document Types -- JSON &lt;img src="https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/logo.png" style="float:right" width="20%"&gt; &lt;img/&gt;
 
 
 ```json
@@ -258,21 +272,25 @@ class: center, middle, inverse
 
 `httr` (httr2 is around the corner!) is an R package that let's you send requests to web services.  Let's try to use the GitHub API to list all my repositories
 
-```{r}
+
+```r
 library(httr)
 library(purrr)
 
 # Querying the the GitHub REST api
-r <- GET("https://api.github.com/users/brunj7/repos")
+r &lt;- GET("https://api.github.com/users/brunj7/repos")
 
 # Extract the content from the response
-my_repos_list <- content(r) 
+my_repos_list &lt;- content(r) 
 
 # Extract what we want from the list
-my_repos <- map_chr(my_repos_list, "full_name")
+my_repos &lt;- map_chr(my_repos_list, "full_name")
 
 my_repos[1:2]
+```
 
+```
+## [1] "brunj7/adv-r"                 "brunj7/aquaculture-crop-feed"
 ```
 
 --
@@ -318,7 +336,7 @@ https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.ht
 
 ### Note that begugging code relying on an API is hard!!
 
-<br>
+&lt;br&gt;
 
 Since you are using a web service, you have now a few more moving parts that can make your code fail, espcially if there is connectivity issues (including paywall) and potential server issues (or limitations).
 
@@ -328,11 +346,11 @@ Since you are using a web service, you have now a few more moving parts that can
 
 # What if there is no API ?
 
-<br>
+&lt;br&gt;
 
 ### Developing and maintaining an API requires resources and not all data provider can afford it!
 
-<br>
+&lt;br&gt;
 
 ### If no APIs are available, then you can try to use web scraping to collect data. Quick intro to webscrapping [here](https://r-meetup-sb.github.io/web-scraping-rvest/index.html#4_Web_scraping_workflow)
 
@@ -343,3 +361,139 @@ Please always check that the data you are scraping is publicly available  and th
 
 
 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
