@@ -48,7 +48,7 @@ knitr::include_graphics("img/code_handover.jpeg")
 
 It is important to make your code easy to read if you hope that others will reuse it. It starts with using a **consistent style** withing your scripts (at least within a project). 
 
-- Here is a good style guide for R: http://adv-r.had.co.nz/Style.html
+- Here is a good style guide for R: https://style.tidyverse.org/
 - Style guide for Python: https://www.python.org/dev/peps/pep-0008/
 
 ```{python Zen of Python, echo=TRUE}
