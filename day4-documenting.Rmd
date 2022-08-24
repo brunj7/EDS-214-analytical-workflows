@@ -7,6 +7,11 @@ knitr::opts_chunk$set(echo = TRUE)
 library(reticulate)
 ```
 
+```{r, echo=FALSE, fig.cap="https://twitter.com/JenMsft/status/1557218211971489792"}
+knitr::include_graphics("img/found_documentationjpg.jpeg")
+```
+
+
 
 ## The power of README
 
@@ -36,6 +41,11 @@ Adding images, short videos / animations can make a README more engaging.
 
 ## Making your code readable
 
+```{r, echo=FALSE, fig.cap= "https://twitter.com/cjm4189/status/1557346489613094914"}
+knitr::include_graphics("img/code_handover.jpeg")
+```
+
+
 It is important to make your code easy to read if you hope that others will reuse it. It starts with using a **consistent style** withing your scripts (at least within a project). 
 
 - Here is a good style guide for R: http://adv-r.had.co.nz/Style.html
@@ -56,7 +66,7 @@ Tom Van Vleck, based on people he knew_ (https://multicians.org/thvv/realprogs.h
 
 Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that **comments should work in complement of the code** and should not being seen as work around vague naming conventions of variables or functions.
 
-```{r , eval=FALSE}
+```{r, eval=FALSE}
 x <- 9.81  #  gravitational acceleration
 
 gravity_acc <- 9.81  #  gravitational acceleration
