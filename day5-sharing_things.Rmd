@@ -57,7 +57,7 @@ Transform your `git` based repo into an interactive jupyter notebook <https://my
 
 ![](https://media.giphy.com/media/9SIAXIrMh4AWBx4GBB/giphy.gif)
 
-**Try it:** https://github.com/syoh/my-awesome-project 
+**Try it:** https://mybinder.org/
 
 ## Citing your code
 
@@ -121,7 +121,9 @@ A few good readings:
 
 ---
 
-# Xaringan
+# Code friendly Presentations
+
+## Xarigan
 
 Xarigan is an R package to create slide deck using R Markdown: https://github.com/yihui/xaringan
 
@@ -130,3 +132,10 @@ remotes::install_github('yihui/xaringan')
 ```
 
 Here is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/
+
+
+## Quarto Presentations
+
+https://quarto.org/docs/presentations/
+
+https://meghan.rbind.io/blog/quarto-slides/
