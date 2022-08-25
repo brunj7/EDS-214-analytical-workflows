@@ -1,5 +1,5 @@
 ---
-title: "Scientific Programming as a Team"
+title: "Documenting and Sharing Things"
 ---
 
 # Day 4
