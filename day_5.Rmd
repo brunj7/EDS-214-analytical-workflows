@@ -31,7 +31,7 @@ library(devtools)
 
 ## Scope and debugging
 
-[**Materials**](rstudio_debbugging.html)
+[**Materials**](rstudio_debugging.html)
 
 ---
 
