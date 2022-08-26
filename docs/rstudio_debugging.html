@@ -2516,7 +2516,7 @@ Daily Materials
 <a href="day_2.html">Day 2: Developing analytical workflows as a team</a>
 <a href="day_3.html">Day 3: Managing your code and data on a remote server</a>
 <a href="day_4.html">Day 4: Documenting and sharing things</a>
-<a href="day_5.html">Day 5: Scientific Programming as a team</a>
+<a href="day_5.html">Day 5: Reproducible for all</a>
 <a href="group_project.html">Group project</a>
 </div>
 </div>
@@ -2545,11 +2545,74 @@ Daily Materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
+<li><a href="#scope-global-vs.-local-environment"
+id="toc-scope-global-vs.-local-environment">Scope: Global vs. Local
+Environment</a>
+<ul>
+<li><a href="#challenge" id="toc-challenge">Challenge</a></li>
+<li><a href="#one-last-one" id="toc-one-last-one">One last one</a></li>
+</ul></li>
+<li><a href="#debugging" id="toc-debugging">Debugging</a>
+<ul>
 <li><a href="#the-debugging-interface"
 id="toc-the-debugging-interface">The debugging interface</a></li>
+<li><a href="#challenge-1" id="toc-challenge-1">Challenge</a></li>
+</ul></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+Reading</a></li>
 </ul>
 </nav>
 </div>
+<h2 id="scope-global-vs.-local-environment">Scope: Global vs. Local
+Environment</h2>
+<p>All variables in a program may not be accessible at all locations in
+that program. This depends on where you have declared a variable.</p>
+<p>Variables that are defined inside a function body have a local scope,
+and those defined outside have a global scope.</p>
+<p>This means that local variables can be only be accessed inside the
+function in which they are declared. Thus, any ordinary assignments done
+within the function are local and temporary and are lost after exit from
+the function; whereas global variables can be accessed throughout the
+program body by all functions.</p>
+<h3 id="challenge">Challenge</h3>
+<p>Try to predict what will be outputted by the following:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>foo</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>bar</span> <span class='op'>&lt;-</span> <span class='fl'>1</span></span>
+<span>    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>bar</span><span class='op'>)</span></span>
+<span><span class='op'>}</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>bar</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span><span class='va'>foo</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>bar</span> <span class='op'>&lt;-</span> <span class='fl'>1</span></span>
+<span>    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>bar</span><span class='op'>)</span></span>
+<span><span class='op'>}</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>foo</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>bar</span> <span class='op'>&lt;&lt;-</span> <span class='fl'>1</span>  <span class='co'>#hein?!</span></span>
+<span>    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>bar</span><span class='op'>)</span></span>
+<span><span class='op'>}</span></span></code></pre>
+</div>
+</div>
+<p>Although <code>&lt;&lt;-</code> is a specificity of R, the general
+concept of global and local scope is valid for Python and others.</p>
+<h3 id="one-last-one">One last one</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>foo</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>bar</span> <span class='op'>&lt;-</span> <span class='va'>bar</span> <span class='op'>+</span> <span class='fl'>1</span></span>
+<span>    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>bar</span><span class='op'>)</span></span>
+<span><span class='op'>}</span></span></code></pre>
+</div>
+</div>
+<h2 id="debugging">Debugging</h2>
 <p><em>This section is adapted from the more detailed material available
 on the RStudio website: <a
 href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio"
@@ -2617,8 +2680,23 @@ R script.</p>
 <p>The <strong>Console</strong> retains most of its normal functionality
 in debugging mode, but contains some additional buttons that appear at
 the top to facilitate moving through code lines (see below).</p>
-<p><img src="img/RStudio_debugging_console.png"
-alt="Debugging buttons on the console" /> ## Further Reading</p>
+<figure>
+<img src="img/RStudio_debugging_console.png"
+alt="Debugging buttons on the console" />
+<figcaption aria-hidden="true">Debugging buttons on the
+console</figcaption>
+</figure>
+<h3 id="challenge-1">Challenge</h3>
+<ol type="1">
+<li>Start a new R Script</li>
+<li>Write a function that computes the percentage of a number:
+<code>n*p/100</code></li>
+<li>Add a ratio factor as an argument so we can also use your function
+to compute 1/1000</li>
+<li>Add a break point inside the function and use it to inspect local
+variables of your function</li>
+</ol>
+<h2 id="further-reading">Further Reading</h2>
 <ul>
 <li>Functional programming in R: <a
 href="http://adv-r.had.co.nz/Functional-programming.html#functional-programming"

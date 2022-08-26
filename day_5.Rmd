@@ -1,5 +1,5 @@
 ---
-title: "Reproducible"
+title: "Reproducible for all"
 ---
 
 ```{r setup, include=FALSE}
@@ -22,7 +22,16 @@ library(devtools)
 | 3:45pm - 4:00pm   | *Final thoughts and feedback*     |
 
 ---
+
+
 ## [Open Source Software for Data Science](https://www.rstudio.com/resources/rstudioconf-2020/open-source-software-for-data-science/) (30 min)
+
+
+---
+
+## Scope and debugging
+
+[**Materials**](rstudio_debbugging.html)
 
 ---
 

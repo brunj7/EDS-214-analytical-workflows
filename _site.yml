@@ -17,7 +17,7 @@ navbar:
           href: day_3.html
         - text: "Day 4: Documenting and sharing things"
           href: day_4.html
-        - text: "Day 5: Scientific Programming as a team"
+        - text: "Day 5: Reproducible for all"
           href: day_5.html
         - text: "Group project"
           href: group_project.html

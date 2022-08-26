@@ -2,6 +2,53 @@
 title: "Debugging in RStudio"
 ---
 
+## Scope: Global vs. Local Environment
+
+All variables in a program may not be accessible at all locations in that program. This depends on where you have declared a variable.
+
+Variables that are defined inside a function body have a local scope, and those defined outside have a global scope.
+
+This means that local variables can be only be accessed inside the function in which they are declared. Thus, any ordinary assignments done within the function are local and temporary and are lost after exit from the function; whereas global variables can be accessed throughout the program body by all functions.
+
+### Challenge
+
+Try to predict what will be outputted by the following:
+
+```{r scope 1, eval=FALSE}
+foo <- function() {
+    bar <- 1
+    return(bar)
+}
+```
+
+```{r scope 2, eval=FALSE}
+bar <- 2
+foo <- function() {
+    bar <- 1
+    return(bar)
+}
+```
+
+```{r scope 3, eval=FALSE}
+foo <- function() {
+    bar <<- 1  #hein?!
+    return(bar)
+}
+```
+
+Although `<<-` is a specificity of R, the general concept of global and local scope is valid for Python and others.
+
+
+### One last one
+```{r scope 4, eval=FALSE}
+foo <- function() {
+    bar <- bar + 1
+    return(bar)
+}
+```
+
+
+## Debugging
 
 *This section is adapted from the more detailed material available on the RStudio website: <https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio>* 
 
@@ -35,6 +82,15 @@ The **Code window** highlights the currently executing function and may create a
 The **Console** retains most of its normal functionality in debugging mode, but contains some additional buttons that appear at the top to facilitate moving through code lines (see below).
 
 ![Debugging buttons on the console](img/RStudio_debugging_console.png)
+
+### Challenge
+
+1. Start a new R Script
+2. Write a function that computes the percentage of a number: `n*p/100`
+3. Add a ratio factor as an argument so we can also use your function to compute 1/1000
+4. Add a break point inside the function and use it to inspect local variables of your function
+
+
 ## Further Reading
 
 - Functional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming
