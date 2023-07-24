@@ -28,7 +28,7 @@ knitr::include_graphics("img/tidy-workflow.png")
 
 ## Tutor
 
-Casey O'Hara (cohara\@bren.ucsb.edu)
+Mae Rennick (maerennick\@ucsb.edu)
 
 
 ## Important links
