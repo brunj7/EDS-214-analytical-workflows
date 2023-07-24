@@ -111,6 +111,7 @@ datatable(sched2, rownames=FALSE, escape=FALSE)
 <!-- | Friday 8/27: morning	| [Sharing things](day_5.html#scientific-products)	| Group project	| [Xaringan](day_5.html#xaringan) | -->
 <!-- | Friday 8/27 afternoon	| [Project presentations](day_5.html#group-projects)	| [Project presentations](day_5.html#group-projects) |  -->
 
+
 ## Course requirements
 
 ### Computing
