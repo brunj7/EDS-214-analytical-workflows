@@ -32,6 +32,7 @@ jobs:
             any::xml2
             any::reticulate
             any::devtools
+            any::tidyverse
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
