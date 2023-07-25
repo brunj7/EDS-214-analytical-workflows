@@ -5,11 +5,11 @@ site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library(tidyverse)
-library(kableExtra)
-library(googlesheets4)
-library(DT)
+# knitr::opts_chunk$set(echo = FALSE)
+# library(tidyverse)
+# library(kableExtra)
+# library(googlesheets4)
+# library(DT)
 # Learn more about creating websites with Distill at:
 # https://rstudio.github.io/distill/website.html
 
