@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Developing Analytical Workflows as a Team</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="theme.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">EDS214 - Analytical Workflows and Scientific Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Daily Materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="./day_1.html" rel="" target="">
+ <span class="dropdown-text">Day 1: Reproducible &amp; collaborative workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_2.html" rel="" target="">
+ <span class="dropdown-text">Day 2: Developing analytical workflows as a team</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_3.html" rel="" target="">
+ <span class="dropdown-text">Day 3: Managing your code and data on a remote server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_4.html" rel="" target="">
+ <span class="dropdown-text">Day 4: Documenting and sharing things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_5.html" rel="" target="">
+ <span class="dropdown-text">Day 5: Reproducible for all</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./group_project.html" rel="" target="">
+ <span class="dropdown-text">Group project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/brunj7/EDS-214-analytical-workflows" rel="" target=""><i class="bi bi-fab fa-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#day-2" id="toc-day-2" class="nav-link active" data-scroll-target="#day-2">Day 2</a></li>
+  <li><a href="#coding-together" id="toc-coding-together" class="nav-link" data-scroll-target="#coding-together">Coding together</a>
+  <ul class="collapse">
+  <li><a href="#setting-git-on-taylor" id="toc-setting-git-on-taylor" class="nav-link" data-scroll-target="#setting-git-on-taylor">Setting git on Taylor</a></li>
+  <li><a href="#setting-github-on-taylor" id="toc-setting-github-on-taylor" class="nav-link" data-scroll-target="#setting-github-on-taylor">Setting GitHub on Taylor</a></li>
+  <li><a href="#collaborating-through-forking" id="toc-collaborating-through-forking" class="nav-link" data-scroll-target="#collaborating-through-forking">Collaborating through forking</a></li>
+  <li><a href="#collaborating-through-branches" id="toc-collaborating-through-branches" class="nav-link" data-scroll-target="#collaborating-through-branches">Collaborating through branches</a></li>
+  <li><a href="#git-commit-messages" id="toc-git-commit-messages" class="nav-link" data-scroll-target="#git-commit-messages"><code>git</code> commit messages</a></li>
+  </ul></li>
+  <li><a href="#git-therapy" id="toc-git-therapy" class="nav-link" data-scroll-target="#git-therapy">Git Therapy</a>
+  <ul class="collapse">
+  <li><a href="#github-conflicts" id="toc-github-conflicts" class="nav-link" data-scroll-target="#github-conflicts">GitHub conflicts</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a>
+  <ul class="collapse">
+  <li><a href="#collaborative-coding" id="toc-collaborative-coding" class="nav-link" data-scroll-target="#collaborative-coding">Collaborative coding</a></li>
+  <li><a href="#code-review" id="toc-code-review" class="nav-link" data-scroll-target="#code-review">Code Review</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#github-workflow" id="toc-github-workflow" class="nav-link" data-scroll-target="#github-workflow">GitHub Workflow</a>
+  <ul class="collapse">
+  <li><a href="#git-using-rstudio" id="toc-git-using-rstudio" class="nav-link" data-scroll-target="#git-using-rstudio">Git using RStudio</a></li>
+  <li><a href="#undoing-things" id="toc-undoing-things" class="nav-link" data-scroll-target="#undoing-things">Undoing things</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Developing Analytical Workflows as a Team</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="day-2" class="level1">
+<h1>Day 2</h1>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Time (PST)</strong></th>
+<th><strong>Activity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9:00am - 9:50am</td>
+<td><em>Coding together (50 min)</em></td>
+</tr>
+<tr class="even">
+<td>9:50am - 10:00am</td>
+<td><em>Break (10 min)</em></td>
+</tr>
+<tr class="odd">
+<td>10:00am - 10:50am</td>
+<td><em>Collaborating with GitHub – Forks (50 min)</em></td>
+</tr>
+<tr class="even">
+<td>10:50am - 11:00am</td>
+<td><em>Break (10 min)</em></td>
+</tr>
+<tr class="odd">
+<td>11:00am - 12:30pm</td>
+<td><em>Flex time 1: Resumé Workshop (Myia) (90 min)</em></td>
+</tr>
+<tr class="even">
+<td>12:30pm - 1:30pm</td>
+<td><em>Lunch (60 min)</em></td>
+</tr>
+<tr class="odd">
+<td>1:30pm - 2:15pm</td>
+<td><em>Branches and Pull Requests (45 min)</em></td>
+</tr>
+<tr class="even">
+<td>2:15pm - 2:25pm</td>
+<td><em>Break (10 min)</em></td>
+</tr>
+<tr class="odd">
+<td>2:25pm - 3:25pm</td>
+<td><em>Collaborating with GitHub – Branches (60 min)</em></td>
+</tr>
+<tr class="even">
+<td>3:25pm - 3:35pm</td>
+<td><em>Day 2 Recap (10 min)</em></td>
+</tr>
+<tr class="odd">
+<td>3:35pm - 5:00pm</td>
+<td><em>Flex session with Casey</em></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="coding-together" class="level1">
+<h1>Coding together</h1>
+<p><a href="day2-coding_together.html"><strong>Materials</strong></a></p>
+<section id="setting-git-on-taylor" class="level2">
+<h2 class="anchored" data-anchor-id="setting-git-on-taylor">Setting git on Taylor</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Jane Doe"</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email janedoe@example.com</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper <span class="st">'cache --timeout=10000000'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setting-github-on-taylor" class="level2">
+<h2 class="anchored" data-anchor-id="setting-github-on-taylor">Setting GitHub on Taylor</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On your laptop</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>() <span class="co"># This should open a web browser on GitHub</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On Taylor </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="collaborating-through-forking" class="level2">
+<h2 class="anchored" data-anchor-id="collaborating-through-forking">Collaborating through forking</h2>
+<p><a href="day2-github_forking.html"><strong>Materials</strong></a></p>
+</section>
+<section id="collaborating-through-branches" class="level2">
+<h2 class="anchored" data-anchor-id="collaborating-through-branches">Collaborating through branches</h2>
+<p><a href="day2-github_branches.html"><strong>Materials</strong></a></p>
+</section>
+<section id="git-commit-messages" class="level2">
+<h2 class="anchored" data-anchor-id="git-commit-messages"><code>git</code> commit messages</h2>
+<p><a href="day2-github_commit_messages.html"><strong>Materials</strong></a></p>
+<hr>
+</section>
+</section>
+<section id="git-therapy" class="level1">
+<h1>Git Therapy</h1>
+<section id="github-conflicts" class="level2">
+<h2 class="anchored" data-anchor-id="github-conflicts">GitHub conflicts</h2>
+<p>First thing to know is that actually <code>git pull</code> is a two step process: <code>git pull = git fetch + git merge</code></p>
+<p>Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, <code>git</code> will call you to the rescue and ask you how to best merge the two versions.</p>
+<p><a href="day2-git-collaboration-conflicts.html"><strong>Materials</strong></a></p>
+<hr>
+</section>
+</section>
+<section id="further-reading" class="level1">
+<h1>Further reading</h1>
+<section id="collaborative-coding" class="level2">
+<h2 class="anchored" data-anchor-id="collaborative-coding">Collaborative coding</h2>
+<ul>
+<li>A new grad’s guide to coding as a team - Atlassian: https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf</li>
+<li>10 tips for efficient programming: https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html</li>
+<li>Agile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</li>
+</ul>
+</section>
+<section id="code-review" class="level2">
+<h2 class="anchored" data-anchor-id="code-review">Code Review</h2>
+<ul>
+<li>Small-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext</li>
+</ul>
+</section>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<ul>
+<li>Interactive tutorial to learn more about git branches and more <a href="https://learngitbranching.js.org/" class="uri">https://learngitbranching.js.org/</a></li>
+</ul>
+</section>
+<section id="github-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="github-workflow">GitHub Workflow</h2>
+<ul>
+<li>GitHub:
+<ul>
+<li>guides on how to use GitHub: <a href="https://guides.github.com/">https://guides.github.com/</a></li>
+<li>GitHub from RStudio: <a href="http://r-pkgs.had.co.nz/git.html#git-pull">http://r-pkgs.had.co.nz/git.html#git-pull</a></li>
+</ul></li>
+<li>Forking:
+<ul>
+<li><a href="https://help.github.com/articles/fork-a-repo/">https://help.github.com/articles/fork-a-repo/</a></li>
+<li><a href="https://guides.github.com/activities/forking/">https://guides.github.com/activities/forking/</a></li>
+</ul></li>
+<li>Comparison of git repository host services: <a href="https://www.git-tower.com/blog/git-hosting-services-compared/" class="uri">https://www.git-tower.com/blog/git-hosting-services-compared/</a></li>
+<li>Branches
+<ul>
+<li>interactive tutorial on branches: <a href="http://learngitbranching.js.org/" class="uri">http://learngitbranching.js.org/</a></li>
+<li>using git in a collaborative environment: <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow" class="uri">https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow</a> https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</li>
+</ul></li>
+</ul>
+<section id="git-using-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="git-using-rstudio">Git using RStudio</h3>
+<ul>
+<li>Happy Git and GitHub for the useR: http://happygitwithr.com/</li>
+<li>R packages - Git and GitHub: http://r-pkgs.had.co.nz/git.html#git-init</li>
+</ul>
+<p>Git mainly from the command line:</p>
+<ul>
+<li>Interactive git 101: <a href="https://try.github.io/">https://try.github.io/</a></li>
+<li>Very good tutorial about git: <a href="https://www.atlassian.com/git/tutorials/what-is-version-control">https://www.atlassian.com/git/tutorials/what-is-version-control</a></li>
+<li>Git tutorial geared towards scientists: <a href="http://nyuccl.org/pages/gittutorial/">http://nyuccl.org/pages/gittutorial/</a></li>
+<li>Short intro to git basics: <a href="https://github.com/mbjones/gitbasics">https://github.com/mbjones/gitbasics</a></li>
+<li>Git documentation about the basics: <a href="http://gitref.org/basic/">http://gitref.org/basic/</a></li>
+<li>Git documentation - the basics: <a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">https://git-scm.com/book/en/v2/Getting-Started-Git-Basics</a></li>
+<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology">https://www.atlassian.com/git/glossary/terminology</a></li>
+<li>In trouble, guide to know what to do: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
+<li>Want to undo something? <a href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git" class="uri">https://github.com/blog/2019-how-to-undo-almost-anything-with-git</a></li>
+<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology" class="uri">https://www.atlassian.com/git/glossary/terminology</a></li>
+<li>8 tips to work better with git: <a href="https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/" class="uri">https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/</a></li>
+<li>GitPro book (2nd edition): <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a></li>
+</ul>
+</section>
+<section id="undoing-things" class="level3">
+<h3 class="anchored" data-anchor-id="undoing-things">Undoing things</h3>
+<ul>
+<li>Help to decide how to undo your problem: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png" class="uri">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
+<li>Undo almost everything with git <a href="https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/" class="uri">https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/</a></li>
+<li>Difference between git reset soft, mixed and hard <a href="https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/" class="uri">https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/</a></li>
+<li>Resetting, Checking Out &amp; Reverting <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" class="uri">https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting</a></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<br>
+<p align="center">
+<a href="https://bren.ucsb.edu/"><img src="img/bren-logo_color.png" alt="Bren School logo" style="width:350px;"></a>
+</p>
+
+<p align="center">
+  This website was made with <u><a href="https://quarto.org">quarto by Posit</a></u>.
+</p>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

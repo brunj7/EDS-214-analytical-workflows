@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Documenting things</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="theme.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">EDS214 - Analytical Workflows and Scientific Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Daily Materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="./day_1.html" rel="" target="">
+ <span class="dropdown-text">Day 1: Reproducible &amp; collaborative workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_2.html" rel="" target="">
+ <span class="dropdown-text">Day 2: Developing analytical workflows as a team</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_3.html" rel="" target="">
+ <span class="dropdown-text">Day 3: Managing your code and data on a remote server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_4.html" rel="" target="">
+ <span class="dropdown-text">Day 4: Documenting and sharing things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_5.html" rel="" target="">
+ <span class="dropdown-text">Day 5: Reproducible for all</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./group_project.html" rel="" target="">
+ <span class="dropdown-text">Group project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/brunj7/EDS-214-analytical-workflows" rel="" target=""><i class="bi bi-fab fa-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-power-of-readme" id="toc-the-power-of-readme" class="nav-link active" data-scroll-target="#the-power-of-readme">The power of README</a>
+  <ul class="collapse">
+  <li><a href="#need-some-inspiration" id="toc-need-some-inspiration" class="nav-link" data-scroll-target="#need-some-inspiration">Need some inspiration ?</a></li>
+  </ul></li>
+  <li><a href="#making-your-code-readable" id="toc-making-your-code-readable" class="nav-link" data-scroll-target="#making-your-code-readable">Making your code readable</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">Comments</a>
+  <ul class="collapse">
+  <li><a href="#header" id="toc-header" class="nav-link" data-scroll-target="#header">Header</a></li>
+  <li><a href="#inline" id="toc-inline" class="nav-link" data-scroll-target="#inline">Inline</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  </ul></li>
+  <li><a href="#leveraging-notebooks" id="toc-leveraging-notebooks" class="nav-link" data-scroll-target="#leveraging-notebooks">Leveraging Notebooks</a></li>
+  <li><a href="#hands-on" id="toc-hands-on" class="nav-link" data-scroll-target="#hands-on">Hands-on</a>
+  <ul class="collapse">
+  <li><a href="#documenting" id="toc-documenting" class="nav-link" data-scroll-target="#documenting">Documenting</a></li>
+  <li><a href="#commenting" id="toc-commenting" class="nav-link" data-scroll-target="#commenting">Commenting</a></li>
+  </ul></li>
+  <li><a href="#metadata" id="toc-metadata" class="nav-link" data-scroll-target="#metadata">Metadata</a></li>
+  <li><a href="#data-provenance-semantics" id="toc-data-provenance-semantics" class="nav-link" data-scroll-target="#data-provenance-semantics">Data provenance &amp; semantics</a></li>
+  <li><a href="#licensing" id="toc-licensing" class="nav-link" data-scroll-target="#licensing">Licensing</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Documenting things</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/found_documentationjpg.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">https://twitter.com/JenMsft/status/1557218211971489792</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="the-power-of-readme" class="level2">
+<h2 class="anchored" data-anchor-id="the-power-of-readme">The power of README</h2>
+<p>README files are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.</p>
+<p>Good types of information to have on a README:</p>
+<ul>
+<li>Title capturing the essence of the project</li>
+<li>A short explanation of the goal / purpose</li>
+<li>How to install / where to start</li>
+<li>A quick demo on how to use the content (can be a link to another document as well)</li>
+<li>What to do if a bug is spotted</li>
+<li>How to contribute</li>
+<li>Licensing</li>
+<li>Acknowledgements of authors, contributors, sponsors or other related work</li>
+</ul>
+<p>Adding images, short videos / animations can make a README more engaging.</p>
+<section id="need-some-inspiration" class="level3">
+<h3 class="anchored" data-anchor-id="need-some-inspiration">Need some inspiration ?</h3>
+<ul>
+<li><p>Here is a interesting template: https://github.com/navendu-pottekkat/awesome-readme/tree/master</p></li>
+<li><p>When you start an R package with the <code>usethis</code> package, a README will be created for you with all the relevant sections for such type of project.</p></li>
+<li><p>pick a package you like and inspect their README</p></li>
+</ul>
+</section>
+</section>
+<section id="making-your-code-readable" class="level2">
+<h2 class="anchored" data-anchor-id="making-your-code-readable">Making your code readable</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/code_handover.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">https://twitter.com/cjm4189/status/1557346489613094914</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It is important to make your code easy to read if you hope that others will reuse it. It starts with using a <strong>consistent style</strong> withing your scripts (at least within a project).</p>
+<ul>
+<li>Here is a good style guide for R: https://style.tidyverse.org/</li>
+<li>Style guide for Python: https://www.python.org/dev/peps/pep-0008/</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> this</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!</code></pre>
+</div>
+</div>
+<p>There is also the <strong>visual aspect</strong> of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. <em>Indentation</em>, <em>spaces</em>, and <em>empty lines</em> should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions. Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, <em>try to add four <code>-</code> or <code>#</code> after a line starting with one or several <code>#</code> in an R Script!</em></p>
+</section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p><strong><em>Real Programmers don’t comment their code. If it was hard to write, it should be hard to understand.</em></strong><br>
+Tom Van Vleck, based on people he knew_ (https://multicians.org/thvv/realprogs.html)</p>
+<p>Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that <strong>comments should work in complement of the code</strong> and should not being seen as work around vague naming conventions of variables or functions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">9.81</span>  <span class="co">#  gravitational acceleration</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gravity_acc <span class="ot">&lt;-</span> <span class="fl">9.81</span>  <span class="co">#  gravitational acceleration</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="header" class="level3">
+<h3 class="anchored" data-anchor-id="header">Header</h3>
+<p>It is good to add a header to your script that will provide basic information such as:</p>
+<ul>
+<li>Purpose of the script (Long title style)</li>
+<li>Who are the authors</li>
+<li>A contact email</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li>A longer description about the script purpose</li>
+<li>A starting date and potentially last updated one, although this information becomes redundant with repository information</li>
+</ul>
+<p>Note that R Studio does something similar by default when creating an new R Markdown document!</p>
+</section>
+<section id="inline" class="level3">
+<h3 class="anchored" data-anchor-id="inline">Inline</h3>
+<p>It does not matter if you are using a script or notebook. It is important to provide comments along your code to complement it by:</p>
+<ul>
+<li>explaining what the code does</li>
+<li>capturing decisions that were made on the analytical side. For example, why a specific value was used for a threshold.</li>
+<li>specifying when some code was added to handle an edge case such as an unexpected value in the data (so a new user doesn’t have to guess what does lines of code and might want to delete them assuming it is not necessary)</li>
+</ul>
+<p>Other thoughts:</p>
+<ul>
+<li>It is OK to state (what seems) the obvious (some might disagree with this statement)</li>
+<li>Try to keep comments to the point and short</li>
+</ul>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<p>Both Python and R have conventions on how to document functions. Adopting those conventions will help you to make your code readable but also to automate part of the documentation development.</p>
+<section id="roxygen2" class="level4">
+<h4 class="anchored" data-anchor-id="roxygen2">Roxygen2</h4>
+<p>The goal of roxygen2 is to make documenting your code as easy as possible. It can dynamically inspect the objects that it’s documenting, so it can automatically add data that you’d otherwise have to write by hand.</p>
+<p>How do we insert it? Make sure you cursor is inside the function you want to document and from RStudio Menu <em>Code -&gt; Insert Roxygen Skeleton</em></p>
+<p>Example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Add together two numbers</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x A number</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param y A number</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' @return The sum of \code{x} and \code{y}</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' add(1, 1)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' add(10, 1)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>add2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> y</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Try it! - Copy the function (without the documentation) in a new script - Add a third parameter to the function such as it sums 3 numbers - Add the Roxygen skeleton - Fill it to best describe your function</p>
+<p>Note that when you are developing an R package, the Roxygen skeleton can be leveraged to develop the help pages of your package so you only have one place to update and the help will synchronize automatically.</p>
+</section>
+<section id="python-docstring" class="level4">
+<h4 class="anchored" data-anchor-id="python-docstring">Python Docstring</h4>
+<p>A docstring is a string literal that occurs as the first statement in a module, function, class, or method definition. Such a docstring becomes the <code>__doc__</code> special attribute of that object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">complex</span>(real<span class="op">=</span><span class="fl">0.0</span>, imag<span class="op">=</span><span class="fl">0.0</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Form a complex number.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Keyword arguments:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    real -- the real part (default 0.0)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    imag -- the imaginary part (default 0.0)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> imag <span class="op">==</span> <span class="fl">0.0</span> <span class="kw">and</span> real <span class="op">==</span> <span class="fl">0.0</span>:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> complex_zero</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here for more: https://www.python.org/dev/peps/pep-0257/</p>
+</section>
+</section>
+</section>
+<section id="leveraging-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="leveraging-notebooks">Leveraging Notebooks</h2>
+<p>As we have discussed and experimented with Notebooks during the week. It is because Notebooks provide space to further develop content, such as methodology, around the code you are developing in your analysis. Notebooks also enable you to integrate the outputs of your scientific research with the code that was used to produce it. Finally, notebooks can be rendered into various format that let them share with a broad audience.</p>
+<p>Notebooks are not only used within the scientific community, see <a href="https://peerj.com/preprints/3182.pdf">here</a> for some thoughts from Airbnb data science team.</p>
+<hr>
+</section>
+<section id="hands-on" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on">Hands-on</h2>
+<section id="documenting" class="level3">
+<h3 class="anchored" data-anchor-id="documenting">Documenting</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>getPercent <span class="ot">&lt;-</span> <span class="cf">function</span>( value, pct ) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> value <span class="sc">*</span> ( pct <span class="sc">/</span> <span class="dv">100</span> )</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>( result )</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Try adding the Roxygen Skeleton to this function and fill all the information you think is necessary to document the function</p>
+</section>
+<section id="commenting" class="level3">
+<h3 class="anchored" data-anchor-id="commenting">Commenting</h3>
+<p>Let’s try to improve the readability and documentation of this repository: <a href="https://github.com/brunj7/better-comments" class="uri">https://github.com/brunj7/better-comments</a>. Follow the instructions on the README</p>
+<p>For inspiration, you can check out the NASA code for APOLLO 11 dating from 1969: <a href="https://github.com/chrislgarry/Apollo-11" class="uri">https://github.com/chrislgarry/Apollo-11</a>!!</p>
+<hr>
+</section>
+</section>
+<section id="metadata" class="level2">
+<h2 class="anchored" data-anchor-id="metadata">Metadata</h2>
+<p>This topic will be the focus of our Fall course <a href="https://docs.python-guide.org/writing/documentation/">EDS-213</a>. This a very important topic for scientific reproducibility and for today we will be only provide a partial overview of this broader topic.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/DLC.png" class="img-fluid figure-img" style="width:150.0%"></p>
+<figcaption class="figure-caption">Data life cycle, DataONE</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Metadata (data about data) is an important part of the data life cycle because it enables data reuse long after the original collection. The goal is to have enough information for the researcher to understand the data, interpret the data, and then re-use the data in another study.</p>
+<p>Here are good questions to answer with your metadata:</p>
+<ul>
+<li>What was measured?</li>
+<li>Who measured it?</li>
+<li>When was it measured?</li>
+<li>Where was it measured?</li>
+<li>How was it measured?</li>
+<li>How is the data structured?</li>
+<li>Why was the data collected?</li>
+<li>Who should get credit for this data (researcher AND funding agency)?</li>
+<li>How can this data be reused (licensing)?</li>
+</ul>
+<p>How do you organize all this information? You could use a free form format, like a README file or spreadsheet. But there is also great advantage to use a more standardized way that will make the content not only <strong>Human readable but also machine readable</strong>. This will enhance the data discovery as specific information will be potentially tagged or attributed to specific aspect of your data (e.g.&nbsp;spatial or temporal coverage, taxonomy, …).</p>
+<p>There are a number of environmental <strong>metadata standards</strong> (think, templates) that you could use, including the <a href="https://eml.ecoinformatics.org/">Ecological Metadata Language (EML)</a>, <a href="https://www.fgdc.gov/metadata/iso-standards">Geospatial Metadata Standards</a> like ISO 19115 and ISO 19139, the <a href="https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/biometadata/biodatap.pdf">Biological Data Profile (BDP)</a>, <a href="https://dublincore.org/">Dublin Core</a>, <a href="https://dwc.tdwg.org/">Darwin Core</a>, <a href="https://www.loc.gov/standards/premis/">PREMIS</a>, the <a href="http://www.loc.gov/standards/mets/">Metadata Encoding and Transmission Standard (METS)</a>, and the list goes on and on.</p>
+</section>
+<section id="data-provenance-semantics" class="level2">
+<h2 class="anchored" data-anchor-id="data-provenance-semantics">Data provenance &amp; semantics</h2>
+<p><strong>Data provenance</strong> is tracing the origin of a data set to the raw-data that were used as input of the processing / analysis that led to the creation of this data set. It can be done more or less formally and this is an active area of research. For today we will be focusing on capturing the information about the data you are collecting. Here are a set of good questions to help you in that process:</p>
+<ul>
+<li>Source / owner (Person, institution, website, ….)</li>
+<li>When was it acquired ?</li>
+<li>By whom on the WG ?</li>
+<li>Where is it currently located (Google drive, server, ….) ?</li>
+<li>Short description of the data</li>
+<li>Track if it is used in your analysis</li>
+</ul>
+<p><a href="https://docs.google.com/spreadsheets/d/1LLpOyydCGTZdY8Xk2fDmTPVy8efF-47GtEXkAjvYsJI/edit#gid=0">Here</a> is a template of a data log that could hep to store this information</p>
+<p>Another important and related aspect and also active field of research is <strong>data semantics</strong>. Often data sets store complex information and concepts that can be describe more of less accurately. Let’s take an example, you have receive a csv file storing a table with several variables about a fish stock assessment. One of the variable is named “length”. However there are many ways to measure the length of a fish. Which one is it?</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/fish_length.png" class="img-fluid" width="694"></p>
+</div>
+</div>
+<p>Data semantics aims at clearly identify those concepts relying on vocabularies and ontologies, such as <a href="http://www.obofoundry.org/ontology/envo.html">ENVO</a> in environmental sciences. In addition, it enables the leverage relations between those concepts to help with (data) discovery.</p>
+</section>
+<section id="licensing" class="level2">
+<h2 class="anchored" data-anchor-id="licensing">Licensing</h2>
+<p>It is a good practice to add a license to a repository / project. It will help to clarify what are the expectations regarding using and potentially contributing to this work.</p>
+<p>Here is a good website to choose a license:</p>
+<p>Here is also good set of instructions on how to make this happen on a GitHub repository: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository</p>
+<p>Note that for content (such as this course), there is also another type of licensing that can be used: https://creativecommons.org/licenses/</p>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<ul>
+<li>Awesome README: https://towardsdatascience.com/how-to-write-an-awesome-readme-68bf4be91f8b</li>
+<li>How to write a great README: https://x-team.com/blog/how-to-write-a-great-readme/</li>
+<li>Python Hichhiker’s guide:
+<ul>
+<li>style: https://docs.python-guide.org/writing/style/</li>
+<li>documentation: https://docs.python-guide.org/writing/documentation/</li>
+</ul></li>
+<li>Documenting Python Code: A Complete Guide: https://realpython.com/documenting-python-code/</li>
+<li>Roxygen2: https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html</li>
+<li>Introduction to Software Engineering by Jason Coposky: https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf</li>
+<li>Functional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming</li>
+<li>Scoping in R: http://adv-r.had.co.nz/Functions.html</li>
+<li>https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages</li>
+<li>http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language</li>
+<li>Software carpentry: https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R/</li>
+</ul>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>Large portion of this material have been adapted from NCEAS Reproducible Research Techniques for Synthesis course <a href="https://learning.nceas.ucsb.edu/2021-02-RRCourse/" class="uri">https://learning.nceas.ucsb.edu/2021-02-RRCourse/</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<br>
+<p align="center">
+<a href="https://bren.ucsb.edu/"><img src="img/bren-logo_color.png" alt="Bren School logo" style="width:350px;"></a>
+</p>
+
+<p align="center">
+  This website was made with <u><a href="https://quarto.org">quarto by Posit</a></u>.
+</p>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

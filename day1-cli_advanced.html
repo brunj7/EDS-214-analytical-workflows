@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Working on a remote server</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="theme.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">EDS214 - Analytical Workflows and Scientific Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Daily Materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="./day_1.html" rel="" target="">
+ <span class="dropdown-text">Day 1: Reproducible &amp; collaborative workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_2.html" rel="" target="">
+ <span class="dropdown-text">Day 2: Developing analytical workflows as a team</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_3.html" rel="" target="">
+ <span class="dropdown-text">Day 3: Managing your code and data on a remote server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_4.html" rel="" target="">
+ <span class="dropdown-text">Day 4: Documenting and sharing things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_5.html" rel="" target="">
+ <span class="dropdown-text">Day 5: Reproducible for all</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./group_project.html" rel="" target="">
+ <span class="dropdown-text">Group project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/brunj7/EDS-214-analytical-workflows" rel="" target=""><i class="bi bi-fab fa-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#advanced-topics-at-the-command-line" id="toc-advanced-topics-at-the-command-line" class="nav-link active" data-scroll-target="#advanced-topics-at-the-command-line">Advanced Topics at the command line</a>
+  <ul class="collapse">
+  <li><a href="#connecting-to-a-remote-server-via-ssh" id="toc-connecting-to-a-remote-server-via-ssh" class="nav-link" data-scroll-target="#connecting-to-a-remote-server-via-ssh">Connecting to a remote server via <code>ssh</code></a></li>
+  <li><a href="#unix-systems-are-multi-user" id="toc-unix-systems-are-multi-user" class="nav-link" data-scroll-target="#unix-systems-are-multi-user">Unix systems are multi-user</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting help</a></li>
+  <li><a href="#finding-stuff" id="toc-finding-stuff" class="nav-link" data-scroll-target="#finding-stuff">finding stuff</a></li>
+  <li><a href="#getting-things-done" id="toc-getting-things-done" class="nav-link" data-scroll-target="#getting-things-done">Getting things done</a>
+  <ul class="collapse">
+  <li><a href="#some-useful-special-commands-using-the-control-key" id="toc-some-useful-special-commands-using-the-control-key" class="nav-link" data-scroll-target="#some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</a></li>
+  <li><a href="#process-management" id="toc-process-management" class="nav-link" data-scroll-target="#process-management">Process management</a></li>
+  <li><a href="#what-about-space" id="toc-what-about-space" class="nav-link" data-scroll-target="#what-about-space">What about “space”</a></li>
+  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a></li>
+  </ul></li>
+  <li><a href="#a-sampling-of-simple-commands-for-dealing-with-files" id="toc-a-sampling-of-simple-commands-for-dealing-with-files" class="nav-link" data-scroll-target="#a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</a></li>
+  <li><a href="#get-into-the-flow-with-pipes" id="toc-get-into-the-flow-with-pipes" class="nav-link" data-scroll-target="#get-into-the-flow-with-pipes">Get into the flow, with pipes</a></li>
+  <li><a href="#text-editing" id="toc-text-editing" class="nav-link" data-scroll-target="#text-editing">Text editing</a>
+  <ul class="collapse">
+  <li><a href="#some-editors" id="toc-some-editors" class="nav-link" data-scroll-target="#some-editors">Some editors</a></li>
+  </ul></li>
+  <li><a href="#searching-advanced-utilities" id="toc-searching-advanced-utilities" class="nav-link" data-scroll-target="#searching-advanced-utilities">Searching advanced utilities</a>
+  <ul class="collapse">
+  <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep">grep</a></li>
+  <li><a href="#lets-look-at-our-text-file" id="toc-lets-look-at-our-text-file" class="nav-link" data-scroll-target="#lets-look-at-our-text-file">Let’s look at our text file</a></li>
+  </ul></li>
+  <li><a href="#create-custom-commands-with-alias" id="toc-create-custom-commands-with-alias" class="nav-link" data-scroll-target="#create-custom-commands-with-alias">Create custom commands with “alias”</a></li>
+  </ul></li>
+  <li><a href="#aknowledgements" id="toc-aknowledgements" class="nav-link" data-scroll-target="#aknowledgements">Aknowledgements</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Working on a remote server</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="advanced-topics-at-the-command-line" class="level1">
+<h1>Advanced Topics at the command line</h1>
+<p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
+<section id="connecting-to-a-remote-server-via-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-a-remote-server-via-ssh">Connecting to a remote server via <code>ssh</code></h2>
+<p>From the gitbash (MS Windows) or the terminal (Mac) type:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> taylor.bren.ucsb.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will be prompted for your username and password.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/aurora-ssh.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">aurora_ssh</figcaption>
+</figure>
+</div>
+<p>You can also directly add your username:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> brun@taylor.bren.ucsb.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this case, you will be only asked for your password as you already specified which user you want to connect with.</p>
+</section>
+<section id="unix-systems-are-multi-user" class="level2">
+<h2 class="anchored" data-anchor-id="unix-systems-are-multi-user">Unix systems are multi-user</h2>
+<ul>
+<li>Who else is logged into this machine? <code>who</code></li>
+<li>Who is logged into “this shell”? <code>whoami</code></li>
+</ul>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting help</h2>
+<ul>
+<li><code>&lt;command&gt; -h</code>, <code>&lt;command&gt; --help</code></li>
+<li><code>man</code>, <code>info</code>, <code>apropos</code>, <code>whereis</code></li>
+<li>Search the web!</li>
+</ul>
+</section>
+<section id="finding-stuff" class="level2">
+<h2 class="anchored" data-anchor-id="finding-stuff">finding stuff</h2>
+<p>Show me my Rmarkdown files!</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-iname</span> <span class="st">'*.Rmd'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Which files are larger than 1GB?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>With more details about the files:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-size</span> +1G <span class="at">-ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="getting-things-done" class="level2">
+<h2 class="anchored" data-anchor-id="getting-things-done">Getting things done</h2>
+<section id="some-useful-special-commands-using-the-control-key" class="level3">
+<h3 class="anchored" data-anchor-id="some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</h3>
+<ul>
+<li>Cancel (abort) a command: <code>Ctrl-c</code> Note: very different than Windows!!</li>
+<li>Stop (suspend) a command: <code>Ctrl-z</code></li>
+<li><code>Ctrl-z</code> can be used to suspend, then background a process</li>
+</ul>
+</section>
+<section id="process-management" class="level3">
+<h3 class="anchored" data-anchor-id="process-management">Process management</h3>
+<ul>
+<li>Like Windows Task Manager, OSX Activity Monitor</li>
+<li><strong><code>top</code></strong>, <code>ps</code>, <code>jobs</code> (hit <code>q</code> to get out!)</li>
+<li><code>kill</code> to delete an unwanted job or process</li>
+<li>Foreground and background: <code>&amp;</code></li>
+</ul>
+</section>
+<section id="what-about-space" class="level3">
+<h3 class="anchored" data-anchor-id="what-about-space">What about “space”</h3>
+<ul>
+<li>How much storage is available on this system? <code>df -h</code></li>
+<li>How much storage am “I” using overall? <code>du -hs &lt;folder&gt;</code></li>
+<li>How much storage am “I” using, by sub directory? <code>du -h &lt;folder&gt;</code></li>
+</ul>
+</section>
+<section id="history" class="level3">
+<h3 class="anchored" data-anchor-id="history">History</h3>
+<ul>
+<li>See your command history: <code>history</code></li>
+<li>Re-run last command: <code>!!</code> (pronounced “bang-bang”)</li>
+<li>Re-run 32th command: <code>!32</code></li>
+<li>Re-run 5th from last command: <code>!-5</code></li>
+<li>Re-run last command that started with ‘c’: <code>!c</code></li>
+</ul>
+</section>
+</section>
+<section id="a-sampling-of-simple-commands-for-dealing-with-files" class="level2">
+<h2 class="anchored" data-anchor-id="a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</h2>
+<ul>
+<li><code>wc</code> count lines, words, and/or characters</li>
+<li><code>diff</code> compare two files for differences</li>
+<li><code>sort</code> sort lines in a file</li>
+<li><code>uniq</code> report or filter out repeated lines in a file</li>
+</ul>
+</section>
+<section id="get-into-the-flow-with-pipes" class="level2">
+<h2 class="anchored" data-anchor-id="get-into-the-flow-with-pipes">Get into the flow, with pipes</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pipe_split.png" title="http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><code>stdin</code>, <code>stdout</code>, <code>stderr</code></figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="pp">*</span>.png <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="pp">*</span>.png <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="op">&gt;</span> pngcount.txt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> diff <span class="op">&lt;(</span><span class="fu">sort</span> file1.txt<span class="op">)</span> <span class="op">&lt;(</span><span class="fu">sort</span> file2.txt<span class="op">)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls foo <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>note use of <code>*</code> as character wildcard for zero or more matches (same in Mac and Windows)</li>
+<li><code>?</code> matches single character; <code>_</code> is SQL query equivalent</li>
+</ul>
+</section>
+<section id="text-editing" class="level2">
+<h2 class="anchored" data-anchor-id="text-editing">Text editing</h2>
+<section id="some-editors" class="level3">
+<h3 class="anchored" data-anchor-id="some-editors">Some editors</h3>
+<ul>
+<li><code>vim</code></li>
+<li><code>emacs</code></li>
+<li><code>nano</code></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano .bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="searching-advanced-utilities" class="level2">
+<h2 class="anchored" data-anchor-id="searching-advanced-utilities">Searching advanced utilities</h2>
+<ul>
+<li><code>grep</code> search files for text</li>
+<li><code>sed</code> filter and transform text</li>
+<li><code>find</code> advanced search for files/directories</li>
+</ul>
+<section id="grep" class="level3">
+<h3 class="anchored" data-anchor-id="grep">grep</h3>
+<p>Show all lines containing “bug” in my R scripts</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep bug <span class="pp">*</span>.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now count the number of occurrences per file</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-c</span> bug <span class="pp">*</span>.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Print the names of files that contain bug</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-l</span> bug <span class="pp">*</span>.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lets-look-at-our-text-file" class="level3">
+<h3 class="anchored" data-anchor-id="lets-look-at-our-text-file">Let’s look at our text file</h3>
+<ul>
+<li><code>cat</code> print file(s)</li>
+<li><code>head</code> print first few lines of file(s)</li>
+<li><code>tail</code> print last few lines of file(s)</li>
+<li><code>less</code> “pager” – view file interactively (type <code>q</code> to quit command)</li>
+<li><code>od --t</code> “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brun@aurora:~/data$ head <span class="at">-3</span> env.csv</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">EnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">1,*Loc</span> ID,-888,-888,-888,-888,-888,-888,-888,-888</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">1,10101,-888,-888,-888,-888,-888,-888,-888,-888</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brun@aurora:~/data$ head <span class="at">-3</span> env.csv <span class="kw">|</span> <span class="fu">od</span> <span class="at">-cx</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ex">0000000</span>   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>           <span class="ex">6e45</span>    4976    2c44    6f4c    4963    2c44    694d    446e</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="ex">0000020</span>   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>           <span class="ex">7461</span>    2c65    614d    4478    7461    2c65    6e41    506e</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="ex">0000040</span>   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>           <span class="ex">5450</span>    4d2c    5441    4d2c    7861    5441    4d2c    6e69</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="ex">0000060</span>   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>           <span class="ex">5441</span>    572c    6165    6874    7265    2c53    6f43    6d6d</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="ex">0000100</span>   e   n   t   s  <span class="dt">\r</span>  <span class="dt">\n</span>   1   ,   <span class="pp">*</span>   L   o   c       I   D   ,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>           <span class="ex">6e65</span>    7374    0a0d    2c31    4c2a    636f    4920    2c44</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="ex">0000120</span>   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>           <span class="ex">382d</span>    3838    2d2c    3838    2c38    382d    3838    2d2c</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="ex">0000140</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2c38    382d    3838    2d2c    3838    2c38    382d</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="ex">0000160</span>   8   8   ,   <span class="at">-</span>   8   8   8  <span class="dt">\r</span>  <span class="dt">\n</span>   1   ,   1   0   1   0   1</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2d2c    3838    0d38    310a    312c    3130    3130</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="ex">0000200</span>   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>           <span class="ex">2d2c</span>    3838    2c38    382d    3838    2d2c    3838    2c38</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="ex">0000220</span>   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span>   8   8   8   ,   <span class="at">-</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>           <span class="ex">382d</span>    3838    2d2c    3838    2c38    382d    3838    2d2c</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="ex">0000240</span>   8   8   8   ,   <span class="at">-</span>   8   8   8  <span class="dt">\r</span>  <span class="dt">\n</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>           <span class="ex">3838</span>    2c38    382d    3838    0a0d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="create-custom-commands-with-alias" class="level2">
+<h2 class="anchored" data-anchor-id="create-custom-commands-with-alias">Create custom commands with “alias”</h2>
+<p><code>alias lwc='ls *.jpg | wc -l'</code></p>
+<p>You can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g.&nbsp;<code>.bashrc</code></p>
+</section>
+</section>
+<section id="aknowledgements" class="level1">
+<h1>Aknowledgements</h1>
+<p>This section reuses a lot of materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<br>
+<p align="center">
+<a href="https://bren.ucsb.edu/"><img src="img/bren-logo_color.png" alt="Bren School logo" style="width:350px;"></a>
+</p>
+
+<p align="center">
+  This website was made with <u><a href="https://quarto.org">quarto by Posit</a></u>.
+</p>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

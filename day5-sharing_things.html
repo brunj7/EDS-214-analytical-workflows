@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Sharing Things</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="theme.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">EDS214 - Analytical Workflows and Scientific Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Daily Materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="./day_1.html" rel="" target="">
+ <span class="dropdown-text">Day 1: Reproducible &amp; collaborative workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_2.html" rel="" target="">
+ <span class="dropdown-text">Day 2: Developing analytical workflows as a team</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_3.html" rel="" target="">
+ <span class="dropdown-text">Day 3: Managing your code and data on a remote server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_4.html" rel="" target="">
+ <span class="dropdown-text">Day 4: Documenting and sharing things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_5.html" rel="" target="">
+ <span class="dropdown-text">Day 5: Reproducible for all</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./group_project.html" rel="" target="">
+ <span class="dropdown-text">Group project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/brunj7/EDS-214-analytical-workflows" rel="" target=""><i class="bi bi-fab fa-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#github-pages-the-r-markdown-family" id="toc-github-pages-the-r-markdown-family" class="nav-link active" data-scroll-target="#github-pages-the-r-markdown-family">GitHub pages &amp; the R Markdown family</a></li>
+  <li><a href="#interactive-web-applications" id="toc-interactive-web-applications" class="nav-link" data-scroll-target="#interactive-web-applications">Interactive web applications</a>
+  <ul class="collapse">
+  <li><a href="#r-shiny" id="toc-r-shiny" class="nav-link" data-scroll-target="#r-shiny">R Shiny <img style="float: right;width: 30px;" src="img/shiny_logo.png"></a></li>
+  <li><a href="#html-widgets" id="toc-html-widgets" class="nav-link" data-scroll-target="#html-widgets">Html widgets</a></li>
+  </ul></li>
+  <li><a href="#plotly" id="toc-plotly" class="nav-link" data-scroll-target="#plotly">plotly <img style="float: right;width: 60px;" src="img/logo-plotly.svg"></a></li>
+  <li><a href="#code-repositories" id="toc-code-repositories" class="nav-link" data-scroll-target="#code-repositories">Code Repositories</a>
+  <ul class="collapse">
+  <li><a href="#binder-jupyter" id="toc-binder-jupyter" class="nav-link" data-scroll-target="#binder-jupyter">Binder &amp; jupyter <img style="float: right;width: 60px;" src="img/binder_logo.svg"></a></li>
+  <li><a href="#citing-your-code" id="toc-citing-your-code" class="nav-link" data-scroll-target="#citing-your-code">Citing your code</a></li>
+  </ul></li>
+  <li><a href="#data-repositories" id="toc-data-repositories" class="nav-link" data-scroll-target="#data-repositories">Data Repositories</a></li>
+  <li><a href="#you-as-an-author" id="toc-you-as-an-author" class="nav-link" data-scroll-target="#you-as-an-author">You as an Author <img style="float: right;width: 35px;" src="img/orcid_logo.svg"></a></li>
+  <li><a href="#what-about-your-computing-environment" id="toc-what-about-your-computing-environment" class="nav-link" data-scroll-target="#what-about-your-computing-environment">What about your computing environment</a>
+  <ul class="collapse">
+  <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info">Session info</a></li>
+  <li><a href="#containers" id="toc-containers" class="nav-link" data-scroll-target="#containers">Containers</a></li>
+  </ul></li>
+  <li><a href="#code-friendly-presentations" id="toc-code-friendly-presentations" class="nav-link" data-scroll-target="#code-friendly-presentations">Code friendly Presentations</a>
+  <ul class="collapse">
+  <li><a href="#xarigan" id="toc-xarigan" class="nav-link" data-scroll-target="#xarigan">Xarigan</a></li>
+  <li><a href="#quarto-presentations" id="toc-quarto-presentations" class="nav-link" data-scroll-target="#quarto-presentations">Quarto Presentations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sharing Things</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="github-pages-the-r-markdown-family" class="level2">
+<h2 class="anchored" data-anchor-id="github-pages-the-r-markdown-family">GitHub pages &amp; the R Markdown family</h2>
+<p>You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see <a href="https://rstudio.github.io/distill/website.html">here</a> for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout <a href="https://quarto.org/">Quarto</a> that is a cross-language tool to render documents from code!</p>
+</section>
+<section id="interactive-web-applications" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-web-applications">Interactive web applications</h2>
+<p>When you have complex data that you want to not only visualize but also to let the user interact with your data or customize parameters used in an analysis, interactive web applications are a great way to increase engagement. The good news is that you do not need to be a web developer anymore to spin such applications or dashboards.</p>
+<section id="r-shiny" class="level3">
+<h3 class="anchored" data-anchor-id="r-shiny">R Shiny <img style="float: right;width: 30px;" src="img/shiny_logo.png"></h3>
+<p>R Shiny is a very interesting framework that lets you write R code that will then be translated into javascript for you and thus let you develop web application without having to learn any new programming language. Note that you will need a server to host the application.</p>
+<p>Check out this gallery of shiny apps: https://shiny.rstudio.com/gallery/</p>
+<p>Getting started with Shiny: https://shiny.rstudio.com/tutorial/</p>
+</section>
+<section id="html-widgets" class="level3">
+<h3 class="anchored" data-anchor-id="html-widgets">Html widgets</h3>
+<p>Html widgets offer some great interactive data visualization. It is more limited that Shiny because you can not modify parameters to modify the data use, but it has the advantage that it does not need a server to run the widget and it can be inserted directly into an R Markdown.</p>
+<p>Here to get started: https://www.htmlwidgets.org/</p>
+</section>
+</section>
+<section id="plotly" class="level2">
+<h2 class="anchored" data-anchor-id="plotly">plotly <img style="float: right;width: 60px;" src="img/logo-plotly.svg"></h2>
+<p><a href="https://plotly.com/"><code>plotly</code></a> enable you to develop great interactive data visualizations. It has the advantage to be available both in <a href="https://plotly.com/r/">R</a> and <a href="https://plotly.com/python/">Python</a> (and javascript). One great thing in R is that if you are a ggplot master, you can write your plot code using ggplot and transform it into a plotly plot with one line of code (<a href="https://plotly.com/ggplot2/getting-started/">here</a> for an example)</p>
+<p>Note there are also other python libraries to create interactive plots, here are a few: https://mode.com/blog/python-interactive-plot-libraries/</p>
+</section>
+<section id="code-repositories" class="level1">
+<h1>Code Repositories</h1>
+<ul>
+<li>GitHub</li>
+<li>GitLab (open source!!): https://about.gitlab.com/</li>
+<li>Bitbucket: https://bitbucket.org/product</li>
+<li>…</li>
+</ul>
+<p><strong>Don’t forget to provide information about the versions of software and libraries that were used when running this specific analysis</strong></p>
+<p>It is also a great idea to add license to your project so people know how they can use your code: https://choosealicense.com/</p>
+<section id="binder-jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="binder-jupyter">Binder &amp; jupyter <img style="float: right;width: 60px;" src="img/binder_logo.svg"></h2>
+<p>Transform your <code>git</code> based repo into an interactive jupyter notebook <a href="https://mybinder.org/" class="uri">https://mybinder.org/</a>!! So other researchers can run your code without having to install anything!</p>
+<p><img src="https://media.giphy.com/media/9SIAXIrMh4AWBx4GBB/giphy.gif" class="img-fluid"></p>
+<p><strong>Try it:</strong> https://mybinder.org/</p>
+</section>
+<section id="citing-your-code" class="level2">
+<h2 class="anchored" data-anchor-id="citing-your-code">Citing your code</h2>
+<p>Note that it is also possible to assign a <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI</a> to cite a specific version of your repository. For example, see <a href="https://guides.github.com/activities/citable-code/">here</a> for more information on how to link <a href="https://zenodo.org/">Zenodo</a> and GitHub.</p>
+</section>
+</section>
+<section id="data-repositories" class="level1">
+<h1>Data Repositories</h1>
+<p>As we discussed earlier, code repositories are note necessarily the best home for your data sets, especially if their format is not text based and if their size is large (&gt;100MB). In addition data repositories offer better support to metadata standard that will help you to describe your data and thus make them more discoverable. Like code repositories, data repositories will version your data creating an history of your data sets that you can navigate. In addition, most of the data repositories will also offer to mint a DOI to cite your data (to be precise a specific version of your data) in a convenient and non ubiquitous way.</p>
+<p>We will talk more in depth about data repositories in the Fall, but for now we will mention to entryways to environmental data federation:</p>
+<ul>
+<li>DataONE: a federation of data repositories, https://www.dataone.org/</li>
+<li>re3data: a registry of research data repositories, https://www.re3data.org/</li>
+</ul>
+<p>Starting by searching data in your field and see where other researchers are archiving their data is often a great way to determine which data repository could be a good home for your own data.</p>
+</section>
+<section id="you-as-an-author" class="level1">
+<h1>You as an Author <img style="float: right;width: 35px;" src="img/orcid_logo.svg"></h1>
+<p>It is important to be able to reference to yourself as a researcher and as an author of your work in a non ambiguous manner. From their website: <em><a href="https://info.orcid.org/what-is-orcid/">ORCID</a> is a great way to create a persistent digital identifier (an ORCID iD) that you own and control, and that distinguishes you from every other researcher.</em> ORCID is also more and more use as an authentication system for many services (e.g.&nbsp;data repositories).</p>
+</section>
+<section id="what-about-your-computing-environment" class="level1">
+<h1>What about your computing environment</h1>
+<section id="session-info" class="level2">
+<h2 class="anchored" data-anchor-id="session-info">Session info</h2>
+<p>Your analysis was done with specific versions both of the program used but also of all the packages involved, as well as the specifications of Operating System (OS) that was used. The good use is that there ar tools to let you capture this information in a systematic manner.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.3.1 (2023-06-16)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.2 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] htmlwidgets_1.6.2 compiler_4.3.1    fastmap_1.1.1     cli_3.6.1        
+ [5] tools_4.3.1       htmltools_0.5.5   rstudioapi_0.15.0 yaml_2.3.7       
+ [9] rmarkdown_2.23    knitr_1.43        jsonlite_1.8.7    xfun_0.39        
+[13] digest_0.6.33     rlang_1.1.1       evaluate_0.21    </code></pre>
+</div>
+</div>
+<p>or even better:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.3.1 (2023-06-16)
+ os       Ubuntu 22.04.2 LTS
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  C.UTF-8
+ ctype    C.UTF-8
+ tz       UTC
+ date     2023-07-25
+ pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package     * version date (UTC) lib source
+ cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.1)
+ callr         3.7.3   2022-11-02 [1] CRAN (R 4.3.1)
+ cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.1)
+ crayon        1.5.2   2022-09-29 [1] CRAN (R 4.3.1)
+ devtools      2.4.5   2022-10-11 [1] any (@2.4.5)
+ digest        0.6.33  2023-07-07 [1] CRAN (R 4.3.1)
+ ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.3.1)
+ evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.1)
+ fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.1)
+ fs            1.6.3   2023-07-20 [1] CRAN (R 4.3.1)
+ glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.1)
+ htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.1)
+ htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.1)
+ httpuv        1.6.11  2023-05-11 [1] CRAN (R 4.3.1)
+ jsonlite      1.8.7   2023-06-29 [1] CRAN (R 4.3.1)
+ knitr         1.43    2023-05-25 [1] CRAN (R 4.3.1)
+ later         1.3.1   2023-05-02 [1] CRAN (R 4.3.1)
+ lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.1)
+ magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.1)
+ memoise       2.0.1   2021-11-26 [1] CRAN (R 4.3.1)
+ mime          0.12    2021-09-28 [1] CRAN (R 4.3.1)
+ miniUI        0.1.1.1 2018-05-18 [1] CRAN (R 4.3.1)
+ pkgbuild      1.4.2   2023-06-26 [1] CRAN (R 4.3.1)
+ pkgload       1.3.2.1 2023-07-08 [1] CRAN (R 4.3.1)
+ prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.3.1)
+ processx      3.8.2   2023-06-30 [1] CRAN (R 4.3.1)
+ profvis       0.3.8   2023-05-02 [1] CRAN (R 4.3.1)
+ promises      1.2.0.1 2021-02-11 [1] CRAN (R 4.3.1)
+ ps            1.7.5   2023-04-18 [1] CRAN (R 4.3.1)
+ purrr         1.0.1   2023-01-10 [1] CRAN (R 4.3.1)
+ R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.1)
+ Rcpp          1.0.11  2023-07-06 [1] CRAN (R 4.3.1)
+ remotes       2.4.2.1 2023-07-18 [1] CRAN (R 4.3.1)
+ rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.1)
+ rmarkdown     2.23    2023-07-01 [1] any (@2.23)
+ rstudioapi    0.15.0  2023-07-07 [1] CRAN (R 4.3.1)
+ sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.1)
+ shiny         1.7.4.1 2023-07-06 [1] CRAN (R 4.3.1)
+ stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.1)
+ stringr       1.5.0   2022-12-02 [1] CRAN (R 4.3.1)
+ urlchecker    1.0.1   2021-11-30 [1] CRAN (R 4.3.1)
+ usethis       2.2.2   2023-07-06 [1] CRAN (R 4.3.1)
+ vctrs         0.6.3   2023-06-14 [1] CRAN (R 4.3.1)
+ xfun          0.39    2023-04-20 [1] CRAN (R 4.3.1)
+ xtable        1.8-4   2019-04-21 [1] CRAN (R 4.3.1)
+ yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.1)
+
+ [1] /home/runner/work/_temp/Library
+ [2] /opt/R/4.3.1/lib/R/site-library
+ [3] /opt/R/4.3.1/lib/R/library
+
+──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+<p>You can save all this content to an <code>session_info.txt</code> file and upload it to your repository.</p>
+<p>In python, using <code>pip freeze &gt; requirements.txt</code> or <code>conda list --export &gt; requirements.txt</code> will create a text file listing all the libraries (and their versions) used in a specific python environment. You can actually use this file to (re)install all the packages and specific versions into a new python environment. It is also great practice to add this file to your repository.</p>
+</section>
+<section id="containers" class="level2">
+<h2 class="anchored" data-anchor-id="containers">Containers</h2>
+<p>A helpful abstraction for capturing the computing environment is a container, whereby a container is created from a set of instructions in a recipe. For the most common containerisation software, Docker, this recipe is called a Dockerfile. Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure and ship the containers to others. A Docker container can be seen as a computer inside your computer.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/docker_drawing.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">http://jsta.github.io/r-docker-tutorial/</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A few good readings:</p>
+<ul>
+<li>Docker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316</li>
+<li>The Whole Tale project: combining containers with data repositories <a href="https://wholetale.org/" class="uri">https://wholetale.org/</a></li>
+<li>Docker tutorial: http://jsta.github.io/r-docker-tutorial/</li>
+<li>Environment Management with Docker: https://environments.rstudio.com/docker</li>
+<li>Sharing and Running R code using Docker: https://aboland.ie/Docker.html</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="code-friendly-presentations" class="level1">
+<h1>Code friendly Presentations</h1>
+<section id="xarigan" class="level2">
+<h2 class="anchored" data-anchor-id="xarigan">Xarigan</h2>
+<p>Xarigan is an R package to create slide deck using R Markdown: https://github.com/yihui/xaringan</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'yihui/xaringan'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/</p>
+</section>
+<section id="quarto-presentations" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-presentations">Quarto Presentations</h2>
+<p>https://quarto.org/docs/presentations/</p>
+<p>https://meghan.rbind.io/blog/quarto-slides/</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<br>
+<p align="center">
+<a href="https://bren.ucsb.edu/"><img src="img/bren-logo_color.png" alt="Bren School logo" style="width:350px;"></a>
+</p>
+
+<p align="center">
+  This website was made with <u><a href="https://quarto.org">quarto by Posit</a></u>.
+</p>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

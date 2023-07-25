@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Working on a remote server</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="theme.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">EDS214 - Analytical Workflows and Scientific Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Daily Materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="./day_1.html" rel="" target="">
+ <span class="dropdown-text">Day 1: Reproducible &amp; collaborative workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_2.html" rel="" target="">
+ <span class="dropdown-text">Day 2: Developing analytical workflows as a team</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_3.html" rel="" target="">
+ <span class="dropdown-text">Day 3: Managing your code and data on a remote server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_4.html" rel="" target="">
+ <span class="dropdown-text">Day 4: Documenting and sharing things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./day_5.html" rel="" target="">
+ <span class="dropdown-text">Day 5: Reproducible for all</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./group_project.html" rel="" target="">
+ <span class="dropdown-text">Group project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/brunj7/EDS-214-analytical-workflows" rel="" target=""><i class="bi bi-fab fa-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
+  <li><a href="#collaborative-setup" id="toc-collaborative-setup" class="nav-link" data-scroll-target="#collaborative-setup">Collaborative Setup</a></li>
+  <li><a href="#what-does-working-on-a-remote-server-means" id="toc-what-does-working-on-a-remote-server-means" class="nav-link" data-scroll-target="#what-does-working-on-a-remote-server-means">What does working on a remote server means?</a></li>
+  <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">RStudio Server</a>
+  <ul class="collapse">
+  <li><a href="#connecting-to-meds-analytical-server" id="toc-connecting-to-meds-analytical-server" class="nav-link" data-scroll-target="#connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</a>
+  <ul class="collapse">
+  <li><a href="#file-structure" id="toc-file-structure" class="nav-link" data-scroll-target="#file-structure">File structure</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#command-line" id="toc-command-line" class="nav-link" data-scroll-target="#command-line">Command line</a>
+  <ul class="collapse">
+  <li><a href="#introduction-to-unix-and-its-siblings" id="toc-introduction-to-unix-and-its-siblings" class="nav-link" data-scroll-target="#introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</a>
+  <ul class="collapse">
+  <li><a href="#some-unix-hallmarks" id="toc-some-unix-hallmarks" class="nav-link" data-scroll-target="#some-unix-hallmarks">Some Unix hallmarks</a></li>
+  </ul></li>
+  <li><a href="#the-command-line-interface-cli" id="toc-the-command-line-interface-cli" class="nav-link" data-scroll-target="#the-command-line-interface-cli">The Command Line Interface (CLI)</a>
+  <ul class="collapse">
+  <li><a href="#why-the-cli-is-worth-learning" id="toc-why-the-cli-is-worth-learning" class="nav-link" data-scroll-target="#why-the-cli-is-worth-learning">Why the CLI is worth learning</a></li>
+  <li><a href="#the-terminal-from-rstudio" id="toc-the-terminal-from-rstudio" class="nav-link" data-scroll-target="#the-terminal-from-rstudio">The Terminal from RStudio</a></li>
+  <li><a href="#navigating-and-managing-filesdirectories-in-nix" id="toc-navigating-and-managing-filesdirectories-in-nix" class="nav-link" data-scroll-target="#navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</a></li>
+  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions">Permissions</a></li>
+  </ul></li>
+  <li><a href="#general-command-syntax" id="toc-general-command-syntax" class="nav-link" data-scroll-target="#general-command-syntax">General command syntax</a>
+  <ul class="collapse">
+  <li><a href="#cli-practice" id="toc-cli-practice" class="nav-link" data-scroll-target="#cli-practice"><strong>CLI Practice</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#uploading-files-to-a-server" id="toc-uploading-files-to-a-server" class="nav-link" data-scroll-target="#uploading-files-to-a-server">Uploading Files to a server</a>
+  <ul class="collapse">
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#sftp-software" id="toc-sftp-software" class="nav-link" data-scroll-target="#sftp-software">sFTP Software</a></li>
+  <li><a href="#scp" id="toc-scp" class="nav-link" data-scroll-target="#scp">scp</a></li>
+  </ul></li>
+  <li><a href="#advanced-topics-at-the-command-line" id="toc-advanced-topics-at-the-command-line" class="nav-link" data-scroll-target="#advanced-topics-at-the-command-line">Advanced Topics at the command line</a></li>
+  <li><a href="#aknowledgements" id="toc-aknowledgements" class="nav-link" data-scroll-target="#aknowledgements">Aknowledgements</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Working on a remote server</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<p>In this lesson, you will learn:</p>
+<ul>
+<li>How to connect to a remote server</li>
+<li>Get familiar with RStudio server</li>
+<li>Get a short introduction to the command line (CLI)</li>
+</ul>
+</section>
+<section id="why-working-on-a-remote-machine" class="level1">
+<h1>Why working on a remote machine?</h1>
+<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
+<ul>
+<li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
+<li><strong>Capacity</strong>: More <em>disk space</em> and generally <em>faster storage</em> (in highly optimized RAID arrays)</li>
+<li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
+<li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
+</ul>
+<p><strong>=&gt; The operating system is more likely going to be Linux!!</strong></p>
+</section>
+<section id="collaborative-setup" class="level1">
+<h1>Collaborative Setup</h1>
+<p>There are additional reasons of particular importance in a collaborative set up, such as a working group:</p>
+<ul>
+<li><strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!</li>
+<li><strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</li>
+</ul>
+</section>
+<section id="what-does-working-on-a-remote-server-means" class="level1">
+<h1>What does working on a remote server means?</h1>
+<p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:</p>
+<ul>
+<li>File management: you will need to learn to move files (including your R scripts) to the server</li>
+<li>Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</li>
+</ul>
+</section>
+<section id="rstudio-server" class="level1">
+<h1>RStudio Server</h1>
+<p>From an user perspective, <em>RStudio Server is your familiar RStudio interface in your web browser</em>. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that <strong>the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!</strong> This remote file management is the main change you will have to adopt in your workflow.</p>
+<p>To help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-server-ide.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="connecting-to-meds-analytical-server" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</h2>
+<ol type="1">
+<li><p>Got to: <a href="https://taylor.bren.ucsb.edu/" class="uri">https://taylor.bren.ucsb.edu/</a></p></li>
+<li><p>Enter your credentials</p></li>
+<li><p>You are in!</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/rstudio-server_login.png" class="img-fluid" width="1544"></p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Click on the <code>New Session</code> button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.</li>
+</ol>
+<p>For this session, we are going to select the <code>RStudio</code> option and hit <code>Start Session</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/rstudio-server_session.png" class="img-fluid" width="591"></p>
+</div>
+</div>
+<p><strong>You should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!</strong></p>
+<section id="file-structure" class="level3">
+<h3 class="anchored" data-anchor-id="file-structure">File structure</h3>
+<p>Let’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the <code>home</code> folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: <code>R</code> and <code>H</code></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/rstudio-server_file-structure.png" class="img-fluid" width="779"></p>
+</div>
+</div>
+<p>The <code>R</code> folder is where your local R packages will be installed, you can ignore it. The <code>H</code> is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.</p>
+<p>Let us make a folder named <code>github</code> by click on the <code>New Folder</code> button at the top of the tab. We will use this folder (also named <code>directory</code> in linux/unix terms) to clone any GitHub repository.</p>
+</section>
+<section id="r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="r-packages">R packages</h3>
+<p>If we go to the <code>Packages</code> tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/rstudio-server_packages.png" class="img-fluid" width="779"></p>
+</div>
+</div>
+<p>A user can also installed her/his own packages. Let’s try to install the <code>remote</code> package that lets you install R packages directly from GitHub: <code>install.packages("remotes")</code>. Once done, note a new section that appeared on the Packages tab named <code>User Library</code>. Each of us have now its own copy of the package installed (in this <code>R</code> folder we were talking about a few minutes ago).</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/rstudio-server_packages-user.png" class="img-fluid" width="777"></p>
+</div>
+</div>
+<p>A few notes:</p>
+<ul>
+<li>In this example we will have made a better choice to have the <code>remotes</code> package installed once at the system level</li>
+<li>Some R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package</li>
+<li>Installing an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries</li>
+</ul>
+<p><strong>Look now inside you <code>R</code> folder!!</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="command-line" class="level1">
+<h1>Command line</h1>
+<section id="introduction-to-unix-and-its-siblings" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</h2>
+<dl>
+<dt>UNIX</dt>
+<dd>
+Originally developed at AT&amp;T Bell Labs circa 1970. Has experienced a <a href="https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg">long, multi-branched evolutionary path</a>
+</dd>
+<dt>POSIX (Portable Operating System Interface)</dt>
+<dd>
+a set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants
+</dd>
+</dl>
+<section id="various-unices" class="level4">
+<h4 class="anchored" data-anchor-id="various-unices">Various Unices</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/unix-history-simple.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The unix family tree</figcaption>
+</figure>
+</div>
+<ul>
+<li><dl>
+<dt>OS X</dt>
+<dd>
+<a href="http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix">is a Unix</a>!
+</dd>
+</dl></li>
+<li><dl>
+<dt>Linux</dt>
+<dd>
+is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href="http://en.wikipedia.org/wiki/Unix-like">functionally Unix</a>
+</dd>
+</dl></li>
+</ul>
+</section>
+<section id="some-unix-hallmarks" class="level3">
+<h3 class="anchored" data-anchor-id="some-unix-hallmarks">Some Unix hallmarks</h3>
+<ul>
+<li>Supports multi-users, multi-processes</li>
+<li>Highly modular: many small tools that do one thing well, and can be combined</li>
+<li>Culture of text files and streams</li>
+<li>Primary OS on HPC (<strong>High Performance Computing</strong> Systems)</li>
+<li>Main OS on which Internet was built</li>
+</ul>
+</section>
+</section>
+<section id="the-command-line-interface-cli" class="level2">
+<h2 class="anchored" data-anchor-id="the-command-line-interface-cli">The Command Line Interface (CLI)</h2>
+<p>The CLI provides a direct way to interact with the Operating System, by typing in commands.</p>
+<section id="why-the-cli-is-worth-learning" class="level3">
+<h3 class="anchored" data-anchor-id="why-the-cli-is-worth-learning">Why the CLI is worth learning</h3>
+<ul>
+<li>Typically much more extensive access to features, commands, options</li>
+<li>Command statements can be written down, saved (scripts!)</li>
+<li>Easier automation</li>
+<li>Much “cheaper” to do work on a remote system (no need to transmit all the graphical stuff over the network)</li>
+</ul>
+</section>
+<section id="the-terminal-from-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="the-terminal-from-rstudio">The Terminal from RStudio</h3>
+<p>You can access the command line directly from RStudio by using the <code>Terminal</code> tab next to your R console.</p>
+<p><img src="img/rstudio-terminal.png" class="img-fluid"></p>
+</section>
+<section id="navigating-and-managing-filesdirectories-in-nix" class="level3">
+<h3 class="anchored" data-anchor-id="navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</h3>
+<p><img src="img/unix_filetree.gif" class="img-fluid"></p>
+<ul>
+<li><code>pwd</code>: Know where you are</li>
+<li><code>ls</code>: List the content of the directory</li>
+<li><code>cd</code>: Go inside a directory</li>
+<li><code>~</code> : Home directory</li>
+<li><code>.</code> : Here (current directory)</li>
+<li><code>..</code>: Up one level (upper directory)</li>
+</ul>
+<p>Let’s put this into action:</p>
+<ul>
+<li>go to my “Home” directory: <code>cd ~</code></li>
+<li>go up one directory level: <code>cd ..</code></li>
+<li>list the content: <code>ls</code></li>
+<li>list the content showing hidden files: <code>ls -a</code> note that <code>-a</code> is referred as an option (modifies the command)</li>
+</ul>
+<p>More files/directories manipulations:</p>
+<ul>
+<li><code>mkdir</code>: Create a directory</li>
+<li><code>cp</code>: Copy a file</li>
+<li><code>mv</code>: Move a file <strong>it is also how you rename a file!</strong></li>
+<li><code>rm</code> / <code>rmdir</code>: Remove a file / directory <strong>use those carefully, there is no return / Trash!!</strong></li>
+</ul>
+<p><strong>Note: typing is not your thing? the <code>&lt;tab&gt;</code> key is your friend!</strong> One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.</p>
+</section>
+<section id="permissions" class="level3">
+<h3 class="anchored" data-anchor-id="permissions">Permissions</h3>
+<p>All files have permissions and ownership.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/UnixFileLongFormat.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">File permissions</figcaption>
+</figure>
+</div>
+<ul>
+<li>Change permissions: <code>chmod</code></li>
+<li>Change ownership: <code>chown</code></li>
+<li>List files showing ownership and permissions: <code>ls -l</code></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:/courses/EDS214$</span> ls <span class="at">-l</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 3 brun      esmdomainusers 4096 Aug 20 04:49 data</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 2 katherine esmdomainusers 4096 Aug 18 18:32 example    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Clear contents in terminal window: <code>clear</code></li>
+</ul>
+</section>
+</section>
+<section id="general-command-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="general-command-syntax">General command syntax</h2>
+<ul>
+<li><code>command [options] [arguments]</code></li>
+</ul>
+<p>where <code>command</code> must be an <em>executable</em> file on your <code>PATH</code> * <code>echo $PATH</code></p>
+<p>and <code>options</code> can usually take two forms * short form: <code>-a</code> * long form: <code>--all</code></p>
+<p>You can combine the options:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ltrh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What do these options do?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tip: hit <code>q</code> to exit the help!</p>
+<section id="cli-practice" class="level3">
+<h3 class="anchored" data-anchor-id="cli-practice"><a href="day1-cli_practice.html"><strong>CLI Practice</strong></a></h3>
+<p><strong>To end an SSH session, simply type <code>exit</code> or <code>logout</code> into the command line</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="uploading-files-to-a-server" class="level1">
+<h1>Uploading Files to a server</h1>
+<p>You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)</p>
+<section id="rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
+<p>You can only upload one file at the time (you can zip a folder to trick it):</p>
+<p><img src="img/rstudio-upload.png" class="img-fluid"></p>
+</section>
+<section id="sftp-software" class="level2">
+<h2 class="anchored" data-anchor-id="sftp-software">sFTP Software</h2>
+<p>An efficient protocol to upload files is FTP (File Transfer Protocol). The <code>s</code> stands for secured. Any software supporting those protocols will work to transfer files.</p>
+<p>We recommend the following free software:</p>
+<ul>
+<li>Mac users: <a href="https://cyberduck.io">cyberduck</a></li>
+<li>Windows: <a href="https://winscp.net/eng/index.php">WinSCP</a></li>
+</ul>
+<p><img src="img/server-cyberduck.png" class="img-fluid"></p>
+</section>
+<section id="scp" class="level2">
+<h2 class="anchored" data-anchor-id="scp">scp</h2>
+<p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:</p>
+<pre><code>scp /source/path hostname:/path/to/destination/</code></pre>
+<p>Here is an example of my uploading the file <code>10min-loop.R</code> to Taylor from my laptop. The destination directory on Taylor is <code>/Users/brun/</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>BTW try to open and run that script for fun!!</p>
+<p>If you want to upload an entire folder, you can add the <code>-r</code> option to the command. The general syntax is:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is an example uploading all the images in the <code>myplot</code> folder</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="advanced-topics-at-the-command-line" class="level1">
+<h1>Advanced Topics at the command line</h1>
+<p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
+<p><a href="day1-cli_advanced.html">Advanced topics CLI</a></p>
+<p><a href="vim.html">Vim</a></p>
+</section>
+<section id="aknowledgements" class="level1">
+<h1>Aknowledgements</h1>
+<p>This section reuses materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<br>
+<p align="center">
+<a href="https://bren.ucsb.edu/"><img src="img/bren-logo_color.png" alt="Bren School logo" style="width:350px;"></a>
+</p>
+
+<p align="center">
+  This website was made with <u><a href="https://quarto.org">quarto by Posit</a></u>.
+</p>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
