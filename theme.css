@@ -67,7 +67,7 @@ d-appendix {
 /*-- WEBSITE HEADER + FOOTER --*/
 /* These properties only apply to Distill sites and blogs  */
 
-.distill-site-header {
+.quarto-site-header {
   --title-size:       20px;
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        18px;
@@ -75,7 +75,7 @@ d-appendix {
   --bkgd-color:       #047C91;
 }
 
-.distill-site-footer {
+.quarto-site-footer {
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
   --hover-color:      white;

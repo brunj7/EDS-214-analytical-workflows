@@ -1,0 +1,42 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!code/"
+    - "!slides/"
+website:
+  title: "EDS214 - Analytical Workflows and Scientific Reproducibility"
+  navbar:
+    right:
+      - text: "Home"
+        href: index.html
+      - text: "Daily Materials"
+        menu:
+          - text: "Day 1: Reproducible & collaborative workflows"
+            href: day_1.html
+          - text: "Day 2: Developing analytical workflows as a team"
+            href: day_2.html
+          - text: "Day 3: Managing your code and data on a remote server"
+            href: day_3.html
+          - text: "Day 4: Documenting and sharing things"
+            href: day_4.html
+          - text: "Day 5: Reproducible for all"
+            href: day_5.html
+          - text: "Group project"
+            href: group_project.html
+      - text: "Resources"
+        href: resources.html
+      - icon: fab fa-github
+        href: https://github.com/brunj7/EDS-214-analytical-workflows
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - medsstyles.scss
+    css: theme.css
+    toc: true
+    include-after-body: _footer.html
+
+
+

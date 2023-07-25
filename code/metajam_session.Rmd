@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Data Package: https://doi.org/10.5063/F1N58JPP
 
 ## Libraries
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 library(tidyverse)
 library(ggplot2)
 # install.packages("metajam")
@@ -35,13 +35,8 @@ local_path <- metajam::download_d1_data(data_url, "~/Desktop")
 
 ## Read the data
 
-```{r, echo=FALSE}
-# Copy the path from above to cache it
-local_path <- "~/Desktop/doi_10.5063_F1CJ8BPH__household_language__csv"
-```
 
-
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 # Read the data and metadata
 hh_list <- metajam::read_d1_files(local_path)
 
