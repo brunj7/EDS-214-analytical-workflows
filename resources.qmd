@@ -2,9 +2,6 @@
 title: "Course resources"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ### More References
 

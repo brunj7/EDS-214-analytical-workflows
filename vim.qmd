@@ -3,10 +3,6 @@ title: "Vim, the editor"
 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 
 # Other text editors
 

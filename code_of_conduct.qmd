@@ -2,9 +2,6 @@
 title: "Code of Conduct"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 All enrolled students, auditors, and course visitors are expected to comply with the following code of conduct. We expect cooperation from all members to help ensure a safe and welcoming environment for everybody.
 
