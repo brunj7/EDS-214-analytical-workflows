@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 | 10:50am - 11:00am | *Break (10 min)*                                                         |
 | 11:00am - 12:30pm | *Interactive Session: Drawing board + reporting (60 min); git recap (30min)*    |
 | 12:30pm - 1:30pm  | *Lunch*                                                                  |
-| 1:30pm - 2:00pm   | *Collaborative workflow: Fork and Branches (30 min)*                     |
+| 1:30pm - 2:00pm   | *Collaborative workflows: Fork and Branches (30 min)*                     |
 | 2:00pm - 3:00pm   | *Interactive Session: Collaborating with GitHub (60 min)*                |
 | 3:00pm - 3:10pm   | *Break (10 min)*                                                         |
 | 3:10pm - 4:00pm   | *git conflicts  (50 min)*                                                |
