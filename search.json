@@ -123,7 +123,7 @@
     "href": "day_1.html",
     "title": "Reproducible & Collaborative Workflows",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nIntroduction & Reproducible workflows (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30pm\nInteractive Session: Drawing board + reporting (60 min); git recap (30min)\n\n\n12:30pm - 1:30pm\nLunch\n\n\n1:30pm - 2:00pm\nCollaborative workflow: Fork and Branches (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session: Collaborating with GitHub (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\ngit conflicts (50 min)"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nIntroduction & Reproducible workflows (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30pm\nInteractive Session: Drawing board + reporting (60 min); git recap (30min)\n\n\n12:30pm - 1:30pm\nLunch\n\n\n1:30pm - 2:00pm\nCollaborative workflows: Fork and Branches (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session: Collaborating with GitHub (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\ngit conflicts (50 min)"
   },
   {
     "objectID": "day_1.html#introduction-to-eds-214",
@@ -998,7 +998,7 @@
     "href": "index.html#sessions-subject-to-change",
     "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
     "section": "Sessions (subject to change)",
-    "text": "Sessions (subject to change)\n\n\n\nDay / Session\nTopics\nInteractive Sessions\n\n\n\n\nMonday morning\nReproducible workflows\nPlanning things: from diagrams to pseudo code\n\n\nMonday afternoon\nCollaborating with GitHub\nForking and Pull Requests; Github collaboration Hands-on; Github conflicts\n\n\nTuesday morning\nWorking on a remote server\nthe command line\n\n\nTuesday afternoon\nRStudio server;\nuploading things\n\n\nWednesday morning\nHow to get data using APIs\nAPIs hands-on: USGS dataretrieval & metajam\n\n\nWednesday afternoon\nIntroduction to group project]\nGroup project\n\n\nThursday morning\nWorkflow tools\nTargets & rrtools as examples\n\n\nThursday afternoon\nDocumenting things\nGroup project\n\n\nFriday morning\nSharing things\nXaringan & Group project\n\n\nFriday afternoon\nProject presentations\nProject presentations"
+    "text": "Sessions (subject to change)\n\n\n\nDay / Session\nTopics\nInteractive Sessions\n\n\n\n\nMonday morning\nReproducible workflows\nPlanning things: from flow charts to pseudocode\n\n\nMonday afternoon\nCollaborating with GitHub\nForking and Pull Requests; Github collaboration Hands-on; Github conflicts\n\n\nTuesday morning\nWorking on a remote server\nthe command line\n\n\nTuesday afternoon\nRStudio server;\nuploading things\n\n\nWednesday morning\nHow to get data using APIs\nAPIs hands-on: USGS dataretrieval & metajam\n\n\nWednesday afternoon\nIntroduction to group project]\nGroup project\n\n\nThursday morning\nWorkflow tools\nTargets & rrtools as examples\n\n\nThursday afternoon\nDocumenting things\nGroup project\n\n\nFriday morning\nSharing things\nXaringan & Group project\n\n\nFriday afternoon\nProject presentations\nProject presentations"
   },
   {
     "objectID": "index.html#course-requirements",
