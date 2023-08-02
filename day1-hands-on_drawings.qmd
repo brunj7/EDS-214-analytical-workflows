@@ -2,9 +2,6 @@
 title: "Hands-on: Planning your work"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 
 ## Goal
@@ -48,7 +45,7 @@ knitr::include_graphics("img/luq-ts-plot.png")
 
 ### Oh wait...
 
-[Actually here is more](day1-hands-on_drawings_p2.html)
+[Actually there is more](day1-hands-on_drawings_p2.html)
 
 
 ## References
