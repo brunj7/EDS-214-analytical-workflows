@@ -8,33 +8,28 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Day 1
 
-| **Time (PST)**    | **Activity**                        |
-|-------------------|-------------------------------------|
-| 9:00am - 9:50am  | *Intro & Reproducible and Collaborative workflow (50 min)*|
-| 9:50am - 10:00am | *Break 1 (10 min)*                                        |
-| 10:00am - 11:00am | *Interactive Session: Drawing board + reporting (60 min)* |
-| 11:30am - 12:00am | *Flex time 1: Intro to MEDS Analytical server (Kat) (60 min)* |
-| 12:00pm - 1:15pm  | *Lunch (75 min)*                                          |
-| 1:15pm - 2:05pm   | *Working on a remote server (50 min)*                   |
-| 2:15pm - 2:25pm   | *Break 2 (10 min)*                                        |
-| 2:25pm - 3:25pm   | *RStudio server & the command line (60min)*             |
-| 3:25pm - 3:35pm   | *Recap of the day (10 min)*                                  |
-| 3:35pm - 5:00pm   | *Q&A Support with Casey (30 min)*                        |
+| **Time (PST)**    | **Activity**                                                             |
+|-------------------|--------------------------------------------------------------------------|
+| 10:00am - 10:50am | *Introduction & Reproducible workflows (50 min)*                                |
+| 10:50am - 11:00am | *Break (10 min)*                                                         |
+| 11:00am - 12:30pm | *Interactive Session: Drawing board + reporting (60 min); git recap (30min)*    |
+| 12:30pm - 1:30pm  | *Lunch*                                                                  |
+| 1:30pm - 2:00pm   | *Collaborative workflow: Fork and Branches (30 min)*                     |
+| 2:00pm - 3:00pm   | *Interactive Session: Collaborating with GitHub (60 min)*                |
+| 3:00pm - 3:10pm   | *Break (10 min)*                                                         |
+| 3:10pm - 4:00pm   | *git conflicts  (50 min)*                                                |
 
 
-# Introduction
+# Morning
+
+## Introduction to EDS-214
 
 [**A few words...**](https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&loop=false&delayms=3000)
 
 
-# Reproducible Workflows
+## Reproducible Analytical Workflows
 
-## Lecture 1: Definitions and Concepts
-
-[**Slide deck**](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
-
-
-###  Why going reproducible
+####  Why going reproducible ?
 
 There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower **you** to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your "future self" to reuse and build from your own work.
 
@@ -50,11 +45,14 @@ To make your data-riven research reproducible, it is important to develop scient
 - Workflows are rarely linear... even less so their implementation
 - Note the programming box -- yes, you'll need to code this :) 
 
-**Workflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team.**
+***Workflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team.***
 
-### How
 
-We recommend shying away from spreadsheets as an analytical tool, as well as Graphical User Interfaces (GUI) where you need to click on buttons to do your analysis. Although convenient for data exploration, GUI will limit the reproducibility and the scalability of your analysis as human intervention is needed at every step. Spreadsheets can be useful to store tabular data, but it is recommended to script their analysis, as copy-pasting and references to cells are prone to mistake [(see Reinhart and Rogof example)](http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf). It is also very difficult to track changes and to scale your analysis using spreadsheets. In addition, auto-formatting (number, date, character, ...) can silently introduce modifications to your data (e.g. [One in five genetics papers contains errors thanks to Microsoft Excel](https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel)).
+
+## Lecture 1: Definitions and Concepts
+
+[**Slide deck**](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
+
 
 
 
@@ -72,34 +70,11 @@ We recommend shying away from spreadsheets as an analytical tool, as well as Gra
 
 [Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](day1-hands-on_drawings.html)
 
+---
 
----  
-
-# Working on a remote server
-
-## Learning Objectives
-
-In this lesson, you will learn:
-
-- How to connect to a remote server 
-- Get familiar with RStudio server
-- Get a short introduction to the command line (CLI)
+# Afternoon
 
 
-## Why working on a remote machine?
-
-Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
-
-* **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB) 
-* **Capacity**: More *disk space* and generally *faster storage* (in highly optimized RAID arrays)
-* **Security**: Data are spread across *multiple drives* and have nightly *backups*
-* **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
-
-**=> The operating system is more likely going to be Linux!!**
-
-**[Materials](day1-remote_server.html)**
-
-![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 
 ---
 
