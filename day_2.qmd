@@ -22,6 +22,33 @@ knitr::opts_chunk$set(echo = FALSE)
 | 3:25pm - 3:35pm   | *Day 2 Recap (10 min)*       |
 | 3:35pm - 5:00pm   | *Flex session with Casey*                      |
 
+---  
+
+# Working on a remote server
+
+## Learning Objectives
+
+In this lesson, you will learn:
+
+- How to connect to a remote server 
+- Get familiar with RStudio server
+- Get a short introduction to the command line (CLI)
+
+
+## Why working on a remote machine?
+
+Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
+
+* **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB) 
+* **Capacity**: More *disk space* and generally *faster storage* (in highly optimized RAID arrays)
+* **Security**: Data are spread across *multiple drives* and have nightly *backups*
+* **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
+
+**=> The operating system is more likely going to be Linux!!**
+
+**[Materials](day1-remote_server.html)**
+
+![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 
 ---
 
