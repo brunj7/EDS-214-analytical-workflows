@@ -176,6 +176,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#day-2" id="toc-day-2" class="nav-link active" data-scroll-target="#day-2">Day 2</a></li>
+  <li><a href="#working-on-a-remote-server" id="toc-working-on-a-remote-server" class="nav-link" data-scroll-target="#working-on-a-remote-server">Working on a remote server</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
+  </ul></li>
   <li><a href="#coding-together" id="toc-coding-together" class="nav-link" data-scroll-target="#coding-together">Coding together</a>
   <ul class="collapse">
   <li><a href="#setting-git-on-taylor" id="toc-setting-git-on-taylor" class="nav-link" data-scroll-target="#setting-git-on-taylor">Setting git on Taylor</a></li>
@@ -283,6 +288,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <hr>
+</section>
+<section id="working-on-a-remote-server" class="level1">
+<h1>Working on a remote server</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>In this lesson, you will learn:</p>
+<ul>
+<li>How to connect to a remote server</li>
+<li>Get familiar with RStudio server</li>
+<li>Get a short introduction to the command line (CLI)</li>
+</ul>
+</section>
+<section id="why-working-on-a-remote-machine" class="level2">
+<h2 class="anchored" data-anchor-id="why-working-on-a-remote-machine">Why working on a remote machine?</h2>
+<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
+<ul>
+<li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
+<li><strong>Capacity</strong>: More <em>disk space</em> and generally <em>faster storage</em> (in highly optimized RAID arrays)</li>
+<li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
+<li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
+</ul>
+<p><strong>=&gt; The operating system is more likely going to be Linux!!</strong></p>
+<p><strong><a href="day1-remote_server.html">Materials</a></strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">CERN computing center</figcaption>
+</figure>
+</div>
+<hr>
+</section>
 </section>
 <section id="coding-together" class="level1">
 <h1>Coding together</h1>
