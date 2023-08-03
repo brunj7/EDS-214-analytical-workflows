@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -181,29 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
   </ul></li>
-  <li><a href="#coding-together" id="toc-coding-together" class="nav-link" data-scroll-target="#coding-together">Coding together</a>
-  <ul class="collapse">
-  <li><a href="#setting-git-on-taylor" id="toc-setting-git-on-taylor" class="nav-link" data-scroll-target="#setting-git-on-taylor">Setting git on Taylor</a></li>
-  <li><a href="#setting-github-on-taylor" id="toc-setting-github-on-taylor" class="nav-link" data-scroll-target="#setting-github-on-taylor">Setting GitHub on Taylor</a></li>
-  <li><a href="#collaborating-through-forking" id="toc-collaborating-through-forking" class="nav-link" data-scroll-target="#collaborating-through-forking">Collaborating through forking</a></li>
-  <li><a href="#collaborating-through-branches" id="toc-collaborating-through-branches" class="nav-link" data-scroll-target="#collaborating-through-branches">Collaborating through branches</a></li>
-  <li><a href="#git-commit-messages" id="toc-git-commit-messages" class="nav-link" data-scroll-target="#git-commit-messages"><code>git</code> commit messages</a></li>
-  </ul></li>
-  <li><a href="#git-therapy" id="toc-git-therapy" class="nav-link" data-scroll-target="#git-therapy">Git Therapy</a>
-  <ul class="collapse">
-  <li><a href="#github-conflicts" id="toc-github-conflicts" class="nav-link" data-scroll-target="#github-conflicts">GitHub conflicts</a></li>
-  </ul></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a>
-  <ul class="collapse">
-  <li><a href="#collaborative-coding" id="toc-collaborative-coding" class="nav-link" data-scroll-target="#collaborative-coding">Collaborative coding</a></li>
-  <li><a href="#code-review" id="toc-code-review" class="nav-link" data-scroll-target="#code-review">Code Review</a></li>
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
-  <li><a href="#github-workflow" id="toc-github-workflow" class="nav-link" data-scroll-target="#github-workflow">GitHub Workflow</a>
-  <ul class="collapse">
-  <li><a href="#git-using-rstudio" id="toc-git-using-rstudio" class="nav-link" data-scroll-target="#git-using-rstudio">Git using RStudio</a></li>
-  <li><a href="#undoing-things" id="toc-undoing-things" class="nav-link" data-scroll-target="#undoing-things">Undoing things</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
@@ -320,127 +264,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 </section>
-<section id="coding-together" class="level1">
-<h1>Coding together</h1>
-<p><a href="day2-coding_together.html"><strong>Materials</strong></a></p>
-<section id="setting-git-on-taylor" class="level2">
-<h2 class="anchored" data-anchor-id="setting-git-on-taylor">Setting git on Taylor</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Jane Doe"</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email janedoe@example.com</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper <span class="st">'cache --timeout=10000000'</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="setting-github-on-taylor" class="level2">
-<h2 class="anchored" data-anchor-id="setting-github-on-taylor">Setting GitHub on Taylor</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On your laptop</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>() <span class="co"># This should open a web browser on GitHub</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On Taylor </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="collaborating-through-forking" class="level2">
-<h2 class="anchored" data-anchor-id="collaborating-through-forking">Collaborating through forking</h2>
-<p><a href="day2-github_forking.html"><strong>Materials</strong></a></p>
-</section>
-<section id="collaborating-through-branches" class="level2">
-<h2 class="anchored" data-anchor-id="collaborating-through-branches">Collaborating through branches</h2>
-<p><a href="day2-github_branches.html"><strong>Materials</strong></a></p>
-</section>
-<section id="git-commit-messages" class="level2">
-<h2 class="anchored" data-anchor-id="git-commit-messages"><code>git</code> commit messages</h2>
-<p><a href="day2-github_commit_messages.html"><strong>Materials</strong></a></p>
-<hr>
-</section>
-</section>
-<section id="git-therapy" class="level1">
-<h1>Git Therapy</h1>
-<section id="github-conflicts" class="level2">
-<h2 class="anchored" data-anchor-id="github-conflicts">GitHub conflicts</h2>
-<p>First thing to know is that actually <code>git pull</code> is a two step process: <code>git pull = git fetch + git merge</code></p>
-<p>Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, <code>git</code> will call you to the rescue and ask you how to best merge the two versions.</p>
-<p><a href="day2-git-collaboration-conflicts.html"><strong>Materials</strong></a></p>
-<hr>
-</section>
-</section>
 <section id="further-reading" class="level1">
 <h1>Further reading</h1>
-<section id="collaborative-coding" class="level2">
-<h2 class="anchored" data-anchor-id="collaborative-coding">Collaborative coding</h2>
-<ul>
-<li>A new grad’s guide to coding as a team - Atlassian: https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf</li>
-<li>10 tips for efficient programming: https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html</li>
-<li>Agile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</li>
-</ul>
-</section>
-<section id="code-review" class="level2">
-<h2 class="anchored" data-anchor-id="code-review">Code Review</h2>
-<ul>
-<li>Small-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext</li>
-</ul>
-</section>
-<section id="branches" class="level2">
-<h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<ul>
-<li>Interactive tutorial to learn more about git branches and more <a href="https://learngitbranching.js.org/" class="uri">https://learngitbranching.js.org/</a></li>
-</ul>
-</section>
-<section id="github-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="github-workflow">GitHub Workflow</h2>
-<ul>
-<li>GitHub:
-<ul>
-<li>guides on how to use GitHub: <a href="https://guides.github.com/">https://guides.github.com/</a></li>
-<li>GitHub from RStudio: <a href="http://r-pkgs.had.co.nz/git.html#git-pull">http://r-pkgs.had.co.nz/git.html#git-pull</a></li>
-</ul></li>
-<li>Forking:
-<ul>
-<li><a href="https://help.github.com/articles/fork-a-repo/">https://help.github.com/articles/fork-a-repo/</a></li>
-<li><a href="https://guides.github.com/activities/forking/">https://guides.github.com/activities/forking/</a></li>
-</ul></li>
-<li>Comparison of git repository host services: <a href="https://www.git-tower.com/blog/git-hosting-services-compared/" class="uri">https://www.git-tower.com/blog/git-hosting-services-compared/</a></li>
-<li>Branches
-<ul>
-<li>interactive tutorial on branches: <a href="http://learngitbranching.js.org/" class="uri">http://learngitbranching.js.org/</a></li>
-<li>using git in a collaborative environment: <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow" class="uri">https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow</a> https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf</li>
-</ul></li>
-</ul>
-<section id="git-using-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="git-using-rstudio">Git using RStudio</h3>
-<ul>
-<li>Happy Git and GitHub for the useR: http://happygitwithr.com/</li>
-<li>R packages - Git and GitHub: http://r-pkgs.had.co.nz/git.html#git-init</li>
-</ul>
-<p>Git mainly from the command line:</p>
-<ul>
-<li>Interactive git 101: <a href="https://try.github.io/">https://try.github.io/</a></li>
-<li>Very good tutorial about git: <a href="https://www.atlassian.com/git/tutorials/what-is-version-control">https://www.atlassian.com/git/tutorials/what-is-version-control</a></li>
-<li>Git tutorial geared towards scientists: <a href="http://nyuccl.org/pages/gittutorial/">http://nyuccl.org/pages/gittutorial/</a></li>
-<li>Short intro to git basics: <a href="https://github.com/mbjones/gitbasics">https://github.com/mbjones/gitbasics</a></li>
-<li>Git documentation about the basics: <a href="http://gitref.org/basic/">http://gitref.org/basic/</a></li>
-<li>Git documentation - the basics: <a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">https://git-scm.com/book/en/v2/Getting-Started-Git-Basics</a></li>
-<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology">https://www.atlassian.com/git/glossary/terminology</a></li>
-<li>In trouble, guide to know what to do: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
-<li>Want to undo something? <a href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git" class="uri">https://github.com/blog/2019-how-to-undo-almost-anything-with-git</a></li>
-<li>Git terminology: <a href="https://www.atlassian.com/git/glossary/terminology" class="uri">https://www.atlassian.com/git/glossary/terminology</a></li>
-<li>8 tips to work better with git: <a href="https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/" class="uri">https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/</a></li>
-<li>GitPro book (2nd edition): <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a></li>
-</ul>
-</section>
-<section id="undoing-things" class="level3">
-<h3 class="anchored" data-anchor-id="undoing-things">Undoing things</h3>
-<ul>
-<li>Help to decide how to undo your problem: <a href="http://justinhileman.info/article/git-pretty/git-pretty.png" class="uri">http://justinhileman.info/article/git-pretty/git-pretty.png</a></li>
-<li>Undo almost everything with git <a href="https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/" class="uri">https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/</a></li>
-<li>Difference between git reset soft, mixed and hard <a href="https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/" class="uri">https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/</a></li>
-<li>Resetting, Checking Out &amp; Reverting <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" class="uri">https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting</a></li>
-</ul>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

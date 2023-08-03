@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EDS214 - Analytical Workflows and Scientific Reproducibility - GitHub branches and more using GitHub website</title>
+<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Collaborative Coding Workflows: Branching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,8 +141,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#our-asks" id="toc-our-asks" class="nav-link active" data-scroll-target="#our-asks">Our asks</a></li>
-  <li><a href="#prompt" id="toc-prompt" class="nav-link" data-scroll-target="#prompt">Prompt</a></li>
+  <li><a href="#collaborating-through-write-push-access" id="toc-collaborating-through-write-push-access" class="nav-link active" data-scroll-target="#collaborating-through-write-push-access">Collaborating through write / push access</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a>
+  <ul class="collapse">
+  <li><a href="#working-with-branches" id="toc-working-with-branches" class="nav-link" data-scroll-target="#working-with-branches">Working with branches</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch">Creating a new branch</a></li>
+  <li><a href="#using-a-branch" id="toc-using-a-branch" class="nav-link" data-scroll-target="#using-a-branch">Using a branch</a></li>
+  </ul></li>
+  <li><a href="#hands-on" id="toc-hands-on" class="nav-link" data-scroll-target="#hands-on">Hands-on</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -151,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GitHub branches and more using GitHub website</h1>
+<h1 class="title">Collaborative Coding Workflows: Branching</h1>
 </div>
 
 
@@ -166,91 +174,102 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>In this section we will be using the GitHub.com website and show you do not need to be a programmer to use version control and edit files on GitHub, nor using branches</p>
-<p>Checks: If you have not already created a GitHub username, please do so now: - GitHub: https://github.com - Follow optional <a href="https://happygitwithr.com/github-acct.html">advice on choosing your username</a></p>
-<section id="our-asks" class="level3">
-<h3 class="anchored" data-anchor-id="our-asks">Our asks</h3>
-<p>As a Team of two: - Help each other, everyone is bringing different skills! Talk it out! - Listen to each other; avoid judgment and solutioneering. - Have fun!</p>
+<section id="collaborating-through-write-push-access" class="level2">
+<h2 class="anchored" data-anchor-id="collaborating-through-write-push-access">Collaborating through write / push access</h2>
+<p>When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (<code>git push</code>) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.</p>
+<section id="adding-collaborators-to-a-repository" class="level4">
+<h4 class="anchored" data-anchor-id="adding-collaborators-to-a-repository">Adding collaborators to a repository</h4>
+<ul>
+<li>Click on the repository</li>
+<li>On the top tabs, click <img src="img/github-repo-settings.png" class="img-fluid"></li>
+<li>On the left pane, click <code>Manage access</code> and click on “Invite a Collaborator” to enter the usernames you want to add</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/github-collaborators.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">collaborators</figcaption>
+</figure>
+</div>
+<p>Under this collaborative workflow, we recommend to use git <code>branches</code> combined with pull requests to avoid conflicts and to track and discuss collaborators contributions.</p>
 </section>
-<section id="prompt" class="level3">
-<h3 class="anchored" data-anchor-id="prompt">Prompt</h3>
-<p>We want to log the information about people favorite dessert using a repository.</p>
-<section id="person-1-owner" class="level4">
-<h4 class="anchored" data-anchor-id="person-1-owner">Person 1 (owner):</h4>
-<ul>
-<li>Create a repository using the following these <a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">instructions</a> steps 1-6</li>
-</ul>
-<p><img src="img/github-dessert-repo.png" class="img-fluid"></p>
-<ul>
-<li>Add Person 2 as collaborator following these <a href="https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository">instructions</a></li>
-<li>Edit the README to:
-<ul>
-<li>Replace the title (first line starting with <code>#</code>) with something better! Maybe <code>Favorite Desserts</code></li>
-<li>Add your name and your favorite dessert below the title: e.g.&nbsp;<code>- Julien: crepes</code></li>
-</ul></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/github-readme_desserts.png" class="img-fluid" width="1248"></p>
-</div>
-</div>
 </section>
-<section id="person-2-create-a-branch" class="level4">
-<h4 class="anchored" data-anchor-id="person-2-create-a-branch">Person 2: Create a branch</h4>
+<section id="branches" class="level1">
+<h1>Branches</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/atlassian_branches_sketch.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">adapted from https://www.atlassian.com/git/tutorials/git-merge</figcaption>
+</figure>
+</div>
+<p>What are branches? Well in fact nothing new, as the <code>main</code> is a branch. A branch represents an independent line of development, parallel to the main (branch).</p>
+<p>Why should you use branches? For 2 main reasons:</p>
 <ul>
-<li>Check your email to accept the invitation</li>
-<li>Go to the repository website (link is provided in the invitation)</li>
-<li>Create a new branch named after your first name</li>
+<li>We want the main to only keep a version of the code that is working</li>
+<li>We want to version the code we are developing to add/test new features (for now we mostly talk about feature branch) in our script without altering the version on the main.</li>
 </ul>
-<div class="cell">
+<section id="working-with-branches" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-branches">Working with branches</h2>
+<section id="creating-a-new-branch" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-new-branch">Creating a new branch</h3>
+<p>In RStudio, you can create a branch using the git tab.</p>
+<ol type="1">
+<li>Click on the branch button</li>
+</ol>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/github-create_branch.png" class="img-fluid" width="1148"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-git-branch-create.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>Start editing the README.md by clicking on pen at the top of the README.md file to edit it</li>
-</ul>
-<div class="cell">
+</div>
+<ol start="2" type="1">
+<li>Fill the branch name in the new branch window; in this example, we are going to use <code>test</code> for the name; leave the other options as default and click create</li>
+</ol>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/github-readme-edit.png" class="img-fluid" width="556"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-git-branch-test.png" class="img-fluid figure-img" style="width:40.0%"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>Add your name and your favorite dessert below the title: e.g.&nbsp;<code>- Sophia: chocolate</code></li>
-<li>Add a descriptive message</li>
-</ul>
-<div class="cell">
+</div>
+<ol start="3" type="1">
+<li>you will be directly creating a local and remote branch and switch to it</li>
+</ol>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/github-commit.png" class="img-fluid" width="531"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-git-branch-new.png" class="img-fluid figure-img" style="width:62.0%"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>Commit your changes</li>
-</ul>
-<div class="cell">
+</div>
+<p>Congratulations you just created your first branch!</p>
+<p>Let us check on Github:</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/github-commit-button.png" class="img-fluid" style="width:20.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/github-new-branch.png" class="img-fluid figure-img" style="width:45.0%"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>Create a pull request to merge those changes to the main repository</li>
-</ul>
+</div>
+<p>As you can see, now there are two branches on our remote repository: - main - test</p>
 </section>
-<section id="person-1-add-a-file" class="level4">
-<h4 class="anchored" data-anchor-id="person-1-add-a-file">Person 1: add a file</h4>
-<p>Download this <a href="https://aurora.nceas.ucsb.edu/~brun/favorite_desserts.csv">csv file</a> about your favorite desserts to your computer</p>
-<ul>
-<li>Just drag and drop it on the Github web page of your repository to upload it</li>
-<li>Add a short message about the file e.g.&nbsp;<code>Adding dessert csv</code> &amp; hit <code>Commit changes</code></li>
-<li>Your have has been uploaded. Click on the filename to see it!</li>
-</ul>
-<p>You should have something similar to this repo: https://github.com/brunj7/favorite-desserts</p>
+<section id="using-a-branch" class="level3">
+<h3 class="anchored" data-anchor-id="using-a-branch">Using a branch</h3>
+<p>Here there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the <code>test</code> branch instead of the main branch.</p>
 </section>
-<section id="bonus" class="level4">
-<h4 class="anchored" data-anchor-id="bonus">Bonus</h4>
-<p>Person 2: Try to edit the csv file directly on GitHub!</p>
-<p>Person 1: Your turn!</p>
-<p><strong>No need to be a programmer to contribute to analytical workflows with GitHub!!</strong></p>
+</section>
+<section id="hands-on" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on">Hands-on</h2>
+<p>Let’s practice this by team of 2!!</p>
+<p><a href="https://github.com/brunj7/eds214-handson-ghcollab" class="uri">https://github.com/brunj7/eds214-handson-ghcollab</a></p>
 
 
 </section>
