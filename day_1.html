@@ -179,24 +179,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#morning" id="toc-morning" class="nav-link" data-scroll-target="#morning">Morning</a>
   <ul class="collapse">
   <li><a href="#introduction-to-eds-214" id="toc-introduction-to-eds-214" class="nav-link" data-scroll-target="#introduction-to-eds-214">Introduction to EDS-214</a></li>
-  <li><a href="#reproducible-analytical-workflows" id="toc-reproducible-analytical-workflows" class="nav-link" data-scroll-target="#reproducible-analytical-workflows">Reproducible Analytical Workflows</a></li>
   <li><a href="#lecture-1-definitions-and-concepts" id="toc-lecture-1-definitions-and-concepts" class="nav-link" data-scroll-target="#lecture-1-definitions-and-concepts">Lecture 1: Definitions and Concepts</a></li>
-  <li><a href="#hands-on-planing-things" id="toc-hands-on-planing-things" class="nav-link" data-scroll-target="#hands-on-planing-things">Hands-on: Planing things</a>
+  <li><a href="#planing-things" id="toc-planing-things" class="nav-link" data-scroll-target="#planing-things">Planing things</a>
   <ul class="collapse">
   <li><a href="#from-drawings-to-pseudocode" id="toc-from-drawings-to-pseudocode" class="nav-link" data-scroll-target="#from-drawings-to-pseudocode">From drawings to pseudocode</a></li>
-  <li><a href="#hands-on" id="toc-hands-on" class="nav-link" data-scroll-target="#hands-on">Hands-on</a></li>
   </ul></li>
+  <li><a href="#interactive-session-1-develop-your-worklow-skills" id="toc-interactive-session-1-develop-your-worklow-skills" class="nav-link" data-scroll-target="#interactive-session-1-develop-your-worklow-skills">Interactive session 1: Develop your worklow skills</a></li>
   </ul></li>
   <li><a href="#afternoon" id="toc-afternoon" class="nav-link" data-scroll-target="#afternoon">Afternoon</a>
   <ul class="collapse">
-  <li><a href="#coding-together" id="toc-coding-together" class="nav-link" data-scroll-target="#coding-together">Coding together</a></li>
-  <li><a href="#collaborating-using-github" id="toc-collaborating-using-github" class="nav-link" data-scroll-target="#collaborating-using-github">Collaborating using GitHub</a>
+  <li><a href="#lecture-2-coding-together" id="toc-lecture-2-coding-together" class="nav-link" data-scroll-target="#lecture-2-coding-together">Lecture 2: Coding together</a>
   <ul class="collapse">
-  <li><a href="#collaborating-through-forking" id="toc-collaborating-through-forking" class="nav-link" data-scroll-target="#collaborating-through-forking">Collaborating through forking</a></li>
-  <li><a href="#collaborating-through-branches" id="toc-collaborating-through-branches" class="nav-link" data-scroll-target="#collaborating-through-branches">Collaborating through branches</a></li>
-  <li><a href="#collaborative-coding-hands-on" id="toc-collaborative-coding-hands-on" class="nav-link" data-scroll-target="#collaborative-coding-hands-on">Collaborative coding hands-on</a></li>
+  <li><a href="#collaborating-using-github" id="toc-collaborating-using-github" class="nav-link" data-scroll-target="#collaborating-using-github">Collaborating using GitHub</a></li>
   </ul></li>
-  <li><a href="#git-therapy" id="toc-git-therapy" class="nav-link" data-scroll-target="#git-therapy">Git Therapy</a>
+  <li><a href="#interactive-session-2-collaborative-coding-with-github" id="toc-interactive-session-2-collaborative-coding-with-github" class="nav-link" data-scroll-target="#interactive-session-2-collaborative-coding-with-github">Interactive session 2: Collaborative coding with GitHub</a></li>
+  <li><a href="#bonus-of-the-day-git-therapy" id="toc-bonus-of-the-day-git-therapy" class="nav-link" data-scroll-target="#bonus-of-the-day-git-therapy">Bonus of the day: Git Therapy</a>
   <ul class="collapse">
   <li><a href="#git-commit-messages" id="toc-git-commit-messages" class="nav-link" data-scroll-target="#git-commit-messages"><code>git</code> commit messages</a></li>
   <li><a href="#github-conflicts" id="toc-github-conflicts" class="nav-link" data-scroll-target="#github-conflicts">GitHub conflicts</a></li>
@@ -293,40 +290,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="introduction-to-eds-214">Introduction to EDS-214</h2>
 <p><a href="https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&amp;loop=false&amp;delayms=3000"><strong>A few words…</strong></a></p>
 </section>
-<section id="reproducible-analytical-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-analytical-workflows">Reproducible Analytical Workflows</h2>
-<section id="why-going-reproducible" class="level4">
-<h4 class="anchored" data-anchor-id="why-going-reproducible">Why going reproducible ?</h4>
-<p>There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower <strong>you</strong> to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your “future self” to reuse and build from your own work.</p>
-<p>To make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on <strong>programming</strong> to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, …) of your analysis. Scripting languages, even better open ones, such as <code>R</code> and <code>python</code>, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use <code>R</code>, <code>git</code> and <code>GitHub</code> to develop such workflows as a team.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/tidy-workflow.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Workflow example using the <code>tidyverse</code>. Note the program box around the workflow and the iterative nature of the analytical process described. <em>Source: R for Data Science <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></em></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Two points to stress about this figure</strong>:</p>
-<ul>
-<li>Workflows are rarely linear… even less so their implementation</li>
-<li>Note the programming box – yes, you’ll need to code this :)</li>
-</ul>
-<p><strong><em>Workflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team.</em></strong></p>
-</section>
-</section>
 <section id="lecture-1-definitions-and-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="lecture-1-definitions-and-concepts">Lecture 1: Definitions and Concepts</h2>
 <p><a href="https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&amp;loop=false&amp;delayms=60000"><strong>Slide deck</strong></a></p>
 </section>
-<section id="hands-on-planing-things" class="level2">
-<h2 class="anchored" data-anchor-id="hands-on-planing-things">Hands-on: Planing things</h2>
+<section id="planing-things" class="level2">
+<h2 class="anchored" data-anchor-id="planing-things">Planing things</h2>
 <p><strong>Don’t start implementing nor coding without planning!</strong> It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.</p>
 <section id="from-drawings-to-pseudocode" class="level3">
 <h3 class="anchored" data-anchor-id="from-drawings-to-pseudocode">From drawings to pseudocode</h3>
-<p><a href="day1-pseudocode.html">Materials</a></p>
+<p><a href="day1-pseudocode.html"><strong>Materials</strong></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/whiteborad_drawings.png" class="img-fluid figure-img"></p>
@@ -334,21 +307,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="hands-on" class="level3">
-<h3 class="anchored" data-anchor-id="hands-on">Hands-on</h3>
+</section>
+<section id="interactive-session-1-develop-your-worklow-skills" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-session-1-develop-your-worklow-skills">Interactive session 1: Develop your worklow skills</h2>
 <p><a href="day1-hands-on_drawings.html">Investigating the impacts of Hurricane on stream chemistry in Puerto Rico</a></p>
 <hr>
 </section>
 </section>
-</section>
 <section id="afternoon" class="level1">
 <h1>Afternoon</h1>
-<section id="coding-together" class="level2">
-<h2 class="anchored" data-anchor-id="coding-together">Coding together</h2>
+<section id="lecture-2-coding-together" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-2-coding-together">Lecture 2: Coding together</h2>
 <p><a href="day1-coding_together.html"><strong>Materials</strong></a></p>
-</section>
-<section id="collaborating-using-github" class="level2">
-<h2 class="anchored" data-anchor-id="collaborating-using-github">Collaborating using GitHub</h2>
+<section id="collaborating-using-github" class="level3">
+<h3 class="anchored" data-anchor-id="collaborating-using-github">Collaborating using GitHub</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -383,20 +355,22 @@ Setting git on Taylor (if not yet done)
 </div>
 </div>
 </div>
-<section id="collaborating-through-forking" class="level3">
-<h3 class="anchored" data-anchor-id="collaborating-through-forking">Collaborating through forking</h3>
+<section id="collaborating-through-forking" class="level4">
+<h4 class="anchored" data-anchor-id="collaborating-through-forking">Collaborating through forking</h4>
 <p><a href="day1-github_forking.html"><strong>Materials</strong></a></p>
 </section>
-<section id="collaborating-through-branches" class="level3">
-<h3 class="anchored" data-anchor-id="collaborating-through-branches">Collaborating through branches</h3>
+<section id="collaborating-through-branches" class="level4">
+<h4 class="anchored" data-anchor-id="collaborating-through-branches">Collaborating through branches</h4>
 <p><a href="day1-github_branches.html"><strong>Materials</strong></a></p>
 </section>
-<section id="collaborative-coding-hands-on" class="level3">
-<h3 class="anchored" data-anchor-id="collaborative-coding-hands-on">Collaborative coding hands-on</h3>
 </section>
 </section>
-<section id="git-therapy" class="level2">
-<h2 class="anchored" data-anchor-id="git-therapy">Git Therapy</h2>
+<section id="interactive-session-2-collaborative-coding-with-github" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-session-2-collaborative-coding-with-github">Interactive session 2: Collaborative coding with GitHub</h2>
+<p><a href="https://github.com/brunj7/eds214-handson-ghcollab" class="uri">https://github.com/brunj7/eds214-handson-ghcollab</a></p>
+</section>
+<section id="bonus-of-the-day-git-therapy" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-of-the-day-git-therapy">Bonus of the day: Git Therapy</h2>
 <section id="git-commit-messages" class="level3">
 <h3 class="anchored" data-anchor-id="git-commit-messages"><code>git</code> commit messages</h3>
 <p><a href="day1-github_commit_messages.html"><strong>Materials</strong></a></p>
