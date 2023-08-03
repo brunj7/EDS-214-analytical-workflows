@@ -1,5 +1,5 @@
 ---
-title: "Topic 8: Dropdown list from a navigation bar item"
+title: "Collaborative Coding Workflows: Branching"
 ---
 
 ```{r setup, include=FALSE}
@@ -74,5 +74,6 @@ Here there is nothing new. The workflow is exactly the same as we did before, ex
 
 ## Hands-on
 
-1. [GitHub branches using the website](day2-handson_github_website.html)
-2. [GitHub branches using RStudio](day2-handson_github_rstudio.html)
+Let's practice this by team of 2!!
+
+<https://github.com/brunj7/eds214-handson-ghcollab>

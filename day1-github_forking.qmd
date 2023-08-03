@@ -1,5 +1,5 @@
 ---
-title: "Collaborating using GitHub forking"
+title: "Collaborative Coding Workflows: Forking"
 ---
 
 ```{r setup, include=FALSE}
@@ -26,21 +26,20 @@ Then type a title and description for the changes you would like to make. By usi
 This workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project.
 
 
-## Hands-on
+
+## Demo time
 
 Update the `greetings` R package to add the option to change the color of the background of the text.
 
 Repo: <https://github.com/brunj7/greetings>
 
-By team of two:
+What I will do:
 
-- Team member 1: fork the repository
+- Fork the repository
 
-- Team member 2: fork the fork that team member 1 just created (yes, you can do this!!)
+- Add functionality to this R package. In this example I will modify the `say_aloah()` function to allow changing the text background color to blue in addition to the existing green (see [here](https://github.com/r-lib/crayon#screenshot-on-osx) for more about the `crayon` package)
 
-- Work together on Team member 2's computer to modify the `say_aloah()` function to allow changing the text background color to blue in addition to the existing green (see [here](https://github.com/r-lib/crayon#screenshot-on-osx) for more about the `crayon` package)
+- Once done, I will create a Pull Request (PR) to integrate the new changes
 
-- Once done, create a pull request to integrate the new changes tagging team member 1 as reviewer
-
-- Team member 1, review the code, comment as needed on the pull request, and merge changes
+- Merge back changes!
 

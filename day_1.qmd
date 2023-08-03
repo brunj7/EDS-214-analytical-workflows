@@ -60,6 +60,7 @@ To make your data-riven research reproducible, it is important to develop scient
 
 **Don’t start implementing nor coding without planning!** It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
 
+
 ### From drawings to pseudocode
 
 [Materials](day1-pseudocode.html)
@@ -70,6 +71,8 @@ To make your data-riven research reproducible, it is important to develop scient
 
 [Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](day1-hands-on_drawings.html)
 
+
+
 ---
 
 # Afternoon
@@ -78,7 +81,7 @@ To make your data-riven research reproducible, it is important to develop scient
 
 ## Coding together
 
-[**Materials**](day2-coding_together.html)
+[**Materials**](day1-coding_together.html)
 
 
 
@@ -114,19 +117,23 @@ usethis::git_sitrep()
 
 ### Collaborating through forking
 
-[**Materials**](day2-github_forking.html)
+[**Materials**](day1-github_forking.html)
 
 ### Collaborating through branches
 
-[**Materials**](day2-github_branches.html)
+[**Materials**](day1-github_branches.html)
 
-## `git` commit messages
 
-[**Materials**](day2-github_commit_messages.html)
+### Collaborative coding hands-on
+
 
 
 
 ## Git Therapy
+
+### `git` commit messages
+
+[**Materials**](day1-github_commit_messages.html)
 
 ### GitHub conflicts
 
@@ -134,7 +141,7 @@ First thing to know is that actually `git pull`  is a two step process: `git pul
 
 Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, `git` will call you to the rescue and ask you how to best merge the two versions.
 
-[**Materials**](day2-git-collaboration-conflicts.html)
+[**Materials**](day1-git-collaboration-conflicts.html)
 
 
 
