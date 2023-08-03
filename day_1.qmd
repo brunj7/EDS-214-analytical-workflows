@@ -27,26 +27,6 @@ knitr::opts_chunk$set(echo = TRUE)
 [**A few words...**](https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&loop=false&delayms=3000)
 
 
-## Reproducible Analytical Workflows
-
-####  Why going reproducible ?
-
-There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower **you** to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your "future self" to reuse and build from your own work.
-
-To make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on **programming** to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, ...) of your analysis. Scripting languages, even better open ones, such as `R` and `python`, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use `R`, `git` and `GitHub` to develop such workflows as a team.
-
-
-```{r tidy-workflow, out.width='80%', fig.align="center", fig.cap="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science <https://r4ds.had.co.nz/>_",echo=FALSE}
-  knitr::include_graphics(here::here("img","tidy-workflow.png"))
-```
-
-**Two points to stress about this figure**:
-
-- Workflows are rarely linear... even less so their implementation
-- Note the programming box -- yes, you'll need to code this :) 
-
-***Workflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team.***
-
 
 
 ## Lecture 1: Definitions and Concepts
@@ -56,18 +36,18 @@ To make your data-riven research reproducible, it is important to develop scient
 
 
 
-## Hands-on: Planing things
+## Planing things
 
 **Don’t start implementing nor coding without planning!** It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
 
 
 ### From drawings to pseudocode
 
-[Materials](day1-pseudocode.html)
+[**Materials**](day1-pseudocode.html)
 
 ![Cherubini et al., 2007](img/whiteborad_drawings.png)
 
-### Hands-on
+## Interactive session 1: Develop your worklow skills
 
 [Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](day1-hands-on_drawings.html)
 
@@ -78,14 +58,13 @@ To make your data-riven research reproducible, it is important to develop scient
 # Afternoon
 
 
-
-## Coding together
+## Lecture 2: Coding together
 
 [**Materials**](day1-coding_together.html)
 
 
 
-## Collaborating using GitHub
+### Collaborating using GitHub
 
 ::: {.callout-note collapse=true}
 ### Setting git on Taylor (if not yet done)
@@ -115,21 +94,21 @@ usethis::git_sitrep()
 :::
 
 
-### Collaborating through forking
+#### Collaborating through forking
 
 [**Materials**](day1-github_forking.html)
 
-### Collaborating through branches
+#### Collaborating through branches
 
 [**Materials**](day1-github_branches.html)
 
 
-### Collaborative coding hands-on
+## Interactive session 2: Collaborative coding with GitHub
+
+<https://github.com/brunj7/eds214-handson-ghcollab>
 
 
-
-
-## Git Therapy
+## Bonus of the day: Git Therapy
 
 ### `git` commit messages
 
@@ -142,7 +121,6 @@ First thing to know is that actually `git pull`  is a two step process: `git pul
 Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, `git` will call you to the rescue and ask you how to best merge the two versions.
 
 [**Materials**](day1-git-collaboration-conflicts.html)
-
 
 
 

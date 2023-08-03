@@ -5,7 +5,7 @@ title: "Coding together"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Managing Scripts
+
 
 ## Learning Objectives
 
@@ -23,7 +23,7 @@ In this part of the lesson, you will learn:
 
 ## Why collaborative coding
 
-[**Slides**](https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html)
+### [Slide deck](https://brunj7.github.io/meds-distill-template/slides/collaborative_coding.html)
 
 Environmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise.  Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:
 
@@ -56,17 +56,16 @@ The good news is there are several tools out there that have been designed to ma
 - Version control system: say goodbye to `save as`
 - Code repository: where we share code and communicate ideas and feedback
 
-```{r, fig.cap=" https://xkcd.com/1597/", echo=FALSE}
-knitr::include_graphics("img/git_explain_xkcd.png")
-```
+
 
 ---
 
-# GitHub as a collaborative tool 
 
-### Quick recap on version control
+# Quick recap on version control
 
-[git and GitHub quick recap](day2-git_github_recap.html)
-
+[**git and GitHub in 10min**](day1-git_github_recap.html)
 
 
+```{r, fig.cap=" https://xkcd.com/1597/", echo=FALSE}
+knitr::include_graphics("img/git_explain_xkcd.png")
+```
