@@ -26,7 +26,8 @@ website:
             href: group_project.html
       - text: "Resources"
         href: resources.html
-      - icon: fab fa-github
+    tools:
+      - icon: github
         href: https://github.com/brunj7/EDS-214-analytical-workflows
 
 format:
