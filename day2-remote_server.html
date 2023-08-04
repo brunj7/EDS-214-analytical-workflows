@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,7 +95,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="theme.css">
 </head>
 
 <body class="nav-fixed">
@@ -178,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
   <li><a href="#collaborative-setup" id="toc-collaborative-setup" class="nav-link" data-scroll-target="#collaborative-setup">Collaborative Setup</a></li>
-  <li><a href="#what-does-working-on-a-remote-server-means" id="toc-what-does-working-on-a-remote-server-means" class="nav-link" data-scroll-target="#what-does-working-on-a-remote-server-means">What does working on a remote server means?</a></li>
+  <li><a href="#what-does-working-on-a-remote-server-mean" id="toc-what-does-working-on-a-remote-server-mean" class="nav-link" data-scroll-target="#what-does-working-on-a-remote-server-mean">What does working on a remote server mean?</a></li>
   <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">RStudio Server</a>
   <ul class="collapse">
   <li><a href="#connecting-to-meds-analytical-server" id="toc-connecting-to-meds-analytical-server" class="nav-link" data-scroll-target="#connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</a>
@@ -196,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-command-line-interface-cli" id="toc-the-command-line-interface-cli" class="nav-link" data-scroll-target="#the-command-line-interface-cli">The Command Line Interface (CLI)</a>
   <ul class="collapse">
   <li><a href="#why-the-cli-is-worth-learning" id="toc-why-the-cli-is-worth-learning" class="nav-link" data-scroll-target="#why-the-cli-is-worth-learning">Why the CLI is worth learning</a></li>
+  <li><a href="#a-little-bit-of-terminology" id="toc-a-little-bit-of-terminology" class="nav-link" data-scroll-target="#a-little-bit-of-terminology">A little bit of terminology</a></li>
   <li><a href="#the-terminal-from-rstudio" id="toc-the-terminal-from-rstudio" class="nav-link" data-scroll-target="#the-terminal-from-rstudio">The Terminal from RStudio</a></li>
   <li><a href="#navigating-and-managing-filesdirectories-in-nix" id="toc-navigating-and-managing-filesdirectories-in-nix" class="nav-link" data-scroll-target="#navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</a></li>
   <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions">Permissions</a></li>
@@ -254,22 +254,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
 <li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
 </ul>
-<p><strong>=&gt; The operating system is more likely going to be Linux!!</strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><em>=&gt; The operating system is more likely going to be Linux!!</em></strong></p>
+</div>
+</div>
 </section>
 <section id="collaborative-setup" class="level1">
 <h1>Collaborative Setup</h1>
 <p>There are additional reasons of particular importance in a collaborative set up, such as a working group:</p>
 <ul>
-<li><strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!</li>
-<li><strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</li>
+<li><p><strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!</p></li>
+<li><p><strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p></li>
 </ul>
 </section>
-<section id="what-does-working-on-a-remote-server-means" class="level1">
-<h1>What does working on a remote server means?</h1>
+<section id="what-does-working-on-a-remote-server-mean" class="level1">
+<h1>What does working on a remote server mean?</h1>
 <p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:</p>
 <ul>
-<li>File management: you will need to learn to move files (including your R scripts) to the server</li>
-<li>Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</li>
+<li><strong>File management</strong>: you will need to learn to move files (including your R scripts) to the server</li>
+<li><strong>R Package installation</strong>: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</li>
 </ul>
 </section>
 <section id="rstudio-server" class="level1">
@@ -403,6 +415,14 @@ is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href=
 <li>Much “cheaper” to do work on a remote system (no need to transmit all the graphical stuff over the network)</li>
 </ul>
 </section>
+<section id="a-little-bit-of-terminology" class="level3">
+<h3 class="anchored" data-anchor-id="a-little-bit-of-terminology">A little bit of terminology</h3>
+<ul>
+<li><code>Command Line Interface (CLI)</code>: This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)</li>
+<li><code>Terminal</code>: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer</li>
+<li><code>Shell</code>: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being <code>bash</code> (Bourne Again SHell)</li>
+</ul>
+</section>
 <section id="the-terminal-from-rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="the-terminal-from-rstudio">The Terminal from RStudio</h3>
 <p>You can access the command line directly from RStudio by using the <code>Terminal</code> tab next to your R console.</p>
@@ -415,6 +435,9 @@ is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href=
 <li><code>pwd</code>: Know where you are</li>
 <li><code>ls</code>: List the content of the directory</li>
 <li><code>cd</code>: Go inside a directory</li>
+</ul>
+<p>Some pseudo directory names. Wherever you are:</p>
+<ul>
 <li><code>~</code> : Home directory</li>
 <li><code>.</code> : Here (current directory)</li>
 <li><code>..</code>: Up one level (upper directory)</li>
@@ -445,17 +468,30 @@ is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href=
 </figure>
 </div>
 <ul>
-<li>Change permissions: <code>chmod</code></li>
-<li>Change ownership: <code>chown</code></li>
 <li>List files showing ownership and permissions: <code>ls -l</code></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brun@taylor:/courses/EDS214$</span> ls <span class="at">-l</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 3 brun      esmdomainusers 4096 Aug 20 04:49 data</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x+</span> 2 katherine esmdomainusers 4096 Aug 18 18:32 example    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can change those permissions:</p>
 <ul>
-<li>Clear contents in terminal window: <code>clear</code></li>
+<li>Change permissions: <code>chmod</code></li>
+<li>Change ownership: <code>chown</code></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Clear contents in terminal window: <code>clear</code></p>
+</div>
+</div>
 </section>
 </section>
 <section id="general-command-syntax" class="level2">
@@ -469,10 +505,22 @@ is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href=
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ltrh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What do these options do?</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Tip: hit <code>q</code> to exit the help!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>hit <code>spacebar</code> to got to the next page of the manual hit <code>q</code> to exit the help</p>
+</div>
+</div>
 <section id="cli-practice" class="level3">
-<h3 class="anchored" data-anchor-id="cli-practice"><a href="day1-cli_practice.html"><strong>CLI Practice</strong></a></h3>
-<p><strong>To end an SSH session, simply type <code>exit</code> or <code>logout</code> into the command line</strong></p>
+<h3 class="anchored" data-anchor-id="cli-practice"><a href="https://github.com/brunj7/eds214-handson-cli"><strong>CLI Practice</strong></a></h3>
+<p><strong>To end a session, simply type <code>exit</code> or <code>logout</code> into the command line</strong></p>
 <hr>
 </section>
 </section>
