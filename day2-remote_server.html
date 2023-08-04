@@ -172,8 +172,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
-  <li><a href="#collaborative-setup" id="toc-collaborative-setup" class="nav-link" data-scroll-target="#collaborative-setup">Collaborative Setup</a></li>
-  <li><a href="#what-does-working-on-a-remote-server-mean" id="toc-what-does-working-on-a-remote-server-mean" class="nav-link" data-scroll-target="#what-does-working-on-a-remote-server-mean">What does working on a remote server mean?</a></li>
   <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">RStudio Server</a>
   <ul class="collapse">
   <li><a href="#connecting-to-meds-analytical-server" id="toc-connecting-to-meds-analytical-server" class="nav-link" data-scroll-target="#connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</a>
@@ -196,18 +194,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#navigating-and-managing-filesdirectories-in-nix" id="toc-navigating-and-managing-filesdirectories-in-nix" class="nav-link" data-scroll-target="#navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</a></li>
   <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions">Permissions</a></li>
   </ul></li>
-  <li><a href="#general-command-syntax" id="toc-general-command-syntax" class="nav-link" data-scroll-target="#general-command-syntax">General command syntax</a>
+  <li><a href="#general-command-syntax" id="toc-general-command-syntax" class="nav-link" data-scroll-target="#general-command-syntax">General command syntax</a></li>
+  <li><a href="#getting-things-done" id="toc-getting-things-done" class="nav-link" data-scroll-target="#getting-things-done">Getting things done</a>
+  <ul class="collapse">
+  <li><a href="#some-useful-special-commands-using-the-control-key" id="toc-some-useful-special-commands-using-the-control-key" class="nav-link" data-scroll-target="#some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</a></li>
+  <li><a href="#process-management" id="toc-process-management" class="nav-link" data-scroll-target="#process-management">Process management</a></li>
+  <li><a href="#what-about-space" id="toc-what-about-space" class="nav-link" data-scroll-target="#what-about-space">What about “space”</a></li>
+  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a></li>
+  </ul></li>
+  <li><a href="#a-sampling-of-simple-commands-for-dealing-with-files" id="toc-a-sampling-of-simple-commands-for-dealing-with-files" class="nav-link" data-scroll-target="#a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</a></li>
+  <li><a href="#get-into-the-flow-with-pipes" id="toc-get-into-the-flow-with-pipes" class="nav-link" data-scroll-target="#get-into-the-flow-with-pipes">Get into the flow, with pipes</a>
   <ul class="collapse">
   <li><a href="#cli-practice" id="toc-cli-practice" class="nav-link" data-scroll-target="#cli-practice"><strong>CLI Practice</strong></a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#collaborative-setup" id="toc-collaborative-setup" class="nav-link" data-scroll-target="#collaborative-setup">Collaborative Setup</a></li>
+  <li><a href="#what-does-working-on-a-remote-server-mean" id="toc-what-does-working-on-a-remote-server-mean" class="nav-link" data-scroll-target="#what-does-working-on-a-remote-server-mean">What does working on a remote server mean?</a></li>
   <li><a href="#uploading-files-to-a-server" id="toc-uploading-files-to-a-server" class="nav-link" data-scroll-target="#uploading-files-to-a-server">Uploading Files to a server</a>
   <ul class="collapse">
   <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
   <li><a href="#sftp-software" id="toc-sftp-software" class="nav-link" data-scroll-target="#sftp-software">sFTP Software</a></li>
   <li><a href="#scp" id="toc-scp" class="nav-link" data-scroll-target="#scp">scp</a></li>
   </ul></li>
-  <li><a href="#advanced-topics-at-the-command-line" id="toc-advanced-topics-at-the-command-line" class="nav-link" data-scroll-target="#advanced-topics-at-the-command-line">Advanced Topics at the command line</a></li>
+  <li><a href="#a-few-words-about-vim" id="toc-a-few-words-about-vim" class="nav-link" data-scroll-target="#a-few-words-about-vim">A few words about vim</a></li>
   <li><a href="#aknowledgements" id="toc-aknowledgements" class="nav-link" data-scroll-target="#aknowledgements">Aknowledgements</a></li>
   </ul>
 </nav>
@@ -261,24 +270,9 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p><strong><em>=&gt; The operating system is more likely going to be Linux!!</em></strong></p>
+<p>More on this in a few minutes</p>
 </div>
 </div>
-</section>
-<section id="collaborative-setup" class="level1">
-<h1>Collaborative Setup</h1>
-<p>There are additional reasons of particular importance in a collaborative set up, such as a working group:</p>
-<ul>
-<li><p><strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!</p></li>
-<li><p><strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p></li>
-</ul>
-</section>
-<section id="what-does-working-on-a-remote-server-mean" class="level1">
-<h1>What does working on a remote server mean?</h1>
-<p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:</p>
-<ul>
-<li><strong>File management</strong>: you will need to learn to move files (including your R scripts) to the server</li>
-<li><strong>R Package installation</strong>: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</li>
-</ul>
 </section>
 <section id="rstudio-server" class="level1">
 <h1>RStudio Server</h1>
@@ -405,11 +399,11 @@ is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href=
 <section id="why-the-cli-is-worth-learning" class="level3">
 <h3 class="anchored" data-anchor-id="why-the-cli-is-worth-learning">Why the CLI is worth learning</h3>
 <ul>
-<li>Typically much more extensive access to features, commands, options</li>
-<li>Command statements can be written down, saved (scripts!)</li>
-<li>Easier automation</li>
-<li>Much “cheaper” to do work on a remote system (no need to transmit all the graphical stuff over the network)</li>
+<li>Might be the only interface you have to a High Performance Computer (HPC)</li>
+<li>Command statements can be reused easily and saved as scripts</li>
+<li>Easier automation and text files manipulation</li>
 </ul>
+<p>Not convinced? Check this out: <a href="https://brunj7.github.io/eds214-handson-cli/cli-pitch.html">the CLI pitch</a></p>
 </section>
 <section id="a-little-bit-of-terminology" class="level3">
 <h3 class="anchored" data-anchor-id="a-little-bit-of-terminology">A little bit of terminology</h3>
@@ -514,12 +508,107 @@ Tip
 <p>hit <code>spacebar</code> to got to the next page of the manual hit <code>q</code> to exit the help</p>
 </div>
 </div>
+</section>
+<section id="getting-things-done" class="level2">
+<h2 class="anchored" data-anchor-id="getting-things-done">Getting things done</h2>
+<section id="some-useful-special-commands-using-the-control-key" class="level3">
+<h3 class="anchored" data-anchor-id="some-useful-special-commands-using-the-control-key">Some useful, special commands using the Control key</h3>
+<ul>
+<li>Cancel (abort) a command: <code>Ctrl-c</code> Note: very different than Windows!!</li>
+<li>Stop (suspend) a command: <code>Ctrl-z</code></li>
+<li><code>Ctrl-z</code> can be used to suspend, then background a process</li>
+</ul>
+</section>
+<section id="process-management" class="level3">
+<h3 class="anchored" data-anchor-id="process-management">Process management</h3>
+<ul>
+<li>Like Windows Task Manager, OSX Activity Monitor</li>
+<li><strong><code>top</code></strong>, <code>ps</code>, <code>jobs</code> (hit <code>q</code> to get out!)</li>
+<li><code>kill</code> to delete an unwanted job or process</li>
+<li>Foreground and background: <code>&amp;</code></li>
+</ul>
+</section>
+<section id="what-about-space" class="level3">
+<h3 class="anchored" data-anchor-id="what-about-space">What about “space”</h3>
+<ul>
+<li>How much storage is available on this system? <code>df -h</code></li>
+<li>How much storage am “I” using overall? <code>du -hs &lt;folder&gt;</code></li>
+<li>How much storage am “I” using, by sub directory? <code>du -h &lt;folder&gt;</code></li>
+</ul>
+</section>
+<section id="history" class="level3">
+<h3 class="anchored" data-anchor-id="history">History</h3>
+<ul>
+<li>See your command history: <code>history</code></li>
+<li>Re-run last command: <code>!!</code> (pronounced “bang-bang”)</li>
+<li>Re-run 32th command: <code>!32</code></li>
+<li>Re-run 5th from last command: <code>!-5</code></li>
+<li>Re-run last command that started with ‘c’: <code>!c</code></li>
+</ul>
+</section>
+</section>
+<section id="a-sampling-of-simple-commands-for-dealing-with-files" class="level2">
+<h2 class="anchored" data-anchor-id="a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</h2>
+<ul>
+<li><code>wc</code> count lines, words, and/or characters</li>
+<li><code>diff</code> compare two files for differences</li>
+<li><code>sort</code> sort lines in a file</li>
+<li><code>uniq</code> report or filter out repeated lines in a file</li>
+</ul>
+</section>
+<section id="get-into-the-flow-with-pipes" class="level2">
+<h2 class="anchored" data-anchor-id="get-into-the-flow-with-pipes">Get into the flow, with pipes</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pipe_split.png" title="http://www.ucblueash.edu/thomas/Intro_Unix_Text/Images/pipe_split.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><code>stdin</code>, <code>stdout</code>, <code>stderr</code></figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.csv </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="{callout-tip}">
+<ul>
+<li>note use of <code>*</code> as character wildcard for zero or more matches (same in Mac and Windows)</li>
+<li><code>?</code> matches single character;</li>
+</ul>
+</div>
+<p>Here the <code>wc -l</code> command, which counts the number of lines in files, is given filenames on the command line, so it counts the lines in those files. It writes its output to stdout. <code>sort -n</code> sorts lines in files. It was given no files to sort, so it sorts whatever lines come in via stdin. By piping these together (i.e., by hooking <code>wc</code>’s stdout to <code>sort</code>’s stdin using the pipe operator), the output from <code>wc -l</code> is thereby sorted.</p>
+<p>There are various operators for redirecting where stdin comes from and where stdout and stderr go:</p>
+<ul>
+<li><code>&lt; file</code>: read stdin from file</li>
+<li><code>&gt; file</code>: write stdout to file</li>
+<li><code>2&gt; file</code>: write stderr to file</li>
+<li><code>&gt;&amp; file</code>: write both stdout and stderr to file</li>
+<li><code>&gt;&gt; file</code>: append stdout to file</li>
+</ul>
+<p>Let’s write the above result to a file:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span> <span class="op">&gt;</span> csvcount.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Caution: except for <code>&gt;&gt;</code>, all forms of <code>&gt;</code> are destructive: Bash overwrites any existing file with an empty file before the program is run.</p>
+<p>Want to get rid of output you don’t want to see? Use the Unix black hole: <code>&gt;&amp; /dev/null</code>. (This is a cultural meme, you’ll see it on T-shirts and license plates.)</p>
+<p>The above are the main redirections, but there are others.</p>
 <section id="cli-practice" class="level3">
 <h3 class="anchored" data-anchor-id="cli-practice"><a href="https://github.com/brunj7/eds214-handson-cli"><strong>CLI Practice</strong></a></h3>
 <p><strong>To end a session, simply type <code>exit</code> or <code>logout</code> into the command line</strong></p>
 <hr>
 </section>
 </section>
+</section>
+<section id="collaborative-setup" class="level1">
+<h1>Collaborative Setup</h1>
+<p>There are additional reasons of particular importance in a collaborative set up, such as a working group:</p>
+<ul>
+<li><p><strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!</p></li>
+<li><p><strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p></li>
+</ul>
+</section>
+<section id="what-does-working-on-a-remote-server-mean" class="level1">
+<h1>What does working on a remote server mean?</h1>
+<p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:</p>
+<ul>
+<li><strong>File management</strong>: you will need to learn to move files (including your R scripts) to the server</li>
+<li><strong>R Package installation</strong>: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</li>
+</ul>
+<hr>
 </section>
 <section id="uploading-files-to-a-server" class="level1">
 <h1>Uploading Files to a server</h1>
@@ -544,24 +633,22 @@ Tip
 <p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:</p>
 <pre><code>scp /source/path hostname:/path/to/destination/</code></pre>
 <p>Here is an example of my uploading the file <code>10min-loop.R</code> to Taylor from my laptop. The destination directory on Taylor is <code>/Users/brun/</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>BTW try to open and run that script for fun!!</p>
 <p>If you want to upload an entire folder, you can add the <code>-r</code> option to the command. The general syntax is:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Here is an example uploading all the images in the <code>myplot</code> folder</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 </section>
-<section id="advanced-topics-at-the-command-line" class="level1">
-<h1>Advanced Topics at the command line</h1>
-<p><strong>We will not cover this during class, it is for your reference</strong>. You will also have the opportunity to further practice and learn about the command line in EDS-215.</p>
-<p><a href="day1-cli_advanced.html">Advanced topics CLI</a></p>
+<section id="a-few-words-about-vim" class="level1">
+<h1>A few words about vim</h1>
 <p><a href="vim.html">Vim</a></p>
 </section>
 <section id="aknowledgements" class="level1">
 <h1>Aknowledgements</h1>
-<p>This section reuses materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others.</p>
+<p>This section reuses materials from <a href="https://learning.nceas.ucsb.edu/">NCEAS Open Science for Synthesis (OSS)</a> intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others; and from EDS-213 <a href="https://github.com/UCSB-Library-Research-Data-Services/bren-meds213-class-data/blob/main/week5/bash-essentials.md">10 bash essentials</a> developed by Greg Janée</p>
 
 
 </section>
