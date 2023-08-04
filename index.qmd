@@ -121,7 +121,7 @@ datatable(sched2, rownames=FALSE, escape=FALSE)
 | Monday morning       |  [Reproducible workflows](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000&slide=id.p) | [Planning things: from flow charts to pseudocode](day1-pseudocode.html)|
  Monday afternoon      |  [Coding together](day1-coding_together.html)                 | [Collaborating with GitHub](day_1.html#collaborating-through-forking); [Github collaboration Hands-on](https://github.com/brunj7/eds214-handson-ghcollab); [Bonus: Github conflicts](day1-git-collaboration-conflicts.html)  |
 | Tuesday morning      |  [Working on a remote server](day2-remote_server.html)                                    |	[the command line](day3-remote_server.html#command-line) | 
-| Tuesday afternoon	   |  [RStudio server](day3-remote_server.html#rstudio-server);                                |	uploading things |
+| Tuesday afternoon	   |  [RStudio server](day2-remote_server.html#rstudio-server);                                |	uploading things |
 | Wednesday morning    |  [How to get data using APIs](day_4.html#coding-as-a-team)                                |  APIs hands-on: USGS `dataretrieval`	& `metajam` |
 | Wednesday afternoon  |	[Introduction to group project](group_project.html)]                                     |	Group project |
 | Thursday morning     |  [Workflow tools](day_4.html#coding-as-a-team)                                            |	`Targets` & `rrtools` as examples	|
