@@ -34,7 +34,6 @@ format:
     theme: 
       - cosmo
       - medsstyles.scss
-    css: theme.css
     toc: true
     include-after-body: _footer.html
 
