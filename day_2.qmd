@@ -1,5 +1,5 @@
 ---
-title: "Developing Analytical Workflows as a Team"
+title: "Working on a remote server"
 ---
 
 ```{r setup, include=FALSE}
@@ -10,11 +10,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 9:00am - 9:50am   | *Coding together (50 min)*         |
-| 9:50am - 10:00am  | *Break (10 min)*                                        |
-| 10:00am - 10:50am | *Collaborating with GitHub -- Forks (50 min)*        |
-| 10:50am - 11:00am | *Break (10 min)*                  |
-| 11:00am - 12:30pm | *Flex time 1: Resumé Workshop (Myia) (90 min)*         |
+| 10:00am - 10:50am | *Working on a remote server Server (50 min)*          |
+| 10:50am - 11:00am | *Break (10 min)*                                        |
+| 11:00am - 12:30am | *Command line (50 min)*        |              
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                                          |
 | 1:30pm - 2:15pm   | *Branches and Pull Requests (45 min)*   |
 | 2:15pm - 2:25pm   | *Break (10 min)*           |
@@ -32,7 +30,7 @@ In this lesson, you will learn:
 
 - How to connect to a remote server 
 - Get familiar with RStudio server
-- Get a short introduction to the command line (CLI)
+- Practice the command line (CLI)
 
 
 ## Why working on a remote machine?
@@ -46,7 +44,7 @@ Often the main motivation is to **scale your analysis beyond what a personal com
 
 **=> The operating system is more likely going to be Linux!!**
 
-**[Materials](day1-remote_server.html)**
+**[Materials](day2-remote_server.html)**
 
 ![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 

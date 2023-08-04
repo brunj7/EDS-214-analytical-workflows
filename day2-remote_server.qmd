@@ -25,23 +25,25 @@ Often the main motivation is to **scale your analysis beyond what a personal com
 * **Security**: Data are spread across *multiple drives* and have nightly *backups*
 * **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
 
-**=> The operating system is more likely going to be Linux!!**
-
+::: {.callout-warning}
+***=> The operating system is more likely going to be Linux!!***
+:::
 
 # Collaborative Setup
 
 There are additional reasons of particular importance in a collaborative set up, such as a working group:
 
 - **Centralizing data management**: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!
+
 - **Make sure your files are safe**: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.
 
 
-# What does working on a remote server means?
+# What does working on a remote server mean?
 
 What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are  about:
 
-- File management: you will need to learn to move files (including your R scripts) to the server
-- Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.
+- **File management**: you will need to learn to move files (including your R scripts) to the server
+- **R Package installation**: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.
 
 
 # RStudio Server
@@ -159,6 +161,12 @@ The CLI provides a direct way to interact with the Operating System, by typing i
 * Much "cheaper" to do work on a remote system (no need to
       transmit all the graphical stuff over the network)
       
+### A little bit of terminology
+
+- `Command Line Interface (CLI)`: This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, ...) 
+- `Terminal`: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer
+- `Shell`: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being `bash` (Bourne Again SHell)
+
 
 
 ### The Terminal from RStudio
@@ -176,6 +184,9 @@ You can access the command line directly from RStudio by using the `Terminal` ta
 * `pwd`: Know where you are
 * `ls`: List the content of the directory
 * `cd`: Go inside a directory
+
+Some pseudo directory names. Wherever you are:
+
 * `~` : Home directory
 * `.` : Here (current directory)
 * `..`: Up one level (upper directory)
@@ -204,17 +215,24 @@ All files have permissions and ownership.
 
 ![File permissions](img/UnixFileLongFormat.png)
 
-* Change permissions: `chmod`
-* Change ownership: `chown`
 * List files showing ownership and permissions: `ls -l`
+
 ```bash
 brun@taylor:/courses/EDS214$ ls -l
 total 16
 drwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data
 drwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example	
 ```
-* Clear contents in terminal window: `clear`
 
+You can change those permissions:
+
+* Change permissions: `chmod`
+* Change ownership: `chown`
+
+
+::: {.callout-tip}
+Clear contents in terminal window: `clear`
+:::
 
 
 ## General command syntax
@@ -240,13 +258,15 @@ What do these options do?
 man ls
 ```
 
-Tip: hit `q` to exit the help!
+::: {.callout-tip}
+hit `spacebar` to got to the next page of the manual
+hit `q` to exit the help
+:::
+
+### [**CLI Practice**](https://github.com/brunj7/eds214-handson-cli)
 
 
-### [**CLI Practice**](day1-cli_practice.html)
-
-
-**To end an SSH session, simply type `exit` or `logout` into the command line**
+**To end a session, simply type `exit` or `logout` into the command line**
 
 ---
 

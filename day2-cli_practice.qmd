@@ -1,6 +1,5 @@
 ---
 title: "Practicing CLI"
-
 ---
 
 ```{r setup, include=FALSE}
