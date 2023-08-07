@@ -320,7 +320,7 @@ wc -l *.csv | sort -n
 
 
 Here the `wc -l` command, which counts the number of lines in files,
-is given filenames on the command line, so it counts the lines in
+is given file names on the command line, so it counts the lines in
 those files.  It writes its output to stdout.  `sort -n` sorts lines
 in files.  It was given no files to sort, so it sorts whatever lines
 come in via stdin.  By piping these together (i.e., by hooking `wc`'s
@@ -437,7 +437,7 @@ scp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots
 --- 
 
 
-# A few words about vim
+# Bonus:  vim
 
 This section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.
 
