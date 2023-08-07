@@ -246,7 +246,7 @@ man ls
 ```
 
 ::: {.callout-tip}
-hit `spacebar` to got to the next page of the manual
+hit `spacebar` to get to the next page of the manual
 hit `q` to exit the help
 :::
 
@@ -272,6 +272,18 @@ hit `q` to exit the help
 * How much storage is available on this system?  `df -h`
 * How much storage am "I" using overall?  `du -hs <folder>`
 * How much storage am "I" using, by sub directory?  `du -h <folder>`
+* How much RAM is used?  `free -h`
+
+
+### Existential questions
+
+* What is your username?  `whoami`
+* What is today's date?  `date`
+* Where are the programs you are using?   `whereis R` also try `which -a python`
+* What is the kernel version of your OS:  `uname -a`
+* Since when since last reboot: `uptime`
+
+
 
 ### History
 
@@ -426,6 +438,8 @@ scp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots
 
 
 # A few words about vim
+
+This section is optional depending of our progress and interest. Vim is still the defautl text editor on many Linux distribution and it is good to know about its basics.
 
 [Vim](vim.html)
 
