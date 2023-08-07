@@ -439,7 +439,7 @@ scp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots
 
 # A few words about vim
 
-This section is optional depending of our progress and interest. Vim is still the defautl text editor on many Linux distribution and it is good to know about its basics.
+This section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.
 
 [Vim](vim.html)
 
