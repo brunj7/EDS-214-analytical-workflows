@@ -11,8 +11,8 @@ library(devtools)
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 9:00am - 9:30am   | *[Open Source Software for Data Science](https://www.rstudio.com/resources/rstudioconf-2020/open-source-software-for-data-science/) (30 min)*  (30min)*             |
-| 9:30am - 12:30pm  | *Group project (120min)* |
+| 10:00am - 10:30am   | *[Open Source Software for Data Science](https://www.rstudio.com/resources/rstudioconf-2020/open-source-software-for-data-science/) (30 min)*  (30min)*             |
+| 10:30am - 12:30pm  | *Group project (120min)* |
 | 12:300pm - 1:30pm  | *Lunch *   |
 | 1:30pm - 2:00pm   | *Meet your next instructor  --  Kelly Caylor,  Office of Research and Earth Research Institute, UCSB* |
 | 2:00pm - 3:00pm   | *Group project presentations - p1 (60 min)*. |

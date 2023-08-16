@@ -1,5 +1,5 @@
 ---
-title: "Documenting and Sharing Things"
+title: "Being reproducible: Tools and Practices"
 ---
 
 # Day 4
