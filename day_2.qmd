@@ -1,5 +1,6 @@
 ---
 title: "Working on a remote server"
+default-image-extension: ""
 ---
 
 ```{r setup, include=FALSE}
@@ -8,20 +9,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Day 2
 
-| **Time (PST)**    | **Activity**                                             |
-|-------------------|----------------------------------------------------------|
-| 10:00am - 10:50am | *Working on a remote server Server (50 min)*             |
-| 10:50am - 11:00am | *Break (10 min)*                                         |
-| 11:00am - 12:30am | *Command line (50 min)*                                  |
-| 12:30pm - 1:30pm  | *Lunch (60 min)*                                         |
-| 1:30pm - 2:00pm   | *Managing data-driven projects as a team (30 min)*       |
-| 2:00pm - 3:00pm   | *Uploading things to a server (60 min)*                  |
-| 3:00pm - 3:10pm   | *Break (10 min)*                                         |
-| 3:10pm - 4:00pm   | *Recap of the first half of the course and Q&A*          |
+| **Time (PST)**    | **Activity**                                       |
+|-------------------|----------------------------------------------------|
+| 10:00am - 10:50am | *Working on a remote server Server (50 min)*       |
+| 10:50am - 11:00am | *Break (10 min)*                                   |
+| 11:00am - 12:30am | *Command line (50 min)*                            |
+| 12:30pm - 1:30pm  | *Lunch (60 min)*                                   |
+| 1:30pm - 2:00pm   | *Managing data-driven projects as a team (30 min)* |
+| 2:00pm - 3:00pm   | *Uploading things to a server (60 min)*            |
+| 3:00pm - 3:10pm   | *Break (10 min)*                                   |
+| 3:10pm - 4:00pm   | *Recap of the first half of the course and Q&A*    |
 
-
-
----  
+------------------------------------------------------------------------
 
 # Working on a remote server
 
@@ -31,49 +30,41 @@ knitr::opts_chunk$set(echo = FALSE)
 
 In this lesson, you will learn:
 
-- How to connect to a remote server 
-- Get familiar with RStudio server
-- Get a short introduction to the command line (CLI)
-
+-   How to connect to a remote server
+-   Get familiar with RStudio server
+-   Get a short introduction to the command line (CLI)
 
 # Why working on a remote machine?
 
 Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
 
-* **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB) 
-* **Capacity**: More *disk space* and generally *faster storage* (in highly optimized RAID arrays)
-* **Security**: Data are spread across *multiple drives* and have nightly *backups*
-* **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
+-   **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB)
+-   **Capacity**: More *disk space* and generally *faster storage* (in highly optimized RAID arrays)
+-   **Security**: Data are spread across *multiple drives* and have nightly *backups*
+-   **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
 
-::: {.callout-warning}
-***=> The operating system is more likely going to be Linux!!***
+::: callout-warning
+***=\> The operating system is more likely going to be Linux!!***
 
 More on this in a few minutes
 :::
 
-
 ## Unix and Friends
 
-**[Materials](day2-unices.html)**
-
+[**Materials**](day2-unices.html)
 
 ## RStudio Server
 
-**[Materials](day2-unices.html)**
-
+[**Materials**](day2-unices.html)
 
 ## The Command Line Interface (CLI)
 
-**[Materials](day2-remote_server.html)**
-
+[**Materials**](day2-remote_server.html)
 
 ## Collaborating on a server
 
-**[Materials](day2-server_collaboration.html)**
-
+[**Materials**](day2-server_collaboration.html)
 
 ## Uploading files to a server
 
-**[Materials](day2-server_uploading.html)**
-
-
+[**Materials**](day2-server_uploading.html)
