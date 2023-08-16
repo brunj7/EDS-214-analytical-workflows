@@ -101,6 +101,8 @@ A few notes:
 
 **Look now inside you `R` folder!!**
 
+
+
 ---
 
 # Command line
@@ -353,10 +355,13 @@ T-shirts and license plates.)
 
 The above are the main redirections, but there are others.
 
-### [**CLI Practice**](https://github.com/brunj7/eds214-handson-cli)
-
-
 **To end a session, simply type `exit` or `logout` into the command line**
+
+
+## [**CLI Practice**](https://github.com/brunj7/eds214-handson-cli)
+
+
+
 
 
 ---
