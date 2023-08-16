@@ -14,11 +14,11 @@ website:
         menu:
           - text: "Day 1: Reproducible & collaborative workflows"
             href: day_1.html
-          - text: "Day 2: Developing analytical workflows as a team"
+          - text: "Day 2: Working on a remote server"
             href: day_2.html
-          - text: "Day 3: Managing your code and data on a remote server"
+          - text: "Day 3: Getting data in a programmatic way"
             href: day_3.html
-          - text: "Day 4: Documenting and sharing things"
+          - text: "Day 4: Being reproducible: Tools and Practices"
             href: day_4.html
           - text: "Day 5: Reproducible for all"
             href: day_5.html
