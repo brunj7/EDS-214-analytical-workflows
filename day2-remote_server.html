@@ -170,28 +170,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
-  <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">RStudio Server</a>
-  <ul class="collapse">
-  <li><a href="#connecting-to-meds-analytical-server" id="toc-connecting-to-meds-analytical-server" class="nav-link" data-scroll-target="#connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</a>
-  <ul class="collapse">
-  <li><a href="#file-structure" id="toc-file-structure" class="nav-link" data-scroll-target="#file-structure">File structure</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#command-line" id="toc-command-line" class="nav-link" data-scroll-target="#command-line">Command line</a>
-  <ul class="collapse">
-  <li><a href="#introduction-to-unix-and-its-siblings" id="toc-introduction-to-unix-and-its-siblings" class="nav-link" data-scroll-target="#introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</a>
-  <ul class="collapse">
-  <li><a href="#some-unix-hallmarks" id="toc-some-unix-hallmarks" class="nav-link" data-scroll-target="#some-unix-hallmarks">Some Unix hallmarks</a></li>
-  </ul></li>
-  <li><a href="#the-command-line-interface-cli" id="toc-the-command-line-interface-cli" class="nav-link" data-scroll-target="#the-command-line-interface-cli">The Command Line Interface (CLI)</a>
+  <li><a href="#the-command-line-interface-cli" id="toc-the-command-line-interface-cli" class="nav-link active" data-scroll-target="#the-command-line-interface-cli">The Command Line Interface (CLI)</a>
   <ul class="collapse">
   <li><a href="#why-the-cli-is-worth-learning" id="toc-why-the-cli-is-worth-learning" class="nav-link" data-scroll-target="#why-the-cli-is-worth-learning">Why the CLI is worth learning</a></li>
   <li><a href="#a-little-bit-of-terminology" id="toc-a-little-bit-of-terminology" class="nav-link" data-scroll-target="#a-little-bit-of-terminology">A little bit of terminology</a></li>
   <li><a href="#the-terminal-from-rstudio" id="toc-the-terminal-from-rstudio" class="nav-link" data-scroll-target="#the-terminal-from-rstudio">The Terminal from RStudio</a></li>
-  <li><a href="#navigating-and-managing-filesdirectories-in-nix" id="toc-navigating-and-managing-filesdirectories-in-nix" class="nav-link" data-scroll-target="#navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</a></li>
   <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions">Permissions</a></li>
   </ul></li>
   <li><a href="#general-command-syntax" id="toc-general-command-syntax" class="nav-link" data-scroll-target="#general-command-syntax">General command syntax</a></li>
@@ -206,15 +189,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a-sampling-of-simple-commands-for-dealing-with-files" id="toc-a-sampling-of-simple-commands-for-dealing-with-files" class="nav-link" data-scroll-target="#a-sampling-of-simple-commands-for-dealing-with-files">A sampling of simple commands for dealing with files</a></li>
   <li><a href="#get-into-the-flow-with-pipes" id="toc-get-into-the-flow-with-pipes" class="nav-link" data-scroll-target="#get-into-the-flow-with-pipes">Get into the flow, with pipes</a></li>
   <li><a href="#cli-practice" id="toc-cli-practice" class="nav-link" data-scroll-target="#cli-practice"><strong>CLI Practice</strong></a></li>
-  </ul></li>
-  <li><a href="#collaborative-setup" id="toc-collaborative-setup" class="nav-link" data-scroll-target="#collaborative-setup">Collaborative Setup</a></li>
-  <li><a href="#what-does-working-on-a-remote-server-mean" id="toc-what-does-working-on-a-remote-server-mean" class="nav-link" data-scroll-target="#what-does-working-on-a-remote-server-mean">What does working on a remote server mean?</a></li>
-  <li><a href="#uploading-files-to-a-server" id="toc-uploading-files-to-a-server" class="nav-link" data-scroll-target="#uploading-files-to-a-server">Uploading Files to a server</a>
-  <ul class="collapse">
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
-  <li><a href="#sftp-software" id="toc-sftp-software" class="nav-link" data-scroll-target="#sftp-software">sFTP Software</a></li>
-  <li><a href="#scp" id="toc-scp" class="nav-link" data-scroll-target="#scp">scp</a></li>
-  </ul></li>
   <li><a href="#bonus-vim" id="toc-bonus-vim" class="nav-link" data-scroll-target="#bonus-vim">Bonus: vim</a></li>
   <li><a href="#aknowledgements" id="toc-aknowledgements" class="nav-link" data-scroll-target="#aknowledgements">Aknowledgements</a></li>
   </ul>
@@ -240,158 +214,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="learning-objectives" class="level1">
-<h1>Learning Objectives</h1>
-<p>In this lesson, you will learn:</p>
-<ul>
-<li>How to connect to a remote server</li>
-<li>Get familiar with RStudio server</li>
-<li>Get a short introduction to the command line (CLI)</li>
-</ul>
-</section>
-<section id="why-working-on-a-remote-machine" class="level1">
-<h1>Why working on a remote machine?</h1>
-<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
-<ul>
-<li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
-<li><strong>Capacity</strong>: More <em>disk space</em> and generally <em>faster storage</em> (in highly optimized RAID arrays)</li>
-<li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
-<li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong><em>=&gt; The operating system is more likely going to be Linux!!</em></strong></p>
-<p>More on this in a few minutes</p>
-</div>
-</div>
-</section>
-<section id="rstudio-server" class="level1">
-<h1>RStudio Server</h1>
-<p>From an user perspective, <em>RStudio Server is your familiar RStudio interface in your web browser</em>. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that <strong>the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!</strong> This remote file management is the main change you will have to adopt in your workflow.</p>
-<p>To help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/rstudio-server-ide.png" class="img-fluid figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="connecting-to-meds-analytical-server" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</h2>
-<ol type="1">
-<li><p>Got to: <a href="https://taylor.bren.ucsb.edu/" class="uri">https://taylor.bren.ucsb.edu/</a></p></li>
-<li><p>Enter your credentials</p></li>
-<li><p>You are in!</p></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/rstudio-server_login.png" class="img-fluid" width="1544"></p>
-</div>
-</div>
-<ol start="4" type="1">
-<li>Click on the <code>New Session</code> button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.</li>
-</ol>
-<p>For this session, we are going to select the <code>RStudio</code> option and hit <code>Start Session</code>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/rstudio-server_session.png" class="img-fluid" width="591"></p>
-</div>
-</div>
-<p><strong>You should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!</strong></p>
-<section id="file-structure" class="level3">
-<h3 class="anchored" data-anchor-id="file-structure">File structure</h3>
-<p>Let’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the <code>home</code> folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: <code>R</code> and <code>H</code></p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/rstudio-server_file-structure.png" class="img-fluid" width="779"></p>
-</div>
-</div>
-<p>The <code>R</code> folder is where your local R packages will be installed, you can ignore it. The <code>H</code> is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.</p>
-<p>Let us make a folder named <code>github</code> by click on the <code>New Folder</code> button at the top of the tab. We will use this folder (also named <code>directory</code> in linux/unix terms) to clone any GitHub repository.</p>
-</section>
-<section id="r-packages" class="level3">
-<h3 class="anchored" data-anchor-id="r-packages">R packages</h3>
-<p>If we go to the <code>Packages</code> tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/rstudio-server_packages.png" class="img-fluid" width="779"></p>
-</div>
-</div>
-<p>A user can also installed her/his own packages. Let’s try to install the <code>remote</code> package that lets you install R packages directly from GitHub: <code>install.packages("remotes")</code>. Once done, note a new section that appeared on the Packages tab named <code>User Library</code>. Each of us have now its own copy of the package installed (in this <code>R</code> folder we were talking about a few minutes ago).</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/rstudio-server_packages-user.png" class="img-fluid" width="777"></p>
-</div>
-</div>
-<p>A few notes:</p>
-<ul>
-<li>In this example we will have made a better choice to have the <code>remotes</code> package installed once at the system level</li>
-<li>Some R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package</li>
-<li>Installing an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries</li>
-</ul>
-<p><strong>Look now inside you <code>R</code> folder!!</strong></p>
-<hr>
-</section>
-</section>
-</section>
-<section id="command-line" class="level1">
-<h1>Command line</h1>
-<section id="introduction-to-unix-and-its-siblings" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</h2>
-<dl>
-<dt>UNIX</dt>
-<dd>
-Originally developed at AT&amp;T Bell Labs circa 1970. Has experienced a <a href="https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg">long, multi-branched evolutionary path</a>
-</dd>
-<dt>POSIX (Portable Operating System Interface)</dt>
-<dd>
-a set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants
-</dd>
-</dl>
-<section id="various-unices" class="level4">
-<h4 class="anchored" data-anchor-id="various-unices">Various Unices</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/unix-history-simple.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The unix family tree</figcaption>
-</figure>
-</div>
-<ul>
-<li><dl>
-<dt>OS X</dt>
-<dd>
-<a href="http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix">is a Unix</a>!
-</dd>
-</dl></li>
-<li><dl>
-<dt>Linux</dt>
-<dd>
-is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href="http://en.wikipedia.org/wiki/Unix-like">functionally Unix</a>
-</dd>
-</dl></li>
-</ul>
-</section>
-<section id="some-unix-hallmarks" class="level3">
-<h3 class="anchored" data-anchor-id="some-unix-hallmarks">Some Unix hallmarks</h3>
-<ul>
-<li>Supports multi-users, multi-processes</li>
-<li>Highly modular: many small tools that do one thing well, and can be combined</li>
-<li>Culture of text files and streams</li>
-<li>Primary OS on HPC (<strong>High Performance Computing</strong> Systems)</li>
-<li>Main OS on which Internet was built</li>
-</ul>
-</section>
-</section>
 <section id="the-command-line-interface-cli" class="level2">
 <h2 class="anchored" data-anchor-id="the-command-line-interface-cli">The Command Line Interface (CLI)</h2>
 <p>The CLI provides a direct way to interact with the Operating System, by typing in commands.</p>
@@ -415,10 +237,7 @@ is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href=
 <section id="the-terminal-from-rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="the-terminal-from-rstudio">The Terminal from RStudio</h3>
 <p>You can access the command line directly from RStudio by using the <code>Terminal</code> tab next to your R console.</p>
-<p><img src="img/rstudio-terminal.png" class="img-fluid"></p>
-</section>
-<section id="navigating-and-managing-filesdirectories-in-nix" class="level3">
-<h3 class="anchored" data-anchor-id="navigating-and-managing-filesdirectories-in-nix">Navigating and managing files/directories in *NIX</h3>
+<p><img src="img/rstudio-terminal.png" class="img-fluid"> ### Navigating and managing files/directories in *NIX</p>
 <p><img src="img/unix_filetree.gif" class="img-fluid"></p>
 <ul>
 <li><code>pwd</code>: Know where you are</li>
@@ -601,56 +420,6 @@ Tip
 <section id="cli-practice" class="level2">
 <h2 class="anchored" data-anchor-id="cli-practice"><a href="https://github.com/brunj7/eds214-handson-cli"><strong>CLI Practice</strong></a></h2>
 <hr>
-</section>
-</section>
-<section id="collaborative-setup" class="level1">
-<h1>Collaborative Setup</h1>
-<p>There are additional reasons of particular importance in a collaborative set up, such as a working group:</p>
-<ul>
-<li><p><strong>Centralizing data management</strong>: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!</p></li>
-<li><p><strong>Make sure your files are safe</strong>: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.</p></li>
-</ul>
-</section>
-<section id="what-does-working-on-a-remote-server-mean" class="level1">
-<h1>What does working on a remote server mean?</h1>
-<p>What does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:</p>
-<ul>
-<li><strong>File management</strong>: you will need to learn to move files (including your R scripts) to the server</li>
-<li><strong>R Package installation</strong>: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.</li>
-</ul>
-<hr>
-</section>
-<section id="uploading-files-to-a-server" class="level1">
-<h1>Uploading Files to a server</h1>
-<p>You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)</p>
-<section id="rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
-<p>You can only upload one file at the time (you can zip a folder to trick it):</p>
-<p><img src="img/rstudio-upload.png" class="img-fluid"></p>
-</section>
-<section id="sftp-software" class="level2">
-<h2 class="anchored" data-anchor-id="sftp-software">sFTP Software</h2>
-<p>An efficient protocol to upload files is FTP (File Transfer Protocol). The <code>s</code> stands for secured. Any software supporting those protocols will work to transfer files.</p>
-<p>We recommend the following free software:</p>
-<ul>
-<li>Mac users: <a href="https://cyberduck.io">cyberduck</a></li>
-<li>Windows: <a href="https://winscp.net/eng/index.php">WinSCP</a></li>
-</ul>
-<p><img src="img/server-cyberduck.png" class="img-fluid"></p>
-</section>
-<section id="scp" class="level2">
-<h2 class="anchored" data-anchor-id="scp">scp</h2>
-<p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:</p>
-<pre><code>scp /source/path hostname:/path/to/destination/</code></pre>
-<p>Here is an example of my uploading the file <code>10min-loop.R</code> to Taylor from my laptop. The destination directory on Taylor is <code>/Users/brun/</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>BTW try to open and run that script for fun!!</p>
-<p>If you want to upload an entire folder, you can add the <code>-r</code> option to the command. The general syntax is:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Here is an example uploading all the images in the <code>myplot</code> folder</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
 </section>
 <section id="bonus-vim" class="level1">
 <h1>Bonus: vim</h1>

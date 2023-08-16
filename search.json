@@ -280,6 +280,41 @@
     "text": "metajam\nThe metajam R package relies on the dataONE API to download data and metadata into your R Environment. It is currently supporting KNB, ADC and EDI repositories because they rely on the metadata standard EML.\nShort intro to the package\n\nExercise 2\nLet’s determine what percentage of Alaskan household are speaking only English!\nThe data: https://doi.org/10.5063/F1N58JPP\n\nRead the metadata\nDownload the data household_language.csv using metajam\nRead the data into R using metajam\nWrite a piece of code that will compute the percentage of Alaskan household speaking only English for the year 2009 to 2015\nCreate a plot to visualize this data\n\n\n\nBonus\nHow does it compare to French?"
   },
   {
+    "objectID": "day2-server_uploading.html",
+    "href": "day2-server_uploading.html",
+    "title": "Uploading things to a server",
+    "section": "",
+    "text": "An efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
+  },
+  {
+    "objectID": "day2-server_uploading.html#sftp-software",
+    "href": "day2-server_uploading.html#sftp-software",
+    "title": "Uploading things to a server",
+    "section": "",
+    "text": "An efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
+  },
+  {
+    "objectID": "day2-server_uploading.html#scp",
+    "href": "day2-server_uploading.html#scp",
+    "title": "Uploading things to a server",
+    "section": "scp",
+    "text": "scp\nThe scp command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:\nscp /source/path hostname:/path/to/destination/\nHere is an example of my uploading the file 10min-loop.R to Taylor from my laptop. The destination directory on Taylor is /Users/brun/:\nscp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/\nBTW try to open and run that script for fun!!\nIf you want to upload an entire folder, you can add the -r option to the command. The general syntax is:\nscp -r /path/to/source-folder user@server:/path/to/destination-folder/\nHere is an example uploading all the images in the myplot folder\nscp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots"
+  },
+  {
+    "objectID": "day2-rstudio_server.html",
+    "href": "day2-rstudio_server.html",
+    "title": "RStudio server",
+    "section": "",
+    "text": "From an user perspective, RStudio Server is your familiar RStudio interface in your web browser. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!! This remote file management is the main change you will have to adopt in your workflow.\nTo help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.\n\n\n\n\n\n\n\n\n\n\n\n\nGot to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\nknitr::include_graphics(\"img/rstudio-server_login.png\")\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\nknitr::include_graphics(\"img/rstudio-server_session.png\")\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\n\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\nknitr::include_graphics(\"img/rstudio-server_file-structure.png\")\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\n\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\nknitr::include_graphics(\"img/rstudio-server_packages.png\")\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\nknitr::include_graphics(\"img/rstudio-server_packages-user.png\")\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
+  },
+  {
+    "objectID": "day2-rstudio_server.html#connecting-to-meds-analytical-server",
+    "href": "day2-rstudio_server.html#connecting-to-meds-analytical-server",
+    "title": "RStudio server",
+    "section": "",
+    "text": "Got to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\nknitr::include_graphics(\"img/rstudio-server_login.png\")\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\nknitr::include_graphics(\"img/rstudio-server_session.png\")\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\n\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\nknitr::include_graphics(\"img/rstudio-server_file-structure.png\")\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\n\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\nknitr::include_graphics(\"img/rstudio-server_packages.png\")\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\nknitr::include_graphics(\"img/rstudio-server_packages-user.png\")\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
+  },
+  {
     "objectID": "day2-projects_team.html",
     "href": "day2-projects_team.html",
     "title": "Managing data-driven projects as a team",
@@ -655,28 +690,14 @@
     "href": "day2-remote_server.html",
     "title": "Working on a remote server",
     "section": "",
-    "text": "In this lesson, you will learn:\n\nHow to connect to a remote server\nGet familiar with RStudio server\nGet a short introduction to the command line (CLI)"
-  },
-  {
-    "objectID": "day2-remote_server.html#connecting-to-meds-analytical-server",
-    "href": "day2-remote_server.html#connecting-to-meds-analytical-server",
-    "title": "Working on a remote server",
-    "section": "Connecting to MEDS Analytical Server",
-    "text": "Connecting to MEDS Analytical Server\n\nGot to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\nFile structure\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\nR packages\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
-  },
-  {
-    "objectID": "day2-remote_server.html#introduction-to-unix-and-its-siblings",
-    "href": "day2-remote_server.html#introduction-to-unix-and-its-siblings",
-    "title": "Working on a remote server",
-    "section": "Introduction to UNIX and its siblings",
-    "text": "Introduction to UNIX and its siblings\n\nUNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\nVarious Unices\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\nSome Unix hallmarks\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built"
+    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
   },
   {
     "objectID": "day2-remote_server.html#the-command-line-interface-cli",
     "href": "day2-remote_server.html#the-command-line-interface-cli",
     "title": "Working on a remote server",
-    "section": "The Command Line Interface (CLI)",
-    "text": "The Command Line Interface (CLI)\nThe CLI provides a direct way to interact with the Operating System, by typing in commands.\n\nWhy the CLI is worth learning\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\nNot convinced? Check this out: the CLI pitch\n\n\nA little bit of terminology\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\nThe Terminal from RStudio\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n\n\n\nNavigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\nPermissions\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
+    "section": "",
+    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
   },
   {
     "objectID": "day2-remote_server.html#general-command-syntax",
@@ -714,18 +735,25 @@
     "text": "CLI Practice"
   },
   {
-    "objectID": "day2-remote_server.html#sftp-software",
-    "href": "day2-remote_server.html#sftp-software",
-    "title": "Working on a remote server",
-    "section": "sFTP Software",
-    "text": "sFTP Software\nAn efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
+    "objectID": "day2-server_collaboration.html",
+    "href": "day2-server_collaboration.html",
+    "title": "Collaborating on a server",
+    "section": "",
+    "text": "Collaborative Setup\nThere are additional reasons of particular importance in a collaborative set up, such as a working group:\n\nCentralizing data management: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!\nMake sure your files are safe: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.\n\n\n\nWhat does working on a remote server mean?\nWhat does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:\n\nFile management: you will need to learn to move files (including your R scripts) to the server\nR Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.\n\n\n\n\nUploading Files to a server\nYou have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)\n\nRStudio\nYou can only upload one file at the time (you can zip a folder to trick it):"
   },
   {
-    "objectID": "day2-remote_server.html#scp",
-    "href": "day2-remote_server.html#scp",
-    "title": "Working on a remote server",
-    "section": "scp",
-    "text": "scp\nThe scp command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:\nscp /source/path hostname:/path/to/destination/\nHere is an example of my uploading the file 10min-loop.R to Taylor from my laptop. The destination directory on Taylor is /Users/brun/:\nscp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/\nBTW try to open and run that script for fun!!\nIf you want to upload an entire folder, you can add the -r option to the command. The general syntax is:\nscp -r /path/to/source-folder user@server:/path/to/destination-folder/\nHere is an example uploading all the images in the myplot folder\nscp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots"
+    "objectID": "day2-unices.html",
+    "href": "day2-unices.html",
+    "title": "Unices",
+    "section": "",
+    "text": "UNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\n\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\n\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built\n\n\n\n\n\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions"
+  },
+  {
+    "objectID": "day2-unices.html#introduction-to-unix-and-its-siblings",
+    "href": "day2-unices.html#introduction-to-unix-and-its-siblings",
+    "title": "Unices",
+    "section": "",
+    "text": "UNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\n\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\n\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built\n\n\n\n\n\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions"
   },
   {
     "objectID": "day4-documenting.html",
@@ -882,18 +910,39 @@
     "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nWorking on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nCommand line (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nManaging data-driven projects as a team (30 min)\n\n\n2:00pm - 3:00pm\nUploading things to a server (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nRecap of the first half of the course and Q&A"
   },
   {
-    "objectID": "day_2.html#learning-objectives",
-    "href": "day_2.html#learning-objectives",
+    "objectID": "day_2.html#unix-and-friends",
+    "href": "day_2.html#unix-and-friends",
     "title": "Working on a remote server",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nIn this lesson, you will learn:\n\nHow to connect to a remote server\nGet familiar with RStudio server\nPractice the command line (CLI)"
+    "section": "Unix and Friends",
+    "text": "Unix and Friends\nMaterials"
   },
   {
-    "objectID": "day_2.html#why-working-on-a-remote-machine",
-    "href": "day_2.html#why-working-on-a-remote-machine",
+    "objectID": "day_2.html#rstudio-server",
+    "href": "day_2.html#rstudio-server",
     "title": "Working on a remote server",
-    "section": "Why working on a remote machine?",
-    "text": "Why working on a remote machine?\nOften the main motivation is to scale your analysis beyond what a personal computer can handle. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:\n\nPower: More CPUs/Cores (24/32/48), More RAM (256/384GB)\nCapacity: More disk space and generally faster storage (in highly optimized RAID arrays)\nSecurity: Data are spread across multiple drives and have nightly backups\nCollaboration: shared folders for code, data, and other materials; same software versions\n\n=&gt; The operating system is more likely going to be Linux!!\nMaterials\n\n\n\nCERN computing center"
+    "section": "RStudio Server",
+    "text": "RStudio Server\nMaterials"
+  },
+  {
+    "objectID": "day_2.html#the-command-line-interface-cli",
+    "href": "day_2.html#the-command-line-interface-cli",
+    "title": "Working on a remote server",
+    "section": "The Command Line Interface (CLI)",
+    "text": "The Command Line Interface (CLI)\nMaterials"
+  },
+  {
+    "objectID": "day_2.html#collaborating-on-a-server",
+    "href": "day_2.html#collaborating-on-a-server",
+    "title": "Working on a remote server",
+    "section": "Collaborating on a server",
+    "text": "Collaborating on a server\nMaterials"
+  },
+  {
+    "objectID": "day_2.html#uploading-files-to-a-server",
+    "href": "day_2.html#uploading-files-to-a-server",
+    "title": "Working on a remote server",
+    "section": "Uploading files to a server",
+    "text": "Uploading files to a server\nMaterials"
   },
   {
     "objectID": "day_4.html",
