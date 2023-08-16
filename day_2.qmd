@@ -55,7 +55,7 @@ More on this in a few minutes
 
 ## RStudio Server
 
-[**Materials**](day2-unices.html)
+[**Materials**](day2-rstudio_server.html)
 
 ## The Command Line Interface (CLI)
 
