@@ -17,7 +17,6 @@ The CLI provides a direct way to interact with the Operating System, by typing i
 * Command statements can be reused easily and saved as scripts
 * Easier automation and text files manipulation
 
-Not convinced? Check this out: [the CLI pitch](https://brunj7.github.io/eds214-handson-cli/cli-pitch.html)
       
 ### A little bit of terminology
 
@@ -25,7 +24,9 @@ Not convinced? Check this out: [the CLI pitch](https://brunj7.github.io/eds214-h
 - `Terminal`: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer
 - `Shell`: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being `bash` (Bourne Again SHell)
 
-
+::: {.callout-tip}
+Not convinced? Check this out: [the CLI pitch](https://brunj7.github.io/eds214-handson-cli/cli-pitch.html)
+:::
 
 ### The Terminal from RStudio
 
