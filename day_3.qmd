@@ -14,9 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 | 11:00am - 11:10am | *Break (10 min)*                   |
 | 11:10am - 12:30am | *APIs hands-on (80 min)*             |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                     |
-| 1:30pm - 2:00pm   | *Managing data-driven projects as a team*    |
-| 2:00pm - 2:30pm   | *Introduction to the group project (30 min)* |
-| 2:30pm - 4:00pm   | *Group Projects (90min)*                     |
+| 1:30pm - 2:00pm   | *Introduction to the group project (30 min)* |
+| 2:00pm - 4:00pm   | *Group Projects (120min)*                  |
 
 
 # Getting Data

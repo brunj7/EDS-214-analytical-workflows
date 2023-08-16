@@ -4,20 +4,17 @@ title: "Documenting and Sharing Things"
 
 # Day 4
 
+
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 9:00am - 9:50am   | *Documenting things (60 min)* |
-| 9:50am - 10:00am  | *Break 1 (10 min)*                  |
-| 10:00am - 11:00am | *Group Project (60min)*             |
-| 11:00am - 12:00pm | *Updating your GitHub profile (Sam)*|
-| 12:00pm - 1:15pm  | *Lunch (75 min)*                    |
-| 1:15pm - 2:15pm   | *sharing things (60 min)*       |
-| 2:15pm - 2:25pm   | *Break (10min)*                     |
-| 2:25pm - 3:25pm   | *Group Project (60min)*             |
-| 3:30pm - 4:30pm   | *Q&A with Casey*                    |
-| 4:30pm -  ...     | *Happy hour with Ginger ;)*         |
-
-
+| 10:00am - 11:00am | *Reproducible publication: meet `rrtools`` (60 min)*   |
+| 11:00am - 11:10am | *Break (10 min)*                    |
+| 11:10am - 12:30am | *Building analytical workflows: meet `targets` (80 min)*   *                    |
+| 12:30pm - 1:30pm  | *Lunch (60 min)*                    |
+| 1:30pm - 2:20pm   | *Documenting & sharing things (50 min)*           |
+| 2:20am - 2:30pm   | *Break (10 min)*                    |
+| 2:30pm - 4:00pm   | *Group Projects*            |
+*[Open Source Software for Data Science](https://www.rstudio.com/resources/rstudioconf-2020/open-source-software-for-data-science/) (30 min)*  (30min)*  
 ---
 
 
