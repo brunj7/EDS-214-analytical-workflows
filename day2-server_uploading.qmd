@@ -1,0 +1,47 @@
+---
+title: "Uploading things to a server"
+---
+
+
+
+## sFTP Software
+
+An efficient protocol to upload files is FTP (File Transfer Protocol). The `s` stands for secured. Any software supporting those protocols will work to transfer files. 
+
+We recommend the following free software:
+
+- Mac users: [cyberduck]( https://cyberduck.io)
+- Windows: [WinSCP](https://winscp.net/eng/index.php)
+
+![](img/server-cyberduck.png)
+
+## scp
+
+The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:
+
+```
+scp /source/path hostname:/path/to/destination/
+```
+
+Here is an example of my uploading the file `10min-loop.R` to Taylor from my laptop. The destination directory on Taylor is `/Users/brun/`:
+
+```bash
+scp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/
+```
+
+BTW try to open and run that script for fun!!
+
+
+If you want to upload an entire folder, you can add the `-r` option to the command. The general syntax is:
+
+```bash
+scp -r /path/to/source-folder user@server:/path/to/destination-folder/
+```
+
+
+Here is an example uploading all the images in the `myplot` folder 
+
+```bash
+scp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots
+```
+

@@ -25,16 +25,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Working on a remote server
 
-## Learning Objectives
+![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
+
+# Learning Objectives
 
 In this lesson, you will learn:
 
 - How to connect to a remote server 
 - Get familiar with RStudio server
-- Practice the command line (CLI)
+- Get a short introduction to the command line (CLI)
 
 
-## Why working on a remote machine?
+# Why working on a remote machine?
 
 Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
 
@@ -43,19 +45,35 @@ Often the main motivation is to **scale your analysis beyond what a personal com
 * **Security**: Data are spread across *multiple drives* and have nightly *backups*
 * **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
 
-**=> The operating system is more likely going to be Linux!!**
+::: {.callout-warning}
+***=> The operating system is more likely going to be Linux!!***
+
+More on this in a few minutes
+:::
+
+
+## Unix and Friends
+
+**[Materials](day2-unices.html)**
+
+
+## RStudio Server
+
+**[Materials](day2-unices.html)**
+
+
+## The Command Line Interface (CLI)
 
 **[Materials](day2-remote_server.html)**
 
-![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
+
+## Collaborating on a server
+
+**[Materials](day2-server_collaboration.html)**
 
 
+## Uploading files to a server
 
-
----
-
-
-
-# Further reading
+**[Materials](day2-server_uploading.html)**
 
 

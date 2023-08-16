@@ -1,0 +1,45 @@
+---
+title: "Unices"
+---
+
+## Introduction to UNIX and its siblings
+
+UNIX
+ :  Originally developed at AT&T Bell Labs circa 1970. Has
+     experienced a [long, multi-branched
+     evolutionary path](https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg)
+
+POSIX (Portable Operating System Interface)
+ :  a set of specifications of what an OS needs to qualify as "a Unix", to enhance interoperability among all the "Unix" variants
+
+
+#### Various Unices
+
+![The unix family tree](img/unix-history-simple.png)
+
+* OS X
+ :  [is a Unix](http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix)!
+* Linux
+ :  is _not_ fully POSIX-compliant, but certainly can be
+      regarded as [functionally Unix](http://en.wikipedia.org/wiki/Unix-like)
+      
+
+### Some Unix hallmarks
+
+* Supports multi-users, multi-processes
+* Highly modular: many small tools that do one thing well, and can be combined
+* Culture of text files and streams
+* Primary OS on HPC (**High Performance Computing** Systems)
+* Main OS on which Internet was built
+
+
+### Files/directories organization in *NIX
+
+
+![](img/unix_filetree.gif)
+
+### Permissions
+
+All files have permissions and ownership.
+
+![File permissions](img/UnixFileLongFormat.png)
