@@ -8,17 +8,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Day 2
 
-| **Time (PST)**    | **Activity**                        |
-|-------------------|-------------------------------------|
-| 10:00am - 10:50am | *Working on a remote server Server (50 min)*          |
-| 10:50am - 11:00am | *Break (10 min)*                                        |
-| 11:00am - 12:30am | *Command line (50 min)*        |              
-| 12:30pm - 1:30pm  | *Lunch (60 min)*                                          |
-| 1:30pm - 2:15pm   | *Branches and Pull Requests (45 min)*   |
-| 2:15pm - 2:25pm   | *Break (10 min)*           |
-| 2:25pm - 3:25pm   | *Collaborating with GitHub -- Branches (60 min)*                  |
-| 3:25pm - 3:35pm   | *Day 2 Recap (10 min)*       |
-| 3:35pm - 5:00pm   | *Flex session with Casey*                      |
+| **Time (PST)**    | **Activity**                                             |
+|-------------------|----------------------------------------------------------|
+| 10:00am - 10:50am | *Working on a remote server Server (50 min)*             |
+| 10:50am - 11:00am | *Break (10 min)*                                         |
+| 11:00am - 12:30am | *Command line (50 min)*                                  |
+| 12:30pm - 1:30pm  | *Lunch (60 min)*                                         |
+| 1:30pm - 2:00pm   | *Managing data-driven projects as a team (30 min)*       |
+| 2:00pm - 3:00pm   | *Uploading things to a server (60 min)*                  |
+| 3:00pm - 3:10pm   | *Break (10 min)*                                         |
+| 3:10pm - 4:00pm   | *Recap of the first half of the course and Q&A*          |
+
+
 
 ---  
 
