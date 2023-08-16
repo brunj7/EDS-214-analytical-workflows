@@ -81,7 +81,7 @@
     "href": "day_5.html",
     "title": "Reproducible for all",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n9:00am - 9:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n9:30am - 10:50am\nGroup project (80min)\n\n\n11:00am - 12:00pm\nMeet your next instructor – Kelly Caylor, Earth Research Institute, UCSB\n\n\n12:00pm - 1:15pm\nLunch (75 min)\n\n\n1:15pm - 2:15pm\nGroup project presentations - p1 (60 min)\n\n\n2:25pm - 2:35pm\nBreak 2 (10min)\n\n\n2:35pm - 3:35pm\nGroup project presentations - p2 (60 min)\n\n\n3:35pm - 3:45pm\nBreak 3 (10min)\n\n\n3:45pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nhttps://docs.google.com/spreadsheets/d/1kTjbQuDZhCMoJVehr_7slSJoizBOk0-_9GhccFkR-ag/edit?usp=sharing"
+    "text": "Time (PST)\nActivity\n\n\n\n\n9:00am - 9:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n9:30am - 12:30pm\nGroup project (120min)\n\n\n12:300pm - 1:30pm\nLunch \n\n\n1:30pm - 2:00pm\nMeet your next instructor – Kelly Caylor, Office of Research and Earth Research Institute, UCSB\n\n\n2:00pm - 3:00pm\nGroup project presentations - p1 (60 min).\n\n\n3:00pm - 3:10pm\nBreak 2 (10min)\n\n\n3:10pm - 3:40pm\nGroup project presentations - p2 (30 min)\n\n\n3:40pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nhttps://docs.google.com/spreadsheets/d/1kTjbQuDZhCMoJVehr_7slSJoizBOk0-_9GhccFkR-ag/edit?usp=sharing"
   },
   {
     "objectID": "day_5.html#scope-and-debugging",
@@ -102,7 +102,7 @@
     "href": "day_3.html",
     "title": "Managing your Code and Data on a Remote Server",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nManaging data-driven projects as a team\n\n\n2:00pm - 2:30pm\nIntroduction to the group project (30 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects (120min)"
   },
   {
     "objectID": "day_3.html#introduction-to-apis",
@@ -900,7 +900,7 @@
     "href": "day_4.html",
     "title": "Documenting and Sharing Things",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n9:00am - 9:50am\nDocumenting things (60 min)\n\n\n9:50am - 10:00am\nBreak 1 (10 min)\n\n\n10:00am - 11:00am\nGroup Project (60min)\n\n\n11:00am - 12:00pm\nUpdating your GitHub profile (Sam)\n\n\n12:00pm - 1:15pm\nLunch (75 min)\n\n\n1:15pm - 2:15pm\nsharing things (60 min)\n\n\n2:15pm - 2:25pm\nBreak (10min)\n\n\n2:25pm - 3:25pm\nGroup Project (60min)\n\n\n3:30pm - 4:30pm\nQ&A with Casey\n\n\n4:30pm - …\nHappy hour with Ginger ;)"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nReproducible publication: meet rrtools`` (60 min)*   | | 11:00am - 11:10am | *Break (10 min)*                    | | 11:10am - 12:30am | *Building analytical workflows: meettargets` (80 min) *\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects\n\n\n\nOpen Source Software for Data Science (30 min) (30min)*"
   },
   {
     "objectID": "day_4.html#why-does-it-matter",
