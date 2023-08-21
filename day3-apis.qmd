@@ -31,13 +31,14 @@ Although discovering data through a web interface is convenient and offers a gre
 
 USGS is managing a vast [network of gauges](https://dashboard.waterdata.usgs.gov/app/nwd/?region=lower48&aoi=default) to monitor freshwater across the US.
 
+
 ### Exercise 1
 
 - Create a new repository on GitHub named `api-practice`
 
 - Clone is to Taylor
 
-- Start a new Quarto document to plot the discharge time-series for the Ventura River for Hilary from 2023-08-19 to 2023-08-22
+- Start a new Quarto document to plot the discharge (ft³/s) time-series for the Ventura River (site 11118500) during Hilary from 2023-08-19 to 2023-08-22
 
 - What was the max discharge during this period of time?
 
@@ -50,7 +51,8 @@ Tutorial for the package can be found here:
 ### Bonus
 
 - How would you try to determine when this stream gauge record started using the API?
-- What are the peakflow data for this gauge?
+- How does the max value compared to the discharge during 2023-01-09?
+
 
 
 ## `metajam`
