@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## The manual way
 
-Using website to retrieve data is great interactive way to search and explore data of interest. Let's start our day by searching some data on the data repository DateONE: https://search.dataone.org/data
+Using website to retrieve data is great interactive way to search and explore data of interest. Let's start our day by searching some data on the data repository DateONE: <https://search.dataone.org/data>
 
-In case you need some inspiration, look at this dataset about historic precipitation in Alaska: https://doi.org/10.5063/N29VCQ
+In case you need some inspiration, look at this dataset about historic precipitation in Alaska: <https://doi.org/10.5063/N29VCQ>
 
 <br>
 
@@ -34,13 +34,12 @@ USGS is managing a vast [network of gauges](https://dashboard.waterdata.usgs.gov
 
 ### Exercise 1
 
-- Create a new repository on GitHub named `api-practice`
-
-- Clone is to Taylor
-
-- Start a new Quarto document to plot the discharge (ft³/s) time-series for the Ventura River (site 11118500) during Hilary from 2023-08-19 to 2023-08-22
-
-- What was the max discharge during this period of time?
+- Create a new repository on GitHub named `api-practice` (add the README.md)
+- Clone it using RStudio server on Taylor (hint: new project)
+- Start a new Quarto document:
+    - Using `dataRetrieval` get the the discharge (ft³/s) time-series for the Ventura River (site `11118500`) during the recent Hilary tropical storm from 2023-08-19 to 2023-08-22
+    - Plot the time-series usgin `ggplot2`
+    - What was the maximum discharge during this period of time?
 
 Webpage: <https://waterdata.usgs.gov/nwis/uv?site_no=11118500>
 
@@ -50,8 +49,8 @@ Tutorial for the package can be found here:
 
 ### Bonus
 
-- How would you try to determine when this stream gauge record started using the API?
-- How does the max value compared to the discharge during 2023-01-09?
+- How would you try to determine when this stream gauge record started (read the documentation :) ) ?
+- How does the max value compare to the discharge during the storm on 2023-01-09 ?
 
 
 
@@ -61,19 +60,21 @@ The `metajam` R package relies on the dataONE API to download data **and** metad
 
 Short [intro](https://brunj7.github.io/EDS-214-analytical-workflows/slides/metajam_intro.html) to the package
 
+
 ### Exercise 2
 
 Let's determine what percentage of Alaskan household are speaking only English!
 
 The data: https://doi.org/10.5063/F1N58JPP
 
-1. Read the metadata 
-2. Download the data `household_language.csv` using metajam
-3. Read the data into R using metajam
-4. Write a piece of code that will compute the percentage of Alaskan household speaking only English for the year 2009 to 2015
+1. Read the metadata on the website
+4. Start a new R script and write a code to:
+    - download the data `household_language.csv` using `metajam`
+    - Read the data into R using `metajam`
+    - compute the percentage of Alaskan household speaking only English from 2009 to 2015
 5. Create a plot to visualize this data
 
 
 ### Bonus
 
-How does it compare to French?
+- How does it compare to French?
