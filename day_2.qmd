@@ -61,6 +61,10 @@ More on this in a few minutes
 
 [**Materials**](day2-remote_server.html)
 
+## Automating things with bash
+
+
+
 ## Collaborating on a server
 
 [**Materials**](day2-server_collaboration.html)
