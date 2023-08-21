@@ -181,8 +181,8 @@ ul.task-list li input[type="checkbox"] {
 <h1>Getting data</h1>
 <section id="the-manual-way" class="level2">
 <h2 class="anchored" data-anchor-id="the-manual-way">The manual way</h2>
-<p>Using website to retrieve data is great interactive way to search and explore data of interest. Let’s start our day by searching some data on the data repository DateONE: https://search.dataone.org/data</p>
-<p>In case you need some inspiration, look at this dataset about historic precipitation in Alaska: https://doi.org/10.5063/N29VCQ</p>
+<p>Using website to retrieve data is great interactive way to search and explore data of interest. Let’s start our day by searching some data on the data repository DateONE: <a href="https://search.dataone.org/data" class="uri">https://search.dataone.org/data</a></p>
+<p>In case you need some inspiration, look at this dataset about historic precipitation in Alaska: <a href="https://doi.org/10.5063/N29VCQ" class="uri">https://doi.org/10.5063/N29VCQ</a></p>
 <p><br></p>
 </section>
 <section id="the-programmatic-way" class="level2">
@@ -200,10 +200,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
 <ul>
-<li><p>Create a new repository on GitHub named <code>api-practice</code></p></li>
-<li><p>Clone is to Taylor</p></li>
-<li><p>Start a new Quarto document to plot the discharge (ft³/s) time-series for the Ventura River (site 11118500) during Hilary from 2023-08-19 to 2023-08-22</p></li>
-<li><p>What was the max discharge during this period of time?</p></li>
+<li>Create a new repository on GitHub named <code>api-practice</code> (add the README.md)</li>
+<li>Clone it using RStudio server on Taylor (hint: new project)</li>
+<li>Start a new Quarto document:
+<ul>
+<li>Using <code>dataRetrieval</code> get the the discharge (ft³/s) time-series for the Ventura River (site <code>11118500</code>) during the recent Hilary tropical storm from 2023-08-19 to 2023-08-22</li>
+<li>Plot the time-series usgin <code>ggplot2</code></li>
+<li>What was the maximum discharge during this period of time?</li>
+</ul></li>
 </ul>
 <p>Webpage: <a href="https://waterdata.usgs.gov/nwis/uv?site_no=11118500" class="uri">https://waterdata.usgs.gov/nwis/uv?site_no=11118500</a></p>
 <p>Tutorial for the package can be found here: <a href="https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html#daily-data" class="uri">https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html#daily-data</a></p>
@@ -211,8 +215,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="bonus" class="level3">
 <h3 class="anchored" data-anchor-id="bonus">Bonus</h3>
 <ul>
-<li>How would you try to determine when this stream gauge record started using the API?</li>
-<li>How does the max value compared to the discharge during 2023-01-09?</li>
+<li>How would you try to determine when this stream gauge record started (read the documentation :) ) ?</li>
+<li>How does the max value compare to the discharge during the storm on 2023-01-09 ?</li>
 </ul>
 </section>
 </section>
@@ -225,16 +229,21 @@ ul.task-list li input[type="checkbox"] {
 <p>Let’s determine what percentage of Alaskan household are speaking only English!</p>
 <p>The data: https://doi.org/10.5063/F1N58JPP</p>
 <ol type="1">
-<li>Read the metadata</li>
-<li>Download the data <code>household_language.csv</code> using metajam</li>
-<li>Read the data into R using metajam</li>
-<li>Write a piece of code that will compute the percentage of Alaskan household speaking only English for the year 2009 to 2015</li>
+<li>Read the metadata on the website</li>
+<li>Start a new R script and write a code to:
+<ul>
+<li>download the data <code>household_language.csv</code> using <code>metajam</code></li>
+<li>Read the data into R using <code>metajam</code></li>
+<li>compute the percentage of Alaskan household speaking only English from 2009 to 2015</li>
+</ul></li>
 <li>Create a plot to visualize this data</li>
 </ol>
 </section>
 <section id="bonus-1" class="level3">
 <h3 class="anchored" data-anchor-id="bonus-1">Bonus</h3>
-<p>How does it compare to French?</p>
+<ul>
+<li>How does it compare to French?</li>
+</ul>
 
 
 </section>
