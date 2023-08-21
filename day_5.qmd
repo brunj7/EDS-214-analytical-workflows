@@ -36,6 +36,5 @@ library(devtools)
 
 ## Group Projects Presentations
 
-https://docs.google.com/spreadsheets/d/1kTjbQuDZhCMoJVehr_7slSJoizBOk0-_9GhccFkR-ag/edit?usp=sharing
-
+[Schedule](https://docs.google.com/spreadsheets/d/1cVoUFvSUdn04gzBSPrvmr2ZfkbnlBOG1iCSwill2NA0/edit#gid=0)
 

@@ -8,10 +8,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Day 3
 
-| **Time (PST)**    | **Activity**                        |
-|-------------------|-------------------------------------|
+| **Time (PST)**    | **Activity**                         |
+|-------------------|--------------------------------------|
 | 10:00am - 11:00am | *Introduction to APIs (50min)*       |
-| 11:00am - 11:10am | *Break (10 min)*                   |
+| 11:00am - 11:10am | *Break (10 min)*                     |
 | 11:10am - 12:30am | *APIs hands-on (80 min)*             |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                     |
 | 1:30pm - 2:00pm   | *Introduction to the group project (30 min)* |
