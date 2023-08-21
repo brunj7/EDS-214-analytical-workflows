@@ -81,7 +81,7 @@
     "href": "day_5.html",
     "title": "Reproducible for all",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n10:30am - 12:30pm\nGroup project (120min)\n\n\n12:300pm - 1:30pm\nLunch \n\n\n1:30pm - 2:00pm\nMeet your next instructor – Kelly Caylor, Office of Research and Earth Research Institute, UCSB\n\n\n2:00pm - 3:00pm\nGroup project presentations - p1 (60 min).\n\n\n3:00pm - 3:10pm\nBreak 2 (10min)\n\n\n3:10pm - 3:40pm\nGroup project presentations - p2 (30 min)\n\n\n3:40pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nhttps://docs.google.com/spreadsheets/d/1kTjbQuDZhCMoJVehr_7slSJoizBOk0-_9GhccFkR-ag/edit?usp=sharing"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n10:30am - 12:30pm\nGroup project (120min)\n\n\n12:300pm - 1:30pm\nLunch \n\n\n1:30pm - 2:00pm\nMeet your next instructor – Kelly Caylor, Office of Research and Earth Research Institute, UCSB\n\n\n2:00pm - 3:00pm\nGroup project presentations - p1 (60 min).\n\n\n3:00pm - 3:10pm\nBreak 2 (10min)\n\n\n3:10pm - 3:40pm\nGroup project presentations - p2 (30 min)\n\n\n3:40pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nSchedule"
   },
   {
     "objectID": "day_5.html#scope-and-debugging",
@@ -95,7 +95,7 @@
     "href": "day_5.html#group-projects-presentations",
     "title": "Reproducible for all",
     "section": "",
-    "text": "https://docs.google.com/spreadsheets/d/1kTjbQuDZhCMoJVehr_7slSJoizBOk0-_9GhccFkR-ag/edit?usp=sharing"
+    "text": "Schedule"
   },
   {
     "objectID": "day_3.html",
@@ -840,71 +840,71 @@
     "text": "Acknowledgements\nLarge portion of this material have been adapted from NCEAS Reproducible Research Techniques for Synthesis course https://learning.nceas.ucsb.edu/2021-02-RRCourse/"
   },
   {
-    "objectID": "day5-sharing_things.html",
-    "href": "day5-sharing_things.html",
+    "objectID": "day4-sharing_things.html",
+    "href": "day4-sharing_things.html",
     "title": "Sharing Things",
     "section": "",
     "text": "You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see here for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout Quarto that is a cross-language tool to render documents from code!"
   },
   {
-    "objectID": "day5-sharing_things.html#github-pages-the-r-markdown-family",
-    "href": "day5-sharing_things.html#github-pages-the-r-markdown-family",
+    "objectID": "day4-sharing_things.html#github-pages-the-r-markdown-family",
+    "href": "day4-sharing_things.html#github-pages-the-r-markdown-family",
     "title": "Sharing Things",
     "section": "",
     "text": "You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see here for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout Quarto that is a cross-language tool to render documents from code!"
   },
   {
-    "objectID": "day5-sharing_things.html#interactive-web-applications",
-    "href": "day5-sharing_things.html#interactive-web-applications",
+    "objectID": "day4-sharing_things.html#interactive-web-applications",
+    "href": "day4-sharing_things.html#interactive-web-applications",
     "title": "Sharing Things",
     "section": "Interactive web applications",
     "text": "Interactive web applications\nWhen you have complex data that you want to not only visualize but also to let the user interact with your data or customize parameters used in an analysis, interactive web applications are a great way to increase engagement. The good news is that you do not need to be a web developer anymore to spin such applications or dashboards.\n\nR Shiny \nR Shiny is a very interesting framework that lets you write R code that will then be translated into javascript for you and thus let you develop web application without having to learn any new programming language. Note that you will need a server to host the application.\nCheck out this gallery of shiny apps: https://shiny.rstudio.com/gallery/\nGetting started with Shiny: https://shiny.rstudio.com/tutorial/\n\n\nHtml widgets\nHtml widgets offer some great interactive data visualization. It is more limited that Shiny because you can not modify parameters to modify the data use, but it has the advantage that it does not need a server to run the widget and it can be inserted directly into an R Markdown.\nHere to get started: https://www.htmlwidgets.org/"
   },
   {
-    "objectID": "day5-sharing_things.html#plotly",
-    "href": "day5-sharing_things.html#plotly",
+    "objectID": "day4-sharing_things.html#plotly",
+    "href": "day4-sharing_things.html#plotly",
     "title": "Sharing Things",
     "section": "plotly ",
     "text": "plotly \nplotly enable you to develop great interactive data visualizations. It has the advantage to be available both in R and Python (and javascript). One great thing in R is that if you are a ggplot master, you can write your plot code using ggplot and transform it into a plotly plot with one line of code (here for an example)\nNote there are also other python libraries to create interactive plots, here are a few: https://mode.com/blog/python-interactive-plot-libraries/"
   },
   {
-    "objectID": "day5-sharing_things.html#binder-jupyter",
-    "href": "day5-sharing_things.html#binder-jupyter",
+    "objectID": "day4-sharing_things.html#binder-jupyter",
+    "href": "day4-sharing_things.html#binder-jupyter",
     "title": "Sharing Things",
     "section": "Binder & jupyter ",
     "text": "Binder & jupyter \nTransform your git based repo into an interactive jupyter notebook https://mybinder.org/!! So other researchers can run your code without having to install anything!\n\nTry it: https://mybinder.org/"
   },
   {
-    "objectID": "day5-sharing_things.html#citing-your-code",
-    "href": "day5-sharing_things.html#citing-your-code",
+    "objectID": "day4-sharing_things.html#citing-your-code",
+    "href": "day4-sharing_things.html#citing-your-code",
     "title": "Sharing Things",
     "section": "Citing your code",
     "text": "Citing your code\nNote that it is also possible to assign a DOI to cite a specific version of your repository. For example, see here for more information on how to link Zenodo and GitHub."
   },
   {
-    "objectID": "day5-sharing_things.html#session-info",
-    "href": "day5-sharing_things.html#session-info",
+    "objectID": "day4-sharing_things.html#session-info",
+    "href": "day4-sharing_things.html#session-info",
     "title": "Sharing Things",
     "section": "Session info",
     "text": "Session info\nYour analysis was done with specific versions both of the program used but also of all the packages involved, as well as the specifications of Operating System (OS) that was used. The good use is that there ar tools to let you capture this information in a systematic manner.\n\nsessionInfo()\n\nR version 4.3.1 (2023-06-16)\nPlatform: x86_64-pc-linux-gnu (64-bit)\nRunning under: Ubuntu 22.04.3 LTS\n\nMatrix products: default\nBLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 \nLAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0\n\nlocale:\n [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       \n [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   \n [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          \n[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   \n\ntime zone: UTC\ntzcode source: system (glibc)\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.2 compiler_4.3.1    fastmap_1.1.1     cli_3.6.1        \n [5] tools_4.3.1       htmltools_0.5.6   rstudioapi_0.15.0 yaml_2.3.7       \n [9] rmarkdown_2.24    knitr_1.43        jsonlite_1.8.7    xfun_0.40        \n[13] digest_0.6.33     rlang_1.1.1       evaluate_0.21    \n\n\nor even better:\n\ndevtools::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16)\n os       Ubuntu 22.04.3 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2023-08-21\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.1)\n callr         3.7.3   2022-11-02 [1] CRAN (R 4.3.1)\n cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.1)\n crayon        1.5.2   2022-09-29 [1] CRAN (R 4.3.1)\n devtools      2.4.5   2022-10-11 [1] any (@2.4.5)\n digest        0.6.33  2023-07-07 [1] CRAN (R 4.3.1)\n ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.3.1)\n evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.1)\n fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.1)\n fs            1.6.3   2023-07-20 [1] CRAN (R 4.3.1)\n glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.1)\n htmltools     0.5.6   2023-08-10 [1] CRAN (R 4.3.1)\n htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.1)\n httpuv        1.6.11  2023-05-11 [1] CRAN (R 4.3.1)\n jsonlite      1.8.7   2023-06-29 [1] CRAN (R 4.3.1)\n knitr         1.43    2023-05-25 [1] CRAN (R 4.3.1)\n later         1.3.1   2023-05-02 [1] CRAN (R 4.3.1)\n lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.1)\n magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.1)\n memoise       2.0.1   2021-11-26 [1] CRAN (R 4.3.1)\n mime          0.12    2021-09-28 [1] CRAN (R 4.3.1)\n miniUI        0.1.1.1 2018-05-18 [1] CRAN (R 4.3.1)\n pkgbuild      1.4.2   2023-06-26 [1] CRAN (R 4.3.1)\n pkgload       1.3.2.1 2023-07-08 [1] CRAN (R 4.3.1)\n prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.3.1)\n processx      3.8.2   2023-06-30 [1] CRAN (R 4.3.1)\n profvis       0.3.8   2023-05-02 [1] CRAN (R 4.3.1)\n promises      1.2.1   2023-08-10 [1] CRAN (R 4.3.1)\n ps            1.7.5   2023-04-18 [1] CRAN (R 4.3.1)\n purrr         1.0.2   2023-08-10 [1] CRAN (R 4.3.1)\n R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.1)\n Rcpp          1.0.11  2023-07-06 [1] CRAN (R 4.3.1)\n remotes       2.4.2.1 2023-07-18 [1] CRAN (R 4.3.1)\n rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.1)\n rmarkdown     2.24    2023-08-14 [1] any (@2.24)\n rstudioapi    0.15.0  2023-07-07 [1] CRAN (R 4.3.1)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.1)\n shiny         1.7.5   2023-08-12 [1] CRAN (R 4.3.1)\n stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.1)\n stringr       1.5.0   2022-12-02 [1] CRAN (R 4.3.1)\n urlchecker    1.0.1   2021-11-30 [1] CRAN (R 4.3.1)\n usethis       2.2.2   2023-07-06 [1] CRAN (R 4.3.1)\n vctrs         0.6.3   2023-06-14 [1] CRAN (R 4.3.1)\n xfun          0.40    2023-08-09 [1] CRAN (R 4.3.1)\n xtable        1.8-4   2019-04-21 [1] CRAN (R 4.3.1)\n yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.1)\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.3.1/lib/R/site-library\n [3] /opt/R/4.3.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────\n\n\nYou can save all this content to an session_info.txt file and upload it to your repository.\nIn python, using pip freeze &gt; requirements.txt or conda list --export &gt; requirements.txt will create a text file listing all the libraries (and their versions) used in a specific python environment. You can actually use this file to (re)install all the packages and specific versions into a new python environment. It is also great practice to add this file to your repository."
   },
   {
-    "objectID": "day5-sharing_things.html#containers",
-    "href": "day5-sharing_things.html#containers",
+    "objectID": "day4-sharing_things.html#containers",
+    "href": "day4-sharing_things.html#containers",
     "title": "Sharing Things",
     "section": "Containers",
     "text": "Containers\nA helpful abstraction for capturing the computing environment is a container, whereby a container is created from a set of instructions in a recipe. For the most common containerisation software, Docker, this recipe is called a Dockerfile. Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure and ship the containers to others. A Docker container can be seen as a computer inside your computer.\n\n\n\n\n\nhttp://jsta.github.io/r-docker-tutorial/\n\n\n\n\nA few good readings:\n\nDocker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316\nThe Whole Tale project: combining containers with data repositories https://wholetale.org/\nDocker tutorial: http://jsta.github.io/r-docker-tutorial/\nEnvironment Management with Docker: https://environments.rstudio.com/docker\nSharing and Running R code using Docker: https://aboland.ie/Docker.html"
   },
   {
-    "objectID": "day5-sharing_things.html#xarigan",
-    "href": "day5-sharing_things.html#xarigan",
+    "objectID": "day4-sharing_things.html#xarigan",
+    "href": "day4-sharing_things.html#xarigan",
     "title": "Sharing Things",
     "section": "Xarigan",
     "text": "Xarigan\nXarigan is an R package to create slide deck using R Markdown: https://github.com/yihui/xaringan\n\nremotes::install_github('yihui/xaringan')\n\nHere is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/"
   },
   {
-    "objectID": "day5-sharing_things.html#quarto-presentations",
-    "href": "day5-sharing_things.html#quarto-presentations",
+    "objectID": "day4-sharing_things.html#quarto-presentations",
+    "href": "day4-sharing_things.html#quarto-presentations",
     "title": "Sharing Things",
     "section": "Quarto Presentations",
     "text": "Quarto Presentations\nhttps://quarto.org/docs/presentations/\nhttps://meghan.rbind.io/blog/quarto-slides/"
@@ -963,14 +963,35 @@
     "href": "day_4.html",
     "title": "Being reproducible: Tools and Practices",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nReproducible publication: meet rrtools`` (60 min)*   | | 11:00am - 11:10am | *Break (10 min)*                    | | 11:10am - 12:30am | *Building analytical workflows: meettargets` (80 min) *\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects\n\n\n\nOpen Source Software for Data Science (30 min) (30min)*"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nReproducible publication: meet rrtools (60 min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nBuilding analytical workflows: meet targets (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects"
+  },
+  {
+    "objectID": "day_4.html#day-4",
+    "href": "day_4.html#day-4",
+    "title": "Being reproducible: Tools and Practices",
+    "section": "",
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nReproducible publication: meet rrtools (60 min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nBuilding analytical workflows: meet targets (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects"
   },
   {
     "objectID": "day_4.html#why-does-it-matter",
     "href": "day_4.html#why-does-it-matter",
     "title": "Being reproducible: Tools and Practices",
     "section": "Why does it matter",
-    "text": "Why does it matter\n\n\n\n\n\nMaterial"
+    "text": "Why does it matter"
+  },
+  {
+    "objectID": "day_4.html#documenting-things",
+    "href": "day_4.html#documenting-things",
+    "title": "Being reproducible: Tools and Practices",
+    "section": "Documenting things",
+    "text": "Documenting things\nMaterials"
+  },
+  {
+    "objectID": "day_4.html#sharing-things",
+    "href": "day_4.html#sharing-things",
+    "title": "Being reproducible: Tools and Practices",
+    "section": "Sharing things",
+    "text": "Sharing things\nMaterials"
   },
   {
     "objectID": "flex-rmarkdown_syntax.html#the-markdown-syntax",
