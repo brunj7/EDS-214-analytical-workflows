@@ -6,7 +6,7 @@ title: "Getting data in a programmatic way"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Day 3
+## Day 3
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
@@ -18,26 +18,20 @@ knitr::opts_chunk$set(echo = TRUE)
 | 2:00pm - 4:00pm   | *Group Projects (120min)*                  |
 
 
-# Getting Data
+## Getting Data
 
-## Introduction to APIs
+### Introduction to APIs
 
 [**Materials**](day3-apis.html)
 
-## Hands-on -- APIs
+### Hands-on -- APIs
 
 [**Materials**](day3-apis.html#Hands-on)
 
 ---
 
-# Managing data-driven projects as a team
 
-[**Materials**](day2-projects_team.html)
-
-
----
-
-# Group project
+## Group project
 
 [**Group project**](group_project.html)
 
