@@ -2,7 +2,10 @@
 title: "Reproducible Analytical Workflows"
 ---
 
+```{r tidy-workflow, out.width='80%', fig.align="center", fig.cap="Conceptual workflow model promoted by the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science <https://r4ds.hadley.nz/intro#fig-ds-diagram>_",echo=FALSE}
 
+knitr::include_graphics("img/tidy-workflow.png")
+```
 
 ## Analytical workflow frameworks in R
 

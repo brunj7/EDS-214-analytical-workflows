@@ -32,16 +32,36 @@ Please remember that every workflow or framework is opinionated. This is also tr
 
 **[rrtools as an example](day4-reproducible_publications.html)**
 
-### Reproducible analytical workflows
 
-**[targets as an example](day4-analytical_workflows.html)**
+### Analytical workflow frameworks in R
+
+```{r tidy-workflow, out.width='80%', fig.align="center", fig.cap="Conceptual workflow model promoted by the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science <https://r4ds.hadley.nz/intro#fig-ds-diagram>_",echo=FALSE}
+
+knitr::include_graphics("img/tidy-workflow.png")
+```
+
+
+#### Targets
+
+The `targets` R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.
+
+Here for more: <https://books.ropensci.org/targets/>
+
+Our practice example: <https://github.com/brunj7/eds214-handson-targets>
+
+
+#### Pointblank
+
+Although the `pointblank` package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.
+
+<https://github.com/rstudio/pointblank>
 
 
 ---
 
 ## Documenting things
 
-### Why does it matter
+### Why does it matter ?
 
 ```{r, out.width="350px", fig.retina=1, echo=FALSE}
 knitr::include_graphics("img/lego_blocks.jpg")
