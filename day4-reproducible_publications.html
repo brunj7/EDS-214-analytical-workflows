@@ -203,7 +203,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://github.com/benmarwick/rrtools">rrtools</a></li>
 <li><a href="https://nceas.github.io/oss-lessons/reproducible-papers-with-rmd/reproducible-papers-with-rmd.html">Reproducible papers with RMarkdown</a></li>
 </ul>
-<p>The key idea in Marwick et al.&nbsp;(2018) is that of the “research compendium”: A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work. Research compendia make it easy for researchers to do their work but also for others to inspect or even reproduce the work because all necessary materials are readily at hand due to being kept in one place. Rather than a constrained set of rules, the research compendium is a scaffold upon which to conduct reproducible research using open science tools such as:</p>
+<p>The key idea in Marwick et al.&nbsp;(2018) is that of the <strong>research compendium</strong>: <em>A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work.</em> Research compendia make it easy for researchers to do their work but also for others to inspect or even reproduce the work because all necessary materials are readily at hand due to being kept in one place.</p>
+<p>Rather than a constrained set of rules, the research compendium is a scaffold upon which to conduct reproducible research using open science tools such as:</p>
 <ul>
 <li><a href="https://www.r-project.org/">R</a></li>
 <li><a href="https://rmarkdown.rstudio.com/">RMarkdown</a></li>
@@ -212,8 +213,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Fortunately for us, Ben Marwick (and others) have written an R package called <a href="https://github.com/benmarwick/rrtools">rrtools</a> that helps us create a research compendium from scratch.</p>
 <p>To start a reproducible paper with <code>rrtools</code>, run:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"benmarwick/rrtools"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rrtools<span class="sc">::</span><span class="fu">use_compendium</span>(<span class="st">"mypaper"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"benmarwick/rrtools"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Attach the library</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rrtools)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the compendium skeleton</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">use_compendium</span>(<span class="st">"mypaper"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You should see output similar to the below:</p>
 <pre><code>&gt; rrtools::use_compendium("mypaper")
@@ -271,6 +278,10 @@ Next, you need to:  ↓ ↓ ↓
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After that, push a copy up to <a href="https://github.com">GitHub</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## create github repository and configure as git remote</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Hopefully, now that you’ve created a research compendium with <code>rrtools</code>, you can imagine how a pre-defined structure like the one <code>rrtools</code> creates might help you organize your reproducible research and also make it easier for others to understand your work.</p>
 <p>For a more complete example than the one we built above, take a look at <a href="https://github.com/benmarwick/teaching-replication-in-archaeology">benmarwick/teaching-replication-in-archaeology</a>.</p>
 <section id="aknowledgement" class="level2">

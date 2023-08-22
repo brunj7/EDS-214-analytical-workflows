@@ -2,142 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/vim.html</loc>
-    <lastmod>2023-08-22T00:25:42.505Z</lastmod>
+    <lastmod>2023-08-22T17:13:28.496Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/resources.html</loc>
-    <lastmod>2023-08-22T00:25:40.613Z</lastmod>
+    <lastmod>2023-08-22T17:13:26.396Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/group_project.html</loc>
-    <lastmod>2023-08-22T00:25:38.921Z</lastmod>
+    <lastmod>2023-08-22T17:13:24.540Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day_5.html</loc>
-    <lastmod>2023-08-22T00:25:36.877Z</lastmod>
+    <lastmod>2023-08-22T17:13:22.232Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day_3.html</loc>
-    <lastmod>2023-08-22T00:25:34.457Z</lastmod>
+    <lastmod>2023-08-22T17:13:19.516Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day_1.html</loc>
-    <lastmod>2023-08-22T00:25:32.641Z</lastmod>
+    <lastmod>2023-08-22T17:13:17.496Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day4-reproducible_publications.html</loc>
-    <lastmod>2023-08-22T00:25:28.969Z</lastmod>
+    <lastmod>2023-08-22T17:13:13.300Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day4-pair_programming.html</loc>
-    <lastmod>2023-08-22T00:25:26.285Z</lastmod>
+    <lastmod>2023-08-22T17:13:10.224Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day4-analytical_workflows.html</loc>
-    <lastmod>2023-08-22T00:25:16.373Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-unices.html</loc>
-    <lastmod>2023-08-22T00:25:15.101Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-server_collaboration.html</loc>
-    <lastmod>2023-08-22T00:25:14.457Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-remote_server.html</loc>
-    <lastmod>2023-08-22T00:25:12.577Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-cli_advanced.html</loc>
-    <lastmod>2023-08-22T00:25:10.441Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-hands-on_drawings_p2.html</loc>
-    <lastmod>2023-08-22T00:25:08.489Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-github_forking.html</loc>
-    <lastmod>2023-08-22T00:25:06.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-github_branches.html</loc>
-    <lastmod>2023-08-22T00:25:03.877Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-git-collaboration-conflicts.html</loc>
-    <lastmod>2023-08-22T00:25:01.469Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/code_of_conduct.html</loc>
-    <lastmod>2023-08-22T00:24:59.329Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-coding_together.html</loc>
-    <lastmod>2023-08-22T00:25:00.869Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-git_github_recap.html</loc>
-    <lastmod>2023-08-22T00:25:02.665Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-github_commit_messages.html</loc>
-    <lastmod>2023-08-22T00:25:04.973Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-hands-on_drawings.html</loc>
-    <lastmod>2023-08-22T00:25:07.265Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-pseudocode.html</loc>
-    <lastmod>2023-08-22T00:25:09.409Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-cli_practice.html</loc>
-    <lastmod>2023-08-22T00:25:11.377Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-rstudio_server.html</loc>
-    <lastmod>2023-08-22T00:25:14.117Z</lastmod>
+    <lastmod>2023-08-22T17:13:03.784Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-server_uploading.html</loc>
-    <lastmod>2023-08-22T00:25:14.781Z</lastmod>
+    <lastmod>2023-08-22T17:13:03.120Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day3-apis.html</loc>
-    <lastmod>2023-08-22T00:25:16.069Z</lastmod>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-rstudio_server.html</loc>
+    <lastmod>2023-08-22T17:13:02.412Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-cli_practice.html</loc>
+    <lastmod>2023-08-22T17:12:59.396Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-pseudocode.html</loc>
+    <lastmod>2023-08-22T17:12:57.220Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-hands-on_drawings.html</loc>
+    <lastmod>2023-08-22T17:12:54.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-github_commit_messages.html</loc>
+    <lastmod>2023-08-22T17:12:52.320Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-git_github_recap.html</loc>
+    <lastmod>2023-08-22T17:12:49.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-coding_together.html</loc>
+    <lastmod>2023-08-22T17:12:47.748Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/code_of_conduct.html</loc>
+    <lastmod>2023-08-22T17:12:46.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-git-collaboration-conflicts.html</loc>
+    <lastmod>2023-08-22T17:12:48.396Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-github_branches.html</loc>
+    <lastmod>2023-08-22T17:12:51.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-github_forking.html</loc>
+    <lastmod>2023-08-22T17:12:53.544Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day1-hands-on_drawings_p2.html</loc>
+    <lastmod>2023-08-22T17:12:56.196Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-cli_advanced.html</loc>
+    <lastmod>2023-08-22T17:12:58.368Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-remote_server.html</loc>
+    <lastmod>2023-08-22T17:13:00.668Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-server_collaboration.html</loc>
+    <lastmod>2023-08-22T17:13:02.780Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day2-unices.html</loc>
+    <lastmod>2023-08-22T17:13:03.468Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day4-documenting.html</loc>
-    <lastmod>2023-08-22T00:25:25.325Z</lastmod>
+    <lastmod>2023-08-22T17:13:09.160Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day4-projects_team.html</loc>
-    <lastmod>2023-08-22T00:25:27.589Z</lastmod>
+    <lastmod>2023-08-22T17:13:11.764Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day4-sharing_things.html</loc>
-    <lastmod>2023-08-22T00:25:31.121Z</lastmod>
+    <lastmod>2023-08-22T17:13:15.728Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day_2.html</loc>
-    <lastmod>2023-08-22T00:25:33.593Z</lastmod>
+    <lastmod>2023-08-22T17:13:18.536Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/day_4.html</loc>
-    <lastmod>2023-08-22T00:25:35.349Z</lastmod>
+    <lastmod>2023-08-22T17:13:20.516Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/flex-rmarkdown_syntax.html</loc>
-    <lastmod>2023-08-22T00:25:37.761Z</lastmod>
+    <lastmod>2023-08-22T17:13:23.208Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/index.html</loc>
-    <lastmod>2023-08-22T00:25:40.321Z</lastmod>
+    <lastmod>2023-08-22T17:13:26.084Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunj7/EDS-214-analytical-workflows/rstudio_debugging.html</loc>
-    <lastmod>2023-08-22T00:25:41.993Z</lastmod>
+    <lastmod>2023-08-22T17:13:27.944Z</lastmod>
   </url>
 </urlset>
