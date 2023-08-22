@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Being reproducible to better collaborate: Tools and Practices</title>
+<title>EDS214 - Analytical Workflows and Scientific Reproducibility - Reproducible Analytical Workflows</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,18 +136,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#day-4" id="toc-day-4" class="nav-link active" data-scroll-target="#day-4">Day 4</a></li>
-  <li><a href="#managing-data-driven-projects-as-a-team" id="toc-managing-data-driven-projects-as-a-team" class="nav-link" data-scroll-target="#managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</a></li>
-  <li><a href="#leveraging-existing-frameworks-for-reproducibility" id="toc-leveraging-existing-frameworks-for-reproducibility" class="nav-link" data-scroll-target="#leveraging-existing-frameworks-for-reproducibility">Leveraging existing frameworks for reproducibility</a>
+  <li><a href="#analytical-workflow-frameworks-in-r" id="toc-analytical-workflow-frameworks-in-r" class="nav-link active" data-scroll-target="#analytical-workflow-frameworks-in-r">Analytical workflow frameworks in R</a>
   <ul class="collapse">
-  <li><a href="#reproducible-publications" id="toc-reproducible-publications" class="nav-link" data-scroll-target="#reproducible-publications">Reproducible publications</a></li>
-  <li><a href="#reproducible-analytical-workflows" id="toc-reproducible-analytical-workflows" class="nav-link" data-scroll-target="#reproducible-analytical-workflows">Reproducible analytical workflows</a></li>
+  <li><a href="#targets" id="toc-targets" class="nav-link" data-scroll-target="#targets">Targets</a></li>
+  <li><a href="#pointblank" id="toc-pointblank" class="nav-link" data-scroll-target="#pointblank">Pointblank</a></li>
   </ul></li>
-  <li><a href="#documenting-things" id="toc-documenting-things" class="nav-link" data-scroll-target="#documenting-things">Documenting things</a>
-  <ul class="collapse">
-  <li><a href="#why-does-it-matter" id="toc-why-does-it-matter" class="nav-link" data-scroll-target="#why-does-it-matter">Why does it matter</a></li>
-  </ul></li>
-  <li><a href="#sharing-things" id="toc-sharing-things" class="nav-link" data-scroll-target="#sharing-things">Sharing things</a></li>
   </ul>
 </nav>
     </div>
@@ -156,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Being reproducible to better collaborate: Tools and Practices</h1>
+<h1 class="title">Reproducible Analytical Workflows</h1>
 </div>
 
 
@@ -171,85 +164,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="day-4" class="level2">
-<h2 class="anchored" data-anchor-id="day-4">Day 4</h2>
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 66%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Time (PST)</strong></th>
-<th><strong>Activity</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>10:00am - 11:00am</td>
-<td><em>Reproducible publication: meet <code>rrtools</code> (60 min)</em></td>
-</tr>
-<tr class="even">
-<td>11:00am - 11:10am</td>
-<td><em>Break (10 min)</em></td>
-</tr>
-<tr class="odd">
-<td>11:10am - 12:30am</td>
-<td><em>Building analytical workflows: meet <code>targets</code> (80 min)</em></td>
-</tr>
-<tr class="even">
-<td>12:30pm - 1:30pm</td>
-<td><em>Lunch (60 min)</em></td>
-</tr>
-<tr class="odd">
-<td>1:30pm - 2:20pm</td>
-<td><em>Documenting &amp; sharing things (50 min)</em></td>
-</tr>
-<tr class="even">
-<td>2:20am - 2:30pm</td>
-<td><em>Break (10 min)</em></td>
-</tr>
-<tr class="odd">
-<td>2:30pm - 4:00pm</td>
-<td><em>Group Projects</em></td>
-</tr>
-</tbody>
-</table>
+<section id="analytical-workflow-frameworks-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-workflow-frameworks-in-r">Analytical workflow frameworks in R</h2>
+<section id="targets" class="level3">
+<h3 class="anchored" data-anchor-id="targets">Targets</h3>
+<p>The <code>targets</code> R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.</p>
+<p>Here for more: <a href="https://books.ropensci.org/targets/" class="uri">https://books.ropensci.org/targets/</a></p>
 </section>
-<section id="managing-data-driven-projects-as-a-team" class="level2">
-<h2 class="anchored" data-anchor-id="managing-data-driven-projects-as-a-team">Managing data-driven projects as a team</h2>
-<p><a href="day4-projects_team.html"><strong>Materials</strong></a></p>
-</section>
-<section id="leveraging-existing-frameworks-for-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="leveraging-existing-frameworks-for-reproducibility">Leveraging existing frameworks for reproducibility</h2>
-<p>Please remember that every workflow or framework is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project.</p>
-<section id="reproducible-publications" class="level3">
-<h3 class="anchored" data-anchor-id="reproducible-publications">Reproducible publications</h3>
-<p><strong><a href="day4-reproducible_publications.html">rrtools</a></strong></p>
-</section>
-<section id="reproducible-analytical-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="reproducible-analytical-workflows">Reproducible analytical workflows</h3>
-<p><strong><a href="day4-analytical_workflows.html">targets</a></strong></p>
-<hr>
-</section>
-</section>
-<section id="documenting-things" class="level2">
-<h2 class="anchored" data-anchor-id="documenting-things">Documenting things</h2>
-<section id="why-does-it-matter" class="level3">
-<h3 class="anchored" data-anchor-id="why-does-it-matter">Why does it matter</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/lego_blocks.jpg" class="img-fluid" width="350"></p>
-</div>
-</div>
-<p><a href="day4-documenting.html"><strong>Materials</strong></a></p>
-</section>
-</section>
-<section id="sharing-things" class="level2">
-<h2 class="anchored" data-anchor-id="sharing-things">Sharing things</h2>
-<p><a href="day4-sharing_things.html"><strong>Materials</strong></a></p>
+<section id="pointblank" class="level3">
+<h3 class="anchored" data-anchor-id="pointblank">Pointblank</h3>
+<p>Although the <code>pointblank</code> package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.</p>
+<p><a href="https://github.com/rstudio/pointblank" class="uri">https://github.com/rstudio/pointblank</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
