@@ -2,8 +2,6 @@
 title: "Reproducible Publication with `rrtools`"
 ---
 
-
-
 A great overview of this approach to reproducible papers comes from:
 
 > Ben Marwick, Carl Boettiger & Lincoln Mullen (2018) **Packaging Data Analytical Work Reproducibly Using R (and Friends)**, The American Statistician, 72:1, 80-88, [doi:10.1080/00031305.2017.1375986](https://doi.org/10.1080/00031305.2017.1375986)
@@ -13,8 +11,9 @@ This lesson will draw from existing materials:
 - [rrtools](https://github.com/benmarwick/rrtools)
 - [Reproducible papers with RMarkdown](https://nceas.github.io/oss-lessons/reproducible-papers-with-rmd/reproducible-papers-with-rmd.html)
 
-The key idea in Marwick et al. (2018) is that of the "research compendium": A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work.
+The key idea in Marwick et al. (2018) is that of the **research compendium**: _A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work._
 Research compendia make it easy for researchers to do their work but also for others to inspect or even reproduce the work because all necessary materials are readily at hand due to being kept in one place.
+
 Rather than a constrained set of rules, the research compendium is a scaffold upon which to conduct reproducible research using open science tools such as:
 
 - [R](https://www.r-project.org/)
@@ -26,8 +25,14 @@ Fortunately for us, Ben Marwick (and others) have written an R package called [r
 To start a reproducible paper with `rrtools`, run:
 
 ```{r eval=FALSE}
+# Install the package
 remotes::install_github("benmarwick/rrtools")
-rrtools::use_compendium("mypaper")
+
+# Attach the library
+library(rrtools)
+
+# Create the compendium skeleton
+use_compendium("mypaper")
 ```
 
 You should see output similar to the below:
@@ -99,6 +104,12 @@ usethis::use_git()
 ```
 
 After that, push a copy up to [GitHub](https://github.com).
+
+```{r  eval=FALSE}
+## create github repository and configure as git remote
+usethis::use_github()
+```
+
 
 Hopefully, now that you've created a research compendium with `rrtools`, you can imagine how a pre-defined structure like the one `rrtools` creates might help you organize your reproducible research and also make it easier for others to understand your work.
 

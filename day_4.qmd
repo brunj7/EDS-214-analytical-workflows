@@ -30,11 +30,11 @@ Please remember that every workflow or framework is opinionated. This is also tr
 
 ### Reproducible publications 
 
-**[rrtools](day4-reproducible_publications.html)**
+**[rrtools as an example](day4-reproducible_publications.html)**
 
 ### Reproducible analytical workflows
 
-**[targets](day4-analytical_workflows.html)**
+**[targets as an example](day4-analytical_workflows.html)**
 
 
 ---
