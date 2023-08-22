@@ -141,11 +141,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#leveraging-existing-frameworks-for-reproducibility" id="toc-leveraging-existing-frameworks-for-reproducibility" class="nav-link" data-scroll-target="#leveraging-existing-frameworks-for-reproducibility">Leveraging existing frameworks for reproducibility</a>
   <ul class="collapse">
   <li><a href="#reproducible-publications" id="toc-reproducible-publications" class="nav-link" data-scroll-target="#reproducible-publications">Reproducible publications</a></li>
-  <li><a href="#reproducible-analytical-workflows" id="toc-reproducible-analytical-workflows" class="nav-link" data-scroll-target="#reproducible-analytical-workflows">Reproducible analytical workflows</a></li>
+  <li><a href="#analytical-workflow-frameworks-in-r" id="toc-analytical-workflow-frameworks-in-r" class="nav-link" data-scroll-target="#analytical-workflow-frameworks-in-r">Analytical workflow frameworks in R</a></li>
   </ul></li>
   <li><a href="#documenting-things" id="toc-documenting-things" class="nav-link" data-scroll-target="#documenting-things">Documenting things</a>
   <ul class="collapse">
-  <li><a href="#why-does-it-matter" id="toc-why-does-it-matter" class="nav-link" data-scroll-target="#why-does-it-matter">Why does it matter</a></li>
+  <li><a href="#why-does-it-matter" id="toc-why-does-it-matter" class="nav-link" data-scroll-target="#why-does-it-matter">Why does it matter ?</a></li>
   </ul></li>
   <li><a href="#sharing-things" id="toc-sharing-things" class="nav-link" data-scroll-target="#sharing-things">Sharing things</a></li>
   </ul>
@@ -227,16 +227,36 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="reproducible-publications">Reproducible publications</h3>
 <p><strong><a href="day4-reproducible_publications.html">rrtools as an example</a></strong></p>
 </section>
-<section id="reproducible-analytical-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="reproducible-analytical-workflows">Reproducible analytical workflows</h3>
-<p><strong><a href="day4-analytical_workflows.html">targets as an example</a></strong></p>
+<section id="analytical-workflow-frameworks-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-workflow-frameworks-in-r">Analytical workflow frameworks in R</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tidy-workflow.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Conceptual workflow model promoted by the <code>tidyverse</code>. Note the program box around the workflow and the iterative nature of the analytical process described. <em>Source: R for Data Science <a href="https://r4ds.hadley.nz/intro#fig-ds-diagram" class="uri">https://r4ds.hadley.nz/intro#fig-ds-diagram</a></em></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="targets" class="level4">
+<h4 class="anchored" data-anchor-id="targets">Targets</h4>
+<p>The <code>targets</code> R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.</p>
+<p>Here for more: <a href="https://books.ropensci.org/targets/" class="uri">https://books.ropensci.org/targets/</a></p>
+<p>Our practice example: <a href="https://github.com/brunj7/eds214-handson-targets" class="uri">https://github.com/brunj7/eds214-handson-targets</a></p>
+</section>
+<section id="pointblank" class="level4">
+<h4 class="anchored" data-anchor-id="pointblank">Pointblank</h4>
+<p>Although the <code>pointblank</code> package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.</p>
+<p><a href="https://github.com/rstudio/pointblank" class="uri">https://github.com/rstudio/pointblank</a></p>
 <hr>
+</section>
 </section>
 </section>
 <section id="documenting-things" class="level2">
 <h2 class="anchored" data-anchor-id="documenting-things">Documenting things</h2>
 <section id="why-does-it-matter" class="level3">
-<h3 class="anchored" data-anchor-id="why-does-it-matter">Why does it matter</h3>
+<h3 class="anchored" data-anchor-id="why-does-it-matter">Why does it matter ?</h3>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="img/lego_blocks.jpg" class="img-fluid" width="350"></p>
