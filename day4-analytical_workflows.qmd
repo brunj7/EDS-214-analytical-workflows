@@ -1,0 +1,28 @@
+---
+title: "Reproducible Analytical Workflows"
+---
+
+
+
+## Analytical workflow frameworks in R
+
+
+### Targets
+
+The `targets` R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.
+
+Here for more: <https://books.ropensci.org/targets/>
+
+
+
+
+
+
+
+### Pointblank
+
+Although the `pointblank` package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.
+
+<https://github.com/rstudio/pointblank>
+
+
