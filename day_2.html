@@ -136,9 +136,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#day-2" id="toc-day-2" class="nav-link active" data-scroll-target="#day-2">Day 2</a></li>
+  <li><a href="#day-2" id="toc-day-2" class="nav-link active" data-scroll-target="#day-2">Day 2</a>
+  <ul class="collapse">
   <li><a href="#working-on-a-remote-server" id="toc-working-on-a-remote-server" class="nav-link" data-scroll-target="#working-on-a-remote-server">Working on a remote server</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  </ul></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a>
+  <ul class="collapse">
   <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a>
   <ul class="collapse">
   <li><a href="#unix-and-friends" id="toc-unix-and-friends" class="nav-link" data-scroll-target="#unix-and-friends">Unix and Friends</a></li>
@@ -146,6 +149,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-command-line-interface-cli" id="toc-the-command-line-interface-cli" class="nav-link" data-scroll-target="#the-command-line-interface-cli">The Command Line Interface (CLI)</a></li>
   <li><a href="#automating-things-with-bash" id="toc-automating-things-with-bash" class="nav-link" data-scroll-target="#automating-things-with-bash">Automating things with bash</a></li>
   <li><a href="#collaborating-on-a-server" id="toc-collaborating-on-a-server" class="nav-link" data-scroll-target="#collaborating-on-a-server">Collaborating on a server</a></li>
+  </ul></li>
   <li><a href="#uploading-files-to-a-server" id="toc-uploading-files-to-a-server" class="nav-link" data-scroll-target="#uploading-files-to-a-server">Uploading files to a server</a></li>
   </ul></li>
   </ul>
@@ -202,33 +206,28 @@ ul.task-list li input[type="checkbox"] {
 <td><em>Lunch (60 min)</em></td>
 </tr>
 <tr class="odd">
-<td>1:30pm - 2:00pm</td>
-<td><em>Managing data-driven projects as a team (30 min)</em></td>
+<td>1:30pm - 3:00pm</td>
+<td><em>Automating things with bash (90min)</em></td>
 </tr>
 <tr class="even">
-<td>2:00pm - 3:00pm</td>
-<td><em>Uploading things to a server (60 min)</em></td>
-</tr>
-<tr class="odd">
 <td>3:00pm - 3:10pm</td>
 <td><em>Break (10 min)</em></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>3:10pm - 4:00pm</td>
-<td><em>Recap of the first half of the course and Q&amp;A</em></td>
+<td><em>Uploading things to a server (30 min)</em></td>
 </tr>
 </tbody>
 </table>
-<hr>
-</section>
-<section id="working-on-a-remote-server" class="level1">
-<h1>Working on a remote server</h1>
+<section id="working-on-a-remote-server" class="level2">
+<h2 class="anchored" data-anchor-id="working-on-a-remote-server">Working on a remote server</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">CERN computing center</figcaption>
 </figure>
 </div>
+</section>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
@@ -238,9 +237,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Get familiar with RStudio server</li>
 <li>Get a short introduction to the command line (CLI)</li>
 </ul>
-</section>
-<section id="why-working-on-a-remote-machine" class="level1">
-<h1>Why working on a remote machine?</h1>
+<section id="why-working-on-a-remote-machine" class="level2">
+<h2 class="anchored" data-anchor-id="why-working-on-a-remote-machine">Why working on a remote machine?</h2>
 <p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
 <ul>
 <li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
@@ -262,24 +260,25 @@ Warning
 <p>More on this in a few minutes</p>
 </div>
 </div>
-<section id="unix-and-friends" class="level2">
-<h2 class="anchored" data-anchor-id="unix-and-friends">Unix and Friends</h2>
+<section id="unix-and-friends" class="level3">
+<h3 class="anchored" data-anchor-id="unix-and-friends">Unix and Friends</h3>
 <p><a href="day2-unices.html"><strong>Materials</strong></a></p>
 </section>
-<section id="rstudio-server" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio-server">RStudio Server</h2>
+<section id="rstudio-server" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio-server">RStudio Server</h3>
 <p><a href="day2-rstudio_server.html"><strong>Materials</strong></a></p>
 </section>
-<section id="the-command-line-interface-cli" class="level2">
-<h2 class="anchored" data-anchor-id="the-command-line-interface-cli">The Command Line Interface (CLI)</h2>
+<section id="the-command-line-interface-cli" class="level3">
+<h3 class="anchored" data-anchor-id="the-command-line-interface-cli">The Command Line Interface (CLI)</h3>
 <p><a href="day2-remote_server.html"><strong>Materials</strong></a></p>
 </section>
-<section id="automating-things-with-bash" class="level2">
-<h2 class="anchored" data-anchor-id="automating-things-with-bash">Automating things with bash</h2>
+<section id="automating-things-with-bash" class="level3">
+<h3 class="anchored" data-anchor-id="automating-things-with-bash">Automating things with bash</h3>
 </section>
-<section id="collaborating-on-a-server" class="level2">
-<h2 class="anchored" data-anchor-id="collaborating-on-a-server">Collaborating on a server</h2>
+<section id="collaborating-on-a-server" class="level3">
+<h3 class="anchored" data-anchor-id="collaborating-on-a-server">Collaborating on a server</h3>
 <p><a href="day2-server_collaboration.html"><strong>Materials</strong></a></p>
+</section>
 </section>
 <section id="uploading-files-to-a-server" class="level2">
 <h2 class="anchored" data-anchor-id="uploading-files-to-a-server">Uploading files to a server</h2>

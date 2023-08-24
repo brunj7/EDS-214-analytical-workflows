@@ -298,14 +298,14 @@
     "href": "day2-server_uploading.html",
     "title": "Uploading things to a server",
     "section": "",
-    "text": "An efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
+    "text": "You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)"
   },
   {
     "objectID": "day2-server_uploading.html#sftp-software",
     "href": "day2-server_uploading.html#sftp-software",
     "title": "Uploading things to a server",
-    "section": "",
-    "text": "An efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
+    "section": "sFTP Software",
+    "text": "sFTP Software\nAn efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
   },
   {
     "objectID": "day2-server_uploading.html#scp",
@@ -697,7 +697,7 @@
     "href": "day2-server_collaboration.html",
     "title": "Collaborating on a server",
     "section": "",
-    "text": "Collaborative Setup\nThere are additional reasons of particular importance in a collaborative set up, such as a working group:\n\nCentralizing data management: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!\nMake sure your files are safe: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.\n\n\n\nWhat does working on a remote server mean?\nWhat does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:\n\nFile management: you will need to learn to move files (including your R scripts) to the server\nR Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.\n\n\n\n\nUploading Files to a server\nYou have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)\n\nRStudio\nYou can only upload one file at the time (you can zip a folder to trick it):"
+    "text": "Collaborative Setup\nThere are additional reasons of particular importance in a collaborative set up, such as a working group:\n\nCentralizing data management: As you know synthesis science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to have only one copy of the data that you can share with all your collaborators. Even better, since everyone can access the same data, everybody will have the exact same path in their script!!\nMake sure your files are safe: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.\n\n\n\nWhat does working on a remote server mean?\nWhat does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:\n\nFile management: you will need to learn to move files (including your R scripts) to the server\nR Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.\n\n\n\n\n\n\nCollaborative workflow on an analytical server; code are managed via git and GitHub, data sets are centralized in shared folders"
   },
   {
     "objectID": "day2-unices.html",
@@ -914,42 +914,21 @@
     "href": "day_2.html",
     "title": "Working on a remote server",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nWorking on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nCommand line (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nManaging data-driven projects as a team (30 min)\n\n\n2:00pm - 3:00pm\nUploading things to a server (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nRecap of the first half of the course and Q&A"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nWorking on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nCommand line (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 3:00pm\nAutomating things with bash (90min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nUploading things to a server (30 min)\n\n\n\n\n\n\n\n\nCERN computing center"
   },
   {
-    "objectID": "day_2.html#unix-and-friends",
-    "href": "day_2.html#unix-and-friends",
+    "objectID": "day_2.html#working-on-a-remote-server",
+    "href": "day_2.html#working-on-a-remote-server",
     "title": "Working on a remote server",
-    "section": "Unix and Friends",
-    "text": "Unix and Friends\nMaterials"
+    "section": "",
+    "text": "CERN computing center"
   },
   {
-    "objectID": "day_2.html#rstudio-server",
-    "href": "day_2.html#rstudio-server",
+    "objectID": "day_2.html#why-working-on-a-remote-machine",
+    "href": "day_2.html#why-working-on-a-remote-machine",
     "title": "Working on a remote server",
-    "section": "RStudio Server",
-    "text": "RStudio Server\nMaterials"
-  },
-  {
-    "objectID": "day_2.html#the-command-line-interface-cli",
-    "href": "day_2.html#the-command-line-interface-cli",
-    "title": "Working on a remote server",
-    "section": "The Command Line Interface (CLI)",
-    "text": "The Command Line Interface (CLI)\nMaterials"
-  },
-  {
-    "objectID": "day_2.html#automating-things-with-bash",
-    "href": "day_2.html#automating-things-with-bash",
-    "title": "Working on a remote server",
-    "section": "Automating things with bash",
-    "text": "Automating things with bash"
-  },
-  {
-    "objectID": "day_2.html#collaborating-on-a-server",
-    "href": "day_2.html#collaborating-on-a-server",
-    "title": "Working on a remote server",
-    "section": "Collaborating on a server",
-    "text": "Collaborating on a server\nMaterials"
+    "section": "Why working on a remote machine?",
+    "text": "Why working on a remote machine?\nOften the main motivation is to scale your analysis beyond what a personal computer can handle. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:\n\nPower: More CPUs/Cores (24/32/48), More RAM (256/384GB)\nCapacity: More disk space and generally faster storage (in highly optimized RAID arrays)\nSecurity: Data are spread across multiple drives and have nightly backups\nCollaboration: shared folders for code, data, and other materials; same software versions\n\n\n\n\n\n\n\nWarning\n\n\n\n=&gt; The operating system is more likely going to be Linux!!\nMore on this in a few minutes\n\n\n\nUnix and Friends\nMaterials\n\n\nRStudio Server\nMaterials\n\n\nThe Command Line Interface (CLI)\nMaterials\n\n\nAutomating things with bash\n\n\nCollaborating on a server\nMaterials"
   },
   {
     "objectID": "day_2.html#uploading-files-to-a-server",
