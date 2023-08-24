@@ -3,6 +3,13 @@ title: "Uploading things to a server"
 ---
 
 
+You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software... and you guessed it the CLI :)
+
+### RStudio
+
+You can only upload one file at the time (you can zip a folder to trick it):
+
+![](img/rstudio-upload.png)
 
 ## sFTP Software
 

@@ -19,14 +19,11 @@ What does it mean for your workflow? The good news is that RStudio Server makes 
 - **File management**: you will need to learn to move files (including your R scripts) to the server
 - **R Package installation**: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.
 
----
 
-# Uploading Files to a server
 
-You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software... and you guessed it the CLI :)
+```{r, fig.cap="Collaborative workflow on an analytical server; code are managed via git and GitHub, data sets are centralized in shared folders", echo=FALSE}
+knitr::include_graphics("img/server-collaborative_workflow.png")
+```
 
-### RStudio
 
-You can only upload one file at the time (you can zip a folder to trick it):
 
-![](img/rstudio-upload.png)

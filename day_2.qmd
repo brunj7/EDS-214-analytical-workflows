@@ -15,14 +15,13 @@ knitr::opts_chunk$set(echo = FALSE)
 | 10:50am - 11:00am | *Break (10 min)*                                   |
 | 11:00am - 12:30am | *Command line (50 min)*                            |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                                   |
-| 1:30pm - 2:00pm   | *Managing data-driven projects as a team (30 min)* |
-| 2:00pm - 3:00pm   | *Uploading things to a server (60 min)*            |
+| 1:30pm - 3:00pm   | *Automating things with bash (90min)*              |
 | 3:00pm - 3:10pm   | *Break (10 min)*                                   |
-| 3:10pm - 4:00pm   | *Recap of the first half of the course and Q&A*    |
+| 3:10pm - 4:00pm   | *Uploading things to a server (30 min)*            |
 
-------------------------------------------------------------------------
 
-# Working on a remote server
+
+## Working on a remote server
 
 ![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
 
@@ -34,7 +33,7 @@ In this lesson, you will learn:
 -   Get familiar with RStudio server
 -   Get a short introduction to the command line (CLI)
 
-# Why working on a remote machine?
+## Why working on a remote machine?
 
 Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
 
@@ -49,23 +48,23 @@ Often the main motivation is to **scale your analysis beyond what a personal com
 More on this in a few minutes
 :::
 
-## Unix and Friends
+### Unix and Friends
 
 [**Materials**](day2-unices.html)
 
-## RStudio Server
+### RStudio Server
 
 [**Materials**](day2-rstudio_server.html)
 
-## The Command Line Interface (CLI)
+### The Command Line Interface (CLI)
 
 [**Materials**](day2-remote_server.html)
 
-## Automating things with bash
+### Automating things with bash
 
 
 
-## Collaborating on a server
+### Collaborating on a server
 
 [**Materials**](day2-server_collaboration.html)
 
