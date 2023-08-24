@@ -21,7 +21,7 @@ What does it mean for your workflow? The good news is that RStudio Server makes 
 
 
 
-```{r, fig.cap="Collaborative workflow on an analytical server; code are managed via git and GitHub, data sets are centralized in shared folders", echo=FALSE}
+```{r, fig.cap="Collaborative workflow on an analytical server; scripts are managed via git and GitHub with each collaborator having a copy of the repository under their home folder, data sets management is  centralized in shared folders on ther server", echo=FALSE}
 knitr::include_graphics("img/server-collaborative_workflow.png")
 ```
 
