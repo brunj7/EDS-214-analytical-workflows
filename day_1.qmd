@@ -29,10 +29,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-## Lecture 1: Definitions and Concepts
+## Lecture 1: Definitions and Concepts of reproducible workflows
 
 [**Slide deck**](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
-
 
 
 
@@ -47,7 +46,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![Cherubini et al., 2007](img/whiteborad_drawings.png)
 
-## Interactive session 1: Develop your worklow skills
+## Interactive session 1: Develop your worklow skills 💪
 
 [Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](day1-hands-on_drawings.html)
 
@@ -98,6 +97,7 @@ usethis::git_sitrep()
 
 [**Materials**](day1-github_forking.html)
 
+
 #### Collaborating through branches
 
 [**Materials**](day1-github_branches.html)
@@ -113,6 +113,7 @@ usethis::git_sitrep()
 ### `git` commit messages
 
 [**Materials**](day1-github_commit_messages.html)
+
 
 ### GitHub conflicts
 

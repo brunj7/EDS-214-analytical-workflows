@@ -47,7 +47,7 @@ The `targets` R package can be very useful if you have a complex workflow that i
 
 Here for more: <https://books.ropensci.org/targets/>
 
-Our practice example: <https://github.com/brunj7/eds214-handson-targets>
+**Our practice example: <https://github.com/brunj7/eds214-handson-targets>**
 
 
 #### Pointblank
@@ -73,11 +73,6 @@ knitr::include_graphics("img/lego_blocks.jpg")
 ## Sharing things
 
 [**Materials**](day4-sharing_things.html)
-
-
-
-
-
 
 
 
