@@ -154,11 +154,11 @@
     "text": "Introduction to EDS-214\nA few words…"
   },
   {
-    "objectID": "day_1.html#lecture-1-definitions-and-concepts",
-    "href": "day_1.html#lecture-1-definitions-and-concepts",
+    "objectID": "day_1.html#lecture-1-definitions-and-concepts-of-reproducible-workflows",
+    "href": "day_1.html#lecture-1-definitions-and-concepts-of-reproducible-workflows",
     "title": "Reproducible & Collaborative Workflows",
-    "section": "Lecture 1: Definitions and Concepts",
-    "text": "Lecture 1: Definitions and Concepts\nSlide deck"
+    "section": "Lecture 1: Definitions and Concepts of reproducible workflows",
+    "text": "Lecture 1: Definitions and Concepts of reproducible workflows\nSlide deck"
   },
   {
     "objectID": "day_1.html#planing-things",
@@ -171,8 +171,8 @@
     "objectID": "day_1.html#interactive-session-1-develop-your-worklow-skills",
     "href": "day_1.html#interactive-session-1-develop-your-worklow-skills",
     "title": "Reproducible & Collaborative Workflows",
-    "section": "Interactive session 1: Develop your worklow skills",
-    "text": "Interactive session 1: Develop your worklow skills\nInvestigating the impacts of Hurricane on stream chemistry in Puerto Rico"
+    "section": "Interactive session 1: Develop your worklow skills 💪",
+    "text": "Interactive session 1: Develop your worklow skills 💪\nInvestigating the impacts of Hurricane on stream chemistry in Puerto Rico"
   },
   {
     "objectID": "day_1.html#lecture-2-coding-together",
@@ -1026,7 +1026,7 @@
     "href": "index.html#predictable-daily-schedule",
     "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
     "section": "Predictable daily schedule",
-    "text": "Predictable daily schedule\nCourse dates: Monday (2023-08-28) - Friday (2023-09-04)\nEDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 4pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.\n\nDaily schedule (subject to change):\n\n\n\n\n\n\n\nTime (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive Session 1 (90 min)\n\n\n12:30am - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nLecture (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session 2 (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nDay Recap + Q&A (50 min)"
+    "text": "Predictable daily schedule\nCourse dates: Monday (2023-08-28) - Friday (2023-09-04)\nEDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 4pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.\n\nDaily schedule (subject to change):\n\n\n\n\n\n\n\nTime (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive Session 1 (90 min)\n\n\n12:30am - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nLecture (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session 2 (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nFlex time + Q&A (50 min)"
   },
   {
     "objectID": "index.html#learning-objectives",
@@ -1047,7 +1047,7 @@
     "href": "index.html#sessions-subject-to-change",
     "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
     "section": "Sessions (subject to change)",
-    "text": "Sessions (subject to change)\n\n\n\nDay / Session\nTopics\nInteractive Sessions\n\n\n\n\nMonday morning\nReproducible workflows\nPlanning things: from flow charts to pseudocode\n\n\nMonday afternoon\nCoding together\nCollaborating with GitHub; Github collaboration Hands-on; Bonus: Github conflicts\n\n\nTuesday morning\nWorking on a remote server\nthe command line\n\n\nTuesday afternoon\nAutomating things with bash;\nbash scripting & uploading things\n\n\nWednesday morning\nHow to get data using APIs\nAPIs hands-on: USGS dataretrieval & metajam\n\n\nWednesday afternoon\nIntroduction to group project]\nGroup project\n\n\nThursday morning\nReproducible tools\ntargets & rrtools as examples\n\n\nThursday afternoon\nDocumenting things\nGroup project\n\n\nFriday morning\nSharing things\nGroup project\n\n\nFriday afternoon\nProject presentations\nProject presentations"
+    "text": "Sessions (subject to change)\n\n\n\nDay / Session\nTopics\nInteractive Sessions\n\n\n\n\nMonday morning\nReproducible workflows\nPlanning things: from flow charts to pseudocode\n\n\nMonday afternoon\nCoding together\nCollaborating with GitHub; Github collaboration Hands-on; Bonus: Github conflicts\n\n\nTuesday morning\nWorking on a remote server\nthe command line and friends\n\n\nTuesday afternoon\nAutomating things with bash\nbash scripting & uploading things\n\n\nWednesday morning\nHow to get data using APIs\nAPIs hands-on: USGS dataretrieval & metajam\n\n\nWednesday afternoon\nIntroduction to group project]\nGroup project\n\n\nThursday morning\nReproducible tools\ntargets & rrtools as examples\n\n\nThursday afternoon\nDocumenting things\nGroup project\n\n\nFriday morning\nSharing things\nGroup project\n\n\nFriday afternoon\nProject presentations\nProject presentations"
   },
   {
     "objectID": "index.html#course-requirements",
