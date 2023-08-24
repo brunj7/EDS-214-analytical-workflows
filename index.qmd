@@ -79,7 +79,7 @@ EDS 214 is an intensive 1-week long graded 2-unit course. Students should plan t
 | 1:30pm - 2:00pm   | *Lecture  (30 min)*                                      |
 | 2:00pm - 3:00pm   | *Interactive Session 2  (60 min)*                          |
 | 3:00pm - 3:10pm   | *Break   (10 min)*                                        |
-| 3:10pm - 4:00pm   | *Day Recap +  Q&A  (50 min)*                              |
+| 3:10pm - 4:00pm   | *Flex time +  Q&A  (50 min)*                              |
 
 
 ## Learning objectives
