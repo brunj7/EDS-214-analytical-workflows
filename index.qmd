@@ -124,8 +124,8 @@ datatable(sched2, rownames=FALSE, escape=FALSE)
 | Tuesday afternoon	   |  [Automating things with `bash`](day2-remote_server.html#rstudio-server)                 |	bash scripting & uploading things |
 | Wednesday morning    |  [How to get data using APIs](day_3.html)                                |  [APIs hands-on](day_3.html#hands-on-apis): USGS `dataretrieval`	& `metajam` |
 | Wednesday afternoon  |	[Introduction to group project](group_project.html)]                                     |	[Group project](group_project.html) |
-| Thursday morning     |  [Reproducible tools](day_4.html#coding-as-a-team)                                        |	`targets` & `rrtools` as examples	|
-| Thursday afternoon   |	[Documenting things](day4-documenting.html)                                              |	Group project |
+| Thursday morning     |  [Reproducible tools](day_4.html#managing-data-driven-projects-as-a-team)                 |	`targets` & `rrtools` as examples	|
+| Thursday afternoon   |	[Documenting things](day_4.html#documenting-things)                                              |	Group project |
 | Friday morning	     |  [Sharing things](day_5.html#scientific-products)	                                       |  Group project |
 | Friday afternoon	   |  [Project presentations](day_5.html#group-projects)	                                     |  [Project presentations](day_5.html#group-projects) | 
 
