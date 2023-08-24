@@ -14,19 +14,25 @@ We are going to build on the exercise we used the first day and work on implemen
 
 By group of 4-5 collaborators:
 
-- Find an awesome name for your group (one of the hardest [step](https://www.karlton.org/2017/12/naming-things-hard/))
+- Find an awesome name for your group (one of the hardest [steps](https://www.karlton.org/2017/12/naming-things-hard/))
 - Setup a shared GitHub repository
 - Use the MEDS server Taylor as your main computing resource
 - Use GitHub to manage your code development in a collaborative manner
-- Use shared folder on Taylor to manage your data `/courses/EDS214/my_group_name`
+- Use shared folder on Taylor to manage your data `/courses/EDS214/group_project/my_group_name`
 - Document your work as you go!!
+  - Comment your code
+  - Add project details to your README, including reference to data sources
 - Use GitHub issues to track your work and discuss progress and tasks
+
+
+#### Log your resources on this [Google Sheet](https://docs.google.com/spreadsheets/d/1cVoUFvSUdn04gzBSPrvmr2ZfkbnlBOG1iCSwill2NA0/edit#gid=0)
+
 
 ## Background
 
 The Luquillo Experimental Forest (LEF) has been a center of tropical forestry research for nearly a century. In addition, the LEF is a recreation site for over a half a million people per year, a water supply for approximately 20% of Puerto Rico's population, a regional center for electronic communication, and a refuge of Caribbean biodiversity. It is the goal of the USDA Forest Service and the University of Puerto to promote and maintain the forest's role as a center of active and dynamic scientific inquiry. However, to maintain the ecological integrity of the forest while balancing the many demands placed upon it's resources, certain protocol is required. This guide provides the major protocols that govern research in the LEF. These protocols are designed to help researchers protect the forests, obey the law, create an amiable and non-discriminatory work environment, and provide a historical record for future scientists
 
-Here for more information about the Luquillo site: https://lternet.edu/site/luquillo-lter/
+Here for more information about the Luquillo site: <https://lternet.edu/site/luquillo-lter/>
 
 
 ```{r plot, echo=FALSE}
@@ -35,8 +41,19 @@ knitr::include_graphics("img/luq-ts-plot.png")
 
 ## Goals
 
-1. Can you recreate that plot (content, not style wise)
-2. Ask your own question! You are encouraged to define you own question around this topic as a team using the latest data set
+1. Can you recreate that plot (content, not style wise... you can do way better 🙂)
+
+Write a quarto document that:
+    - reads the data in (from a local cpy on Taylor)
+    - processes the data as needed to be plotted
+    - use ggplot to create a similar (but better looking) plat
+    - comment your code and use markdown text to provide context to your code
+    - render your report as html
+
+
+2. Ask your own question! You are encouraged to define you own question around this topic as a team
+
+Go wild!! Ask your own scientific question using the stream chemistry data but also any other external source of data (like [historical hurricane tracks from NOAA](https://www.nhc.noaa.gov/data/)). **The focus in this part of the project is on the process of how you will be answering the question (planning, orkflow, code, data, ....), not on the results per se**
 
 
 ## Data
@@ -46,19 +63,19 @@ Data are available from the Environmental Data Initiative ([EDI](https://environ
 
 ### Chemistry of stream water data from the Luquillo Mountains
 
-McDowell, W. 2022. Chemistry of stream water from the Luquillo Mountains ver 4923058. Environmental Data Initiative. https://doi.org/10.6073/pasta/1dd1a59a7e6fbe95fdf8736477d81b83 
+McDowell, W. and International Institute of Tropical Forestry(IITF), USDA Forest Service. 2022. Chemistry of stream water from the Luquillo Mountains ver 4923061. Environmental Data Initiative. <https://doi.org/10.6073/pasta/570231c2807a6396ced6a89ef7547bd4> (Accessed 2023-08-24).
 
 
-## Group project presentation (12-15min) 
+## Group project presentation (10min; 5 slides) 
 
 Major points to hit:
 
-- Goal/Question + workflow you used to achieve it (aka *THE* plan)
-- How did you set up your project (server, data, code, …)
-- How did you organize your team (tasks, who did what)
-- Results 
-- Challenges
-- Share your work! Were to find your ressources
+1. Goal/Question + workflow you used to achieve it (aka *THE* plan)
+1. How did you set up your project (server, data, code, …)
+1. How did you organize your team (tasks, who did what)
+1. Results 
+1. Main challenges
+
 
 
 ## Reference
