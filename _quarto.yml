@@ -3,7 +3,6 @@ project:
   render:
     - "*.qmd"
     - "!code/"
-    - "!slides/"
 website:
   title: "EDS214 - Analytical Workflows and Scientific Reproducibility"
   navbar:
