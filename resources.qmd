@@ -10,3 +10,4 @@ title: "Course resources"
 - Reproducible Research with R and RStudio, Chrisotpher Gandrud <http://christophergandrud.github.io/RepResR-RStudio/index.html>
 - Initial steps toward reproducible research, Karl Broman, <https://kbroman.org/steps2rr/>
 - Reproducibility guide from [ROpenSci](https://ropensci.org/) <https://ropensci.github.io/reproducibility-guide/>
+- The Turing Way Community. (2022). [The Turing Way: A handbook for reproducible, ethical and collaborative research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research). Zenodo. doi: [10.5281/zenodo.3233853](https://doi.org/10.5281/zenodo.3233853)
