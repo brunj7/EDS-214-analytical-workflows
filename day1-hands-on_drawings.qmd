@@ -35,7 +35,7 @@ knitr::include_graphics("img/luq-ts-plot.png")
 
 **Draw the data processing steps to harmonize those data into one dataset that will let you compare time-series data and reproduce the above plot (20min)**
 
-I recommend you use the white boards or paper. You can also use <https://excalidraw.com/> (but do not take too much time to learn all its features! Focus on developing the workflow)
+I recommend you use the white boards or paper. You can also use <https://excalidraw.com/> (but do not take too much time to learn its features! Focus on developing the workflow)
 
 ## Remember
 
