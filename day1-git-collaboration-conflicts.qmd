@@ -204,9 +204,6 @@ a lot of time and frustration. These are words our teams live by:
 - Pull immediately before you commit or push
 - Commit often in small chunks.
 
-A good workflow is encapsulated as follows:
-
-```Pull -> Edit -> Add -> Pull -> Commit -> Push```
 
 **Always start your working sessions with a pull** to get any outstanding changes, then
 start doing your editing and work. Stage your changes, but before you commit, Pull
