@@ -104,6 +104,6 @@ In this course, we will focus on:
 
 class: center, middle
 
-## Back to main doc [here](https://brunj7.github.io/EDS-214-analytical-workflows/day_2.html)
+## Back to main doc [here](https://brunj7.github.io/EDS-214-analytical-workflows/day_1.html)
 
 
