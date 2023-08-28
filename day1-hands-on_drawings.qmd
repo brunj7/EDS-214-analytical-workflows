@@ -54,4 +54,4 @@ I recommend you use the white boards or paper. You can also use <https://excalid
 
 Exercise based on: Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358
 
-Data available here: McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684 (Accessed 2021-08-06).
+Data available here: McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. <https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684> (Accessed 2021-08-06).
