@@ -1,0 +1,215 @@
+---
+title: "An introduction to Bash scripting"
+---
+
+So far you've seen Bash as a CLI, i.e., as an interactive tool. But Bash is also a programming language, and that is where its real power lies. Nobody claims that Bash is a particularly good general-purpose programming language (though in theory it could be used that way). But when it comes to manipulating files, working in Bash is often far more convenient than working in other languages such as R or Python. An additional benefit is that Bash is almost universally available, whereas R and Python require additional installs.
+
+In this exercise you will create a Bash script to perform two common file manipulation tasks: adding header records and renaming files.
+
+## Adding a header record to each file
+
+There are two problems with our state baby name files: they lack header records, and they end in `.TXT` instead of `.csv`. To tackle the first problem, we can say:
+
+``` bash
+echo "state,gender,year,firstname,count" > tempfile
+```
+
+This gives us a header record in a new file `tempfile`. We can then append the contents of one of our data files to that file:
+
+``` bash
+cat STATE.AK.TXT >> tempfile
+```
+
+Examine `tempfile` using any of the following commands:
+
+``` bash
+head tempfile
+cat tempfile
+more tempfile
+less tempfile
+```
+
+At this point we can now rename `tempfile` to the desired filename ending in `.csv` and we're done (with one data file anyway):
+
+``` bash
+mv tempfile STATE.AK.csv
+```
+
+#### Questions
+
+> -   What will happen if you do this?
+>
+>     ``` bash
+>     echo "state,gender,year,firstname,count" > tempfile
+>     cat STATE.AK.TXT > tempfile
+>     ```
+>
+> -   Or this?
+>
+>     ``` bash
+>     echo "state,gender,year,firstname,count" >> tempfile
+>     cat STATE.AK.TXT > tempfile
+>     ```
+>
+> -   Or this?
+>
+>     ``` bash
+>     echo "state,gender,year,firstname,count" >> tempfile
+>     cat STATE.AK.TXT >> tempfile
+>     ```
+
+We want to do the above processing to every file, that's where loops come in. But first, we need variables.
+
+## Variables
+
+Bash supports variables, and variables are essential in writing Bash scripts. To set a variable:
+
+``` bash
+name=Alice
+```
+
+No space between the variable name and equals sign! Variables are referenced as `${name}`, or as just `$name` if not ambiguous.
+
+#### Question
+
+> What will be printed by the following three `echo` commands, and why?
+>
+> ``` bash
+> var=xy
+> echo $varz
+> echo ${var}z
+> echo $var.z
+> ```
+
+When we process our data files in a loop, we will be working with a variable `file` whose value will be the name of the current file such as `STATE.AK.TXT`. We will want to construct a new filename such as `STATE.AK.csv` from that variable. This can be done by modifying a simple variable reference such as `${file}` to include Bash string processing functions inside the braces. Here are two ways:
+
+``` bash
+file=STATE.AK.TXT
+echo ${file/.TXT/.csv}
+echo ${file%.TXT}.csv
+```
+
+The first form performs a string substitution, substituting the first (and in our case, only) occurrence of `.TXT` with `.csv`. The second form peels off the trailing `.TXT` (`%` means "trailing"), leaving just `STATE.AK`. To that we then append `.csv`.
+
+::: callout-tip
+There are lots of string processing operations, and all are invoked using single characters like `%`, `#`, `^`, etc. How the heck can you remember that? The answer is, you likely can't. The takeaway for you in this class is that there exist string processing operators in Bash, and that if you look in the Bash manual you can get a description of what each one does.
+
+-   [Bash manual](https://www.gnu.org/software/bash/manual/)
+-   [Bash manual: Shell parameter expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+-   [Parameter expansion FAQ](http://mywiki.wooledge.org/BashFAQ/073)
+:::
+
+## Scripts
+
+A Bash script is a text file containing the same Bash commands you might type interactively. It's analogous to an R or Python script but written in Bash instead of one of those other languages.
+
+Bash knows it is reading from a file instead of the terminal window, and it operates slightly differently:
+
+-   It doesn't print a prompt.
+-   It doesn't read Bash configuration files (`~/.bashrc`, `~/.bash_profile`, `~/.profile`, etc.). As a consequence, aliases and variables defined in those files are not visible to scripts.
+
+A Bash script can be run like so:
+
+``` bash
+bash myscript.sh
+```
+
+#### Exercise
+
+> Create a script `myscript.sh` that processes data file `STATE.AK.TXT` as above.
+
+Once you've created a script, it can be very useful to check it for errors and potential pitfalls by running it through [ShellCheck](https://www.shellcheck.net).
+
+## Loops
+
+Bash supports a few kinds of loops. The one we'll be using here looks like this:
+
+``` bash
+for var in list_of_things; do
+    # operate on $var
+done
+```
+
+Alternative syntax (notice the `do` is on a line by itself):
+
+``` bash
+for var in list_of_things
+do
+    # operate on $var
+done
+```
+
+A couple examples:
+
+``` bash
+for name in Tom Dick Harry; do
+    echo "Every $name"
+done
+```
+
+``` bash
+for i in {99..1}; do
+    echo "$i bottles of beer on the wall"
+done
+```
+
+It's very common to operate on files:
+
+``` bash
+for file in *.TXT; do
+    # do something with $file, for example:
+    echo $file
+done
+```
+
+## Putting it all together
+
+Recall that our goal is to add a header record to each data file, and to rename the data files to `.csv`. We can do so by writing a loop, and performing those two operations inside the loop. Write your data file-processing loop inside your `myscript.sh` script file.
+
+::: callout-tip
+When performing a destructive operation, it can be very helpful to view the actual commands that will be executed before doing them for real. To satisfy yourself that your script is coded correctly, prefix each command with `echo` so that it is simply printed in the terminal window. You will also want to either comment out I/O redirections or quote them, as they will otherwise affect the `echo` command. Here's our practice loop:
+
+``` bash
+for file in *.TXT; do
+    echo echo "state,gender,year,firstname,count" ">" tempfile
+    echo cat $file ">>" tempfile
+    echo mv tempfile ${file/.TXT/.csv}
+done
+```
+
+When ready, remove the `echo` prefixes and remove quotes around redirection operators:
+
+``` bash
+for file in *.TXT; do
+    echo "state,gender,year,firstname,count" > tempfile
+    cat $file >> tempfile
+    mv tempfile ${file/.TXT/.csv}
+done
+```
+:::
+
+### Exercise
+
+Alice does not want to rename her files to `.csv`, she's fine with them being named `.TXT`. And after learning that `cat` will concatenate multiple files given on the command line, she has what she thinks is a brilliant idea for performing the processing more simply. First she puts the common header record in a file:
+
+``` bash
+echo "state,gender,year,firstname,count" > header
+```
+
+And then she writes this loop:
+
+``` bash
+for file in *.TXT; do
+    cat header $file > $file
+done
+```
+
+Well that turned out to be a disaster. What went wrong?
+
+## Next steps
+
+There's a lot more to Bash scripting. Key next topics to study include:
+
+-   Conditional statements
+-   Processing command line arguments
+-   Creating scripts that can be invoked like built-in commands

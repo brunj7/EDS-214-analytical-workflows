@@ -62,7 +62,7 @@ More on this in a few minutes
 
 ### Automating things with bash
 
-
+[**Materials**](day2-bash-scripting.html)
 
 ### Collaborating on a server
 
