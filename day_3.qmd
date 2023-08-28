@@ -32,7 +32,7 @@ In case you need some inspiration, look at this dataset about historic precipita
 
 Although discovering data through a web interface is convenient and offers a great experience, it is often hard to scale this approach or to integrate it into a reproducible workflow.
 
-**[Slides](https://brunj7.github.io/EDS-214-analytical-workflows/slides/api.html)**
+**[Slides](https://brunj7.github.io/eds214-slides/api.html)**
 
 
 
