@@ -2,7 +2,7 @@
 title: "EDS 214 - Analytical Workflows and Scientific Reproducibility"
 subtitle: "Day 2: Coding as a Team"
 author: "Julien Brun"
-institute: "NCEAS, UCSB"
+institute: "UCSB"
 output:
   xaringan::moon_reader:
     lib_dir: libs

@@ -2,8 +2,8 @@
 title: "Acessing Data in a Programmatic Way"
 subtitle: "APIs and more"
 author: "Julien Brun"
-institute: "EDS-214"
-date: "2022/08"
+institute: "UCSB"
+date: "2023/08"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts]

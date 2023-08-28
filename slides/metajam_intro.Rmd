@@ -2,8 +2,8 @@
 title: "Introduction to metajam"
 subtitle: "EDS-214: Reproducible workflows"
 author: "Julien Brun"
-institute: "NCEAS, UCSB"
-date: "Summer 2022"
+institute: "UCSB"
+date: "Summer 2023"
 output:
   xaringan::moon_reader:
     css: [hygge-duke, hygge, metropolis-fonts]
