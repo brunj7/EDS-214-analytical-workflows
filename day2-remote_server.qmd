@@ -159,7 +159,7 @@ hit `q` to exit the help
 ### History
 
 * See your command history:  `history`
-* Re-run last command:  `!!`  (pronounced "bang-bang")
+* Re-run last command:  `!!`
 * Re-run 32th command: `!32`
 * Re-run 5th from last command: `!-5`
 * Re-run last command that started with 'c': `!c`
