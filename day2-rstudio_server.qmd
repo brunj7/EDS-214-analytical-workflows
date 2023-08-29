@@ -21,7 +21,7 @@ To help with remote files management, the RStudio Server interface as few additi
 
 3. You are in!
 
-```{r}
+```{r echo=FALSE,}
 knitr::include_graphics("img/rstudio-server_login.png")
 ```
 
@@ -29,7 +29,7 @@ knitr::include_graphics("img/rstudio-server_login.png")
 
 For this session, we are going to select the `RStudio` option and hit `Start Session`.
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics("img/rstudio-server_session.png")
 ```
 
@@ -39,7 +39,7 @@ knitr::include_graphics("img/rstudio-server_session.png")
 
 Let's explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the `home` folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: `R` and `H`
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics("img/rstudio-server_file-structure.png")
 ```
 
@@ -52,14 +52,14 @@ Let us make a folder named `github` by click on the `New Folder` button at the t
 If we go to the `Packages` tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them. 
 
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics("img/rstudio-server_packages.png")
 ```
 
 
 A user can also installed her/his own packages. Let's try to install the `remote` package that lets you install R packages directly from GitHub: `install.packages("remotes")`. Once done, note a new section that appeared on the Packages tab named `User Library`. Each of us have now its own copy of the package installed (in this `R` folder we were talking about a few minutes ago). 
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics("img/rstudio-server_packages-user.png")
 ```
 
