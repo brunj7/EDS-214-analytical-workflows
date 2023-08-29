@@ -31,7 +31,7 @@ In this lesson, you will learn:
 
 -   How to connect to a remote server
 -   Get familiar with RStudio server
--   Get a short introduction to the command line (CLI)
+-   Get an introduction to the command line (CLI) & bash
 
 ## Why working on a remote machine?
 
