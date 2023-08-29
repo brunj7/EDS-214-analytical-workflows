@@ -21,7 +21,7 @@ To help with remote files management, the RStudio Server interface as few additi
 
 3. You are in!
 
-```{r echo=FALSE,}
+```{r echo=FALSE}
 knitr::include_graphics("img/rstudio-server_login.png")
 ```
 
