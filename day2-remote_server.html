@@ -405,8 +405,8 @@ Tip
 <figcaption class="figure-caption"><code>stdin</code>, <code>stdout</code>, <code>stderr</code></figcaption>
 </figure>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.csv </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.TXT </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.TXT <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="{callout-tip}">
 <ul>
 <li>note use of <code>*</code> as character wildcard for zero or more matches (same in Mac and Windows)</li>
@@ -423,7 +423,7 @@ Tip
 <li><code>&gt;&gt; file</code>: append stdout to file</li>
 </ul>
 <p>Let’s write the above result to a file:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span> <span class="op">&gt;</span> csvcount.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="pp">*</span>.TXT <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span> <span class="op">&gt;</span> csvcount.log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Caution: except for <code>&gt;&gt;</code>, all forms of <code>&gt;</code> are destructive: Bash overwrites any existing file with an empty file before the program is run.</p>
 <p>Want to get rid of output you don’t want to see? Use the Unix black hole: <code>&gt;&amp; /dev/null</code>. (This is a cultural meme, you’ll see it on T-shirts and license plates.)</p>
 <p>The above are the main redirections, but there are others.</p>
