@@ -180,8 +180,8 @@ hit `q` to exit the help
 
 
 ```bash
-wc -l *.csv 
-wc -l *.csv | sort -n
+wc -l *.TXT 
+wc -l *.TXT | sort -n
 ```
 
 :::{callout-tip}
@@ -211,7 +211,7 @@ where stdout and stderr go:
 Let's write the above result to a file:
 
 ```bash
-wc -l *.csv | sort -n > csvcount.txt
+wc -l *.TXT | sort -n > csvcount.log
 ```
 
 Caution: except for `>>`, all forms of `>` are destructive: Bash
