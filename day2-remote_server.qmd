@@ -152,7 +152,8 @@ hit `q` to exit the help
 * What is today's date?  `date`
 * Where are the programs you are using?   `whereis R` also try `which -a python`
 * What is the kernel version of your OS:  `uname -a`
-* Since when since last reboot: `uptime`
+* How long since last reboot: `uptime`
+* Which shell are you using? `echo $0`
 
 
 
