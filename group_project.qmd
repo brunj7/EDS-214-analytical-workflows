@@ -58,7 +58,7 @@ Go wild!! Ask your own scientific question using the stream chemistry data but a
 
 ## Data
 
-Data are available from the Environmental Data Initiative ([EDI](https://environmentaldatainitiative.org/)) that is hosting most of the data of the Long Term Ecological Research ([LTER](https://lternet.edu/)) Network.
+Data are available from the Environmental Data Initiative ([EDI](https://edirepository.org/)) that is hosting most of the data of the Long Term Ecological Research ([LTER](https://lternet.edu/)) Network.
 
 
 ### Chemistry of stream water data from the Luquillo Mountains
