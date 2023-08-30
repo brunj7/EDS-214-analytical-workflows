@@ -44,7 +44,7 @@ knitr::include_graphics("img/luq-ts-plot.png")
 1. Can you recreate that plot (content, not style wise... you can do way better 🙂)
 
 Write a quarto document that:
-    - reads the data in (from a local cpy on Taylor)
+    - reads the data in (from a local copy on Taylor)
     - processes the data as needed to be plotted
     - use ggplot to create a similar (but better looking) plat
     - comment your code and use markdown text to provide context to your code
@@ -53,7 +53,7 @@ Write a quarto document that:
 
 2. Ask your own question! You are encouraged to define you own question around this topic as a team
 
-Go wild!! Ask your own scientific question using the stream chemistry data but also any other external source of data (like [historical hurricane tracks from NOAA](https://www.nhc.noaa.gov/data/)). **The focus in this part of the project is on the process of how you will be answering the question (planning, orkflow, code, data, ....), not on the results per se**
+Go wild!! Ask your own scientific question using the stream chemistry data but also any other external source of data (like [historical hurricane tracks from NOAA](https://www.nhc.noaa.gov/data/)). **The focus in this part of the project is on the process of how you will be answering the question (planning, workflow, code, data, ....), not on the results per se**
 
 
 ## Data
