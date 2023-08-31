@@ -6,7 +6,7 @@ title: "Sharing Things"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## GitHub pages & the R Markdown family
+## GitHub pages & the R Markdown & quarto family
 
 You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see [here](https://rstudio.github.io/distill/website.html) for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout [Quarto](https://quarto.org/) that is a cross-language tool to render documents from code!
 
@@ -19,36 +19,36 @@ When you have complex data that you want to not only visualize but also to let t
 
 R Shiny is a very interesting framework that lets you write R code that will then be translated into javascript for you and thus let you develop web application without having to learn any new programming language. Note that you will need a server to host the application.
 
-Check out this gallery of shiny apps: https://shiny.rstudio.com/gallery/ 
+Check out this gallery of shiny apps: <https://shiny.rstudio.com/gallery/>
 
-Getting started with Shiny: https://shiny.rstudio.com/tutorial/
+Getting started with Shiny: <https://shiny.rstudio.com/tutorial/>
 
 ### Html widgets
 
 Html widgets offer some great interactive data visualization. It is more limited that Shiny because you can not modify parameters to modify the data use, but it has the advantage that it does not need a server to run the widget and it can be inserted directly into an R Markdown.
 
-Here to get started: https://www.htmlwidgets.org/
+Here to get started: <https://www.htmlwidgets.org/>
 
 ## plotly <img style="float: right;width: 60px;" src=img/logo-plotly.svg />
 
 [`plotly`](https://plotly.com/) enable you to develop great interactive data visualizations. It has the advantage to be available both in [R](https://plotly.com/r/) and [Python](https://plotly.com/python/) (and javascript). One great thing in R is that if you are a ggplot master, you can write your plot code using ggplot and transform it into a plotly plot with one line of code ([here](https://plotly.com/ggplot2/getting-started/) for an example)
 
-Note there are also other python libraries to create interactive plots, here are a few: https://mode.com/blog/python-interactive-plot-libraries/
+Note there are also other python libraries to create interactive plots, here are a few: <https://mode.com/blog/python-interactive-plot-libraries/>
 
 
 
 # Code Repositories
 
 - GitHub 
-- GitLab (open source!!): https://about.gitlab.com/
-- Bitbucket: https://bitbucket.org/product
+- GitLab (open source!!): <https://about.gitlab.com/>
+- Bitbucket: <https://bitbucket.org/product>
 - ...
 
 
 
 **Don't forget to provide information about the versions of software and libraries that were used when running this specific analysis** 
 
-It is also a great idea to add license to your project so people know how they can use your code: https://choosealicense.com/ 
+It is also a great idea to add license to your project so people know how they can use your code: <https://choosealicense.com/>
 
 
 ## Binder & jupyter <img style="float: right;width: 60px;" src=img/binder_logo.svg />
@@ -57,7 +57,7 @@ Transform your `git` based repo into an interactive jupyter notebook <https://my
 
 ![](https://media.giphy.com/media/9SIAXIrMh4AWBx4GBB/giphy.gif)
 
-**Try it:** https://mybinder.org/
+**Try it:** <https://mybinder.org/>
 
 ## Citing your code
 
@@ -112,11 +112,11 @@ knitr::include_graphics("img/docker_drawing.jpeg")
 
 A few good readings:
 
-- Docker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316
+- Docker for scientific reproducibility: <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316>
 - The Whole Tale project: combining containers with data repositories <https://wholetale.org/>
-- Docker tutorial: http://jsta.github.io/r-docker-tutorial/
-- Environment Management with Docker: https://environments.rstudio.com/docker
-- Sharing and Running R code using Docker: https://aboland.ie/Docker.html
+- Docker tutorial: <http://jsta.github.io/r-docker-tutorial/>
+- Environment Management with Docker: <https://environments.rstudio.com/docker>
+- Sharing and Running R code using Docker: <https://aboland.ie/Docker.html>
 
 
 ---
@@ -125,17 +125,17 @@ A few good readings:
 
 ## Xarigan
 
-Xarigan is an R package to create slide deck using R Markdown: https://github.com/yihui/xaringan
+Xarigan is an R package to create slide deck using R Markdown: <https://github.com/yihui/xaringan>
 
 ```{r, eval=FALSE}
 remotes::install_github('yihui/xaringan')
 ```
 
-Here is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/
+Here is a good introduction to it: <https://www.favstats.eu/post/xaringan_tut/>
 
 
 ## Quarto Presentations
 
-https://quarto.org/docs/presentations/
+<https://quarto.org/docs/presentations/>
 
-https://meghan.rbind.io/blog/quarto-slides/
+<https://meghan.rbind.io/blog/quarto-slides/>
