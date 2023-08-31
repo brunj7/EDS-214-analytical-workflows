@@ -17,9 +17,10 @@ knitr::include_graphics("img/found_documentationjpg.jpeg")
 
 README files are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
 
-Good types of information to have on a README:
+Good types of information to have on a `README`:
 
 - Title  capturing the essence of the project
+- List of current contributors
 - A short explanation of the goal / purpose
 - How to install / where to start
 - A quick demo on how to use the content (can be a link to another document as well)
@@ -48,8 +49,8 @@ knitr::include_graphics("img/code_handover.jpeg")
 
 It is important to make your code easy to read if you hope that others will reuse it. It starts with using a **consistent style** withing your scripts (at least within a project). 
 
-- Here is a good style guide for R: https://style.tidyverse.org/
-- Style guide for Python: https://www.python.org/dev/peps/pep-0008/
+- Here is a good style guide for R: <https://style.tidyverse.org/>
+- Style guide for Python: <https://www.python.org/dev/peps/pep-0008/>
 
 ```{python Zen of Python, echo=TRUE}
 import this
@@ -154,7 +155,7 @@ def complex(real=0.0, imag=0.0):
         return complex_zero
 ```
 
-Here for more: https://www.python.org/dev/peps/pep-0257/
+Here for more: <https://www.python.org/dev/peps/pep-0257/>
 
 
 
@@ -253,19 +254,19 @@ Note that for content (such as this course), there is also another type of licen
 
 ## Further Reading
 
-- Awesome README: https://towardsdatascience.com/how-to-write-an-awesome-readme-68bf4be91f8b
-- How to write a great README: https://x-team.com/blog/how-to-write-a-great-readme/
+- Awesome README: <https://towardsdatascience.com/how-to-write-an-awesome-readme-68bf4be91f8b>
+- How to write a great README: <https://x-team.com/blog/how-to-write-a-great-readme/>
 - Python Hichhiker's guide: 
-  - style: https://docs.python-guide.org/writing/style/
-  - documentation: https://docs.python-guide.org/writing/documentation/
-- Documenting Python Code: A Complete Guide: https://realpython.com/documenting-python-code/
-- Roxygen2: https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html
-- Introduction to Software Engineering by Jason Coposky: https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf
-- Functional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming
-- Scoping in R: http://adv-r.had.co.nz/Functions.html
-- https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages
-- http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language
-- Software carpentry: https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R/
+  - style: <https://docs.python-guide.org/writing/style/>
+  - documentation: <https://docs.python-guide.org/writing/documentation/>
+- Documenting Python Code: A Complete Guide: <https://realpython.com/documenting-python-code/>
+- Roxygen2: <https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html>
+- Introduction to Software Engineering by Jason Coposky: <https://github.com/NCEAS/training/blob/master/2014-oss/day-09/IntroductionToSoftwareClass.pdf>
+- Functional programming in R: <http://adv-r.had.co.nz/Functional-programming.html#functional-programming>
+- Scoping in R: <http://adv-r.had.co.nz/Functions.html>
+- <https://www.quora.com/What-is-the-difference-between-programming-languages-markup-languages-and-scripting-languages>
+- <http://stackoverflow.com/questions/17253545/scripting-language-vs-programming-language>
+- Software carpentry: <https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R/>
 
 
 ## Acknowledgements
