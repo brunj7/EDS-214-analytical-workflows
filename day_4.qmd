@@ -7,30 +7,19 @@ title: "Being reproducible to better collaborate: Tools and Practices"
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
-| 10:00am - 11:00am | *Reproducible publication: meet `rrtools` (60 min)*   |
-| 11:00am - 11:10am | *Break (10 min)*                    |
-| 11:10am - 12:30am | *Building analytical workflows: meet `targets` (80 min)* |
+| 10:00am - 11:20am | *Building analytical workflows: meet `targets` (80 min)*  |
+| 11:20am - 11:30am | *Break (10 min)*                    |
+| 11:30am - 12:30am | *Reproducible publication: meet `rrtools` (60 min)*  |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                    |
 | 1:30pm - 2:20pm   | *Documenting & sharing things (50 min)*           |
 | 2:20am - 2:30pm   | *Break (10 min)*                    |
-| 2:30pm - 4:00pm   | *Group Projects*            |
+| 2:30pm - 4:00pm   | *Group Projects (90min)*            |
  
-
-
-## Managing data-driven projects as a team
-
-[**Materials**](day4-projects_team.html)
-
 
 
 ## Leveraging existing frameworks for reproducibility
 
 Please remember that every workflow or framework is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project. 
-
-
-### Reproducible publications 
-
-**[rrtools as an example](day4-reproducible_publications.html)**
 
 
 ### Analytical workflow frameworks in R
@@ -55,6 +44,13 @@ Here for more: <https://books.ropensci.org/targets/>
 Although the `pointblank` package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.
 
 <https://github.com/rstudio/pointblank>
+
+
+
+### Reproducible publications 
+
+**[rrtools as an example](day4-reproducible_publications.html)**
+
 
 
 ---
