@@ -1,1 +1,1 @@
-Sitemap: https://github.com/brunj7/EDS-214-analytical-workflows/sitemap.xml
+Sitemap: https://brunj7.github.io/EDS-214-analytical-workflows/sitemap.xml
