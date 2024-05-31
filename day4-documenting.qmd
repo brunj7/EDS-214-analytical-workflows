@@ -7,7 +7,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(reticulate)
 ```
 
-Only a few people with free time ahead of them will sit wondering about what to do next and think "what if I were to write some documentation!?". Make it part of your workflow, and do not let it get out of sync too much as your iterate on your analysis.
+Only a few people with free time ahead of them will sit wondering about what to do next and think "what if I were to write some documentation!?". Make it part of your workflow, and do not let it get out of sync too much as you iterate on your analysis.
 
 ```{r, echo=FALSE, fig.cap="https://twitter.com/JenMsft/status/1557218211971489792"}
 knitr::include_graphics("img/found_documentationjpg.jpeg")
