@@ -7,15 +7,25 @@ knitr::opts_chunk$set(echo = TRUE)
 library(reticulate)
 ```
 
+Only a few people with free time ahead of them will sit wondering about what to do next and think "what if I were to write some documentation!?". Make it part of your workflow, and do not let it get out of sync too much as your iterate on your analysis.
+
 ```{r, echo=FALSE, fig.cap="https://twitter.com/JenMsft/status/1557218211971489792"}
 knitr::include_graphics("img/found_documentationjpg.jpeg")
 ```
 
+### Know your audience
 
+There are actually various ways to document your work!! Here is a potential framework to help to think about those different types of documentation and their related audiences:
+
+```{r, echo=FALSE, out.width="150%",fig.cap=" source:  https://diataxis.fr/"}
+knitr::include_graphics("img/document_diataxis.png")
+```
+
+Your potential audience(s) for your documentation can be a future collaborator, an external researcher with no direct insight on your work, a potential user of a tool you developed?
 
 ## The power of README
 
-README files are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax and its web rendering in most code repositories, is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
+README files are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax (and its web rendering in most code repositories) is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
 
 Good types of information to have on a `README`:
 
@@ -29,11 +39,19 @@ Good types of information to have on a `README`:
 - Licensing 
 - Acknowledgements of authors, contributors, sponsors or other related work 
 
-Adding images, short videos / animations can make a README more engaging. 
+**Adding images, short videos / animations can make a README more engaging.**
 
-### Need some inspiration ?
 
-- Here is a interesting template: https://github.com/navendu-pottekkat/awesome-readme/tree/master
+### Data README
+
+Most data repositories will ask you to provide some kind of README file to help describe the content you are archiving. Here is a template you may customize for your project needs: <https://doi.org/10.5281/zenodo.10828379>
+
+
+### Code README
+
+Need some inspiration ?
+
+- Here is a interesting template: <https://github.com/navendu-pottekkat/awesome-readme/tree/master>
 
 - When you start an R package with the `usethis` package, a README will be created for you with all the relevant sections for such type of project.
 
@@ -56,14 +74,13 @@ It is important to make your code easy to read if you hope that others will reus
 import this
 ```
 
-
 There is also the **visual aspect** of the code that should not be neglected. Like a prose, if you receive a long text without any paragraphs, you might be not very excited about reading it. _Indentation_, _spaces_, and _empty lines_ should be leveraged to make a script visually inviting and easy to read. The good news is that most of the Integrated Development Environment (IDE) will help you to do so by auto formatting your scripts according to conventions.  Note that also a lot of IDEs, such as RStudio, rely on some conventions to ease the navigation of scripts and notebooks. For example, _try to add four `-` or `#` after a line starting with one or several `#` in an R Script!_
 
 
 ## Comments
 
 ***Real Programmers don't comment their code. If it was hard to write, it should be hard to understand.*** \
-Tom Van Vleck, based on people he knew_ (https://multicians.org/thvv/realprogs.html)
+Tom Van Vleck, based on people he knew..._ (<https://multicians.org/thvv/realprogs.html>)
 
 Joke aside, it is really hard to comment too much your code, because even steps that might seem trivial today might not be so anymore in a few weeks or months for now. In addition, a well commented code is more likely to be read by others. Note also that **comments should work in complement of the code** and should not being seen as work around vague naming conventions of variables or functions.
 
@@ -158,7 +175,6 @@ def complex(real=0.0, imag=0.0):
 Here for more: <https://www.python.org/dev/peps/pep-0257/>
 
 
-
 ## Leveraging Notebooks
 
 As we have discussed and experimented with Notebooks during the week. It is because Notebooks provide space to further develop content, such as methodology, around the code you are developing in your analysis. Notebooks also enable you to integrate the outputs of your scientific research with the code that was used to produce it. Finally, notebooks can be rendered into various format that let them share with a broad audience.
@@ -189,18 +205,32 @@ For inspiration, you can check out the NASA code for APOLLO 11 dating from 1969:
 
 ---
 
+## Computing Environment
+
+Your analysis was done with specific versions of the program used (e.g. R 4.4.3) but also of all the packages involved, as well as the specifications of the Operating System (OS) that was used. The good use is that there are tools to let you systematically capture this information.
+
+In R:
+
+`sessionInfo()` or `devtools::session_info()` are great ways to capture all this information. You should save it into a session_info.txt file to include in your GitHub repository
+
+### Virtual environments
+
+You can even go a step further and help others to recreate the same computing environment that you used independently of what versions you have installed on your machine: https://rstudio.github.io/renv/articles/renv.html
+
+
 ## Metadata
 
-This topic will be the focus of our Fall course [EDS-213](https://docs.python-guide.org/writing/documentation/). This a very important topic for scientific reproducibility and for today we will be only provide a partial overview of this broader topic.
+This a very important topic for scientific reproducibility and for today we will be only provide a partial overview of this broader topic.
 
 ```{r, fig.cap="Data life cycle, DataONE", out.width="150%", echo=FALSE}
 knitr::include_graphics("img/DLC.png")
 ```
 
-
-
-
 Metadata (data about data) is an important part of the data life cycle because it enables data reuse long after the original collection. The goal is to have enough information for the researcher to understand the data, interpret the data, and then re-use the data in another study.
+
+```{r, fig.cap="metadata analogy", out.width="150%", echo=FALSE}
+knitr::include_graphics("img/metadata_cooking.png")
+```
 
 Here are good questions to answer with your metadata:
 
@@ -214,14 +244,18 @@ Here are good questions to answer with your metadata:
 - Who should get credit for this data (researcher AND funding agency)?
 - How can this data be reused (licensing)?
 
-How do you organize all this information? You could use a free form format, like a README file or spreadsheet. But there is also great advantage to use a more standardized way that will make the content not only **Human readable but also machine readable**. This will enhance the data discovery as specific information will be potentially tagged or attributed to specific aspect of your data (e.g. spatial or temporal coverage, taxonomy, ...).
+### Metadata standards
+
+How do you organize all this information? You could use a free-form format, like a README file or spreadsheet. But there is also a great advantage to using a more standardized way that will make the content not only Human readable but also **machine-readable**. This will enhance the data discovery as specific information will be potentially tagged or attributed to specific aspects of your data (e.g. spatial or temporal coverage, taxonomy, …).
 
 There are a number of environmental **metadata standards** (think, templates) that you could use, including the [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/), [Geospatial Metadata Standards](https://www.fgdc.gov/metadata/iso-standards) like ISO 19115 and ISO 19139, the [Biological Data Profile (BDP)](https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/biometadata/biodatap.pdf), [Dublin Core](https://dublincore.org/), [Darwin Core](https://dwc.tdwg.org/), [PREMIS](https://www.loc.gov/standards/premis/), the [Metadata Encoding and Transmission Standard (METS)](http://www.loc.gov/standards/mets/), and the list goes on and on. 
+
+Some repositories will have standards baked into their systems, so if you plan to archive and preserve your data in a disciplinary repository with specific metadata requirements it is always important to check what are these in advance. You may need to rework your existing documentation accordingly.
 
 
 ## Data provenance & semantics
 
-**Data provenance** is tracing the origin of a data set to the raw-data that were used as input of the processing / analysis that led to the creation of this data set. It can be done more or less formally and this is an active area of research. For today we will be focusing on capturing the information about the data you are collecting. Here are a set of good questions to help you in that process:
+**Data provenance** refers to one’s ability to trace the original source of a data set to the raw data that were used as input for the processing/analysis that led to the creation of this data set. It can be done more or less formally and this is an active area of research. Today, we will be focusing on capturing the information about the data you are collecting. Here are a set of good questions to help you in that process:
 
 - Source / owner (Person, institution, website, ….)
 - When was it acquired ?
@@ -232,13 +266,19 @@ There are a number of environmental **metadata standards** (think, templates) th
 
 [Here](https://docs.google.com/spreadsheets/d/1LLpOyydCGTZdY8Xk2fDmTPVy8efF-47GtEXkAjvYsJI/edit#gid=0) is a template of a data log that could hep to store this information
 
-Another important and related aspect and also active field of research is **data semantics**. Often data sets store complex information and concepts that can be describe more of less accurately. Let's take an example, you have receive a csv file storing a table with several variables about a fish stock assessment. One of the variable is named "length". However there are many ways to measure the length of a fish. Which one is it? 
+Another important and related aspect and also active field of research is **data semantics**. Often data sets store complex information and concepts that can be described more or less accurately. Let’s take an example, you have received a csv file storing a table with several variables about a fish stock assessment. One of the variables is named “length”. However, there are many ways to measure the length of a fish. Which one is it?
 
 ```{r, echo=FALSE}
 knitr::include_graphics("img/fish_length.png")
 ```
+
 Data semantics aims at clearly identify those concepts relying on vocabularies and ontologies, such as [ENVO](http://www.obofoundry.org/ontology/envo.html) in environmental sciences. In addition, it enables the leverage relations between those concepts to help with (data) discovery.
 
+## Yourself
+
+You as an Author!!
+
+It is important to be able to reference yourself as a researcher and as an author of your work in a non ambiguous manner. [ORCID](https://info.orcid.org/what-is-orcid/) is a great way to create a persistent digital identifier (an ORCID iD) that you own and control, and that distinguishes you from every other researcher. ORCID is also more and more used as an authentication system for many services (e.g. data repositories).
 
 
 ## Licensing
