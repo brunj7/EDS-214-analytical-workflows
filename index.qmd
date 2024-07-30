@@ -48,25 +48,25 @@ To make your data-riven research reproducible, it is important to develop scient
 
 ## Teaching team
 
-- [Julien Brun](https://brunj7.github.io), Instructor
+- [Julien Brun](https://brunj7.github.io){target="_blank"}, Instructor
 
-- [Brian Lee](https://bren.ucsb.edu/people/brian-lee), TA
+- [Brian Lee](https://bren.ucsb.edu/people/brian-lee){target="_blank"}, TA
 
 _MEDS Slack is the best way to communicate with us._
 
 
 ## Important links
 
--   [Course syllabus](https://docs.google.com/document/d/1ylxg20c4HsNc0C_qZV6PNO8sTjwOf5ZhAbzcemN2UtU/edit?usp=sharing)
--   [Code of Conduct](code_of_conduct.html)
+-   [Course syllabus](https://docs.google.com/document/d/1ylxg20c4HsNc0C_qZV6PNO8sTjwOf5ZhAbzcemN2UtU/edit?usp=sharing){target="_blank"}
+-   [Code of Conduct](code_of_conduct.html){target="_blank"}
 
 
 
 ## Predictable daily schedule
 
-**Course dates:** Monday (2023-08-28) - Friday (2023-09-04)
+**Course dates:** Monday (2024-08-26) - Friday (2024-08-30)
 
-EDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 4pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.
+EDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.
 
 ### Daily schedule (subject to change):
 
@@ -135,17 +135,17 @@ datatable(sched2, rownames=FALSE, escape=FALSE)
 
 ### Computing
 
-- Minimum [MEDS device requirements](https://ucsb-meds.github.io/computer_reqs.html)
+- Minimum [MEDS device requirements](https://ucsb-meds.github.io/computer_reqs.html){target="_blank"}
 
-- Have a ready to be used GitHub Account (<https://github.com/>) 
+- Have a ready to be used GitHub Account (<https://github.com/>){target="_blank"}
 
-- [MEDS server Taylor](https://ucsb.app.box.com/notes/850504913040?s=zzy77gwmmil94a5k1seuttzz12urlyvp)
+- [MEDS server Taylor](https://ucsb.app.box.com/notes/850504913040?s=zzy77gwmmil94a5k1seuttzz12urlyvp){target="_blank"}
 
 
 ### Textbook
 
-- R for Data Science, 2nd edition: https://r4ds.hadley.nz/
-- The Practice of Reproducible Research: http://www.practicereproducibleresearch.org/
+- R for Data Science, 2nd edition: <https://r4ds.hadley.nz/>
+- The Practice of Reproducible Research: <http://www.practicereproducibleresearch.org/>
 
 
 
