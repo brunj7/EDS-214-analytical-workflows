@@ -228,7 +228,7 @@ The above are the main redirections, but there are others.
 **To end a session, simply type `exit` or `logout` into the command line**
 
 
-## [**CLI Practice**](https://github.com/brunj7/eds214-handson-cli)
+## [**CLI Practice**](https://github.com/EDS-214/eds214-handson-cli){target="_blank"}
 
 
 ::: {.callout-note collapse=true}
