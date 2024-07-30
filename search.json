@@ -1068,7 +1068,7 @@
     "href": "index.html#predictable-daily-schedule",
     "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
     "section": "Predictable daily schedule",
-    "text": "Predictable daily schedule\nCourse dates: Monday (2023-08-28) - Friday (2023-09-04)\nEDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 4pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.\n\nDaily schedule (subject to change):\n\n\n\n\n\n\n\nTime (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive Session 1 (90 min)\n\n\n12:30am - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nLecture (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session 2 (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nFlex time + Q&A (50 min)"
+    "text": "Predictable daily schedule\nCourse dates: Monday (2024-08-26) - Friday (2024-08-30)\nEDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.\n\nDaily schedule (subject to change):\n\n\n\n\n\n\n\nTime (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive Session 1 (90 min)\n\n\n12:30am - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nLecture (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session 2 (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nFlex time + Q&A (50 min)"
   },
   {
     "objectID": "index.html#learning-objectives",
@@ -1096,7 +1096,7 @@
     "href": "index.html#course-requirements",
     "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
     "section": "Course requirements",
-    "text": "Course requirements\n\nComputing\n\nMinimum MEDS device requirements\nHave a ready to be used GitHub Account (https://github.com/)\nMEDS server Taylor\n\n\n\nTextbook\n\nR for Data Science, 2nd edition: https://r4ds.hadley.nz/\nThe Practice of Reproducible Research: http://www.practicereproducibleresearch.org/"
+    "text": "Course requirements\n\nComputing\n\nMinimum MEDS device requirements\nHave a ready to be used GitHub Account (https://github.com/){target=“_blank”}\nMEDS server Taylor\n\n\n\nTextbook\n\nR for Data Science, 2nd edition: https://r4ds.hadley.nz/\nThe Practice of Reproducible Research: http://www.practicereproducibleresearch.org/"
   },
   {
     "objectID": "day1-github_branches.html",
