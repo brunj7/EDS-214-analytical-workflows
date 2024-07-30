@@ -46,18 +46,18 @@ To make your data-riven research reproducible, it is important to develop scient
 ***Workflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team.***
 
 
-## Instructor
+## Teaching team
 
-[Julien Brun](https://brunj7.github.io) 
+- [Julien Brun](https://brunj7.github.io), Instructor
 
-## Tutor
+- [Brian Lee](https://bren.ucsb.edu/people/brian-lee), TA
 
-[Mae Rennick](https://maerennick.github.io)
+_MEDS Slack is the best way to communicate with us._
 
 
 ## Important links
 
--   [Course syllabus](https://bren.ucsb.edu/courses/eds-214)
+-   [Course syllabus](https://docs.google.com/document/d/1ylxg20c4HsNc0C_qZV6PNO8sTjwOf5ZhAbzcemN2UtU/edit?usp=sharing)
 -   [Code of Conduct](code_of_conduct.html)
 
 
