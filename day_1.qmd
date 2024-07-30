@@ -6,7 +6,7 @@ title: "Reproducible & Collaborative Workflows"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Day 1
+## Day 1
 
 | **Time (PST)**    | **Activity**                                                             |
 |-------------------|--------------------------------------------------------------------------|
@@ -20,33 +20,31 @@ knitr::opts_chunk$set(echo = TRUE)
 | 3:10pm - 4:00pm   | *git conflicts  (50 min)*                                                |
 
 
-# Morning
+## Morning
 
-## Introduction to EDS-214
+### Introduction to EDS-214
 
 [**A few words...**](https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&loop=false&delayms=3000)
 
 
-
-
-## Lecture 1: Definitions and Concepts of reproducible workflows
+### Lecture 1: Definitions and Concepts of reproducible workflows
 
 [**Slide deck**](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000)
 
 
 
-## Planing things
+### Planing things
 
 **Don’t start implementing nor coding without planning!** It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
 
 
-### From drawings to pseudocode
+#### From drawings to pseudocode
 
 [**Materials**](day1-pseudocode.html)
 
 ![Cherubini et al., 2007](img/whiteborad_drawings.png)
 
-## Interactive session 1: Develop your worklow skills 💪
+### Interactive session 1: Develop your worklow skills 💪
 
 [Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](day1-hands-on_drawings.html)
 
@@ -54,19 +52,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ---
 
-# Afternoon
+## Afternoon
 
 
-## Lecture 2: Coding together
+### Lecture 2: Coding together
 
 [**Materials**](day1-coding_together.html)
 
 
 
-### Collaborating using GitHub
+#### Collaborating using GitHub
 
 ::: {.callout-note collapse=true}
-### Setting git on Taylor (if not yet done)
+#### Setting git on Taylor (if not yet done)
 
 
 At the **Terminal**:
@@ -78,7 +76,7 @@ git config --global credential.helper 'cache --timeout=10000000'
 git config --list
 ``` 
 
-### Setting GitHub token on Taylor
+#### Setting GitHub token on Taylor
 
 At the **R Console**:
 
@@ -93,29 +91,29 @@ usethis::git_sitrep()
 :::
 
 
-#### Collaborating through forking
+##### Collaborating through forking
 
 [**Materials**](day1-github_forking.html)
 
 
-#### Collaborating through branches
+##### Collaborating through branches
 
 [**Materials**](day1-github_branches.html)
 
 
-## Interactive session 2: Collaborative coding with GitHub
+### Interactive session 2: Collaborative coding with GitHub
 
 <https://github.com/brunj7/eds214-handson-ghcollab>
 
 
-## Bonus of the day: Git Therapy
+### Bonus of the day: Git Therapy
 
-### `git` commit messages
+#### `git` commit messages
 
 [**Materials**](day1-github_commit_messages.html)
 
 
-### GitHub conflicts
+#### GitHub conflicts
 
 First thing to know is that actually `git pull`  is a two step process: `git pull = git fetch + git merge`
 
@@ -128,12 +126,12 @@ Second: you did nothing wrong!! Git tries to merge files automatically. When the
 
 ---
 
-# Further reading
+## Further reading
 
 Here are a few selected publications to help you to learn more about these topics.
 
 
-## Data and scientific workflow management:
+### Data and scientific workflow management:
 
 - The Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\
     Kitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. <http://www.practicereproducibleresearch.org/>
@@ -151,7 +149,7 @@ Here are a few selected publications to help you to learn more about these topic
     [https://www.dataone.org/education-modules](https://www.dataone.org/education-modules)
 
 
-## Open Science
+### Open Science
 
 - The Tao of open science for ecology:  \
 [https://doi.org/10.1890/ES14-00402.1](https://doi.org/10.1890/ES14-00402.1) 
@@ -168,7 +166,7 @@ Here are a few selected publications to help you to learn more about these topic
 [https://doi.org/10.1038/s41563-019-0539-5](https://doi.org/10.1038/s41563-019-0539-5) 
 
 
-## Collaborative coding
+### Collaborative coding
 
 - A new grad's guide to coding as a team - Atlassian:
 <https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf>
@@ -176,15 +174,15 @@ Here are a few selected publications to help you to learn more about these topic
 <https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html> 
 - Agile Manifesto: <https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf>
 
-## Code Review
+### Code Review
 
 - Small-Group Code Reviews For Education: <https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext>
 
-## Branches
+### Branches
 
 - Interactive tutorial to learn more about git branches and more <https://learngitbranching.js.org/>
 
-## GitHub Workflow
+### GitHub Workflow
 
 - GitHub:
    - guides on how to use GitHub: [https://guides.github.com/](https://guides.github.com/)
@@ -198,7 +196,7 @@ Here are a few selected publications to help you to learn more about these topic
    - using git in a collaborative environment: <https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow>
 https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf 
 
-### Git using RStudio
+#### Git using RStudio
 
 - Happy Git and GitHub for the useR:<http://happygitwithr.com/>
 - R packages - Git and GitHub: <http://r-pkgs.had.co.nz/git.html#git-init>
@@ -219,7 +217,7 @@ Git mainly from the command line:
 - GitPro book (2nd edition): <https://git-scm.com/book/en/v2>
 
 
-### Undoing things
+#### Undoing things
 
 - Help to decide how to undo your problem: <http://justinhileman.info/article/git-pretty/git-pretty.png>
 - Undo almost everything with git <https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/>
