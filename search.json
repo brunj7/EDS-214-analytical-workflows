@@ -203,207 +203,207 @@
     "text": "Aknowledgement\nThe rrtools example had been ported from NCEAS Reproducible Research Techniques for Synthesis"
   },
   {
-    "objectID": "day2-remote_server.html",
-    "href": "day2-remote_server.html",
-    "title": "Working on a remote server",
+    "objectID": "group_project.html",
+    "href": "group_project.html",
+    "title": "Group Project",
     "section": "",
-    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\n\n\n\nTip\n\n\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
+    "text": "We are going to build on the exercise we used the first day and work on implementing and refining the workflow we developed during that session.\n\n\nBy group of 4-5 collaborators:\n\nFind an awesome name for your group (one of the hardest steps)\nSetup a shared GitHub repository\nUse the MEDS server Taylor as your main computing resource\nUse GitHub to manage your code development in a collaborative manner\nUse shared folder on Taylor to manage your data /courses/EDS214/group_project/my_group_name\nDocument your work as you go!!\n\nComment your code\nAdd project details to your README, including reference to data sources\n\nUse GitHub issues to track your work and discuss progress and tasks\n\n\n\n\n\n\n\nThe Luquillo Experimental Forest (LEF) has been a center of tropical forestry research for nearly a century. In addition, the LEF is a recreation site for over a half a million people per year, a water supply for approximately 20% of Puerto Rico’s population, a regional center for electronic communication, and a refuge of Caribbean biodiversity. It is the goal of the USDA Forest Service and the University of Puerto to promote and maintain the forest’s role as a center of active and dynamic scientific inquiry. However, to maintain the ecological integrity of the forest while balancing the many demands placed upon it’s resources, certain protocol is required. This guide provides the major protocols that govern research in the LEF. These protocols are designed to help researchers protect the forests, obey the law, create an amiable and non-discriminatory work environment, and provide a historical record for future scientists\nHere for more information about the Luquillo site: https://lternet.edu/site/luquillo-lter/\n\n\n\n\n\n\n\n\n\n\n\n\n\nCan you recreate that plot (content, not style wise… you can do way better 🙂)\n\nWrite a quarto document that: - reads the data in (from a local copy on Taylor) - processes the data as needed to be plotted - use ggplot to create a similar (but better looking) plat - comment your code and use markdown text to provide context to your code - render your report as html\n\nAsk your own question! You are encouraged to define you own question around this topic as a team\n\nGo wild!! Ask your own scientific question using the stream chemistry data but also any other external source of data (like historical hurricane tracks from NOAA). The focus in this part of the project is on the process of how you will be answering the question (planning, workflow, code, data, ….), not on the results per se\n\n\n\nData are available from the Environmental Data Initiative (EDI) that is hosting most of the data of the Long Term Ecological Research (LTER) Network.\n\n\nMcDowell, W. and International Institute of Tropical Forestry(IITF), USDA Forest Service. 2022. Chemistry of stream water from the Luquillo Mountains ver 4923061. Environmental Data Initiative. https://doi.org/10.6073/pasta/570231c2807a6396ced6a89ef7547bd4 (Accessed 2023-08-24).\n\n\n\n\nMajor points to hit:\n\nGoal/Question + workflow you used to achieve it (aka THE plan)\nHow did you set up your project (server, data, code, …)\nHow did you organize your team (tasks, who did what)\nResults\nMain challenges\n\n\n\n\n\n\n\ngroup_name\ngithub_repo\nslides\n\n\n\n\nA1\nhttps://github.com/katleyq/A1_GroupProject.git\nhttps://docs.google.com/presentation/d/1MIxRjgidlx6aNrJP_j3NrdGwueftTrKvZMohyeHCO5I/edit?usp=sharing\n\n\ngot git?\nhttps://github.com/BenVerst/Got-Git\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nThe Brenniacs\nhttps://github.com/oksanaprotsukha/thebrenniacs\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nGroup Fourk\nhttps://github.com/hmchilders/EDS214_Group4\nhttps://docs.google.com/presentation/d/1-Vsyrfgm5CBWHuNI8qwxv7C0wU5s8nVdVAZRFmTTEZE/edit?usp=sharing\n\n\nTropic-Thunder\nhttps://github.com/saingersoll/tropic-thunder\nhttps://docs.google.com/presentation/d/1548heJAcJN9x8lYXY6uKkh3X2imWDLK9GxKLMNkqnvU/edit?usp=sharing\n\n\nTeam Siguana\nhttps://github.com/Vanessa-Salgado/EDS214_group_project_team_siguanaa\nhttps://docs.google.com/presentation/d/15Ea1zf39oQlQBq6mOkdQZDI8MJw-MjuEHHdVUFA5Rxw/edit#slide=id.g2798449c7d5_0_10\n\n\nSMOL\nhttps://github.com/olleholt/SMOL\nhttps://docs.google.com/presentation/d/1kK2p3mnl_-ar3ZZahE1P1WqYCdvmFPik9CIJAOHSEVE/edit?pli=1#slide=id.p\n\n\n\n\n\n\nSchaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358"
   },
   {
-    "objectID": "day2-remote_server.html#the-command-line-interface-cli",
-    "href": "day2-remote_server.html#the-command-line-interface-cli",
-    "title": "Working on a remote server",
+    "objectID": "group_project.html#here-are-the-expectations",
+    "href": "group_project.html#here-are-the-expectations",
+    "title": "Group Project",
     "section": "",
-    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\n\n\n\nTip\n\n\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
+    "text": "By group of 4-5 collaborators:\n\nFind an awesome name for your group (one of the hardest steps)\nSetup a shared GitHub repository\nUse the MEDS server Taylor as your main computing resource\nUse GitHub to manage your code development in a collaborative manner\nUse shared folder on Taylor to manage your data /courses/EDS214/group_project/my_group_name\nDocument your work as you go!!\n\nComment your code\nAdd project details to your README, including reference to data sources\n\nUse GitHub issues to track your work and discuss progress and tasks"
   },
   {
-    "objectID": "day2-remote_server.html#general-command-syntax",
-    "href": "day2-remote_server.html#general-command-syntax",
-    "title": "Working on a remote server",
-    "section": "General command syntax",
-    "text": "General command syntax\n\ncommand [options] [arguments]\n\nwhere command must be an executable file on your PATH * echo $PATH\nand options can usually take two forms * short form: -a * long form: --all\nYou can combine the options:\nls -ltrh\nWhat do these options do?\nman ls\n\n\n\n\n\n\nTip\n\n\n\nhit spacebar to get to the next page of the manual hit q to exit the help"
-  },
-  {
-    "objectID": "day2-remote_server.html#getting-things-done",
-    "href": "day2-remote_server.html#getting-things-done",
-    "title": "Working on a remote server",
-    "section": "Getting things done",
-    "text": "Getting things done\n\nSome useful, special commands using the Control key\n\nCancel (abort) a command: Ctrl-c Note: very different than Windows!!\nStop (suspend) a command: Ctrl-z\nCtrl-z can be used to suspend, then background a process\n\n\n\nProcess management\n\nLike Windows Task Manager, OSX Activity Monitor\ntop, ps, jobs (hit q to get out!)\nkill to delete an unwanted job or process\nForeground and background: &\n\n\n\nWhat about “space”\n\nHow much storage is available on this system? df -h\nHow much storage am “I” using overall? du -hs &lt;folder&gt;\nHow much storage am “I” using, by sub directory? du -h &lt;folder&gt;\nHow much RAM is used? free -h\n\n\n\nExistential questions\n\nWhat is your username? whoami\nWhat is today’s date? date\nWhere are the programs you are using? whereis R also try which -a python\nWhat is the kernel version of your OS: uname -a\nHow long since last reboot: uptime\nWhich shell are you using? echo $0\n\n\n\nHistory\n\nSee your command history: history\nRe-run last command: !!\nRe-run 32th command: !32\nRe-run 5th from last command: !-5\nRe-run last command that started with ‘c’: !c"
-  },
-  {
-    "objectID": "day2-remote_server.html#a-sampling-of-simple-commands-for-dealing-with-files",
-    "href": "day2-remote_server.html#a-sampling-of-simple-commands-for-dealing-with-files",
-    "title": "Working on a remote server",
-    "section": "A sampling of simple commands for dealing with files",
-    "text": "A sampling of simple commands for dealing with files\n\nwc count lines, words, and/or characters\ndiff compare two files for differences\nsort sort lines in a file\nuniq report or filter out repeated lines in a file"
-  },
-  {
-    "objectID": "day2-remote_server.html#get-into-the-flow-with-pipes",
-    "href": "day2-remote_server.html#get-into-the-flow-with-pipes",
-    "title": "Working on a remote server",
-    "section": "Get into the flow, with pipes",
-    "text": "Get into the flow, with pipes\n\n\n\nstdin, stdout, stderr\n\n\nwc -l *.TXT \nwc -l *.TXT | sort -n\n\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character;\n\n\nHere the wc -l command, which counts the number of lines in files, is given file names on the command line, so it counts the lines in those files. It writes its output to stdout. sort -n sorts lines in files. It was given no files to sort, so it sorts whatever lines come in via stdin. By piping these together (i.e., by hooking wc’s stdout to sort’s stdin using the pipe operator), the output from wc -l is thereby sorted.\nThere are various operators for redirecting where stdin comes from and where stdout and stderr go:\n\n&lt; file: read stdin from file\n&gt; file: write stdout to file\n2&gt; file: write stderr to file\n&gt;& file: write both stdout and stderr to file\n&gt;&gt; file: append stdout to file\n\nLet’s write the above result to a file:\nwc -l *.TXT | sort -n &gt; csvcount.log\nCaution: except for &gt;&gt;, all forms of &gt; are destructive: Bash overwrites any existing file with an empty file before the program is run.\nWant to get rid of output you don’t want to see? Use the Unix black hole: &gt;& /dev/null. (This is a cultural meme, you’ll see it on T-shirts and license plates.)\nThe above are the main redirections, but there are others.\nTo end a session, simply type exit or logout into the command line"
-  },
-  {
-    "objectID": "day2-remote_server.html#cli-practice",
-    "href": "day2-remote_server.html#cli-practice",
-    "title": "Working on a remote server",
-    "section": "CLI Practice",
-    "text": "CLI Practice\n\n\n\n\n\n\nSetting git on Taylor (if not yet done)\n\n\n\n\n\nAt the Terminal:\n\ngit config --global user.name \"Jane Doe\" \ngit config --global user.email janedoe@example.com\ngit config --global credential.helper 'cache --timeout=10000000'\ngit config --list\n\n\nSetting GitHub token on Taylor\nAt the R Console:\n\n# On your laptop\nusethis::create_github_token() # This should open a web browser on GitHub\n\n# On Taylor \ngitcreds::gitcreds_set()\nusethis::git_sitrep()"
-  },
-  {
-    "objectID": "day_4.html",
-    "href": "day_4.html",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
+    "objectID": "group_project.html#background",
+    "href": "group_project.html#background",
+    "title": "Group Project",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:20am\nBuilding analytical workflows: meet targets (80 min)\n\n\n11:20am - 11:30am\nBreak (10 min)\n\n\n11:30am - 12:30am\nReproducible publication: meet rrtools (60 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
+    "text": "The Luquillo Experimental Forest (LEF) has been a center of tropical forestry research for nearly a century. In addition, the LEF is a recreation site for over a half a million people per year, a water supply for approximately 20% of Puerto Rico’s population, a regional center for electronic communication, and a refuge of Caribbean biodiversity. It is the goal of the USDA Forest Service and the University of Puerto to promote and maintain the forest’s role as a center of active and dynamic scientific inquiry. However, to maintain the ecological integrity of the forest while balancing the many demands placed upon it’s resources, certain protocol is required. This guide provides the major protocols that govern research in the LEF. These protocols are designed to help researchers protect the forests, obey the law, create an amiable and non-discriminatory work environment, and provide a historical record for future scientists\nHere for more information about the Luquillo site: https://lternet.edu/site/luquillo-lter/"
   },
   {
-    "objectID": "day_4.html#day-4",
-    "href": "day_4.html#day-4",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
+    "objectID": "group_project.html#goals",
+    "href": "group_project.html#goals",
+    "title": "Group Project",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:20am\nBuilding analytical workflows: meet targets (80 min)\n\n\n11:20am - 11:30am\nBreak (10 min)\n\n\n11:30am - 12:30am\nReproducible publication: meet rrtools (60 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
+    "text": "Can you recreate that plot (content, not style wise… you can do way better 🙂)\n\nWrite a quarto document that: - reads the data in (from a local copy on Taylor) - processes the data as needed to be plotted - use ggplot to create a similar (but better looking) plat - comment your code and use markdown text to provide context to your code - render your report as html\n\nAsk your own question! You are encouraged to define you own question around this topic as a team\n\nGo wild!! Ask your own scientific question using the stream chemistry data but also any other external source of data (like historical hurricane tracks from NOAA). The focus in this part of the project is on the process of how you will be answering the question (planning, workflow, code, data, ….), not on the results per se"
   },
   {
-    "objectID": "day_4.html#leveraging-existing-frameworks-for-reproducibility",
-    "href": "day_4.html#leveraging-existing-frameworks-for-reproducibility",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "Leveraging existing frameworks for reproducibility",
-    "text": "Leveraging existing frameworks for reproducibility\nPlease remember that every workflow or framework is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project.\n\nAnalytical workflow frameworks in R\n\n\n\n\n\nConceptual workflow model promoted by the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.hadley.nz/intro#fig-ds-diagram\n\n\n\n\n\nTargets\nThe targets R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.\nHere for more: https://books.ropensci.org/targets/\nOur practice example: https://github.com/brunj7/eds214-handson-targets\n\n\nPointblank\nAlthough the pointblank package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.\nhttps://github.com/rstudio/pointblank\n\n\n\nReproducible publications\nrrtools as an example"
+    "objectID": "group_project.html#data",
+    "href": "group_project.html#data",
+    "title": "Group Project",
+    "section": "",
+    "text": "Data are available from the Environmental Data Initiative (EDI) that is hosting most of the data of the Long Term Ecological Research (LTER) Network.\n\n\nMcDowell, W. and International Institute of Tropical Forestry(IITF), USDA Forest Service. 2022. Chemistry of stream water from the Luquillo Mountains ver 4923061. Environmental Data Initiative. https://doi.org/10.6073/pasta/570231c2807a6396ced6a89ef7547bd4 (Accessed 2023-08-24)."
   },
   {
-    "objectID": "day_4.html#documenting-things",
-    "href": "day_4.html#documenting-things",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "Documenting things",
-    "text": "Documenting things\n\nWhy does it matter ?\n\n\n\n\n\n\n\n\n\nMaterials"
+    "objectID": "group_project.html#group-project-presentation-10min-5-slides",
+    "href": "group_project.html#group-project-presentation-10min-5-slides",
+    "title": "Group Project",
+    "section": "",
+    "text": "Major points to hit:\n\nGoal/Question + workflow you used to achieve it (aka THE plan)\nHow did you set up your project (server, data, code, …)\nHow did you organize your team (tasks, who did what)\nResults\nMain challenges"
   },
   {
-    "objectID": "day_4.html#sharing-things",
-    "href": "day_4.html#sharing-things",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "Sharing things",
-    "text": "Sharing things\nMaterials"
+    "objectID": "group_project.html#groups-2023",
+    "href": "group_project.html#groups-2023",
+    "title": "Group Project",
+    "section": "",
+    "text": "group_name\ngithub_repo\nslides\n\n\n\n\nA1\nhttps://github.com/katleyq/A1_GroupProject.git\nhttps://docs.google.com/presentation/d/1MIxRjgidlx6aNrJP_j3NrdGwueftTrKvZMohyeHCO5I/edit?usp=sharing\n\n\ngot git?\nhttps://github.com/BenVerst/Got-Git\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nThe Brenniacs\nhttps://github.com/oksanaprotsukha/thebrenniacs\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nGroup Fourk\nhttps://github.com/hmchilders/EDS214_Group4\nhttps://docs.google.com/presentation/d/1-Vsyrfgm5CBWHuNI8qwxv7C0wU5s8nVdVAZRFmTTEZE/edit?usp=sharing\n\n\nTropic-Thunder\nhttps://github.com/saingersoll/tropic-thunder\nhttps://docs.google.com/presentation/d/1548heJAcJN9x8lYXY6uKkh3X2imWDLK9GxKLMNkqnvU/edit?usp=sharing\n\n\nTeam Siguana\nhttps://github.com/Vanessa-Salgado/EDS214_group_project_team_siguanaa\nhttps://docs.google.com/presentation/d/15Ea1zf39oQlQBq6mOkdQZDI8MJw-MjuEHHdVUFA5Rxw/edit#slide=id.g2798449c7d5_0_10\n\n\nSMOL\nhttps://github.com/olleholt/SMOL\nhttps://docs.google.com/presentation/d/1kK2p3mnl_-ar3ZZahE1P1WqYCdvmFPik9CIJAOHSEVE/edit?pli=1#slide=id.p"
   },
   {
-    "objectID": "day1-hands-on_drawings.html",
-    "href": "day1-hands-on_drawings.html",
+    "objectID": "group_project.html#reference",
+    "href": "group_project.html#reference",
+    "title": "Group Project",
+    "section": "",
+    "text": "Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358"
+  },
+  {
+    "objectID": "day1-hands-on_drawings_p2.html",
+    "href": "day1-hands-on_drawings_p2.html",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
+    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
   },
   {
-    "objectID": "day1-hands-on_drawings.html#goal",
-    "href": "day1-hands-on_drawings.html#goal",
+    "objectID": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
+    "href": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
+    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
   },
   {
-    "objectID": "day1-hands-on_drawings.html#remember",
-    "href": "day1-hands-on_drawings.html#remember",
+    "objectID": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
+    "href": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
     "title": "Hands-on: Planning your work",
-    "section": "Remember",
-    "text": "Remember\n\nEach node represents a step or an input/output\nEach connecting edge represents data flow or processing\n\n\n\nOh wait…\nActually there is more"
+    "section": "This is your lucky day!!",
+    "text": "This is your lucky day!!\nWe found data for additional chemistry measurements while skimming through the database :)\nWe now want to be able to produce the following plot\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (5min)"
   },
   {
-    "objectID": "day1-hands-on_drawings.html#references",
-    "href": "day1-hands-on_drawings.html#references",
-    "title": "Hands-on: Planning your work",
-    "section": "References",
-    "text": "References\nExercise based on: Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358\nData available here: McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684 (Accessed 2021-08-06)."
-  },
-  {
-    "objectID": "day1-github_commit_messages.html",
-    "href": "day1-github_commit_messages.html",
-    "title": "On good commit messages",
+    "objectID": "day1-github_forking.html",
+    "href": "day1-github_forking.html",
+    "title": "Collaborative Coding Workflows: Forking",
     "section": "",
-    "text": "https://xkcd.com/1296/\nCommit messages are critical for others, including your future self, to understand the motivation behind the changes that were implemented. Combined into the history of your file and repository, those messages help to understand the content and its evolution over time\nSo what is a good commit message? Well I think the answer actually starts with what is a good commit? Which actually begins when you are choosing how to group files during the staging.\nA good commit:\nA good commit message:\nNote: you can add a body to a commit message if you want to describe the content in greater details, but keep the first line (message) separated."
+    "text": "A fork is a copy of a repository that will be stored under your user account. Forking a repository allows you to freely experiment with changes without affecting the original project. We can create a fork on Github by clicking the “fork” button in the top right corner of our repository web page.\nMost commonly, forks are used to either propose changes to someone else’s project or to use someone else’s project as a starting point for your own idea.\nWhen you are satisfied with your work, you can initiate a Pull Request to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the “New pull request” button!\nNext, click “compare across forks”, and use the dropdown menus to select your fork as the “head fork” and the original repository as the “base fork”.\nThen type a title and description for the changes you would like to make. By using GitHub’s @mention syntax in your Pull Request message, you can ask for feedback from specific people or teams.\nThis workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project."
   },
   {
-    "objectID": "day1-github_commit_messages.html#references",
-    "href": "day1-github_commit_messages.html#references",
-    "title": "On good commit messages",
-    "section": "References",
-    "text": "References\n\nHow to Write a Git Commit Message: https://chris.beams.io/posts/git-commit/"
+    "objectID": "day1-github_forking.html#demo-time",
+    "href": "day1-github_forking.html#demo-time",
+    "title": "Collaborative Coding Workflows: Forking",
+    "section": "Demo time",
+    "text": "Demo time\nUpdate the greetings R package to add the option to change the color of the background of the text.\nRepo: https://github.com/brunj7/greetings\nWhat I will do:\n\nFork the repository\nAdd functionality to this R package. In this example I will modify the say_aloah() function to allow changing the text background color to blue in addition to the existing green (see here for more about the crayon package)\nOnce done, I will create a Pull Request (PR) to integrate the new changes\nMerge back changes!"
   },
   {
-    "objectID": "day1-coding_together.html",
-    "href": "day1-coding_together.html",
-    "title": "Coding together",
+    "objectID": "day1-git_github_recap.html",
+    "href": "day1-git_github_recap.html",
+    "title": "git and GitHub recap",
     "section": "",
-    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
+    "text": "Aka – Say goodbye to script_JB_03v5b.R !!\n\n\n\n\n\n\n\n\n\n\n\nEvery file in the scientific process changes. Manuscripts are edited. Figures get revised. Code gets fixed when problems are discovered. Data files get combined together, then errors are fixed, and then they are split and combined again. In the course of a single analysis, one can expect thousands of changes to files. And yet, all we use to track this are simplistic filenames. You might think there is a better way, and you’d be right: version control.\nVersion control systems help you track all of the changes to your files, without the spaghetti mess that ensues from simple file renaming. In other words, version control is a system that helps you to manage the different versions of your files in an organized manner. It will help you to never have to duplicate files using save as as a way to keep different versions of a file (see below). Version control help you to create a timeline of snapshots containing the different versions of a file. At any point in time, you will be able to roll back to a specific version. Bonus: you can add a short description (commit message) to remember what each specific version is about.\nWhat is the difference between git and GitHub?\n\ngit: is a version control software used to track files in a folder (a repository)\n\ngit creates a timeline or history of your files\n\nGitHub: is a code repository in the cloud that enables users to store their git repositories and share them with others. Github also add many features to manage projects and document your work.\n\n\n\n\n\nThis section focuses on the code versioning system called Git. Note that there are others, such as Mercurial or svn for example.\nGit is a free and open source distributed version control system. It has many functionalities and was originally geared towards software development and production environment. In fact, Git was initially designed and developed in 2005 by Linux kernel developers (including Linus Torvalds) to track the development of the Linux kernel. Here is a fun video of Linus Torvalds touting Git to Google.\nHow does it work?\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nWhat git is not:\n\nGit is not a backup per se\nGit is not good at versioning large files (there are workarounds) =&gt; not meant for data\n\n\n\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nAlthough there many ways to start a new repository, GitHub (or any other cloud solutions, such as GitLab) provide among the most convenient way of starting a repository.\n\n\n\n\n\nGitHub is a company that hosts git repositories online and provides several collaboration features (among which forking). GitHub fosters a great user community and has built a nice web interface to git, also adding great visualization/rendering capacities of your data.\n\nGitHub.com: https://github.com\nA user account: https://github.com/brunj7\nAn organization account: https://github.com/nceas\nNCEAS GitHub instance: https://github.nceas.ucsb.edu/\n\n\n\nThis screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.\n\nIf we drill into the “commits” for the repository, we can see the history of changes made to all of the files. Looks like kellijohnson and seananderson were fixing things in June and July:\n\nAnd finally, if we drill into the changes made on June 13, we can see exactly what was changed in each file:\n Tracking these changes, and seeing how they relate to released versions of software and files is exactly what Git and GitHub are good for. We will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow."
   },
   {
-    "objectID": "day1-coding_together.html#learning-objectives",
-    "href": "day1-coding_together.html#learning-objectives",
-    "title": "Coding together",
+    "objectID": "day1-git_github_recap.html#the-problem-with-save_as",
+    "href": "day1-git_github_recap.html#the-problem-with-save_as",
+    "title": "git and GitHub recap",
     "section": "",
-    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
+    "text": "Every file in the scientific process changes. Manuscripts are edited. Figures get revised. Code gets fixed when problems are discovered. Data files get combined together, then errors are fixed, and then they are split and combined again. In the course of a single analysis, one can expect thousands of changes to files. And yet, all we use to track this are simplistic filenames. You might think there is a better way, and you’d be right: version control.\nVersion control systems help you track all of the changes to your files, without the spaghetti mess that ensues from simple file renaming. In other words, version control is a system that helps you to manage the different versions of your files in an organized manner. It will help you to never have to duplicate files using save as as a way to keep different versions of a file (see below). Version control help you to create a timeline of snapshots containing the different versions of a file. At any point in time, you will be able to roll back to a specific version. Bonus: you can add a short description (commit message) to remember what each specific version is about.\nWhat is the difference between git and GitHub?\n\ngit: is a version control software used to track files in a folder (a repository)\n\ngit creates a timeline or history of your files\n\nGitHub: is a code repository in the cloud that enables users to store their git repositories and share them with others. Github also add many features to manage projects and document your work."
   },
   {
-    "objectID": "day1-coding_together.html#why-collaborative-coding",
-    "href": "day1-coding_together.html#why-collaborative-coding",
-    "title": "Coding together",
-    "section": "Why collaborative coding",
-    "text": "Why collaborative coding\n\nSlide deck\nEnvironmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise. Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:\n\nRight size\nDiverse group of people with the right mix of skills, knowledge, and competencies\nAligned purpose and incentives\nEffective organizational structure\nStrong individual contributions\nSupportive team processes and culture\n\nSince Analytical Workflows are rarely linear! and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind. Programming as part of a team is different than writing a script for your(present)self. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:\n\nMotivating you to document well your work\nHelping you to think how to make your work reusable (by you, your future you and others)\nLearning to read code from collaborators to build upon each others work\nGain further knowledge in software development tools, such as version control\n\nDeveloping those skills will accelerate your research and open the door for you to contribute to open source projects."
-  },
-  {
-    "objectID": "day1-coding_together.html#how-to-code-together",
-    "href": "day1-coding_together.html#how-to-code-together",
-    "title": "Coding together",
-    "section": "How to code together",
-    "text": "How to code together\nIt is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming.\n\nTools\nThe good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:\n\nVersion control system: say goodbye to save as\nCode repository: where we share code and communicate ideas and feedback"
-  },
-  {
-    "objectID": "day_5.html",
-    "href": "day_5.html",
-    "title": "Reproducible for all",
+    "objectID": "day1-git_github_recap.html#git",
+    "href": "day1-git_github_recap.html#git",
+    "title": "git and GitHub recap",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n10:30am - 12:30pm\nGroup project (120min)\n\n\n12:300pm - 1:30pm\nLunch \n\n\n1:30pm - 2:00pm\nMeet your next instructor – Kelly Caylor, Office of Research and Earth Research Institute, UCSB\n\n\n2:00pm - 3:00pm\nGroup project presentations - p1 (60 min).\n\n\n3:00pm - 3:10pm\nBreak 2 (10min)\n\n\n3:10pm - 3:40pm\nGroup project presentations - p2 (30 min)\n\n\n3:40pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nSchedule"
+    "text": "This section focuses on the code versioning system called Git. Note that there are others, such as Mercurial or svn for example.\nGit is a free and open source distributed version control system. It has many functionalities and was originally geared towards software development and production environment. In fact, Git was initially designed and developed in 2005 by Linux kernel developers (including Linus Torvalds) to track the development of the Linux kernel. Here is a fun video of Linus Torvalds touting Git to Google.\nHow does it work?\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nWhat git is not:\n\nGit is not a backup per se\nGit is not good at versioning large files (there are workarounds) =&gt; not meant for data\n\n\n\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nAlthough there many ways to start a new repository, GitHub (or any other cloud solutions, such as GitLab) provide among the most convenient way of starting a repository."
   },
   {
-    "objectID": "day_5.html#scope-and-debugging",
-    "href": "day_5.html#scope-and-debugging",
-    "title": "Reproducible for all",
+    "objectID": "day1-git_github_recap.html#github",
+    "href": "day1-git_github_recap.html#github",
+    "title": "git and GitHub recap",
     "section": "",
-    "text": "Materials"
+    "text": "GitHub is a company that hosts git repositories online and provides several collaboration features (among which forking). GitHub fosters a great user community and has built a nice web interface to git, also adding great visualization/rendering capacities of your data.\n\nGitHub.com: https://github.com\nA user account: https://github.com/brunj7\nAn organization account: https://github.com/nceas\nNCEAS GitHub instance: https://github.nceas.ucsb.edu/\n\n\n\nThis screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.\n\nIf we drill into the “commits” for the repository, we can see the history of changes made to all of the files. Looks like kellijohnson and seananderson were fixing things in June and July:\n\nAnd finally, if we drill into the changes made on June 13, we can see exactly what was changed in each file:\n Tracking these changes, and seeing how they relate to released versions of software and files is exactly what Git and GitHub are good for. We will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow."
   },
   {
-    "objectID": "day_5.html#group-projects-presentations",
-    "href": "day_5.html#group-projects-presentations",
-    "title": "Reproducible for all",
+    "objectID": "flex-rmarkdown_syntax.html#the-markdown-syntax",
+    "href": "flex-rmarkdown_syntax.html#the-markdown-syntax",
+    "title": "Rmarkdown syntax",
+    "section": "The Markdown syntax ",
+    "text": "The Markdown syntax \nYou will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using pandoc into various document formats (PDF, html, ….). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor.\nAnother interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.\n$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$\n\\[\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\\]\nDuring this flex session, explore what you can do with with Markdown basic\nhttps://www.markdownguide.org/basic-syntax/\nAnd extended:\nhttps://www.markdownguide.org/extended-syntax/\n\nR Markdown\nWhat about R markdown in all of this? Well the R Markdown syntax, or more precisely the knitr package, add extra R oriented features which allows the translate of R code, figures and more into a Markdown document to produce dynamic and reproducible documents."
+  },
+  {
+    "objectID": "day_3.html",
+    "href": "day_3.html",
+    "title": "Getting data in a programmatic way",
     "section": "",
-    "text": "Schedule"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects (120min)"
   },
   {
-    "objectID": "day_2.html",
-    "href": "day_2.html",
-    "title": "Working on a remote server",
+    "objectID": "day_3.html#day-3",
+    "href": "day_3.html#day-3",
+    "title": "Getting data in a programmatic way",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nWorking on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nCommand line (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 3:00pm\nAutomating things with bash (90min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nUploading things to a server (30 min)\n\n\n\n\n\n\n\n\nCERN computing center"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects (120min)"
   },
   {
-    "objectID": "day_2.html#working-on-a-remote-server",
-    "href": "day_2.html#working-on-a-remote-server",
-    "title": "Working on a remote server",
+    "objectID": "day_3.html#getting-data",
+    "href": "day_3.html#getting-data",
+    "title": "Getting data in a programmatic way",
+    "section": "Getting Data",
+    "text": "Getting Data"
+  },
+  {
+    "objectID": "day_3.html#the-manual-way",
+    "href": "day_3.html#the-manual-way",
+    "title": "Getting data in a programmatic way",
+    "section": "The manual way",
+    "text": "The manual way\nUsing website to retrieve data is great interactive way to search and explore data of interest. Let’s start our day by searching some data on the data repository DateONE: https://search.dataone.org/data\nIn case you need some inspiration, look at this dataset about historic precipitation in Alaska: https://doi.org/10.5063/N29VCQ"
+  },
+  {
+    "objectID": "day_3.html#the-programmatic-way",
+    "href": "day_3.html#the-programmatic-way",
+    "title": "Getting data in a programmatic way",
+    "section": "The programmatic way",
+    "text": "The programmatic way\nAlthough discovering data through a web interface is convenient and offers a great experience, it is often hard to scale this approach or to integrate it into a reproducible workflow.\nSlides\n\nHands-on – APIs\nRepository"
+  },
+  {
+    "objectID": "day_3.html#group-project",
+    "href": "day_3.html#group-project",
+    "title": "Getting data in a programmatic way",
+    "section": "Group project",
+    "text": "Group project\nGroup project"
+  },
+  {
+    "objectID": "day_1.html",
+    "href": "day_1.html",
+    "title": "Reproducible & Collaborative Workflows",
     "section": "",
-    "text": "CERN computing center"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nIntroduction & Reproducible workflows (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30pm\nInteractive Session: Drawing board + reporting (60 min); git recap (30min)\n\n\n12:30pm - 1:30pm\nLunch\n\n\n1:30pm - 2:00pm\nCollaborative workflows: Fork and Branches (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session: Collaborating with GitHub (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\ngit conflicts (50 min)"
   },
   {
-    "objectID": "day_2.html#why-working-on-a-remote-machine",
-    "href": "day_2.html#why-working-on-a-remote-machine",
-    "title": "Working on a remote server",
-    "section": "Why working on a remote machine?",
-    "text": "Why working on a remote machine?\nOften the main motivation is to scale your analysis beyond what a personal computer can handle. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:\n\nPower: More CPUs/Cores (24/32/48), More RAM (256/384GB)\nCapacity: More disk space and generally faster storage (in highly optimized RAID arrays)\nSecurity: Data are spread across multiple drives and have nightly backups\nCollaboration: shared folders for code, data, and other materials; same software versions\n\n\n\n\n\n\n\nWarning\n\n\n\n=&gt; The operating system is more likely going to be Linux!!\nMore on this in a few minutes\n\n\n\nUnix and Friends\nMaterials\n\n\nRStudio Server\nMaterials\n\n\nThe Command Line Interface (CLI)\nMaterials\n\n\nAutomating things with bash\nMaterials\n\n\nCollaborating on a server\nMaterials"
+    "objectID": "day_1.html#day-1",
+    "href": "day_1.html#day-1",
+    "title": "Reproducible & Collaborative Workflows",
+    "section": "",
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nIntroduction & Reproducible workflows (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30pm\nInteractive Session: Drawing board + reporting (60 min); git recap (30min)\n\n\n12:30pm - 1:30pm\nLunch\n\n\n1:30pm - 2:00pm\nCollaborative workflows: Fork and Branches (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session: Collaborating with GitHub (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\ngit conflicts (50 min)"
   },
   {
-    "objectID": "day_2.html#uploading-files-to-a-server",
-    "href": "day_2.html#uploading-files-to-a-server",
-    "title": "Working on a remote server",
-    "section": "Uploading files to a server",
-    "text": "Uploading files to a server\nMaterials"
+    "objectID": "day_1.html#morning",
+    "href": "day_1.html#morning",
+    "title": "Reproducible & Collaborative Workflows",
+    "section": "Morning",
+    "text": "Morning\n\nIntroduction to EDS-214\nA few words…\n\n\nLecture 1: Definitions and Concepts of reproducible workflows\nSlide deck\n\n\nPlaning things\nDon’t start implementing nor coding without planning! It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.\n\nFrom drawings to pseudocode\nMaterials\n\n\n\nCherubini et al., 2007\n\n\n\n\n\nInteractive session 1: Develop your worklow skills 💪\nInvestigating the impacts of Hurricane on stream chemistry in Puerto Rico"
+  },
+  {
+    "objectID": "day_1.html#afternoon",
+    "href": "day_1.html#afternoon",
+    "title": "Reproducible & Collaborative Workflows",
+    "section": "Afternoon",
+    "text": "Afternoon\n\nLecture 2: Coding together\nMaterials\n\n\nCollaborating using GitHub\n\nCollaborating through forking\nMaterials\n\n\nCollaborating through branches\nMaterials\n\n\n\nInteractive session 2: Collaborative coding with GitHub\nhttps://github.com/brunj7/eds214-handson-ghcollab\n\n\nBonus of the day: Git Therapy\n\ngit commit messages\nMaterials\n\n\nGitHub conflicts\nFirst thing to know is that actually git pull is a two step process: git pull = git fetch + git merge\nSecond: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, git will call you to the rescue and ask you how to best merge the two versions.\nMaterials"
+  },
+  {
+    "objectID": "day_1.html#further-reading",
+    "href": "day_1.html#further-reading",
+    "title": "Reproducible & Collaborative Workflows",
+    "section": "Further reading",
+    "text": "Further reading\nHere are a few selected publications to help you to learn more about these topics.\n\nData and scientific workflow management:\n\nThe Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\nKitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. http://www.practicereproducibleresearch.org/\nGood enough practices in Scientific Computing:\nhttps://doi.org/10.1371/journal.pcbi.1005510\nScript your analysis:\nhttps://doi.org/10.1038/nj7638-563a\nPrinciples for data analysis workflows:\nhttps://doi.org/10.1371/journal.pcbi.1008770\nBenureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions. Front. Neuroinform. 0. https://doi.org/10.3389/fninf.2017.00069\nSandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology 9, e1003285. https://doi.org/10.1371/journal.pcbi.1003285\nSome Simple Guidelines for Effective Data Management:\nhttps://doi.org/10.1890/0012-9623-90.2.205\nBasic concepts of data management:\nhttps://www.dataone.org/education-modules\n\n\n\nOpen Science\n\nThe Tao of open science for ecology:\nhttps://doi.org/10.1890/ES14-00402.1\nChallenges and Opportunities of Open Data in Ecology:\nhttps://doi.org/10.1126/science.1197962\n\nScientific computing: Code alert\nhttps://doi.org/10.1038/nj7638-563a\nOur path to better science in less time using open data science tools\nhttps://doi.org/10.1038%2Fs41559-017-0160\nFAIR data guiding principles\nhttps://doi.org/10.1038/sdata.2016.18\nSkills and Knowledge for Data-Intensive Environmental Research https://doi.org/10.1093/biosci/bix025\n\nLet go your data\nhttps://doi.org/10.1038/s41563-019-0539-5\n\n\n\nCollaborative coding\n\nA new grad’s guide to coding as a team - Atlassian: https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf\n10 tips for efficient programming: https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html\nAgile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nCode Review\n\nSmall-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext\n\n\n\nBranches\n\nInteractive tutorial to learn more about git branches and more https://learngitbranching.js.org/\n\n\n\nGitHub Workflow\n\nGitHub:\n\nguides on how to use GitHub: https://guides.github.com/\nGitHub from RStudio: http://r-pkgs.had.co.nz/git.html#git-pull\n\nForking:\n\nhttps://help.github.com/articles/fork-a-repo/\nhttps://guides.github.com/activities/forking/\n\nComparison of git repository host services: https://www.git-tower.com/blog/git-hosting-services-compared/\nBranches\n\ninteractive tutorial on branches: http://learngitbranching.js.org/\nusing git in a collaborative environment: https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nGit using RStudio\n\nHappy Git and GitHub for the useR:http://happygitwithr.com/\nR packages - Git and GitHub: http://r-pkgs.had.co.nz/git.html#git-init\n\nGit mainly from the command line:\n\nInteractive git 101: https://try.github.io/\nVery good tutorial about git: https://www.atlassian.com/git/tutorials/what-is-version-control\nGit tutorial geared towards scientists: http://nyuccl.org/pages/gittutorial/\nShort intro to git basics: https://github.com/mbjones/gitbasics\nGit documentation about the basics: http://gitref.org/basic/\nGit documentation - the basics: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics\nGit terminology: https://www.atlassian.com/git/glossary/terminology\nIn trouble, guide to know what to do: http://justinhileman.info/article/git-pretty/git-pretty.png\nWant to undo something? https://github.com/blog/2019-how-to-undo-almost-anything-with-git\nGit terminology: https://www.atlassian.com/git/glossary/terminology\n8 tips to work better with git: https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/\nGitPro book (2nd edition): https://git-scm.com/book/en/v2\n\n\n\nUndoing things\n\nHelp to decide how to undo your problem: http://justinhileman.info/article/git-pretty/git-pretty.png\nUndo almost everything with git https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/\nDifference between git reset soft, mixed and hard https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/\nResetting, Checking Out & Reverting https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting"
   },
   {
     "objectID": "day4-pair_programming.html",
@@ -770,207 +770,207 @@
     "text": "Data\nIt is recommended to keep the raw-data you are collecting separated from any data you might generate at various steps of your workflow. This will help you to trace back any problems, but also make your work more reproducible because you started your processing directly from the original data. There are different ways of ensuring this. A common one is to create a raw-data (sub)folder to store the data. You can even play with the file access settings to make those files read-only.\n\n\n\nhttps://github.com/benmarwick/rrtools"
   },
   {
-    "objectID": "day_3.html",
-    "href": "day_3.html",
-    "title": "Getting data in a programmatic way",
+    "objectID": "day_2.html",
+    "href": "day_2.html",
+    "title": "Working on a remote server",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects (120min)"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nWorking on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nCommand line (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 3:00pm\nAutomating things with bash (90min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nUploading things to a server (30 min)\n\n\n\n\n\n\n\n\nCERN computing center"
   },
   {
-    "objectID": "day_3.html#day-3",
-    "href": "day_3.html#day-3",
-    "title": "Getting data in a programmatic way",
+    "objectID": "day_2.html#working-on-a-remote-server",
+    "href": "day_2.html#working-on-a-remote-server",
+    "title": "Working on a remote server",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects (120min)"
+    "text": "CERN computing center"
   },
   {
-    "objectID": "day_3.html#getting-data",
-    "href": "day_3.html#getting-data",
-    "title": "Getting data in a programmatic way",
-    "section": "Getting Data",
-    "text": "Getting Data"
+    "objectID": "day_2.html#why-working-on-a-remote-machine",
+    "href": "day_2.html#why-working-on-a-remote-machine",
+    "title": "Working on a remote server",
+    "section": "Why working on a remote machine?",
+    "text": "Why working on a remote machine?\nOften the main motivation is to scale your analysis beyond what a personal computer can handle. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:\n\nPower: More CPUs/Cores (24/32/48), More RAM (256/384GB)\nCapacity: More disk space and generally faster storage (in highly optimized RAID arrays)\nSecurity: Data are spread across multiple drives and have nightly backups\nCollaboration: shared folders for code, data, and other materials; same software versions\n\n\n\n\n\n\n\nWarning\n\n\n\n=&gt; The operating system is more likely going to be Linux!!\nMore on this in a few minutes\n\n\n\nUnix and Friends\nMaterials\n\n\nRStudio Server\nMaterials\n\n\nThe Command Line Interface (CLI)\nMaterials\n\n\nAutomating things with bash\nMaterials\n\n\nCollaborating on a server\nMaterials"
   },
   {
-    "objectID": "day_3.html#the-manual-way",
-    "href": "day_3.html#the-manual-way",
-    "title": "Getting data in a programmatic way",
-    "section": "The manual way",
-    "text": "The manual way\nUsing website to retrieve data is great interactive way to search and explore data of interest. Let’s start our day by searching some data on the data repository DateONE: https://search.dataone.org/data\nIn case you need some inspiration, look at this dataset about historic precipitation in Alaska: https://doi.org/10.5063/N29VCQ"
+    "objectID": "day_2.html#uploading-files-to-a-server",
+    "href": "day_2.html#uploading-files-to-a-server",
+    "title": "Working on a remote server",
+    "section": "Uploading files to a server",
+    "text": "Uploading files to a server\nMaterials"
   },
   {
-    "objectID": "day_3.html#the-programmatic-way",
-    "href": "day_3.html#the-programmatic-way",
-    "title": "Getting data in a programmatic way",
-    "section": "The programmatic way",
-    "text": "The programmatic way\nAlthough discovering data through a web interface is convenient and offers a great experience, it is often hard to scale this approach or to integrate it into a reproducible workflow.\nSlides\n\nHands-on – APIs\nRepository"
-  },
-  {
-    "objectID": "day_3.html#group-project",
-    "href": "day_3.html#group-project",
-    "title": "Getting data in a programmatic way",
-    "section": "Group project",
-    "text": "Group project\nGroup project"
-  },
-  {
-    "objectID": "flex-rmarkdown_syntax.html#the-markdown-syntax",
-    "href": "flex-rmarkdown_syntax.html#the-markdown-syntax",
-    "title": "Rmarkdown syntax",
-    "section": "The Markdown syntax ",
-    "text": "The Markdown syntax \nYou will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using pandoc into various document formats (PDF, html, ….). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor.\nAnother interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.\n$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$\n\\[\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\\]\nDuring this flex session, explore what you can do with with Markdown basic\nhttps://www.markdownguide.org/basic-syntax/\nAnd extended:\nhttps://www.markdownguide.org/extended-syntax/\n\nR Markdown\nWhat about R markdown in all of this? Well the R Markdown syntax, or more precisely the knitr package, add extra R oriented features which allows the translate of R code, figures and more into a Markdown document to produce dynamic and reproducible documents."
-  },
-  {
-    "objectID": "day1-git_github_recap.html",
-    "href": "day1-git_github_recap.html",
-    "title": "git and GitHub recap",
+    "objectID": "day_5.html",
+    "href": "day_5.html",
+    "title": "Reproducible for all",
     "section": "",
-    "text": "Aka – Say goodbye to script_JB_03v5b.R !!\n\n\n\n\n\n\n\n\n\n\n\nEvery file in the scientific process changes. Manuscripts are edited. Figures get revised. Code gets fixed when problems are discovered. Data files get combined together, then errors are fixed, and then they are split and combined again. In the course of a single analysis, one can expect thousands of changes to files. And yet, all we use to track this are simplistic filenames. You might think there is a better way, and you’d be right: version control.\nVersion control systems help you track all of the changes to your files, without the spaghetti mess that ensues from simple file renaming. In other words, version control is a system that helps you to manage the different versions of your files in an organized manner. It will help you to never have to duplicate files using save as as a way to keep different versions of a file (see below). Version control help you to create a timeline of snapshots containing the different versions of a file. At any point in time, you will be able to roll back to a specific version. Bonus: you can add a short description (commit message) to remember what each specific version is about.\nWhat is the difference between git and GitHub?\n\ngit: is a version control software used to track files in a folder (a repository)\n\ngit creates a timeline or history of your files\n\nGitHub: is a code repository in the cloud that enables users to store their git repositories and share them with others. Github also add many features to manage projects and document your work.\n\n\n\n\n\nThis section focuses on the code versioning system called Git. Note that there are others, such as Mercurial or svn for example.\nGit is a free and open source distributed version control system. It has many functionalities and was originally geared towards software development and production environment. In fact, Git was initially designed and developed in 2005 by Linux kernel developers (including Linus Torvalds) to track the development of the Linux kernel. Here is a fun video of Linus Torvalds touting Git to Google.\nHow does it work?\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nWhat git is not:\n\nGit is not a backup per se\nGit is not good at versioning large files (there are workarounds) =&gt; not meant for data\n\n\n\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nAlthough there many ways to start a new repository, GitHub (or any other cloud solutions, such as GitLab) provide among the most convenient way of starting a repository.\n\n\n\n\n\nGitHub is a company that hosts git repositories online and provides several collaboration features (among which forking). GitHub fosters a great user community and has built a nice web interface to git, also adding great visualization/rendering capacities of your data.\n\nGitHub.com: https://github.com\nA user account: https://github.com/brunj7\nAn organization account: https://github.com/nceas\nNCEAS GitHub instance: https://github.nceas.ucsb.edu/\n\n\n\nThis screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.\n\nIf we drill into the “commits” for the repository, we can see the history of changes made to all of the files. Looks like kellijohnson and seananderson were fixing things in June and July:\n\nAnd finally, if we drill into the changes made on June 13, we can see exactly what was changed in each file:\n Tracking these changes, and seeing how they relate to released versions of software and files is exactly what Git and GitHub are good for. We will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow."
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n10:30am - 12:30pm\nGroup project (120min)\n\n\n12:300pm - 1:30pm\nLunch \n\n\n1:30pm - 2:00pm\nMeet your next instructor – Kelly Caylor, Office of Research and Earth Research Institute, UCSB\n\n\n2:00pm - 3:00pm\nGroup project presentations - p1 (60 min).\n\n\n3:00pm - 3:10pm\nBreak 2 (10min)\n\n\n3:10pm - 3:40pm\nGroup project presentations - p2 (30 min)\n\n\n3:40pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nSchedule"
   },
   {
-    "objectID": "day1-git_github_recap.html#the-problem-with-save_as",
-    "href": "day1-git_github_recap.html#the-problem-with-save_as",
-    "title": "git and GitHub recap",
+    "objectID": "day_5.html#scope-and-debugging",
+    "href": "day_5.html#scope-and-debugging",
+    "title": "Reproducible for all",
     "section": "",
-    "text": "Every file in the scientific process changes. Manuscripts are edited. Figures get revised. Code gets fixed when problems are discovered. Data files get combined together, then errors are fixed, and then they are split and combined again. In the course of a single analysis, one can expect thousands of changes to files. And yet, all we use to track this are simplistic filenames. You might think there is a better way, and you’d be right: version control.\nVersion control systems help you track all of the changes to your files, without the spaghetti mess that ensues from simple file renaming. In other words, version control is a system that helps you to manage the different versions of your files in an organized manner. It will help you to never have to duplicate files using save as as a way to keep different versions of a file (see below). Version control help you to create a timeline of snapshots containing the different versions of a file. At any point in time, you will be able to roll back to a specific version. Bonus: you can add a short description (commit message) to remember what each specific version is about.\nWhat is the difference between git and GitHub?\n\ngit: is a version control software used to track files in a folder (a repository)\n\ngit creates a timeline or history of your files\n\nGitHub: is a code repository in the cloud that enables users to store their git repositories and share them with others. Github also add many features to manage projects and document your work."
+    "text": "Materials"
   },
   {
-    "objectID": "day1-git_github_recap.html#git",
-    "href": "day1-git_github_recap.html#git",
-    "title": "git and GitHub recap",
+    "objectID": "day_5.html#group-projects-presentations",
+    "href": "day_5.html#group-projects-presentations",
+    "title": "Reproducible for all",
     "section": "",
-    "text": "This section focuses on the code versioning system called Git. Note that there are others, such as Mercurial or svn for example.\nGit is a free and open source distributed version control system. It has many functionalities and was originally geared towards software development and production environment. In fact, Git was initially designed and developed in 2005 by Linux kernel developers (including Linus Torvalds) to track the development of the Linux kernel. Here is a fun video of Linus Torvalds touting Git to Google.\nHow does it work?\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nWhat git is not:\n\nGit is not a backup per se\nGit is not good at versioning large files (there are workarounds) =&gt; not meant for data\n\n\n\nGit can be enabled on a specific folder/directory on your file system to version files within that directory (including sub-directories). In git (and other version control systems) terms, this “tracked folder” is called a repository (which formally is a specific data structure storing versioning information).\nAlthough there many ways to start a new repository, GitHub (or any other cloud solutions, such as GitLab) provide among the most convenient way of starting a repository."
+    "text": "Schedule"
   },
   {
-    "objectID": "day1-git_github_recap.html#github",
-    "href": "day1-git_github_recap.html#github",
-    "title": "git and GitHub recap",
+    "objectID": "day1-coding_together.html",
+    "href": "day1-coding_together.html",
+    "title": "Coding together",
     "section": "",
-    "text": "GitHub is a company that hosts git repositories online and provides several collaboration features (among which forking). GitHub fosters a great user community and has built a nice web interface to git, also adding great visualization/rendering capacities of your data.\n\nGitHub.com: https://github.com\nA user account: https://github.com/brunj7\nAn organization account: https://github.com/nceas\nNCEAS GitHub instance: https://github.nceas.ucsb.edu/\n\n\n\nThis screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.\n\nIf we drill into the “commits” for the repository, we can see the history of changes made to all of the files. Looks like kellijohnson and seananderson were fixing things in June and July:\n\nAnd finally, if we drill into the changes made on June 13, we can see exactly what was changed in each file:\n Tracking these changes, and seeing how they relate to released versions of software and files is exactly what Git and GitHub are good for. We will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow."
+    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
   },
   {
-    "objectID": "day1-github_forking.html",
-    "href": "day1-github_forking.html",
-    "title": "Collaborative Coding Workflows: Forking",
+    "objectID": "day1-coding_together.html#learning-objectives",
+    "href": "day1-coding_together.html#learning-objectives",
+    "title": "Coding together",
     "section": "",
-    "text": "A fork is a copy of a repository that will be stored under your user account. Forking a repository allows you to freely experiment with changes without affecting the original project. We can create a fork on Github by clicking the “fork” button in the top right corner of our repository web page.\nMost commonly, forks are used to either propose changes to someone else’s project or to use someone else’s project as a starting point for your own idea.\nWhen you are satisfied with your work, you can initiate a Pull Request to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the “New pull request” button!\nNext, click “compare across forks”, and use the dropdown menus to select your fork as the “head fork” and the original repository as the “base fork”.\nThen type a title and description for the changes you would like to make. By using GitHub’s @mention syntax in your Pull Request message, you can ask for feedback from specific people or teams.\nThis workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project."
+    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
   },
   {
-    "objectID": "day1-github_forking.html#demo-time",
-    "href": "day1-github_forking.html#demo-time",
-    "title": "Collaborative Coding Workflows: Forking",
-    "section": "Demo time",
-    "text": "Demo time\nUpdate the greetings R package to add the option to change the color of the background of the text.\nRepo: https://github.com/brunj7/greetings\nWhat I will do:\n\nFork the repository\nAdd functionality to this R package. In this example I will modify the say_aloah() function to allow changing the text background color to blue in addition to the existing green (see here for more about the crayon package)\nOnce done, I will create a Pull Request (PR) to integrate the new changes\nMerge back changes!"
+    "objectID": "day1-coding_together.html#why-collaborative-coding",
+    "href": "day1-coding_together.html#why-collaborative-coding",
+    "title": "Coding together",
+    "section": "Why collaborative coding",
+    "text": "Why collaborative coding\n\nSlide deck\nEnvironmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise. Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:\n\nRight size\nDiverse group of people with the right mix of skills, knowledge, and competencies\nAligned purpose and incentives\nEffective organizational structure\nStrong individual contributions\nSupportive team processes and culture\n\nSince Analytical Workflows are rarely linear! and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind. Programming as part of a team is different than writing a script for your(present)self. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:\n\nMotivating you to document well your work\nHelping you to think how to make your work reusable (by you, your future you and others)\nLearning to read code from collaborators to build upon each others work\nGain further knowledge in software development tools, such as version control\n\nDeveloping those skills will accelerate your research and open the door for you to contribute to open source projects."
   },
   {
-    "objectID": "day1-hands-on_drawings_p2.html",
-    "href": "day1-hands-on_drawings_p2.html",
+    "objectID": "day1-coding_together.html#how-to-code-together",
+    "href": "day1-coding_together.html#how-to-code-together",
+    "title": "Coding together",
+    "section": "How to code together",
+    "text": "How to code together\nIt is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming.\n\nTools\nThe good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:\n\nVersion control system: say goodbye to save as\nCode repository: where we share code and communicate ideas and feedback"
+  },
+  {
+    "objectID": "day1-github_commit_messages.html",
+    "href": "day1-github_commit_messages.html",
+    "title": "On good commit messages",
+    "section": "",
+    "text": "https://xkcd.com/1296/\nCommit messages are critical for others, including your future self, to understand the motivation behind the changes that were implemented. Combined into the history of your file and repository, those messages help to understand the content and its evolution over time\nSo what is a good commit message? Well I think the answer actually starts with what is a good commit? Which actually begins when you are choosing how to group files during the staging.\nA good commit:\nA good commit message:\nNote: you can add a body to a commit message if you want to describe the content in greater details, but keep the first line (message) separated."
+  },
+  {
+    "objectID": "day1-github_commit_messages.html#references",
+    "href": "day1-github_commit_messages.html#references",
+    "title": "On good commit messages",
+    "section": "References",
+    "text": "References\n\nHow to Write a Git Commit Message: https://chris.beams.io/posts/git-commit/"
+  },
+  {
+    "objectID": "day1-hands-on_drawings.html",
+    "href": "day1-hands-on_drawings.html",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
+    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
   },
   {
-    "objectID": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
-    "href": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
+    "objectID": "day1-hands-on_drawings.html#goal",
+    "href": "day1-hands-on_drawings.html#goal",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
+    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
   },
   {
-    "objectID": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
-    "href": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
+    "objectID": "day1-hands-on_drawings.html#remember",
+    "href": "day1-hands-on_drawings.html#remember",
     "title": "Hands-on: Planning your work",
-    "section": "This is your lucky day!!",
-    "text": "This is your lucky day!!\nWe found data for additional chemistry measurements while skimming through the database :)\nWe now want to be able to produce the following plot\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (5min)"
+    "section": "Remember",
+    "text": "Remember\n\nEach node represents a step or an input/output\nEach connecting edge represents data flow or processing\n\n\n\nOh wait…\nActually there is more"
   },
   {
-    "objectID": "group_project.html",
-    "href": "group_project.html",
-    "title": "Group Project",
+    "objectID": "day1-hands-on_drawings.html#references",
+    "href": "day1-hands-on_drawings.html#references",
+    "title": "Hands-on: Planning your work",
+    "section": "References",
+    "text": "References\nExercise based on: Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358\nData available here: McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684 (Accessed 2021-08-06)."
+  },
+  {
+    "objectID": "day_4.html",
+    "href": "day_4.html",
+    "title": "Being reproducible to better collaborate: Tools and Practices",
     "section": "",
-    "text": "We are going to build on the exercise we used the first day and work on implementing and refining the workflow we developed during that session.\n\n\nBy group of 4-5 collaborators:\n\nFind an awesome name for your group (one of the hardest steps)\nSetup a shared GitHub repository\nUse the MEDS server Taylor as your main computing resource\nUse GitHub to manage your code development in a collaborative manner\nUse shared folder on Taylor to manage your data /courses/EDS214/group_project/my_group_name\nDocument your work as you go!!\n\nComment your code\nAdd project details to your README, including reference to data sources\n\nUse GitHub issues to track your work and discuss progress and tasks\n\n\n\n\n\n\n\nThe Luquillo Experimental Forest (LEF) has been a center of tropical forestry research for nearly a century. In addition, the LEF is a recreation site for over a half a million people per year, a water supply for approximately 20% of Puerto Rico’s population, a regional center for electronic communication, and a refuge of Caribbean biodiversity. It is the goal of the USDA Forest Service and the University of Puerto to promote and maintain the forest’s role as a center of active and dynamic scientific inquiry. However, to maintain the ecological integrity of the forest while balancing the many demands placed upon it’s resources, certain protocol is required. This guide provides the major protocols that govern research in the LEF. These protocols are designed to help researchers protect the forests, obey the law, create an amiable and non-discriminatory work environment, and provide a historical record for future scientists\nHere for more information about the Luquillo site: https://lternet.edu/site/luquillo-lter/\n\n\n\n\n\n\n\n\n\n\n\n\n\nCan you recreate that plot (content, not style wise… you can do way better 🙂)\n\nWrite a quarto document that: - reads the data in (from a local copy on Taylor) - processes the data as needed to be plotted - use ggplot to create a similar (but better looking) plat - comment your code and use markdown text to provide context to your code - render your report as html\n\nAsk your own question! You are encouraged to define you own question around this topic as a team\n\nGo wild!! Ask your own scientific question using the stream chemistry data but also any other external source of data (like historical hurricane tracks from NOAA). The focus in this part of the project is on the process of how you will be answering the question (planning, workflow, code, data, ….), not on the results per se\n\n\n\nData are available from the Environmental Data Initiative (EDI) that is hosting most of the data of the Long Term Ecological Research (LTER) Network.\n\n\nMcDowell, W. and International Institute of Tropical Forestry(IITF), USDA Forest Service. 2022. Chemistry of stream water from the Luquillo Mountains ver 4923061. Environmental Data Initiative. https://doi.org/10.6073/pasta/570231c2807a6396ced6a89ef7547bd4 (Accessed 2023-08-24).\n\n\n\n\nMajor points to hit:\n\nGoal/Question + workflow you used to achieve it (aka THE plan)\nHow did you set up your project (server, data, code, …)\nHow did you organize your team (tasks, who did what)\nResults\nMain challenges\n\n\n\n\n\n\n\ngroup_name\ngithub_repo\nslides\n\n\n\n\nA1\nhttps://github.com/katleyq/A1_GroupProject.git\nhttps://docs.google.com/presentation/d/1MIxRjgidlx6aNrJP_j3NrdGwueftTrKvZMohyeHCO5I/edit?usp=sharing\n\n\ngot git?\nhttps://github.com/BenVerst/Got-Git\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nThe Brenniacs\nhttps://github.com/oksanaprotsukha/thebrenniacs\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nGroup Fourk\nhttps://github.com/hmchilders/EDS214_Group4\nhttps://docs.google.com/presentation/d/1-Vsyrfgm5CBWHuNI8qwxv7C0wU5s8nVdVAZRFmTTEZE/edit?usp=sharing\n\n\nTropic-Thunder\nhttps://github.com/saingersoll/tropic-thunder\nhttps://docs.google.com/presentation/d/1548heJAcJN9x8lYXY6uKkh3X2imWDLK9GxKLMNkqnvU/edit?usp=sharing\n\n\nTeam Siguana\nhttps://github.com/Vanessa-Salgado/EDS214_group_project_team_siguanaa\nhttps://docs.google.com/presentation/d/15Ea1zf39oQlQBq6mOkdQZDI8MJw-MjuEHHdVUFA5Rxw/edit#slide=id.g2798449c7d5_0_10\n\n\nSMOL\nhttps://github.com/olleholt/SMOL\nhttps://docs.google.com/presentation/d/1kK2p3mnl_-ar3ZZahE1P1WqYCdvmFPik9CIJAOHSEVE/edit?pli=1#slide=id.p\n\n\n\n\n\n\nSchaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:20am\nBuilding analytical workflows: meet targets (80 min)\n\n\n11:20am - 11:30am\nBreak (10 min)\n\n\n11:30am - 12:30am\nReproducible publication: meet rrtools (60 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
   },
   {
-    "objectID": "group_project.html#here-are-the-expectations",
-    "href": "group_project.html#here-are-the-expectations",
-    "title": "Group Project",
+    "objectID": "day_4.html#day-4",
+    "href": "day_4.html#day-4",
+    "title": "Being reproducible to better collaborate: Tools and Practices",
     "section": "",
-    "text": "By group of 4-5 collaborators:\n\nFind an awesome name for your group (one of the hardest steps)\nSetup a shared GitHub repository\nUse the MEDS server Taylor as your main computing resource\nUse GitHub to manage your code development in a collaborative manner\nUse shared folder on Taylor to manage your data /courses/EDS214/group_project/my_group_name\nDocument your work as you go!!\n\nComment your code\nAdd project details to your README, including reference to data sources\n\nUse GitHub issues to track your work and discuss progress and tasks"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:20am\nBuilding analytical workflows: meet targets (80 min)\n\n\n11:20am - 11:30am\nBreak (10 min)\n\n\n11:30am - 12:30am\nReproducible publication: meet rrtools (60 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
   },
   {
-    "objectID": "group_project.html#background",
-    "href": "group_project.html#background",
-    "title": "Group Project",
+    "objectID": "day_4.html#leveraging-existing-frameworks-for-reproducibility",
+    "href": "day_4.html#leveraging-existing-frameworks-for-reproducibility",
+    "title": "Being reproducible to better collaborate: Tools and Practices",
+    "section": "Leveraging existing frameworks for reproducibility",
+    "text": "Leveraging existing frameworks for reproducibility\nPlease remember that every workflow or framework is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project.\n\nAnalytical workflow frameworks in R\n\n\n\n\n\nConceptual workflow model promoted by the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.hadley.nz/intro#fig-ds-diagram\n\n\n\n\n\nTargets\nThe targets R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.\nHere for more: https://books.ropensci.org/targets/\nOur practice example: https://github.com/brunj7/eds214-handson-targets\n\n\nPointblank\nAlthough the pointblank package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.\nhttps://github.com/rstudio/pointblank\n\n\n\nReproducible publications\nrrtools as an example"
+  },
+  {
+    "objectID": "day_4.html#documenting-things",
+    "href": "day_4.html#documenting-things",
+    "title": "Being reproducible to better collaborate: Tools and Practices",
+    "section": "Documenting things",
+    "text": "Documenting things\n\nWhy does it matter ?\n\n\n\n\n\n\n\n\n\nMaterials"
+  },
+  {
+    "objectID": "day_4.html#sharing-things",
+    "href": "day_4.html#sharing-things",
+    "title": "Being reproducible to better collaborate: Tools and Practices",
+    "section": "Sharing things",
+    "text": "Sharing things\nMaterials"
+  },
+  {
+    "objectID": "day2-remote_server.html",
+    "href": "day2-remote_server.html",
+    "title": "Working on a remote server",
     "section": "",
-    "text": "The Luquillo Experimental Forest (LEF) has been a center of tropical forestry research for nearly a century. In addition, the LEF is a recreation site for over a half a million people per year, a water supply for approximately 20% of Puerto Rico’s population, a regional center for electronic communication, and a refuge of Caribbean biodiversity. It is the goal of the USDA Forest Service and the University of Puerto to promote and maintain the forest’s role as a center of active and dynamic scientific inquiry. However, to maintain the ecological integrity of the forest while balancing the many demands placed upon it’s resources, certain protocol is required. This guide provides the major protocols that govern research in the LEF. These protocols are designed to help researchers protect the forests, obey the law, create an amiable and non-discriminatory work environment, and provide a historical record for future scientists\nHere for more information about the Luquillo site: https://lternet.edu/site/luquillo-lter/"
+    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\n\n\n\nTip\n\n\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
   },
   {
-    "objectID": "group_project.html#goals",
-    "href": "group_project.html#goals",
-    "title": "Group Project",
+    "objectID": "day2-remote_server.html#the-command-line-interface-cli",
+    "href": "day2-remote_server.html#the-command-line-interface-cli",
+    "title": "Working on a remote server",
     "section": "",
-    "text": "Can you recreate that plot (content, not style wise… you can do way better 🙂)\n\nWrite a quarto document that: - reads the data in (from a local copy on Taylor) - processes the data as needed to be plotted - use ggplot to create a similar (but better looking) plat - comment your code and use markdown text to provide context to your code - render your report as html\n\nAsk your own question! You are encouraged to define you own question around this topic as a team\n\nGo wild!! Ask your own scientific question using the stream chemistry data but also any other external source of data (like historical hurricane tracks from NOAA). The focus in this part of the project is on the process of how you will be answering the question (planning, workflow, code, data, ….), not on the results per se"
+    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\n\n\n\nTip\n\n\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
   },
   {
-    "objectID": "group_project.html#data",
-    "href": "group_project.html#data",
-    "title": "Group Project",
-    "section": "",
-    "text": "Data are available from the Environmental Data Initiative (EDI) that is hosting most of the data of the Long Term Ecological Research (LTER) Network.\n\n\nMcDowell, W. and International Institute of Tropical Forestry(IITF), USDA Forest Service. 2022. Chemistry of stream water from the Luquillo Mountains ver 4923061. Environmental Data Initiative. https://doi.org/10.6073/pasta/570231c2807a6396ced6a89ef7547bd4 (Accessed 2023-08-24)."
+    "objectID": "day2-remote_server.html#general-command-syntax",
+    "href": "day2-remote_server.html#general-command-syntax",
+    "title": "Working on a remote server",
+    "section": "General command syntax",
+    "text": "General command syntax\n\ncommand [options] [arguments]\n\nwhere command must be an executable file on your PATH * echo $PATH\nand options can usually take two forms * short form: -a * long form: --all\nYou can combine the options:\nls -ltrh\nWhat do these options do?\nman ls\n\n\n\n\n\n\nTip\n\n\n\nhit spacebar to get to the next page of the manual hit q to exit the help"
   },
   {
-    "objectID": "group_project.html#group-project-presentation-10min-5-slides",
-    "href": "group_project.html#group-project-presentation-10min-5-slides",
-    "title": "Group Project",
-    "section": "",
-    "text": "Major points to hit:\n\nGoal/Question + workflow you used to achieve it (aka THE plan)\nHow did you set up your project (server, data, code, …)\nHow did you organize your team (tasks, who did what)\nResults\nMain challenges"
+    "objectID": "day2-remote_server.html#getting-things-done",
+    "href": "day2-remote_server.html#getting-things-done",
+    "title": "Working on a remote server",
+    "section": "Getting things done",
+    "text": "Getting things done\n\nSome useful, special commands using the Control key\n\nCancel (abort) a command: Ctrl-c Note: very different than Windows!!\nStop (suspend) a command: Ctrl-z\nCtrl-z can be used to suspend, then background a process\n\n\n\nProcess management\n\nLike Windows Task Manager, OSX Activity Monitor\ntop, ps, jobs (hit q to get out!)\nkill to delete an unwanted job or process\nForeground and background: &\n\n\n\nWhat about “space”\n\nHow much storage is available on this system? df -h\nHow much storage am “I” using overall? du -hs &lt;folder&gt;\nHow much storage am “I” using, by sub directory? du -h &lt;folder&gt;\nHow much RAM is used? free -h\n\n\n\nExistential questions\n\nWhat is your username? whoami\nWhat is today’s date? date\nWhere are the programs you are using? whereis R also try which -a python\nWhat is the kernel version of your OS: uname -a\nHow long since last reboot: uptime\nWhich shell are you using? echo $0\n\n\n\nHistory\n\nSee your command history: history\nRe-run last command: !!\nRe-run 32th command: !32\nRe-run 5th from last command: !-5\nRe-run last command that started with ‘c’: !c"
   },
   {
-    "objectID": "group_project.html#groups-2023",
-    "href": "group_project.html#groups-2023",
-    "title": "Group Project",
-    "section": "",
-    "text": "group_name\ngithub_repo\nslides\n\n\n\n\nA1\nhttps://github.com/katleyq/A1_GroupProject.git\nhttps://docs.google.com/presentation/d/1MIxRjgidlx6aNrJP_j3NrdGwueftTrKvZMohyeHCO5I/edit?usp=sharing\n\n\ngot git?\nhttps://github.com/BenVerst/Got-Git\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nThe Brenniacs\nhttps://github.com/oksanaprotsukha/thebrenniacs\nhttps://docs.google.com/presentation/d/1Xy1bYJpYrcdP7mRlN-8UuHn8JdGMpaXX08gWgcHOIzo/edit#slide=id.g27a90bb0dba_0_91\n\n\nGroup Fourk\nhttps://github.com/hmchilders/EDS214_Group4\nhttps://docs.google.com/presentation/d/1-Vsyrfgm5CBWHuNI8qwxv7C0wU5s8nVdVAZRFmTTEZE/edit?usp=sharing\n\n\nTropic-Thunder\nhttps://github.com/saingersoll/tropic-thunder\nhttps://docs.google.com/presentation/d/1548heJAcJN9x8lYXY6uKkh3X2imWDLK9GxKLMNkqnvU/edit?usp=sharing\n\n\nTeam Siguana\nhttps://github.com/Vanessa-Salgado/EDS214_group_project_team_siguanaa\nhttps://docs.google.com/presentation/d/15Ea1zf39oQlQBq6mOkdQZDI8MJw-MjuEHHdVUFA5Rxw/edit#slide=id.g2798449c7d5_0_10\n\n\nSMOL\nhttps://github.com/olleholt/SMOL\nhttps://docs.google.com/presentation/d/1kK2p3mnl_-ar3ZZahE1P1WqYCdvmFPik9CIJAOHSEVE/edit?pli=1#slide=id.p"
+    "objectID": "day2-remote_server.html#a-sampling-of-simple-commands-for-dealing-with-files",
+    "href": "day2-remote_server.html#a-sampling-of-simple-commands-for-dealing-with-files",
+    "title": "Working on a remote server",
+    "section": "A sampling of simple commands for dealing with files",
+    "text": "A sampling of simple commands for dealing with files\n\nwc count lines, words, and/or characters\ndiff compare two files for differences\nsort sort lines in a file\nuniq report or filter out repeated lines in a file"
   },
   {
-    "objectID": "group_project.html#reference",
-    "href": "group_project.html#reference",
-    "title": "Group Project",
-    "section": "",
-    "text": "Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358"
+    "objectID": "day2-remote_server.html#get-into-the-flow-with-pipes",
+    "href": "day2-remote_server.html#get-into-the-flow-with-pipes",
+    "title": "Working on a remote server",
+    "section": "Get into the flow, with pipes",
+    "text": "Get into the flow, with pipes\n\n\n\nstdin, stdout, stderr\n\n\nwc -l *.TXT \nwc -l *.TXT | sort -n\n\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character;\n\n\nHere the wc -l command, which counts the number of lines in files, is given file names on the command line, so it counts the lines in those files. It writes its output to stdout. sort -n sorts lines in files. It was given no files to sort, so it sorts whatever lines come in via stdin. By piping these together (i.e., by hooking wc’s stdout to sort’s stdin using the pipe operator), the output from wc -l is thereby sorted.\nThere are various operators for redirecting where stdin comes from and where stdout and stderr go:\n\n&lt; file: read stdin from file\n&gt; file: write stdout to file\n2&gt; file: write stderr to file\n&gt;& file: write both stdout and stderr to file\n&gt;&gt; file: append stdout to file\n\nLet’s write the above result to a file:\nwc -l *.TXT | sort -n &gt; csvcount.log\nCaution: except for &gt;&gt;, all forms of &gt; are destructive: Bash overwrites any existing file with an empty file before the program is run.\nWant to get rid of output you don’t want to see? Use the Unix black hole: &gt;& /dev/null. (This is a cultural meme, you’ll see it on T-shirts and license plates.)\nThe above are the main redirections, but there are others.\nTo end a session, simply type exit or logout into the command line"
   },
   {
-    "objectID": "day_1.html",
-    "href": "day_1.html",
-    "title": "Reproducible & Collaborative Workflows",
-    "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nIntroduction & Reproducible workflows (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30pm\nInteractive Session: Drawing board + reporting (60 min); git recap (30min)\n\n\n12:30pm - 1:30pm\nLunch\n\n\n1:30pm - 2:00pm\nCollaborative workflows: Fork and Branches (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session: Collaborating with GitHub (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\ngit conflicts (50 min)"
-  },
-  {
-    "objectID": "day_1.html#day-1",
-    "href": "day_1.html#day-1",
-    "title": "Reproducible & Collaborative Workflows",
-    "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nIntroduction & Reproducible workflows (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30pm\nInteractive Session: Drawing board + reporting (60 min); git recap (30min)\n\n\n12:30pm - 1:30pm\nLunch\n\n\n1:30pm - 2:00pm\nCollaborative workflows: Fork and Branches (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session: Collaborating with GitHub (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\ngit conflicts (50 min)"
-  },
-  {
-    "objectID": "day_1.html#morning",
-    "href": "day_1.html#morning",
-    "title": "Reproducible & Collaborative Workflows",
-    "section": "Morning",
-    "text": "Morning\n\nIntroduction to EDS-214\nA few words…\n\n\nLecture 1: Definitions and Concepts of reproducible workflows\nSlide deck\n\n\nPlaning things\nDon’t start implementing nor coding without planning! It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.\n\nFrom drawings to pseudocode\nMaterials\n\n\n\nCherubini et al., 2007\n\n\n\n\n\nInteractive session 1: Develop your worklow skills 💪\nInvestigating the impacts of Hurricane on stream chemistry in Puerto Rico"
-  },
-  {
-    "objectID": "day_1.html#afternoon",
-    "href": "day_1.html#afternoon",
-    "title": "Reproducible & Collaborative Workflows",
-    "section": "Afternoon",
-    "text": "Afternoon\n\nLecture 2: Coding together\nMaterials\n\nCollaborating using GitHub\n\n\n\n\n\n\nSetting git on Taylor (if not yet done)\n\n\n\n\n\nAt the Terminal:\n\ngit config --global user.name \"Jane Doe\" \ngit config --global user.email janedoe@example.com\ngit config --global credential.helper 'cache --timeout=10000000'\ngit config --list\n\n\nSetting GitHub token on Taylor\nAt the R Console:\n\n# On your laptop\nusethis::create_github_token() # This should open a web browser on GitHub\n\n# On Taylor \ngitcreds::gitcreds_set()\nusethis::git_sitrep()\n\n\n\n\n\n\nCollaborating through forking\nMaterials\n\n\nCollaborating through branches\nMaterials\n\n\n\n\nInteractive session 2: Collaborative coding with GitHub\nhttps://github.com/brunj7/eds214-handson-ghcollab\n\n\nBonus of the day: Git Therapy\n\ngit commit messages\nMaterials\n\n\nGitHub conflicts\nFirst thing to know is that actually git pull is a two step process: git pull = git fetch + git merge\nSecond: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, git will call you to the rescue and ask you how to best merge the two versions.\nMaterials"
-  },
-  {
-    "objectID": "day_1.html#further-reading",
-    "href": "day_1.html#further-reading",
-    "title": "Reproducible & Collaborative Workflows",
-    "section": "Further reading",
-    "text": "Further reading\nHere are a few selected publications to help you to learn more about these topics.\n\nData and scientific workflow management:\n\nThe Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\nKitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. http://www.practicereproducibleresearch.org/\nGood enough practices in Scientific Computing:\nhttps://doi.org/10.1371/journal.pcbi.1005510\nScript your analysis:\nhttps://doi.org/10.1038/nj7638-563a\nPrinciples for data analysis workflows:\nhttps://doi.org/10.1371/journal.pcbi.1008770\nBenureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions. Front. Neuroinform. 0. https://doi.org/10.3389/fninf.2017.00069\nSandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology 9, e1003285. https://doi.org/10.1371/journal.pcbi.1003285\nSome Simple Guidelines for Effective Data Management:\nhttps://doi.org/10.1890/0012-9623-90.2.205\nBasic concepts of data management:\nhttps://www.dataone.org/education-modules\n\n\n\nOpen Science\n\nThe Tao of open science for ecology:\nhttps://doi.org/10.1890/ES14-00402.1\nChallenges and Opportunities of Open Data in Ecology:\nhttps://doi.org/10.1126/science.1197962\n\nScientific computing: Code alert\nhttps://doi.org/10.1038/nj7638-563a\nOur path to better science in less time using open data science tools\nhttps://doi.org/10.1038%2Fs41559-017-0160\nFAIR data guiding principles\nhttps://doi.org/10.1038/sdata.2016.18\nSkills and Knowledge for Data-Intensive Environmental Research https://doi.org/10.1093/biosci/bix025\n\nLet go your data\nhttps://doi.org/10.1038/s41563-019-0539-5\n\n\n\nCollaborative coding\n\nA new grad’s guide to coding as a team - Atlassian: https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf\n10 tips for efficient programming: https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html\nAgile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nCode Review\n\nSmall-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext\n\n\n\nBranches\n\nInteractive tutorial to learn more about git branches and more https://learngitbranching.js.org/\n\n\n\nGitHub Workflow\n\nGitHub:\n\nguides on how to use GitHub: https://guides.github.com/\nGitHub from RStudio: http://r-pkgs.had.co.nz/git.html#git-pull\n\nForking:\n\nhttps://help.github.com/articles/fork-a-repo/\nhttps://guides.github.com/activities/forking/\n\nComparison of git repository host services: https://www.git-tower.com/blog/git-hosting-services-compared/\nBranches\n\ninteractive tutorial on branches: http://learngitbranching.js.org/\nusing git in a collaborative environment: https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nGit using RStudio\n\nHappy Git and GitHub for the useR:http://happygitwithr.com/\nR packages - Git and GitHub: http://r-pkgs.had.co.nz/git.html#git-init\n\nGit mainly from the command line:\n\nInteractive git 101: https://try.github.io/\nVery good tutorial about git: https://www.atlassian.com/git/tutorials/what-is-version-control\nGit tutorial geared towards scientists: http://nyuccl.org/pages/gittutorial/\nShort intro to git basics: https://github.com/mbjones/gitbasics\nGit documentation about the basics: http://gitref.org/basic/\nGit documentation - the basics: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics\nGit terminology: https://www.atlassian.com/git/glossary/terminology\nIn trouble, guide to know what to do: http://justinhileman.info/article/git-pretty/git-pretty.png\nWant to undo something? https://github.com/blog/2019-how-to-undo-almost-anything-with-git\nGit terminology: https://www.atlassian.com/git/glossary/terminology\n8 tips to work better with git: https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/\nGitPro book (2nd edition): https://git-scm.com/book/en/v2\n\n\n\nUndoing things\n\nHelp to decide how to undo your problem: http://justinhileman.info/article/git-pretty/git-pretty.png\nUndo almost everything with git https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/\nDifference between git reset soft, mixed and hard https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/\nResetting, Checking Out & Reverting https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting"
+    "objectID": "day2-remote_server.html#cli-practice",
+    "href": "day2-remote_server.html#cli-practice",
+    "title": "Working on a remote server",
+    "section": "CLI Practice",
+    "text": "CLI Practice\n\n\n\n\n\n\nSetting git on Taylor (if not yet done)\n\n\n\n\n\nAt the Terminal:\n\ngit config --global user.name \"Jane Doe\" \ngit config --global user.email janedoe@example.com\ngit config --global credential.helper 'cache --timeout=10000000'\ngit config --list\n\n\nSetting GitHub token on Taylor\nAt the R Console:\n\n# On your laptop\nusethis::create_github_token() # This should open a web browser on GitHub\n\n# On Taylor \ngitcreds::gitcreds_set()\nusethis::git_sitrep()"
   },
   {
     "objectID": "index.html",
