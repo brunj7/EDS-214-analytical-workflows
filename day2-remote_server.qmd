@@ -231,7 +231,32 @@ The above are the main redirections, but there are others.
 ## [**CLI Practice**](https://github.com/brunj7/eds214-handson-cli)
 
 
+::: {.callout-note collapse=true}
+#### Setting git on Taylor (if not yet done)
 
+At the **Terminal**:
+
+```{bash, eval=FALSE, echo=TRUE}
+git config --global user.name "Jane Doe" 
+git config --global user.email janedoe@example.com
+git config --global credential.helper 'cache --timeout=10000000'
+git config --list
+``` 
+
+#### Setting GitHub token on Taylor
+
+At the **R Console**:
+
+```{r, eval=FALSE, echo=TRUE}
+# On your laptop
+usethis::create_github_token() # This should open a web browser on GitHub
+
+# On Taylor 
+gitcreds::gitcreds_set()
+usethis::git_sitrep()
+```
+
+:::
 
 --- 
 
