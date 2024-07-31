@@ -1,12 +1,12 @@
 ---
-title: "Reproducible & Collaborative Workflows"
+title: "Day 1 - Reproducible & Collaborative Workflows"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Day 1
+
 
 | **Time (PST)**    | **Activity**                                                             |
 |-------------------|--------------------------------------------------------------------------|
