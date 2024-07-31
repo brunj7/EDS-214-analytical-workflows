@@ -10,90 +10,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 | **Time (PST)**    | **Activity**                                                             |
 |-------------------|--------------------------------------------------------------------------|
-| 10:00am - 10:50am | *Introduction & Reproducible workflows (50 min)*                         |
+| 10:00am - 10:50am | *Lecture 1: [Course Introduction](https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&loop=false&delayms=3000){target="_blank"};  [Reproducible workflows](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000){target="_blank"} (50 min)*                         |
 | 10:50am - 11:00am | *Break (10 min)*                                                         |
-| 11:00am - 12:30pm | *Interactive Session: Drawing board + reporting (60 min); git recap (30min)* |
+| 11:00am - 12:00pm | *Interactive Session 1: [Flow charts](day1-pseudocode.html){target="_blank"};  [Drawing board + reporting](day1-hands-on_drawings.html){target="_blank"} (60 min)*  |
+| 12:00pm - 12:30pm | *[git recap](day1-git_github_recap.html) (30min)* |
 | 12:30pm - 1:30pm  | *Lunch*                                                                  |
-| 1:30pm - 2:00pm   | *Collaborative workflows: Fork and Branches (30 min)*                    |
-| 2:00pm - 3:00pm   | *Interactive Session: Collaborating with GitHub (60 min)*                |
+| 1:30pm - 2:00pm   | *Lecture 2: [Coding together](day1-coding_together.html){target="_blank"} (30 min)*                    |
+| 2:00pm - 3:00pm   | *Interactive Session 2: [Collaborative coding with GitHub](day1-github_collab.html){target="_blank"} - Fork and Branches (60 min)*                |
 | 3:00pm - 3:10pm   | *Break (10 min)*                                                         |
-| 3:10pm - 4:00pm   | *git conflicts  (50 min)*                                                |
-
-
-## Morning
-
-### Introduction to EDS-214
-
-[**A few words...**](https://docs.google.com/presentation/d/e/2PACX-1vQoawMQwTyWma4JsDePgainH7WNrRGWBEBVm794FCjrp6gyYoi6RrfBDJM5thJCLy4GAqJES8AR-5GB/pub?start=false&loop=false&delayms=3000){target="_blank"}
-
-
-### Lecture 1: Definitions and Concepts of reproducible workflows
-
-[**Slide deck**](https://docs.google.com/presentation/d/e/2PACX-1vRO81O7IJeTHihyMu6yXTsHhWozBbTWWVHy9YJ2ytilrOBji24dzhDTMilQc0hna9prfXLlsLnafa1B/pub?start=false&loop=false&delayms=60000){target="_blank"}
-
-
-
-### Planing things
-
-**Don’t start implementing nor coding without planning!** It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
-
-
-#### From drawings to pseudocode
-
-[**Materials**](day1-pseudocode.html){target="_blank"}
-
-![Cherubini et al., 2007](img/whiteborad_drawings.png)
-
-### Interactive session 1: Develop your worklow skills 💪
-
-[Investigating the impacts of Hurricane on stream chemistry in Puerto Rico](day1-hands-on_drawings.html){target="_blank"}
-
-
-
----
-
-## Afternoon
-
-
-### Lecture 2: Coding together
-
-[**Materials**](day1-coding_together.html){target="_blank"}
-
-
-
-### Collaborating using GitHub
-
-#### Collaborating through forking
-
-[**Materials**](day1-github_forking.html)
-
-
-#### Collaborating through branches
-
-[**Materials**](day1-github_branches.html)
-
-
-### Interactive session 2: Collaborative coding with GitHub
-
-<https://github.com/brunj7/eds214-handson-ghcollab>
-
-
-### Bonus of the day: Git Therapy
-
-#### `git` commit messages
-
-[**Materials**](day1-github_commit_messages.html)
-
-
-#### GitHub conflicts
-
-First thing to know is that actually `git pull`  is a two step process: `git pull = git fetch + git merge`
-
-Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, `git` will call you to the rescue and ask you how to best merge the two versions.
-
-[**Materials**](day1-git-collaboration-conflicts.html)
-
-
+| 3:10pm - 4:00pm   | *[git conflicts](day1-git-collaboration-conflicts.html){target="_blank"}  (50 min)*                                                |
 
 
 ---

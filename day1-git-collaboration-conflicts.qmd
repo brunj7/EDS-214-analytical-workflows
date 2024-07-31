@@ -11,6 +11,13 @@ In this lesson, you will learn:
 - How to resolve a conflict
 
 
+## Before we start
+
+First thing to know is that actually `git pull`  is a two step process: `git pull = git fetch + git merge`
+
+Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, `git` will call you to the rescue and ask you how to best merge the two versions.
+
+
 ## Merge conflicts
 
 So things can go wrong, which usually starts with a **merge conflict**, due to 

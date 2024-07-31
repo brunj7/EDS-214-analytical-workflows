@@ -48,6 +48,10 @@ Git can be enabled on a specific folder/directory on your file system to version
 - **Git is not a backup per se**
 - Git is not good at versioning large files (there are workarounds) => not meant for data
 
+**What we want to avoid:**
+```{r, fig.cap=" https://xkcd.com/1597/", echo=FALSE}
+knitr::include_graphics("img/git_explain_xkcd.png")
+```
 
 ### Repository
 

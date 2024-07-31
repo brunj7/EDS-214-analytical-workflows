@@ -6,8 +6,13 @@ title: "Flow charts and pseudocode"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Planing things
 
-# Flow charts
+**Don’t start implementing nor coding without planning!** It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.
+
+![Cherubini et al., 2007](img/whiteborad_drawings.png)
+
+## Flow charts
 
 Flowcharts are useful to visualize and develop analytical workflow. It guides planning and anticipating the various computing and analytical tasks that will be required to complete an analysis. It also helps explaining the different steps to your collaborators and team. You can use a flowchart to spell out the logic behind a analytical workflow before ever starting to code. It can help to organize big-picture thinking and provide a guide when it comes time to code. More specifically, flowcharts can:
 
@@ -22,7 +27,7 @@ The main benefit for the project is the process and discussion as a team to deve
 
 [A few workflow examples](https://docs.google.com/presentation/d/e/2PACX-1vSEWK0Qrkg7ob-wBLebla5KHJuGCsezV502J1Sc00pZK24CJBFcp-0YOFVP-dtI-l8azsR-1Y5jluiz/pub?start=false&loop=false&delayms=60000)
 
-# Pseudocode
+## Pseudocode
 
 Often, programmers may write pseudocode as a next step, to provide greater detail than the flowchart in terms of processing steps and implementation. It will help you to define where iterations will be needed but also detect repeating blocks that might be well suited to be handled via the development of a function.
 
