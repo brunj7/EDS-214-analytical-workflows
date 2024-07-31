@@ -21,7 +21,8 @@ knitr::opts_chunk$set(echo = TRUE)
 | 3:10pm - 4:00pm   | *[git conflicts](day1-git-collaboration-conflicts.html){target="_blank"}  (50 min)*                                                |
 
 
----
+<br>
+<br>
 
 ## Further reading
 
