@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Working on a remote server – EDS214 - Analytical Workflows and Scientific Reproducibility</title>
+<title>Day 2 - Working on a remote server – EDS214 - Analytical Workflows and Scientific Reproducibility</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,13 +143,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#day-2" id="toc-day-2" class="nav-link active" data-scroll-target="#day-2">Day 2</a>
-  <ul class="collapse">
-  <li><a href="#working-on-a-remote-server" id="toc-working-on-a-remote-server" class="nav-link" data-scroll-target="#working-on-a-remote-server">Working on a remote server</a></li>
-  </ul></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a>
-  <ul class="collapse">
-  <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a>
+  <li><a href="#working-on-a-remote-server" id="toc-working-on-a-remote-server" class="nav-link active" data-scroll-target="#working-on-a-remote-server">Working on a remote server</a>
   <ul class="collapse">
   <li><a href="#unix-and-friends" id="toc-unix-and-friends" class="nav-link" data-scroll-target="#unix-and-friends">Unix and Friends</a></li>
   <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">RStudio Server</a></li>
@@ -158,7 +152,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#collaborating-on-a-server" id="toc-collaborating-on-a-server" class="nav-link" data-scroll-target="#collaborating-on-a-server">Collaborating on a server</a></li>
   </ul></li>
   <li><a href="#uploading-files-to-a-server" id="toc-uploading-files-to-a-server" class="nav-link" data-scroll-target="#uploading-files-to-a-server">Uploading files to a server</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -167,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Working on a remote server</h1>
+<h1 class="title">Day 2 - Working on a remote server</h1>
 </div>
 
 
@@ -184,13 +177,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="day-2" class="level1">
-<h1>Day 2</h1>
+<p><br></p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
-</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Time (PST)</strong></th>
@@ -200,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>10:00am - 10:50am</td>
-<td><em>Working on a remote server Server (50 min)</em></td>
+<td><em>Lecture 1: <a href="day2-remote_server.html" target="_blank">Working on a remote server Server</a> (50 min)</em></td>
 </tr>
 <tr class="even">
 <td>10:50am - 11:00am</td>
@@ -208,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>11:00am - 12:30am</td>
-<td><em>Command line (50 min)</em></td>
+<td><em>Interactive session 1: <a href="https://github.com/EDS-214/eds214-handson-cli" target="_blank">Command line Interface</a> (50 min)</em></td>
 </tr>
 <tr class="even">
 <td>12:30pm - 1:30pm</td>
@@ -230,45 +218,6 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="working-on-a-remote-server" class="level2">
 <h2 class="anchored" data-anchor-id="working-on-a-remote-server">Working on a remote server</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium" class="img-fluid figure-img"></p>
-<figcaption>CERN computing center</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="learning-objectives" class="level1">
-<h1>Learning Objectives</h1>
-<p>In this lesson, you will learn:</p>
-<ul>
-<li>How to connect to a remote server</li>
-<li>Get familiar with RStudio server</li>
-<li>Get an introduction to the command line (CLI) &amp; bash</li>
-</ul>
-<section id="why-working-on-a-remote-machine" class="level2">
-<h2 class="anchored" data-anchor-id="why-working-on-a-remote-machine">Why working on a remote machine?</h2>
-<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
-<ul>
-<li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
-<li><strong>Capacity</strong>: More <em>disk space</em> and generally <em>faster storage</em> (in highly optimized RAID arrays)</li>
-<li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
-<li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong><em>=&gt; The operating system is more likely going to be Linux!!</em></strong></p>
-<p>More on this in a few minutes</p>
-</div>
-</div>
 <section id="unix-and-friends" class="level3">
 <h3 class="anchored" data-anchor-id="unix-and-friends">Unix and Friends</h3>
 <p><a href="day2-unices.html"><strong>Materials</strong></a></p>
@@ -295,7 +244,6 @@ Warning
 <p><a href="day2-server_uploading.html"><strong>Materials</strong></a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

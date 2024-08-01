@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -177,7 +177,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-command-line-interface-cli" id="toc-the-command-line-interface-cli" class="nav-link active" data-scroll-target="#the-command-line-interface-cli">The Command Line Interface (CLI)</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#why-working-on-a-remote-machine" id="toc-why-working-on-a-remote-machine" class="nav-link" data-scroll-target="#why-working-on-a-remote-machine">Why working on a remote machine?</a></li>
+  <li><a href="#introduction-to-unix-and-its-siblings" id="toc-introduction-to-unix-and-its-siblings" class="nav-link" data-scroll-target="#introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</a>
+  <ul class="collapse">
+  <li><a href="#various-unices" id="toc-various-unices" class="nav-link" data-scroll-target="#various-unices">Various Unices</a></li>
+  <li><a href="#some-unix-hallmarks" id="toc-some-unix-hallmarks" class="nav-link" data-scroll-target="#some-unix-hallmarks">Some Unix hallmarks</a></li>
+  </ul></li>
+  <li><a href="#connecting-via-ide---posit-workbench" id="toc-connecting-via-ide---posit-workbench" class="nav-link" data-scroll-target="#connecting-via-ide---posit-workbench">Connecting via IDE - Posit Workbench</a></li>
+  <li><a href="#connecting-to-meds-analytical-server" id="toc-connecting-to-meds-analytical-server" class="nav-link" data-scroll-target="#connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</a>
+  <ul class="collapse">
+  <li><a href="#file-structure" id="toc-file-structure" class="nav-link" data-scroll-target="#file-structure">File structure</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
+  </ul></li>
+  <li><a href="#the-command-line-interface-cli" id="toc-the-command-line-interface-cli" class="nav-link" data-scroll-target="#the-command-line-interface-cli">The Command Line Interface (CLI)</a>
   <ul class="collapse">
   <li><a href="#why-the-cli-is-worth-learning" id="toc-why-the-cli-is-worth-learning" class="nav-link" data-scroll-target="#why-the-cli-is-worth-learning">Why the CLI is worth learning</a></li>
   <li><a href="#a-little-bit-of-terminology" id="toc-a-little-bit-of-terminology" class="nav-link" data-scroll-target="#a-little-bit-of-terminology">A little bit of terminology</a></li>
@@ -223,6 +236,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium.png" class="img-fluid figure-img"></p>
+<figcaption>CERN computing center</figcaption>
+</figure>
+</div>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>In this lesson, you will learn:</p>
+<ul>
+<li>How to connect to a remote server</li>
+<li>Get familiar with RStudio server</li>
+<li>Get an introduction to the command line (CLI) &amp; bash</li>
+</ul>
+</section>
+<section id="why-working-on-a-remote-machine" class="level2">
+<h2 class="anchored" data-anchor-id="why-working-on-a-remote-machine">Why working on a remote machine?</h2>
+<p>Often the main motivation is to <strong>scale your analysis beyond what a personal computer can handle</strong>. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:</p>
+<ul>
+<li><strong>Power</strong>: More <em>CPUs/Cores</em> (24/32/48), More RAM (256/384GB)</li>
+<li><strong>Capacity</strong>: More <em>disk space</em> and generally <em>faster storage</em> (in highly optimized RAID arrays)</li>
+<li><strong>Security</strong>: Data are spread across <em>multiple drives</em> and have nightly <em>backups</em></li>
+<li><strong>Collaboration</strong>: <em>shared folders</em> for code, data, and other materials; same <em>software versions</em></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><em>=&gt; The operating system is more likely going to be Linux!!</em></strong></p>
+<p>More on this in a few minutes</p>
+</div>
+</div>
+</section>
+<section id="introduction-to-unix-and-its-siblings" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-unix-and-its-siblings">Introduction to UNIX and its siblings</h2>
+<dl>
+<dt>UNIX</dt>
+<dd>
+Originally developed at AT&amp;T Bell Labs circa 1970. Has experienced a <a href="https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg">long, multi-branched evolutionary path</a>
+</dd>
+<dt>POSIX (Portable Operating System Interface)</dt>
+<dd>
+a set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants
+</dd>
+</dl>
+<section id="various-unices" class="level3">
+<h3 class="anchored" data-anchor-id="various-unices">Various Unices</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/unix-history-simple.png" class="img-fluid figure-img"></p>
+<figcaption>The unix family tree</figcaption>
+</figure>
+</div>
+<ul>
+<li><dl>
+<dt>OS X</dt>
+<dd>
+<a href="http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix">is a Unix</a>!
+</dd>
+</dl></li>
+<li><dl>
+<dt>Linux</dt>
+<dd>
+is <em>not</em> fully POSIX-compliant, but certainly can be regarded as <a href="http://en.wikipedia.org/wiki/Unix-like">functionally Unix</a>
+</dd>
+</dl></li>
+</ul>
+</section>
+<section id="some-unix-hallmarks" class="level3">
+<h3 class="anchored" data-anchor-id="some-unix-hallmarks">Some Unix hallmarks</h3>
+<ul>
+<li>Supports multi-users, multi-processes</li>
+<li>Highly modular: many small tools that do one thing well, and can be combined</li>
+<li>Culture of text files and streams</li>
+<li>Primary OS on HPC (<strong>High Performance Computing</strong> Systems)</li>
+<li>Main OS on which Internet was built</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="connecting-via-ide---posit-workbench" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-via-ide---posit-workbench">Connecting via IDE - Posit Workbench</h2>
+<p>From an user perspective, <em>RStudio Server is your familiar RStudio interface in your web browser</em>. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that <strong>the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!</strong> This remote file management is the main change you will have to adopt in your workflow.</p>
+<p>To help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-server-ide.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="connecting-to-meds-analytical-server" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-meds-analytical-server">Connecting to MEDS Analytical Server</h2>
+<ol type="1">
+<li><p>Got to: <a href="https://taylor.bren.ucsb.edu/" class="uri">https://taylor.bren.ucsb.edu/</a></p></li>
+<li><p>Enter your credentials</p></li>
+<li><p>You are in!</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/rstudio-server_login.png" class="img-fluid figure-img" width="1544"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Click on the <code>New Session</code> button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.</li>
+</ol>
+<p>For this session, we are going to select the <code>RStudio</code> option and hit <code>Start Session</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/rstudio-server_session.png" class="img-fluid figure-img" width="591"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>You should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!</strong></p>
+<section id="file-structure" class="level3">
+<h3 class="anchored" data-anchor-id="file-structure">File structure</h3>
+<p>Let’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the <code>home</code> folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: <code>R</code> and <code>H</code></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/rstudio-server_file-structure.png" class="img-fluid figure-img" width="779"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <code>R</code> folder is where your local R packages will be installed, you can ignore it. The <code>H</code> is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.</p>
+<p>Let us make a folder named <code>github</code> by click on the <code>New Folder</code> button at the top of the tab. We will use this folder (also named <code>directory</code> in linux/unix terms) to clone any GitHub repository.</p>
+</section>
+<section id="r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="r-packages">R packages</h3>
+<p>If we go to the <code>Packages</code> tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/rstudio-server_packages.png" class="img-fluid figure-img" width="779"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A user can also installed her/his own packages. Let’s try to install the <code>remote</code> package that lets you install R packages directly from GitHub: <code>install.packages("remotes")</code>. Once done, note a new section that appeared on the Packages tab named <code>User Library</code>. Each of us have now its own copy of the package installed (in this <code>R</code> folder we were talking about a few minutes ago).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/rstudio-server_packages-user.png" class="img-fluid figure-img" width="777"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A few notes:</p>
+<ul>
+<li>In this example we will have made a better choice to have the <code>remotes</code> package installed once at the system level</li>
+<li>Some R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package</li>
+<li>Installing an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries</li>
+</ul>
+<p><strong>Look now inside you <code>R</code> folder!!</strong></p>
+<hr>
+</section>
+</section>
 <section id="the-command-line-interface-cli" class="level2">
 <h2 class="anchored" data-anchor-id="the-command-line-interface-cli">The Command Line Interface (CLI)</h2>
 <p>The CLI provides a direct way to interact with the Operating System, by typing in commands.</p>
@@ -251,7 +441,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Not convinced? Check this out: <a href="https://brunj7.github.io/eds214-handson-cli/cli-pitch.html">the CLI pitch</a></p>
+<p>Not convinced? Check this out: <a href="https://eds-214.github.io/eds214-handson-cli/cli-pitch.html">the CLI pitch</a></p>
 </div>
 </div>
 </section>
@@ -442,7 +632,7 @@ Tip
 <section id="cli-practice" class="level2">
 <h2 class="anchored" data-anchor-id="cli-practice"><a href="https://github.com/EDS-214/eds214-handson-cli" target="_blank"><strong>CLI Practice</strong></a></h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -451,7 +641,7 @@ Setting git on Taylor (if not yet done)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>At the <strong>Terminal</strong>:</p>
 <div class="cell">

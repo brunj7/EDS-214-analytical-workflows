@@ -91,116 +91,109 @@
     "text": "Acknowledgements\nLarge portion of this material have been adapted from NCEAS Reproducible Research Techniques for Synthesis course https://learning.nceas.ucsb.edu/2021-02-RRCourse/"
   },
   {
-    "objectID": "day4-sharing_things.html",
-    "href": "day4-sharing_things.html",
-    "title": "Sharing Things",
+    "objectID": "day2-rstudio_server.html",
+    "href": "day2-rstudio_server.html",
+    "title": "RStudio server",
     "section": "",
-    "text": "You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see here for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout Quarto that is a cross-language tool to render documents from code!"
+    "text": "From an user perspective, RStudio Server is your familiar RStudio interface in your web browser. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!! This remote file management is the main change you will have to adopt in your workflow.\nTo help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.\n\n\n\n\n\n\n\n\n\n\n\n\nGot to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\n\n\n\n\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\n\n\n\n\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\n\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\n\n\n\n\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\n\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\n\n\n\n\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\n\n\n\n\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
   },
   {
-    "objectID": "day4-sharing_things.html#github-pages-the-r-markdown-quarto-family",
-    "href": "day4-sharing_things.html#github-pages-the-r-markdown-quarto-family",
-    "title": "Sharing Things",
+    "objectID": "day2-rstudio_server.html#connecting-to-meds-analytical-server",
+    "href": "day2-rstudio_server.html#connecting-to-meds-analytical-server",
+    "title": "RStudio server",
     "section": "",
-    "text": "You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see here for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout Quarto that is a cross-language tool to render documents from code!"
+    "text": "Got to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\n\n\n\n\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\n\n\n\n\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\n\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\n\n\n\n\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\n\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\n\n\n\n\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\n\n\n\n\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
   },
   {
-    "objectID": "day4-sharing_things.html#interactive-web-applications",
-    "href": "day4-sharing_things.html#interactive-web-applications",
-    "title": "Sharing Things",
-    "section": "Interactive web applications",
-    "text": "Interactive web applications\nWhen you have complex data that you want to not only visualize but also to let the user interact with your data or customize parameters used in an analysis, interactive web applications are a great way to increase engagement. The good news is that you do not need to be a web developer anymore to spin such applications or dashboards.\n\nR Shiny \nR Shiny is a very interesting framework that lets you write R code that will then be translated into javascript for you and thus let you develop web application without having to learn any new programming language. Note that you will need a server to host the application.\nCheck out this gallery of shiny apps: https://shiny.rstudio.com/gallery/\nGetting started with Shiny: https://shiny.rstudio.com/tutorial/\n\n\nHtml widgets\nHtml widgets offer some great interactive data visualization. It is more limited that Shiny because you can not modify parameters to modify the data use, but it has the advantage that it does not need a server to run the widget and it can be inserted directly into an R Markdown.\nHere to get started: https://www.htmlwidgets.org/"
-  },
-  {
-    "objectID": "day4-sharing_things.html#plotly",
-    "href": "day4-sharing_things.html#plotly",
-    "title": "Sharing Things",
-    "section": "plotly ",
-    "text": "plotly \nplotly enable you to develop great interactive data visualizations. It has the advantage to be available both in R and Python (and javascript). One great thing in R is that if you are a ggplot master, you can write your plot code using ggplot and transform it into a plotly plot with one line of code (here for an example)\nNote there are also other python libraries to create interactive plots, here are a few: https://mode.com/blog/python-interactive-plot-libraries/"
-  },
-  {
-    "objectID": "day4-sharing_things.html#binder-jupyter",
-    "href": "day4-sharing_things.html#binder-jupyter",
-    "title": "Sharing Things",
-    "section": "Binder & jupyter ",
-    "text": "Binder & jupyter \nTransform your git based repo into an interactive jupyter notebook https://mybinder.org/!! So other researchers can run your code without having to install anything!\n\nTry it: https://mybinder.org/"
-  },
-  {
-    "objectID": "day4-sharing_things.html#citing-your-code",
-    "href": "day4-sharing_things.html#citing-your-code",
-    "title": "Sharing Things",
-    "section": "Citing your code",
-    "text": "Citing your code\nNote that it is also possible to assign a DOI to cite a specific version of your repository. For example, see here for more information on how to link Zenodo and GitHub."
-  },
-  {
-    "objectID": "day4-sharing_things.html#session-info",
-    "href": "day4-sharing_things.html#session-info",
-    "title": "Sharing Things",
-    "section": "Session info",
-    "text": "Session info\nYour analysis was done with specific versions both of the program used but also of all the packages involved, as well as the specifications of Operating System (OS) that was used. The good use is that there ar tools to let you capture this information in a systematic manner.\n\nsessionInfo()\n\nR version 4.3.1 (2023-06-16)\nPlatform: x86_64-pc-linux-gnu (64-bit)\nRunning under: Ubuntu 22.04.4 LTS\n\nMatrix products: default\nBLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 \nLAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0\n\nlocale:\n [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       \n [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   \n [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          \n[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   \n\ntime zone: UTC\ntzcode source: system (glibc)\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.1    fastmap_1.2.0     cli_3.6.3        \n [5] tools_4.3.1       htmltools_0.5.8.1 yaml_2.3.10       rmarkdown_2.27   \n [9] knitr_1.48        jsonlite_1.8.8    xfun_0.46         digest_0.6.36    \n[13] rlang_1.1.4       evaluate_0.24.0  \n\n\nor even better:\n\ndevtools::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16)\n os       Ubuntu 22.04.4 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2024-07-31\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cachem        1.1.0   2024-05-16 [1] CRAN (R 4.3.1)\n cli           3.6.3   2024-06-21 [1] CRAN (R 4.3.1)\n devtools      2.4.5   2022-10-11 [1] any (@2.4.5)\n digest        0.6.36  2024-06-23 [1] CRAN (R 4.3.1)\n ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.3.1)\n evaluate      0.24.0  2024-06-10 [1] CRAN (R 4.3.1)\n fastmap       1.2.0   2024-05-15 [1] CRAN (R 4.3.1)\n fs            1.6.4   2024-04-25 [1] CRAN (R 4.3.1)\n glue          1.7.0   2024-01-09 [1] CRAN (R 4.3.1)\n htmltools     0.5.8.1 2024-04-04 [1] CRAN (R 4.3.1)\n htmlwidgets   1.6.4   2023-12-06 [1] CRAN (R 4.3.1)\n httpuv        1.6.15  2024-03-26 [1] CRAN (R 4.3.1)\n jsonlite      1.8.8   2023-12-04 [1] CRAN (R 4.3.1)\n knitr         1.48    2024-07-07 [1] CRAN (R 4.3.1)\n later         1.3.2   2023-12-06 [1] CRAN (R 4.3.1)\n lifecycle     1.0.4   2023-11-07 [1] CRAN (R 4.3.1)\n magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.1)\n memoise       2.0.1   2021-11-26 [1] CRAN (R 4.3.1)\n mime          0.12    2021-09-28 [1] CRAN (R 4.3.1)\n miniUI        0.1.1.1 2018-05-18 [1] CRAN (R 4.3.1)\n pkgbuild      1.4.4   2024-03-17 [1] CRAN (R 4.3.1)\n pkgload       1.4.0   2024-06-28 [1] CRAN (R 4.3.1)\n profvis       0.3.8   2023-05-02 [1] CRAN (R 4.3.1)\n promises      1.3.0   2024-04-05 [1] CRAN (R 4.3.1)\n purrr         1.0.2   2023-08-10 [1] CRAN (R 4.3.1)\n R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.1)\n Rcpp          1.0.13  2024-07-17 [1] CRAN (R 4.3.1)\n remotes       2.5.0   2024-03-17 [1] CRAN (R 4.3.1)\n rlang         1.1.4   2024-06-04 [1] CRAN (R 4.3.1)\n rmarkdown     2.27    2024-05-17 [1] any (@2.27)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.1)\n shiny         1.9.0   2024-07-29 [1] CRAN (R 4.3.1)\n stringi       1.8.4   2024-05-06 [1] CRAN (R 4.3.1)\n stringr       1.5.1   2023-11-14 [1] CRAN (R 4.3.1)\n urlchecker    1.0.1   2021-11-30 [1] CRAN (R 4.3.1)\n usethis       3.0.0   2024-07-29 [1] CRAN (R 4.3.1)\n vctrs         0.6.5   2023-12-01 [1] CRAN (R 4.3.1)\n xfun          0.46    2024-07-18 [1] CRAN (R 4.3.1)\n xtable        1.8-4   2019-04-21 [1] CRAN (R 4.3.1)\n yaml          2.3.10  2024-07-26 [1] CRAN (R 4.3.1)\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.3.1/lib/R/site-library\n [3] /opt/R/4.3.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────\n\n\nYou can save all this content to an session_info.txt file and upload it to your repository.\nIn python, using pip freeze &gt; requirements.txt or conda list --export &gt; requirements.txt will create a text file listing all the libraries (and their versions) used in a specific python environment. You can actually use this file to (re)install all the packages and specific versions into a new python environment. It is also great practice to add this file to your repository."
-  },
-  {
-    "objectID": "day4-sharing_things.html#containers",
-    "href": "day4-sharing_things.html#containers",
-    "title": "Sharing Things",
-    "section": "Containers",
-    "text": "Containers\nA helpful abstraction for capturing the computing environment is a container, whereby a container is created from a set of instructions in a recipe. For the most common containerisation software, Docker, this recipe is called a Dockerfile. Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure and ship the containers to others. A Docker container can be seen as a computer inside your computer.\n\n\n\n\n\nhttp://jsta.github.io/r-docker-tutorial/\n\n\n\n\nA few good readings:\n\nDocker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316\nThe Whole Tale project: combining containers with data repositories https://wholetale.org/\nDocker tutorial: http://jsta.github.io/r-docker-tutorial/\nEnvironment Management with Docker: https://environments.rstudio.com/docker\nSharing and Running R code using Docker: https://aboland.ie/Docker.html"
-  },
-  {
-    "objectID": "day4-sharing_things.html#xarigan",
-    "href": "day4-sharing_things.html#xarigan",
-    "title": "Sharing Things",
-    "section": "Xarigan",
-    "text": "Xarigan\nXarigan is an R package to create slide deck using R Markdown: https://github.com/yihui/xaringan\n\nremotes::install_github('yihui/xaringan')\n\nHere is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/"
-  },
-  {
-    "objectID": "day4-sharing_things.html#quarto-presentations",
-    "href": "day4-sharing_things.html#quarto-presentations",
-    "title": "Sharing Things",
-    "section": "Quarto Presentations",
-    "text": "Quarto Presentations\nhttps://quarto.org/docs/presentations/\nhttps://meghan.rbind.io/blog/quarto-slides/"
-  },
-  {
-    "objectID": "rstudio_debugging.html",
-    "href": "rstudio_debugging.html",
-    "title": "Debugging in RStudio",
+    "objectID": "day1-github_branches.html",
+    "href": "day1-github_branches.html",
+    "title": "Collaborative Coding Workflows: Branching",
     "section": "",
-    "text": "All variables in a program may not be accessible at all locations in that program. This depends on where you have declared a variable.\nVariables that are defined inside a function body have a local scope, and those defined outside have a global scope.\nThis means that local variables can be only be accessed inside the function in which they are declared. Thus, any ordinary assignments done within the function are local and temporary and are lost after exit from the function; whereas global variables can be accessed throughout the program body by all functions.\n\n\nTry to predict what will be outputted by the following:\n\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nbar &lt;- 2\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nfoo &lt;- function() {\n    bar &lt;&lt;- 1  #hein?!\n    return(bar)\n}\n\nAlthough &lt;&lt;- is a specificity of R, the general concept of global and local scope is valid for Python and others.\n\n\n\n\nfoo &lt;- function() {\n    bar &lt;- bar + 1\n    return(bar)\n}"
+    "text": "When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (git push) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.\n\n\n\nClick on the repository\nOn the top tabs, click \nOn the left pane, click Manage access and click on “Invite a Collaborator” to enter the usernames you want to add\n\n\n\n\ncollaborators\n\n\nUnder this collaborative workflow, we recommend to use git branches combined with pull requests to avoid conflicts and to track and discuss collaborators contributions."
   },
   {
-    "objectID": "rstudio_debugging.html#scope-global-vs.-local-environment",
-    "href": "rstudio_debugging.html#scope-global-vs.-local-environment",
-    "title": "Debugging in RStudio",
+    "objectID": "day1-github_branches.html#collaborating-through-write-push-access",
+    "href": "day1-github_branches.html#collaborating-through-write-push-access",
+    "title": "Collaborative Coding Workflows: Branching",
     "section": "",
-    "text": "All variables in a program may not be accessible at all locations in that program. This depends on where you have declared a variable.\nVariables that are defined inside a function body have a local scope, and those defined outside have a global scope.\nThis means that local variables can be only be accessed inside the function in which they are declared. Thus, any ordinary assignments done within the function are local and temporary and are lost after exit from the function; whereas global variables can be accessed throughout the program body by all functions.\n\n\nTry to predict what will be outputted by the following:\n\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nbar &lt;- 2\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nfoo &lt;- function() {\n    bar &lt;&lt;- 1  #hein?!\n    return(bar)\n}\n\nAlthough &lt;&lt;- is a specificity of R, the general concept of global and local scope is valid for Python and others.\n\n\n\n\nfoo &lt;- function() {\n    bar &lt;- bar + 1\n    return(bar)\n}"
+    "text": "When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (git push) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.\n\n\n\nClick on the repository\nOn the top tabs, click \nOn the left pane, click Manage access and click on “Invite a Collaborator” to enter the usernames you want to add\n\n\n\n\ncollaborators\n\n\nUnder this collaborative workflow, we recommend to use git branches combined with pull requests to avoid conflicts and to track and discuss collaborators contributions."
   },
   {
-    "objectID": "rstudio_debugging.html#debugging",
-    "href": "rstudio_debugging.html#debugging",
-    "title": "Debugging in RStudio",
-    "section": "Debugging",
-    "text": "Debugging\nThis section is adapted from the more detailed material available on the RStudio website: https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio\nDebugging is a broad topic that can be approached in many ways. Generically, at some point you will likely attempt to execute a script in R, receive errors and not know exactly what caused the errors. One approach would be to run your code line by line, but RStudio has some useful built-in debugging features.\nOne basic approach to debugging is to create a breakpoint in your code – this forces your code to “stop” executing when it reaches some certain function or line number in your code, allowing you then to examine the state of various variables, etc. The easiest way to do this is to set the breakpoint by manually clicking next to the desired line number in the code panel, per this web example:\n\n\n\nhttps://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio#stopping-on-a-line\n\n\nSetting this editor breakpoint creates tracing code associated with the R function object. You can remove the breakpoint by clicking on the red dot by the line number. Also note the Debug toolbar has an option to clear all breakpoints.\nNote: keep in mind that you can’t set breakpoints anywhere. In general, you want to insert breakpoints at top-level expressions or simple, named functions.\nAn alternative way to set breakpoints is with the browser() function. This must be typed into your code, per this web example:\n\n\n\nhttps://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio\n\n\n(image source: https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio#stopping-on-a-line)\n\nThe debugging interface\nOnce your code hits a breakpoint, RStudio enters debugging mode. Details on the debugging interface can be found here, but we summarize the main points below:\nThe Environment tab will display the objects in the environment of the currently executing function (i.e., the function’s defined arguments)\nThe Traceback literally traces back how you arrived at the currently executing function (latest executed command is at the top of the list). This is analagous to the “call stack” in other programming languages.\nThe Code window highlights the currently executing function and may create a new tab, named Source Viewer, when the current function the debugger is stepping through is not in the main R script.\nThe Console retains most of its normal functionality in debugging mode, but contains some additional buttons that appear at the top to facilitate moving through code lines (see below).\n\n\n\nDebugging buttons on the console\n\n\n\n\nChallenge\n\nStart a new R Script\nWrite a function that computes the percentage of a number: n*p/100\nAdd a ratio factor as an argument so we can also use your function to compute 1/1000\nAdd a break point inside the function and use it to inspect local variables of your function"
+    "objectID": "day1-github_branches.html#working-with-branches",
+    "href": "day1-github_branches.html#working-with-branches",
+    "title": "Collaborative Coding Workflows: Branching",
+    "section": "Working with branches",
+    "text": "Working with branches\n\nCreating a new branch\nIn RStudio, you can create a branch using the git tab.\n\nClick on the branch button\n\n\n\n\n\n\n\n\n\n\n\nFill the branch name in the new branch window; in this example, we are going to use test for the name; leave the other options as default and click create\n\n\n\n\n\n\n\n\n\n\n\nyou will be directly creating a local and remote branch and switch to it\n\n\n\n\n\n\n\n\n\n\nCongratulations you just created your first branch!\nLet us check on Github:\n\n\n\n\n\n\n\n\n\nAs you can see, now there are two branches on our remote repository: - main - test\n\n\nUsing a branch\nHere there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the test branch instead of the main branch."
   },
   {
-    "objectID": "rstudio_debugging.html#further-reading",
-    "href": "rstudio_debugging.html#further-reading",
-    "title": "Debugging in RStudio",
-    "section": "Further Reading",
-    "text": "Further Reading\n\nFunctional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming\nScoping in R: http://adv-r.had.co.nz/Functions.html"
+    "objectID": "day1-github_branches.html#hands-on",
+    "href": "day1-github_branches.html#hands-on",
+    "title": "Collaborative Coding Workflows: Branching",
+    "section": "Hands-on",
+    "text": "Hands-on\nLet’s practice this by team of 2!!\nhttps://github.com/brunj7/eds214-handson-ghcollab"
   },
   {
-    "objectID": "day4-reproducible_publications.html",
-    "href": "day4-reproducible_publications.html",
-    "title": "Reproducible Publication with rrtools",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
     "section": "",
-    "text": "A great overview of this approach to reproducible papers comes from:\nThis lesson will draw from existing materials:\nThe key idea in Marwick et al. (2018) is that of the research compendium: A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work. Research compendia make it easy for researchers to do their work but also for others to inspect or even reproduce the work because all necessary materials are readily at hand due to being kept in one place.\nRather than a constrained set of rules, the research compendium is a scaffold upon which to conduct reproducible research using open science tools such as:\nFortunately for us, Ben Marwick (and others) have written an R package called rrtools that helps us create a research compendium from scratch.\nTo start a reproducible paper with rrtools, run:\n# Install the package\nremotes::install_github(\"benmarwick/rrtools\")\n\n# Attach the library\nlibrary(rrtools)\n\n# Create the compendium skeleton\nuse_compendium(\"mypaper\")\nYou should see output similar to the below:\nrrtools has created the beginnings of a research compendium for us. At this point, it looks mostly the same as an R package. That’s because it uses the same underlying folder structure and metadata and therefore it technically is an R package. And this means our research compendium will be easy to install, just like an R package.\nBefore we get to writing our reproducible paper, let’s fill in some more structure. Let’s:\nusethis::use_apl2_license() # Change this\nrrtools::use_readme_rmd()\nrrtools::use_analysis()\nAt this point, we’re ready to start writing the paper. To follow the structure rrtools has put in place for us, here are some pointers:\nIt would also be a good idea to initialize this folder as a git repo for maximum reproducibility:\nusethis::use_git()\nAfter that, push a copy up to GitHub.\n## create github repository and configure as git remote\nusethis::use_github()\nHopefully, now that you’ve created a research compendium with rrtools, you can imagine how a pre-defined structure like the one rrtools creates might help you organize your reproducible research and also make it easier for others to understand your work.\nFor a more complete example than the one we built above, take a look at benmarwick/teaching-replication-in-archaeology."
+    "text": "Collaborative and Reproducible Environmental Data Science as summarized by the MEDS Students cohort 21-22, art by Allison Horst"
   },
   {
-    "objectID": "day4-reproducible_publications.html#aknowledgement",
-    "href": "day4-reproducible_publications.html#aknowledgement",
-    "title": "Reproducible Publication with rrtools",
-    "section": "Aknowledgement",
-    "text": "Aknowledgement\nThe rrtools example had been ported from NCEAS Reproducible Research Techniques for Synthesis"
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Course description",
+    "text": "Course description\nThe generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.\n\nWhy going reproducible ?\nThere are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower you to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your “future self” to reuse and build from your own work.\nTo make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, …) of your analysis. Scripting languages, even better open ones, such as R and python, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use R, git and GitHub to develop such workflows as a team.\n\n\n\n\n\nWorkflow example using the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.had.co.nz/\n\n\n\n\nTwo points to stress about this figure:\n\nWorkflows are rarely linear… even less so their implementation\nNote the programming box – yes, you’ll need to code this :)\n\nWorkflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team."
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Teaching team",
+    "text": "Teaching team\n\nJulien Brun, Instructor\nBrian Lee, TA\n\nMEDS Slack is the best way to communicate with us."
+  },
+  {
+    "objectID": "index.html#important-links",
+    "href": "index.html#important-links",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Important links",
+    "text": "Important links\n\nCourse syllabus\nCode of Conduct"
+  },
+  {
+    "objectID": "index.html#predictable-daily-schedule",
+    "href": "index.html#predictable-daily-schedule",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Predictable daily schedule",
+    "text": "Predictable daily schedule\nCourse dates: Monday (2024-08-26) - Friday (2024-08-30)\nEDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.\n\nDaily schedule (subject to change):\n\n\n\n\n\n\n\nTime (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive Session 1 (90 min)\n\n\n12:30am - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nLecture (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session 2 (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nFlex time + Q&A (50 min)"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nThe goal of EDS 214 - Analytical Workflows and Scientific Reproducibility is to expose incoming MEDS students to “good enough” practices of scientific programming develop skills in environmental data science to produce reproducible research. By the end of the course, students should be able to:\n\nDevelop knowledge in scientific analytical workflows To learn how to make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results of your analysis (figures, new data, publications, …). Scripting languages, even better open ones such as R and python, are well-suited for scientists to develop reproducible scientific workflows, but are not the only tools you will need to develop reproducible and collaborative workflows\nLearn how to code in a collaborative manner by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code review using git and GitHub to create pull request, ask feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows\nPractice documenting code and data in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work"
+  },
+  {
+    "objectID": "index.html#grading",
+    "href": "index.html#grading",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Grading",
+    "text": "Grading\nThe grading for this course is organized as follow:\n\n50% Class participation\n50% Group project"
+  },
+  {
+    "objectID": "index.html#sessions-subject-to-change",
+    "href": "index.html#sessions-subject-to-change",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Sessions (subject to change)",
+    "text": "Sessions (subject to change)\n\n\n\nDay / Session\nTopics\nInteractive Sessions\n\n\n\n\nMonday morning\nReproducible workflows\nPlanning things: from flow charts to pseudocode\n\n\nMonday afternoon\nCoding together\nCollaborating with GitHub; Github collaboration Hands-on; Bonus: Github conflicts\n\n\nTuesday morning\nWorking on a remote server\nthe command line and friends\n\n\nTuesday afternoon\nAutomating things with bash\nbash scripting & uploading things\n\n\nWednesday morning\nHow to get data using APIs\nAPIs hands-on: USGS dataretrieval & metajam\n\n\nWednesday afternoon\nIntroduction to group project\nGroup project\n\n\nThursday morning\nReproducible tools\ntargets & rrtools as examples\n\n\nThursday afternoon\nDocumenting things\nGroup project\n\n\nFriday morning\nSharing things\nGroup project\n\n\nFriday afternoon\nProject presentations\nProject presentations"
+  },
+  {
+    "objectID": "index.html#course-requirements",
+    "href": "index.html#course-requirements",
+    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
+    "section": "Course requirements",
+    "text": "Course requirements\n\nComputing\n\nMinimum MEDS device requirements\nHave a ready to be used GitHub Account (https://github.com/){target=“_blank”}\nMEDS server Taylor\n\n\n\nTextbook\n\nR for Data Science, 2nd edition: https://r4ds.hadley.nz/\nThe Practice of Reproducible Research: http://www.practicereproducibleresearch.org/"
   },
   {
     "objectID": "day1-git_github_recap.html",
@@ -329,30 +322,16 @@
     "text": "Schedule"
   },
   {
-    "objectID": "day_2.html",
-    "href": "day_2.html",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nWorking on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nCommand line (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 3:00pm\nAutomating things with bash (90min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nUploading things to a server (30 min)\n\n\n\n\n\n\n\n\nCERN computing center"
-  },
-  {
     "objectID": "day_2.html#working-on-a-remote-server",
     "href": "day_2.html#working-on-a-remote-server",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "CERN computing center"
-  },
-  {
-    "objectID": "day_2.html#why-working-on-a-remote-machine",
-    "href": "day_2.html#why-working-on-a-remote-machine",
-    "title": "Working on a remote server",
-    "section": "Why working on a remote machine?",
-    "text": "Why working on a remote machine?\nOften the main motivation is to scale your analysis beyond what a personal computer can handle. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:\n\nPower: More CPUs/Cores (24/32/48), More RAM (256/384GB)\nCapacity: More disk space and generally faster storage (in highly optimized RAID arrays)\nSecurity: Data are spread across multiple drives and have nightly backups\nCollaboration: shared folders for code, data, and other materials; same software versions\n\n\n\n\n\n\n\nWarning\n\n\n\n=&gt; The operating system is more likely going to be Linux!!\nMore on this in a few minutes\n\n\n\nUnix and Friends\nMaterials\n\n\nRStudio Server\nMaterials\n\n\nThe Command Line Interface (CLI)\nMaterials\n\n\nAutomating things with bash\nMaterials\n\n\nCollaborating on a server\nMaterials"
+    "title": "Day 2 - Working on a remote server",
+    "section": "Working on a remote server",
+    "text": "Working on a remote server\n\nUnix and Friends\nMaterials\n\n\nRStudio Server\nMaterials\n\n\nThe Command Line Interface (CLI)\nMaterials\n\n\nAutomating things with bash\nMaterials\n\n\nCollaborating on a server\nMaterials"
   },
   {
     "objectID": "day_2.html#uploading-files-to-a-server",
     "href": "day_2.html#uploading-files-to-a-server",
-    "title": "Working on a remote server",
+    "title": "Day 2 - Working on a remote server",
     "section": "Uploading files to a server",
     "text": "Uploading files to a server\nMaterials"
   },
@@ -931,18 +910,165 @@
     "text": "Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358"
   },
   {
+    "objectID": "day4-reproducible_publications.html",
+    "href": "day4-reproducible_publications.html",
+    "title": "Reproducible Publication with rrtools",
+    "section": "",
+    "text": "A great overview of this approach to reproducible papers comes from:\nThis lesson will draw from existing materials:\nThe key idea in Marwick et al. (2018) is that of the research compendium: A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work. Research compendia make it easy for researchers to do their work but also for others to inspect or even reproduce the work because all necessary materials are readily at hand due to being kept in one place.\nRather than a constrained set of rules, the research compendium is a scaffold upon which to conduct reproducible research using open science tools such as:\nFortunately for us, Ben Marwick (and others) have written an R package called rrtools that helps us create a research compendium from scratch.\nTo start a reproducible paper with rrtools, run:\n# Install the package\nremotes::install_github(\"benmarwick/rrtools\")\n\n# Attach the library\nlibrary(rrtools)\n\n# Create the compendium skeleton\nuse_compendium(\"mypaper\")\nYou should see output similar to the below:\nrrtools has created the beginnings of a research compendium for us. At this point, it looks mostly the same as an R package. That’s because it uses the same underlying folder structure and metadata and therefore it technically is an R package. And this means our research compendium will be easy to install, just like an R package.\nBefore we get to writing our reproducible paper, let’s fill in some more structure. Let’s:\nusethis::use_apl2_license() # Change this\nrrtools::use_readme_rmd()\nrrtools::use_analysis()\nAt this point, we’re ready to start writing the paper. To follow the structure rrtools has put in place for us, here are some pointers:\nIt would also be a good idea to initialize this folder as a git repo for maximum reproducibility:\nusethis::use_git()\nAfter that, push a copy up to GitHub.\n## create github repository and configure as git remote\nusethis::use_github()\nHopefully, now that you’ve created a research compendium with rrtools, you can imagine how a pre-defined structure like the one rrtools creates might help you organize your reproducible research and also make it easier for others to understand your work.\nFor a more complete example than the one we built above, take a look at benmarwick/teaching-replication-in-archaeology."
+  },
+  {
+    "objectID": "day4-reproducible_publications.html#aknowledgement",
+    "href": "day4-reproducible_publications.html#aknowledgement",
+    "title": "Reproducible Publication with rrtools",
+    "section": "Aknowledgement",
+    "text": "Aknowledgement\nThe rrtools example had been ported from NCEAS Reproducible Research Techniques for Synthesis"
+  },
+  {
+    "objectID": "rstudio_debugging.html",
+    "href": "rstudio_debugging.html",
+    "title": "Debugging in RStudio",
+    "section": "",
+    "text": "All variables in a program may not be accessible at all locations in that program. This depends on where you have declared a variable.\nVariables that are defined inside a function body have a local scope, and those defined outside have a global scope.\nThis means that local variables can be only be accessed inside the function in which they are declared. Thus, any ordinary assignments done within the function are local and temporary and are lost after exit from the function; whereas global variables can be accessed throughout the program body by all functions.\n\n\nTry to predict what will be outputted by the following:\n\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nbar &lt;- 2\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nfoo &lt;- function() {\n    bar &lt;&lt;- 1  #hein?!\n    return(bar)\n}\n\nAlthough &lt;&lt;- is a specificity of R, the general concept of global and local scope is valid for Python and others.\n\n\n\n\nfoo &lt;- function() {\n    bar &lt;- bar + 1\n    return(bar)\n}"
+  },
+  {
+    "objectID": "rstudio_debugging.html#scope-global-vs.-local-environment",
+    "href": "rstudio_debugging.html#scope-global-vs.-local-environment",
+    "title": "Debugging in RStudio",
+    "section": "",
+    "text": "All variables in a program may not be accessible at all locations in that program. This depends on where you have declared a variable.\nVariables that are defined inside a function body have a local scope, and those defined outside have a global scope.\nThis means that local variables can be only be accessed inside the function in which they are declared. Thus, any ordinary assignments done within the function are local and temporary and are lost after exit from the function; whereas global variables can be accessed throughout the program body by all functions.\n\n\nTry to predict what will be outputted by the following:\n\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nbar &lt;- 2\nfoo &lt;- function() {\n    bar &lt;- 1\n    return(bar)\n}\n\n\nfoo &lt;- function() {\n    bar &lt;&lt;- 1  #hein?!\n    return(bar)\n}\n\nAlthough &lt;&lt;- is a specificity of R, the general concept of global and local scope is valid for Python and others.\n\n\n\n\nfoo &lt;- function() {\n    bar &lt;- bar + 1\n    return(bar)\n}"
+  },
+  {
+    "objectID": "rstudio_debugging.html#debugging",
+    "href": "rstudio_debugging.html#debugging",
+    "title": "Debugging in RStudio",
+    "section": "Debugging",
+    "text": "Debugging\nThis section is adapted from the more detailed material available on the RStudio website: https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio\nDebugging is a broad topic that can be approached in many ways. Generically, at some point you will likely attempt to execute a script in R, receive errors and not know exactly what caused the errors. One approach would be to run your code line by line, but RStudio has some useful built-in debugging features.\nOne basic approach to debugging is to create a breakpoint in your code – this forces your code to “stop” executing when it reaches some certain function or line number in your code, allowing you then to examine the state of various variables, etc. The easiest way to do this is to set the breakpoint by manually clicking next to the desired line number in the code panel, per this web example:\n\n\n\nhttps://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio#stopping-on-a-line\n\n\nSetting this editor breakpoint creates tracing code associated with the R function object. You can remove the breakpoint by clicking on the red dot by the line number. Also note the Debug toolbar has an option to clear all breakpoints.\nNote: keep in mind that you can’t set breakpoints anywhere. In general, you want to insert breakpoints at top-level expressions or simple, named functions.\nAn alternative way to set breakpoints is with the browser() function. This must be typed into your code, per this web example:\n\n\n\nhttps://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio\n\n\n(image source: https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio#stopping-on-a-line)\n\nThe debugging interface\nOnce your code hits a breakpoint, RStudio enters debugging mode. Details on the debugging interface can be found here, but we summarize the main points below:\nThe Environment tab will display the objects in the environment of the currently executing function (i.e., the function’s defined arguments)\nThe Traceback literally traces back how you arrived at the currently executing function (latest executed command is at the top of the list). This is analagous to the “call stack” in other programming languages.\nThe Code window highlights the currently executing function and may create a new tab, named Source Viewer, when the current function the debugger is stepping through is not in the main R script.\nThe Console retains most of its normal functionality in debugging mode, but contains some additional buttons that appear at the top to facilitate moving through code lines (see below).\n\n\n\nDebugging buttons on the console\n\n\n\n\nChallenge\n\nStart a new R Script\nWrite a function that computes the percentage of a number: n*p/100\nAdd a ratio factor as an argument so we can also use your function to compute 1/1000\nAdd a break point inside the function and use it to inspect local variables of your function"
+  },
+  {
+    "objectID": "rstudio_debugging.html#further-reading",
+    "href": "rstudio_debugging.html#further-reading",
+    "title": "Debugging in RStudio",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nFunctional programming in R: http://adv-r.had.co.nz/Functional-programming.html#functional-programming\nScoping in R: http://adv-r.had.co.nz/Functions.html"
+  },
+  {
+    "objectID": "day4-sharing_things.html",
+    "href": "day4-sharing_things.html",
+    "title": "Sharing Things",
+    "section": "",
+    "text": "You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see here for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout Quarto that is a cross-language tool to render documents from code!"
+  },
+  {
+    "objectID": "day4-sharing_things.html#github-pages-the-r-markdown-quarto-family",
+    "href": "day4-sharing_things.html#github-pages-the-r-markdown-quarto-family",
+    "title": "Sharing Things",
+    "section": "",
+    "text": "You have been using it all week!! and before!! All the course material has been developed as an R Markdown based website, distill website to be precise (see here for more), and it is also a great way to publish and share your note book with your team and the broader community. Also checkout Quarto that is a cross-language tool to render documents from code!"
+  },
+  {
+    "objectID": "day4-sharing_things.html#interactive-web-applications",
+    "href": "day4-sharing_things.html#interactive-web-applications",
+    "title": "Sharing Things",
+    "section": "Interactive web applications",
+    "text": "Interactive web applications\nWhen you have complex data that you want to not only visualize but also to let the user interact with your data or customize parameters used in an analysis, interactive web applications are a great way to increase engagement. The good news is that you do not need to be a web developer anymore to spin such applications or dashboards.\n\nR Shiny \nR Shiny is a very interesting framework that lets you write R code that will then be translated into javascript for you and thus let you develop web application without having to learn any new programming language. Note that you will need a server to host the application.\nCheck out this gallery of shiny apps: https://shiny.rstudio.com/gallery/\nGetting started with Shiny: https://shiny.rstudio.com/tutorial/\n\n\nHtml widgets\nHtml widgets offer some great interactive data visualization. It is more limited that Shiny because you can not modify parameters to modify the data use, but it has the advantage that it does not need a server to run the widget and it can be inserted directly into an R Markdown.\nHere to get started: https://www.htmlwidgets.org/"
+  },
+  {
+    "objectID": "day4-sharing_things.html#plotly",
+    "href": "day4-sharing_things.html#plotly",
+    "title": "Sharing Things",
+    "section": "plotly ",
+    "text": "plotly \nplotly enable you to develop great interactive data visualizations. It has the advantage to be available both in R and Python (and javascript). One great thing in R is that if you are a ggplot master, you can write your plot code using ggplot and transform it into a plotly plot with one line of code (here for an example)\nNote there are also other python libraries to create interactive plots, here are a few: https://mode.com/blog/python-interactive-plot-libraries/"
+  },
+  {
+    "objectID": "day4-sharing_things.html#binder-jupyter",
+    "href": "day4-sharing_things.html#binder-jupyter",
+    "title": "Sharing Things",
+    "section": "Binder & jupyter ",
+    "text": "Binder & jupyter \nTransform your git based repo into an interactive jupyter notebook https://mybinder.org/!! So other researchers can run your code without having to install anything!\n\nTry it: https://mybinder.org/"
+  },
+  {
+    "objectID": "day4-sharing_things.html#citing-your-code",
+    "href": "day4-sharing_things.html#citing-your-code",
+    "title": "Sharing Things",
+    "section": "Citing your code",
+    "text": "Citing your code\nNote that it is also possible to assign a DOI to cite a specific version of your repository. For example, see here for more information on how to link Zenodo and GitHub."
+  },
+  {
+    "objectID": "day4-sharing_things.html#session-info",
+    "href": "day4-sharing_things.html#session-info",
+    "title": "Sharing Things",
+    "section": "Session info",
+    "text": "Session info\nYour analysis was done with specific versions both of the program used but also of all the packages involved, as well as the specifications of Operating System (OS) that was used. The good use is that there ar tools to let you capture this information in a systematic manner.\n\nsessionInfo()\n\nR version 4.3.1 (2023-06-16)\nPlatform: x86_64-pc-linux-gnu (64-bit)\nRunning under: Ubuntu 22.04.4 LTS\n\nMatrix products: default\nBLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 \nLAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0\n\nlocale:\n [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       \n [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   \n [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          \n[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   \n\ntime zone: UTC\ntzcode source: system (glibc)\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.1    fastmap_1.2.0     cli_3.6.3        \n [5] tools_4.3.1       htmltools_0.5.8.1 yaml_2.3.10       rmarkdown_2.27   \n [9] knitr_1.48        jsonlite_1.8.8    xfun_0.46         digest_0.6.36    \n[13] rlang_1.1.4       evaluate_0.24.0  \n\n\nor even better:\n\ndevtools::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16)\n os       Ubuntu 22.04.4 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2024-08-01\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cachem        1.1.0   2024-05-16 [1] CRAN (R 4.3.1)\n cli           3.6.3   2024-06-21 [1] CRAN (R 4.3.1)\n devtools      2.4.5   2022-10-11 [1] any (@2.4.5)\n digest        0.6.36  2024-06-23 [1] CRAN (R 4.3.1)\n ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.3.1)\n evaluate      0.24.0  2024-06-10 [1] CRAN (R 4.3.1)\n fastmap       1.2.0   2024-05-15 [1] CRAN (R 4.3.1)\n fs            1.6.4   2024-04-25 [1] CRAN (R 4.3.1)\n glue          1.7.0   2024-01-09 [1] CRAN (R 4.3.1)\n htmltools     0.5.8.1 2024-04-04 [1] CRAN (R 4.3.1)\n htmlwidgets   1.6.4   2023-12-06 [1] CRAN (R 4.3.1)\n httpuv        1.6.15  2024-03-26 [1] CRAN (R 4.3.1)\n jsonlite      1.8.8   2023-12-04 [1] CRAN (R 4.3.1)\n knitr         1.48    2024-07-07 [1] CRAN (R 4.3.1)\n later         1.3.2   2023-12-06 [1] CRAN (R 4.3.1)\n lifecycle     1.0.4   2023-11-07 [1] CRAN (R 4.3.1)\n magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.1)\n memoise       2.0.1   2021-11-26 [1] CRAN (R 4.3.1)\n mime          0.12    2021-09-28 [1] CRAN (R 4.3.1)\n miniUI        0.1.1.1 2018-05-18 [1] CRAN (R 4.3.1)\n pkgbuild      1.4.4   2024-03-17 [1] CRAN (R 4.3.1)\n pkgload       1.4.0   2024-06-28 [1] CRAN (R 4.3.1)\n profvis       0.3.8   2023-05-02 [1] CRAN (R 4.3.1)\n promises      1.3.0   2024-04-05 [1] CRAN (R 4.3.1)\n purrr         1.0.2   2023-08-10 [1] CRAN (R 4.3.1)\n R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.1)\n Rcpp          1.0.13  2024-07-17 [1] CRAN (R 4.3.1)\n remotes       2.5.0   2024-03-17 [1] CRAN (R 4.3.1)\n rlang         1.1.4   2024-06-04 [1] CRAN (R 4.3.1)\n rmarkdown     2.27    2024-05-17 [1] any (@2.27)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.1)\n shiny         1.9.1   2024-08-01 [1] CRAN (R 4.3.1)\n stringi       1.8.4   2024-05-06 [1] CRAN (R 4.3.1)\n stringr       1.5.1   2023-11-14 [1] CRAN (R 4.3.1)\n urlchecker    1.0.1   2021-11-30 [1] CRAN (R 4.3.1)\n usethis       3.0.0   2024-07-29 [1] CRAN (R 4.3.1)\n vctrs         0.6.5   2023-12-01 [1] CRAN (R 4.3.1)\n xfun          0.46    2024-07-18 [1] CRAN (R 4.3.1)\n xtable        1.8-4   2019-04-21 [1] CRAN (R 4.3.1)\n yaml          2.3.10  2024-07-26 [1] CRAN (R 4.3.1)\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.3.1/lib/R/site-library\n [3] /opt/R/4.3.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────\n\n\nYou can save all this content to an session_info.txt file and upload it to your repository.\nIn python, using pip freeze &gt; requirements.txt or conda list --export &gt; requirements.txt will create a text file listing all the libraries (and their versions) used in a specific python environment. You can actually use this file to (re)install all the packages and specific versions into a new python environment. It is also great practice to add this file to your repository."
+  },
+  {
+    "objectID": "day4-sharing_things.html#containers",
+    "href": "day4-sharing_things.html#containers",
+    "title": "Sharing Things",
+    "section": "Containers",
+    "text": "Containers\nA helpful abstraction for capturing the computing environment is a container, whereby a container is created from a set of instructions in a recipe. For the most common containerisation software, Docker, this recipe is called a Dockerfile. Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure and ship the containers to others. A Docker container can be seen as a computer inside your computer.\n\n\n\n\n\nhttp://jsta.github.io/r-docker-tutorial/\n\n\n\n\nA few good readings:\n\nDocker for scientific reproducibility: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008316\nThe Whole Tale project: combining containers with data repositories https://wholetale.org/\nDocker tutorial: http://jsta.github.io/r-docker-tutorial/\nEnvironment Management with Docker: https://environments.rstudio.com/docker\nSharing and Running R code using Docker: https://aboland.ie/Docker.html"
+  },
+  {
+    "objectID": "day4-sharing_things.html#xarigan",
+    "href": "day4-sharing_things.html#xarigan",
+    "title": "Sharing Things",
+    "section": "Xarigan",
+    "text": "Xarigan\nXarigan is an R package to create slide deck using R Markdown: https://github.com/yihui/xaringan\n\nremotes::install_github('yihui/xaringan')\n\nHere is a good introduction to it: https://www.favstats.eu/post/xaringan_tut/"
+  },
+  {
+    "objectID": "day4-sharing_things.html#quarto-presentations",
+    "href": "day4-sharing_things.html#quarto-presentations",
+    "title": "Sharing Things",
+    "section": "Quarto Presentations",
+    "text": "Quarto Presentations\nhttps://quarto.org/docs/presentations/\nhttps://meghan.rbind.io/blog/quarto-slides/"
+  },
+  {
     "objectID": "day2-remote_server.html",
     "href": "day2-remote_server.html",
     "title": "Working on a remote server",
     "section": "",
-    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\n\n\n\nTip\n\n\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
+    "text": "CERN computing center"
+  },
+  {
+    "objectID": "day2-remote_server.html#learning-objectives",
+    "href": "day2-remote_server.html#learning-objectives",
+    "title": "Working on a remote server",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nIn this lesson, you will learn:\n\nHow to connect to a remote server\nGet familiar with RStudio server\nGet an introduction to the command line (CLI) & bash"
+  },
+  {
+    "objectID": "day2-remote_server.html#why-working-on-a-remote-machine",
+    "href": "day2-remote_server.html#why-working-on-a-remote-machine",
+    "title": "Working on a remote server",
+    "section": "Why working on a remote machine?",
+    "text": "Why working on a remote machine?\nOften the main motivation is to scale your analysis beyond what a personal computer can handle. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:\n\nPower: More CPUs/Cores (24/32/48), More RAM (256/384GB)\nCapacity: More disk space and generally faster storage (in highly optimized RAID arrays)\nSecurity: Data are spread across multiple drives and have nightly backups\nCollaboration: shared folders for code, data, and other materials; same software versions\n\n\n\n\n\n\n\nWarning\n\n\n\n=&gt; The operating system is more likely going to be Linux!!\nMore on this in a few minutes"
+  },
+  {
+    "objectID": "day2-remote_server.html#introduction-to-unix-and-its-siblings",
+    "href": "day2-remote_server.html#introduction-to-unix-and-its-siblings",
+    "title": "Working on a remote server",
+    "section": "Introduction to UNIX and its siblings",
+    "text": "Introduction to UNIX and its siblings\n\nUNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\nVarious Unices\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\nSome Unix hallmarks\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built"
+  },
+  {
+    "objectID": "day2-remote_server.html#connecting-via-ide---posit-workbench",
+    "href": "day2-remote_server.html#connecting-via-ide---posit-workbench",
+    "title": "Working on a remote server",
+    "section": "Connecting via IDE - Posit Workbench",
+    "text": "Connecting via IDE - Posit Workbench\nFrom an user perspective, RStudio Server is your familiar RStudio interface in your web browser. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!! This remote file management is the main change you will have to adopt in your workflow.\nTo help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections."
+  },
+  {
+    "objectID": "day2-remote_server.html#connecting-to-meds-analytical-server",
+    "href": "day2-remote_server.html#connecting-to-meds-analytical-server",
+    "title": "Working on a remote server",
+    "section": "Connecting to MEDS Analytical Server",
+    "text": "Connecting to MEDS Analytical Server\n\nGot to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\n\n\n\n\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\n\n\n\n\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\nFile structure\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\n\n\n\n\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\nR packages\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\n\n\n\n\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\n\n\n\n\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
   },
   {
     "objectID": "day2-remote_server.html#the-command-line-interface-cli",
     "href": "day2-remote_server.html#the-command-line-interface-cli",
     "title": "Working on a remote server",
-    "section": "",
-    "text": "The CLI provides a direct way to interact with the Operating System, by typing in commands.\n\n\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\n\n\n\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\n\n\n\nTip\n\n\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\n\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
+    "section": "The Command Line Interface (CLI)",
+    "text": "The Command Line Interface (CLI)\nThe CLI provides a direct way to interact with the Operating System, by typing in commands.\n\nWhy the CLI is worth learning\n\nMight be the only interface you have to a High Performance Computer (HPC)\nCommand statements can be reused easily and saved as scripts\nEasier automation and text files manipulation\n\n\n\nA little bit of terminology\n\nCommand Line Interface (CLI): This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, …)\nTerminal: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer\nShell: It is the program that runs the command line. There are many different shells, the most common (an default on most system) being bash (Bourne Again SHell)\n\n\n\n\n\n\n\nTip\n\n\n\nNot convinced? Check this out: the CLI pitch\n\n\n\n\nThe Terminal from RStudio\nYou can access the command line directly from RStudio by using the Terminal tab next to your R console.\n ### Navigating and managing files/directories in *NIX\n\n\npwd: Know where you are\nls: List the content of the directory\ncd: Go inside a directory\n\nSome pseudo directory names. Wherever you are:\n\n~ : Home directory\n. : Here (current directory)\n..: Up one level (upper directory)\n\nLet’s put this into action:\n\ngo to my “Home” directory: cd ~\ngo up one directory level: cd ..\nlist the content: ls\nlist the content showing hidden files: ls -a note that -a is referred as an option (modifies the command)\n\nMore files/directories manipulations:\n\nmkdir: Create a directory\ncp: Copy a file\nmv: Move a file it is also how you rename a file!\nrm / rmdir: Remove a file / directory use those carefully, there is no return / Trash!!\n\nNote: typing is not your thing? the &lt;tab&gt; key is your friend! One hit it will auto-complete the file/directory/path name for you. If there are many options, hit it twice to see the options.\n\n\nPermissions\nAll files have permissions and ownership.\n\n\n\nFile permissions\n\n\n\nList files showing ownership and permissions: ls -l\n\nbrun@taylor:/courses/EDS214$ ls -l\ntotal 16\ndrwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data\ndrwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example    \nYou can change those permissions:\n\nChange permissions: chmod\nChange ownership: chown\n\n\n\n\n\n\n\nTip\n\n\n\nClear contents in terminal window: clear"
   },
   {
     "objectID": "day2-remote_server.html#general-command-syntax",
@@ -978,110 +1104,5 @@
     "title": "Working on a remote server",
     "section": "CLI Practice",
     "text": "CLI Practice\n\n\n\n\n\n\nSetting git on Taylor (if not yet done)\n\n\n\n\n\nAt the Terminal:\n\ngit config --global user.name \"Jane Doe\" \ngit config --global user.email janedoe@example.com\ngit config --global credential.helper 'cache --timeout=10000000'\ngit config --list\n\n\nSetting GitHub token on Taylor\nAt the R Console:\n\n# On your laptop\nusethis::create_github_token() # This should open a web browser on GitHub\n\n# On Taylor \ngitcreds::gitcreds_set()\nusethis::git_sitrep()"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "",
-    "text": "Collaborative and Reproducible Environmental Data Science as summarized by the MEDS Students cohort 21-22, art by Allison Horst"
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Course description",
-    "text": "Course description\nThe generation and analysis of environmental data is often a complex, multi-step process that may involve the collaboration of many people. Increasingly tools that document and help to organize workflows are being used to ensure reproducibility, shareability, and transparency of the results. This course will introduce students to the conceptual organization of workflows (including code, documents, and data) as a way to conduct reproducible analyses. These concepts will be combined with the practice of various software tools and collaborative coding techniques to develop and manage multi-step analytical workflows as a team.\n\nWhy going reproducible ?\nThere are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower you to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your “future self” to reuse and build from your own work.\nTo make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, …) of your analysis. Scripting languages, even better open ones, such as R and python, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use R, git and GitHub to develop such workflows as a team.\n\n\n\n\n\nWorkflow example using the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.had.co.nz/\n\n\n\n\nTwo points to stress about this figure:\n\nWorkflows are rarely linear… even less so their implementation\nNote the programming box – yes, you’ll need to code this :)\n\nWorkflows are developed iteratively, and one of the most helpful things you can do as a data scientist is to talk about them with your research team."
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Teaching team",
-    "text": "Teaching team\n\nJulien Brun, Instructor\nBrian Lee, TA\n\nMEDS Slack is the best way to communicate with us."
-  },
-  {
-    "objectID": "index.html#important-links",
-    "href": "index.html#important-links",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Important links",
-    "text": "Important links\n\nCourse syllabus\nCode of Conduct"
-  },
-  {
-    "objectID": "index.html#predictable-daily-schedule",
-    "href": "index.html#predictable-daily-schedule",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Predictable daily schedule",
-    "text": "Predictable daily schedule\nCourse dates: Monday (2024-08-26) - Friday (2024-08-30)\nEDS 214 is an intensive 1-week long graded 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 214 outside of those hours, unless you are working with the Teaching Assistant in student hours.\n\nDaily schedule (subject to change):\n\n\n\n\n\n\n\nTime (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive Session 1 (90 min)\n\n\n12:30am - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nLecture (30 min)\n\n\n2:00pm - 3:00pm\nInteractive Session 2 (60 min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nFlex time + Q&A (50 min)"
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nThe goal of EDS 214 - Analytical Workflows and Scientific Reproducibility is to expose incoming MEDS students to “good enough” practices of scientific programming develop skills in environmental data science to produce reproducible research. By the end of the course, students should be able to:\n\nDevelop knowledge in scientific analytical workflows To learn how to make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results of your analysis (figures, new data, publications, …). Scripting languages, even better open ones such as R and python, are well-suited for scientists to develop reproducible scientific workflows, but are not the only tools you will need to develop reproducible and collaborative workflows\nLearn how to code in a collaborative manner by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code review using git and GitHub to create pull request, ask feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows\nPractice documenting code and data in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work"
-  },
-  {
-    "objectID": "index.html#grading",
-    "href": "index.html#grading",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Grading",
-    "text": "Grading\nThe grading for this course is organized as follow:\n\n50% Class participation\n50% Group project"
-  },
-  {
-    "objectID": "index.html#sessions-subject-to-change",
-    "href": "index.html#sessions-subject-to-change",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Sessions (subject to change)",
-    "text": "Sessions (subject to change)\n\n\n\nDay / Session\nTopics\nInteractive Sessions\n\n\n\n\nMonday morning\nReproducible workflows\nPlanning things: from flow charts to pseudocode\n\n\nMonday afternoon\nCoding together\nCollaborating with GitHub; Github collaboration Hands-on; Bonus: Github conflicts\n\n\nTuesday morning\nWorking on a remote server\nthe command line and friends\n\n\nTuesday afternoon\nAutomating things with bash\nbash scripting & uploading things\n\n\nWednesday morning\nHow to get data using APIs\nAPIs hands-on: USGS dataretrieval & metajam\n\n\nWednesday afternoon\nIntroduction to group project\nGroup project\n\n\nThursday morning\nReproducible tools\ntargets & rrtools as examples\n\n\nThursday afternoon\nDocumenting things\nGroup project\n\n\nFriday morning\nSharing things\nGroup project\n\n\nFriday afternoon\nProject presentations\nProject presentations"
-  },
-  {
-    "objectID": "index.html#course-requirements",
-    "href": "index.html#course-requirements",
-    "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
-    "section": "Course requirements",
-    "text": "Course requirements\n\nComputing\n\nMinimum MEDS device requirements\nHave a ready to be used GitHub Account (https://github.com/){target=“_blank”}\nMEDS server Taylor\n\n\n\nTextbook\n\nR for Data Science, 2nd edition: https://r4ds.hadley.nz/\nThe Practice of Reproducible Research: http://www.practicereproducibleresearch.org/"
-  },
-  {
-    "objectID": "day1-github_branches.html",
-    "href": "day1-github_branches.html",
-    "title": "Collaborative Coding Workflows: Branching",
-    "section": "",
-    "text": "When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (git push) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.\n\n\n\nClick on the repository\nOn the top tabs, click \nOn the left pane, click Manage access and click on “Invite a Collaborator” to enter the usernames you want to add\n\n\n\n\ncollaborators\n\n\nUnder this collaborative workflow, we recommend to use git branches combined with pull requests to avoid conflicts and to track and discuss collaborators contributions."
-  },
-  {
-    "objectID": "day1-github_branches.html#collaborating-through-write-push-access",
-    "href": "day1-github_branches.html#collaborating-through-write-push-access",
-    "title": "Collaborative Coding Workflows: Branching",
-    "section": "",
-    "text": "When you collaborate closely and actively with colleagues, you do not want necessarily to have to review all their changes through pull requests. You can then give them write access (git push) to your repository to allow them to directly edit and contribute to its content. This is the workflow we will recommend to use within your working group.\n\n\n\nClick on the repository\nOn the top tabs, click \nOn the left pane, click Manage access and click on “Invite a Collaborator” to enter the usernames you want to add\n\n\n\n\ncollaborators\n\n\nUnder this collaborative workflow, we recommend to use git branches combined with pull requests to avoid conflicts and to track and discuss collaborators contributions."
-  },
-  {
-    "objectID": "day1-github_branches.html#working-with-branches",
-    "href": "day1-github_branches.html#working-with-branches",
-    "title": "Collaborative Coding Workflows: Branching",
-    "section": "Working with branches",
-    "text": "Working with branches\n\nCreating a new branch\nIn RStudio, you can create a branch using the git tab.\n\nClick on the branch button\n\n\n\n\n\n\n\n\n\n\n\nFill the branch name in the new branch window; in this example, we are going to use test for the name; leave the other options as default and click create\n\n\n\n\n\n\n\n\n\n\n\nyou will be directly creating a local and remote branch and switch to it\n\n\n\n\n\n\n\n\n\n\nCongratulations you just created your first branch!\nLet us check on Github:\n\n\n\n\n\n\n\n\n\nAs you can see, now there are two branches on our remote repository: - main - test\n\n\nUsing a branch\nHere there is nothing new. The workflow is exactly the same as we did before, except our commits will be created on the test branch instead of the main branch."
-  },
-  {
-    "objectID": "day1-github_branches.html#hands-on",
-    "href": "day1-github_branches.html#hands-on",
-    "title": "Collaborative Coding Workflows: Branching",
-    "section": "Hands-on",
-    "text": "Hands-on\nLet’s practice this by team of 2!!\nhttps://github.com/brunj7/eds214-handson-ghcollab"
-  },
-  {
-    "objectID": "day2-rstudio_server.html",
-    "href": "day2-rstudio_server.html",
-    "title": "RStudio server",
-    "section": "",
-    "text": "From an user perspective, RStudio Server is your familiar RStudio interface in your web browser. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!! This remote file management is the main change you will have to adopt in your workflow.\nTo help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.\n\n\n\n\n\n\n\n\n\n\n\n\nGot to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\n\n\n\n\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\n\n\n\n\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\n\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\n\n\n\n\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\n\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\n\n\n\n\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\n\n\n\n\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
-  },
-  {
-    "objectID": "day2-rstudio_server.html#connecting-to-meds-analytical-server",
-    "href": "day2-rstudio_server.html#connecting-to-meds-analytical-server",
-    "title": "RStudio server",
-    "section": "",
-    "text": "Got to: https://taylor.bren.ucsb.edu/\nEnter your credentials\nYou are in!\n\n\n\n\n\n\n\n\n\n\n\nClick on the New Session button. You can see that you are able to start both an R (Studio) and jupyter notebook session. Let’s take a few minutes to experiment with the different options.\n\nFor this session, we are going to select the RStudio option and hit Start Session.\n\n\n\n\n\n\n\n\n\nYou should now see a very familiar interface :) Except it is running on the server with a lot of resources at your fingertips!!\n\n\nLet’s explore explore a little bit the file structure on the server. By default on a Linux server, you are located in the home folder. This folder is only accessible to you and it is where you can store your personal files on a server. You should see 2 folders: R and H\n\n\n\n\n\n\n\n\n\nThe R folder is where your local R packages will be installed, you can ignore it. The H is your H drive that the Bren School is offering to all its students. If you click on it you should see any files you have uploaded there.\nLet us make a folder named github by click on the New Folder button at the top of the tab. We will use this folder (also named directory in linux/unix terms) to clone any GitHub repository.\n\n\n\nIf we go to the Packages tab, we can see a long list of packages that have already be installed by our system administrator (Brad). Those packages have been installed server wide, meaning that all the users have access to them.\n\n\n\n\n\n\n\n\n\nA user can also installed her/his own packages. Let’s try to install the remote package that lets you install R packages directly from GitHub: install.packages(\"remotes\"). Once done, note a new section that appeared on the Packages tab named User Library. Each of us have now its own copy of the package installed (in this R folder we were talking about a few minutes ago).\n\n\n\n\n\n\n\n\n\nA few notes:\n\nIn this example we will have made a better choice to have the remotes package installed once at the system level\nSome R packages depend on external libraries that need to be installed on the server. Those libraries will have to be installed by the system administrator first before you can install the R package\nInstalling an R package on a linux machine generally requires compilation of the code and will thus take more time to install than when you install it from pre-compiled binaries\n\nLook now inside you R folder!!"
   }
 ]
