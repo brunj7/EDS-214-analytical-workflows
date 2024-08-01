@@ -1,13 +1,12 @@
 ---
-title: "Reproducible for all"
+title: "Day 5 - Reproducible for all"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(devtools)
 ``` 
 
-# Day 5
+<br>
 
 | **Time (PST)**    | **Activity**                        |
 |-------------------|-------------------------------------|
@@ -15,26 +14,8 @@ library(devtools)
 | 10:30am - 12:30pm  | *Group project (120min)* |
 | 12:300pm - 1:30pm  | *Lunch *   |
 | 1:30pm - 2:00pm   | *Meet your next instructor  --  Kelly Caylor,  Office of Research and Earth Research Institute, UCSB* |
-| 2:00pm - 3:00pm   | *Group project presentations - p1 (60 min)*. |
+| 2:00pm - 3:00pm   | *[Group project presentations - p1](https://docs.google.com/spreadsheets/d/1rm7qBrK5ywtd3YYD8J9evxR9EgXlqcK5QNGs8o_lbIY/edit?gid=0#gid=0) (60 min)*. |
 | 3:00pm - 3:10pm   | *Break 2 (10min)* 
-| 3:10pm - 3:40pm   | *Group project presentations - p2 (30 min)* |
+| 3:10pm - 3:40pm   | *[Group project presentations - p2](https://docs.google.com/spreadsheets/d/1rm7qBrK5ywtd3YYD8J9evxR9EgXlqcK5QNGs8o_lbIY/edit?gid=0#gid=0) (30 min)* |
 | 3:40pm - 4:00pm   | *Final thoughts and feedback*     |
-
----
-
-
-## [Open Source Software for Data Science](https://www.rstudio.com/resources/rstudioconf-2020/open-source-software-for-data-science/) (30 min)
-
-
----
-
-## Scope and debugging
-
-[**Materials**](rstudio_debugging.html)
-
----
-
-## Group Projects Presentations
-
-[Schedule](https://docs.google.com/spreadsheets/d/1cVoUFvSUdn04gzBSPrvmr2ZfkbnlBOG1iCSwill2NA0/edit#gid=0)
 
