@@ -359,11 +359,10 @@ The above are the main redirections, but there are others.
 **To end a session, simply type `exit` or `logout` into the command line**
 
 
-## [**CLI Practice**](https://github.com/EDS-214/eds214-handson-cli){target="_blank"}
 
 
-::: {.callout-note collapse=true}
-#### Setting git on Taylor (if not yet done)
+::: {.callout-note collapse=false}
+### Setting git on Taylor (if not yet done)
 
 At the **Terminal**:
 
@@ -374,7 +373,7 @@ git config --global credential.helper 'cache --timeout=10000000'
 git config --list
 ``` 
 
-#### Setting GitHub token on Taylor
+### Setting GitHub token on Taylor
 
 At the **R Console**:
 
@@ -389,17 +388,20 @@ usethis::git_sitrep()
 
 :::
 
+
+## [**CLI Practice**](https://github.com/EDS-214/eds214-handson-cli){target="_blank"}
+
 --- 
 
 
-# Bonus:  vim
+## Bonus:  vim
 
 This section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.
 
 [Vim](vim.html)
 
 
-# Aknowledgements
+## Aknowledgements
 
 This section reuses materials from [NCEAS Open Science for Synthesis (OSS)](https://learning.nceas.ucsb.edu/) intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others; and from EDS-213 [10 bash essentials](https://github.com/UCSB-Library-Research-Data-Services/bren-meds213-class-data/blob/main/week5/bash-essentials.md) developed by Greg Janée
 
