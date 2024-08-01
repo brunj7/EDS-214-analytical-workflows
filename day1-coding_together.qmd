@@ -23,7 +23,7 @@ In this part of the lesson, you will learn:
 
 ## Why collaborative coding
 
-### [Slide deck](https://brunj7.github.io/eds214-slides/collaborative_coding.html)
+### [Slide deck](https://EDS-214.github.io/eds214-slides/collaborative_coding.html)
 
 Environmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise.  Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:
 
