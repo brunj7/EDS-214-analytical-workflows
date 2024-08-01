@@ -462,67 +462,60 @@
     "text": "Vim has modes\n\nNormal\n\nfor almost everything except typing! Insert\n\n\nfor typing Visual\n\n\nfor highlighting a region to operate on\n\n\n(and others you don’t need to know about)"
   },
   {
-    "objectID": "day2-unices.html",
-    "href": "day2-unices.html",
-    "title": "Unices",
+    "objectID": "day3-api.html",
+    "href": "day3-api.html",
+    "title": "Getting Data using APIs",
     "section": "",
-    "text": "UNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\n\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\n\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built\n\n\n\n\n\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions"
+    "text": "Using website to retrieve data is great interactive way to search and explore data of interest. Let’s start our day by searching some data on the data repository DateONE: https://search.dataone.org/data\nIn case you need some inspiration, look at this dataset about historic precipitation in Alaska: https://doi.org/10.5063/N29VCQ"
   },
   {
-    "objectID": "day2-unices.html#introduction-to-unix-and-its-siblings",
-    "href": "day2-unices.html#introduction-to-unix-and-its-siblings",
-    "title": "Unices",
+    "objectID": "day3-api.html#the-manual-way",
+    "href": "day3-api.html#the-manual-way",
+    "title": "Getting Data using APIs",
     "section": "",
-    "text": "UNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\n\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\n\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built\n\n\n\n\n\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions"
+    "text": "Using website to retrieve data is great interactive way to search and explore data of interest. Let’s start our day by searching some data on the data repository DateONE: https://search.dataone.org/data\nIn case you need some inspiration, look at this dataset about historic precipitation in Alaska: https://doi.org/10.5063/N29VCQ"
   },
   {
-    "objectID": "day2-bash-scripting.html",
-    "href": "day2-bash-scripting.html",
-    "title": "An introduction to Bash scripting",
+    "objectID": "day3-api.html#the-programmatic-way",
+    "href": "day3-api.html#the-programmatic-way",
+    "title": "Getting Data using APIs",
+    "section": "The programmatic way",
+    "text": "The programmatic way\nAlthough discovering data through a web interface is convenient and offers a great experience, it is often hard to scale this approach or to integrate it into a reproducible workflow.\nSlides"
+  },
+  {
+    "objectID": "day2-server_uploading.html",
+    "href": "day2-server_uploading.html",
+    "title": "Uploading things to a server",
     "section": "",
-    "text": "So far you’ve seen Bash as a CLI, i.e., as an interactive tool. But Bash is also a programming language, and that is where its real power lies. Nobody claims that Bash is a particularly good general-purpose programming language (though in theory it could be used that way). But when it comes to manipulating files, working in Bash is often far more convenient than working in other languages such as R or Python. An additional benefit is that Bash is almost universally available, whereas R and Python require additional installs.\nIn this exercise you will create a Bash script to perform two common file manipulation tasks: adding header records and renaming files."
+    "text": "You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)"
   },
   {
-    "objectID": "day2-bash-scripting.html#adding-a-header-record-to-each-file",
-    "href": "day2-bash-scripting.html#adding-a-header-record-to-each-file",
-    "title": "An introduction to Bash scripting",
-    "section": "Adding a header record to each file",
-    "text": "Adding a header record to each file\nThere are two problems with our state baby name files: they lack header records, and they end in .TXT instead of .csv. To tackle the first problem, we can say:\necho \"state,gender,year,firstname,count\" &gt; tempfile\nThis gives us a header record in a new file tempfile. We can then append the contents of one of our data files to that file:\ncat STATE.AK.TXT &gt;&gt; tempfile\nExamine tempfile using any of the following commands:\nhead tempfile\ncat tempfile\nmore tempfile\nless tempfile\nAt this point we can now rename tempfile to the desired filename ending in .csv and we’re done (with one data file anyway):\nmv tempfile STATE.AK.csv\n\nQuestions\n\n\nWhat will happen if you do this?\necho \"state,gender,year,firstname,count\" &gt; tempfile\ncat STATE.AK.TXT &gt; tempfile\nOr this?\necho \"state,gender,year,firstname,count\" &gt;&gt; tempfile\ncat STATE.AK.TXT &gt; tempfile\nOr this?\necho \"state,gender,year,firstname,count\" &gt;&gt; tempfile\ncat STATE.AK.TXT &gt;&gt; tempfile\n\n\nWe want to do the above processing to every file, that’s where loops come in. But first, we need variables."
+    "objectID": "day2-server_uploading.html#sftp-software",
+    "href": "day2-server_uploading.html#sftp-software",
+    "title": "Uploading things to a server",
+    "section": "sFTP Software",
+    "text": "sFTP Software\nAn efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
   },
   {
-    "objectID": "day2-bash-scripting.html#variables",
-    "href": "day2-bash-scripting.html#variables",
-    "title": "An introduction to Bash scripting",
-    "section": "Variables",
-    "text": "Variables\nBash supports variables, and variables are essential in writing Bash scripts. To set a variable:\nname=Alice\nNo space between the variable name and equals sign! Variables are referenced as ${name}, or as just $name if not ambiguous.\n\nQuestion\n\nWhat will be printed by the following three echo commands, and why?\nvar=xy\necho $varz\necho ${var}z\necho $var.z\n\nWhen we process our data files in a loop, we will be working with a variable file whose value will be the name of the current file such as STATE.AK.TXT. We will want to construct a new filename such as STATE.AK.csv from that variable. This can be done by modifying a simple variable reference such as ${file} to include Bash string processing functions inside the braces. Here are two ways:\nfile=STATE.AK.TXT\necho ${file/.TXT/.csv}\necho ${file%.TXT}.csv\nThe first form performs a string substitution, substituting the first (and in our case, only) occurrence of .TXT with .csv. The second form peels off the trailing .TXT (% means “trailing”), leaving just STATE.AK. To that we then append .csv.\n\n\n\n\n\n\nTip\n\n\n\nThere are lots of string processing operations, and all are invoked using single characters like %, #, ^, etc. How the heck can you remember that? The answer is, you likely can’t. The takeaway for you in this class is that there exist string processing operators in Bash, and that if you look in the Bash manual you can get a description of what each one does.\n\nBash manual\nBash manual: Shell parameter expansion\nParameter expansion FAQ"
+    "objectID": "day2-server_uploading.html#scp",
+    "href": "day2-server_uploading.html#scp",
+    "title": "Uploading things to a server",
+    "section": "scp",
+    "text": "scp\nThe scp command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:\nscp /source/path hostname:/path/to/destination/\nHere is an example of my uploading the file 10min-loop.R to Taylor from my laptop. The destination directory on Taylor is /Users/brun/:\nscp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/\nBTW try to open and run that script for fun!!\nIf you want to upload an entire folder, you can add the -r option to the command. The general syntax is:\nscp -r /path/to/source-folder user@server:/path/to/destination-folder/\nHere is an example uploading all the images in the myplot folder\nscp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots"
   },
   {
-    "objectID": "day2-bash-scripting.html#scripts",
-    "href": "day2-bash-scripting.html#scripts",
-    "title": "An introduction to Bash scripting",
-    "section": "Scripts",
-    "text": "Scripts\nA Bash script is a text file containing the same Bash commands you might type interactively. It’s analogous to an R or Python script but written in Bash instead of one of those other languages.\nBash knows it is reading from a file instead of the terminal window, and it operates slightly differently:\n\nIt doesn’t print a prompt.\nIt doesn’t read Bash configuration files (~/.bashrc, ~/.bash_profile, ~/.profile, etc.). As a consequence, aliases and variables defined in those files are not visible to scripts.\n\nA Bash script can be run like so:\nbash myscript.sh\n\nExercise\n\nCreate a script myscript.sh that processes data file STATE.AK.TXT as above.\n\nOnce you’ve created a script, it can be very useful to check it for errors and potential pitfalls by running it through ShellCheck."
+    "objectID": "day1-github_collab.html",
+    "href": "day1-github_collab.html",
+    "title": "GitHub Collaboration",
+    "section": "",
+    "text": "Collaborating through forking\nMaterials\n\n\nCollaborating through branches\nMaterials\n\n\nInteractive session 2: Collaborative coding with GitHub\nhttps://github.com/brunj7/eds214-handson-ghcollab"
   },
   {
-    "objectID": "day2-bash-scripting.html#loops",
-    "href": "day2-bash-scripting.html#loops",
-    "title": "An introduction to Bash scripting",
-    "section": "Loops",
-    "text": "Loops\nBash supports a few kinds of loops. The one we’ll be using here looks like this:\nfor var in list_of_things; do\n    # operate on $var\ndone\nAlternative syntax (notice the do is on a line by itself):\nfor var in list_of_things\ndo\n    # operate on $var\ndone\nA couple examples:\nfor name in Tom Dick Harry; do\n    echo \"Every $name\"\ndone\nfor i in {99..1}; do\n    echo \"$i bottles of beer on the wall\"\ndone\nIt’s very common to operate on files:\nfor file in *.TXT; do\n    # do something with $file, for example:\n    echo $file\ndone"
-  },
-  {
-    "objectID": "day2-bash-scripting.html#putting-it-all-together",
-    "href": "day2-bash-scripting.html#putting-it-all-together",
-    "title": "An introduction to Bash scripting",
-    "section": "Putting it all together",
-    "text": "Putting it all together\nRecall that our goal is to add a header record to each data file, and to rename the data files to .csv. We can do so by writing a loop, and performing those two operations inside the loop. Write your data file-processing loop inside your myscript.sh script file.\n\n\n\n\n\n\nTip\n\n\n\nWhen performing a destructive operation, it can be very helpful to view the actual commands that will be executed before doing them for real. To satisfy yourself that your script is coded correctly, prefix each command with echo so that it is simply printed in the terminal window. You will also want to either comment out I/O redirections or quote them, as they will otherwise affect the echo command. Here’s our practice loop:\nfor file in *.TXT; do\n    echo echo \"state,gender,year,firstname,count\" \"&gt;\" tempfile\n    echo cat $file \"&gt;&gt;\" tempfile\n    echo mv tempfile ${file/.TXT/.csv}\ndone\nWhen ready, remove the echo prefixes and remove quotes around redirection operators:\nfor file in *.TXT; do\n    echo \"state,gender,year,firstname,count\" &gt; tempfile\n    cat $file &gt;&gt; tempfile\n    mv tempfile ${file/.TXT/.csv}\ndone\n\n\n\nExercise\nAlice does not want to rename her files to .csv, she’s fine with them being named .TXT. And after learning that cat will concatenate multiple files given on the command line, she has what she thinks is a brilliant idea for performing the processing more simply. First she puts the common header record in a file:\necho \"state,gender,year,firstname,count\" &gt; header\nAnd then she writes this loop:\nfor file in *.TXT; do\n    cat header $file &gt; $file\ndone\nWell that turned out to be a disaster. What went wrong?"
-  },
-  {
-    "objectID": "day2-bash-scripting.html#next-steps",
-    "href": "day2-bash-scripting.html#next-steps",
-    "title": "An introduction to Bash scripting",
-    "section": "Next steps",
-    "text": "Next steps\nThere’s a lot more to Bash scripting. Key next topics to study include:\n\nConditional statements\nProcessing command line arguments\nCreating scripts that can be invoked like built-in commands"
+    "objectID": "code_of_conduct.html",
+    "href": "code_of_conduct.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "All enrolled students, auditors, and course visitors are expected to comply with the following code of conduct. We expect cooperation from all members to help ensure a safe and welcoming environment for everybody.\n\nOverview\nWe are determined to make our courses welcoming, inclusive and harassment-free for everyone regardless of gender, gender identity and expression, race, age, sexual orientation, disability, physical appearance, body size, or religion (or lack thereof). We do not tolerate harassment of class participants, teaching assistants, or instructors in any form. Derogatory, abusive, demeaning or sexual language and imagery is not appropriate or acceptable. Saying something “as a joke” does not make it less offensive, harmful, or consequential.\nAnything not covered here but that exists in the UCSB Student Conduct Code also applies, and will be enforced by UCSB Policy.\nThese expectations and consequences apply to synchronous discussions, office hours, the course Slack workspace, and all other modes of communication, posting or discussion by course participants.\n\n\nExamples of behavior that contributes to creating a positive environment include:\n\nUsing welcoming and inclusive language\nBeing an aware and respectful colleague (raise your hand when asked, respect others’ time and space, include peers in small discussions, don’t dominate meetings, etc.)\nGiving proper credit to the creator (of an idea/material/solution/etc.)\nBeing respectful of differing viewpoints and experiences\nShowing empathy towards all community members\nUnderstanding that an individual’s experience and worldview are influenced by multiple (and often compounding) facets of their identity, and that your perception of a situation/topic/reaction may be very different from your classmates’\n\n\n\nExamples of unacceptable behavior by class participants include:\n\nDistracting other students in classes in labs, or otherwise distracting from their education\nAny abuse, disrespect or harassment of teaching assistants, other students, or teachers, is not tolerated and will result in disciplinary action as needed\nThe use of unwelcome sexual attention or advances\nTrolling, insulting/derogatory comments or language, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or electronic address, without explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting\n\nMembers asked to stop any harassing behavior are expected to comply immediately. If you are being harassed, notice that someone else is being harassed, or have any other concerns in or related to these classes, you are welcome to contact Allison or use outside resources.\n\n\nOther resources at UCSB\nAt Campus Advocacy, Resources and Education (CARE) you can chat with a UCSB staff member in a confidential setting. CARE assists faculty, staff and students who have been impacted by sexual harassment, sexual assault, domestic/dating violence, and stalking. The office is confidential so you can talk with a staff member in private without any reporting obligations.\n\nPhone: (805) 893-4613.\nOffice is located in the Student Resource Building (SRB) near parking lot 23.\n\nAnother confidential resource is the Campus Ombuds office. The Ombuds office is particularly helpful if you would like to describe a sensitive issue in a confidential setting and learn more about campus resources to address the issue. The Ombuds office is located at 1205-K Girvetz Hall and their phone number is 805-893-3285. The Ombuds office provides consultation, mediation, and facilitation, among other services, for faculty, staff and students.\nUCSB Academic Counseling is a resource outside of the Bren department that can help with a number of topics from academic planning to “balancing personal difficulties in academics.”\n\nGraduate counselor: Ryan Sims\nPhone: 805-893-2068\nEmail: ryan.sims@graddiv.ucsb.edu\n\nThis is a living document, that we are always hoping to improve. If you have suggestions, questions or ideas for how we can update our Code of Conduct, we encourage you to reach out to us and will be grateful for your feedback.\nContributions by:\n\nAllison Horst\nJessica Couture {“mode”:“full”,“isActive”:false}"
   },
   {
     "objectID": "day1-git-collaboration-conflicts.html",
@@ -574,39 +567,67 @@
     "text": "Your turn\n\nUse your favorite desserts to create a merge conflict. Resolve it using RStudio\nMixing the fun: try to create a merge conflict using the forking workflow. How would you do this? Try to resolve the conflict on the GitHub website! hint"
   },
   {
-    "objectID": "code_of_conduct.html",
-    "href": "code_of_conduct.html",
-    "title": "Code of Conduct",
+    "objectID": "day2-bash-scripting.html",
+    "href": "day2-bash-scripting.html",
+    "title": "An introduction to Bash scripting",
     "section": "",
-    "text": "All enrolled students, auditors, and course visitors are expected to comply with the following code of conduct. We expect cooperation from all members to help ensure a safe and welcoming environment for everybody.\n\nOverview\nWe are determined to make our courses welcoming, inclusive and harassment-free for everyone regardless of gender, gender identity and expression, race, age, sexual orientation, disability, physical appearance, body size, or religion (or lack thereof). We do not tolerate harassment of class participants, teaching assistants, or instructors in any form. Derogatory, abusive, demeaning or sexual language and imagery is not appropriate or acceptable. Saying something “as a joke” does not make it less offensive, harmful, or consequential.\nAnything not covered here but that exists in the UCSB Student Conduct Code also applies, and will be enforced by UCSB Policy.\nThese expectations and consequences apply to synchronous discussions, office hours, the course Slack workspace, and all other modes of communication, posting or discussion by course participants.\n\n\nExamples of behavior that contributes to creating a positive environment include:\n\nUsing welcoming and inclusive language\nBeing an aware and respectful colleague (raise your hand when asked, respect others’ time and space, include peers in small discussions, don’t dominate meetings, etc.)\nGiving proper credit to the creator (of an idea/material/solution/etc.)\nBeing respectful of differing viewpoints and experiences\nShowing empathy towards all community members\nUnderstanding that an individual’s experience and worldview are influenced by multiple (and often compounding) facets of their identity, and that your perception of a situation/topic/reaction may be very different from your classmates’\n\n\n\nExamples of unacceptable behavior by class participants include:\n\nDistracting other students in classes in labs, or otherwise distracting from their education\nAny abuse, disrespect or harassment of teaching assistants, other students, or teachers, is not tolerated and will result in disciplinary action as needed\nThe use of unwelcome sexual attention or advances\nTrolling, insulting/derogatory comments or language, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or electronic address, without explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting\n\nMembers asked to stop any harassing behavior are expected to comply immediately. If you are being harassed, notice that someone else is being harassed, or have any other concerns in or related to these classes, you are welcome to contact Allison or use outside resources.\n\n\nOther resources at UCSB\nAt Campus Advocacy, Resources and Education (CARE) you can chat with a UCSB staff member in a confidential setting. CARE assists faculty, staff and students who have been impacted by sexual harassment, sexual assault, domestic/dating violence, and stalking. The office is confidential so you can talk with a staff member in private without any reporting obligations.\n\nPhone: (805) 893-4613.\nOffice is located in the Student Resource Building (SRB) near parking lot 23.\n\nAnother confidential resource is the Campus Ombuds office. The Ombuds office is particularly helpful if you would like to describe a sensitive issue in a confidential setting and learn more about campus resources to address the issue. The Ombuds office is located at 1205-K Girvetz Hall and their phone number is 805-893-3285. The Ombuds office provides consultation, mediation, and facilitation, among other services, for faculty, staff and students.\nUCSB Academic Counseling is a resource outside of the Bren department that can help with a number of topics from academic planning to “balancing personal difficulties in academics.”\n\nGraduate counselor: Ryan Sims\nPhone: 805-893-2068\nEmail: ryan.sims@graddiv.ucsb.edu\n\nThis is a living document, that we are always hoping to improve. If you have suggestions, questions or ideas for how we can update our Code of Conduct, we encourage you to reach out to us and will be grateful for your feedback.\nContributions by:\n\nAllison Horst\nJessica Couture {“mode”:“full”,“isActive”:false}"
+    "text": "So far you’ve seen Bash as a CLI, i.e., as an interactive tool. But Bash is also a programming language, and that is where its real power lies. Nobody claims that Bash is a particularly good general-purpose programming language (though in theory it could be used that way). But when it comes to manipulating files, working in Bash is often far more convenient than working in other languages such as R or Python. An additional benefit is that Bash is almost universally available, whereas R and Python require additional installs.\nIn this exercise you will create a Bash script to perform two common file manipulation tasks: adding header records and renaming files."
   },
   {
-    "objectID": "day1-github_collab.html",
-    "href": "day1-github_collab.html",
-    "title": "GitHub Collaboration",
+    "objectID": "day2-bash-scripting.html#adding-a-header-record-to-each-file",
+    "href": "day2-bash-scripting.html#adding-a-header-record-to-each-file",
+    "title": "An introduction to Bash scripting",
+    "section": "Adding a header record to each file",
+    "text": "Adding a header record to each file\nThere are two problems with our state baby name files: they lack header records, and they end in .TXT instead of .csv. To tackle the first problem, we can say:\necho \"state,gender,year,firstname,count\" &gt; tempfile\nThis gives us a header record in a new file tempfile. We can then append the contents of one of our data files to that file:\ncat STATE.AK.TXT &gt;&gt; tempfile\nExamine tempfile using any of the following commands:\nhead tempfile\ncat tempfile\nmore tempfile\nless tempfile\nAt this point we can now rename tempfile to the desired filename ending in .csv and we’re done (with one data file anyway):\nmv tempfile STATE.AK.csv\n\nQuestions\n\n\nWhat will happen if you do this?\necho \"state,gender,year,firstname,count\" &gt; tempfile\ncat STATE.AK.TXT &gt; tempfile\nOr this?\necho \"state,gender,year,firstname,count\" &gt;&gt; tempfile\ncat STATE.AK.TXT &gt; tempfile\nOr this?\necho \"state,gender,year,firstname,count\" &gt;&gt; tempfile\ncat STATE.AK.TXT &gt;&gt; tempfile\n\n\nWe want to do the above processing to every file, that’s where loops come in. But first, we need variables."
+  },
+  {
+    "objectID": "day2-bash-scripting.html#variables",
+    "href": "day2-bash-scripting.html#variables",
+    "title": "An introduction to Bash scripting",
+    "section": "Variables",
+    "text": "Variables\nBash supports variables, and variables are essential in writing Bash scripts. To set a variable:\nname=Alice\nNo space between the variable name and equals sign! Variables are referenced as ${name}, or as just $name if not ambiguous.\n\nQuestion\n\nWhat will be printed by the following three echo commands, and why?\nvar=xy\necho $varz\necho ${var}z\necho $var.z\n\nWhen we process our data files in a loop, we will be working with a variable file whose value will be the name of the current file such as STATE.AK.TXT. We will want to construct a new filename such as STATE.AK.csv from that variable. This can be done by modifying a simple variable reference such as ${file} to include Bash string processing functions inside the braces. Here are two ways:\nfile=STATE.AK.TXT\necho ${file/.TXT/.csv}\necho ${file%.TXT}.csv\nThe first form performs a string substitution, substituting the first (and in our case, only) occurrence of .TXT with .csv. The second form peels off the trailing .TXT (% means “trailing”), leaving just STATE.AK. To that we then append .csv.\n\n\n\n\n\n\nTip\n\n\n\nThere are lots of string processing operations, and all are invoked using single characters like %, #, ^, etc. How the heck can you remember that? The answer is, you likely can’t. The takeaway for you in this class is that there exist string processing operators in Bash, and that if you look in the Bash manual you can get a description of what each one does.\n\nBash manual\nBash manual: Shell parameter expansion\nParameter expansion FAQ"
+  },
+  {
+    "objectID": "day2-bash-scripting.html#scripts",
+    "href": "day2-bash-scripting.html#scripts",
+    "title": "An introduction to Bash scripting",
+    "section": "Scripts",
+    "text": "Scripts\nA Bash script is a text file containing the same Bash commands you might type interactively. It’s analogous to an R or Python script but written in Bash instead of one of those other languages.\nBash knows it is reading from a file instead of the terminal window, and it operates slightly differently:\n\nIt doesn’t print a prompt.\nIt doesn’t read Bash configuration files (~/.bashrc, ~/.bash_profile, ~/.profile, etc.). As a consequence, aliases and variables defined in those files are not visible to scripts.\n\nA Bash script can be run like so:\nbash myscript.sh\n\nExercise\n\nCreate a script myscript.sh that processes data file STATE.AK.TXT as above.\n\nOnce you’ve created a script, it can be very useful to check it for errors and potential pitfalls by running it through ShellCheck."
+  },
+  {
+    "objectID": "day2-bash-scripting.html#loops",
+    "href": "day2-bash-scripting.html#loops",
+    "title": "An introduction to Bash scripting",
+    "section": "Loops",
+    "text": "Loops\nBash supports a few kinds of loops. The one we’ll be using here looks like this:\nfor var in list_of_things; do\n    # operate on $var\ndone\nAlternative syntax (notice the do is on a line by itself):\nfor var in list_of_things\ndo\n    # operate on $var\ndone\nA couple examples:\nfor name in Tom Dick Harry; do\n    echo \"Every $name\"\ndone\nfor i in {99..1}; do\n    echo \"$i bottles of beer on the wall\"\ndone\nIt’s very common to operate on files:\nfor file in *.TXT; do\n    # do something with $file, for example:\n    echo $file\ndone"
+  },
+  {
+    "objectID": "day2-bash-scripting.html#putting-it-all-together",
+    "href": "day2-bash-scripting.html#putting-it-all-together",
+    "title": "An introduction to Bash scripting",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nRecall that our goal is to add a header record to each data file, and to rename the data files to .csv. We can do so by writing a loop, and performing those two operations inside the loop. Write your data file-processing loop inside your myscript.sh script file.\n\n\n\n\n\n\nTip\n\n\n\nWhen performing a destructive operation, it can be very helpful to view the actual commands that will be executed before doing them for real. To satisfy yourself that your script is coded correctly, prefix each command with echo so that it is simply printed in the terminal window. You will also want to either comment out I/O redirections or quote them, as they will otherwise affect the echo command. Here’s our practice loop:\nfor file in *.TXT; do\n    echo echo \"state,gender,year,firstname,count\" \"&gt;\" tempfile\n    echo cat $file \"&gt;&gt;\" tempfile\n    echo mv tempfile ${file/.TXT/.csv}\ndone\nWhen ready, remove the echo prefixes and remove quotes around redirection operators:\nfor file in *.TXT; do\n    echo \"state,gender,year,firstname,count\" &gt; tempfile\n    cat $file &gt;&gt; tempfile\n    mv tempfile ${file/.TXT/.csv}\ndone\n\n\n\nExercise\nAlice does not want to rename her files to .csv, she’s fine with them being named .TXT. And after learning that cat will concatenate multiple files given on the command line, she has what she thinks is a brilliant idea for performing the processing more simply. First she puts the common header record in a file:\necho \"state,gender,year,firstname,count\" &gt; header\nAnd then she writes this loop:\nfor file in *.TXT; do\n    cat header $file &gt; $file\ndone\nWell that turned out to be a disaster. What went wrong?"
+  },
+  {
+    "objectID": "day2-bash-scripting.html#next-steps",
+    "href": "day2-bash-scripting.html#next-steps",
+    "title": "An introduction to Bash scripting",
+    "section": "Next steps",
+    "text": "Next steps\nThere’s a lot more to Bash scripting. Key next topics to study include:\n\nConditional statements\nProcessing command line arguments\nCreating scripts that can be invoked like built-in commands"
+  },
+  {
+    "objectID": "day2-unices.html",
+    "href": "day2-unices.html",
+    "title": "Unices",
     "section": "",
-    "text": "Collaborating through forking\nMaterials\n\n\nCollaborating through branches\nMaterials\n\n\nInteractive session 2: Collaborative coding with GitHub\nhttps://github.com/brunj7/eds214-handson-ghcollab"
+    "text": "UNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\n\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\n\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built\n\n\n\n\n\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions"
   },
   {
-    "objectID": "day2-server_uploading.html",
-    "href": "day2-server_uploading.html",
-    "title": "Uploading things to a server",
+    "objectID": "day2-unices.html#introduction-to-unix-and-its-siblings",
+    "href": "day2-unices.html#introduction-to-unix-and-its-siblings",
+    "title": "Unices",
     "section": "",
-    "text": "You have several options to upload files to the server. Some are more convenient if you have few files, like RStudio interface, some are more built for uploading a lot of files at one, like specific software… and you guessed it the CLI :)"
-  },
-  {
-    "objectID": "day2-server_uploading.html#sftp-software",
-    "href": "day2-server_uploading.html#sftp-software",
-    "title": "Uploading things to a server",
-    "section": "sFTP Software",
-    "text": "sFTP Software\nAn efficient protocol to upload files is FTP (File Transfer Protocol). The s stands for secured. Any software supporting those protocols will work to transfer files.\nWe recommend the following free software:\n\nMac users: cyberduck\nWindows: WinSCP"
-  },
-  {
-    "objectID": "day2-server_uploading.html#scp",
-    "href": "day2-server_uploading.html#scp",
-    "title": "Uploading things to a server",
-    "section": "scp",
-    "text": "scp\nThe scp command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:\nscp /source/path hostname:/path/to/destination/\nHere is an example of my uploading the file 10min-loop.R to Taylor from my laptop. The destination directory on Taylor is /Users/brun/:\nscp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/\nBTW try to open and run that script for fun!!\nIf you want to upload an entire folder, you can add the -r option to the command. The general syntax is:\nscp -r /path/to/source-folder user@server:/path/to/destination-folder/\nHere is an example uploading all the images in the myplot folder\nscp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots"
+    "text": "UNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\n\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\n\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built\n\n\n\n\n\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions"
   },
   {
     "objectID": "resources.html",
@@ -765,44 +786,9 @@
   {
     "objectID": "day_3.html",
     "href": "day_3.html",
-    "title": "Getting data in a programmatic way",
+    "title": "Day 3 - Getting data in a programmatic way",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects (120min)"
-  },
-  {
-    "objectID": "day_3.html#day-3",
-    "href": "day_3.html#day-3",
-    "title": "Getting data in a programmatic way",
-    "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects (120min)"
-  },
-  {
-    "objectID": "day_3.html#getting-data",
-    "href": "day_3.html#getting-data",
-    "title": "Getting data in a programmatic way",
-    "section": "Getting Data",
-    "text": "Getting Data"
-  },
-  {
-    "objectID": "day_3.html#the-manual-way",
-    "href": "day_3.html#the-manual-way",
-    "title": "Getting data in a programmatic way",
-    "section": "The manual way",
-    "text": "The manual way\nUsing website to retrieve data is great interactive way to search and explore data of interest. Let’s start our day by searching some data on the data repository DateONE: https://search.dataone.org/data\nIn case you need some inspiration, look at this dataset about historic precipitation in Alaska: https://doi.org/10.5063/N29VCQ"
-  },
-  {
-    "objectID": "day_3.html#the-programmatic-way",
-    "href": "day_3.html#the-programmatic-way",
-    "title": "Getting data in a programmatic way",
-    "section": "The programmatic way",
-    "text": "The programmatic way\nAlthough discovering data through a web interface is convenient and offers a great experience, it is often hard to scale this approach or to integrate it into a reproducible workflow.\nSlides\n\nHands-on – APIs\nRepository"
-  },
-  {
-    "objectID": "day_3.html#group-project",
-    "href": "day_3.html#group-project",
-    "title": "Getting data in a programmatic way",
-    "section": "Group project",
-    "text": "Group project\nGroup project"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects working session (120min)"
   },
   {
     "objectID": "flex-rmarkdown_syntax.html#the-markdown-syntax",
