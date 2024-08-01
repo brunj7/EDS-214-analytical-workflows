@@ -322,18 +322,11 @@
     "text": "Schedule"
   },
   {
-    "objectID": "day_2.html#working-on-a-remote-server",
-    "href": "day_2.html#working-on-a-remote-server",
+    "objectID": "day_2.html",
+    "href": "day_2.html",
     "title": "Day 2 - Working on a remote server",
-    "section": "Working on a remote server",
-    "text": "Working on a remote server\n\nUnix and Friends\nMaterials\n\n\nRStudio Server\nMaterials\n\n\nThe Command Line Interface (CLI)\nMaterials\n\n\nAutomating things with bash\nMaterials\n\n\nCollaborating on a server\nMaterials"
-  },
-  {
-    "objectID": "day_2.html#uploading-files-to-a-server",
-    "href": "day_2.html#uploading-files-to-a-server",
-    "title": "Day 2 - Working on a remote server",
-    "section": "Uploading files to a server",
-    "text": "Uploading files to a server\nMaterials"
+    "section": "",
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture 1: Working on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive session 1: Command line Interface (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 3:00pm\nHybrid: Automating things with bash (90min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nCollaborating on a server (20 min) & Uploading things to a server (30 min)"
   },
   {
     "objectID": "day4-projects_team.html",
@@ -1096,13 +1089,27 @@
     "href": "day2-remote_server.html#get-into-the-flow-with-pipes",
     "title": "Working on a remote server",
     "section": "Get into the flow, with pipes",
-    "text": "Get into the flow, with pipes\n\n\n\nstdin, stdout, stderr\n\n\nwc -l *.TXT \nwc -l *.TXT | sort -n\n\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character;\n\n\nHere the wc -l command, which counts the number of lines in files, is given file names on the command line, so it counts the lines in those files. It writes its output to stdout. sort -n sorts lines in files. It was given no files to sort, so it sorts whatever lines come in via stdin. By piping these together (i.e., by hooking wc’s stdout to sort’s stdin using the pipe operator), the output from wc -l is thereby sorted.\nThere are various operators for redirecting where stdin comes from and where stdout and stderr go:\n\n&lt; file: read stdin from file\n&gt; file: write stdout to file\n2&gt; file: write stderr to file\n&gt;& file: write both stdout and stderr to file\n&gt;&gt; file: append stdout to file\n\nLet’s write the above result to a file:\nwc -l *.TXT | sort -n &gt; csvcount.log\nCaution: except for &gt;&gt;, all forms of &gt; are destructive: Bash overwrites any existing file with an empty file before the program is run.\nWant to get rid of output you don’t want to see? Use the Unix black hole: &gt;& /dev/null. (This is a cultural meme, you’ll see it on T-shirts and license plates.)\nThe above are the main redirections, but there are others.\nTo end a session, simply type exit or logout into the command line"
+    "text": "Get into the flow, with pipes\n\n\n\nstdin, stdout, stderr\n\n\nwc -l *.TXT \nwc -l *.TXT | sort -n\n\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character;\n\n\nHere the wc -l command, which counts the number of lines in files, is given file names on the command line, so it counts the lines in those files. It writes its output to stdout. sort -n sorts lines in files. It was given no files to sort, so it sorts whatever lines come in via stdin. By piping these together (i.e., by hooking wc’s stdout to sort’s stdin using the pipe operator), the output from wc -l is thereby sorted.\nThere are various operators for redirecting where stdin comes from and where stdout and stderr go:\n\n&lt; file: read stdin from file\n&gt; file: write stdout to file\n2&gt; file: write stderr to file\n&gt;& file: write both stdout and stderr to file\n&gt;&gt; file: append stdout to file\n\nLet’s write the above result to a file:\nwc -l *.TXT | sort -n &gt; csvcount.log\nCaution: except for &gt;&gt;, all forms of &gt; are destructive: Bash overwrites any existing file with an empty file before the program is run.\nWant to get rid of output you don’t want to see? Use the Unix black hole: &gt;& /dev/null. (This is a cultural meme, you’ll see it on T-shirts and license plates.)\nThe above are the main redirections, but there are others.\nTo end a session, simply type exit or logout into the command line\n\n\n\n\n\n\nSetting git on Taylor (if not yet done)\n\n\n\n\n\nAt the Terminal:\n\ngit config --global user.name \"Jane Doe\" \ngit config --global user.email janedoe@example.com\ngit config --global credential.helper 'cache --timeout=10000000'\ngit config --list\n\n\nSetting GitHub token on Taylor\nAt the R Console:\n\n# On your laptop\nusethis::create_github_token() # This should open a web browser on GitHub\n\n# On Taylor \ngitcreds::gitcreds_set()\nusethis::git_sitrep()"
   },
   {
     "objectID": "day2-remote_server.html#cli-practice",
     "href": "day2-remote_server.html#cli-practice",
     "title": "Working on a remote server",
     "section": "CLI Practice",
-    "text": "CLI Practice\n\n\n\n\n\n\nSetting git on Taylor (if not yet done)\n\n\n\n\n\nAt the Terminal:\n\ngit config --global user.name \"Jane Doe\" \ngit config --global user.email janedoe@example.com\ngit config --global credential.helper 'cache --timeout=10000000'\ngit config --list\n\n\nSetting GitHub token on Taylor\nAt the R Console:\n\n# On your laptop\nusethis::create_github_token() # This should open a web browser on GitHub\n\n# On Taylor \ngitcreds::gitcreds_set()\nusethis::git_sitrep()"
+    "text": "CLI Practice"
+  },
+  {
+    "objectID": "day2-remote_server.html#bonus-vim",
+    "href": "day2-remote_server.html#bonus-vim",
+    "title": "Working on a remote server",
+    "section": "Bonus: vim",
+    "text": "Bonus: vim\nThis section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.\nVim"
+  },
+  {
+    "objectID": "day2-remote_server.html#aknowledgements",
+    "href": "day2-remote_server.html#aknowledgements",
+    "title": "Working on a remote server",
+    "section": "Aknowledgements",
+    "text": "Aknowledgements\nThis section reuses materials from NCEAS Open Science for Synthesis (OSS) intensive summer schools and other training. Contributions to this content have been made by Mark Schildhauer, Matt Jones, Jim Regetz and many others; and from EDS-213 10 bash essentials developed by Greg Janée"
   }
 ]
