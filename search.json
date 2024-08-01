@@ -224,242 +224,207 @@
     "text": "GitHub is a company that hosts git repositories online and provides several collaboration features (among which forking). GitHub fosters a great user community and has built a nice web interface to git, also adding great visualization/rendering capacities of your data.\n\nGitHub.com: https://github.com\nA user account: https://github.com/brunj7\nAn organization account: https://github.com/nceas\nNCEAS GitHub instance: https://github.nceas.ucsb.edu/\n\n\n\nThis screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.\n\nIf we drill into the “commits” for the repository, we can see the history of changes made to all of the files. Looks like kellijohnson and seananderson were fixing things in June and July:\n\nAnd finally, if we drill into the changes made on June 13, we can see exactly what was changed in each file:\n Tracking these changes, and seeing how they relate to released versions of software and files is exactly what Git and GitHub are good for. We will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow."
   },
   {
-    "objectID": "day_4.html",
-    "href": "day_4.html",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:20am\nBuilding analytical workflows: meet targets (80 min)\n\n\n11:20am - 11:30am\nBreak (10 min)\n\n\n11:30am - 12:30am\nReproducible publication: meet rrtools (60 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
-  },
-  {
-    "objectID": "day_4.html#day-4",
-    "href": "day_4.html#day-4",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:20am\nBuilding analytical workflows: meet targets (80 min)\n\n\n11:20am - 11:30am\nBreak (10 min)\n\n\n11:30am - 12:30am\nReproducible publication: meet rrtools (60 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
-  },
-  {
-    "objectID": "day_4.html#leveraging-existing-frameworks-for-reproducibility",
-    "href": "day_4.html#leveraging-existing-frameworks-for-reproducibility",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "Leveraging existing frameworks for reproducibility",
-    "text": "Leveraging existing frameworks for reproducibility\nPlease remember that every workflow or framework is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project.\n\nAnalytical workflow frameworks in R\n\n\n\n\n\nConceptual workflow model promoted by the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.hadley.nz/intro#fig-ds-diagram\n\n\n\n\n\nTargets\nThe targets R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.\nHere for more: https://books.ropensci.org/targets/\nOur practice example: https://github.com/brunj7/eds214-handson-targets\n\n\nPointblank\nAlthough the pointblank package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.\nhttps://github.com/rstudio/pointblank\n\n\n\nReproducible publications\nrrtools as an example"
-  },
-  {
-    "objectID": "day_4.html#documenting-things",
-    "href": "day_4.html#documenting-things",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "Documenting things",
-    "text": "Documenting things\n\nWhy does it matter ?\n\n\n\n\n\n\n\n\n\nMaterials"
-  },
-  {
-    "objectID": "day_4.html#sharing-things",
-    "href": "day_4.html#sharing-things",
-    "title": "Being reproducible to better collaborate: Tools and Practices",
-    "section": "Sharing things",
-    "text": "Sharing things\nMaterials"
-  },
-  {
-    "objectID": "day1-hands-on_drawings.html",
-    "href": "day1-hands-on_drawings.html",
+    "objectID": "day1-hands-on_drawings_p2.html",
+    "href": "day1-hands-on_drawings_p2.html",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
+    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
   },
   {
-    "objectID": "day1-hands-on_drawings.html#goal",
-    "href": "day1-hands-on_drawings.html#goal",
+    "objectID": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
+    "href": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
+    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
   },
   {
-    "objectID": "day1-hands-on_drawings.html#remember",
-    "href": "day1-hands-on_drawings.html#remember",
+    "objectID": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
+    "href": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
     "title": "Hands-on: Planning your work",
-    "section": "Remember",
-    "text": "Remember\n\nEach node represents a step or an input/output\nEach connecting edge represents data flow or processing\n\n\n\nOh wait…\nActually there is more"
+    "section": "This is your lucky day!!",
+    "text": "This is your lucky day!!\nWe found data for additional chemistry measurements while skimming through the database :)\nWe now want to be able to produce the following plot\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (5min)"
   },
   {
-    "objectID": "day1-hands-on_drawings.html#references",
-    "href": "day1-hands-on_drawings.html#references",
-    "title": "Hands-on: Planning your work",
-    "section": "References",
-    "text": "References\nExercise based on: Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358\nData available here: McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684 (Accessed 2021-08-06)."
-  },
-  {
-    "objectID": "day1-github_commit_messages.html",
-    "href": "day1-github_commit_messages.html",
-    "title": "On good commit messages",
+    "objectID": "day1-github_forking.html",
+    "href": "day1-github_forking.html",
+    "title": "Collaborative Coding Workflows: Forking",
     "section": "",
-    "text": "https://xkcd.com/1296/\nCommit messages are critical for others, including your future self, to understand the motivation behind the changes that were implemented. Combined into the history of your file and repository, those messages help to understand the content and its evolution over time\nSo what is a good commit message? Well I think the answer actually starts with what is a good commit? Which actually begins when you are choosing how to group files during the staging.\nA good commit:\nA good commit message:\nNote: you can add a body to a commit message if you want to describe the content in greater details, but keep the first line (message) separated."
+    "text": "A fork is a copy of a repository that will be stored under your user account. Forking a repository allows you to freely experiment with changes without affecting the original project. We can create a fork on Github by clicking the “fork” button in the top right corner of our repository web page.\nMost commonly, forks are used to either propose changes to someone else’s project or to use someone else’s project as a starting point for your own idea.\nWhen you are satisfied with your work, you can initiate a Pull Request to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the “New pull request” button!\nNext, click “compare across forks”, and use the dropdown menus to select your fork as the “head fork” and the original repository as the “base fork”.\nThen type a title and description for the changes you would like to make. By using GitHub’s @mention syntax in your Pull Request message, you can ask for feedback from specific people or teams.\nThis workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project."
   },
   {
-    "objectID": "day1-github_commit_messages.html#references",
-    "href": "day1-github_commit_messages.html#references",
-    "title": "On good commit messages",
-    "section": "References",
-    "text": "References\n\nHow to Write a Git Commit Message: https://chris.beams.io/posts/git-commit/"
+    "objectID": "day1-github_forking.html#demo-time",
+    "href": "day1-github_forking.html#demo-time",
+    "title": "Collaborative Coding Workflows: Forking",
+    "section": "Demo time",
+    "text": "Demo time\nUpdate the greetings R package to add the option to change the color of the background of the text.\nRepo: https://github.com/brunj7/greetings\nWhat I will do:\n\nFork the repository\nAdd functionality to this R package. In this example I will modify the say_aloah() function to allow changing the text background color to blue in addition to the existing green (see here for more about the crayon package)\nOnce done, I will create a Pull Request (PR) to integrate the new changes\nMerge back changes!"
   },
   {
-    "objectID": "day_5.html",
-    "href": "day_5.html",
-    "title": "Reproducible for all",
+    "objectID": "flex-rmarkdown_syntax.html#the-markdown-syntax",
+    "href": "flex-rmarkdown_syntax.html#the-markdown-syntax",
+    "title": "Rmarkdown syntax",
+    "section": "The Markdown syntax ",
+    "text": "The Markdown syntax \nYou will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using pandoc into various document formats (PDF, html, ….). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor.\nAnother interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.\n$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$\n\\[\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\\]\nDuring this flex session, explore what you can do with with Markdown basic\nhttps://www.markdownguide.org/basic-syntax/\nAnd extended:\nhttps://www.markdownguide.org/extended-syntax/\n\nR Markdown\nWhat about R markdown in all of this? Well the R Markdown syntax, or more precisely the knitr package, add extra R oriented features which allows the translate of R code, figures and more into a Markdown document to produce dynamic and reproducible documents."
+  },
+  {
+    "objectID": "day_3.html",
+    "href": "day_3.html",
+    "title": "Day 3 - Getting data in a programmatic way",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n10:30am - 12:30pm\nGroup project (120min)\n\n\n12:300pm - 1:30pm\nLunch \n\n\n1:30pm - 2:00pm\nMeet your next instructor – Kelly Caylor, Office of Research and Earth Research Institute, UCSB\n\n\n2:00pm - 3:00pm\nGroup project presentations - p1 (60 min).\n\n\n3:00pm - 3:10pm\nBreak 2 (10min)\n\n\n3:10pm - 3:40pm\nGroup project presentations - p2 (30 min)\n\n\n3:40pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nSchedule"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects working session (120min)"
   },
   {
-    "objectID": "day_5.html#scope-and-debugging",
-    "href": "day_5.html#scope-and-debugging",
-    "title": "Reproducible for all",
+    "objectID": "day_1.html#further-reading",
+    "href": "day_1.html#further-reading",
+    "title": "Day 1 - Reproducible & Collaborative Workflows",
+    "section": "Further reading",
+    "text": "Further reading\nHere are a few selected publications to help you to learn more about these topics.\n\nData and scientific workflow management:\n\nThe Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\nKitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. http://www.practicereproducibleresearch.org/\nGood enough practices in Scientific Computing:\nhttps://doi.org/10.1371/journal.pcbi.1005510\nScript your analysis:\nhttps://doi.org/10.1038/nj7638-563a\nPrinciples for data analysis workflows:\nhttps://doi.org/10.1371/journal.pcbi.1008770\nBenureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions. Front. Neuroinform. 0. https://doi.org/10.3389/fninf.2017.00069\nSandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology 9, e1003285. https://doi.org/10.1371/journal.pcbi.1003285\nSome Simple Guidelines for Effective Data Management:\nhttps://doi.org/10.1890/0012-9623-90.2.205\nBasic concepts of data management:\nhttps://www.dataone.org/education-modules\n\n\n\nOpen Science\n\nThe Tao of open science for ecology:\nhttps://doi.org/10.1890/ES14-00402.1\nChallenges and Opportunities of Open Data in Ecology:\nhttps://doi.org/10.1126/science.1197962\n\nScientific computing: Code alert\nhttps://doi.org/10.1038/nj7638-563a\nOur path to better science in less time using open data science tools\nhttps://doi.org/10.1038%2Fs41559-017-0160\nFAIR data guiding principles\nhttps://doi.org/10.1038/sdata.2016.18\nSkills and Knowledge for Data-Intensive Environmental Research https://doi.org/10.1093/biosci/bix025\n\nLet go your data\nhttps://doi.org/10.1038/s41563-019-0539-5\n\n\n\nCollaborative coding\n\nA new grad’s guide to coding as a team - Atlassian: https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf\n10 tips for efficient programming: https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html\nAgile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nCode Review\n\nSmall-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext\n\n\n\nBranches\n\nInteractive tutorial to learn more about git branches and more https://learngitbranching.js.org/\n\n\n\nGitHub Workflow\n\nGitHub:\n\nguides on how to use GitHub: https://guides.github.com/\nGitHub from RStudio: http://r-pkgs.had.co.nz/git.html#git-pull\n\nForking:\n\nhttps://help.github.com/articles/fork-a-repo/\nhttps://guides.github.com/activities/forking/\n\nComparison of git repository host services: https://www.git-tower.com/blog/git-hosting-services-compared/\nBranches\n\ninteractive tutorial on branches: http://learngitbranching.js.org/\nusing git in a collaborative environment: https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nGit using RStudio\n\nHappy Git and GitHub for the useR:http://happygitwithr.com/\nR packages - Git and GitHub: http://r-pkgs.had.co.nz/git.html#git-init\n\nGit mainly from the command line:\n\nInteractive git 101: https://try.github.io/\nVery good tutorial about git: https://www.atlassian.com/git/tutorials/what-is-version-control\nGit tutorial geared towards scientists: http://nyuccl.org/pages/gittutorial/\nShort intro to git basics: https://github.com/mbjones/gitbasics\nGit documentation about the basics: http://gitref.org/basic/\nGit documentation - the basics: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics\nGit terminology: https://www.atlassian.com/git/glossary/terminology\nIn trouble, guide to know what to do: http://justinhileman.info/article/git-pretty/git-pretty.png\nWant to undo something? https://github.com/blog/2019-how-to-undo-almost-anything-with-git\nGit terminology: https://www.atlassian.com/git/glossary/terminology\n8 tips to work better with git: https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/\nGitPro book (2nd edition): https://git-scm.com/book/en/v2\n\n\n\nUndoing things\n\nHelp to decide how to undo your problem: http://justinhileman.info/article/git-pretty/git-pretty.png\nUndo almost everything with git https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/\nDifference between git reset soft, mixed and hard https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/\nResetting, Checking Out & Reverting https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting"
+  },
+  {
+    "objectID": "day4-pair_programming.html",
+    "href": "day4-pair_programming.html",
+    "title": "Pair Programming",
     "section": "",
-    "text": "Materials"
+    "text": "Pair programming is an synchronous team activity, where several programmers get to work together on the same piece of code. This is a great way to gain a better sense of what coding style people are using and better understand their way of solving challenges. It is also a great way to learn from each other. Generally, there is one Driver who is the person typing at the computer. The other role is called Navigator(s). The Navigator does not write code and focuses on finding solutions to the problem. Their use of computer should be limited to searching online for solutions."
   },
   {
-    "objectID": "day_5.html#group-projects-presentations",
-    "href": "day_5.html#group-projects-presentations",
-    "title": "Reproducible for all",
-    "section": "",
-    "text": "Schedule"
+    "objectID": "day4-pair_programming.html#basic-principles-practices",
+    "href": "day4-pair_programming.html#basic-principles-practices",
+    "title": "Pair Programming",
+    "section": "Basic principles & practices",
+    "text": "Basic principles & practices\nAdapted from Woody Zuill https://www.agileconnection.com/article/getting-started-mob-programming\n\nTreat each other with kindness, consideration, and respect - makes group work more fun and sustainable\nDriver/navigator pair programming adapted to work with the whole team - “For an idea to go from your head into the computer, it must go through someone else’s hands.” Speak at the highest level of abstraction that the driver (and the rest of the team) is able to digest at the moment\nTimed Rotation - 20-60 minutes. We don’t require that everyone take the driver role; it is everyone’s choice whether to do so\nWhole Team - every contributor to the project is an integral part of the whole team; when we don’t have the skills we need within the team, we find someone who does and invite them to work with us to accomplish the needed work\nReflect, Tune, and Adjust Frequently - based on agile principle: “At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.”"
   },
   {
-    "objectID": "day_2.html",
-    "href": "day_2.html",
-    "title": "Day 2 - Working on a remote server",
-    "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture 1: Working on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive session 1: Command line Interface (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 3:00pm\nHybrid: Automating things with bash (90min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nCollaborating on a server (20 min) & Uploading things to a server (30 min)"
+    "objectID": "day4-pair_programming.html#tips-and-tricks-for-effective-team-programming",
+    "href": "day4-pair_programming.html#tips-and-tricks-for-effective-team-programming",
+    "title": "Pair Programming",
+    "section": "Tips and Tricks for Effective Team Programming",
+    "text": "Tips and Tricks for Effective Team Programming\nAdapted from Corey Johannsen: https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/\n\nSuggest, don’t dictate: Instead of telling the driver what to type into their editor, we explain what we’re trying to accomplish and then help the driver find the best solution. We’ve found that drivers learn better this way, and they don’t just end up feeling like a stenographer. Whenever possible, we ask questions that lead the driver to discover the answers on their own.\nStay focused and be present: Shut your laptop and put your phone away. I’ve struggled with following this guideline—we all have—and I recognize that the distraction almost always affects the rest of the mob. We tell all our mob members to be present, and if you can’t, it’s OK to leave until you can be.\nUse a timer, but be ready to pause it: We switch drivers every 20 - 60 minutes. However, we often wander off implementation into design discussions—it’s unavoidable—so this is when we pause the timer. This is another key guideline of our mob: the time you spend driving should be dedicated to writing the code that helps complete the task, not discussing design solutions.\nSet specific tasks for each session: When our mob gathers for a session, we first agree on and create a checklist of the tasks we are going to complete, and order them by priority on a whiteboard. This ensures we are all focused on the same task and keeps us moving forward. Additionally, this keeps us aligned with Minimal Marketable Feature (MMF) work, which we can communicate with our engineering and product managers to assure them we’re completing tasks that align with developing small, self-contained features that demonstrate immediate customer value."
   },
   {
-    "objectID": "day4-projects_team.html",
-    "href": "day4-projects_team.html",
-    "title": "Managing data-driven projects as a team",
-    "section": "",
-    "text": "Our goal is to centralize the management of your files (data, codes, …). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path.\nThere are many tools out there to help with file management. Here are a few questions to ask your teammates when organizing your project:\n\nCan everybody have access to this tool? This should overrule the “best” tool =&gt; maximize adoption\nWhat team practices should you set on how to use these tools? Example: naming convention for files\nAllow flexibility – acknowledge the technological level varies among collaborators. Empower them by showing how to best use these tools rather than doing it for them!"
-  },
-  {
-    "objectID": "day4-projects_team.html#managing-your-files-as-a-team",
-    "href": "day4-projects_team.html#managing-your-files-as-a-team",
-    "title": "Managing data-driven projects as a team",
-    "section": "",
-    "text": "Our goal is to centralize the management of your files (data, codes, …). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path.\nThere are many tools out there to help with file management. Here are a few questions to ask your teammates when organizing your project:\n\nCan everybody have access to this tool? This should overrule the “best” tool =&gt; maximize adoption\nWhat team practices should you set on how to use these tools? Example: naming convention for files\nAllow flexibility – acknowledge the technological level varies among collaborators. Empower them by showing how to best use these tools rather than doing it for them!"
-  },
-  {
-    "objectID": "day4-projects_team.html#naming-things",
-    "href": "day4-projects_team.html#naming-things",
-    "title": "Managing data-driven projects as a team",
-    "section": "Naming things",
-    "text": "Naming things\n\nDevelop naming conventions for files and folder:\n\nAvoid spaces (use underscores or dashes)\nAvoid punctuation or special characters\nTry to leverage alphabetical order (e.g. start with dates: 2020-05-08)\nUse descriptive naming (lite metadata)\nUse folders to structure/organize content\nKeep it simple\nMake it programmatically useful:\n\nUseful to select files (Wildcard *, regular expression)\nBut don’t forget Humans need to read file names too!!\n\n\n\nQuizz\nWhy do you think the second option would be best?\n\nx &lt;- 9.81  #  gravitational acceleration\n\ngravity_acc &lt;- 9.81  #  gravitational acceleration\n\nWhich filename would be the most useful?\n\n06-2020-08-sensor2-plot1.csv\n2020-05-08_light-sensor-1_plot-1.csv\nMeasurement 1.csv\n2020-05-08-light-sensor-1-plot-2.csv\n2020-05-08-windSensor1-plot3.csv\n\nThe most important is to make it consistent!\nGood reference on this topic from Jenny Bryan (RStudio)."
-  },
-  {
-    "objectID": "day4-projects_team.html#organizing-things",
-    "href": "day4-projects_team.html#organizing-things",
-    "title": "Managing data-driven projects as a team",
-    "section": "Organizing things",
-    "text": "Organizing things\nAs we discussed previously, it is good practice to encapsulate your project and repositories are a good unit to start with. In this section we will talk about the case when your data sets start to be numerous or large enough that it is not possible anymore to keep them in your repository. Generally when you reach this amount of data to deal with, it also means that your personal computer might not be the best computer to efficiently process those data sets. Thus using a remote server (on premise or in the cloud) might become necessary.\n\nCodes should be managed using version control (git and GitHub for this course)   The repository should be stored in your home folder and the management of the different contributions should be resolved using git and GitHub and not by sharing directly the scripts. The main reason is that git does already the work for us by tracking the changes between the various versions, but also tracking which collaborator has made those changes and when.\nData sets should should be centralized in a shared folder that is available to all   It is very rare in an Environmental Data Science project that you will discover all the data you need from the start. In addition, a lot of environmental data sets are time-series, and one year later might need to be updated as your project progresses. Our goal here is to setup ourselves in a way that will help us to avoid duplication of data. Every time you duplicate a data set (for example on your own laptop), there is a risk that at some point it will become its own version."
-  },
-  {
-    "objectID": "day4-projects_team.html#code",
-    "href": "day4-projects_team.html#code",
-    "title": "Managing data-driven projects as a team",
-    "section": "Code",
-    "text": "Code\nVersion control systems have been originally designed to track changes by rows in small text files, in other words they are well suited to manage codes. It is thus recommended to use them to track changes that you and your collaborators are making to the various scripts of your project. Mote on how to best do this in the section below."
-  },
-  {
-    "objectID": "day4-projects_team.html#scripting-languages",
-    "href": "day4-projects_team.html#scripting-languages",
-    "title": "Managing data-driven projects as a team",
-    "section": "Scripting languages",
-    "text": "Scripting languages\nCompared to other programming languages (such as C, fortran, …), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.\n\nStructure of a script\nA script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:\nFrom the top to the bottom of your script:\n\nSummary explaining the purpose of the script\nAttribution: authors, contributors, date of last update, contact info\nImport of external modules / packages\nConstant definitions (g = 9.81)\nFunction definitions (ideally respecting the order in which they are called)\nMain code calling the different functions\n\n\n\nA few programming practices that will help a long way\n\nComment your code. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes\nUse variables and constants instead of repeating values in different places of the code. This will let you update those values more easily\nChoose descriptive names for your variables and functions, not generic ones. If you store a list of files, do not use x for the variable name, use instead files. Even better use input_files if you are listing the files you are importing.\nBe consistent in terms of style (input_files, inputFiles,…) used to name variables and functions. Just pick one and stick to it!\nkeep it simple, stupid (KISS). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others\nGo modular! Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks\nDon’t Repeat Yourself (DRY). If you start copy/pasting part of your code changing a few parameters =&gt; write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain\nTest your code. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, ….\nIterate with small steps, implement few changes at a time to your code. Test, fix, and move forward!\n\nWe hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.\n\n\nNotebooks and scripts\nWith the increasing popularity of notebooks in scientific projects, it can sometimes be confusing to know when to use one. The good news is that there is not really a wrong or right here and that actually both can be used in a complementary manner and each data scientist will have her/his preference. However here are a few tips to help you decide:\n\nKeep your Notebook at a length you will feel comfortable reading. It if starts to be a long it might be time to think about if some code could be move to another document (scripts or another notebook)\nScripts might be better suited for tasks you need to rerun frequently\nIf you have developed many functions for your analysis, it might be worth storing them in a script outside your main notebook"
-  },
-  {
-    "objectID": "day4-projects_team.html#data",
-    "href": "day4-projects_team.html#data",
-    "title": "Managing data-driven projects as a team",
-    "section": "Data",
-    "text": "Data\nIt is recommended to keep the raw-data you are collecting separated from any data you might generate at various steps of your workflow. This will help you to trace back any problems, but also make your work more reproducible because you started your processing directly from the original data. There are different ways of ensuring this. A common one is to create a raw-data (sub)folder to store the data. You can even play with the file access settings to make those files read-only.\n\n\n\nhttps://github.com/benmarwick/rrtools"
-  },
-  {
-    "objectID": "day4-analytical_workflows.html",
-    "href": "day4-analytical_workflows.html",
-    "title": "Reproducible Analytical Workflows",
-    "section": "",
-    "text": "Conceptual workflow model promoted by the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.hadley.nz/intro#fig-ds-diagram"
-  },
-  {
-    "objectID": "day4-analytical_workflows.html#analytical-workflow-frameworks-in-r",
-    "href": "day4-analytical_workflows.html#analytical-workflow-frameworks-in-r",
-    "title": "Reproducible Analytical Workflows",
-    "section": "Analytical workflow frameworks in R",
-    "text": "Analytical workflow frameworks in R\n\nTargets\nThe targets R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.\nHere for more: https://books.ropensci.org/targets/\n\n\nPointblank\nAlthough the pointblank package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.\nhttps://github.com/rstudio/pointblank"
-  },
-  {
-    "objectID": "day2-cli_practice.html",
-    "href": "day2-cli_practice.html",
-    "title": "Practicing CLI",
-    "section": "",
-    "text": "In the following code examples, you need to type the command, but not include the command prompt (e.g., brun@taylor:~$) which just shows that the computer is ready to accept a command.\nWe’ll start by:\n\ncreating two directories with mkdir (make directory)\ncreate a simple text file using echo\nShow the contents of that file using cat (concatenate)\n\nbrun@taylor:~$ mkdir cli_intro\nbrun@taylor:~$ mkdir cli_intro/data\nbrun@taylor:~$ echo \"# Tutorial files related to CLI\" &gt; cli_intro/README.md\nbrun@taylor:~$ cat cli_intro/README.md\n# Tutorial files related to CLI\nbrun@taylor:~$ \n\n\n\n\n\ncopy a file into your directory with cp (copy)\nchange our working directory to that newly created directory using cd (change directory)\nlist the files in the directory with ls (list)\nlook where we are in the filesystem using pwd (print working directory)\nget an overview of the directory contents using tree\n\nUpload files from your local machine to the server using the different techniques mentioned above, You can download the 10min-loop.R file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R\n\n\n\n\ndownload the data to your laptop: https://aurora.nceas.ucsb.edu/~brun/sampledata.zip\nunzip the folder\nupload the folder to Taylor using scp or cyberduck\n\nYour should end up with something like this:\nbrun@taylor:~$ ls -l\ntotal 16\n-rw-r--r-- 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 24 23:05 github\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R\ndrwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata\n\n\n\n\nNow, let’s create two subdirectories in the data directory: mammals and plots\n\nmove using cp all the mammals files from the sampledata folder to the mammals subdirectory; hint: you can use the wildcard *\nmove using mv the other files files from the sampledata folder to the plots subdirectory\ndouble check it is done using cd and ls\nremove rm the sampledata directory; hint: rmdir can only remove empty directories\nbonus: add a text file data_listing.txt in the data folder that lists all the files in it"
-  },
-  {
-    "objectID": "day2-cli_practice.html#files-and-directories",
-    "href": "day2-cli_practice.html#files-and-directories",
-    "title": "Practicing CLI",
-    "section": "",
-    "text": "In the following code examples, you need to type the command, but not include the command prompt (e.g., brun@taylor:~$) which just shows that the computer is ready to accept a command.\nWe’ll start by:\n\ncreating two directories with mkdir (make directory)\ncreate a simple text file using echo\nShow the contents of that file using cat (concatenate)\n\nbrun@taylor:~$ mkdir cli_intro\nbrun@taylor:~$ mkdir cli_intro/data\nbrun@taylor:~$ echo \"# Tutorial files related to CLI\" &gt; cli_intro/README.md\nbrun@taylor:~$ cat cli_intro/README.md\n# Tutorial files related to CLI\nbrun@taylor:~$ \n\n\n\n\n\ncopy a file into your directory with cp (copy)\nchange our working directory to that newly created directory using cd (change directory)\nlist the files in the directory with ls (list)\nlook where we are in the filesystem using pwd (print working directory)\nget an overview of the directory contents using tree\n\nUpload files from your local machine to the server using the different techniques mentioned above, You can download the 10min-loop.R file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R\n\n\n\n\ndownload the data to your laptop: https://aurora.nceas.ucsb.edu/~brun/sampledata.zip\nunzip the folder\nupload the folder to Taylor using scp or cyberduck\n\nYour should end up with something like this:\nbrun@taylor:~$ ls -l\ntotal 16\n-rw-r--r-- 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 24 23:05 github\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R\ndrwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata\n\n\n\n\nNow, let’s create two subdirectories in the data directory: mammals and plots\n\nmove using cp all the mammals files from the sampledata folder to the mammals subdirectory; hint: you can use the wildcard *\nmove using mv the other files files from the sampledata folder to the plots subdirectory\ndouble check it is done using cd and ls\nremove rm the sampledata directory; hint: rmdir can only remove empty directories\nbonus: add a text file data_listing.txt in the data folder that lists all the files in it"
-  },
-  {
-    "objectID": "day2-cli_practice.html#aknowledgements",
-    "href": "day2-cli_practice.html#aknowledgements",
-    "title": "Practicing CLI",
+    "objectID": "day4-pair_programming.html#aknowledgements",
+    "href": "day4-pair_programming.html#aknowledgements",
+    "title": "Pair Programming",
     "section": "Aknowledgements",
-    "text": "Aknowledgements\nAdapted from Matt Jones, OSS 2017, https://github.com/NCEAS/oss-lessons"
+    "text": "Aknowledgements\nThis section reuses a lot of materials from an R Meetup organized by the Santa Barbara R Users group (https://github.com/R-Meetup-SB/hackathon-201806), including material prepared by Irene Steves."
   },
   {
-    "objectID": "day1-pseudocode.html",
-    "href": "day1-pseudocode.html",
-    "title": "Flow charts and pseudocode",
+    "objectID": "day2-server_collaboration.html",
+    "href": "day2-server_collaboration.html",
+    "title": "Collaborating on a server",
     "section": "",
-    "text": "Don’t start implementing nor coding without planning! It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.\n\n\n\nCherubini et al., 2007"
+    "text": "Collaborative Setup\nThere are additional reasons of particular importance in a collaborative set up, such as a working group:\n\nCentralizing data management: As you know environmental data science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to centralize your data management by having only one copy of the data that you can share with all your collaborators. It will ensure everybody is using the same version of the data and since everyone can access the same data from the same shred folder, everybody will have the exact same path in their script!!\nMake sure your files are safe: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.\n\n\n\nWhat does working on a remote server mean?\nWhat does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:\n\nFile management: you will need to learn to move files (including your R scripts) to the server\nR Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.\nCode: you will use version control (such as git) and code repository (such as GitHub)to move you code from one machine to another. Do not store code in shared folder, but rather under your home directory and use the code repository solution to share your code with your collaborator and leverage version control to manage the various contributions to your scripts.\n\n\n\n\n\n\nCollaborative workflow on an analytical server; scripts are managed via git and GitHub with each collaborator having a copy of the repository under their home folder, data sets management is centralized in shared folders on ther server"
   },
   {
-    "objectID": "day1-pseudocode.html#planing-things",
-    "href": "day1-pseudocode.html#planing-things",
-    "title": "Flow charts and pseudocode",
+    "objectID": "day2-cli_advanced.html",
+    "href": "day2-cli_advanced.html",
+    "title": "Working on a remote server",
     "section": "",
-    "text": "Don’t start implementing nor coding without planning! It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.\n\n\n\nCherubini et al., 2007"
+    "text": "We will not cover this during class, it is for your reference. You will also have the opportunity to further practice and learn about the command line in EDS-215.\n\n\nFrom the gitbash (MS Windows) or the terminal (Mac) type:\nssh taylor.bren.ucsb.edu\nYou will be prompted for your username and password.\n\n\n\naurora_ssh\n\n\nYou can also directly add your username:\nssh brun@taylor.bren.ucsb.edu\nIn this case, you will be only asked for your password as you already specified which user you want to connect with.\n\n\n\n\nWho else is logged into this machine? who\nWho is logged into “this shell”? whoami\n\n\n\n\n\n&lt;command&gt; -h, &lt;command&gt; --help\nman, info, apropos, whereis\nSearch the web!\n\n\n\n\nShow me my Rmarkdown files!\nfind . -iname '*.Rmd'\nWhich files are larger than 1GB?\nfind . -size +1G\nWith more details about the files:\nfind . -size +1G -ls\n\n\n\n\n\n\nCancel (abort) a command: Ctrl-c Note: very different than Windows!!\nStop (suspend) a command: Ctrl-z\nCtrl-z can be used to suspend, then background a process\n\n\n\n\n\nLike Windows Task Manager, OSX Activity Monitor\ntop, ps, jobs (hit q to get out!)\nkill to delete an unwanted job or process\nForeground and background: &\n\n\n\n\n\nHow much storage is available on this system? df -h\nHow much storage am “I” using overall? du -hs &lt;folder&gt;\nHow much storage am “I” using, by sub directory? du -h &lt;folder&gt;\n\n\n\n\n\nSee your command history: history\nRe-run last command: !! (pronounced “bang-bang”)\nRe-run 32th command: !32\nRe-run 5th from last command: !-5\nRe-run last command that started with ‘c’: !c\n\n\n\n\n\n\nwc count lines, words, and/or characters\ndiff compare two files for differences\nsort sort lines in a file\nuniq report or filter out repeated lines in a file\n\n\n\n\n\n\n\nstdin, stdout, stderr\n\n\n$ ls *.png | wc -l\n$ ls *.png | wc -l &gt; pngcount.txt\n$ diff &lt;(sort file1.txt) &lt;(sort file2.txt)\n$ ls foo 2&gt;/dev/null\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character; _ is SQL query equivalent\n\n\n\n\n\n\n\nvim\nemacs\nnano\n\n$ nano .bashrc\n\n\n\n\n\ngrep search files for text\nsed filter and transform text\nfind advanced search for files/directories\n\n\n\nShow all lines containing “bug” in my R scripts\n$ grep bug *.R\nNow count the number of occurrences per file\n$ grep -c bug *.R\nPrint the names of files that contain bug\n$ grep -l bug *.R\n\n\n\n\ncat print file(s)\nhead print first few lines of file(s)\ntail print last few lines of file(s)\nless “pager” – view file interactively (type q to quit command)\nod --t “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format\n\n$ brun@aurora:~/data$ head -3 env.csv\nEnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments\n1,*Loc ID,-888,-888,-888,-888,-888,-888,-888,-888\n1,10101,-888,-888,-888,-888,-888,-888,-888,-888\n\n$ brun@aurora:~/data$ head -3 env.csv | od -cx\n0000000   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D\n           6e45    4976    2c44    6f4c    4963    2c44    694d    446e\n0000020   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P\n           7461    2c65    614d    4478    7461    2c65    6e41    506e\n0000040   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n\n           5450    4d2c    5441    4d2c    7861    5441    4d2c    6e69\n0000060   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m\n           5441    572c    6165    6874    7265    2c53    6f43    6d6d\n0000100   e   n   t   s  \\r  \\n   1   ,   *   L   o   c       I   D   ,\n           6e65    7374    0a0d    2c31    4c2a    636f    4920    2c44\n0000120   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000140   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -   8\n           3838    2c38    382d    3838    2d2c    3838    2c38    382d\n0000160   8   8   ,   -   8   8   8  \\r  \\n   1   ,   1   0   1   0   1\n           3838    2d2c    3838    0d38    310a    312c    3130    3130\n0000200   ,   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,\n           2d2c    3838    2c38    382d    3838    2d2c    3838    2c38\n0000220   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000240   8   8   8   ,   -   8   8   8  \\r  \\n\n           3838    2c38    382d    3838    0a0d\n\n\n\n\nalias lwc='ls *.jpg | wc -l'\nYou can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. .bashrc"
   },
   {
-    "objectID": "day1-pseudocode.html#flow-charts",
-    "href": "day1-pseudocode.html#flow-charts",
-    "title": "Flow charts and pseudocode",
-    "section": "Flow charts",
-    "text": "Flow charts\nFlowcharts are useful to visualize and develop analytical workflow. It guides planning and anticipating the various computing and analytical tasks that will be required to complete an analysis. It also helps explaining the different steps to your collaborators and team. You can use a flowchart to spell out the logic behind a analytical workflow before ever starting to code. It can help to organize big-picture thinking and provide a guide when it comes time to code. More specifically, flowcharts can:\n\nVisualize the sequence of the different phases of the analytical process from data collection to implementing analyses\nBetter define the scope and resources needed both in terms of project data management and computing resources needed\nDiscuss who will be in charge and involved in the development of the different parts of the workflow\nList the products / outputs that will result from your analysis - such as data, codes, publications, web presence, … - and discuss how to best preserve and share them\n\nThere are conventions on how to use symbols to represent different parts of a workflow (see here for example). Although it is good to be aware of those conventions for sharing a workflow with your community, within a team the most important aspect is to be coherent and stick to this usage overtime.\nThe main benefit for the project is the process and discussion as a team to develop the workflow. It will ensure that everybody is on the same page and has the opportunity to provide inputs on the project. This workflow should be updated regularly as the project evolves.\nA few workflow examples"
-  },
-  {
-    "objectID": "day1-pseudocode.html#pseudocode",
-    "href": "day1-pseudocode.html#pseudocode",
-    "title": "Flow charts and pseudocode",
-    "section": "Pseudocode",
-    "text": "Pseudocode\nOften, programmers may write pseudocode as a next step, to provide greater detail than the flowchart in terms of processing steps and implementation. It will help you to define where iterations will be needed but also detect repeating blocks that might be well suited to be handled via the development of a function.\nThis technique aims at developing a sequence of pragrammatical steps in a manner that is easy to understand for anyone with basic programming knowledge. Pseudocode can be implemented more or less formally and at various levels of details. One additional advantage of going through this process is that it is agnostic of the tools / programming languages that you will be using to develop your analytical workflow.\nIn this course, we will be focusing on the process more than the exact syntax to use, keeping the level of details at a level that provide more details than a flow chart."
-  },
-  {
-    "objectID": "vim.html",
-    "href": "vim.html",
-    "title": "Vim, the editor",
+    "objectID": "day2-cli_advanced.html#connecting-to-a-remote-server-via-ssh",
+    "href": "day2-cli_advanced.html#connecting-to-a-remote-server-via-ssh",
+    "title": "Working on a remote server",
     "section": "",
-    "text": "When you type almost any key, the corresponding character (letter, number, symbol, or whitespace) appears at the cursor\nCertain special keys do special operations (control, alt, command, super)\nFor a GUI app, you can/must click menus for other functionality"
+    "text": "From the gitbash (MS Windows) or the terminal (Mac) type:\nssh taylor.bren.ucsb.edu\nYou will be prompted for your username and password.\n\n\n\naurora_ssh\n\n\nYou can also directly add your username:\nssh brun@taylor.bren.ucsb.edu\nIn this case, you will be only asked for your password as you already specified which user you want to connect with."
   },
   {
-    "objectID": "vim.html#your-typical-editor-works-like-this",
-    "href": "vim.html#your-typical-editor-works-like-this",
-    "title": "Vim, the editor",
+    "objectID": "day2-cli_advanced.html#unix-systems-are-multi-user",
+    "href": "day2-cli_advanced.html#unix-systems-are-multi-user",
+    "title": "Working on a remote server",
     "section": "",
-    "text": "When you type almost any key, the corresponding character (letter, number, symbol, or whitespace) appears at the cursor\nCertain special keys do special operations (control, alt, command, super)\nFor a GUI app, you can/must click menus for other functionality"
+    "text": "Who else is logged into this machine? who\nWho is logged into “this shell”? whoami"
   },
   {
-    "objectID": "vim.html#vim-has-modes",
-    "href": "vim.html#vim-has-modes",
-    "title": "Vim, the editor",
-    "section": "Vim has modes",
-    "text": "Vim has modes\n\nNormal\n\nfor almost everything except typing! Insert\n\n\nfor typing Visual\n\n\nfor highlighting a region to operate on\n\n\n(and others you don’t need to know about)"
+    "objectID": "day2-cli_advanced.html#getting-help",
+    "href": "day2-cli_advanced.html#getting-help",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "&lt;command&gt; -h, &lt;command&gt; --help\nman, info, apropos, whereis\nSearch the web!"
+  },
+  {
+    "objectID": "day2-cli_advanced.html#finding-stuff",
+    "href": "day2-cli_advanced.html#finding-stuff",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "Show me my Rmarkdown files!\nfind . -iname '*.Rmd'\nWhich files are larger than 1GB?\nfind . -size +1G\nWith more details about the files:\nfind . -size +1G -ls"
+  },
+  {
+    "objectID": "day2-cli_advanced.html#getting-things-done",
+    "href": "day2-cli_advanced.html#getting-things-done",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "Cancel (abort) a command: Ctrl-c Note: very different than Windows!!\nStop (suspend) a command: Ctrl-z\nCtrl-z can be used to suspend, then background a process\n\n\n\n\n\nLike Windows Task Manager, OSX Activity Monitor\ntop, ps, jobs (hit q to get out!)\nkill to delete an unwanted job or process\nForeground and background: &\n\n\n\n\n\nHow much storage is available on this system? df -h\nHow much storage am “I” using overall? du -hs &lt;folder&gt;\nHow much storage am “I” using, by sub directory? du -h &lt;folder&gt;\n\n\n\n\n\nSee your command history: history\nRe-run last command: !! (pronounced “bang-bang”)\nRe-run 32th command: !32\nRe-run 5th from last command: !-5\nRe-run last command that started with ‘c’: !c"
+  },
+  {
+    "objectID": "day2-cli_advanced.html#a-sampling-of-simple-commands-for-dealing-with-files",
+    "href": "day2-cli_advanced.html#a-sampling-of-simple-commands-for-dealing-with-files",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "wc count lines, words, and/or characters\ndiff compare two files for differences\nsort sort lines in a file\nuniq report or filter out repeated lines in a file"
+  },
+  {
+    "objectID": "day2-cli_advanced.html#get-into-the-flow-with-pipes",
+    "href": "day2-cli_advanced.html#get-into-the-flow-with-pipes",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "stdin, stdout, stderr\n\n\n$ ls *.png | wc -l\n$ ls *.png | wc -l &gt; pngcount.txt\n$ diff &lt;(sort file1.txt) &lt;(sort file2.txt)\n$ ls foo 2&gt;/dev/null\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character; _ is SQL query equivalent"
+  },
+  {
+    "objectID": "day2-cli_advanced.html#text-editing",
+    "href": "day2-cli_advanced.html#text-editing",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "vim\nemacs\nnano\n\n$ nano .bashrc"
+  },
+  {
+    "objectID": "day2-cli_advanced.html#searching-advanced-utilities",
+    "href": "day2-cli_advanced.html#searching-advanced-utilities",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "grep search files for text\nsed filter and transform text\nfind advanced search for files/directories\n\n\n\nShow all lines containing “bug” in my R scripts\n$ grep bug *.R\nNow count the number of occurrences per file\n$ grep -c bug *.R\nPrint the names of files that contain bug\n$ grep -l bug *.R\n\n\n\n\ncat print file(s)\nhead print first few lines of file(s)\ntail print last few lines of file(s)\nless “pager” – view file interactively (type q to quit command)\nod --t “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format\n\n$ brun@aurora:~/data$ head -3 env.csv\nEnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments\n1,*Loc ID,-888,-888,-888,-888,-888,-888,-888,-888\n1,10101,-888,-888,-888,-888,-888,-888,-888,-888\n\n$ brun@aurora:~/data$ head -3 env.csv | od -cx\n0000000   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D\n           6e45    4976    2c44    6f4c    4963    2c44    694d    446e\n0000020   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P\n           7461    2c65    614d    4478    7461    2c65    6e41    506e\n0000040   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n\n           5450    4d2c    5441    4d2c    7861    5441    4d2c    6e69\n0000060   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m\n           5441    572c    6165    6874    7265    2c53    6f43    6d6d\n0000100   e   n   t   s  \\r  \\n   1   ,   *   L   o   c       I   D   ,\n           6e65    7374    0a0d    2c31    4c2a    636f    4920    2c44\n0000120   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000140   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -   8\n           3838    2c38    382d    3838    2d2c    3838    2c38    382d\n0000160   8   8   ,   -   8   8   8  \\r  \\n   1   ,   1   0   1   0   1\n           3838    2d2c    3838    0d38    310a    312c    3130    3130\n0000200   ,   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,\n           2d2c    3838    2c38    382d    3838    2d2c    3838    2c38\n0000220   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000240   8   8   8   ,   -   8   8   8  \\r  \\n\n           3838    2c38    382d    3838    0a0d"
+  },
+  {
+    "objectID": "day2-cli_advanced.html#create-custom-commands-with-alias",
+    "href": "day2-cli_advanced.html#create-custom-commands-with-alias",
+    "title": "Working on a remote server",
+    "section": "",
+    "text": "alias lwc='ls *.jpg | wc -l'\nYou can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. .bashrc"
+  },
+  {
+    "objectID": "day1-coding_together.html",
+    "href": "day1-coding_together.html",
+    "title": "Coding together",
+    "section": "",
+    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
+  },
+  {
+    "objectID": "day1-coding_together.html#learning-objectives",
+    "href": "day1-coding_together.html#learning-objectives",
+    "title": "Coding together",
+    "section": "",
+    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
+  },
+  {
+    "objectID": "day1-coding_together.html#why-collaborative-coding",
+    "href": "day1-coding_together.html#why-collaborative-coding",
+    "title": "Coding together",
+    "section": "Why collaborative coding",
+    "text": "Why collaborative coding\n\nSlide deck\nEnvironmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise. Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:\n\nRight size\nDiverse group of people with the right mix of skills, knowledge, and competencies\nAligned purpose and incentives\nEffective organizational structure\nStrong individual contributions\nSupportive team processes and culture\n\nSince Analytical Workflows are rarely linear! and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind. Programming as part of a team is different than writing a script for your(present)self. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:\n\nMotivating you to document well your work\nHelping you to think how to make your work reusable (by you, your future you and others)\nLearning to read code from collaborators to build upon each others work\nGain further knowledge in software development tools, such as version control\n\nDeveloping those skills will accelerate your research and open the door for you to contribute to open source projects."
+  },
+  {
+    "objectID": "day1-coding_together.html#how-to-code-together",
+    "href": "day1-coding_together.html#how-to-code-together",
+    "title": "Coding together",
+    "section": "How to code together",
+    "text": "How to code together\nIt is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming.\n\nTools\nThe good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:\n\nVersion control system: say goodbye to save as\nCode repository: where we share code and communicate ideas and feedback"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Course resources",
+    "section": "",
+    "text": "More References\n\nThe Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\nKitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. http://www.practicereproducibleresearch.org/\nReproducible Research with R and RStudio, Chrisotpher Gandrud http://christophergandrud.github.io/RepResR-RStudio/index.html\nInitial steps toward reproducible research, Karl Broman, https://kbroman.org/steps2rr/\nReproducibility guide from ROpenSci https://ropensci.github.io/reproducibility-guide/\nThe Turing Way Community. (2022). The Turing Way: A handbook for reproducible, ethical and collaborative research. Zenodo. doi: 10.5281/zenodo.3233853"
   },
   {
     "objectID": "day3-api.html",
@@ -630,207 +595,214 @@
     "text": "UNIX\n\nOriginally developed at AT&T Bell Labs circa 1970. Has experienced a long, multi-branched evolutionary path\n\nPOSIX (Portable Operating System Interface)\n\na set of specifications of what an OS needs to qualify as “a Unix”, to enhance interoperability among all the “Unix” variants\n\n\n\n\n\n\n\nThe unix family tree\n\n\n\n\nOS X\n\nis a Unix!\n\n\n\nLinux\n\nis not fully POSIX-compliant, but certainly can be regarded as functionally Unix\n\n\n\n\n\n\n\nSupports multi-users, multi-processes\nHighly modular: many small tools that do one thing well, and can be combined\nCulture of text files and streams\nPrimary OS on HPC (High Performance Computing Systems)\nMain OS on which Internet was built\n\n\n\n\n\n\n\n\nAll files have permissions and ownership.\n\n\n\nFile permissions"
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Course resources",
+    "objectID": "day_4.html",
+    "href": "day_4.html",
+    "title": "Day 4 - Being reproducible to better collaborate: Tools and Practices",
     "section": "",
-    "text": "More References\n\nThe Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\nKitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. http://www.practicereproducibleresearch.org/\nReproducible Research with R and RStudio, Chrisotpher Gandrud http://christophergandrud.github.io/RepResR-RStudio/index.html\nInitial steps toward reproducible research, Karl Broman, https://kbroman.org/steps2rr/\nReproducibility guide from ROpenSci https://ropensci.github.io/reproducibility-guide/\nThe Turing Way Community. (2022). The Turing Way: A handbook for reproducible, ethical and collaborative research. Zenodo. doi: 10.5281/zenodo.3233853"
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:20am\nBuilding analytical workflows: meet targets (80 min)\n\n\n11:20am - 11:30am\nBreak (10 min)\n\n\n11:30am - 12:30am\nReproducible publication: meet rrtools (60 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:20pm\nDocumenting & sharing things (50 min)\n\n\n2:20am - 2:30pm\nBreak (10 min)\n\n\n2:30pm - 4:00pm\nGroup Projects (90min)"
   },
   {
-    "objectID": "day1-coding_together.html",
-    "href": "day1-coding_together.html",
-    "title": "Coding together",
+    "objectID": "vim.html",
+    "href": "vim.html",
+    "title": "Vim, the editor",
     "section": "",
-    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
+    "text": "When you type almost any key, the corresponding character (letter, number, symbol, or whitespace) appears at the cursor\nCertain special keys do special operations (control, alt, command, super)\nFor a GUI app, you can/must click menus for other functionality"
   },
   {
-    "objectID": "day1-coding_together.html#learning-objectives",
-    "href": "day1-coding_together.html#learning-objectives",
-    "title": "Coding together",
+    "objectID": "vim.html#your-typical-editor-works-like-this",
+    "href": "vim.html#your-typical-editor-works-like-this",
+    "title": "Vim, the editor",
     "section": "",
-    "text": "In this part of the lesson, you will learn:\n\nWhy git is useful for reproducible analysis\nHow to use git to track changes to your work over time\nHow to use GitHub to collaborate with others\nHow to write effective commit messages\nHow to structure your commits so your changes are clear to others\nHow to fork a repository to contribute to its content\nHow to create a pull request\nHow to review a pull request"
+    "text": "When you type almost any key, the corresponding character (letter, number, symbol, or whitespace) appears at the cursor\nCertain special keys do special operations (control, alt, command, super)\nFor a GUI app, you can/must click menus for other functionality"
   },
   {
-    "objectID": "day1-coding_together.html#why-collaborative-coding",
-    "href": "day1-coding_together.html#why-collaborative-coding",
-    "title": "Coding together",
-    "section": "Why collaborative coding",
-    "text": "Why collaborative coding\n\nSlide deck\nEnvironmental Data Science (EDS), as many other data-driven research fields, requires a transdisciplinary approach to tackle challenges that often span across several domains of expertise. Working as a team will leverage know-how from diverse collaborators and be the most efficient way to tackle complex problems in EDS. Consequently collaborative skills are required to work effectively as a member of a team. No matter their focus, highly effective teams share certain characteristics:\n\nRight size\nDiverse group of people with the right mix of skills, knowledge, and competencies\nAligned purpose and incentives\nEffective organizational structure\nStrong individual contributions\nSupportive team processes and culture\n\nSince Analytical Workflows are rarely linear! and are developed iteratively, the most efficient way to iterate quickly on your analysis is to use scripts and leave copy-pasting behind. Programming as part of a team is different than writing a script for your(present)self. However learning programming as part of a team is not only critical to the efficacy of your team, it will also you help you to grow as a programmer by:\n\nMotivating you to document well your work\nHelping you to think how to make your work reusable (by you, your future you and others)\nLearning to read code from collaborators to build upon each others work\nGain further knowledge in software development tools, such as version control\n\nDeveloping those skills will accelerate your research and open the door for you to contribute to open source projects."
+    "objectID": "vim.html#vim-has-modes",
+    "href": "vim.html#vim-has-modes",
+    "title": "Vim, the editor",
+    "section": "Vim has modes",
+    "text": "Vim has modes\n\nNormal\n\nfor almost everything except typing! Insert\n\n\nfor typing Visual\n\n\nfor highlighting a region to operate on\n\n\n(and others you don’t need to know about)"
   },
   {
-    "objectID": "day1-coding_together.html#how-to-code-together",
-    "href": "day1-coding_together.html#how-to-code-together",
-    "title": "Coding together",
-    "section": "How to code together",
-    "text": "How to code together\nIt is important to acknowledge that there are many solutions to the complex research questions you will be facing in EDS. Each of those solutions will have several possible implementations, meaning that more likely you might code this implementation differently than your collaborators. Integrated software engineer teams generally try to mitigate this by developing coding standards and conventions that will guide how to write code and develop specific implementation. In scientific teams in which the collaboration is more loose and maybe more ephemeral as well, developing detailed coding standards will be too much of an overhead. However, we think it is important to acknowledge that coding style may varies among the data scientists of a project and it is a good discussion to have among the team at the beginning of the project. For example, in R it could be trying to use the tidyverse approach as much as possible. We also think there are two activities that will make the team more efficient: Code Review and Pair Programming.\n\nTools\nThe good news is there are several tools out there that have been designed to make developing code as a team more efficient. In this course, we will focus on getting familiar with the following:\n\nVersion control system: say goodbye to save as\nCode repository: where we share code and communicate ideas and feedback"
-  },
-  {
-    "objectID": "day2-cli_advanced.html",
-    "href": "day2-cli_advanced.html",
-    "title": "Working on a remote server",
+    "objectID": "day1-pseudocode.html",
+    "href": "day1-pseudocode.html",
+    "title": "Flow charts and pseudocode",
     "section": "",
-    "text": "We will not cover this during class, it is for your reference. You will also have the opportunity to further practice and learn about the command line in EDS-215.\n\n\nFrom the gitbash (MS Windows) or the terminal (Mac) type:\nssh taylor.bren.ucsb.edu\nYou will be prompted for your username and password.\n\n\n\naurora_ssh\n\n\nYou can also directly add your username:\nssh brun@taylor.bren.ucsb.edu\nIn this case, you will be only asked for your password as you already specified which user you want to connect with.\n\n\n\n\nWho else is logged into this machine? who\nWho is logged into “this shell”? whoami\n\n\n\n\n\n&lt;command&gt; -h, &lt;command&gt; --help\nman, info, apropos, whereis\nSearch the web!\n\n\n\n\nShow me my Rmarkdown files!\nfind . -iname '*.Rmd'\nWhich files are larger than 1GB?\nfind . -size +1G\nWith more details about the files:\nfind . -size +1G -ls\n\n\n\n\n\n\nCancel (abort) a command: Ctrl-c Note: very different than Windows!!\nStop (suspend) a command: Ctrl-z\nCtrl-z can be used to suspend, then background a process\n\n\n\n\n\nLike Windows Task Manager, OSX Activity Monitor\ntop, ps, jobs (hit q to get out!)\nkill to delete an unwanted job or process\nForeground and background: &\n\n\n\n\n\nHow much storage is available on this system? df -h\nHow much storage am “I” using overall? du -hs &lt;folder&gt;\nHow much storage am “I” using, by sub directory? du -h &lt;folder&gt;\n\n\n\n\n\nSee your command history: history\nRe-run last command: !! (pronounced “bang-bang”)\nRe-run 32th command: !32\nRe-run 5th from last command: !-5\nRe-run last command that started with ‘c’: !c\n\n\n\n\n\n\nwc count lines, words, and/or characters\ndiff compare two files for differences\nsort sort lines in a file\nuniq report or filter out repeated lines in a file\n\n\n\n\n\n\n\nstdin, stdout, stderr\n\n\n$ ls *.png | wc -l\n$ ls *.png | wc -l &gt; pngcount.txt\n$ diff &lt;(sort file1.txt) &lt;(sort file2.txt)\n$ ls foo 2&gt;/dev/null\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character; _ is SQL query equivalent\n\n\n\n\n\n\n\nvim\nemacs\nnano\n\n$ nano .bashrc\n\n\n\n\n\ngrep search files for text\nsed filter and transform text\nfind advanced search for files/directories\n\n\n\nShow all lines containing “bug” in my R scripts\n$ grep bug *.R\nNow count the number of occurrences per file\n$ grep -c bug *.R\nPrint the names of files that contain bug\n$ grep -l bug *.R\n\n\n\n\ncat print file(s)\nhead print first few lines of file(s)\ntail print last few lines of file(s)\nless “pager” – view file interactively (type q to quit command)\nod --t “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format\n\n$ brun@aurora:~/data$ head -3 env.csv\nEnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments\n1,*Loc ID,-888,-888,-888,-888,-888,-888,-888,-888\n1,10101,-888,-888,-888,-888,-888,-888,-888,-888\n\n$ brun@aurora:~/data$ head -3 env.csv | od -cx\n0000000   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D\n           6e45    4976    2c44    6f4c    4963    2c44    694d    446e\n0000020   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P\n           7461    2c65    614d    4478    7461    2c65    6e41    506e\n0000040   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n\n           5450    4d2c    5441    4d2c    7861    5441    4d2c    6e69\n0000060   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m\n           5441    572c    6165    6874    7265    2c53    6f43    6d6d\n0000100   e   n   t   s  \\r  \\n   1   ,   *   L   o   c       I   D   ,\n           6e65    7374    0a0d    2c31    4c2a    636f    4920    2c44\n0000120   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000140   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -   8\n           3838    2c38    382d    3838    2d2c    3838    2c38    382d\n0000160   8   8   ,   -   8   8   8  \\r  \\n   1   ,   1   0   1   0   1\n           3838    2d2c    3838    0d38    310a    312c    3130    3130\n0000200   ,   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,\n           2d2c    3838    2c38    382d    3838    2d2c    3838    2c38\n0000220   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000240   8   8   8   ,   -   8   8   8  \\r  \\n\n           3838    2c38    382d    3838    0a0d\n\n\n\n\nalias lwc='ls *.jpg | wc -l'\nYou can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. .bashrc"
+    "text": "Don’t start implementing nor coding without planning! It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.\n\n\n\nCherubini et al., 2007"
   },
   {
-    "objectID": "day2-cli_advanced.html#connecting-to-a-remote-server-via-ssh",
-    "href": "day2-cli_advanced.html#connecting-to-a-remote-server-via-ssh",
-    "title": "Working on a remote server",
+    "objectID": "day1-pseudocode.html#planing-things",
+    "href": "day1-pseudocode.html#planing-things",
+    "title": "Flow charts and pseudocode",
     "section": "",
-    "text": "From the gitbash (MS Windows) or the terminal (Mac) type:\nssh taylor.bren.ucsb.edu\nYou will be prompted for your username and password.\n\n\n\naurora_ssh\n\n\nYou can also directly add your username:\nssh brun@taylor.bren.ucsb.edu\nIn this case, you will be only asked for your password as you already specified which user you want to connect with."
+    "text": "Don’t start implementing nor coding without planning! It is important to stress that scientists write scripts to help them to investigate scientific question(s). Therefore scripting should not drive our analysis and thinking. We strongly recommend you take the time to plan ahead all the steps you need to conduct your analysis. Developing such a scientific workflow will help you to narrow down the tasks that are needed to move forward your analysis.\n\n\n\nCherubini et al., 2007"
   },
   {
-    "objectID": "day2-cli_advanced.html#unix-systems-are-multi-user",
-    "href": "day2-cli_advanced.html#unix-systems-are-multi-user",
-    "title": "Working on a remote server",
+    "objectID": "day1-pseudocode.html#flow-charts",
+    "href": "day1-pseudocode.html#flow-charts",
+    "title": "Flow charts and pseudocode",
+    "section": "Flow charts",
+    "text": "Flow charts\nFlowcharts are useful to visualize and develop analytical workflow. It guides planning and anticipating the various computing and analytical tasks that will be required to complete an analysis. It also helps explaining the different steps to your collaborators and team. You can use a flowchart to spell out the logic behind a analytical workflow before ever starting to code. It can help to organize big-picture thinking and provide a guide when it comes time to code. More specifically, flowcharts can:\n\nVisualize the sequence of the different phases of the analytical process from data collection to implementing analyses\nBetter define the scope and resources needed both in terms of project data management and computing resources needed\nDiscuss who will be in charge and involved in the development of the different parts of the workflow\nList the products / outputs that will result from your analysis - such as data, codes, publications, web presence, … - and discuss how to best preserve and share them\n\nThere are conventions on how to use symbols to represent different parts of a workflow (see here for example). Although it is good to be aware of those conventions for sharing a workflow with your community, within a team the most important aspect is to be coherent and stick to this usage overtime.\nThe main benefit for the project is the process and discussion as a team to develop the workflow. It will ensure that everybody is on the same page and has the opportunity to provide inputs on the project. This workflow should be updated regularly as the project evolves.\nA few workflow examples"
+  },
+  {
+    "objectID": "day1-pseudocode.html#pseudocode",
+    "href": "day1-pseudocode.html#pseudocode",
+    "title": "Flow charts and pseudocode",
+    "section": "Pseudocode",
+    "text": "Pseudocode\nOften, programmers may write pseudocode as a next step, to provide greater detail than the flowchart in terms of processing steps and implementation. It will help you to define where iterations will be needed but also detect repeating blocks that might be well suited to be handled via the development of a function.\nThis technique aims at developing a sequence of pragrammatical steps in a manner that is easy to understand for anyone with basic programming knowledge. Pseudocode can be implemented more or less formally and at various levels of details. One additional advantage of going through this process is that it is agnostic of the tools / programming languages that you will be using to develop your analytical workflow.\nIn this course, we will be focusing on the process more than the exact syntax to use, keeping the level of details at a level that provide more details than a flow chart."
+  },
+  {
+    "objectID": "day2-cli_practice.html",
+    "href": "day2-cli_practice.html",
+    "title": "Practicing CLI",
     "section": "",
-    "text": "Who else is logged into this machine? who\nWho is logged into “this shell”? whoami"
+    "text": "In the following code examples, you need to type the command, but not include the command prompt (e.g., brun@taylor:~$) which just shows that the computer is ready to accept a command.\nWe’ll start by:\n\ncreating two directories with mkdir (make directory)\ncreate a simple text file using echo\nShow the contents of that file using cat (concatenate)\n\nbrun@taylor:~$ mkdir cli_intro\nbrun@taylor:~$ mkdir cli_intro/data\nbrun@taylor:~$ echo \"# Tutorial files related to CLI\" &gt; cli_intro/README.md\nbrun@taylor:~$ cat cli_intro/README.md\n# Tutorial files related to CLI\nbrun@taylor:~$ \n\n\n\n\n\ncopy a file into your directory with cp (copy)\nchange our working directory to that newly created directory using cd (change directory)\nlist the files in the directory with ls (list)\nlook where we are in the filesystem using pwd (print working directory)\nget an overview of the directory contents using tree\n\nUpload files from your local machine to the server using the different techniques mentioned above, You can download the 10min-loop.R file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R\n\n\n\n\ndownload the data to your laptop: https://aurora.nceas.ucsb.edu/~brun/sampledata.zip\nunzip the folder\nupload the folder to Taylor using scp or cyberduck\n\nYour should end up with something like this:\nbrun@taylor:~$ ls -l\ntotal 16\n-rw-r--r-- 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 24 23:05 github\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R\ndrwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata\n\n\n\n\nNow, let’s create two subdirectories in the data directory: mammals and plots\n\nmove using cp all the mammals files from the sampledata folder to the mammals subdirectory; hint: you can use the wildcard *\nmove using mv the other files files from the sampledata folder to the plots subdirectory\ndouble check it is done using cd and ls\nremove rm the sampledata directory; hint: rmdir can only remove empty directories\nbonus: add a text file data_listing.txt in the data folder that lists all the files in it"
   },
   {
-    "objectID": "day2-cli_advanced.html#getting-help",
-    "href": "day2-cli_advanced.html#getting-help",
-    "title": "Working on a remote server",
+    "objectID": "day2-cli_practice.html#files-and-directories",
+    "href": "day2-cli_practice.html#files-and-directories",
+    "title": "Practicing CLI",
     "section": "",
-    "text": "&lt;command&gt; -h, &lt;command&gt; --help\nman, info, apropos, whereis\nSearch the web!"
+    "text": "In the following code examples, you need to type the command, but not include the command prompt (e.g., brun@taylor:~$) which just shows that the computer is ready to accept a command.\nWe’ll start by:\n\ncreating two directories with mkdir (make directory)\ncreate a simple text file using echo\nShow the contents of that file using cat (concatenate)\n\nbrun@taylor:~$ mkdir cli_intro\nbrun@taylor:~$ mkdir cli_intro/data\nbrun@taylor:~$ echo \"# Tutorial files related to CLI\" &gt; cli_intro/README.md\nbrun@taylor:~$ cat cli_intro/README.md\n# Tutorial files related to CLI\nbrun@taylor:~$ \n\n\n\n\n\ncopy a file into your directory with cp (copy)\nchange our working directory to that newly created directory using cd (change directory)\nlist the files in the directory with ls (list)\nlook where we are in the filesystem using pwd (print working directory)\nget an overview of the directory contents using tree\n\nUpload files from your local machine to the server using the different techniques mentioned above, You can download the 10min-loop.R file to your local machine from https://aurora.nceas.ucsb.edu/~brun/10min-loop.R\n\n\n\n\ndownload the data to your laptop: https://aurora.nceas.ucsb.edu/~brun/sampledata.zip\nunzip the folder\nupload the folder to Taylor using scp or cyberduck\n\nYour should end up with something like this:\nbrun@taylor:~$ ls -l\ntotal 16\n-rw-r--r-- 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 24 23:05 github\ndrwxr-xr-x 3 brun esmdomainusers 4096 Aug 16 05:00 R\ndrwxr-xr-x 2 brun esmdomainusers 4096 Aug 25 05:37 sampledata\n\n\n\n\nNow, let’s create two subdirectories in the data directory: mammals and plots\n\nmove using cp all the mammals files from the sampledata folder to the mammals subdirectory; hint: you can use the wildcard *\nmove using mv the other files files from the sampledata folder to the plots subdirectory\ndouble check it is done using cd and ls\nremove rm the sampledata directory; hint: rmdir can only remove empty directories\nbonus: add a text file data_listing.txt in the data folder that lists all the files in it"
   },
   {
-    "objectID": "day2-cli_advanced.html#finding-stuff",
-    "href": "day2-cli_advanced.html#finding-stuff",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "Show me my Rmarkdown files!\nfind . -iname '*.Rmd'\nWhich files are larger than 1GB?\nfind . -size +1G\nWith more details about the files:\nfind . -size +1G -ls"
-  },
-  {
-    "objectID": "day2-cli_advanced.html#getting-things-done",
-    "href": "day2-cli_advanced.html#getting-things-done",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "Cancel (abort) a command: Ctrl-c Note: very different than Windows!!\nStop (suspend) a command: Ctrl-z\nCtrl-z can be used to suspend, then background a process\n\n\n\n\n\nLike Windows Task Manager, OSX Activity Monitor\ntop, ps, jobs (hit q to get out!)\nkill to delete an unwanted job or process\nForeground and background: &\n\n\n\n\n\nHow much storage is available on this system? df -h\nHow much storage am “I” using overall? du -hs &lt;folder&gt;\nHow much storage am “I” using, by sub directory? du -h &lt;folder&gt;\n\n\n\n\n\nSee your command history: history\nRe-run last command: !! (pronounced “bang-bang”)\nRe-run 32th command: !32\nRe-run 5th from last command: !-5\nRe-run last command that started with ‘c’: !c"
-  },
-  {
-    "objectID": "day2-cli_advanced.html#a-sampling-of-simple-commands-for-dealing-with-files",
-    "href": "day2-cli_advanced.html#a-sampling-of-simple-commands-for-dealing-with-files",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "wc count lines, words, and/or characters\ndiff compare two files for differences\nsort sort lines in a file\nuniq report or filter out repeated lines in a file"
-  },
-  {
-    "objectID": "day2-cli_advanced.html#get-into-the-flow-with-pipes",
-    "href": "day2-cli_advanced.html#get-into-the-flow-with-pipes",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "stdin, stdout, stderr\n\n\n$ ls *.png | wc -l\n$ ls *.png | wc -l &gt; pngcount.txt\n$ diff &lt;(sort file1.txt) &lt;(sort file2.txt)\n$ ls foo 2&gt;/dev/null\n\nnote use of * as character wildcard for zero or more matches (same in Mac and Windows)\n? matches single character; _ is SQL query equivalent"
-  },
-  {
-    "objectID": "day2-cli_advanced.html#text-editing",
-    "href": "day2-cli_advanced.html#text-editing",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "vim\nemacs\nnano\n\n$ nano .bashrc"
-  },
-  {
-    "objectID": "day2-cli_advanced.html#searching-advanced-utilities",
-    "href": "day2-cli_advanced.html#searching-advanced-utilities",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "grep search files for text\nsed filter and transform text\nfind advanced search for files/directories\n\n\n\nShow all lines containing “bug” in my R scripts\n$ grep bug *.R\nNow count the number of occurrences per file\n$ grep -c bug *.R\nPrint the names of files that contain bug\n$ grep -l bug *.R\n\n\n\n\ncat print file(s)\nhead print first few lines of file(s)\ntail print last few lines of file(s)\nless “pager” – view file interactively (type q to quit command)\nod --t “octal dump” – to view file’s underlying binary/octal/hexadecimal/ASCII format\n\n$ brun@aurora:~/data$ head -3 env.csv\nEnvID,LocID,MinDate,MaxDate,AnnPPT,MAT,MaxAT,MinAT,WeatherS,Comments\n1,*Loc ID,-888,-888,-888,-888,-888,-888,-888,-888\n1,10101,-888,-888,-888,-888,-888,-888,-888,-888\n\n$ brun@aurora:~/data$ head -3 env.csv | od -cx\n0000000   E   n   v   I   D   ,   L   o   c   I   D   ,   M   i   n   D\n           6e45    4976    2c44    6f4c    4963    2c44    694d    446e\n0000020   a   t   e   ,   M   a   x   D   a   t   e   ,   A   n   n   P\n           7461    2c65    614d    4478    7461    2c65    6e41    506e\n0000040   P   T   ,   M   A   T   ,   M   a   x   A   T   ,   M   i   n\n           5450    4d2c    5441    4d2c    7861    5441    4d2c    6e69\n0000060   A   T   ,   W   e   a   t   h   e   r   S   ,   C   o   m   m\n           5441    572c    6165    6874    7265    2c53    6f43    6d6d\n0000100   e   n   t   s  \\r  \\n   1   ,   *   L   o   c       I   D   ,\n           6e65    7374    0a0d    2c31    4c2a    636f    4920    2c44\n0000120   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000140   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -   8\n           3838    2c38    382d    3838    2d2c    3838    2c38    382d\n0000160   8   8   ,   -   8   8   8  \\r  \\n   1   ,   1   0   1   0   1\n           3838    2d2c    3838    0d38    310a    312c    3130    3130\n0000200   ,   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,\n           2d2c    3838    2c38    382d    3838    2d2c    3838    2c38\n0000220   -   8   8   8   ,   -   8   8   8   ,   -   8   8   8   ,   -\n           382d    3838    2d2c    3838    2c38    382d    3838    2d2c\n0000240   8   8   8   ,   -   8   8   8  \\r  \\n\n           3838    2c38    382d    3838    0a0d"
-  },
-  {
-    "objectID": "day2-cli_advanced.html#create-custom-commands-with-alias",
-    "href": "day2-cli_advanced.html#create-custom-commands-with-alias",
-    "title": "Working on a remote server",
-    "section": "",
-    "text": "alias lwc='ls *.jpg | wc -l'\nYou can create a number of custom aliases that are available whenever you log in, by putting commands such as the above in your shell start-up file, e.g. .bashrc"
-  },
-  {
-    "objectID": "day2-server_collaboration.html",
-    "href": "day2-server_collaboration.html",
-    "title": "Collaborating on a server",
-    "section": "",
-    "text": "Collaborative Setup\nThere are additional reasons of particular importance in a collaborative set up, such as a working group:\n\nCentralizing data management: As you know environmental data science is data intensive and often require to deal with a large number of heterogeneous data files. It can be complicated to make sure every collaborators as access to all the data they need. It is even harder to ensure that the exact same version of the data is used by everyone. Moving your workflow to a server, will allow to centralize your data management by having only one copy of the data that you can share with all your collaborators. It will ensure everybody is using the same version of the data and since everyone can access the same data from the same shred folder, everybody will have the exact same path in their script!!\nMake sure your files are safe: Generally, servers are managed by a System Administrator. This person is in charge of keeping the server up-to-date, secured from malwares and set up back up strategies to ensure all the files on the server are backed up. When using cloud solutions, you should always check if a back up plan is available for the resources your using.\n\n\n\nWhat does working on a remote server mean?\nWhat does it mean for your workflow? The good news is that RStudio Server makes it very easy for RStudio users to start using a server for their analysis. The main changes are about:\n\nFile management: you will need to learn to move files (including your R scripts) to the server\nR Package installation: You can still install the R packages you need under your user (with some limitations). However some R packages will be already installed at the server level.\nCode: you will use version control (such as git) and code repository (such as GitHub)to move you code from one machine to another. Do not store code in shared folder, but rather under your home directory and use the code repository solution to share your code with your collaborator and leverage version control to manage the various contributions to your scripts.\n\n\n\n\n\n\nCollaborative workflow on an analytical server; scripts are managed via git and GitHub with each collaborator having a copy of the repository under their home folder, data sets management is centralized in shared folders on ther server"
-  },
-  {
-    "objectID": "day4-pair_programming.html",
-    "href": "day4-pair_programming.html",
-    "title": "Pair Programming",
-    "section": "",
-    "text": "Pair programming is an synchronous team activity, where several programmers get to work together on the same piece of code. This is a great way to gain a better sense of what coding style people are using and better understand their way of solving challenges. It is also a great way to learn from each other. Generally, there is one Driver who is the person typing at the computer. The other role is called Navigator(s). The Navigator does not write code and focuses on finding solutions to the problem. Their use of computer should be limited to searching online for solutions."
-  },
-  {
-    "objectID": "day4-pair_programming.html#basic-principles-practices",
-    "href": "day4-pair_programming.html#basic-principles-practices",
-    "title": "Pair Programming",
-    "section": "Basic principles & practices",
-    "text": "Basic principles & practices\nAdapted from Woody Zuill https://www.agileconnection.com/article/getting-started-mob-programming\n\nTreat each other with kindness, consideration, and respect - makes group work more fun and sustainable\nDriver/navigator pair programming adapted to work with the whole team - “For an idea to go from your head into the computer, it must go through someone else’s hands.” Speak at the highest level of abstraction that the driver (and the rest of the team) is able to digest at the moment\nTimed Rotation - 20-60 minutes. We don’t require that everyone take the driver role; it is everyone’s choice whether to do so\nWhole Team - every contributor to the project is an integral part of the whole team; when we don’t have the skills we need within the team, we find someone who does and invite them to work with us to accomplish the needed work\nReflect, Tune, and Adjust Frequently - based on agile principle: “At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.”"
-  },
-  {
-    "objectID": "day4-pair_programming.html#tips-and-tricks-for-effective-team-programming",
-    "href": "day4-pair_programming.html#tips-and-tricks-for-effective-team-programming",
-    "title": "Pair Programming",
-    "section": "Tips and Tricks for Effective Team Programming",
-    "text": "Tips and Tricks for Effective Team Programming\nAdapted from Corey Johannsen: https://blog.newrelic.com/2017/10/31/mob-programming-hurdles/\n\nSuggest, don’t dictate: Instead of telling the driver what to type into their editor, we explain what we’re trying to accomplish and then help the driver find the best solution. We’ve found that drivers learn better this way, and they don’t just end up feeling like a stenographer. Whenever possible, we ask questions that lead the driver to discover the answers on their own.\nStay focused and be present: Shut your laptop and put your phone away. I’ve struggled with following this guideline—we all have—and I recognize that the distraction almost always affects the rest of the mob. We tell all our mob members to be present, and if you can’t, it’s OK to leave until you can be.\nUse a timer, but be ready to pause it: We switch drivers every 20 - 60 minutes. However, we often wander off implementation into design discussions—it’s unavoidable—so this is when we pause the timer. This is another key guideline of our mob: the time you spend driving should be dedicated to writing the code that helps complete the task, not discussing design solutions.\nSet specific tasks for each session: When our mob gathers for a session, we first agree on and create a checklist of the tasks we are going to complete, and order them by priority on a whiteboard. This ensures we are all focused on the same task and keeps us moving forward. Additionally, this keeps us aligned with Minimal Marketable Feature (MMF) work, which we can communicate with our engineering and product managers to assure them we’re completing tasks that align with developing small, self-contained features that demonstrate immediate customer value."
-  },
-  {
-    "objectID": "day4-pair_programming.html#aknowledgements",
-    "href": "day4-pair_programming.html#aknowledgements",
-    "title": "Pair Programming",
+    "objectID": "day2-cli_practice.html#aknowledgements",
+    "href": "day2-cli_practice.html#aknowledgements",
+    "title": "Practicing CLI",
     "section": "Aknowledgements",
-    "text": "Aknowledgements\nThis section reuses a lot of materials from an R Meetup organized by the Santa Barbara R Users group (https://github.com/R-Meetup-SB/hackathon-201806), including material prepared by Irene Steves."
+    "text": "Aknowledgements\nAdapted from Matt Jones, OSS 2017, https://github.com/NCEAS/oss-lessons"
   },
   {
-    "objectID": "day_1.html#further-reading",
-    "href": "day_1.html#further-reading",
-    "title": "Day 1 - Reproducible & Collaborative Workflows",
-    "section": "Further reading",
-    "text": "Further reading\nHere are a few selected publications to help you to learn more about these topics.\n\nData and scientific workflow management:\n\nThe Practice of Reproducible Research-Case Studies and Lessons from the Data-Intensive Sciences:\nKitzes, Justin, Daniel Turek, and Fatma Deniz. n.d. http://www.practicereproducibleresearch.org/\nGood enough practices in Scientific Computing:\nhttps://doi.org/10.1371/journal.pcbi.1005510\nScript your analysis:\nhttps://doi.org/10.1038/nj7638-563a\nPrinciples for data analysis workflows:\nhttps://doi.org/10.1371/journal.pcbi.1008770\nBenureau, F.C.Y., Rougier, N.P., 2018. Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions. Front. Neuroinform. 0. https://doi.org/10.3389/fninf.2017.00069\nSandve, G.K., Nekrutenko, A., Taylor, J., Hovig, E., 2013. Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology 9, e1003285. https://doi.org/10.1371/journal.pcbi.1003285\nSome Simple Guidelines for Effective Data Management:\nhttps://doi.org/10.1890/0012-9623-90.2.205\nBasic concepts of data management:\nhttps://www.dataone.org/education-modules\n\n\n\nOpen Science\n\nThe Tao of open science for ecology:\nhttps://doi.org/10.1890/ES14-00402.1\nChallenges and Opportunities of Open Data in Ecology:\nhttps://doi.org/10.1126/science.1197962\n\nScientific computing: Code alert\nhttps://doi.org/10.1038/nj7638-563a\nOur path to better science in less time using open data science tools\nhttps://doi.org/10.1038%2Fs41559-017-0160\nFAIR data guiding principles\nhttps://doi.org/10.1038/sdata.2016.18\nSkills and Knowledge for Data-Intensive Environmental Research https://doi.org/10.1093/biosci/bix025\n\nLet go your data\nhttps://doi.org/10.1038/s41563-019-0539-5\n\n\n\nCollaborative coding\n\nA new grad’s guide to coding as a team - Atlassian: https://www.atlassian.com/blog/wp-content/uploads/HelloWorldEbook.pdf\n10 tips for efficient programming: https://www.devx.com/enterprise/top-10-tips-for-efficient-team-coding.html\nAgile Manifesto: https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nCode Review\n\nSmall-Group Code Reviews For Education: https://cacm.acm.org/blogs/blog-cacm/175944-small-group-code-reviews-for-education/fulltext\n\n\n\nBranches\n\nInteractive tutorial to learn more about git branches and more https://learngitbranching.js.org/\n\n\n\nGitHub Workflow\n\nGitHub:\n\nguides on how to use GitHub: https://guides.github.com/\nGitHub from RStudio: http://r-pkgs.had.co.nz/git.html#git-pull\n\nForking:\n\nhttps://help.github.com/articles/fork-a-repo/\nhttps://guides.github.com/activities/forking/\n\nComparison of git repository host services: https://www.git-tower.com/blog/git-hosting-services-compared/\nBranches\n\ninteractive tutorial on branches: http://learngitbranching.js.org/\nusing git in a collaborative environment: https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow https://moodle2019-20.ua.es/moodle/pluginfile.php/2213/mod_resource/content/2/agile-manifesto.pdf\n\n\n\nGit using RStudio\n\nHappy Git and GitHub for the useR:http://happygitwithr.com/\nR packages - Git and GitHub: http://r-pkgs.had.co.nz/git.html#git-init\n\nGit mainly from the command line:\n\nInteractive git 101: https://try.github.io/\nVery good tutorial about git: https://www.atlassian.com/git/tutorials/what-is-version-control\nGit tutorial geared towards scientists: http://nyuccl.org/pages/gittutorial/\nShort intro to git basics: https://github.com/mbjones/gitbasics\nGit documentation about the basics: http://gitref.org/basic/\nGit documentation - the basics: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics\nGit terminology: https://www.atlassian.com/git/glossary/terminology\nIn trouble, guide to know what to do: http://justinhileman.info/article/git-pretty/git-pretty.png\nWant to undo something? https://github.com/blog/2019-how-to-undo-almost-anything-with-git\nGit terminology: https://www.atlassian.com/git/glossary/terminology\n8 tips to work better with git: https://about.gitlab.com/2015/02/19/8-tips-to-help-you-work-better-with-git/\nGitPro book (2nd edition): https://git-scm.com/book/en/v2\n\n\n\nUndoing things\n\nHelp to decide how to undo your problem: http://justinhileman.info/article/git-pretty/git-pretty.png\nUndo almost everything with git https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/\nDifference between git reset soft, mixed and hard https://davidzych.com/difference-between-git-reset-soft-mixed-and-hard/\nResetting, Checking Out & Reverting https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting"
-  },
-  {
-    "objectID": "day_3.html",
-    "href": "day_3.html",
-    "title": "Day 3 - Getting data in a programmatic way",
+    "objectID": "day4-analytical_workflows.html",
+    "href": "day4-analytical_workflows.html",
+    "title": "Reproducible Analytical Workflows",
     "section": "",
-    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 11:00am\nIntroduction to APIs (50min)\n\n\n11:00am - 11:10am\nBreak (10 min)\n\n\n11:10am - 12:30am\nAPIs hands-on (80 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 2:00pm\nIntroduction to the group project (30 min)\n\n\n2:00pm - 4:00pm\nGroup Projects working session (120min)"
+    "text": "Please remember that every workflow or framework is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project.\n\n\n\n\n\n\n\nConceptual workflow model promoted by the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.hadley.nz/intro#fig-ds-diagram\n\n\n\n\n\n\nThe targets R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.\nHere for more: https://books.ropensci.org/targets/\nOur practice example: https://github.com/EDS-214/eds214-handson-targets\n\n\n\nAlthough the pointblank package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.\nhttps://github.com/rstudio/pointblank"
   },
   {
-    "objectID": "flex-rmarkdown_syntax.html#the-markdown-syntax",
-    "href": "flex-rmarkdown_syntax.html#the-markdown-syntax",
-    "title": "Rmarkdown syntax",
-    "section": "The Markdown syntax ",
-    "text": "The Markdown syntax \nYou will find Markdown to be useful for a lot of various tasks and tools you will use as a data scientist. The good new is that the syntax is very basic and it is easy to get started with. In addition, Markdown files (.md) are text files that can be opened by any text editor and can be easily be versioned. You can also render markdown document using pandoc into various document formats (PDF, html, ….). However it is important to be aware that there are several flavors of Markdown out there that are adding more capabilities to the basic one. For example GitHub has created its own flavor.\nAnother interesting feature of Markdown is that you can use html formatting when you want to do some more advanced formatting. In fact, document styles can be customized with HTML/CSS and math notation can be included using LaTeX or mathjax.\n$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$\n\\[\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\\]\nDuring this flex session, explore what you can do with with Markdown basic\nhttps://www.markdownguide.org/basic-syntax/\nAnd extended:\nhttps://www.markdownguide.org/extended-syntax/\n\nR Markdown\nWhat about R markdown in all of this? Well the R Markdown syntax, or more precisely the knitr package, add extra R oriented features which allows the translate of R code, figures and more into a Markdown document to produce dynamic and reproducible documents."
-  },
-  {
-    "objectID": "day1-github_forking.html",
-    "href": "day1-github_forking.html",
-    "title": "Collaborative Coding Workflows: Forking",
+    "objectID": "day4-analytical_workflows.html#leveraging-existing-frameworks-for-reproducibility",
+    "href": "day4-analytical_workflows.html#leveraging-existing-frameworks-for-reproducibility",
+    "title": "Reproducible Analytical Workflows",
     "section": "",
-    "text": "A fork is a copy of a repository that will be stored under your user account. Forking a repository allows you to freely experiment with changes without affecting the original project. We can create a fork on Github by clicking the “fork” button in the top right corner of our repository web page.\nMost commonly, forks are used to either propose changes to someone else’s project or to use someone else’s project as a starting point for your own idea.\nWhen you are satisfied with your work, you can initiate a Pull Request to initiate discussion about your modifications and requesting to integrate your changes to the main repository. Your commit history allows the original repository administrators to see exactly what changes would be merged if they accept your request. Do this by going to the original repository and clicking the “New pull request” button!\nNext, click “compare across forks”, and use the dropdown menus to select your fork as the “head fork” and the original repository as the “base fork”.\nThen type a title and description for the changes you would like to make. By using GitHub’s @mention syntax in your Pull Request message, you can ask for feedback from specific people or teams.\nThis workflow is recommended when you do not have push/write access to a repository, such as contributing to a open source software or R package, or if you are heavily changing a project."
+    "text": "Please remember that every workflow or framework is opinionated. This is also true for the tools out there that can help you to develop reproducible workflows. It is great practice to test them on a small project to see if hey could fit your project needs and way of working and collaborating. In this section we will go over a few R packages that could be of interest for your project.\n\n\n\n\n\n\n\nConceptual workflow model promoted by the tidyverse. Note the program box around the workflow and the iterative nature of the analytical process described. Source: R for Data Science https://r4ds.hadley.nz/intro#fig-ds-diagram\n\n\n\n\n\n\nThe targets R package can be very useful if you have a complex workflow that is built of many parts that take time to rerun. Target can detect and run only the strict necessary steps to rerun when a specific change has been done to the workflow.\nHere for more: https://books.ropensci.org/targets/\nOur practice example: https://github.com/EDS-214/eds214-handson-targets\n\n\n\nAlthough the pointblank package is mainly framed as a validating tool of the various part of your workflow, it provide a set of tools and great integration with the R Markdown ecosystem. It is also quite flexible making it possible to leverage this tool in a variety of project setups.\nhttps://github.com/rstudio/pointblank"
   },
   {
-    "objectID": "day1-github_forking.html#demo-time",
-    "href": "day1-github_forking.html#demo-time",
-    "title": "Collaborative Coding Workflows: Forking",
-    "section": "Demo time",
-    "text": "Demo time\nUpdate the greetings R package to add the option to change the color of the background of the text.\nRepo: https://github.com/brunj7/greetings\nWhat I will do:\n\nFork the repository\nAdd functionality to this R package. In this example I will modify the say_aloah() function to allow changing the text background color to blue in addition to the existing green (see here for more about the crayon package)\nOnce done, I will create a Pull Request (PR) to integrate the new changes\nMerge back changes!"
+    "objectID": "day4-projects_team.html",
+    "href": "day4-projects_team.html",
+    "title": "Managing data-driven projects as a team",
+    "section": "",
+    "text": "Our goal is to centralize the management of your files (data, codes, …). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path.\nThere are many tools out there to help with file management. Here are a few questions to ask your teammates when organizing your project:\n\nCan everybody have access to this tool? This should overrule the “best” tool =&gt; maximize adoption\nWhat team practices should you set on how to use these tools? Example: naming convention for files\nAllow flexibility – acknowledge the technological level varies among collaborators. Empower them by showing how to best use these tools rather than doing it for them!"
   },
   {
-    "objectID": "day1-hands-on_drawings_p2.html",
-    "href": "day1-hands-on_drawings_p2.html",
+    "objectID": "day4-projects_team.html#managing-your-files-as-a-team",
+    "href": "day4-projects_team.html#managing-your-files-as-a-team",
+    "title": "Managing data-driven projects as a team",
+    "section": "",
+    "text": "Our goal is to centralize the management of your files (data, codes, …). Try to avoid having data sets spread among laptops or other personal computers; this makes it difficult for other team members to redo a particular analysis and it can become difficult to know which version of the data was used for a specific analysis. We recommend asking your institution if there are servers or cloud services available to you and use those tools to centralize your data management. This will also make sure that all your collaborators will be able to access the same version of the data using the same path.\nThere are many tools out there to help with file management. Here are a few questions to ask your teammates when organizing your project:\n\nCan everybody have access to this tool? This should overrule the “best” tool =&gt; maximize adoption\nWhat team practices should you set on how to use these tools? Example: naming convention for files\nAllow flexibility – acknowledge the technological level varies among collaborators. Empower them by showing how to best use these tools rather than doing it for them!"
+  },
+  {
+    "objectID": "day4-projects_team.html#naming-things",
+    "href": "day4-projects_team.html#naming-things",
+    "title": "Managing data-driven projects as a team",
+    "section": "Naming things",
+    "text": "Naming things\n\nDevelop naming conventions for files and folder:\n\nAvoid spaces (use underscores or dashes)\nAvoid punctuation or special characters\nTry to leverage alphabetical order (e.g. start with dates: 2020-05-08)\nUse descriptive naming (lite metadata)\nUse folders to structure/organize content\nKeep it simple\nMake it programmatically useful:\n\nUseful to select files (Wildcard *, regular expression)\nBut don’t forget Humans need to read file names too!!\n\n\n\nQuizz\nWhy do you think the second option would be best?\n\nx &lt;- 9.81  #  gravitational acceleration\n\ngravity_acc &lt;- 9.81  #  gravitational acceleration\n\nWhich filename would be the most useful?\n\n06-2020-08-sensor2-plot1.csv\n2020-05-08_light-sensor-1_plot-1.csv\nMeasurement 1.csv\n2020-05-08-light-sensor-1-plot-2.csv\n2020-05-08-windSensor1-plot3.csv\n\nThe most important is to make it consistent!\nGood reference on this topic from Jenny Bryan (RStudio)."
+  },
+  {
+    "objectID": "day4-projects_team.html#organizing-things",
+    "href": "day4-projects_team.html#organizing-things",
+    "title": "Managing data-driven projects as a team",
+    "section": "Organizing things",
+    "text": "Organizing things\nAs we discussed previously, it is good practice to encapsulate your project and repositories are a good unit to start with. In this section we will talk about the case when your data sets start to be numerous or large enough that it is not possible anymore to keep them in your repository. Generally when you reach this amount of data to deal with, it also means that your personal computer might not be the best computer to efficiently process those data sets. Thus using a remote server (on premise or in the cloud) might become necessary.\n\nCodes should be managed using version control (git and GitHub for this course)   The repository should be stored in your home folder and the management of the different contributions should be resolved using git and GitHub and not by sharing directly the scripts. The main reason is that git does already the work for us by tracking the changes between the various versions, but also tracking which collaborator has made those changes and when.\nData sets should should be centralized in a shared folder that is available to all   It is very rare in an Environmental Data Science project that you will discover all the data you need from the start. In addition, a lot of environmental data sets are time-series, and one year later might need to be updated as your project progresses. Our goal here is to setup ourselves in a way that will help us to avoid duplication of data. Every time you duplicate a data set (for example on your own laptop), there is a risk that at some point it will become its own version."
+  },
+  {
+    "objectID": "day4-projects_team.html#code",
+    "href": "day4-projects_team.html#code",
+    "title": "Managing data-driven projects as a team",
+    "section": "Code",
+    "text": "Code\nVersion control systems have been originally designed to track changes by rows in small text files, in other words they are well suited to manage codes. It is thus recommended to use them to track changes that you and your collaborators are making to the various scripts of your project. Mote on how to best do this in the section below."
+  },
+  {
+    "objectID": "day4-projects_team.html#scripting-languages",
+    "href": "day4-projects_team.html#scripting-languages",
+    "title": "Managing data-driven projects as a team",
+    "section": "Scripting languages",
+    "text": "Scripting languages\nCompared to other programming languages (such as C, fortran, …), scripting languages are not required to be compiled to be executable. One consequence is that, generally, scripts will execute more slowly than a compiled executable program, because they need an interpreter. However, the more natural language oriented syntax of scripts make them easier to learn and use. In addition, numerous libraries are available to streamline scientific analysis.\n\nStructure of a script\nA script can be divided into several main sections. Each scripting language has its own syntax and style, but these main components are generally accepted:\nFrom the top to the bottom of your script:\n\nSummary explaining the purpose of the script\nAttribution: authors, contributors, date of last update, contact info\nImport of external modules / packages\nConstant definitions (g = 9.81)\nFunction definitions (ideally respecting the order in which they are called)\nMain code calling the different functions\n\n\n\nA few programming practices that will help a long way\n\nComment your code. This will allow you to inform your collaborators (but also your future self!) about the tasks your script accomplishes\nUse variables and constants instead of repeating values in different places of the code. This will let you update those values more easily\nChoose descriptive names for your variables and functions, not generic ones. If you store a list of files, do not use x for the variable name, use instead files. Even better use input_files if you are listing the files you are importing.\nBe consistent in terms of style (input_files, inputFiles,…) used to name variables and functions. Just pick one and stick to it!\nkeep it simple, stupid (KISS). Do not create overly complicated or nested statements. Break your tasks in several simple lines of code instead of embedding a lot of executions in one (complicated line). It will save you time while debugging and make your code more readable to others\nGo modular! Break down tasks into small code fragments such as functions or code chunks. It will make your code reusable for you and others (if well documented). Keep functions simple; they should only implement one or few (related) tasks\nDon’t Repeat Yourself (DRY). If you start copy/pasting part of your code changing a few parameters =&gt; write a function and call it several times with different parameters. Add flow control such as loops and conditions. It will be easier to debug, change and maintain\nTest your code. Test your code against values you would expect or computed with another software. Try hedge cases, such as NA, negative values, ….\nIterate with small steps, implement few changes at a time to your code. Test, fix, and move forward!\n\nWe hope this overview section about scientific programming has raised your interest in learning more about best practices and tools for developing reproducible workflows using scripting languages.\n\n\nNotebooks and scripts\nWith the increasing popularity of notebooks in scientific projects, it can sometimes be confusing to know when to use one. The good news is that there is not really a wrong or right here and that actually both can be used in a complementary manner and each data scientist will have her/his preference. However here are a few tips to help you decide:\n\nKeep your Notebook at a length you will feel comfortable reading. It if starts to be a long it might be time to think about if some code could be move to another document (scripts or another notebook)\nScripts might be better suited for tasks you need to rerun frequently\nIf you have developed many functions for your analysis, it might be worth storing them in a script outside your main notebook"
+  },
+  {
+    "objectID": "day4-projects_team.html#data",
+    "href": "day4-projects_team.html#data",
+    "title": "Managing data-driven projects as a team",
+    "section": "Data",
+    "text": "Data\nIt is recommended to keep the raw-data you are collecting separated from any data you might generate at various steps of your workflow. This will help you to trace back any problems, but also make your work more reproducible because you started your processing directly from the original data. There are different ways of ensuring this. A common one is to create a raw-data (sub)folder to store the data. You can even play with the file access settings to make those files read-only.\n\n\n\nhttps://github.com/benmarwick/rrtools"
+  },
+  {
+    "objectID": "day_2.html",
+    "href": "day_2.html",
+    "title": "Day 2 - Working on a remote server",
+    "section": "",
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:50am\nLecture 1: Working on a remote server Server (50 min)\n\n\n10:50am - 11:00am\nBreak (10 min)\n\n\n11:00am - 12:30am\nInteractive session 1: Command line Interface (50 min)\n\n\n12:30pm - 1:30pm\nLunch (60 min)\n\n\n1:30pm - 3:00pm\nHybrid: Automating things with bash (90min)\n\n\n3:00pm - 3:10pm\nBreak (10 min)\n\n\n3:10pm - 4:00pm\nCollaborating on a server (20 min) & Uploading things to a server (30 min)"
+  },
+  {
+    "objectID": "day_5.html",
+    "href": "day_5.html",
+    "title": "Reproducible for all",
+    "section": "",
+    "text": "Time (PST)\nActivity\n\n\n\n\n10:00am - 10:30am\nOpen Source Software for Data Science (30 min) (30min)*\n\n\n10:30am - 12:30pm\nGroup project (120min)\n\n\n12:300pm - 1:30pm\nLunch \n\n\n1:30pm - 2:00pm\nMeet your next instructor – Kelly Caylor, Office of Research and Earth Research Institute, UCSB\n\n\n2:00pm - 3:00pm\nGroup project presentations - p1 (60 min).\n\n\n3:00pm - 3:10pm\nBreak 2 (10min)\n\n\n3:10pm - 3:40pm\nGroup project presentations - p2 (30 min)\n\n\n3:40pm - 4:00pm\nFinal thoughts and feedback\n\n\n\n\n\n\n\n\n\n\nMaterials\n\n\n\n\nSchedule"
+  },
+  {
+    "objectID": "day_5.html#scope-and-debugging",
+    "href": "day_5.html#scope-and-debugging",
+    "title": "Reproducible for all",
+    "section": "",
+    "text": "Materials"
+  },
+  {
+    "objectID": "day_5.html#group-projects-presentations",
+    "href": "day_5.html#group-projects-presentations",
+    "title": "Reproducible for all",
+    "section": "",
+    "text": "Schedule"
+  },
+  {
+    "objectID": "day1-github_commit_messages.html",
+    "href": "day1-github_commit_messages.html",
+    "title": "On good commit messages",
+    "section": "",
+    "text": "https://xkcd.com/1296/\nCommit messages are critical for others, including your future self, to understand the motivation behind the changes that were implemented. Combined into the history of your file and repository, those messages help to understand the content and its evolution over time\nSo what is a good commit message? Well I think the answer actually starts with what is a good commit? Which actually begins when you are choosing how to group files during the staging.\nA good commit:\nA good commit message:\nNote: you can add a body to a commit message if you want to describe the content in greater details, but keep the first line (message) separated."
+  },
+  {
+    "objectID": "day1-github_commit_messages.html#references",
+    "href": "day1-github_commit_messages.html#references",
+    "title": "On good commit messages",
+    "section": "References",
+    "text": "References\n\nHow to Write a Git Commit Message: https://chris.beams.io/posts/git-commit/"
+  },
+  {
+    "objectID": "day1-hands-on_drawings.html",
+    "href": "day1-hands-on_drawings.html",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
+    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
   },
   {
-    "objectID": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
-    "href": "day1-hands-on_drawings_p2.html#good-news-we-found-data-for-one-more-watershed",
+    "objectID": "day1-hands-on_drawings.html#goal",
+    "href": "day1-hands-on_drawings.html#goal",
     "title": "Hands-on: Planning your work",
     "section": "",
-    "text": "Actually our team also collected data for an adjacent watershed!!\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (10min)"
+    "text": "Draw the workflow to combine 4 datasets about stream flow and water chemistry in a way that will let you investigate the impact of the 1989 Hurricane Hugo on Stream Chemistry in the Luquillo Mountains of Puerto Rico\n\n\n\nTable structures are different =&gt; only some variables / columns overlap among the different sites\nUnits used among the various sites are different\nPeriod covered is not perfectly aligned for all the time-series. Some sites start or end before others, but there is a period of overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want to be able to produce this plot"
   },
   {
-    "objectID": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
-    "href": "day1-hands-on_drawings_p2.html#this-is-your-lucky-day",
+    "objectID": "day1-hands-on_drawings.html#remember",
+    "href": "day1-hands-on_drawings.html#remember",
     "title": "Hands-on: Planning your work",
-    "section": "This is your lucky day!!",
-    "text": "This is your lucky day!!\nWe found data for additional chemistry measurements while skimming through the database :)\nWe now want to be able to produce the following plot\n\n\n\n\n\n\n\n\n\n=&gt; How should you modify your workflow to handle this new situation? (5min)"
+    "section": "Remember",
+    "text": "Remember\n\nEach node represents a step or an input/output\nEach connecting edge represents data flow or processing\n\n\n\nOh wait…\nActually there is more"
+  },
+  {
+    "objectID": "day1-hands-on_drawings.html#references",
+    "href": "day1-hands-on_drawings.html#references",
+    "title": "Hands-on: Planning your work",
+    "section": "References",
+    "text": "References\nExercise based on: Schaefer, D., McDowell, W., Scatena, F., & Asbury, C. (2000). Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico. Journal of Tropical Ecology, 16(2), 189-207. doi:10.1017/S0266467400001358\nData available here: McDowell, W. 2021. Chemistry of stream water from the Luquillo Mountains ver 4923052. Environmental Data Initiative. https://doi.org/10.6073/pasta/ddb4d61aea2fb18b77540e9b0c424684 (Accessed 2021-08-06)."
   },
   {
     "objectID": "group_project.html",
