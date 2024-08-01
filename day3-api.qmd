@@ -1,0 +1,17 @@
+---
+title: "Getting Data using APIs"
+---
+
+## The manual way
+
+Using website to retrieve data is great interactive way to search and explore data of interest. Let's start our day by searching some data on the data repository DateONE: <https://search.dataone.org/data>
+
+In case you need some inspiration, look at this dataset about historic precipitation in Alaska: <https://doi.org/10.5063/N29VCQ>
+
+<br>
+
+## The programmatic way
+
+Although discovering data through a web interface is convenient and offers a great experience, it is often hard to scale this approach or to integrate it into a reproducible workflow.
+
+**[Slides](https://EDS-214.github.io/eds214-slides/api.html)**
