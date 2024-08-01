@@ -1,5 +1,5 @@
 ---
-title: "Working on a remote server"
+title: "Day 2 - Working on a remote server"
 default-image-extension: ""
 ---
 
@@ -7,13 +7,13 @@ default-image-extension: ""
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Day 2
+<br>
 
 | **Time (PST)**    | **Activity**                                       |
 |-------------------|----------------------------------------------------|
-| 10:00am - 10:50am | *Working on a remote server Server (50 min)*       |
+| 10:00am - 10:50am | *Lecture 1: [Working on a remote server Server](day2-remote_server.html){target="_blank"} (50 min)* |
 | 10:50am - 11:00am | *Break (10 min)*                                   |
-| 11:00am - 12:30am | *Command line (50 min)*                            |
+| 11:00am - 12:30am | *Interactive session 1: [Command line Interface](https://github.com/EDS-214/eds214-handson-cli){target="_blank"}  (50 min)* |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                                   |
 | 1:30pm - 3:00pm   | *Automating things with bash (90min)*              |
 | 3:00pm - 3:10pm   | *Break (10 min)*                                   |
@@ -23,30 +23,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Working on a remote server
 
-![CERN computing center](https://cds.cern.ch/images/OPEN-PHO-CCC-2017-001-1/file?size=medium)
-
-# Learning Objectives
-
-In this lesson, you will learn:
-
--   How to connect to a remote server
--   Get familiar with RStudio server
--   Get an introduction to the command line (CLI) & bash
-
-## Why working on a remote machine?
-
-Often the main motivation is to **scale your analysis beyond what a personal computer can handle**. R being pretty memory intensive, moving to a server often provides you more RAM and thus allows to load larger data in R without the need of slicing your data into chunks. But there are also other advantages, here are the main for scientist:
-
--   **Power**: More *CPUs/Cores* (24/32/48), More RAM (256/384GB)
--   **Capacity**: More *disk space* and generally *faster storage* (in highly optimized RAID arrays)
--   **Security**: Data are spread across *multiple drives* and have nightly *backups*
--   **Collaboration**: *shared folders* for code, data, and other materials; same *software versions*
-
-::: callout-warning
-***=\> The operating system is more likely going to be Linux!!***
-
-More on this in a few minutes
-:::
 
 ### Unix and Friends
 
