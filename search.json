@@ -193,7 +193,7 @@
     "href": "index.html#course-requirements",
     "title": "EDS 214: Analytical Workflows and Scientific Reproducibility",
     "section": "Course requirements",
-    "text": "Course requirements\n\nComputing\n\nMinimum MEDS device requirements\nHave a ready to be used GitHub Account (https://github.com/){target=“_blank”}\nMEDS server Taylor\n\n\n\nTextbook\n\nR for Data Science, 2nd edition: https://r4ds.hadley.nz/\nThe Practice of Reproducible Research: http://www.practicereproducibleresearch.org/"
+    "text": "Course requirements\n\nComputing\n\nMinimum MEDS device requirements\nHave a ready to be used GitHub Account https://github.com/\nMEDS server Taylor\n\n\n\nTextbook\n\nR for Data Science, 2nd edition: https://r4ds.hadley.nz/\nThe Practice of Reproducible Research: http://www.practicereproducibleresearch.org/"
   },
   {
     "objectID": "day1-git_github_recap.html",
