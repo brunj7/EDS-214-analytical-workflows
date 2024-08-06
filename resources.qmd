@@ -2,6 +2,10 @@
 title: "Course resources"
 ---
 
+### Practice repositories
+
+<https://github.com/EDS-214>
+
 
 ### More References
 
