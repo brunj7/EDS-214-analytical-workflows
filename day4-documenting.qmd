@@ -23,6 +23,11 @@ knitr::include_graphics("img/document_diataxis.png")
 
 Your potential audience(s) for your documentation can be a future collaborator, an external researcher with no direct insight on your work, a potential user of a tool you developed?
 
+
+## Plan ahead
+
+From the beginning of your project, you should plan the entire lifecycle of all your scientific products including data and code that will be used and generated. Several tools exist to this end, [data management plans](https://ucsb-library-research-data-services.github.io/project-data-management/) and [software management plans](https://doi.org/10.5281/zenodo.13242504) are great ways to plan the steps of your projects and assign people's responsibilities during and after the project ends.
+
 ## The power of README
 
 README files are not a new thing. They have been around computer projects since the early days. One great thing about the popularization of supporting the markdown syntax (and its web rendering in most code repositories) is that you can move beyond a simple text file and start to present a compelling entry point to your project that can link to various parts and external resources.
