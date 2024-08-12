@@ -199,7 +199,7 @@ Try adding the Roxygen Skeleton to this function and fill all the information yo
 
 ### Commenting
 
-Let's try to improve the readability and documentation of this repository: <https://github.com/brunj7/better-comments>. Follow the instructions on the README
+Let's try to improve the readability and documentation of this repository: <https://github.com/EDS-214/eds214-better-comments>. Follow the instructions on the README
 
 For inspiration, you can check out the NASA code for APOLLO 11 dating from 1969: <https://github.com/chrislgarry/Apollo-11>!!
 
