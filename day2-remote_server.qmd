@@ -68,7 +68,7 @@ POSIX (Portable Operating System Interface)
 
 ## Connecting via IDE - Posit Workbench
 
-From an user perspective, _RStudio Server is your familiar RStudio interface in your web browser_. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that **the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!** This remote file management is the main change you will have to adopt in your workflow. 
+From an user perspective, _Posit Workbench is your familiar RStudio interface in your web browser_. The big difference however is that with RStudio Server the computation will be running on the remote machine instead of your local personal computer. This also means that **the files you are seeing through the RStudio Server interface are located on the remote machine. And this also include your R packages!!!** This remote file management is the main change you will have to adopt in your workflow. 
 
 To help with remote files management, the RStudio Server interface as few additional features that we will be discussing in the following sections.
 
@@ -78,7 +78,12 @@ To help with remote files management, the RStudio Server interface as few additi
 
 ## Connecting to MEDS Analytical Server
 
-1. Got to: <https://taylor.bren.ucsb.edu/> 
+::: {.callout-tip}
+## Reference
+[MEDS computational servers guide](https://bren.zendesk.com/hc/en-us/articles/8727865050900-MEDS-Computational-Server-Guide)
+:::
+
+1. Got to: <https://workbench-1.bren.ucsb.edu> 
 
 2. Enter your credentials
 
