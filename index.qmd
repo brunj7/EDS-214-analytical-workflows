@@ -139,7 +139,7 @@ datatable(sched2, rownames=FALSE, escape=FALSE)
 
 - Have a ready to be used GitHub Account [https://github.com/](https://github.com/){target="_blank"}
 
-- [MEDS server Taylor](https://ucsb.app.box.com/notes/850504913040?s=zzy77gwmmil94a5k1seuttzz12urlyvp){target="_blank"}
+- [MEDS servers](https://bren.zendesk.com/hc/en-us/articles/8727865050900-MEDS-Computational-Server-Guide){target="_blank"}
 
 
 ### Textbook
