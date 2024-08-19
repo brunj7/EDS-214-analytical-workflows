@@ -31,7 +31,7 @@ The generation and analysis of environmental data is often a complex, multi-step
 
 There are many reasons why it is essential to make your science reproducible and how the necessity of openness is a cornerstone of the integrity and efficacy of the scientific research process. Here we will also be focusing on why making your work reproducible will empower **you** to iterate quickly, integrate new information more easily to iterate quickly, scale your analysis to larger data sets, and better collaborate by receiving feedback and contributions from others, as well as enable your "future self" to reuse and build from your own work.
 
-To make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on **programming** to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, ...) of your analysis. Scripting languages, even better open ones, such as `R` and `python`, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course we will introduce how to use `R`, `git` and `GitHub` to develop such workflows as a team.
+To make your data-driven research reproducible, it is important to develop scientific workflows that will be relying on **programming** to accomplish the necessary tasks to go from the raw data to the results (figures, new data, publications, ...) of your analysis. Scripting languages, even better open ones, such as `R` and `python`, are well-suited for scientists to develop reproducible scientific workflows. Those scripting languages provide a large ecosystem of libraries (also referred to as packages or modules) that are ready to be leveraged to conduct analysis and modeling. In this course, we will introduce how to use `R`, `git`, and `GitHub` to develop such workflows as a team.
 
 
 ```{r tidy-workflow, out.width='80%', fig.align="center", fig.cap="Workflow example using the `tidyverse`. Note the program box around the workflow and the iterative nature of the analytical process described. _Source: R for Data Science <https://r4ds.had.co.nz/>_",echo=FALSE}
@@ -86,16 +86,16 @@ EDS 214 is an intensive 1-week long graded 2-unit course. Students should plan t
 
 The goal of EDS 214 - Analytical Workflows and Scientific Reproducibility  is to expose incoming MEDS students to "good enough" practices of scientific programming develop skills in environmental data science to produce reproducible research. By the end of the course, students should be able to: 
 
--   **Develop knowledge in scientific analytical workflows** to learn how to make your data-riven research reproducible, it is important to develop scientific workflows that will be relying on programming to accomplish the necessary tasks to go from the raw data to the results  of your analysis (figures, new data, publications, ...). Scripting languages, even better open ones such as `R` and `python`, are well-suited for scientists to develop reproducible scientific workflows, but are not the only tools you will need to develop reproducible and collaborative workflows
+-   **Develop knowledge in scientific analytical workflows** to learn how to make your data-driven research reproducible. These scientific workflows rely on programming to accomplish the necessary tasks to go from the raw data to the results of your analysis (figures, new data, publications, ...). Scripting languages, even better open ones such as `R` and `python`, are well-suited for scientists to develop reproducible scientific workflows, but are not the only tools you will need to develop reproducible and collaborative workflows
 
--   **Learn how to code in a collaborative manner** by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code review using `git` and `GitHub` to create pull request, ask feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows
+-   **Learn how to code in a collaborative manner** by practicing techniques such as code review and pair programming. Become comfortable asking for and conducting code reviews using `git` and `GitHub` to create pull requests, ask for feedback from peers, and merge changes into the main repository. Practice pair programming to cement the collaborative development of reproducible analytical workflows
 
 -   **Practice documenting code and data** in a systematic way that will enable your collaborators, including your future self, to understand and reuse your work
 
 
 ## Grading
 
-The grading for this course is organized as follow:
+The grading for this course is organized as follows:
 
 - 50% Class participation
 - 50% Group project
