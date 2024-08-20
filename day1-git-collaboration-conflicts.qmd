@@ -15,23 +15,18 @@ In this lesson, you will learn:
 
 First thing to know is that actually `git pull`  is a two step process: `git pull = git fetch + git merge`
 
-Second: you did nothing wrong!! Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, `git` will call you to the rescue and ask you how to best merge the two versions.
+Second: **you did nothing wrong!!** Git tries to merge files automatically. When the changes are on the same file far apart, git will figure it out on his own and do the merge automatically. However if changes are overlapping, `git` will call you to the rescue and ask you how to best merge the two versions.
 
 
 ## Merge conflicts
 
-So things can go wrong, which usually starts with a **merge conflict**, due to 
-both collaborators making incompatible changes to a file. While the error messages
-from merge conflicts can be daunting, getting things back to a normal state can be
-straightforward once you've got an idea where the problem lies.
+So things can go wrong, which usually starts with a **merge conflict**, due to both collaborators making incompatible changes to a file. While the error messages from merge conflicts can be daunting, getting things back to a normal state can be straightforward once you've got an idea where the problem lies.
 
 This is most **easily avoided by good communication about who is working on various sections of each file, and trying to avoid overlaps**.  But sometimes it happens, and *git* is there to warn you about potential problems.  And git will not allow you to overwrite one person's changes to a file with another's changes to the same file if they were based on the same version.
 
 ![](img/git-conflict-00-lines-changed.png)
 
-The main problem with merge conflicts is that, when the Owner and Collaborator
-both make changes to the same line of a file, git doesn't know whose changes
-take precedence.  You have to tell git whose changes to use for that line.
+The main problem with merge conflicts is that, when the Owner and Collaborator both make changes to the same line of a file, git doesn't know whose changes take precedence.  You have to tell git whose changes to use for that line.
 
 ## How to resolve a conflict
 
