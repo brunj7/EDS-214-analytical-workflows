@@ -41,7 +41,7 @@ Sometimes you just made a mistake.  When you get a merge conflict, the repositor
 is placed in a 'Merging' state until you resolve it.  There's a command line command
 to abort doing the merge altogether:
 
-```
+```bash
 git merge --abort
 ```
 
