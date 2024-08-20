@@ -1,5 +1,5 @@
 ---
-title: "git conflicts"
+title: "git merge conflicts"
 ---
 
 ## Learning Objectives
