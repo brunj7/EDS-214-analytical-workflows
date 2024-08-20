@@ -35,7 +35,7 @@ More on this in a few minutes
 ## Introduction to UNIX and its siblings
 
 UNIX
- :  Originally developed at AT&T Bell Labs circa 1970. Has
+ :  Originally developed at AT&T / [Bell Labs](https://en.wikipedia.org/wiki/Bell_Labs) circa 1970. Has
      experienced a [long, multi-branched
      evolutionary path](https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg)
 
