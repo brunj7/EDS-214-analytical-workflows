@@ -176,6 +176,7 @@ branch, and the merged changes are clearly visible in the history.
 
 ![](img/git-conflict-08-history.png)
 
+::: {.callout-note}
 ### Merge Conflict Challenge {- .exercise}
 
 Now it's your turn. In pairs, intentionally create a merge conflict, and then go 
@@ -193,8 +194,7 @@ merged files. See the sections above for help with each of these steps:
 - Step 8: Owner pushes the resolved changes to GitHub
 - Step 9: Collaborator pulls the resolved changes from GitHub
 - Step 10: Both can view commit history
-
-### {-}
+:::
 
 ## Workflows to avoid merge conflicts
 
