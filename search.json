@@ -1050,11 +1050,18 @@
     "text": "CLI Practice"
   },
   {
-    "objectID": "day2-remote_server.html#bonus-vim",
-    "href": "day2-remote_server.html#bonus-vim",
+    "objectID": "day2-remote_server.html#bonuses",
+    "href": "day2-remote_server.html#bonuses",
     "title": "Working on a remote server",
-    "section": "Bonus: vim",
-    "text": "Bonus: vim\nThis section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.\nVim"
+    "section": "Bonuses",
+    "text": "Bonuses\n\nvim text editor\nThis section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.\nVim"
+  },
+  {
+    "objectID": "day2-remote_server.html#advanced-cli",
+    "href": "day2-remote_server.html#advanced-cli",
+    "title": "Working on a remote server",
+    "section": "Advanced CLI",
+    "text": "Advanced CLI\nWant to know more cool tools your can use: CLI Adanved"
   },
   {
     "objectID": "day2-remote_server.html#aknowledgements",
