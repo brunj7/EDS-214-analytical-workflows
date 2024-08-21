@@ -24,16 +24,16 @@ We recommend the following free software:
 
 ## scp
 
-The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:
+The `scp` command is another convenient way to transfer a single file or directory using the CLI. You can run it from Bren server or from your local computer. Here is the basic syntax:
 
 ```
 scp /source/path hostname:/path/to/destination/
 ```
 
-Here is an example of my uploading the file `10min-loop.R` to Taylor from my laptop. The destination directory on Taylor is `/Users/brun/`:
+Here is an example of my uploading the file `10min-loop.R` to workbench-1 from my laptop. The destination directory on workbench-1 is `/Users/brun/`:
 
 ```bash
-scp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/
+scp 10min-loop.R brun@workbench-1.bren.ucsb.edu:/Users/brun/
 ```
 
 BTW try to open and run that script for fun!!
@@ -49,6 +49,6 @@ scp -r /path/to/source-folder user@server:/path/to/destination-folder/
 Here is an example uploading all the images in the `myplot` folder 
 
 ```bash
-scp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots
+scp -r myplot brun@workbench-1.bren.ucsb.edu:/Users/brun/plots
 ```
 
