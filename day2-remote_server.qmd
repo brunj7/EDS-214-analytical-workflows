@@ -412,7 +412,7 @@ This section is optional depending of our progress and interest. Vim is still th
 
 ## Advanced CLI
 
-Want to know more cool tools your can use: [**CLI Adanved**](day2-cli_advanced.html)
+Want to know more cool tools your can use: [**CLI Advanced**](day2-cli_advanced.html)
 
 
 ## Aknowledgements
