@@ -480,7 +480,7 @@
     "href": "day2-server_uploading.html#scp",
     "title": "Uploading things to a server",
     "section": "scp",
-    "text": "scp\nThe scp command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:\nscp /source/path hostname:/path/to/destination/\nHere is an example of my uploading the file 10min-loop.R to Taylor from my laptop. The destination directory on Taylor is /Users/brun/:\nscp 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/\nBTW try to open and run that script for fun!!\nIf you want to upload an entire folder, you can add the -r option to the command. The general syntax is:\nscp -r /path/to/source-folder user@server:/path/to/destination-folder/\nHere is an example uploading all the images in the myplot folder\nscp -r myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots"
+    "text": "scp\nThe scp command is another convenient way to transfer a single file or directory using the CLI. You can run it from Bren server or from your local computer. Here is the basic syntax:\nscp /source/path hostname:/path/to/destination/\nHere is an example of my uploading the file 10min-loop.R to workbench-1 from my laptop. The destination directory on workbench-1 is /Users/brun/:\nscp 10min-loop.R brun@workbench-1.bren.ucsb.edu:/Users/brun/\nBTW try to open and run that script for fun!!\nIf you want to upload an entire folder, you can add the -r option to the command. The general syntax is:\nscp -r /path/to/source-folder user@server:/path/to/destination-folder/\nHere is an example uploading all the images in the myplot folder\nscp -r myplot brun@workbench-1.bren.ucsb.edu:/Users/brun/plots"
   },
   {
     "objectID": "day1-github_collab.html",

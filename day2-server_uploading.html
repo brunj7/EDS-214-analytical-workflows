@@ -223,15 +223,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="scp" class="level2">
 <h2 class="anchored" data-anchor-id="scp">scp</h2>
-<p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from Taylor or from your local computer. Here is the basic syntax:</p>
+<p>The <code>scp</code> command is another convenient way to transfer a single file or directory using the CLI. You can run it from Bren server or from your local computer. Here is the basic syntax:</p>
 <pre><code>scp /source/path hostname:/path/to/destination/</code></pre>
-<p>Here is an example of my uploading the file <code>10min-loop.R</code> to Taylor from my laptop. The destination directory on Taylor is <code>/Users/brun/</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@taylor.bren.ucsb.edu:/Users/brun/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is an example of my uploading the file <code>10min-loop.R</code> to workbench-1 from my laptop. The destination directory on workbench-1 is <code>/Users/brun/</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> 10min-loop.R brun@workbench-1.bren.ucsb.edu:/Users/brun/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>BTW try to open and run that script for fun!!</p>
 <p>If you want to upload an entire folder, you can add the <code>-r</code> option to the command. The general syntax is:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> /path/to/source-folder user@server:/path/to/destination-folder/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Here is an example uploading all the images in the <code>myplot</code> folder</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@taylor.bren.ucsb.edu:/Users/brun/plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> myplot brun@workbench-1.bren.ucsb.edu:/Users/brun/plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
