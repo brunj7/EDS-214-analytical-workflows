@@ -159,7 +159,7 @@ The CLI provides a direct way to interact with the Operating System, by typing i
 
 - `Command Line Interface (CLI)`: This is a user interface that lets you interact with a computer. It is a legacy from the early days of computers. Now a days computers have graphical user interfaces instead (MacOSX, Windows, Linux, ...) 
 - `Terminal`: It is a an application that lets you run a command line interface. It used to be a physical machine connected to a mainframe computer
-- `Shell`: It is the program that runs the command line. There are many different shells, the most common being `bash` (Bourne Again SHell) that is installed by default in many Linux distributions
+- `Shell`: It is the program that runs the command line. There are many different shells, the most common being `bash` (Bourne Again SHell) which is installed by default in many Linux distributions
 
 ::: {.callout-tip}
 ### The pitch
