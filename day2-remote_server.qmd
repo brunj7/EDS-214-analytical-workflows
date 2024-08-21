@@ -47,11 +47,12 @@ POSIX (Portable Operating System Interface)
 
 ![The unix family tree](img/unix-history-simple.png)
 
+* Linux (Linus Torvalds, 1991)
+ :  is _not_ fully POSIX-compliant, but certainly can be
+      regarded as [functionally Unix](http://en.wikipedia.org/wiki/Unix-like) <br>
+      Some popular Linux distributions include Debian, Fedora Linux, Arch Linux, and Ubuntu. There are also commercial distributions such as Red Hat Enterprise Linux and SUSE Linux Enterprise. Android is actually Linux-based!
 * OS X
  :  [is a Unix](http://unix.stackexchange.com/questions/1489/is-mac-os-x-unix)!
-* Linux
- :  is _not_ fully POSIX-compliant, but certainly can be
-      regarded as [functionally Unix](http://en.wikipedia.org/wiki/Unix-like)
       
 
 ### Some Unix hallmarks
