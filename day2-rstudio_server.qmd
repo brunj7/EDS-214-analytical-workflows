@@ -15,7 +15,7 @@ To help with remote files management, the RStudio Server interface as few additi
 
 ## Connecting to MEDS Analytical Server
 
-1. Got to: <https://taylor.bren.ucsb.edu/> 
+1. Got to: <https://workbench-1.bren.ucsb.edu/> 
 
 2. Enter your credentials
 

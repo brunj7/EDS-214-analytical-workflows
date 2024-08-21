@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = FALSE)
 From the gitbash (MS Windows) or the terminal (Mac) type:
 
 ```bash
-ssh taylor.bren.ucsb.edu
+ssh workbench-1.bren.ucsb.edu
 ```
 You will be prompted for your username and password.
 
@@ -25,7 +25,7 @@ You will be prompted for your username and password.
 You can also directly add your username:
 
 ```bash
-ssh brun@taylor.bren.ucsb.edu
+ssh brun@workbench-1.bren.ucsb.edu
 ```
 
 In this case, you will be only asked for your password as you already specified which user you want to connect with.

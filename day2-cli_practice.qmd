@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Files and directories
 
 In the following code examples, you need to type the command, but not include 
-the command prompt (e.g., `brun@taylor:~$`) which just shows that the computer 
+the command prompt (e.g., `brun@workbench-1:~$`) which just shows that the computer 
 is ready to accept a command.
 
 We'll start by:
@@ -18,12 +18,12 @@ We'll start by:
 - Show the contents of that file using `cat` (concatenate)
 
 ```bash
-brun@taylor:~$ mkdir cli_intro
-brun@taylor:~$ mkdir cli_intro/data
-brun@taylor:~$ echo "# Tutorial files related to CLI" > cli_intro/README.md
-brun@taylor:~$ cat cli_intro/README.md
+brun@workbench-1:~$ mkdir cli_intro
+brun@workbench-1:~$ mkdir cli_intro/data
+brun@workbench-1:~$ echo "# Tutorial files related to CLI" > cli_intro/README.md
+brun@workbench-1:~$ cat cli_intro/README.md
 # Tutorial files related to CLI
-brun@taylor:~$ 
+brun@workbench-1:~$ 
 ```
 
 ### Your turn
@@ -43,12 +43,12 @@ Upload files from your local machine to the server using the different technique
 
 - download the data to your laptop: https://aurora.nceas.ucsb.edu/~brun/sampledata.zip
 - unzip the folder
-- upload the folder to Taylor using scp or cyberduck
+- upload the folder to workbench-1 using scp or cyberduck
 
 Your should end up with something like this:
 
 ```bash
-brun@taylor:~$ ls -l
+brun@workbench-1:~$ ls -l
 total 16
 -rw-r--r-- 1 brun esmdomainusers   90 Aug 25 05:36 10min-loop.R
 drwxr-xr-x 3 brun esmdomainusers 4096 Aug 24 23:05 github

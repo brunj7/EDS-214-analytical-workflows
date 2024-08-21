@@ -215,7 +215,7 @@ All files have permissions and ownership.
 * List files showing ownership and permissions: `ls -l`
 
 ```bash
-brun@taylor:/courses/EDS214$ ls -l
+brun@workbench-1:/courses/EDS214$ ls -l
 total 16
 drwxrwxr-x+ 3 brun      esmdomainusers 4096 Aug 20 04:49 data
 drwxrwxr-x+ 2 katherine esmdomainusers 4096 Aug 18 18:32 example	
@@ -370,7 +370,7 @@ The above are the main redirections, but there are others.
 
 
 ::: {.callout-note collapse=false}
-### Setting git on Taylor (if not yet done)
+### Setting git on workbench-1 (if not yet done)
 
 At the **Terminal**:
 
@@ -381,7 +381,7 @@ git config --global credential.helper 'cache --timeout=10000000'
 git config --list
 ``` 
 
-### Setting GitHub token on Taylor
+### Setting GitHub token on workbench-1
 
 At the **R Console**:
 
@@ -389,7 +389,7 @@ At the **R Console**:
 # On your laptop
 usethis::create_github_token() # This should open a web browser on GitHub
 
-# On Taylor 
+# On workbench-1 
 gitcreds::gitcreds_set()
 usethis::git_sitrep()
 ```
