@@ -402,11 +402,17 @@ usethis::git_sitrep()
 --- 
 
 
-## Bonus:  vim
+## Bonuses
+
+### vim text editor
 
 This section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.
 
 [Vim](vim.html)
+
+## Advanced CLI
+
+Want to know more cool tools your can use: [**CLI Adanved**](day2-cli_advanced.html)
 
 
 ## Aknowledgements
