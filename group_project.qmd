@@ -25,7 +25,7 @@ By group of 4-5 collaborators:
 - Use GitHub issues to track your work and discuss progress and tasks
 
 
-#### Log your resources on this [Google Sheet](https://docs.google.com/spreadsheets/d/1cVoUFvSUdn04gzBSPrvmr2ZfkbnlBOG1iCSwill2NA0/edit#gid=0)
+#### Log your resources on this [Google Sheet](https://docs.google.com/spreadsheets/d/1rm7qBrK5ywtd3YYD8J9evxR9EgXlqcK5QNGs8o_lbIY/edit?gid=0#gid=0)
 
 
 ## Background
