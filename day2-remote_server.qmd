@@ -6,7 +6,7 @@ title: "Working on a remote server"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-![CERN computing center](img/cern-server-small.jpg){width="110%"}
+![CERN computing center](img/cern-server-small.jpg){width="70%"}
 
 ## Learning Objectives
 
