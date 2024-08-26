@@ -2,14 +2,15 @@
 title: "GitHub Collaboration"
 ---
 
+#### Collaborating through branches
+
+[**Materials**](day1-github_branches.html)
+
+
 #### Collaborating through forking
 
 [**Materials**](day1-github_forking.html)
 
-
-#### Collaborating through branches
-
-[**Materials**](day1-github_branches.html)
 
 
 ### Interactive session 2: Collaborative coding with GitHub
