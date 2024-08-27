@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 | 10:50am - 11:00am | *Break (10 min)*                                   |
 | 11:00am - 12:30am | *Interactive session 1: [Command line Interface](https://github.com/EDS-214/eds214-handson-cli){target="_blank"}  (50 min)* |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                                   |
-| 1:30pm - 3:00pm   | *Hybrid: [Automating things with bash](day2-bash-scripting.html){target="_blank"} (90min)*              |
+| 1:30pm - 3:00pm   | *Hybrid: [Automating things with bash](day2-bash-scripting.html){target="_blank"} - Greg Janée (90min)*              |
 | 3:00pm - 3:10pm   | *Break (10 min)*                                   |
 | 3:10pm - 4:00pm   | *[Collaborating on a server](day2-server_collaboration.html){target="_blank"} (20 min) & [Uploading things to a server](day2-server_uploading.html){target="_blank"} (30 min)*            |
 
