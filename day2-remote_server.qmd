@@ -172,6 +172,7 @@ The CLI provides a direct way to interact with the Operating System, by typing i
 You can access the command line directly from RStudio by using the `Terminal` tab next to your R console.
 
 ![](img/rstudio-terminal.png)
+
 ### Navigating and managing files/directories in *NIX
 
 
