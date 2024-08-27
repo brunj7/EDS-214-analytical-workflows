@@ -213,6 +213,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>So far you’ve seen Bash as a CLI, i.e., as an interactive tool. But Bash is also a programming language, and that is where its real power lies. Nobody claims that Bash is a particularly good general-purpose programming language (though in theory it could be used that way). But when it comes to manipulating files, working in Bash is often far more convenient than working in other languages such as R or Python. An additional benefit is that Bash is almost universally available, whereas R and Python require additional installs.</p>
 <p>In this exercise you will create a Bash script to perform two common file manipulation tasks: adding header records and renaming files.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fork this repository: <a href="https://github.com/EDS-214/eds214-handson-cli" class="uri">https://github.com/EDS-214/eds214-handson-cli</a> under your account and clone your repository on <code>workbench-1</code> under the course folder <code>eds-214-repro</code> you created this morning.</p>
+</div>
+</div>
 <section id="adding-a-header-record-to-each-file" class="level2">
 <h2 class="anchored" data-anchor-id="adding-a-header-record-to-each-file">Adding a header record to each file</h2>
 <p>There are two problems with our state baby name files: they lack header records, and they end in <code>.TXT</code> instead of <code>.csv</code>. To tackle the first problem, we can say:</p>
