@@ -6,6 +6,12 @@ So far you've seen Bash as a CLI, i.e., as an interactive tool. But Bash is also
 
 In this exercise you will create a Bash script to perform two common file manipulation tasks: adding header records and renaming files.
 
+::: {.callout-tip}
+## Setup
+Fork this repository: <https://github.com/EDS-214/eds214-handson-cli> under your account and clone your repository on `workbench-1` under the course folder `eds-214-repro` you created this morning.
+:::
+
+
 ## Adding a header record to each file
 
 There are two problems with our state baby name files: they lack header records, and they end in `.TXT` instead of `.csv`. To tackle the first problem, we can say:
