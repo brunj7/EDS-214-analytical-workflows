@@ -89,6 +89,15 @@ Major points to hit:
 <!-- | Team Siguana	| <https://github.com/Vanessa-Salgado/EDS214_group_project_team_siguanaa> |	<https://docs.google.com/presentation/d/15Ea1zf39oQlQBq6mOkdQZDI8MJw-MjuEHHdVUFA5Rxw/edit#slide=id.g2798449c7d5_0_10> | -->
 <!-- | SMOL	|  <https://github.com/olleholt/SMOL>  |	<https://docs.google.com/presentation/d/1kK2p3mnl_-ar3ZZahE1P1WqYCdvmFPik9CIJAOHSEVE/edit?pli=1#slide=id.p> -->
 
+## How to read data from the shared folder
+
+```{r}
+library(tidyverse)
+
+data_path <- "/courses/EDS214/group_project/2023/A1/raw_data"
+
+data_test <- read_csv(file.path(a1_path, "BasicFieldData-Rain2.csv")) 
+```
 
 ## Reference
 
