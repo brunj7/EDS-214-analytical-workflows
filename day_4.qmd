@@ -9,9 +9,9 @@ title: "Day 4 - Being reproducible to better collaborate: Tools and Practices"
 |-------------------|-------------------------------------|
 | 10:00am - 11:20am | *[Building analytical workflows: meet `targets`](day4-analytical_workflows.html){target="_blank"} (80 min)*  |
 | 11:20am - 11:30am | *Break (10 min)*                    |
-| 11:30am - 12:30am | *[Reproducible publication: meet `rrtools`](day4-reproducible_publications.html){target="_blank"} (60 min)*  |
+| 11:30am - 12:30am | *[Documenting](day4-documenting.html){target="_blank"} & [sharing things](day4-sharing_things.html){target="_blank"} (50 min)* |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                    |
-| 1:30pm - 2:20pm   | *[Documenting](day4-documenting.html){target="_blank"} & [sharing things](day4-sharing_things.html){target="_blank"} (50 min)*           |
+| 1:30pm - 2:20pm   | *[Reproducible publication: meet `rrtools`](day4-reproducible_publications.html){target="_blank"} (60 min)*           |
 | 2:20am - 2:30pm   | *Break (10 min)*                    |
 | 2:30pm - 4:00pm   | *Group Projects (90min)*            |
  
