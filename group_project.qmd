@@ -16,9 +16,9 @@ By group of 4-5 collaborators:
 
 - Find an awesome name for your group (one of the hardest [steps](https://www.karlton.org/2017/12/naming-things-hard/))
 - Setup a shared GitHub repository
-- Use the MEDS server Workbench-1 as your main computing resource
+- Use the MEDS server `Workbench-1` as your main computing resource
 - Use GitHub to manage your code development in a collaborative manner
-- Use shared folder on Workbench-1 to manage your data `/courses/EDS214/group_project/my_group_name`
+- Use shared folder on `Workbench-1` to manage your data `/courses/EDS214/group_project/my_group_name`
 - Document your work as you go!!
   - Comment your code
   - Add project details to your README, including reference to data sources
@@ -43,11 +43,11 @@ knitr::include_graphics("img/luq-ts-plot.png")
 
 1. Can you recreate that plot (content, not style wise... you can do way better 🙂)
 
-Write a quarto document that:
+Write a quarto document(s) that:
     - reads the data in (from a local copy on Workbench-1)
     - processes the data as needed to be plotted
-    - use ggplot to create a similar (but better looking) plat
-    - comment your code and use markdown text to provide context to your code
+    - use ggplot to create a similar (but better looking) plot
+    - comment your code and use markdown text between the code chunks to provide context to your code
     - render your report as html
 
 
