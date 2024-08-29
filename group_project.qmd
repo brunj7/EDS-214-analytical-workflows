@@ -96,7 +96,9 @@ library(tidyverse)
 
 data_path <- "/courses/EDS214/group_project/2023/A1/raw_data"
 
-data_test <- read_csv(file.path(a1_path, "BasicFieldData-Rain2.csv")) 
+data_file_rain <- "BasicFieldData-Rain2.csv"
+
+data_test <- read_csv(file.path(data_path, data_file_rain)) 
 ```
 
 ## Reference
