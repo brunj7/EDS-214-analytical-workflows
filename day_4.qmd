@@ -11,9 +11,9 @@ title: "Day 4 - Being reproducible to better collaborate: Tools and Practices"
 | 11:20am - 11:30am | *Break (10 min)*                    |
 | 11:30am - 12:30am | *[Documenting](day4-documenting.html){target="_blank"} & [sharing things](day4-sharing_things.html){target="_blank"} (50 min)* |
 | 12:30pm - 1:30pm  | *Lunch (60 min)*                    |
-| 1:30pm - 2:20pm   | *Group Projects (60 min)*           |
+| 1:30pm - 2:20pm   | *Group Projects (50 min)*           |
 | 2:20am - 2:30pm   | *Break (10 min)*                    |
-| 2:30pm - 4:00pm   | *Group Projects (90min)*            |
+| 2:30pm - 3:30pm   | *Group Projects (60 min)*            |
  
 
 
