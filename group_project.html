@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -153,6 +187,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chemistry-of-stream-water-data-from-the-luquillo-mountains" id="toc-chemistry-of-stream-water-data-from-the-luquillo-mountains" class="nav-link" data-scroll-target="#chemistry-of-stream-water-data-from-the-luquillo-mountains">Chemistry of stream water data from the Luquillo Mountains</a></li>
   </ul></li>
   <li><a href="#group-project-presentation-10min-5-slides" id="toc-group-project-presentation-10min-5-slides" class="nav-link" data-scroll-target="#group-project-presentation-10min-5-slides">Group project presentation (10min; 5 slides)</a></li>
+  <li><a href="#how-to-read-data-from-the-shared-folder" id="toc-how-to-read-data-from-the-shared-folder" class="nav-link" data-scroll-target="#how-to-read-data-from-the-shared-folder">How to read data from the shared folder</a></li>
   <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul></li>
   </ul>
@@ -256,6 +291,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- | Tropic-Thunder | <https://github.com/saingersoll/tropic-thunder> |   <https://docs.google.com/presentation/d/1548heJAcJN9x8lYXY6uKkh3X2imWDLK9GxKLMNkqnvU/edit?usp=sharing> | -->
 <!-- | Team Siguana | <https://github.com/Vanessa-Salgado/EDS214_group_project_team_siguanaa> | <https://docs.google.com/presentation/d/15Ea1zf39oQlQBq6mOkdQZDI8MJw-MjuEHHdVUFA5Rxw/edit#slide=id.g2798449c7d5_0_10> | -->
 <!-- | SMOL |  <https://github.com/olleholt/SMOL>  |    <https://docs.google.com/presentation/d/1kK2p3mnl_-ar3ZZahE1P1WqYCdvmFPik9CIJAOHSEVE/edit?pli=1#slide=id.p> -->
+</section>
+<section id="how-to-read-data-from-the-shared-folder" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-data-from-the-shared-folder">How to read data from the shared folder</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">"/courses/EDS214/group_project/2023/A1/raw_data"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data_test <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">file.path</span>(a1_path, <span class="st">"BasicFieldData-Rain2.csv"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="reference" class="level2">
 <h2 class="anchored" data-anchor-id="reference">Reference</h2>
