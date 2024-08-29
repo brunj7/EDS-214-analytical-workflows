@@ -91,7 +91,7 @@ Major points to hit:
 
 ## How to read data from the shared folder
 
-```{r}
+```r
 library(tidyverse)
 
 data_path <- "/courses/EDS214/group_project/2023/A1/raw_data"
