@@ -19,3 +19,9 @@ knitr::opts_chunk$set(echo = FALSE)
 | 3:00pm - 3:10pm   | *Break (10 min)*                                   |
 | 3:10pm - 4:00pm   | *[Collaborating on a server](day2-server_collaboration.html){target="_blank"} (20 min) & [Uploading things to a server](day2-server_uploading.html){target="_blank"} (30 min)*            |
 
+
+---
+
+## Further Reading
+
+- Video from AT&T about the Unix system: <https://www.youtube.com/watch?v=tc4ROCJYbm0>
