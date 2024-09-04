@@ -405,11 +405,17 @@ usethis::git_sitrep()
 
 ## Bonuses
 
-### vim text editor
+### Hear more about the unix revolution directly from its creators
+
+<https://www.youtube.com/watch?v=tc4ROCJYbm0>
+
+
+### Vim text editor
 
 This section is optional depending of our progress and interest. Vim is still the default text editor on many Linux distribution and it is good to know about its basics.
 
 [Vim](vim.html)
+
 
 ## Advanced CLI
 
