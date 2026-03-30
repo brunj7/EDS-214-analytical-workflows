@@ -3,6 +3,8 @@
 [![DOI](https://zenodo.org/badge/379994626.svg)](https://zenodo.org/doi/10.5281/zenodo.11194410)
 
 
+**THIS REPO IS AN ARCHIVED VERSION OF THE COURSE for which an GH organization has been created. FOR THE LATEST VERSION of this course, SEE: https://github.com/EDS-214/EDS-214-analytical-workflows**
+
 
 # EDS 214: Analytical Workflows and Scientific Reproducibility
 
